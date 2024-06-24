@@ -1,0 +1,29 @@
+C:\Users\BCVR-IT\AppData\Local\Temporary Projects\IM_HR-Payroll-System\bin\Debug\IM_HR-Payroll-System.exe.config
+C:\Users\BCVR-IT\AppData\Local\Temporary Projects\IM_HR-Payroll-System\bin\Debug\IM_HR-Payroll-System.exe
+C:\Users\BCVR-IT\AppData\Local\Temporary Projects\IM_HR-Payroll-System\bin\Debug\IM_HR-Payroll-System.pdb
+C:\Users\BCVR-IT\AppData\Local\Temporary Projects\IM_HR-Payroll-System\bin\Debug\IM_HR-Payroll-System.xml
+C:\Users\BCVR-IT\AppData\Local\Temporary Projects\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.Resources.resources
+C:\Users\BCVR-IT\AppData\Local\Temporary Projects\IM_HR-Payroll-System\obj\Debug\IM_HR-Payroll-System.vbproj.GenerateResource.Cache
+C:\Users\BCVR-IT\AppData\Local\Temporary Projects\IM_HR-Payroll-System\obj\Debug\IM_HR-Payroll-System.exe
+C:\Users\BCVR-IT\AppData\Local\Temporary Projects\IM_HR-Payroll-System\obj\Debug\IM_HR-Payroll-System.xml
+C:\Users\BCVR-IT\AppData\Local\Temporary Projects\IM_HR-Payroll-System\obj\Debug\IM_HR-Payroll-System.pdb
+C:\Users\BCVR-IT\AppData\Local\Temporary Projects\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.FormSERVER_SETTINGS.resources
+C:\Users\BCVR-IT\AppData\Local\Temporary Projects\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.Form_LOGIN.resources
+C:\Users\BCVR-IT\AppData\Local\Temporary Projects\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.MDIMain.resources
+B:\IM_HR-Payroll-System\IM_HR-Payroll-System\bin\Debug\IM_HR-Payroll-System.exe.config
+B:\IM_HR-Payroll-System\IM_HR-Payroll-System\bin\Debug\IM_HR-Payroll-System.exe
+B:\IM_HR-Payroll-System\IM_HR-Payroll-System\bin\Debug\IM_HR-Payroll-System.pdb
+B:\IM_HR-Payroll-System\IM_HR-Payroll-System\bin\Debug\IM_HR-Payroll-System.xml
+B:\IM_HR-Payroll-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.FormEMPLOYEES.resources
+B:\IM_HR-Payroll-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.FormEMPLOYEES_DETAILS.resources
+B:\IM_HR-Payroll-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.FormPAYROLL.resources
+B:\IM_HR-Payroll-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.FormSERVER_SETTINGS.resources
+B:\IM_HR-Payroll-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.Form_LOGIN.resources
+B:\IM_HR-Payroll-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.MDIMain.resources
+B:\IM_HR-Payroll-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.Resources.resources
+B:\IM_HR-Payroll-System\IM_HR-Payroll-System\obj\Debug\IM_HR-Payroll-System.vbproj.GenerateResource.Cache
+B:\IM_HR-Payroll-System\IM_HR-Payroll-System\obj\Debug\IM_HR-Payroll-System.exe
+B:\IM_HR-Payroll-System\IM_HR-Payroll-System\obj\Debug\IM_HR-Payroll-System.xml
+B:\IM_HR-Payroll-System\IM_HR-Payroll-System\obj\Debug\IM_HR-Payroll-System.pdb
+B:\IM_HR-Payroll-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.FormPAYROLL_ADD.resources
+B:\IM_HR-Payroll-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.FormPAYROLL_PAYEE.resources
