@@ -117,4 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Label3.Text" xml:space="preserve">
+    <value>x               day(s)     Total :
+
+x               day(s)     Total :
+
+x               day(s)     Total :
+
+x               day(s)     Total :
+
+x               min(s)     Total :
+
+x               min(s)     Total :</value>
+  </data>
 </root>

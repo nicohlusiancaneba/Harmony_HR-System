@@ -22,56 +22,63 @@ Partial Class FormPAYROLL_PAYEE
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPAYROLL_PAYEE))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txt_payNightDiff = New System.Windows.Forms.TextBox()
+        Me.txt_numNightDiff = New System.Windows.Forms.TextBox()
+        Me.txt_totalNightDiff = New System.Windows.Forms.TextBox()
+        Me.txt_payOvertime = New System.Windows.Forms.TextBox()
+        Me.txt_numOvertime = New System.Windows.Forms.TextBox()
+        Me.txt_payHoliday = New System.Windows.Forms.TextBox()
+        Me.txt_numHoliday = New System.Windows.Forms.TextBox()
+        Me.txt_payField = New System.Windows.Forms.TextBox()
+        Me.txt_numField = New System.Windows.Forms.TextBox()
+        Me.txt_paySpecial = New System.Windows.Forms.TextBox()
+        Me.txt_numSpecial = New System.Windows.Forms.TextBox()
+        Me.txt_totalOvertime = New System.Windows.Forms.TextBox()
+        Me.txt_totalHoliday = New System.Windows.Forms.TextBox()
+        Me.txt_totalField = New System.Windows.Forms.TextBox()
+        Me.txt_totalSpecial = New System.Windows.Forms.TextBox()
+        Me.txt_totalRegular = New System.Windows.Forms.TextBox()
+        Me.txt_payRegular = New System.Windows.Forms.TextBox()
+        Me.txt_numRegular = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.TextBox31 = New System.Windows.Forms.TextBox()
+        Me.TextBox30 = New System.Windows.Forms.TextBox()
+        Me.TextBox29 = New System.Windows.Forms.TextBox()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TextBox35 = New System.Windows.Forms.TextBox()
+        Me.TextBox36 = New System.Windows.Forms.TextBox()
+        Me.TextBox24 = New System.Windows.Forms.TextBox()
+        Me.TextBox25 = New System.Windows.Forms.TextBox()
+        Me.TextBox26 = New System.Windows.Forms.TextBox()
+        Me.TextBox23 = New System.Windows.Forms.TextBox()
+        Me.TextBox22 = New System.Windows.Forms.TextBox()
+        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.TextBox28 = New System.Windows.Forms.TextBox()
+        Me.TextBox27 = New System.Windows.Forms.TextBox()
+        Me.TextBox13 = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.TextBox12 = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.ListView2 = New System.Windows.Forms.ListView()
-        Me.TextBox14 = New System.Windows.Forms.TextBox()
-        Me.TextBox15 = New System.Windows.Forms.TextBox()
-        Me.TextBox16 = New System.Windows.Forms.TextBox()
-        Me.TextBox17 = New System.Windows.Forms.TextBox()
-        Me.TextBox18 = New System.Windows.Forms.TextBox()
-        Me.TextBox19 = New System.Windows.Forms.TextBox()
-        Me.TextBox20 = New System.Windows.Forms.TextBox()
-        Me.TextBox21 = New System.Windows.Forms.TextBox()
-        Me.TextBox22 = New System.Windows.Forms.TextBox()
-        Me.TextBox23 = New System.Windows.Forms.TextBox()
-        Me.TextBox24 = New System.Windows.Forms.TextBox()
-        Me.TextBox25 = New System.Windows.Forms.TextBox()
-        Me.TextBox26 = New System.Windows.Forms.TextBox()
-        Me.TextBox27 = New System.Windows.Forms.TextBox()
-        Me.TextBox28 = New System.Windows.Forms.TextBox()
-        Me.TextBox29 = New System.Windows.Forms.TextBox()
-        Me.TextBox30 = New System.Windows.Forms.TextBox()
-        Me.TextBox31 = New System.Windows.Forms.TextBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -93,29 +100,241 @@ Partial Class FormPAYROLL_PAYEE
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.TextBox20)
-        Me.GroupBox1.Controls.Add(Me.TextBox21)
-        Me.GroupBox1.Controls.Add(Me.TextBox18)
-        Me.GroupBox1.Controls.Add(Me.TextBox19)
-        Me.GroupBox1.Controls.Add(Me.TextBox16)
-        Me.GroupBox1.Controls.Add(Me.TextBox17)
-        Me.GroupBox1.Controls.Add(Me.TextBox14)
-        Me.GroupBox1.Controls.Add(Me.TextBox15)
-        Me.GroupBox1.Controls.Add(Me.TextBox7)
-        Me.GroupBox1.Controls.Add(Me.TextBox6)
-        Me.GroupBox1.Controls.Add(Me.TextBox5)
-        Me.GroupBox1.Controls.Add(Me.TextBox4)
-        Me.GroupBox1.Controls.Add(Me.TextBox3)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
+        Me.GroupBox1.Controls.Add(Me.txt_payNightDiff)
+        Me.GroupBox1.Controls.Add(Me.txt_numNightDiff)
+        Me.GroupBox1.Controls.Add(Me.txt_totalNightDiff)
+        Me.GroupBox1.Controls.Add(Me.txt_payOvertime)
+        Me.GroupBox1.Controls.Add(Me.txt_numOvertime)
+        Me.GroupBox1.Controls.Add(Me.txt_payHoliday)
+        Me.GroupBox1.Controls.Add(Me.txt_numHoliday)
+        Me.GroupBox1.Controls.Add(Me.txt_payField)
+        Me.GroupBox1.Controls.Add(Me.txt_numField)
+        Me.GroupBox1.Controls.Add(Me.txt_paySpecial)
+        Me.GroupBox1.Controls.Add(Me.txt_numSpecial)
+        Me.GroupBox1.Controls.Add(Me.txt_totalOvertime)
+        Me.GroupBox1.Controls.Add(Me.txt_totalHoliday)
+        Me.GroupBox1.Controls.Add(Me.txt_totalField)
+        Me.GroupBox1.Controls.Add(Me.txt_totalSpecial)
+        Me.GroupBox1.Controls.Add(Me.txt_totalRegular)
+        Me.GroupBox1.Controls.Add(Me.txt_payRegular)
+        Me.GroupBox1.Controls.Add(Me.txt_numRegular)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 130)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(459, 213)
+        Me.GroupBox1.Size = New System.Drawing.Size(459, 258)
         Me.GroupBox1.TabIndex = 21
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Basic Pay"
+        '
+        'txt_payNightDiff
+        '
+        Me.txt_payNightDiff.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_payNightDiff.Location = New System.Drawing.Point(125, 214)
+        Me.txt_payNightDiff.Name = "txt_payNightDiff"
+        Me.txt_payNightDiff.Size = New System.Drawing.Size(56, 26)
+        Me.txt_payNightDiff.TabIndex = 39
+        Me.txt_payNightDiff.Tag = "BasicPay"
+        Me.txt_payNightDiff.Text = "0"
+        Me.txt_payNightDiff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_numNightDiff
+        '
+        Me.txt_numNightDiff.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_numNightDiff.Location = New System.Drawing.Point(207, 214)
+        Me.txt_numNightDiff.Name = "txt_numNightDiff"
+        Me.txt_numNightDiff.Size = New System.Drawing.Size(47, 26)
+        Me.txt_numNightDiff.TabIndex = 38
+        Me.txt_numNightDiff.Tag = "BasicPay"
+        Me.txt_numNightDiff.Text = "0"
+        Me.txt_numNightDiff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_totalNightDiff
+        '
+        Me.txt_totalNightDiff.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_totalNightDiff.Location = New System.Drawing.Point(373, 214)
+        Me.txt_totalNightDiff.Name = "txt_totalNightDiff"
+        Me.txt_totalNightDiff.ReadOnly = True
+        Me.txt_totalNightDiff.Size = New System.Drawing.Size(56, 26)
+        Me.txt_totalNightDiff.TabIndex = 37
+        Me.txt_totalNightDiff.Text = "0"
+        Me.txt_totalNightDiff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_payOvertime
+        '
+        Me.txt_payOvertime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_payOvertime.Location = New System.Drawing.Point(125, 174)
+        Me.txt_payOvertime.Name = "txt_payOvertime"
+        Me.txt_payOvertime.Size = New System.Drawing.Size(56, 26)
+        Me.txt_payOvertime.TabIndex = 36
+        Me.txt_payOvertime.Tag = "BasicPay"
+        Me.txt_payOvertime.Text = "0"
+        Me.txt_payOvertime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_numOvertime
+        '
+        Me.txt_numOvertime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_numOvertime.Location = New System.Drawing.Point(207, 174)
+        Me.txt_numOvertime.Name = "txt_numOvertime"
+        Me.txt_numOvertime.Size = New System.Drawing.Size(47, 26)
+        Me.txt_numOvertime.TabIndex = 35
+        Me.txt_numOvertime.Tag = "BasicPay"
+        Me.txt_numOvertime.Text = "0"
+        Me.txt_numOvertime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_payHoliday
+        '
+        Me.txt_payHoliday.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_payHoliday.Location = New System.Drawing.Point(125, 134)
+        Me.txt_payHoliday.Name = "txt_payHoliday"
+        Me.txt_payHoliday.Size = New System.Drawing.Size(56, 26)
+        Me.txt_payHoliday.TabIndex = 34
+        Me.txt_payHoliday.Tag = "BasicPay"
+        Me.txt_payHoliday.Text = "0"
+        Me.txt_payHoliday.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_numHoliday
+        '
+        Me.txt_numHoliday.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_numHoliday.Location = New System.Drawing.Point(207, 134)
+        Me.txt_numHoliday.Name = "txt_numHoliday"
+        Me.txt_numHoliday.Size = New System.Drawing.Size(47, 26)
+        Me.txt_numHoliday.TabIndex = 33
+        Me.txt_numHoliday.Tag = "BasicPay"
+        Me.txt_numHoliday.Text = "0"
+        Me.txt_numHoliday.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_payField
+        '
+        Me.txt_payField.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_payField.Location = New System.Drawing.Point(125, 92)
+        Me.txt_payField.Name = "txt_payField"
+        Me.txt_payField.Size = New System.Drawing.Size(56, 26)
+        Me.txt_payField.TabIndex = 32
+        Me.txt_payField.Tag = "BasicPay"
+        Me.txt_payField.Text = "0"
+        Me.txt_payField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_numField
+        '
+        Me.txt_numField.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_numField.Location = New System.Drawing.Point(207, 92)
+        Me.txt_numField.Name = "txt_numField"
+        Me.txt_numField.Size = New System.Drawing.Size(47, 26)
+        Me.txt_numField.TabIndex = 31
+        Me.txt_numField.Tag = "BasicPay"
+        Me.txt_numField.Text = "0"
+        Me.txt_numField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_paySpecial
+        '
+        Me.txt_paySpecial.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_paySpecial.Location = New System.Drawing.Point(125, 55)
+        Me.txt_paySpecial.Name = "txt_paySpecial"
+        Me.txt_paySpecial.Size = New System.Drawing.Size(56, 26)
+        Me.txt_paySpecial.TabIndex = 30
+        Me.txt_paySpecial.Tag = "BasicPay"
+        Me.txt_paySpecial.Text = "0"
+        Me.txt_paySpecial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_numSpecial
+        '
+        Me.txt_numSpecial.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_numSpecial.Location = New System.Drawing.Point(207, 55)
+        Me.txt_numSpecial.Name = "txt_numSpecial"
+        Me.txt_numSpecial.Size = New System.Drawing.Size(47, 26)
+        Me.txt_numSpecial.TabIndex = 29
+        Me.txt_numSpecial.Tag = "BasicPay"
+        Me.txt_numSpecial.Text = "0"
+        Me.txt_numSpecial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_totalOvertime
+        '
+        Me.txt_totalOvertime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_totalOvertime.Location = New System.Drawing.Point(373, 174)
+        Me.txt_totalOvertime.Name = "txt_totalOvertime"
+        Me.txt_totalOvertime.ReadOnly = True
+        Me.txt_totalOvertime.Size = New System.Drawing.Size(56, 26)
+        Me.txt_totalOvertime.TabIndex = 28
+        Me.txt_totalOvertime.Text = "0"
+        Me.txt_totalOvertime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_totalHoliday
+        '
+        Me.txt_totalHoliday.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_totalHoliday.Location = New System.Drawing.Point(373, 134)
+        Me.txt_totalHoliday.Name = "txt_totalHoliday"
+        Me.txt_totalHoliday.ReadOnly = True
+        Me.txt_totalHoliday.Size = New System.Drawing.Size(56, 26)
+        Me.txt_totalHoliday.TabIndex = 27
+        Me.txt_totalHoliday.Text = "0"
+        Me.txt_totalHoliday.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_totalField
+        '
+        Me.txt_totalField.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_totalField.Location = New System.Drawing.Point(373, 92)
+        Me.txt_totalField.Name = "txt_totalField"
+        Me.txt_totalField.ReadOnly = True
+        Me.txt_totalField.Size = New System.Drawing.Size(56, 26)
+        Me.txt_totalField.TabIndex = 26
+        Me.txt_totalField.Text = "0"
+        Me.txt_totalField.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_totalSpecial
+        '
+        Me.txt_totalSpecial.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_totalSpecial.Location = New System.Drawing.Point(373, 55)
+        Me.txt_totalSpecial.Name = "txt_totalSpecial"
+        Me.txt_totalSpecial.ReadOnly = True
+        Me.txt_totalSpecial.Size = New System.Drawing.Size(56, 26)
+        Me.txt_totalSpecial.TabIndex = 25
+        Me.txt_totalSpecial.Text = "0"
+        Me.txt_totalSpecial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_totalRegular
+        '
+        Me.txt_totalRegular.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_totalRegular.Location = New System.Drawing.Point(373, 13)
+        Me.txt_totalRegular.Name = "txt_totalRegular"
+        Me.txt_totalRegular.ReadOnly = True
+        Me.txt_totalRegular.Size = New System.Drawing.Size(56, 26)
+        Me.txt_totalRegular.TabIndex = 24
+        Me.txt_totalRegular.Text = "0"
+        Me.txt_totalRegular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_payRegular
+        '
+        Me.txt_payRegular.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_payRegular.Location = New System.Drawing.Point(125, 13)
+        Me.txt_payRegular.Name = "txt_payRegular"
+        Me.txt_payRegular.Size = New System.Drawing.Size(56, 26)
+        Me.txt_payRegular.TabIndex = 23
+        Me.txt_payRegular.Tag = "BasicPay"
+        Me.txt_payRegular.Text = "0"
+        Me.txt_payRegular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_numRegular
+        '
+        Me.txt_numRegular.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_numRegular.Location = New System.Drawing.Point(207, 13)
+        Me.txt_numRegular.Name = "txt_numRegular"
+        Me.txt_numRegular.Size = New System.Drawing.Size(47, 26)
+        Me.txt_numRegular.TabIndex = 22
+        Me.txt_numRegular.Tag = "BasicPay"
+        Me.txt_numRegular.Text = "0"
+        Me.txt_numRegular.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(188, 16)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(182, 220)
+        Me.Label3.TabIndex = 22
+        Me.Label3.Text = resources.GetString("Label3.Text")
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label1
         '
@@ -123,34 +342,11 @@ Partial Class FormPAYROLL_PAYEE
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(6, 16)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(113, 180)
+        Me.Label1.Size = New System.Drawing.Size(113, 220)
         Me.Label1.TabIndex = 21
         Me.Label1.Text = "Regular Days :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Special Days :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Field Days : " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Holiday Days :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Overtime :" & _
-    ""
+    "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Night Diff. :"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(187, 16)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(182, 180)
-        Me.Label3.TabIndex = 22
-        Me.Label3.Text = "x               day(s)     Total :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "x               day(s)     Total :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "x    " & _
-    "           day(s)     Total :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "x               day(s)     Total :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "x        " & _
-    "       min(s)     Total :"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(207, 13)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(47, 26)
-        Me.TextBox1.TabIndex = 22
-        Me.TextBox1.Text = "0"
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GroupBox2
         '
@@ -166,6 +362,42 @@ Partial Class FormPAYROLL_PAYEE
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Additional Pay"
         '
+        'TextBox31
+        '
+        Me.TextBox31.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox31.Location = New System.Drawing.Point(118, 134)
+        Me.TextBox31.Name = "TextBox31"
+        Me.TextBox31.Size = New System.Drawing.Size(56, 26)
+        Me.TextBox31.TabIndex = 32
+        Me.TextBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox30
+        '
+        Me.TextBox30.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox30.Location = New System.Drawing.Point(118, 94)
+        Me.TextBox30.Name = "TextBox30"
+        Me.TextBox30.Size = New System.Drawing.Size(56, 26)
+        Me.TextBox30.TabIndex = 31
+        Me.TextBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox29
+        '
+        Me.TextBox29.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox29.Location = New System.Drawing.Point(118, 53)
+        Me.TextBox29.Name = "TextBox29"
+        Me.TextBox29.Size = New System.Drawing.Size(56, 26)
+        Me.TextBox29.TabIndex = 30
+        Me.TextBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox11.Location = New System.Drawing.Point(118, 13)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(56, 26)
+        Me.TextBox11.TabIndex = 29
+        Me.TextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -177,68 +409,10 @@ Partial Class FormPAYROLL_PAYEE
         Me.Label4.Text = "Special :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Field :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Incentive :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Allowance :"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'TextBox2
-        '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(125, 13)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox2.TabIndex = 23
-        Me.TextBox2.Text = "0"
-        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(372, 13)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox3.TabIndex = 24
-        Me.TextBox3.Text = "0"
-        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(372, 55)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox4.TabIndex = 25
-        Me.TextBox4.Text = "0"
-        Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox5
-        '
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(372, 92)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox5.TabIndex = 26
-        Me.TextBox5.Text = "0"
-        Me.TextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox6
-        '
-        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(372, 134)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox6.TabIndex = 27
-        Me.TextBox6.Text = "0"
-        Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.Location = New System.Drawing.Point(372, 174)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox7.TabIndex = 28
-        Me.TextBox7.Text = "0"
-        Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.TextBox35)
+        Me.GroupBox3.Controls.Add(Me.TextBox36)
         Me.GroupBox3.Controls.Add(Me.TextBox24)
         Me.GroupBox3.Controls.Add(Me.TextBox25)
         Me.GroupBox3.Controls.Add(Me.TextBox26)
@@ -251,62 +425,84 @@ Partial Class FormPAYROLL_PAYEE
         Me.GroupBox3.Controls.Add(Me.TextBox8)
         Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Controls.Add(Me.Label5)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 349)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 396)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(459, 175)
+        Me.GroupBox3.Size = New System.Drawing.Size(459, 219)
         Me.GroupBox3.TabIndex = 24
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Deductions / Contributions"
         '
-        'Label5
+        'TextBox35
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(6, 16)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(98, 140)
-        Me.Label5.TabIndex = 23
-        Me.Label5.Text = "Insurance :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Philhealth :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "PAG - IBIG :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Late :"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.TextBox35.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox35.Location = New System.Drawing.Point(193, 175)
+        Me.TextBox35.Name = "TextBox35"
+        Me.TextBox35.Size = New System.Drawing.Size(47, 26)
+        Me.TextBox35.TabIndex = 38
+        Me.TextBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label6
+        'TextBox36
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(183, 11)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(0, 20)
-        Me.Label6.TabIndex = 25
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.TextBox36.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox36.Location = New System.Drawing.Point(110, 175)
+        Me.TextBox36.Name = "TextBox36"
+        Me.TextBox36.Size = New System.Drawing.Size(56, 26)
+        Me.TextBox36.TabIndex = 37
+        Me.TextBox36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox8
+        'TextBox24
         '
-        Me.TextBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.Location = New System.Drawing.Point(110, 133)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox8.TabIndex = 26
-        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox24.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox24.Location = New System.Drawing.Point(337, 10)
+        Me.TextBox24.Name = "TextBox24"
+        Me.TextBox24.Size = New System.Drawing.Size(56, 26)
+        Me.TextBox24.TabIndex = 36
+        Me.TextBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label7
+        'TextBox25
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(187, 136)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(182, 20)
-        Me.Label7.TabIndex = 29
-        Me.Label7.Text = "x               min(s)     Total :"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.TextBox25.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox25.Location = New System.Drawing.Point(337, 48)
+        Me.TextBox25.Name = "TextBox25"
+        Me.TextBox25.Size = New System.Drawing.Size(56, 26)
+        Me.TextBox25.TabIndex = 35
+        Me.TextBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox9
+        'TextBox26
         '
-        Me.TextBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox9.Location = New System.Drawing.Point(207, 133)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.Size = New System.Drawing.Size(47, 26)
-        Me.TextBox9.TabIndex = 29
-        Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox26.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox26.Location = New System.Drawing.Point(337, 89)
+        Me.TextBox26.Name = "TextBox26"
+        Me.TextBox26.Size = New System.Drawing.Size(56, 26)
+        Me.TextBox26.TabIndex = 34
+        Me.TextBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox23
+        '
+        Me.TextBox23.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox23.Location = New System.Drawing.Point(110, 15)
+        Me.TextBox23.Name = "TextBox23"
+        Me.TextBox23.Size = New System.Drawing.Size(56, 26)
+        Me.TextBox23.TabIndex = 33
+        Me.TextBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox22
+        '
+        Me.TextBox22.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox22.Location = New System.Drawing.Point(110, 53)
+        Me.TextBox22.Name = "TextBox22"
+        Me.TextBox22.Size = New System.Drawing.Size(56, 26)
+        Me.TextBox22.TabIndex = 32
+        Me.TextBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox10
+        '
+        Me.TextBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox10.Location = New System.Drawing.Point(110, 94)
+        Me.TextBox10.Name = "TextBox10"
+        Me.TextBox10.Size = New System.Drawing.Size(56, 26)
+        Me.TextBox10.TabIndex = 31
+        Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label8
         '
@@ -319,23 +515,55 @@ Partial Class FormPAYROLL_PAYEE
         Me.Label8.Text = "SSS :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tax :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Charge :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'TextBox10
+        'TextBox9
         '
-        Me.TextBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox10.Location = New System.Drawing.Point(110, 94)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox10.TabIndex = 31
-        Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TextBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox9.Location = New System.Drawing.Point(193, 133)
+        Me.TextBox9.Name = "TextBox9"
+        Me.TextBox9.Size = New System.Drawing.Size(47, 26)
+        Me.TextBox9.TabIndex = 29
+        Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox11
+        'Label7
         '
-        Me.TextBox11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox11.Location = New System.Drawing.Point(118, 13)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox11.TabIndex = 29
-        Me.TextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(173, 136)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(182, 60)
+        Me.Label7.TabIndex = 29
+        Me.Label7.Text = "x               min(s)     Total :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "x               min(s)     Total :"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'TextBox8
+        '
+        Me.TextBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox8.Location = New System.Drawing.Point(110, 133)
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.Size = New System.Drawing.Size(56, 26)
+        Me.TextBox8.TabIndex = 26
+        Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(183, 11)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(0, 20)
+        Me.Label6.TabIndex = 25
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(6, 16)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(98, 180)
+        Me.Label5.TabIndex = 23
+        Me.Label5.Text = "Insurance :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Philhealth :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "PAG - IBIG :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Late :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Undertime :"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'GroupBox4
         '
@@ -352,6 +580,54 @@ Partial Class FormPAYROLL_PAYEE
         Me.GroupBox4.TabIndex = 30
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Total"
+        '
+        'TextBox28
+        '
+        Me.TextBox28.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox28.Location = New System.Drawing.Point(110, 103)
+        Me.TextBox28.Name = "TextBox28"
+        Me.TextBox28.Size = New System.Drawing.Size(68, 26)
+        Me.TextBox28.TabIndex = 34
+        Me.TextBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox27
+        '
+        Me.TextBox27.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox27.Location = New System.Drawing.Point(110, 62)
+        Me.TextBox27.Name = "TextBox27"
+        Me.TextBox27.Size = New System.Drawing.Size(68, 26)
+        Me.TextBox27.TabIndex = 33
+        Me.TextBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'TextBox13
+        '
+        Me.TextBox13.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox13.Location = New System.Drawing.Point(10, 171)
+        Me.TextBox13.Name = "TextBox13"
+        Me.TextBox13.Size = New System.Drawing.Size(168, 32)
+        Me.TextBox13.TabIndex = 32
+        Me.TextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(46, 145)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(97, 20)
+        Me.Label11.TabIndex = 31
+        Me.Label11.Text = "Net  Total :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(24, 61)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(0, 20)
+        Me.Label10.TabIndex = 30
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'TextBox12
         '
@@ -372,36 +648,6 @@ Partial Class FormPAYROLL_PAYEE
         Me.Label9.TabIndex = 23
         Me.Label9.Text = "Gross :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Deductions :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Loans :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(24, 61)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(0, 20)
-        Me.Label10.TabIndex = 30
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(46, 145)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(97, 20)
-        Me.Label11.TabIndex = 31
-        Me.Label11.Text = "Net  Total :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'TextBox13
-        '
-        Me.TextBox13.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox13.Location = New System.Drawing.Point(10, 171)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(168, 32)
-        Me.TextBox13.TabIndex = 32
-        Me.TextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GroupBox5
         '
@@ -449,181 +695,23 @@ Partial Class FormPAYROLL_PAYEE
         Me.ListView2.UseCompatibleStateImageBehavior = False
         Me.ListView2.View = System.Windows.Forms.View.Details
         '
-        'TextBox14
+        'CheckBox1
         '
-        Me.TextBox14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox14.Location = New System.Drawing.Point(125, 55)
-        Me.TextBox14.Name = "TextBox14"
-        Me.TextBox14.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox14.TabIndex = 30
-        Me.TextBox14.Text = "0"
-        Me.TextBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox15
-        '
-        Me.TextBox15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox15.Location = New System.Drawing.Point(207, 55)
-        Me.TextBox15.Name = "TextBox15"
-        Me.TextBox15.Size = New System.Drawing.Size(47, 26)
-        Me.TextBox15.TabIndex = 29
-        Me.TextBox15.Text = "0"
-        Me.TextBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox16
-        '
-        Me.TextBox16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox16.Location = New System.Drawing.Point(125, 92)
-        Me.TextBox16.Name = "TextBox16"
-        Me.TextBox16.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox16.TabIndex = 32
-        Me.TextBox16.Text = "0"
-        Me.TextBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox17
-        '
-        Me.TextBox17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox17.Location = New System.Drawing.Point(207, 92)
-        Me.TextBox17.Name = "TextBox17"
-        Me.TextBox17.Size = New System.Drawing.Size(47, 26)
-        Me.TextBox17.TabIndex = 31
-        Me.TextBox17.Text = "0"
-        Me.TextBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox18
-        '
-        Me.TextBox18.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox18.Location = New System.Drawing.Point(125, 134)
-        Me.TextBox18.Name = "TextBox18"
-        Me.TextBox18.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox18.TabIndex = 34
-        Me.TextBox18.Text = "0"
-        Me.TextBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox19
-        '
-        Me.TextBox19.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox19.Location = New System.Drawing.Point(207, 134)
-        Me.TextBox19.Name = "TextBox19"
-        Me.TextBox19.Size = New System.Drawing.Size(47, 26)
-        Me.TextBox19.TabIndex = 33
-        Me.TextBox19.Text = "0"
-        Me.TextBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox20
-        '
-        Me.TextBox20.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox20.Location = New System.Drawing.Point(125, 174)
-        Me.TextBox20.Name = "TextBox20"
-        Me.TextBox20.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox20.TabIndex = 36
-        Me.TextBox20.Text = "0"
-        Me.TextBox20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox21
-        '
-        Me.TextBox21.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox21.Location = New System.Drawing.Point(207, 174)
-        Me.TextBox21.Name = "TextBox21"
-        Me.TextBox21.Size = New System.Drawing.Size(47, 26)
-        Me.TextBox21.TabIndex = 35
-        Me.TextBox21.Text = "0"
-        Me.TextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox22
-        '
-        Me.TextBox22.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox22.Location = New System.Drawing.Point(110, 53)
-        Me.TextBox22.Name = "TextBox22"
-        Me.TextBox22.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox22.TabIndex = 32
-        Me.TextBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox23
-        '
-        Me.TextBox23.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox23.Location = New System.Drawing.Point(110, 15)
-        Me.TextBox23.Name = "TextBox23"
-        Me.TextBox23.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox23.TabIndex = 33
-        Me.TextBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox24
-        '
-        Me.TextBox24.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox24.Location = New System.Drawing.Point(337, 10)
-        Me.TextBox24.Name = "TextBox24"
-        Me.TextBox24.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox24.TabIndex = 36
-        Me.TextBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox25
-        '
-        Me.TextBox25.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox25.Location = New System.Drawing.Point(337, 48)
-        Me.TextBox25.Name = "TextBox25"
-        Me.TextBox25.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox25.TabIndex = 35
-        Me.TextBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox26
-        '
-        Me.TextBox26.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox26.Location = New System.Drawing.Point(337, 89)
-        Me.TextBox26.Name = "TextBox26"
-        Me.TextBox26.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox26.TabIndex = 34
-        Me.TextBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox27
-        '
-        Me.TextBox27.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox27.Location = New System.Drawing.Point(110, 62)
-        Me.TextBox27.Name = "TextBox27"
-        Me.TextBox27.Size = New System.Drawing.Size(68, 26)
-        Me.TextBox27.TabIndex = 33
-        Me.TextBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox28
-        '
-        Me.TextBox28.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox28.Location = New System.Drawing.Point(110, 103)
-        Me.TextBox28.Name = "TextBox28"
-        Me.TextBox28.Size = New System.Drawing.Size(68, 26)
-        Me.TextBox28.TabIndex = 34
-        Me.TextBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox29
-        '
-        Me.TextBox29.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox29.Location = New System.Drawing.Point(118, 53)
-        Me.TextBox29.Name = "TextBox29"
-        Me.TextBox29.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox29.TabIndex = 30
-        Me.TextBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox30
-        '
-        Me.TextBox30.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox30.Location = New System.Drawing.Point(118, 94)
-        Me.TextBox30.Name = "TextBox30"
-        Me.TextBox30.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox30.TabIndex = 31
-        Me.TextBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'TextBox31
-        '
-        Me.TextBox31.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox31.Location = New System.Drawing.Point(118, 134)
-        Me.TextBox31.Name = "TextBox31"
-        Me.TextBox31.Size = New System.Drawing.Size(56, 26)
-        Me.TextBox31.TabIndex = 32
-        Me.TextBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CheckBox1.Location = New System.Drawing.Point(538, 537)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(61, 24)
+        Me.CheckBox1.TabIndex = 33
+        Me.CheckBox1.Text = "SSS"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'FormPAYROLL_PAYEE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1004, 558)
+        Me.ClientSize = New System.Drawing.Size(1004, 618)
+        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox4)
@@ -653,15 +741,15 @@ Partial Class FormPAYROLL_PAYEE
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txt_totalRegular As System.Windows.Forms.TextBox
+    Friend WithEvents txt_payRegular As System.Windows.Forms.TextBox
+    Friend WithEvents txt_numRegular As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox5 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents txt_totalOvertime As System.Windows.Forms.TextBox
+    Friend WithEvents txt_totalHoliday As System.Windows.Forms.TextBox
+    Friend WithEvents txt_totalField As System.Windows.Forms.TextBox
+    Friend WithEvents txt_totalSpecial As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
@@ -678,14 +766,14 @@ Partial Class FormPAYROLL_PAYEE
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
-    Friend WithEvents TextBox20 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox21 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox18 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox19 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox16 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox17 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox14 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox15 As System.Windows.Forms.TextBox
+    Friend WithEvents txt_payOvertime As System.Windows.Forms.TextBox
+    Friend WithEvents txt_numOvertime As System.Windows.Forms.TextBox
+    Friend WithEvents txt_payHoliday As System.Windows.Forms.TextBox
+    Friend WithEvents txt_numHoliday As System.Windows.Forms.TextBox
+    Friend WithEvents txt_payField As System.Windows.Forms.TextBox
+    Friend WithEvents txt_numField As System.Windows.Forms.TextBox
+    Friend WithEvents txt_paySpecial As System.Windows.Forms.TextBox
+    Friend WithEvents txt_numSpecial As System.Windows.Forms.TextBox
     Friend WithEvents TextBox31 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox30 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox29 As System.Windows.Forms.TextBox
@@ -699,4 +787,10 @@ Partial Class FormPAYROLL_PAYEE
     Friend WithEvents ListView1 As System.Windows.Forms.ListView
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
     Friend WithEvents ListView2 As System.Windows.Forms.ListView
+    Friend WithEvents txt_payNightDiff As System.Windows.Forms.TextBox
+    Friend WithEvents txt_numNightDiff As System.Windows.Forms.TextBox
+    Friend WithEvents txt_totalNightDiff As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox35 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox36 As System.Windows.Forms.TextBox
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
 End Class

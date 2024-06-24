@@ -78,7 +78,7 @@
     End Sub
 
     Private Sub btn_submit_Click(sender As Object, e As EventArgs) Handles btn_submit.Click
-
+        ShowForm1(FormPAYROLL_PAYEE, "add", 1)
         grp_Payrollpayee.Visible = False
     End Sub
 
