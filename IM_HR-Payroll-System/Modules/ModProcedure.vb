@@ -40,12 +40,25 @@ Module ModProcedure
     End Sub
 
     Public Sub ShowForm1(frm As Form, operation As String, id1 As Integer)
+        frm.MaximizeBox = False
+        frm.MinimizeBox = False
+        frm.FormBorderStyle = FormBorderStyle.FixedSingle
+        frm.ShowIcon = False
+        frm.ShowInTaskbar = False
+
+
         formOperation = operation
         xID1 = id1
         frm.ShowDialog()
     End Sub
 
     Public Sub ShowForm2(frm As Form, operation As String, id1 As Integer, id2 As Integer)
+        frm.MaximizeBox = False
+        frm.MinimizeBox = False
+        frm.FormBorderStyle = FormBorderStyle.FixedSingle
+        frm.ShowIcon = False
+        frm.ShowInTaskbar = False
+
         formOperation = operation
         xID1 = id1
         xID2 = id2

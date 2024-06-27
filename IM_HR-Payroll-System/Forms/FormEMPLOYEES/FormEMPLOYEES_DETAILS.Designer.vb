@@ -41,6 +41,12 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.txt_emergencyContactPerson = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.txt_taxAmount = New System.Windows.Forms.TextBox()
+        Me.txt_SSSshare = New System.Windows.Forms.TextBox()
+        Me.txt_philhealthShare = New System.Windows.Forms.TextBox()
+        Me.txt_pagIbigShare = New System.Windows.Forms.TextBox()
         Me.dt_regularizationDate = New System.Windows.Forms.DateTimePicker()
         Me.dt_hiredDate = New System.Windows.Forms.DateTimePicker()
         Me.cmb_division = New System.Windows.Forms.ComboBox()
@@ -63,18 +69,12 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btn_Save = New System.Windows.Forms.Button()
         Me.btn_Cancel = New System.Windows.Forms.Button()
-        Me.txt_pagIbigShare = New System.Windows.Forms.TextBox()
-        Me.txt_philhealthShare = New System.Windows.Forms.TextBox()
-        Me.txt_SSSshare = New System.Windows.Forms.TextBox()
-        Me.txt_taxAmount = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -264,6 +264,63 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Employment Record"
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.txt_taxAmount)
+        Me.GroupBox5.Controls.Add(Me.txt_SSSshare)
+        Me.GroupBox5.Controls.Add(Me.txt_philhealthShare)
+        Me.GroupBox5.Controls.Add(Me.txt_pagIbigShare)
+        Me.GroupBox5.Controls.Add(Me.Label5)
+        Me.GroupBox5.Location = New System.Drawing.Point(290, 249)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(160, 153)
+        Me.GroupBox5.TabIndex = 16
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Contributions / Deductions"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(6, 16)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(80, 126)
+        Me.Label5.TabIndex = 19
+        Me.Label5.Text = "SSS :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Philhealth :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tax :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "PAG-IBIG :"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'txt_taxAmount
+        '
+        Me.txt_taxAmount.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_taxAmount.Location = New System.Drawing.Point(83, 87)
+        Me.txt_taxAmount.Name = "txt_taxAmount"
+        Me.txt_taxAmount.Size = New System.Drawing.Size(66, 24)
+        Me.txt_taxAmount.TabIndex = 23
+        '
+        'txt_SSSshare
+        '
+        Me.txt_SSSshare.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_SSSshare.Location = New System.Drawing.Point(83, 16)
+        Me.txt_SSSshare.Name = "txt_SSSshare"
+        Me.txt_SSSshare.Size = New System.Drawing.Size(66, 24)
+        Me.txt_SSSshare.TabIndex = 20
+        '
+        'txt_philhealthShare
+        '
+        Me.txt_philhealthShare.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_philhealthShare.Location = New System.Drawing.Point(83, 50)
+        Me.txt_philhealthShare.Name = "txt_philhealthShare"
+        Me.txt_philhealthShare.Size = New System.Drawing.Size(66, 24)
+        Me.txt_philhealthShare.TabIndex = 21
+        '
+        'txt_pagIbigShare
+        '
+        Me.txt_pagIbigShare.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_pagIbigShare.Location = New System.Drawing.Point(83, 122)
+        Me.txt_pagIbigShare.Name = "txt_pagIbigShare"
+        Me.txt_pagIbigShare.Size = New System.Drawing.Size(66, 24)
+        Me.txt_pagIbigShare.TabIndex = 22
         '
         'dt_regularizationDate
         '
@@ -473,63 +530,6 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.btn_Cancel.Text = "&Cancel"
         Me.btn_Cancel.UseVisualStyleBackColor = True
         '
-        'txt_pagIbigShare
-        '
-        Me.txt_pagIbigShare.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_pagIbigShare.Location = New System.Drawing.Point(83, 122)
-        Me.txt_pagIbigShare.Name = "txt_pagIbigShare"
-        Me.txt_pagIbigShare.Size = New System.Drawing.Size(66, 24)
-        Me.txt_pagIbigShare.TabIndex = 22
-        '
-        'txt_philhealthShare
-        '
-        Me.txt_philhealthShare.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_philhealthShare.Location = New System.Drawing.Point(83, 50)
-        Me.txt_philhealthShare.Name = "txt_philhealthShare"
-        Me.txt_philhealthShare.Size = New System.Drawing.Size(66, 24)
-        Me.txt_philhealthShare.TabIndex = 21
-        '
-        'txt_SSSshare
-        '
-        Me.txt_SSSshare.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SSSshare.Location = New System.Drawing.Point(83, 16)
-        Me.txt_SSSshare.Name = "txt_SSSshare"
-        Me.txt_SSSshare.Size = New System.Drawing.Size(66, 24)
-        Me.txt_SSSshare.TabIndex = 20
-        '
-        'txt_taxAmount
-        '
-        Me.txt_taxAmount.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_taxAmount.Location = New System.Drawing.Point(83, 87)
-        Me.txt_taxAmount.Name = "txt_taxAmount"
-        Me.txt_taxAmount.Size = New System.Drawing.Size(66, 24)
-        Me.txt_taxAmount.TabIndex = 23
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(6, 16)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(80, 126)
-        Me.Label5.TabIndex = 19
-        Me.Label5.Text = "SSS :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Philhealth :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tax :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "PAG-IBIG :"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.Label5)
-        Me.GroupBox5.Controls.Add(Me.txt_taxAmount)
-        Me.GroupBox5.Controls.Add(Me.txt_SSSshare)
-        Me.GroupBox5.Controls.Add(Me.txt_philhealthShare)
-        Me.GroupBox5.Controls.Add(Me.txt_pagIbigShare)
-        Me.GroupBox5.Location = New System.Drawing.Point(290, 249)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(160, 153)
-        Me.GroupBox5.TabIndex = 16
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Contributions / Deductions"
-        '
         'FormEMPLOYEES_DETAILS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -543,8 +543,12 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FormEMPLOYEES_DETAILS"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Employee Record"
         Me.TopMost = True
@@ -554,11 +558,11 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

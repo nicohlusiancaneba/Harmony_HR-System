@@ -135,10 +135,12 @@ Partial Class Form_LOGIN
         Me.Controls.Add(Me.cmdclose)
         Me.Controls.Add(Me.txtuser)
         Me.Controls.Add(Me.cmdlogin)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Form_LOGIN"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Login | Harmony"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

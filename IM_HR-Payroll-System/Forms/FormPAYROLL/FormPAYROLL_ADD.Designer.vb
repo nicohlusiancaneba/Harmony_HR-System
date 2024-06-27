@@ -42,17 +42,17 @@ Partial Class FormPAYROLL_ADD
         Me.txt_totalDeductions = New System.Windows.Forms.TextBox()
         Me.dt_payroll = New System.Windows.Forms.DateTimePicker()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.rtb_remarks = New System.Windows.Forms.RichTextBox()
         Me.btn_newPayroll = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.EditEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DeleteEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.grp_Payrollpayee = New System.Windows.Forms.GroupBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.cmb_employees = New System.Windows.Forms.ComboBox()
-        Me.btn_submit = New System.Windows.Forms.Button()
         Me.btn_cancelSubmit = New System.Windows.Forms.Button()
+        Me.btn_submit = New System.Windows.Forms.Button()
+        Me.cmb_employees = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grp_Payrollpayee.SuspendLayout()
@@ -230,6 +230,20 @@ Partial Class FormPAYROLL_ADD
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(174, 52)
         '
+        'EditEmployeeToolStripMenuItem
+        '
+        Me.EditEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.edit
+        Me.EditEmployeeToolStripMenuItem.Name = "EditEmployeeToolStripMenuItem"
+        Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(173, 24)
+        Me.EditEmployeeToolStripMenuItem.Text = "Edit Payee"
+        '
+        'DeleteEmployeeToolStripMenuItem
+        '
+        Me.DeleteEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.bin
+        Me.DeleteEmployeeToolStripMenuItem.Name = "DeleteEmployeeToolStripMenuItem"
+        Me.DeleteEmployeeToolStripMenuItem.Size = New System.Drawing.Size(173, 24)
+        Me.DeleteEmployeeToolStripMenuItem.Text = "Delete Payee"
+        '
         'ImageList1
         '
         Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
@@ -270,20 +284,6 @@ Partial Class FormPAYROLL_ADD
         Me.PictureBox1.TabIndex = 27
         Me.PictureBox1.TabStop = False
         '
-        'EditEmployeeToolStripMenuItem
-        '
-        Me.EditEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.edit
-        Me.EditEmployeeToolStripMenuItem.Name = "EditEmployeeToolStripMenuItem"
-        Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(173, 24)
-        Me.EditEmployeeToolStripMenuItem.Text = "Edit Payee"
-        '
-        'DeleteEmployeeToolStripMenuItem
-        '
-        Me.DeleteEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.bin
-        Me.DeleteEmployeeToolStripMenuItem.Name = "DeleteEmployeeToolStripMenuItem"
-        Me.DeleteEmployeeToolStripMenuItem.Size = New System.Drawing.Size(173, 24)
-        Me.DeleteEmployeeToolStripMenuItem.Text = "Delete Payee"
-        '
         'grp_Payrollpayee
         '
         Me.grp_Payrollpayee.Controls.Add(Me.btn_cancelSubmit)
@@ -299,23 +299,15 @@ Partial Class FormPAYROLL_ADD
         Me.grp_Payrollpayee.Text = "Create Payroll Payee Record for:"
         Me.grp_Payrollpayee.Visible = False
         '
-        'Label5
+        'btn_cancelSubmit
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 32)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(62, 20)
-        Me.Label5.TabIndex = 0
-        Me.Label5.Text = "Select :"
-        '
-        'cmb_employees
-        '
-        Me.cmb_employees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_employees.FormattingEnabled = True
-        Me.cmb_employees.Location = New System.Drawing.Point(75, 26)
-        Me.cmb_employees.Name = "cmb_employees"
-        Me.cmb_employees.Size = New System.Drawing.Size(353, 28)
-        Me.cmb_employees.TabIndex = 1
+        Me.btn_cancelSubmit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_cancelSubmit.Location = New System.Drawing.Point(358, 60)
+        Me.btn_cancelSubmit.Name = "btn_cancelSubmit"
+        Me.btn_cancelSubmit.Size = New System.Drawing.Size(70, 30)
+        Me.btn_cancelSubmit.TabIndex = 42
+        Me.btn_cancelSubmit.Text = "&Cancel"
+        Me.btn_cancelSubmit.UseVisualStyleBackColor = True
         '
         'btn_submit
         '
@@ -327,15 +319,23 @@ Partial Class FormPAYROLL_ADD
         Me.btn_submit.Text = "&Submit"
         Me.btn_submit.UseVisualStyleBackColor = True
         '
-        'btn_cancelSubmit
+        'cmb_employees
         '
-        Me.btn_cancelSubmit.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_cancelSubmit.Location = New System.Drawing.Point(358, 60)
-        Me.btn_cancelSubmit.Name = "btn_cancelSubmit"
-        Me.btn_cancelSubmit.Size = New System.Drawing.Size(70, 30)
-        Me.btn_cancelSubmit.TabIndex = 42
-        Me.btn_cancelSubmit.Text = "&Cancel"
-        Me.btn_cancelSubmit.UseVisualStyleBackColor = True
+        Me.cmb_employees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_employees.FormattingEnabled = True
+        Me.cmb_employees.Location = New System.Drawing.Point(75, 26)
+        Me.cmb_employees.Name = "cmb_employees"
+        Me.cmb_employees.Size = New System.Drawing.Size(353, 28)
+        Me.cmb_employees.TabIndex = 1
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(6, 32)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(62, 20)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Select :"
         '
         'FormPAYROLL_ADD
         '
@@ -363,8 +363,12 @@ Partial Class FormPAYROLL_ADD
         Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.lst_employees)
         Me.Controls.Add(Me.Label2)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FormPAYROLL_ADD"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Payroll Record"
         Me.ContextMenuStrip1.ResumeLayout(False)

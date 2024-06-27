@@ -35,10 +35,10 @@ Partial Class FormLOAN_NEW
         Me.btn_submit = New System.Windows.Forms.Button()
         Me.btn_cancel = New System.Windows.Forms.Button()
         Me.cmb_employees = New System.Windows.Forms.ComboBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.cmb_loanType = New System.Windows.Forms.ComboBox()
         Me.txt_suggestedDeduction = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -170,16 +170,6 @@ Partial Class FormLOAN_NEW
         Me.cmb_employees.Size = New System.Drawing.Size(199, 28)
         Me.cmb_employees.TabIndex = 30
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.loan
-        Me.PictureBox1.Location = New System.Drawing.Point(5, 9)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(33, 33)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 17
-        Me.PictureBox1.TabStop = False
-        '
         'cmb_loanType
         '
         Me.cmb_loanType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -212,6 +202,16 @@ Partial Class FormLOAN_NEW
         Me.Label4.Text = "/ Cutoff"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.loan
+        Me.PictureBox1.Location = New System.Drawing.Point(5, 9)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(33, 33)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 17
+        Me.PictureBox1.TabStop = False
+        '
         'FormLOAN_NEW
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -234,10 +234,12 @@ Partial Class FormLOAN_NEW
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormLOAN_NEW"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "New Employee Loan"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

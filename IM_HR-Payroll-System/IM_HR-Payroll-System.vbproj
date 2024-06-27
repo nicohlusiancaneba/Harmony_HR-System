@@ -100,6 +100,12 @@
     <Compile Include="Forms\FormLOANS\FormLOAN_NEW.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\FormLOANS\FormLOAN_PAYMENT.Designer.vb">
+      <DependentUpon>FormLOAN_PAYMENT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLOANS\FormLOAN_PAYMENT.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FormPAYROLL\FormPAYROLL.Designer.vb">
       <DependentUpon>FormPAYROLL.vb</DependentUpon>
     </Compile>
@@ -170,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLOANS\FormLOAN_NEW.resx">
       <DependentUpon>FormLOAN_NEW.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLOANS\FormLOAN_PAYMENT.resx">
+      <DependentUpon>FormLOAN_PAYMENT.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPAYROLL\FormPAYROLL.resx">
       <DependentUpon>FormPAYROLL.vb</DependentUpon>

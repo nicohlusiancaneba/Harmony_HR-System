@@ -24,4 +24,14 @@
     Private Sub EditEmployeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditEmployeeToolStripMenuItem.Click
         ShowForm1(FormLOAN_EDIT, "edit", lst_loans.FocusedItem.Text)
     End Sub
+
+    Private Sub DeleteEmployeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteEmployeeToolStripMenuItem.Click
+        If MsgBox("Do you want to delete this loan record?", MsgBoxStyle.YesNo + MsgBoxStyle.Critical, msgBox_header) = MsgBoxResult.Yes Then
+            sqlSTR = "Delete from Loans where Loan_ID =" & lst_loans.FocusedItem.Text
+            ExecuteSQLQuery(sqlSTR)
+
+            MsgBox("Delete employee record.", MsgBoxStyle.Information, msgBox_header)
+        End If
+        RefreshLoansList()
+    End Sub
 End Class
