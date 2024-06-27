@@ -61,3 +61,6 @@ A:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.Form_LO
 A:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.MDIMain.resources
 A:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.Resources.resources
 A:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\IM_HR-Payroll-System.vbproj.GenerateResource.Cache
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.FormLOANS.resources
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.FormLOAN_NEW.resources
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.FormLOAN_EDIT.resources

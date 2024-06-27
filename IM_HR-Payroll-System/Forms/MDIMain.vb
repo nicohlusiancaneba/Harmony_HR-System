@@ -47,6 +47,12 @@
     End Sub
 
     Private Sub btn_loans_Click(sender As Object, e As EventArgs) Handles btn_loans.Click
+        With FormLOANS
+            .TopLevel = False
+            Panel2.Controls.Add(FormLOANS)
+            .BringToFront()
+            .Show()
+        End With
         activeButtonForm(btn_loans)
     End Sub
 

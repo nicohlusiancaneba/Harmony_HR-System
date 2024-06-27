@@ -40,6 +40,8 @@
     End Sub
 
 
+
+
     Private Sub TextBox_KeyPress(sender As Object, e As KeyPressEventArgs)
         ' Allow control keys, numbers, and a single period
         If Not Char.IsControl(e.KeyChar) AndAlso Not Char.IsDigit(e.KeyChar) AndAlso (e.KeyChar <> "."c) Then
@@ -63,10 +65,70 @@
         txt_totalHoliday.Text = Val(txt_payHoliday.Text) * Val(txt_numHoliday.Text)
         txt_totalOvertime.Text = Val(txt_payOvertime.Text) * Val(txt_numOvertime.Text)
         txt_totalNightDiff.Text = Val(txt_payNightDiff.Text) * Val(txt_numNightDiff.Text)
+
+        txt_gross.Text = (Val(txt_totalRegular.Text) + Val(txt_totalSpecial.Text) + Val(txt_totalField.Text) + Val(txt_totalHoliday.Text) + Val(txt_totalOvertime.Text) + Val(txt_totalNightDiff.Text)) + Val(txt_payAddSpecial.Text) + Val(txt_payAddField.Text) + Val(txt_payAddIncentive.Text) + Val(txt_payAddAllowance.Text)
+
+    End Sub
+
+    Private Sub DeductionsCompute()
+        txt_totalLate.Text = Val(txt_minusLate.Text) * Val(txt_numLate.Text)
+        txt_totalUndertime.Text = Val(txt_minusUndertime.Text) * Val(txt_numUndertime.Text)
+
+
+        txt_deductions.Text = Val(txt_totalLate.Text) + Val(txt_totalUndertime.Text) + Val(txt_charge.Text) + Val(txt_insurance.Tag) + Val(txt_philhealth.Tag) + Val(txt_pagibig.Tag) + Val(txt_SSS.Tag) + Val(txt_tax.Tag)
+    End Sub
+
+    Private Sub checkbox_Deductions(chckbox As CheckBox, txtbox As TextBox)
+        If chckbox.Checked Then
+            txtbox.BackColor = Color.WhiteSmoke
+            txtbox.Tag = txtbox.Text
+        Else
+            txtbox.BackColor = Color.Gray
+            txtbox.Tag = ""
+        End If
+        DeductionsCompute()
+    End Sub
+
+    Private Sub txt_charge_TextChanged(sender As Object, e As EventArgs) Handles txt_charge.TextChanged
+        DeductionsCompute()
+    End Sub
+
+    Private Sub txt_totalLate_TextChanged(sender As Object, e As EventArgs) Handles txt_totalLate.TextChanged
+        DeductionsCompute()
+    End Sub
+
+    Private Sub txt_totalUndertime_TextChanged(sender As Object, e As EventArgs) Handles txt_totalUndertime.TextChanged
+        DeductionsCompute()
+    End Sub
+
+    Private Sub txt_numLate_TextChanged(sender As Object, e As EventArgs) Handles txt_numLate.TextChanged
+        DeductionsCompute()
+    End Sub
+
+    Private Sub txt_numUndertime_TextChanged(sender As Object, e As EventArgs) Handles txt_numUndertime.TextChanged
+        DeductionsCompute()
+    End Sub
+
+    Private Sub cb_insurance_CheckedChanged(sender As Object, e As EventArgs) Handles cb_insurance.CheckedChanged
+        checkbox_Deductions(cb_insurance, txt_insurance)
+    End Sub
+
+    Private Sub cb_philhealth_CheckedChanged(sender As Object, e As EventArgs) Handles cb_philhealth.CheckedChanged
+        checkbox_Deductions(cb_philhealth, txt_philhealth)
+    End Sub
+
+    Private Sub cb_pagibig_CheckedChanged(sender As Object, e As EventArgs) Handles cb_pagibig.CheckedChanged
+        checkbox_Deductions(cb_pagibig, txt_pagibig)
+    End Sub
+
+    Private Sub cb_SSS_CheckedChanged(sender As Object, e As EventArgs) Handles cb_SSS.CheckedChanged
+        checkbox_Deductions(cb_SSS, txt_SSS)
+    End Sub
+
+    Private Sub cb_Tax_CheckedChanged(sender As Object, e As EventArgs) Handles cb_Tax.CheckedChanged
+        checkbox_Deductions(cb_Tax, txt_tax)
     End Sub
 
 
-    Private Sub txt_payRegular_TextChanged(sender As Object, e As EventArgs) Handles txt_payRegular.TextChanged
-
-    End Sub
+    
 End Class

@@ -82,6 +82,24 @@
     <Compile Include="Forms\FormEMPLOYEES\FormEMPLOYEES_DETAILS.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\FormLOANS\FormLOANS.Designer.vb">
+      <DependentUpon>FormLOANS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLOANS\FormLOANS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLOANS\FormLOAN_EDIT.Designer.vb">
+      <DependentUpon>FormLOAN_EDIT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLOANS\FormLOAN_EDIT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLOANS\FormLOAN_NEW.Designer.vb">
+      <DependentUpon>FormLOAN_NEW.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLOANS\FormLOAN_NEW.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FormPAYROLL\FormPAYROLL.Designer.vb">
       <DependentUpon>FormPAYROLL.vb</DependentUpon>
     </Compile>
@@ -143,6 +161,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEMPLOYEES\FormEMPLOYEES_DETAILS.resx">
       <DependentUpon>FormEMPLOYEES_DETAILS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLOANS\FormLOANS.resx">
+      <DependentUpon>FormLOANS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLOANS\FormLOAN_EDIT.resx">
+      <DependentUpon>FormLOAN_EDIT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLOANS\FormLOAN_NEW.resx">
+      <DependentUpon>FormLOAN_NEW.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormPAYROLL\FormPAYROLL.resx">
       <DependentUpon>FormPAYROLL.vb</DependentUpon>
