@@ -32,7 +32,17 @@
             payroll_Id = sqlDT.Rows(0)("Payroll_ID")
             txt_payroll_ID.Text = payroll_Id
         End If
+
+        RefreshPayrollDetailList()
     End Sub
+
+    Private Sub RefreshPayrollDetailList()
+        sqlSTR = "Select Payroll_Detail_ID as ID, Payroll_Details.Employee_ID as 'Employee ID', CONCAT(Last_Name, ', ', First_Name) as 'Employee', grandTotal_Basic as 'Total Basic Pay', grandTotal_Additional as 'Total Additional Pay', " & _
+                "grandTotal_Gross as 'Total Gross', grandTotal_Deduction as 'Total Deduction', grandTotal_Loan as 'Total Loan Payment', grandTotal_Net as 'Total Net' " & _
+                "from Payroll_Details INNER JOIN Employees on Employees.Employee_ID = Payroll_Details.Employee_ID where Payroll_ID = " & payroll_Id
+        FillListView(ExecuteSQLQuery(sqlSTR), lst_payrollRecord, 0)
+    End Sub
+
 
     Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
         Me.Close()
@@ -78,16 +88,37 @@
     End Sub
 
     Private Sub btn_submit_Click(sender As Object, e As EventArgs) Handles btn_submit.Click
-        ShowForm1(FormPAYROLL_PAYEE, "add", 1)
+        sqlSTR = "select Employee_ID from Payroll_Details where Employee_ID =" & Split(cmb_employees.Text, " - ")(0) & " and Payroll_ID = " & payroll_Id
+        ExecuteSQLQuery(sqlSTR)
+
+        If sqlDT.Rows.Count > 0 Then
+            MsgBox("Payroll for current employee is already existing, edit instead and try again.", MsgBoxStyle.Critical, msgBox_header)
+            Exit Sub
+        End If
+
+        sqlSTR = "INSERT INTO Payroll_Details (Employee_ID, Payroll_ID) VALUES (" & Split(cmb_employees.Text, " - ")(0) & ", " & payroll_Id & ")"
+        ExecuteSQLQuery(sqlSTR)
+
+        ShowForm2(FormPAYROLL_PAYEE, "add", Split(cmb_employees.Text, " - ")(0), payroll_Id)
         grp_Payrollpayee.Visible = False
+
+        RefreshPayrollDetailList()
     End Sub
 
     Private Sub btn_cancelSubmit_Click(sender As Object, e As EventArgs) Handles btn_cancelSubmit.Click
         grp_Payrollpayee.Visible = False
+
+        RefreshPayrollDetailList()
     End Sub
     '//////////////////////////////////////////////////////////////////////////////////////////////////////
     
 
 
     
+    Private Sub EditEmployeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditEmployeeToolStripMenuItem.Click
+        ShowForm2(FormPAYROLL_PAYEE, "edit", lst_payrollRecord.FocusedItem.SubItems(1).Text, payroll_Id)
+        grp_Payrollpayee.Visible = False
+
+        RefreshPayrollDetailList()
+    End Sub
 End Class

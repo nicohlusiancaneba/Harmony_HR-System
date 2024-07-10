@@ -27,7 +27,6 @@ Partial Class FormLOAN_EDIT
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.cmb_employees = New System.Windows.Forms.ComboBox()
         Me.txt_loanRemarks = New System.Windows.Forms.RichTextBox()
         Me.txt_loanReason = New System.Windows.Forms.RichTextBox()
         Me.dt_payEndDate = New System.Windows.Forms.DateTimePicker()
@@ -36,24 +35,25 @@ Partial Class FormLOAN_EDIT
         Me.txt_interestRate = New System.Windows.Forms.TextBox()
         Me.txt_netAmount = New System.Windows.Forms.TextBox()
         Me.lst_loanPayment = New System.Windows.Forms.ListView()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_cancel = New System.Windows.Forms.Button()
         Me.btn_save = New System.Windows.Forms.Button()
         Me.txt_balanceAmount = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.cmb_loanStatus = New System.Windows.Forms.ComboBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.cmb_loanType = New System.Windows.Forms.ComboBox()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.AddPaymentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_newLoan = New System.Windows.Forms.Button()
-        Me.EditEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DeleteEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Panel1.SuspendLayout()
+        Me.txt_employees = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txt_suggestedDeduction = New System.Windows.Forms.TextBox()
         Me.ContextMenuStrip1.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -83,23 +83,12 @@ Partial Class FormLOAN_EDIT
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(410, 13)
+        Me.Label3.Location = New System.Drawing.Point(398, 12)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(157, 200)
+        Me.Label3.Size = New System.Drawing.Size(169, 260)
         Me.Label3.TabIndex = 22
-        Me.Label3.Text = "Loan Type :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Payment Start Date :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Payment End Date :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Loan Reason :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "L" & _
-    "oan Remarks :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label3.Text = "Loan Type :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cutoff Pay Start Date :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cutoff Pay End Date :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Loan Reason :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Loan Remarks :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Loan Status :"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'cmb_employees
-        '
-        Me.cmb_employees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_employees.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmb_employees.FormattingEnabled = True
-        Me.cmb_employees.Location = New System.Drawing.Point(153, 51)
-        Me.cmb_employees.Name = "cmb_employees"
-        Me.cmb_employees.Size = New System.Drawing.Size(199, 28)
-        Me.cmb_employees.TabIndex = 38
         '
         'txt_loanRemarks
         '
@@ -172,7 +161,7 @@ Partial Class FormLOAN_EDIT
         Me.lst_loanPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lst_loanPayment.FullRowSelect = True
         Me.lst_loanPayment.GridLines = True
-        Me.lst_loanPayment.Location = New System.Drawing.Point(11, 285)
+        Me.lst_loanPayment.Location = New System.Drawing.Point(11, 318)
         Me.lst_loanPayment.Margin = New System.Windows.Forms.Padding(2)
         Me.lst_loanPayment.Name = "lst_loanPayment"
         Me.lst_loanPayment.Size = New System.Drawing.Size(761, 194)
@@ -180,10 +169,31 @@ Partial Class FormLOAN_EDIT
         Me.lst_loanPayment.UseCompatibleStateImageBehavior = False
         Me.lst_loanPayment.View = System.Windows.Forms.View.Details
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditEmployeeToolStripMenuItem, Me.DeleteEmployeeToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(173, 52)
+        '
+        'EditEmployeeToolStripMenuItem
+        '
+        Me.EditEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.edit
+        Me.EditEmployeeToolStripMenuItem.Name = "EditEmployeeToolStripMenuItem"
+        Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(172, 24)
+        Me.EditEmployeeToolStripMenuItem.Text = "Edit Payment"
+        '
+        'DeleteEmployeeToolStripMenuItem
+        '
+        Me.DeleteEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.bin
+        Me.DeleteEmployeeToolStripMenuItem.Name = "DeleteEmployeeToolStripMenuItem"
+        Me.DeleteEmployeeToolStripMenuItem.Size = New System.Drawing.Size(172, 24)
+        Me.DeleteEmployeeToolStripMenuItem.Text = "Delete Loan"
+        '
         'btn_cancel
         '
         Me.btn_cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_cancel.Location = New System.Drawing.Point(699, 484)
+        Me.btn_cancel.Location = New System.Drawing.Point(699, 517)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(75, 27)
         Me.btn_cancel.TabIndex = 41
@@ -193,7 +203,7 @@ Partial Class FormLOAN_EDIT
         'btn_save
         '
         Me.btn_save.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_save.Location = New System.Drawing.Point(618, 484)
+        Me.btn_save.Location = New System.Drawing.Point(618, 517)
         Me.btn_save.Name = "btn_save"
         Me.btn_save.Size = New System.Drawing.Size(75, 27)
         Me.btn_save.TabIndex = 40
@@ -221,24 +231,13 @@ Partial Class FormLOAN_EDIT
         Me.Label4.Text = "%"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(12, 487)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(104, 20)
-        Me.Label5.TabIndex = 44
-        Me.Label5.Text = "Loan Status :"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
         'cmb_loanStatus
         '
         Me.cmb_loanStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_loanStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_loanStatus.FormattingEnabled = True
-        Me.cmb_loanStatus.Items.AddRange(New Object() {"", "Active", "Paid", "Pending", "Rejected"})
-        Me.cmb_loanStatus.Location = New System.Drawing.Point(122, 484)
+        Me.cmb_loanStatus.Items.AddRange(New Object() {"", "Active", "Paid"})
+        Me.cmb_loanStatus.Location = New System.Drawing.Point(573, 253)
         Me.cmb_loanStatus.Name = "cmb_loanStatus"
         Me.cmb_loanStatus.Size = New System.Drawing.Size(113, 28)
         Me.cmb_loanStatus.TabIndex = 45
@@ -247,7 +246,7 @@ Partial Class FormLOAN_EDIT
         '
         Me.Panel1.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel1.Controls.Add(Me.Label11)
-        Me.Panel1.Location = New System.Drawing.Point(11, 254)
+        Me.Panel1.Location = New System.Drawing.Point(11, 287)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(634, 26)
         Me.Panel1.TabIndex = 139
@@ -274,25 +273,12 @@ Partial Class FormLOAN_EDIT
         Me.cmb_loanType.Size = New System.Drawing.Size(127, 28)
         Me.cmb_loanType.TabIndex = 140
         '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AddPaymentToolStripMenuItem, Me.EditEmployeeToolStripMenuItem, Me.DeleteEmployeeToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(174, 76)
-        '
         'ImageList1
         '
         Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         Me.ImageList1.Images.SetKeyName(0, "plus.png")
         Me.ImageList1.Images.SetKeyName(1, "add.png")
-        '
-        'AddPaymentToolStripMenuItem
-        '
-        Me.AddPaymentToolStripMenuItem.Name = "AddPaymentToolStripMenuItem"
-        Me.AddPaymentToolStripMenuItem.Size = New System.Drawing.Size(173, 24)
-        Me.AddPaymentToolStripMenuItem.Text = "Add Payment"
         '
         'btn_newLoan
         '
@@ -301,27 +287,13 @@ Partial Class FormLOAN_EDIT
         Me.btn_newLoan.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_newLoan.ImageKey = "plus.png"
         Me.btn_newLoan.ImageList = Me.ImageList1
-        Me.btn_newLoan.Location = New System.Drawing.Point(651, 254)
+        Me.btn_newLoan.Location = New System.Drawing.Point(651, 287)
         Me.btn_newLoan.Name = "btn_newLoan"
         Me.btn_newLoan.Size = New System.Drawing.Size(121, 26)
         Me.btn_newLoan.TabIndex = 142
         Me.btn_newLoan.Text = "New Payment"
         Me.btn_newLoan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_newLoan.UseVisualStyleBackColor = True
-        '
-        'EditEmployeeToolStripMenuItem
-        '
-        Me.EditEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.edit
-        Me.EditEmployeeToolStripMenuItem.Name = "EditEmployeeToolStripMenuItem"
-        Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(173, 24)
-        Me.EditEmployeeToolStripMenuItem.Text = "Edit Payment"
-        '
-        'DeleteEmployeeToolStripMenuItem
-        '
-        Me.DeleteEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.bin
-        Me.DeleteEmployeeToolStripMenuItem.Name = "DeleteEmployeeToolStripMenuItem"
-        Me.DeleteEmployeeToolStripMenuItem.Size = New System.Drawing.Size(173, 24)
-        Me.DeleteEmployeeToolStripMenuItem.Text = "Delete Loan"
         '
         'PictureBox1
         '
@@ -333,22 +305,54 @@ Partial Class FormLOAN_EDIT
         Me.PictureBox1.TabIndex = 19
         Me.PictureBox1.TabStop = False
         '
+        'txt_employees
+        '
+        Me.txt_employees.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_employees.Location = New System.Drawing.Point(153, 51)
+        Me.txt_employees.Name = "txt_employees"
+        Me.txt_employees.ReadOnly = True
+        Me.txt_employees.Size = New System.Drawing.Size(199, 26)
+        Me.txt_employees.TabIndex = 143
+        Me.txt_employees.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(15, 252)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(181, 20)
+        Me.Label6.TabIndex = 144
+        Me.Label6.Text = "Suggested Pay / Cutoff :"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'txt_suggestedDeduction
+        '
+        Me.txt_suggestedDeduction.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_suggestedDeduction.Location = New System.Drawing.Point(202, 249)
+        Me.txt_suggestedDeduction.Name = "txt_suggestedDeduction"
+        Me.txt_suggestedDeduction.ReadOnly = True
+        Me.txt_suggestedDeduction.Size = New System.Drawing.Size(100, 26)
+        Me.txt_suggestedDeduction.TabIndex = 145
+        Me.txt_suggestedDeduction.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'FormLOAN_EDIT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(782, 517)
+        Me.ClientSize = New System.Drawing.Size(782, 555)
+        Me.Controls.Add(Me.txt_suggestedDeduction)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.txt_employees)
         Me.Controls.Add(Me.btn_newLoan)
         Me.Controls.Add(Me.cmb_loanType)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.cmb_loanStatus)
-        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txt_balanceAmount)
         Me.Controls.Add(Me.btn_cancel)
         Me.Controls.Add(Me.btn_save)
         Me.Controls.Add(Me.lst_loanPayment)
-        Me.Controls.Add(Me.cmb_employees)
         Me.Controls.Add(Me.txt_loanRemarks)
         Me.Controls.Add(Me.txt_loanReason)
         Me.Controls.Add(Me.dt_payEndDate)
@@ -368,9 +372,9 @@ Partial Class FormLOAN_EDIT
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Employee Loan Details"
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -380,7 +384,6 @@ Partial Class FormLOAN_EDIT
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents cmb_employees As System.Windows.Forms.ComboBox
     Friend WithEvents txt_loanRemarks As System.Windows.Forms.RichTextBox
     Friend WithEvents txt_loanReason As System.Windows.Forms.RichTextBox
     Friend WithEvents dt_payEndDate As System.Windows.Forms.DateTimePicker
@@ -393,15 +396,16 @@ Partial Class FormLOAN_EDIT
     Friend WithEvents btn_save As System.Windows.Forms.Button
     Friend WithEvents txt_balanceAmount As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents cmb_loanStatus As System.Windows.Forms.ComboBox
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents cmb_loanType As System.Windows.Forms.ComboBox
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
-    Friend WithEvents AddPaymentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EditEmployeeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DeleteEmployeeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
     Friend WithEvents btn_newLoan As System.Windows.Forms.Button
+    Friend WithEvents txt_employees As System.Windows.Forms.TextBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents txt_suggestedDeduction As System.Windows.Forms.TextBox
 End Class

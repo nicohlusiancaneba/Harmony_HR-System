@@ -85,3 +85,4 @@ C:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.MDIMain
 C:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.Resources.resources
 C:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\IM_HR-Payroll-System.vbproj.GenerateResource.Cache
 C:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.FormLOAN_PAYMENT.resources
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\IM_HR_Payroll_System.FormLOAN_PAYMENT.resources

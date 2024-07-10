@@ -56,15 +56,14 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_totalLate = New System.Windows.Forms.TextBox()
         Me.cb_pagibig = New System.Windows.Forms.CheckBox()
         Me.cb_philhealth = New System.Windows.Forms.CheckBox()
-        Me.cb_insurance = New System.Windows.Forms.CheckBox()
         Me.cb_Tax = New System.Windows.Forms.CheckBox()
         Me.cb_SSS = New System.Windows.Forms.CheckBox()
         Me.txt_numUndertime = New System.Windows.Forms.TextBox()
         Me.txt_minusUndertime = New System.Windows.Forms.TextBox()
+        Me.txt_insurance = New System.Windows.Forms.TextBox()
         Me.txt_SSS = New System.Windows.Forms.TextBox()
         Me.txt_tax = New System.Windows.Forms.TextBox()
         Me.txt_charge = New System.Windows.Forms.TextBox()
-        Me.txt_insurance = New System.Windows.Forms.TextBox()
         Me.txt_philhealth = New System.Windows.Forms.TextBox()
         Me.txt_pagibig = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -74,34 +73,43 @@ Partial Class FormPAYROLL_PAYEE
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.TextBox28 = New System.Windows.Forms.TextBox()
-        Me.txt_deductions = New System.Windows.Forms.TextBox()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
+        Me.txt_grandTotal_Additional = New System.Windows.Forms.TextBox()
+        Me.txt_grandTotal_Basic = New System.Windows.Forms.TextBox()
+        Me.txt_grandTotal_Loan = New System.Windows.Forms.TextBox()
+        Me.txt_grandTotal_Deduction = New System.Windows.Forms.TextBox()
+        Me.txt_grandTotal_Net = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.txt_gross = New System.Windows.Forms.TextBox()
+        Me.txt_grandTotal_Gross = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.lst_loans = New System.Windows.Forms.ListView()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.ListView2 = New System.Windows.Forms.ListView()
+        Me.btn_Cancel = New System.Windows.Forms.Button()
+        Me.btn_Save = New System.Windows.Forms.Button()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txt_payroll_employeeRemarks = New System.Windows.Forms.RichTextBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(8, 9)
+        Me.Label2.Location = New System.Drawing.Point(73, 7)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(132, 100)
+        Me.Label2.Size = New System.Drawing.Size(108, 60)
         Me.Label2.TabIndex = 20
-        Me.Label2.Text = "Payroll Payee ID :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Employee ID :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Name :"
+        Me.Label2.Text = "Employee ID :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Name :"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'GroupBox1
@@ -126,7 +134,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.GroupBox1.Controls.Add(Me.txt_numRegular)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 130)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 81)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(459, 258)
         Me.GroupBox1.TabIndex = 21
@@ -138,6 +146,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_payNightDiff.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_payNightDiff.Location = New System.Drawing.Point(125, 214)
         Me.txt_payNightDiff.Name = "txt_payNightDiff"
+        Me.txt_payNightDiff.ReadOnly = True
         Me.txt_payNightDiff.Size = New System.Drawing.Size(56, 26)
         Me.txt_payNightDiff.TabIndex = 11
         Me.txt_payNightDiff.Tag = "BasicPay"
@@ -171,6 +180,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_payOvertime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_payOvertime.Location = New System.Drawing.Point(125, 174)
         Me.txt_payOvertime.Name = "txt_payOvertime"
+        Me.txt_payOvertime.ReadOnly = True
         Me.txt_payOvertime.Size = New System.Drawing.Size(56, 26)
         Me.txt_payOvertime.TabIndex = 9
         Me.txt_payOvertime.Tag = "BasicPay"
@@ -193,6 +203,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_payHoliday.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_payHoliday.Location = New System.Drawing.Point(125, 134)
         Me.txt_payHoliday.Name = "txt_payHoliday"
+        Me.txt_payHoliday.ReadOnly = True
         Me.txt_payHoliday.Size = New System.Drawing.Size(56, 26)
         Me.txt_payHoliday.TabIndex = 7
         Me.txt_payHoliday.Tag = "BasicPay"
@@ -314,6 +325,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_payRegular.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_payRegular.Location = New System.Drawing.Point(125, 13)
         Me.txt_payRegular.Name = "txt_payRegular"
+        Me.txt_payRegular.ReadOnly = True
         Me.txt_payRegular.Size = New System.Drawing.Size(56, 26)
         Me.txt_payRegular.TabIndex = 1
         Me.txt_payRegular.Tag = "BasicPay"
@@ -361,9 +373,9 @@ Partial Class FormPAYROLL_PAYEE
         Me.GroupBox2.Controls.Add(Me.txt_payAddField)
         Me.GroupBox2.Controls.Add(Me.txt_payAddSpecial)
         Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Location = New System.Drawing.Point(808, 130)
+        Me.GroupBox2.Location = New System.Drawing.Point(808, 81)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(184, 171)
+        Me.GroupBox2.Size = New System.Drawing.Size(187, 171)
         Me.GroupBox2.TabIndex = 22
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Additional Pay"
@@ -425,15 +437,14 @@ Partial Class FormPAYROLL_PAYEE
         Me.GroupBox3.Controls.Add(Me.txt_totalLate)
         Me.GroupBox3.Controls.Add(Me.cb_pagibig)
         Me.GroupBox3.Controls.Add(Me.cb_philhealth)
-        Me.GroupBox3.Controls.Add(Me.cb_insurance)
         Me.GroupBox3.Controls.Add(Me.cb_Tax)
         Me.GroupBox3.Controls.Add(Me.cb_SSS)
         Me.GroupBox3.Controls.Add(Me.txt_numUndertime)
         Me.GroupBox3.Controls.Add(Me.txt_minusUndertime)
+        Me.GroupBox3.Controls.Add(Me.txt_insurance)
         Me.GroupBox3.Controls.Add(Me.txt_SSS)
         Me.GroupBox3.Controls.Add(Me.txt_tax)
         Me.GroupBox3.Controls.Add(Me.txt_charge)
-        Me.GroupBox3.Controls.Add(Me.txt_insurance)
         Me.GroupBox3.Controls.Add(Me.txt_philhealth)
         Me.GroupBox3.Controls.Add(Me.txt_pagibig)
         Me.GroupBox3.Controls.Add(Me.Label8)
@@ -442,7 +453,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.GroupBox3.Controls.Add(Me.txt_minusLate)
         Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Controls.Add(Me.Label5)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 396)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 347)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(459, 219)
         Me.GroupBox3.TabIndex = 24
@@ -495,22 +506,11 @@ Partial Class FormPAYROLL_PAYEE
         Me.cb_philhealth.Text = "Philhealth :"
         Me.cb_philhealth.UseVisualStyleBackColor = True
         '
-        'cb_insurance
-        '
-        Me.cb_insurance.AutoSize = True
-        Me.cb_insurance.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_insurance.Location = New System.Drawing.Point(15, 17)
-        Me.cb_insurance.Name = "cb_insurance"
-        Me.cb_insurance.Size = New System.Drawing.Size(107, 24)
-        Me.cb_insurance.TabIndex = 40
-        Me.cb_insurance.Text = "Insurance :"
-        Me.cb_insurance.UseVisualStyleBackColor = True
-        '
         'cb_Tax
         '
         Me.cb_Tax.AutoSize = True
         Me.cb_Tax.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_Tax.Location = New System.Drawing.Point(287, 48)
+        Me.cb_Tax.Location = New System.Drawing.Point(305, 12)
         Me.cb_Tax.Name = "cb_Tax"
         Me.cb_Tax.Size = New System.Drawing.Size(61, 24)
         Me.cb_Tax.TabIndex = 39
@@ -521,7 +521,7 @@ Partial Class FormPAYROLL_PAYEE
         '
         Me.cb_SSS.AutoSize = True
         Me.cb_SSS.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_SSS.Location = New System.Drawing.Point(279, 10)
+        Me.cb_SSS.Location = New System.Drawing.Point(52, 16)
         Me.cb_SSS.Name = "cb_SSS"
         Me.cb_SSS.Size = New System.Drawing.Size(69, 24)
         Me.cb_SSS.TabIndex = 33
@@ -546,52 +546,49 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_minusUndertime.TabIndex = 16
         Me.txt_minusUndertime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'txt_insurance
+        '
+        Me.txt_insurance.BackColor = System.Drawing.SystemColors.Window
+        Me.txt_insurance.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_insurance.Location = New System.Drawing.Point(368, 50)
+        Me.txt_insurance.Name = "txt_insurance"
+        Me.txt_insurance.ReadOnly = True
+        Me.txt_insurance.Size = New System.Drawing.Size(56, 26)
+        Me.txt_insurance.TabIndex = 33
+        Me.txt_insurance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'txt_SSS
         '
         Me.txt_SSS.BackColor = System.Drawing.Color.Gray
         Me.txt_SSS.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_SSS.ForeColor = System.Drawing.Color.Black
-        Me.txt_SSS.Location = New System.Drawing.Point(350, 10)
+        Me.txt_SSS.Location = New System.Drawing.Point(123, 16)
         Me.txt_SSS.Name = "txt_SSS"
         Me.txt_SSS.ReadOnly = True
         Me.txt_SSS.Size = New System.Drawing.Size(56, 26)
         Me.txt_SSS.TabIndex = 36
-        Me.txt_SSS.Text = "100"
         Me.txt_SSS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_tax
         '
         Me.txt_tax.BackColor = System.Drawing.Color.Gray
         Me.txt_tax.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_tax.Location = New System.Drawing.Point(350, 48)
+        Me.txt_tax.Location = New System.Drawing.Point(368, 12)
         Me.txt_tax.Name = "txt_tax"
         Me.txt_tax.ReadOnly = True
         Me.txt_tax.Size = New System.Drawing.Size(56, 26)
         Me.txt_tax.TabIndex = 35
-        Me.txt_tax.Text = "100"
         Me.txt_tax.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_charge
         '
         Me.txt_charge.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_charge.Location = New System.Drawing.Point(350, 89)
+        Me.txt_charge.Location = New System.Drawing.Point(368, 88)
         Me.txt_charge.Name = "txt_charge"
         Me.txt_charge.Size = New System.Drawing.Size(56, 26)
         Me.txt_charge.TabIndex = 13
         Me.txt_charge.Tag = "Deductions"
         Me.txt_charge.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txt_insurance
-        '
-        Me.txt_insurance.BackColor = System.Drawing.Color.Gray
-        Me.txt_insurance.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_insurance.Location = New System.Drawing.Point(123, 15)
-        Me.txt_insurance.Name = "txt_insurance"
-        Me.txt_insurance.ReadOnly = True
-        Me.txt_insurance.Size = New System.Drawing.Size(56, 26)
-        Me.txt_insurance.TabIndex = 33
-        Me.txt_insurance.Text = "100"
-        Me.txt_insurance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_philhealth
         '
@@ -602,7 +599,6 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_philhealth.ReadOnly = True
         Me.txt_philhealth.Size = New System.Drawing.Size(56, 26)
         Me.txt_philhealth.TabIndex = 32
-        Me.txt_philhealth.Text = "100"
         Me.txt_philhealth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txt_pagibig
@@ -614,7 +610,6 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_pagibig.ReadOnly = True
         Me.txt_pagibig.Size = New System.Drawing.Size(56, 26)
         Me.txt_pagibig.TabIndex = 31
-        Me.txt_pagibig.Text = "100"
         Me.txt_pagibig.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label8
@@ -623,9 +618,9 @@ Partial Class FormPAYROLL_PAYEE
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(275, 11)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(69, 100)
+        Me.Label8.Size = New System.Drawing.Size(88, 100)
         Me.Label8.TabIndex = 30
-        Me.Label8.Text = "SSS :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tax :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Charge :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label8.Text = "Tax :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Insurance :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Charge :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'txt_numLate
@@ -675,57 +670,78 @@ Partial Class FormPAYROLL_PAYEE
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(98, 180)
         Me.Label5.TabIndex = 23
-        Me.Label5.Text = "Insurance :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Philhealth :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "PAG - IBIG :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Late :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Undertime :"
+        Me.Label5.Text = "SSS :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Philhealth :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "PAG - IBIG :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Late :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Undertime :"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.TextBox28)
-        Me.GroupBox4.Controls.Add(Me.txt_deductions)
-        Me.GroupBox4.Controls.Add(Me.TextBox13)
+        Me.GroupBox4.Controls.Add(Me.txt_grandTotal_Additional)
+        Me.GroupBox4.Controls.Add(Me.txt_grandTotal_Basic)
+        Me.GroupBox4.Controls.Add(Me.txt_grandTotal_Loan)
+        Me.GroupBox4.Controls.Add(Me.txt_grandTotal_Deduction)
+        Me.GroupBox4.Controls.Add(Me.txt_grandTotal_Net)
         Me.GroupBox4.Controls.Add(Me.Label11)
         Me.GroupBox4.Controls.Add(Me.Label10)
-        Me.GroupBox4.Controls.Add(Me.txt_gross)
+        Me.GroupBox4.Controls.Add(Me.txt_grandTotal_Gross)
         Me.GroupBox4.Controls.Add(Me.Label9)
-        Me.GroupBox4.Location = New System.Drawing.Point(808, 307)
+        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.Location = New System.Drawing.Point(808, 258)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(184, 216)
+        Me.GroupBox4.Size = New System.Drawing.Size(187, 308)
         Me.GroupBox4.TabIndex = 30
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Total"
         '
-        'TextBox28
+        'txt_grandTotal_Additional
         '
-        Me.TextBox28.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox28.Location = New System.Drawing.Point(110, 103)
-        Me.TextBox28.Name = "TextBox28"
-        Me.TextBox28.Size = New System.Drawing.Size(68, 26)
-        Me.TextBox28.TabIndex = 34
-        Me.TextBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_grandTotal_Additional.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_grandTotal_Additional.Location = New System.Drawing.Point(106, 62)
+        Me.txt_grandTotal_Additional.Name = "txt_grandTotal_Additional"
+        Me.txt_grandTotal_Additional.Size = New System.Drawing.Size(68, 26)
+        Me.txt_grandTotal_Additional.TabIndex = 36
+        Me.txt_grandTotal_Additional.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txt_deductions
+        'txt_grandTotal_Basic
         '
-        Me.txt_deductions.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_deductions.Location = New System.Drawing.Point(110, 62)
-        Me.txt_deductions.Name = "txt_deductions"
-        Me.txt_deductions.Size = New System.Drawing.Size(68, 26)
-        Me.txt_deductions.TabIndex = 33
-        Me.txt_deductions.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_grandTotal_Basic.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_grandTotal_Basic.Location = New System.Drawing.Point(106, 24)
+        Me.txt_grandTotal_Basic.Name = "txt_grandTotal_Basic"
+        Me.txt_grandTotal_Basic.Size = New System.Drawing.Size(68, 26)
+        Me.txt_grandTotal_Basic.TabIndex = 35
+        Me.txt_grandTotal_Basic.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'TextBox13
+        'txt_grandTotal_Loan
         '
-        Me.TextBox13.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox13.Location = New System.Drawing.Point(10, 171)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(168, 32)
-        Me.TextBox13.TabIndex = 32
-        Me.TextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_grandTotal_Loan.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_grandTotal_Loan.Location = New System.Drawing.Point(106, 184)
+        Me.txt_grandTotal_Loan.Name = "txt_grandTotal_Loan"
+        Me.txt_grandTotal_Loan.Size = New System.Drawing.Size(68, 26)
+        Me.txt_grandTotal_Loan.TabIndex = 34
+        Me.txt_grandTotal_Loan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_grandTotal_Deduction
+        '
+        Me.txt_grandTotal_Deduction.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_grandTotal_Deduction.Location = New System.Drawing.Point(106, 143)
+        Me.txt_grandTotal_Deduction.Name = "txt_grandTotal_Deduction"
+        Me.txt_grandTotal_Deduction.Size = New System.Drawing.Size(68, 26)
+        Me.txt_grandTotal_Deduction.TabIndex = 33
+        Me.txt_grandTotal_Deduction.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_grandTotal_Net
+        '
+        Me.txt_grandTotal_Net.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_grandTotal_Net.Location = New System.Drawing.Point(20, 253)
+        Me.txt_grandTotal_Net.Name = "txt_grandTotal_Net"
+        Me.txt_grandTotal_Net.Size = New System.Drawing.Size(154, 32)
+        Me.txt_grandTotal_Net.TabIndex = 32
+        Me.txt_grandTotal_Net.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(46, 145)
+        Me.Label11.Location = New System.Drawing.Point(46, 228)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(97, 20)
         Me.Label11.TabIndex = 31
@@ -742,53 +758,53 @@ Partial Class FormPAYROLL_PAYEE
         Me.Label10.TabIndex = 30
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'txt_gross
+        'txt_grandTotal_Gross
         '
-        Me.txt_gross.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_gross.Location = New System.Drawing.Point(110, 22)
-        Me.txt_gross.Name = "txt_gross"
-        Me.txt_gross.Size = New System.Drawing.Size(68, 26)
-        Me.txt_gross.TabIndex = 29
-        Me.txt_gross.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_grandTotal_Gross.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_grandTotal_Gross.Location = New System.Drawing.Point(106, 103)
+        Me.txt_grandTotal_Gross.Name = "txt_grandTotal_Gross"
+        Me.txt_grandTotal_Gross.Size = New System.Drawing.Size(68, 26)
+        Me.txt_grandTotal_Gross.TabIndex = 29
+        Me.txt_grandTotal_Gross.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(6, 24)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(98, 100)
+        Me.Label9.Size = New System.Drawing.Size(101, 180)
         Me.Label9.TabIndex = 23
-        Me.Label9.Text = "Gross :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Deductions :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Loans :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label9.Text = "Basic :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Additional :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Gross :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Deduction :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Loan :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.ListView1)
-        Me.GroupBox5.Location = New System.Drawing.Point(478, 130)
+        Me.GroupBox5.Controls.Add(Me.lst_loans)
+        Me.GroupBox5.Location = New System.Drawing.Point(478, 81)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(324, 272)
         Me.GroupBox5.TabIndex = 31
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Loans"
         '
-        'ListView1
+        'lst_loans
         '
-        Me.ListView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListView1.FullRowSelect = True
-        Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(5, 18)
-        Me.ListView1.Margin = New System.Windows.Forms.Padding(2)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(314, 247)
-        Me.ListView1.TabIndex = 17
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
+        Me.lst_loans.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lst_loans.FullRowSelect = True
+        Me.lst_loans.GridLines = True
+        Me.lst_loans.Location = New System.Drawing.Point(5, 18)
+        Me.lst_loans.Margin = New System.Windows.Forms.Padding(2)
+        Me.lst_loans.Name = "lst_loans"
+        Me.lst_loans.Size = New System.Drawing.Size(314, 247)
+        Me.lst_loans.TabIndex = 17
+        Me.lst_loans.UseCompatibleStateImageBehavior = False
+        Me.lst_loans.View = System.Windows.Forms.View.Details
         '
         'GroupBox6
         '
         Me.GroupBox6.Controls.Add(Me.ListView2)
-        Me.GroupBox6.Location = New System.Drawing.Point(477, 408)
+        Me.GroupBox6.Location = New System.Drawing.Point(477, 359)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(324, 207)
         Me.GroupBox6.TabIndex = 32
@@ -808,11 +824,77 @@ Partial Class FormPAYROLL_PAYEE
         Me.ListView2.UseCompatibleStateImageBehavior = False
         Me.ListView2.View = System.Windows.Forms.View.Details
         '
+        'btn_Cancel
+        '
+        Me.btn_Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Cancel.Location = New System.Drawing.Point(926, 572)
+        Me.btn_Cancel.Name = "btn_Cancel"
+        Me.btn_Cancel.Size = New System.Drawing.Size(70, 30)
+        Me.btn_Cancel.TabIndex = 34
+        Me.btn_Cancel.Text = "&Cancel"
+        Me.btn_Cancel.UseVisualStyleBackColor = True
+        '
+        'btn_Save
+        '
+        Me.btn_Save.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Save.Location = New System.Drawing.Point(850, 572)
+        Me.btn_Save.Name = "btn_Save"
+        Me.btn_Save.Size = New System.Drawing.Size(70, 30)
+        Me.btn_Save.TabIndex = 33
+        Me.btn_Save.Text = "&Save"
+        Me.btn_Save.UseVisualStyleBackColor = True
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(350, 7)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(141, 60)
+        Me.Label12.TabIndex = 35
+        Me.Label12.Text = "Cutoff Date From :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cutoff Date To :"
+        Me.Label12.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(655, 9)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(81, 20)
+        Me.Label13.TabIndex = 36
+        Me.Label13.Text = "Remarks :"
+        Me.Label13.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'txt_payroll_employeeRemarks
+        '
+        Me.txt_payroll_employeeRemarks.Location = New System.Drawing.Point(743, 9)
+        Me.txt_payroll_employeeRemarks.Name = "txt_payroll_employeeRemarks"
+        Me.txt_payroll_employeeRemarks.Size = New System.Drawing.Size(252, 66)
+        Me.txt_payroll_employeeRemarks.TabIndex = 37
+        Me.txt_payroll_employeeRemarks.Text = ""
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.payroll
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 9)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(55, 54)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 38
+        Me.PictureBox1.TabStop = False
+        '
         'FormPAYROLL_PAYEE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1004, 632)
+        Me.ClientSize = New System.Drawing.Size(1010, 608)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.txt_payroll_employeeRemarks)
+        Me.Controls.Add(Me.Label13)
+        Me.Controls.Add(Me.Label12)
+        Me.Controls.Add(Me.btn_Cancel)
+        Me.Controls.Add(Me.btn_Save)
         Me.Controls.Add(Me.GroupBox6)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.GroupBox4)
@@ -820,8 +902,12 @@ Partial Class FormPAYROLL_PAYEE
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label2)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FormPAYROLL_PAYEE"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Payroll Payee Record"
         Me.GroupBox1.ResumeLayout(False)
@@ -834,6 +920,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.GroupBox4.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -861,9 +948,9 @@ Partial Class FormPAYROLL_PAYEE
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents txt_minusLate As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents txt_gross As System.Windows.Forms.TextBox
+    Friend WithEvents txt_grandTotal_Gross As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents TextBox13 As System.Windows.Forms.TextBox
+    Friend WithEvents txt_grandTotal_Net As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
@@ -883,9 +970,9 @@ Partial Class FormPAYROLL_PAYEE
     Friend WithEvents txt_charge As System.Windows.Forms.TextBox
     Friend WithEvents txt_insurance As System.Windows.Forms.TextBox
     Friend WithEvents txt_philhealth As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox28 As System.Windows.Forms.TextBox
-    Friend WithEvents txt_deductions As System.Windows.Forms.TextBox
-    Friend WithEvents ListView1 As System.Windows.Forms.ListView
+    Friend WithEvents txt_grandTotal_Loan As System.Windows.Forms.TextBox
+    Friend WithEvents txt_grandTotal_Deduction As System.Windows.Forms.TextBox
+    Friend WithEvents lst_loans As System.Windows.Forms.ListView
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
     Friend WithEvents ListView2 As System.Windows.Forms.ListView
     Friend WithEvents txt_payNightDiff As System.Windows.Forms.TextBox
@@ -896,8 +983,15 @@ Partial Class FormPAYROLL_PAYEE
     Friend WithEvents cb_SSS As System.Windows.Forms.CheckBox
     Friend WithEvents cb_pagibig As System.Windows.Forms.CheckBox
     Friend WithEvents cb_philhealth As System.Windows.Forms.CheckBox
-    Friend WithEvents cb_insurance As System.Windows.Forms.CheckBox
     Friend WithEvents cb_Tax As System.Windows.Forms.CheckBox
     Friend WithEvents txt_totalUndertime As System.Windows.Forms.TextBox
     Friend WithEvents txt_totalLate As System.Windows.Forms.TextBox
+    Friend WithEvents txt_grandTotal_Additional As System.Windows.Forms.TextBox
+    Friend WithEvents txt_grandTotal_Basic As System.Windows.Forms.TextBox
+    Friend WithEvents btn_Cancel As System.Windows.Forms.Button
+    Friend WithEvents btn_Save As System.Windows.Forms.Button
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents txt_payroll_employeeRemarks As System.Windows.Forms.RichTextBox
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class

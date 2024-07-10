@@ -6,7 +6,7 @@
     End Sub
 
     Private Sub btn_submit_Click(sender As Object, e As EventArgs) Handles btn_submit.Click
-        sqlSTR = "INSERT INTO Loans (Loan_Date, Employee_ID, Loan_Net_Amount, Loan_Interest_Rate, Loan_Gross_Amount, Loan_Payment_Start_Date, Loan_Payment_End_Date, Loan_Type, Loan_Reason, Loan_Remarks, Loan_Status) VALUES (" & _
+        sqlSTR = "INSERT INTO Loans (Loan_Date, Employee_ID, Loan_Net_Amount, Loan_Interest_Rate, Loan_Gross_Amount, Loan_Payment_Start_Date, Loan_Payment_End_Date, Loan_Type, Suggested_PayPerCutoff, Loan_Reason, Loan_Remarks, Loan_Status) VALUES (" & _
                             "format(GETDATE(), 'mm/dd/yyyy'), '" & _
                              Split(cmb_employees.Text, " - ")(0) & "', '" & _
                              txt_netAmount.Text & "', '" & _
@@ -15,8 +15,9 @@
                              dt_payStartDate.Text & "', '" & _
                              dt_payEndDate.Text & "', '" & _
                              cmb_loanType.Text & "', '" & _
+                             txt_suggestedDeduction.Text & "', '" & _
                              txt_loanReason.Text & "', '" & _
-                             txt_loanRemarks.Text & "', 'Pending')"
+                             txt_loanRemarks.Text & "', 'Active')"
         ExecuteSQLQuery(sqlSTR)
         Me.Close()
     End Sub
@@ -78,6 +79,22 @@
 
 
     Private Sub txt_grossAmount_TextChanged(sender As Object, e As EventArgs) Handles txt_grossAmount.TextChanged
+        suggestedLoanDeduction()
+    End Sub
+
+    Private Sub suggestedLoanDeduction()
         txt_suggestedDeduction.Text = Val(txt_grossAmount.Text) / SuggestedNumberOfPayments()
+    End Sub
+
+    Private Sub dt_payStartDate_ValueChanged(sender As Object, e As EventArgs) Handles dt_payStartDate.ValueChanged
+        suggestedLoanDeduction()
+    End Sub
+
+    Private Sub dt_payEndDate_ValueChanged(sender As Object, e As EventArgs) Handles dt_payEndDate.ValueChanged
+        suggestedLoanDeduction()
+    End Sub
+
+    Private Sub txt_suggestedDeduction_TextChanged(sender As Object, e As EventArgs) Handles txt_suggestedDeduction.TextChanged
+
     End Sub
 End Class

@@ -143,6 +143,7 @@
       <DependentUpon>MDIMain.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Modules\ModCode.vb" />
     <Compile Include="Modules\ModCon.vb" />
     <Compile Include="Modules\ModProcedure.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

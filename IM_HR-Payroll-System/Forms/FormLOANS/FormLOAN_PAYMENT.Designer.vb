@@ -28,10 +28,8 @@ Partial Class FormLOAN_PAYMENT
         Me.btn_cancel = New System.Windows.Forms.Button()
         Me.btn_save = New System.Windows.Forms.Button()
         Me.dt_paymentDate = New System.Windows.Forms.DateTimePicker()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_grossAmount = New System.Windows.Forms.TextBox()
-        Me.txt_interestRate = New System.Windows.Forms.TextBox()
-        Me.txt_netAmount = New System.Windows.Forms.TextBox()
+        Me.txt_remarks = New System.Windows.Forms.RichTextBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -61,15 +59,15 @@ Partial Class FormLOAN_PAYMENT
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(12, 54)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(120, 140)
+        Me.Label2.Size = New System.Drawing.Size(118, 100)
         Me.Label2.TabIndex = 22
-        Me.Label2.Text = "Payment Date :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Gross Amount :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Interest Rate :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Net Amount :"
+        Me.Label2.Text = "Payment Date :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Amount :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Remarks :"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'btn_cancel
         '
         Me.btn_cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_cancel.Location = New System.Drawing.Point(188, 225)
+        Me.btn_cancel.Location = New System.Drawing.Point(248, 226)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(75, 27)
         Me.btn_cancel.TabIndex = 43
@@ -79,7 +77,7 @@ Partial Class FormLOAN_PAYMENT
         'btn_save
         '
         Me.btn_save.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_save.Location = New System.Drawing.Point(107, 225)
+        Me.btn_save.Location = New System.Drawing.Point(167, 226)
         Me.btn_save.Name = "btn_save"
         Me.btn_save.Size = New System.Drawing.Size(75, 27)
         Me.btn_save.TabIndex = 42
@@ -95,17 +93,6 @@ Partial Class FormLOAN_PAYMENT
         Me.dt_paymentDate.Size = New System.Drawing.Size(127, 26)
         Me.dt_paymentDate.TabIndex = 44
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(182, 135)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(23, 20)
-        Me.Label3.TabIndex = 48
-        Me.Label3.Text = "%"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
         'txt_grossAmount
         '
         Me.txt_grossAmount.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -115,34 +102,21 @@ Partial Class FormLOAN_PAYMENT
         Me.txt_grossAmount.TabIndex = 47
         Me.txt_grossAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'txt_interestRate
+        'txt_remarks
         '
-        Me.txt_interestRate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_interestRate.Location = New System.Drawing.Point(138, 132)
-        Me.txt_interestRate.Name = "txt_interestRate"
-        Me.txt_interestRate.Size = New System.Drawing.Size(43, 26)
-        Me.txt_interestRate.TabIndex = 46
-        Me.txt_interestRate.Text = "0"
-        Me.txt_interestRate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'txt_netAmount
-        '
-        Me.txt_netAmount.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_netAmount.Location = New System.Drawing.Point(138, 172)
-        Me.txt_netAmount.Name = "txt_netAmount"
-        Me.txt_netAmount.Size = New System.Drawing.Size(100, 26)
-        Me.txt_netAmount.TabIndex = 45
-        Me.txt_netAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_remarks.Location = New System.Drawing.Point(138, 136)
+        Me.txt_remarks.Name = "txt_remarks"
+        Me.txt_remarks.Size = New System.Drawing.Size(185, 73)
+        Me.txt_remarks.TabIndex = 48
+        Me.txt_remarks.Text = ""
         '
         'FormLOAN_PAYMENT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(277, 265)
-        Me.Controls.Add(Me.Label3)
+        Me.ClientSize = New System.Drawing.Size(335, 265)
+        Me.Controls.Add(Me.txt_remarks)
         Me.Controls.Add(Me.txt_grossAmount)
-        Me.Controls.Add(Me.txt_interestRate)
-        Me.Controls.Add(Me.txt_netAmount)
         Me.Controls.Add(Me.dt_paymentDate)
         Me.Controls.Add(Me.btn_cancel)
         Me.Controls.Add(Me.btn_save)
@@ -168,8 +142,6 @@ Partial Class FormLOAN_PAYMENT
     Friend WithEvents btn_cancel As System.Windows.Forms.Button
     Friend WithEvents btn_save As System.Windows.Forms.Button
     Friend WithEvents dt_paymentDate As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents txt_grossAmount As System.Windows.Forms.TextBox
-    Friend WithEvents txt_interestRate As System.Windows.Forms.TextBox
-    Friend WithEvents txt_netAmount As System.Windows.Forms.TextBox
+    Friend WithEvents txt_remarks As System.Windows.Forms.RichTextBox
 End Class
