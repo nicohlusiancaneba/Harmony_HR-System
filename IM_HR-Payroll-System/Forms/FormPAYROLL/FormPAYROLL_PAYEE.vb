@@ -1,8 +1,13 @@
 ﻿Public Class FormPAYROLL_PAYEE
-    Private payroll_id, employee_id As Integer
+    Private payroll_id, employee_id, payroll_detail_id As Integer
     Private Sub FormPAYROLL_PAYEE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         employee_id = xID1
         payroll_id = xID2
+
+        sqlSTR = "select Payroll_Detail_ID from Payroll_Details where Employee_ID =" & employee_id & " and Payroll_id =" & payroll_id
+        ExecuteSQLQuery(sqlSTR)
+
+        payroll_detail_id = sqlDT.Rows(0)("Payroll_Detail_ID")
 
         sqlSTR = "Select * from Employees where Employee_Id =" & employee_id
         ExecuteSQLQuery(sqlSTR)
@@ -23,13 +28,15 @@
 
 
         '//////// LOANS ////////
-        sqlSTR = "SELECT Loan_ID AS 'Loan ID', Loan_Date AS 'Loan Date', Loan_Net_Amount AS 'Loan Net Amount', CONCAT(Loan_Interest_Rate, '%') AS 'Loan Interest Rate', Loan_Gross_Amount AS 'Loan Gross Amount', " & _
-            " Loan_Reason AS 'Loan Reason', Loan_Remarks AS 'Loan Remarks' FROM Loans INNER JOIN Employees ON Employees.Employee_ID = Loans.Employee_ID " & _
-            " where Loan_Status = 'Active' and Loans.Employee_ID = " & employee_id
+        sqlSTR = "select Loans.Loan_ID as 'Loan ID', max(Employee_ID) as 'Employee ID', max(Loan_Date) as 'Loan Date', " & _
+            " max(Loan_Gross_Amount) as 'Loan Gross', max(Loan_Gross_Amount) - sum(case when Payment_Posted = 'Yes' then COALESCE(Gross_Payment, 0) else 0 end) as 'Loan Balance' " & _
+            " from Loans LEFT JOIN Loan_Payments on Loan_Payments.Loan_ID = Loans.Loan_ID" & _
+            " WHERE Loan_Status = 'Active' and Employee_ID=" & employee_id & _
+            " group by Loans.Loan_ID "
         FillListView(ExecuteSQLQuery(sqlSTR), lst_loans, 0)
         '///////////////////////
 
-
+        RefreshLoanPaymentList()
 
         TextBox_NumberHandler()
         TextBox_BasicPayCompute("BasicPay")
@@ -96,9 +103,9 @@
         txt_totalOvertime.Text = Val(txt_payOvertime.Text) * Val(txt_numOvertime.Text)
         txt_totalNightDiff.Text = Val(txt_payNightDiff.Text) * Val(txt_numNightDiff.Text)
 
-        txt_grandTotal_Gross.Text = (Val(txt_totalRegular.Text) + Val(txt_totalSpecial.Text) + Val(txt_totalField.Text) + Val(txt_totalHoliday.Text) + Val(txt_totalOvertime.Text) + Val(txt_totalNightDiff.Text))
+        txt_grandTotal_Basic.Text = (Val(txt_totalRegular.Text) + Val(txt_totalSpecial.Text) + Val(txt_totalField.Text) + Val(txt_totalHoliday.Text) + Val(txt_totalOvertime.Text) + Val(txt_totalNightDiff.Text))
         txt_grandTotal_Additional.Text = Val(txt_payAddSpecial.Text) + Val(txt_payAddField.Text) + Val(txt_payAddIncentive.Text) + Val(txt_payAddAllowance.Text)
-
+        txt_grandTotal_Gross.Text = Val(txt_grandTotal_Basic.Text) + Val(txt_grandTotal_Additional.Text)
     End Sub
 
     Private Sub DeductionsCompute()
@@ -118,6 +125,12 @@
             txtbox.Tag = ""
         End If
         DeductionsCompute()
+    End Sub
+
+    Private Sub RefreshLoanPaymentList()
+        sqlSTR = "select Loan_Payment_ID as ID, Loan_ID as 'Loan ID', Payroll_Detail_ID as 'Payroll Detail ID', Payment_Date as 'Payment Date', " & _
+                "Gross_Payment as 'Payment', Payment_Remarks as Remarks, Payment_Posted as 'Payment Posted' from Loan_Payments where payroll_detail_id=" & payroll_detail_id
+        FillListView(ExecuteSQLQuery(sqlSTR), lst_loanPayment, 0)
     End Sub
 
     Private Sub txt_charge_TextChanged(sender As Object, e As EventArgs) Handles txt_charge.TextChanged
@@ -204,5 +217,12 @@
 " WHERE Employee_ID = " & employee_id & " and Payroll_ID = " & payroll_id
         ExecuteSQLQuery(sqlSTR)
         MsgBox("Succesfully saved employee payroll details.", MsgBoxStyle.Information, msgBox_header)
+    End Sub
+
+
+
+    Private Sub EditEmployeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditEmployeeToolStripMenuItem.Click
+        ShowForm2(FormLOAN_PAYMENT, "add", lst_loans.FocusedItem.Text, payroll_detail_id)
+        RefreshLoanPaymentList()
     End Sub
 End Class

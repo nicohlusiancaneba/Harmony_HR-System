@@ -52,6 +52,7 @@ Partial Class FormLOAN_EDIT
         Me.txt_employees = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txt_suggestedDeduction = New System.Windows.Forms.TextBox()
+        Me.PostPaymentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -172,22 +173,22 @@ Partial Class FormLOAN_EDIT
         'ContextMenuStrip1
         '
         Me.ContextMenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditEmployeeToolStripMenuItem, Me.DeleteEmployeeToolStripMenuItem})
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditEmployeeToolStripMenuItem, Me.DeleteEmployeeToolStripMenuItem, Me.PostPaymentToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(173, 52)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(177, 98)
         '
         'EditEmployeeToolStripMenuItem
         '
         Me.EditEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.edit
         Me.EditEmployeeToolStripMenuItem.Name = "EditEmployeeToolStripMenuItem"
-        Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(172, 24)
+        Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(176, 24)
         Me.EditEmployeeToolStripMenuItem.Text = "Edit Payment"
         '
         'DeleteEmployeeToolStripMenuItem
         '
         Me.DeleteEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.bin
         Me.DeleteEmployeeToolStripMenuItem.Name = "DeleteEmployeeToolStripMenuItem"
-        Me.DeleteEmployeeToolStripMenuItem.Size = New System.Drawing.Size(172, 24)
+        Me.DeleteEmployeeToolStripMenuItem.Size = New System.Drawing.Size(176, 24)
         Me.DeleteEmployeeToolStripMenuItem.Text = "Delete Loan"
         '
         'btn_cancel
@@ -336,6 +337,12 @@ Partial Class FormLOAN_EDIT
         Me.txt_suggestedDeduction.TabIndex = 145
         Me.txt_suggestedDeduction.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'PostPaymentToolStripMenuItem
+        '
+        Me.PostPaymentToolStripMenuItem.Name = "PostPaymentToolStripMenuItem"
+        Me.PostPaymentToolStripMenuItem.Size = New System.Drawing.Size(176, 24)
+        Me.PostPaymentToolStripMenuItem.Text = "Post Payment"
+        '
         'FormLOAN_EDIT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -408,4 +415,5 @@ Partial Class FormLOAN_EDIT
     Friend WithEvents txt_employees As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents txt_suggestedDeduction As System.Windows.Forms.TextBox
+    Friend WithEvents PostPaymentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

@@ -22,6 +22,7 @@ Partial Class FormPAYROLL_PAYEE
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPAYROLL_PAYEE))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -84,21 +85,28 @@ Partial Class FormPAYROLL_PAYEE
         Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.lst_loans = New System.Windows.Forms.ListView()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.ListView2 = New System.Windows.Forms.ListView()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.lst_loanPayment = New System.Windows.Forms.ListView()
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.btn_Save = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txt_payroll_employeeRemarks = New System.Windows.Forms.RichTextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ContextMenuStrip2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label2
@@ -697,6 +705,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_grandTotal_Additional.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_grandTotal_Additional.Location = New System.Drawing.Point(106, 62)
         Me.txt_grandTotal_Additional.Name = "txt_grandTotal_Additional"
+        Me.txt_grandTotal_Additional.ReadOnly = True
         Me.txt_grandTotal_Additional.Size = New System.Drawing.Size(68, 26)
         Me.txt_grandTotal_Additional.TabIndex = 36
         Me.txt_grandTotal_Additional.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -706,6 +715,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_grandTotal_Basic.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_grandTotal_Basic.Location = New System.Drawing.Point(106, 24)
         Me.txt_grandTotal_Basic.Name = "txt_grandTotal_Basic"
+        Me.txt_grandTotal_Basic.ReadOnly = True
         Me.txt_grandTotal_Basic.Size = New System.Drawing.Size(68, 26)
         Me.txt_grandTotal_Basic.TabIndex = 35
         Me.txt_grandTotal_Basic.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -715,6 +725,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_grandTotal_Loan.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_grandTotal_Loan.Location = New System.Drawing.Point(106, 184)
         Me.txt_grandTotal_Loan.Name = "txt_grandTotal_Loan"
+        Me.txt_grandTotal_Loan.ReadOnly = True
         Me.txt_grandTotal_Loan.Size = New System.Drawing.Size(68, 26)
         Me.txt_grandTotal_Loan.TabIndex = 34
         Me.txt_grandTotal_Loan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -724,6 +735,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_grandTotal_Deduction.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_grandTotal_Deduction.Location = New System.Drawing.Point(106, 143)
         Me.txt_grandTotal_Deduction.Name = "txt_grandTotal_Deduction"
+        Me.txt_grandTotal_Deduction.ReadOnly = True
         Me.txt_grandTotal_Deduction.Size = New System.Drawing.Size(68, 26)
         Me.txt_grandTotal_Deduction.TabIndex = 33
         Me.txt_grandTotal_Deduction.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -733,6 +745,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_grandTotal_Net.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_grandTotal_Net.Location = New System.Drawing.Point(20, 253)
         Me.txt_grandTotal_Net.Name = "txt_grandTotal_Net"
+        Me.txt_grandTotal_Net.ReadOnly = True
         Me.txt_grandTotal_Net.Size = New System.Drawing.Size(154, 32)
         Me.txt_grandTotal_Net.TabIndex = 32
         Me.txt_grandTotal_Net.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -763,6 +776,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_grandTotal_Gross.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_grandTotal_Gross.Location = New System.Drawing.Point(106, 103)
         Me.txt_grandTotal_Gross.Name = "txt_grandTotal_Gross"
+        Me.txt_grandTotal_Gross.ReadOnly = True
         Me.txt_grandTotal_Gross.Size = New System.Drawing.Size(68, 26)
         Me.txt_grandTotal_Gross.TabIndex = 29
         Me.txt_grandTotal_Gross.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -790,6 +804,7 @@ Partial Class FormPAYROLL_PAYEE
         '
         'lst_loans
         '
+        Me.lst_loans.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lst_loans.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lst_loans.FullRowSelect = True
         Me.lst_loans.GridLines = True
@@ -801,9 +816,23 @@ Partial Class FormPAYROLL_PAYEE
         Me.lst_loans.UseCompatibleStateImageBehavior = False
         Me.lst_loans.View = System.Windows.Forms.View.Details
         '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditEmployeeToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(291, 28)
+        '
+        'EditEmployeeToolStripMenuItem
+        '
+        Me.EditEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.edit
+        Me.EditEmployeeToolStripMenuItem.Name = "EditEmployeeToolStripMenuItem"
+        Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(290, 24)
+        Me.EditEmployeeToolStripMenuItem.Text = "Add Loan Deduction Payment"
+        '
         'GroupBox6
         '
-        Me.GroupBox6.Controls.Add(Me.ListView2)
+        Me.GroupBox6.Controls.Add(Me.lst_loanPayment)
         Me.GroupBox6.Location = New System.Drawing.Point(477, 359)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(324, 207)
@@ -811,18 +840,25 @@ Partial Class FormPAYROLL_PAYEE
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Loan Payment"
         '
-        'ListView2
+        'ImageList1
         '
-        Me.ListView2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListView2.FullRowSelect = True
-        Me.ListView2.GridLines = True
-        Me.ListView2.Location = New System.Drawing.Point(5, 48)
-        Me.ListView2.Margin = New System.Windows.Forms.Padding(2)
-        Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(314, 154)
-        Me.ListView2.TabIndex = 17
-        Me.ListView2.UseCompatibleStateImageBehavior = False
-        Me.ListView2.View = System.Windows.Forms.View.Details
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "plus.png")
+        Me.ImageList1.Images.SetKeyName(1, "add.png")
+        '
+        'lst_loanPayment
+        '
+        Me.lst_loanPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lst_loanPayment.FullRowSelect = True
+        Me.lst_loanPayment.GridLines = True
+        Me.lst_loanPayment.Location = New System.Drawing.Point(5, 18)
+        Me.lst_loanPayment.Margin = New System.Windows.Forms.Padding(2)
+        Me.lst_loanPayment.Name = "lst_loanPayment"
+        Me.lst_loanPayment.Size = New System.Drawing.Size(314, 184)
+        Me.lst_loanPayment.TabIndex = 17
+        Me.lst_loanPayment.UseCompatibleStateImageBehavior = False
+        Me.lst_loanPayment.View = System.Windows.Forms.View.Details
         '
         'btn_Cancel
         '
@@ -884,6 +920,20 @@ Partial Class FormPAYROLL_PAYEE
         Me.PictureBox1.TabIndex = 38
         Me.PictureBox1.TabStop = False
         '
+        'ContextMenuStrip2
+        '
+        Me.ContextMenuStrip2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2})
+        Me.ContextMenuStrip2.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(309, 28)
+        '
+        'ToolStripMenuItem2
+        '
+        Me.ToolStripMenuItem2.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.bin
+        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(308, 24)
+        Me.ToolStripMenuItem2.Text = "Delete Loan Deduction Payment"
+        '
         'FormPAYROLL_PAYEE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -919,8 +969,10 @@ Partial Class FormPAYROLL_PAYEE
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ContextMenuStrip2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -974,7 +1026,7 @@ Partial Class FormPAYROLL_PAYEE
     Friend WithEvents txt_grandTotal_Deduction As System.Windows.Forms.TextBox
     Friend WithEvents lst_loans As System.Windows.Forms.ListView
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
-    Friend WithEvents ListView2 As System.Windows.Forms.ListView
+    Friend WithEvents lst_loanPayment As System.Windows.Forms.ListView
     Friend WithEvents txt_payNightDiff As System.Windows.Forms.TextBox
     Friend WithEvents txt_numNightDiff As System.Windows.Forms.TextBox
     Friend WithEvents txt_totalNightDiff As System.Windows.Forms.TextBox
@@ -994,4 +1046,9 @@ Partial Class FormPAYROLL_PAYEE
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents txt_payroll_employeeRemarks As System.Windows.Forms.RichTextBox
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
+    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents EditEmployeeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ContextMenuStrip2 As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
 End Class

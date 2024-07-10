@@ -2,7 +2,7 @@
 
     Dim loan_id, payroll_detail_ID, loan_payment_id As Integer
     Private Sub FormLOAN_PAYMENT_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        
+
 
         If formOperation = "edit" Then
             loan_payment_id = xID1
@@ -33,8 +33,8 @@
             sqlSTR = "Update Loan_Payments set Payment_Date='" & dt_paymentDate.Text & "', Gross_Payment='" & txt_grossAmount.Text & "', Payment_Remarks='" & txt_remarks.Text & "' where Loan_Payment_ID=" & loan_payment_id
             ExecuteSQLQuery(sqlSTR)
         Else
-            sqlSTR = "INSERT INTO Loan_Payments(Loan_ID, Payroll_Detail_ID,  Payment_Remarks, Gross_Payment, Payment_Date) " & _
-                            "Values (" & loan_id & ", Replace(" & payroll_detail_ID & ", 0, null), '" & txt_remarks.Text & "', '" & txt_grossAmount.Text & "', '" & dt_paymentDate.Value & "')"
+            sqlSTR = "INSERT INTO Loan_Payments(Loan_ID, Payroll_Detail_ID,  Payment_Remarks, Gross_Payment, Payment_Date, Payment_Posted) " & _
+                            "Values (" & loan_id & ", NULLIF(" & payroll_detail_ID & ", 0), '" & txt_remarks.Text & "', '" & txt_grossAmount.Text & "', '" & dt_paymentDate.Value & "', 'No')"
             ExecuteSQLQuery(sqlSTR)
         End If
 

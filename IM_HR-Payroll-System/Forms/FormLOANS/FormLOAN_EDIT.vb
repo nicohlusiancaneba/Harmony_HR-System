@@ -22,8 +22,8 @@
     End Sub
 
     Private Sub RefreshLoanPaymentList()
-        sqlSTR = "select Loan_Payment_ID as ID, Loan_ID as 'Loan ID', Payroll_Detail_ID as 'Payroll ID', Payment_Date as 'Payment Date', " & _
-                "Gross_Payment as 'Payment', Payment_Remarks as Remarks from Loan_Payments where Loan_ID=" & Loan_ID
+        sqlSTR = "select Loan_Payment_ID as ID, Loan_ID as 'Loan ID', Payroll_Detail_ID as 'Payroll Detail ID', Payment_Date as 'Payment Date', " & _
+                "Gross_Payment as 'Payment', Payment_Remarks as Remarks, Payment_Posted as 'Payment Posted' from Loan_Payments where Loan_ID=" & Loan_ID
         FillListView(ExecuteSQLQuery(sqlSTR), lst_loanPayment, 0)
         ComputeBalance()
     End Sub
@@ -46,7 +46,10 @@
         If lst_loanPayment.Items.Count > 0 Then
             Dim payment As Double
             For i As Integer = 0 To lst_loanPayment.Items.Count - 1
-                payment = payment + lst_loanPayment.Items(i).SubItems(4).Text
+                If lst_loanPayment.Items(i).SubItems(6).Text = "Yes" Then
+                    payment = payment + lst_loanPayment.Items(i).SubItems(4).Text
+                End If
+
             Next i
             txt_balanceAmount.Text = Val(txt_grossAmount.Text) - payment
         Else
@@ -124,5 +127,24 @@
 
     Private Sub txt_interestRate_TextChanged(sender As Object, e As EventArgs) Handles txt_interestRate.TextChanged
         ComputeGrossAmount()
+    End Sub
+
+    Private Sub PostPaymentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PostPaymentToolStripMenuItem.Click
+        If lst_loanPayment.FocusedItem.SubItems(6).Text = "Yes" Then
+            MsgBox("Loan payment already posted.", MsgBoxStyle.Exclamation, msgBox_header)
+            Exit Sub
+        End If
+
+        If lst_loanPayment.FocusedItem.SubItems(2).Text <> "" Then
+            MsgBox("Cannot post this loan payment, payment is posted from approved paryoll.", MsgBoxStyle.Exclamation, msgBox_header)
+            Exit Sub
+        End If
+
+        If MsgBox("Do you want to post this loan payment record?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, msgBox_header) = MsgBoxResult.Yes Then
+            sqlSTR = "Update Loan_Payments set Payment_Posted = 'Yes' where Loan_Payment_ID =" & lst_loanPayment.FocusedItem.Text
+            ExecuteSQLQuery(sqlSTR)
+            MsgBox("Loan payment posted.", MsgBoxStyle.Information, msgBox_header)
+        End If
+        RefreshLoanPaymentList()
     End Sub
 End Class
