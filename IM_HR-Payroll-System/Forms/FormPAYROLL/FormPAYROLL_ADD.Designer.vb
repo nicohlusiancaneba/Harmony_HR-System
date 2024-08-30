@@ -26,7 +26,10 @@ Partial Class FormPAYROLL_ADD
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPAYROLL_ADD))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.lst_payrollRecord = New System.Windows.Forms.ListView()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.cb_Approved = New System.Windows.Forms.CheckBox()
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.btn_Save = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -41,9 +44,6 @@ Partial Class FormPAYROLL_ADD
         Me.txt_totalLoansPaid = New System.Windows.Forms.TextBox()
         Me.txt_totalDeductions = New System.Windows.Forms.TextBox()
         Me.dt_payroll = New System.Windows.Forms.DateTimePicker()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.EditEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DeleteEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.rtb_remarks = New System.Windows.Forms.RichTextBox()
         Me.btn_newPayroll = New System.Windows.Forms.Button()
@@ -83,16 +83,37 @@ Partial Class FormPAYROLL_ADD
         Me.lst_payrollRecord.UseCompatibleStateImageBehavior = False
         Me.lst_payrollRecord.View = System.Windows.Forms.View.Details
         '
-        'CheckBox1
+        'ContextMenuStrip1
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(847, 545)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(96, 24)
-        Me.CheckBox1.TabIndex = 21
-        Me.CheckBox1.Text = "Approved"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.ContextMenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditEmployeeToolStripMenuItem, Me.DeleteEmployeeToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(232, 52)
+        '
+        'EditEmployeeToolStripMenuItem
+        '
+        Me.EditEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.edit
+        Me.EditEmployeeToolStripMenuItem.Name = "EditEmployeeToolStripMenuItem"
+        Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(231, 24)
+        Me.EditEmployeeToolStripMenuItem.Text = "Edit Payroll Record"
+        '
+        'DeleteEmployeeToolStripMenuItem
+        '
+        Me.DeleteEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.bin
+        Me.DeleteEmployeeToolStripMenuItem.Name = "DeleteEmployeeToolStripMenuItem"
+        Me.DeleteEmployeeToolStripMenuItem.Size = New System.Drawing.Size(231, 24)
+        Me.DeleteEmployeeToolStripMenuItem.Text = "Delete Payroll Record"
+        '
+        'cb_Approved
+        '
+        Me.cb_Approved.AutoSize = True
+        Me.cb_Approved.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cb_Approved.Location = New System.Drawing.Point(847, 545)
+        Me.cb_Approved.Name = "cb_Approved"
+        Me.cb_Approved.Size = New System.Drawing.Size(96, 24)
+        Me.cb_Approved.TabIndex = 21
+        Me.cb_Approved.Text = "Approved"
+        Me.cb_Approved.UseVisualStyleBackColor = True
         '
         'btn_Cancel
         '
@@ -172,6 +193,7 @@ Partial Class FormPAYROLL_ADD
         Me.txt_payroll_ID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_payroll_ID.Location = New System.Drawing.Point(130, 56)
         Me.txt_payroll_ID.Name = "txt_payroll_ID"
+        Me.txt_payroll_ID.ReadOnly = True
         Me.txt_payroll_ID.Size = New System.Drawing.Size(85, 26)
         Me.txt_payroll_ID.TabIndex = 30
         '
@@ -188,6 +210,7 @@ Partial Class FormPAYROLL_ADD
         Me.txt_TotalgrossPay.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_TotalgrossPay.Location = New System.Drawing.Point(478, 12)
         Me.txt_TotalgrossPay.Name = "txt_TotalgrossPay"
+        Me.txt_TotalgrossPay.ReadOnly = True
         Me.txt_TotalgrossPay.Size = New System.Drawing.Size(99, 26)
         Me.txt_TotalgrossPay.TabIndex = 32
         '
@@ -196,6 +219,7 @@ Partial Class FormPAYROLL_ADD
         Me.txt_TotalnetPay.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_TotalnetPay.Location = New System.Drawing.Point(478, 53)
         Me.txt_TotalnetPay.Name = "txt_TotalnetPay"
+        Me.txt_TotalnetPay.ReadOnly = True
         Me.txt_TotalnetPay.Size = New System.Drawing.Size(99, 26)
         Me.txt_TotalnetPay.TabIndex = 33
         '
@@ -204,6 +228,7 @@ Partial Class FormPAYROLL_ADD
         Me.txt_totalLoansPaid.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_totalLoansPaid.Location = New System.Drawing.Point(770, 56)
         Me.txt_totalLoansPaid.Name = "txt_totalLoansPaid"
+        Me.txt_totalLoansPaid.ReadOnly = True
         Me.txt_totalLoansPaid.Size = New System.Drawing.Size(99, 26)
         Me.txt_totalLoansPaid.TabIndex = 35
         '
@@ -212,6 +237,7 @@ Partial Class FormPAYROLL_ADD
         Me.txt_totalDeductions.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_totalDeductions.Location = New System.Drawing.Point(770, 15)
         Me.txt_totalDeductions.Name = "txt_totalDeductions"
+        Me.txt_totalDeductions.ReadOnly = True
         Me.txt_totalDeductions.Size = New System.Drawing.Size(99, 26)
         Me.txt_totalDeductions.TabIndex = 34
         '
@@ -223,27 +249,6 @@ Partial Class FormPAYROLL_ADD
         Me.dt_payroll.Name = "dt_payroll"
         Me.dt_payroll.Size = New System.Drawing.Size(119, 26)
         Me.dt_payroll.TabIndex = 37
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditEmployeeToolStripMenuItem, Me.DeleteEmployeeToolStripMenuItem})
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(232, 74)
-        '
-        'EditEmployeeToolStripMenuItem
-        '
-        Me.EditEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.edit
-        Me.EditEmployeeToolStripMenuItem.Name = "EditEmployeeToolStripMenuItem"
-        Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(231, 24)
-        Me.EditEmployeeToolStripMenuItem.Text = "Edit Payroll Record"
-        '
-        'DeleteEmployeeToolStripMenuItem
-        '
-        Me.DeleteEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.bin
-        Me.DeleteEmployeeToolStripMenuItem.Name = "DeleteEmployeeToolStripMenuItem"
-        Me.DeleteEmployeeToolStripMenuItem.Size = New System.Drawing.Size(231, 24)
-        Me.DeleteEmployeeToolStripMenuItem.Text = "Delete Payroll Record"
         '
         'ImageList1
         '
@@ -361,7 +366,7 @@ Partial Class FormPAYROLL_ADD
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_Cancel)
         Me.Controls.Add(Me.btn_Save)
-        Me.Controls.Add(Me.CheckBox1)
+        Me.Controls.Add(Me.cb_Approved)
         Me.Controls.Add(Me.lst_payrollRecord)
         Me.Controls.Add(Me.Label2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -382,7 +387,7 @@ Partial Class FormPAYROLL_ADD
     End Sub
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents lst_payrollRecord As System.Windows.Forms.ListView
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents cb_Approved As System.Windows.Forms.CheckBox
     Friend WithEvents btn_Cancel As System.Windows.Forms.Button
     Friend WithEvents btn_Save As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label

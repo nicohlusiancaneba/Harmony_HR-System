@@ -88,8 +88,8 @@ Partial Class FormPAYROLL_PAYEE
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.lst_loanPayment = New System.Windows.Forms.ListView()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.btn_Save = New System.Windows.Forms.Button()
         Me.Label12 = New System.Windows.Forms.Label()
@@ -98,6 +98,10 @@ Partial Class FormPAYROLL_PAYEE
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.txt_EmployeeID = New System.Windows.Forms.TextBox()
+        Me.txt_employeeName = New System.Windows.Forms.TextBox()
+        Me.dt_cutoffEnd = New System.Windows.Forms.DateTimePicker()
+        Me.dt_cutoffStart = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -698,7 +702,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.GroupBox4.Size = New System.Drawing.Size(187, 308)
         Me.GroupBox4.TabIndex = 30
         Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Total"
+        Me.GroupBox4.Text = "Grand Total"
         '
         'txt_grandTotal_Additional
         '
@@ -840,13 +844,6 @@ Partial Class FormPAYROLL_PAYEE
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Loan Payment"
         '
-        'ImageList1
-        '
-        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList1.Images.SetKeyName(0, "plus.png")
-        Me.ImageList1.Images.SetKeyName(1, "add.png")
-        '
         'lst_loanPayment
         '
         Me.lst_loanPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -859,6 +856,13 @@ Partial Class FormPAYROLL_PAYEE
         Me.lst_loanPayment.TabIndex = 17
         Me.lst_loanPayment.UseCompatibleStateImageBehavior = False
         Me.lst_loanPayment.View = System.Windows.Forms.View.Details
+        '
+        'ImageList1
+        '
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "plus.png")
+        Me.ImageList1.Images.SetKeyName(1, "add.png")
         '
         'btn_Cancel
         '
@@ -884,7 +888,7 @@ Partial Class FormPAYROLL_PAYEE
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(350, 7)
+        Me.Label12.Location = New System.Drawing.Point(412, 6)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(141, 60)
         Me.Label12.TabIndex = 35
@@ -895,7 +899,7 @@ Partial Class FormPAYROLL_PAYEE
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(655, 9)
+        Me.Label13.Location = New System.Drawing.Point(715, 9)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(81, 20)
         Me.Label13.TabIndex = 36
@@ -904,9 +908,9 @@ Partial Class FormPAYROLL_PAYEE
         '
         'txt_payroll_employeeRemarks
         '
-        Me.txt_payroll_employeeRemarks.Location = New System.Drawing.Point(743, 9)
+        Me.txt_payroll_employeeRemarks.Location = New System.Drawing.Point(808, 9)
         Me.txt_payroll_employeeRemarks.Name = "txt_payroll_employeeRemarks"
-        Me.txt_payroll_employeeRemarks.Size = New System.Drawing.Size(252, 66)
+        Me.txt_payroll_employeeRemarks.Size = New System.Drawing.Size(187, 66)
         Me.txt_payroll_employeeRemarks.TabIndex = 37
         Me.txt_payroll_employeeRemarks.Text = ""
         '
@@ -934,11 +938,54 @@ Partial Class FormPAYROLL_PAYEE
         Me.ToolStripMenuItem2.Size = New System.Drawing.Size(308, 24)
         Me.ToolStripMenuItem2.Text = "Delete Loan Deduction Payment"
         '
+        'txt_EmployeeID
+        '
+        Me.txt_EmployeeID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_EmployeeID.Location = New System.Drawing.Point(187, 6)
+        Me.txt_EmployeeID.Name = "txt_EmployeeID"
+        Me.txt_EmployeeID.ReadOnly = True
+        Me.txt_EmployeeID.Size = New System.Drawing.Size(78, 26)
+        Me.txt_EmployeeID.TabIndex = 39
+        Me.txt_EmployeeID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_employeeName
+        '
+        Me.txt_employeeName.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_employeeName.Location = New System.Drawing.Point(186, 45)
+        Me.txt_employeeName.Name = "txt_employeeName"
+        Me.txt_employeeName.ReadOnly = True
+        Me.txt_employeeName.Size = New System.Drawing.Size(196, 26)
+        Me.txt_employeeName.TabIndex = 40
+        '
+        'dt_cutoffEnd
+        '
+        Me.dt_cutoffEnd.Enabled = False
+        Me.dt_cutoffEnd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dt_cutoffEnd.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dt_cutoffEnd.Location = New System.Drawing.Point(559, 43)
+        Me.dt_cutoffEnd.Name = "dt_cutoffEnd"
+        Me.dt_cutoffEnd.Size = New System.Drawing.Size(119, 26)
+        Me.dt_cutoffEnd.TabIndex = 42
+        '
+        'dt_cutoffStart
+        '
+        Me.dt_cutoffStart.Enabled = False
+        Me.dt_cutoffStart.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dt_cutoffStart.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dt_cutoffStart.Location = New System.Drawing.Point(559, 6)
+        Me.dt_cutoffStart.Name = "dt_cutoffStart"
+        Me.dt_cutoffStart.Size = New System.Drawing.Size(119, 26)
+        Me.dt_cutoffStart.TabIndex = 43
+        '
         'FormPAYROLL_PAYEE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1010, 608)
+        Me.Controls.Add(Me.dt_cutoffStart)
+        Me.Controls.Add(Me.dt_cutoffEnd)
+        Me.Controls.Add(Me.txt_employeeName)
+        Me.Controls.Add(Me.txt_EmployeeID)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.txt_payroll_employeeRemarks)
         Me.Controls.Add(Me.Label13)
@@ -1051,4 +1098,8 @@ Partial Class FormPAYROLL_PAYEE
     Friend WithEvents EditEmployeeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ContextMenuStrip2 As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents txt_EmployeeID As System.Windows.Forms.TextBox
+    Friend WithEvents txt_employeeName As System.Windows.Forms.TextBox
+    Friend WithEvents dt_cutoffEnd As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dt_cutoffStart As System.Windows.Forms.DateTimePicker
 End Class

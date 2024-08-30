@@ -1,5 +1,6 @@
 ﻿Public Class FormPAYROLL_ADD
     Dim payroll_Id As Integer
+    Dim approved As Boolean
     Private Sub FormPAYROLL_ADD_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txt_payroll_ID.Text = ""
         txt_cutoff.Text = ""
@@ -8,6 +9,8 @@
         txt_totalDeductions.Text = ""
         txt_TotalnetPay.Text = ""
         rtb_remarks.Text = ""
+        approved = False
+
 
         If formOperation = "edit" Then
             payroll_Id = xID1
@@ -24,6 +27,20 @@
             txt_totalLoansPaid.Text = sqlDT.Rows(0)("Total_LoansPaid")
             rtb_remarks.Text = sqlDT.Rows(0)("Payroll_Remarks")
             txt_encodedby.Text = "Encoded by : " & sqlDT.Rows(0)("Encoded_by")
+
+            If sqlDT.Rows(0)("Payroll_Approved").ToString = "Yes" Then
+                approved = True
+            End If
+
+            If approved Then
+                cb_Approved.Checked = True
+                cb_Approved.Enabled = False
+                btn_newPayroll.Enabled = False
+                btn_Save.Enabled = False
+                txt_cutoff.ReadOnly = True
+                rtb_remarks.ReadOnly = True
+                dt_payroll.Enabled = False
+            End If
 
         Else 'ADD
             sqlSTR = "SELECT IDENT_CURRENT('Payroll') + IDENT_INCR('Payroll') AS Payroll_ID"
@@ -72,7 +89,23 @@
                       "VALUES ('" & dt_payroll.Text & "', '" & txt_cutoff.Text & "', '" & txt_TotalgrossPay.Text & "', '" & txt_TotalnetPay.Text & "', '" & txt_totalDeductions.Text & "', '" & txt_totalLoansPaid.Text & "', '" & rtb_remarks.Text & "', '" & xUsername & "')"
             ExecuteSQLQuery(sqlSTR)
         End If
-        MsgBox("Succesfully saved payroll record.", MsgBoxStyle.Information, msgBox_header)
+
+        If cb_Approved.Checked Then
+            If MsgBox("Would you like to approve this payroll record? Please note that once approved, it cannot be modified.", MsgBoxStyle.YesNo + MsgBoxStyle.Critical, msgBox_header) = MsgBoxResult.Yes Then
+                sqlSTR = "Update Payroll set Payroll_Approved='Yes', Approved_by='" & xUsername & "' where Payroll_ID=" & payroll_Id
+                ExecuteSQLQuery(sqlSTR)
+
+                For i = 0 To lst_payrollRecord.Items.Count - 1
+                    sqlSTR = "Update Loan_Payments set Payment_Posted = 'Yes' where Payroll_Detail_ID =" & lst_payrollRecord.FocusedItem.Text
+                    ExecuteSQLQuery(sqlSTR)
+                Next
+            End If
+            MsgBox("Succesfully APPROVED payroll record.", MsgBoxStyle.Information, msgBox_header)
+        Else
+            MsgBox("Succesfully SAVED payroll record.", MsgBoxStyle.Information, msgBox_header)
+        End If
+
+
         Me.Close()
     End Sub
 
@@ -120,5 +153,10 @@
         grp_Payrollpayee.Visible = False
 
         RefreshPayrollDetailList()
+    End Sub
+
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles cb_Approved.CheckedChanged
+
     End Sub
 End Class

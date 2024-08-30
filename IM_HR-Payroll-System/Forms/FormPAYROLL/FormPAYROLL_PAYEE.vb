@@ -4,14 +4,11 @@
         employee_id = xID1
         payroll_id = xID2
 
-        sqlSTR = "select Payroll_Detail_ID from Payroll_Details where Employee_ID =" & employee_id & " and Payroll_id =" & payroll_id
+        sqlSTR = "Select *, CONCAT(Last_Name, ', ', First_Name) as EmployeeName from Employees where Employee_Id =" & employee_id
         ExecuteSQLQuery(sqlSTR)
 
-        payroll_detail_id = sqlDT.Rows(0)("Payroll_Detail_ID")
-
-        sqlSTR = "Select * from Employees where Employee_Id =" & employee_id
-        ExecuteSQLQuery(sqlSTR)
-
+        txt_EmployeeID.Text = sqlDT.Rows(0)("Employee_Id")
+        txt_employeeName.Text = sqlDT.Rows(0)("EmployeeName")
         txt_payRegular.Text = sqlDT.Rows(0)("Current_Daily_Rate")
         txt_paySpecial.Text = sqlDT.Rows(0)("Current_Daily_Rate")
         txt_payField.Text = sqlDT.Rows(0)("Current_Daily_Rate")
@@ -27,15 +24,63 @@
         txt_minusUndertime.Text = Format(Val(sqlDT.Rows(0)("Current_Daily_Rate")) / 8 / 60, "N2")
 
 
-        '//////// LOANS ////////
-        sqlSTR = "select Loans.Loan_ID as 'Loan ID', max(Employee_ID) as 'Employee ID', max(Loan_Date) as 'Loan Date', " & _
-            " max(Loan_Gross_Amount) as 'Loan Gross', max(Loan_Gross_Amount) - sum(case when Payment_Posted = 'Yes' then COALESCE(Gross_Payment, 0) else 0 end) as 'Loan Balance' " & _
-            " from Loans LEFT JOIN Loan_Payments on Loan_Payments.Loan_ID = Loans.Loan_ID" & _
-            " WHERE Loan_Status = 'Active' and Employee_ID=" & employee_id & _
-            " group by Loans.Loan_ID "
-        FillListView(ExecuteSQLQuery(sqlSTR), lst_loans, 0)
-        '///////////////////////
 
+        sqlSTR = "select *, COALESCE(totalSSS, 0) as total_SSS, COALESCE(totalPhilhealth, 0) as total_Philhealth, COALESCE(totalPagIbig, 0) as total_PagIbig, COALESCE(totalTax, 0) as total_Tax from Payroll_Details INNER JOIN Payroll on Payroll.Payroll_ID = Payroll_Details.Payroll_ID " & _
+            " where Employee_ID =" & employee_id & " and Payroll_Details.Payroll_id =" & payroll_id
+        ExecuteSQLQuery(sqlSTR)
+
+        payroll_detail_id = sqlDT.Rows(0)("Payroll_Detail_ID")
+        dt_cutoffStart.Text = sqlDT.Rows(0)("Cutoff_Date_Start")
+        dt_cutoffEnd.Text = sqlDT.Rows(0)("Cutoff_Date_End")
+
+        txt_numRegular.Text = sqlDT.Rows(0)("numRegular")
+        txt_numSpecial.Text = sqlDT.Rows(0)("numSpecial")
+        txt_numField.Text = sqlDT.Rows(0)("numField")
+        txt_numHoliday.Text = sqlDT.Rows(0)("numHoliday")
+        txt_numOvertime.Text = sqlDT.Rows(0)("numOvertime")
+        txt_numNightDiff.Text = sqlDT.Rows(0)("numNight_diff")
+        txt_totalRegular.Text = sqlDT.Rows(0)("totalRegular")
+        txt_totalSpecial.Text = sqlDT.Rows(0)("totalSpecial")
+        txt_totalField.Text = sqlDT.Rows(0)("totalField")
+        txt_totalHoliday.Text = sqlDT.Rows(0)("totalHoliday")
+        txt_totalOvertime.Text = sqlDT.Rows(0)("totalOvertime")
+        txt_totalNightDiff.Text = sqlDT.Rows(0)("totalNight_diff")
+
+        'txt_SSS.Text = sqlDT.Rows(0)("totalSSS")
+        'txt_philhealth.Text = sqlDT.Rows(0)("totalPhilhealth")
+        'txt_pagibig.Text = sqlDT.Rows(0)("totalPagIbig")
+        'txt_tax.Text = sqlDT.Rows(0)("totalTax")
+
+        If CDbl(sqlDT.Rows(0)("total_SSS")) > 0 Then cb_SSS.Checked = True
+        If CDbl(sqlDT.Rows(0)("total_Philhealth")) > 0 Then cb_philhealth.Checked = True
+        If CDbl(sqlDT.Rows(0)("total_PagIbig")) > 0 Then cb_pagibig.Checked = True
+        If CDbl(sqlDT.Rows(0)("total_Tax")) > 0 Then cb_Tax.Checked = True
+
+        txt_insurance.Text = sqlDT.Rows(0)("totalInsurance")
+        txt_charge.Text = sqlDT.Rows(0)("totalCharge")
+        txt_totalLate.Text = sqlDT.Rows(0)("totalLate")
+        txt_totalUndertime.Text = sqlDT.Rows(0)("totalUndertime")
+        txt_minusLate.Text = sqlDT.Rows(0)("minusLate")
+        txt_minusUndertime.Text = sqlDT.Rows(0)("minusUndertime")
+        txt_numLate.Text = sqlDT.Rows(0)("numLate")
+        txt_numUndertime.Text = sqlDT.Rows(0)("numUndertime")
+
+        txt_payAddSpecial.Text = sqlDT.Rows(0)("totalAddSpecial")
+        txt_payAddField.Text = sqlDT.Rows(0)("totalAddField")
+        txt_payAddIncentive.Text = sqlDT.Rows(0)("totalAddIncentive")
+        txt_payAddAllowance.Text = sqlDT.Rows(0)("totalAddAllowance")
+
+        txt_grandTotal_Basic.Text = sqlDT.Rows(0)("grandTotal_Basic")
+        txt_grandTotal_Additional.Text = sqlDT.Rows(0)("grandTotal_Additional")
+        txt_grandTotal_Gross.Text = sqlDT.Rows(0)("grandTotal_Gross")
+        txt_grandTotal_Deduction.Text = sqlDT.Rows(0)("grandTotal_Deduction")
+        txt_grandTotal_Loan.Text = sqlDT.Rows(0)("grandTotal_Loan")
+        txt_grandTotal_Net.Text = sqlDT.Rows(0)("grandTotal_Net")
+        txt_payroll_employeeRemarks.Text = sqlDT.Rows(0)("payroll_employeeRemarks")
+
+        
+        DeductionsCompute()
+        RefreshLoanList()
         RefreshLoanPaymentList()
 
         TextBox_NumberHandler()
@@ -103,9 +148,15 @@
         txt_totalOvertime.Text = Val(txt_payOvertime.Text) * Val(txt_numOvertime.Text)
         txt_totalNightDiff.Text = Val(txt_payNightDiff.Text) * Val(txt_numNightDiff.Text)
 
+        GrandTotalCompute()
+    End Sub
+
+    Private Sub GrandTotalCompute()
         txt_grandTotal_Basic.Text = (Val(txt_totalRegular.Text) + Val(txt_totalSpecial.Text) + Val(txt_totalField.Text) + Val(txt_totalHoliday.Text) + Val(txt_totalOvertime.Text) + Val(txt_totalNightDiff.Text))
         txt_grandTotal_Additional.Text = Val(txt_payAddSpecial.Text) + Val(txt_payAddField.Text) + Val(txt_payAddIncentive.Text) + Val(txt_payAddAllowance.Text)
         txt_grandTotal_Gross.Text = Val(txt_grandTotal_Basic.Text) + Val(txt_grandTotal_Additional.Text)
+
+        txt_grandTotal_Net.Text = Val(txt_grandTotal_Gross.Text) - Val(txt_grandTotal_Deduction.Text) - Val(txt_grandTotal_Loan.Text)
     End Sub
 
     Private Sub DeductionsCompute()
@@ -113,7 +164,8 @@
         txt_totalUndertime.Text = Val(txt_minusUndertime.Text) * Val(txt_numUndertime.Text)
 
 
-        txt_grandTotal_Deduction.Text = Val(txt_totalLate.Text) + Val(txt_totalUndertime.Text) + Val(txt_charge.Text) + Val(txt_insurance.Tag) + Val(txt_philhealth.Tag) + Val(txt_pagibig.Tag) + Val(txt_SSS.Tag) + Val(txt_tax.Tag)
+        txt_grandTotal_Deduction.Text = Val(txt_totalLate.Text) + Val(txt_totalUndertime.Text) + Val(txt_charge.Text) + Val(txt_insurance.Text) + Val(txt_philhealth.Tag) + Val(txt_pagibig.Tag) + Val(txt_SSS.Tag) + Val(txt_tax.Tag)
+        GrandTotalCompute()
     End Sub
 
     Private Sub checkbox_Deductions(chckbox As CheckBox, txtbox As TextBox)
@@ -129,8 +181,24 @@
 
     Private Sub RefreshLoanPaymentList()
         sqlSTR = "select Loan_Payment_ID as ID, Loan_ID as 'Loan ID', Payroll_Detail_ID as 'Payroll Detail ID', Payment_Date as 'Payment Date', " & _
-                "Gross_Payment as 'Payment', Payment_Remarks as Remarks, Payment_Posted as 'Payment Posted' from Loan_Payments where payroll_detail_id=" & payroll_detail_id
+                "Gross_Payment as 'Payment', Payment_Remarks as Remarks from Loan_Payments where payroll_detail_id=" & payroll_detail_id
         FillListView(ExecuteSQLQuery(sqlSTR), lst_loanPayment, 0)
+
+        Dim payment As Double = 0
+        For i As Integer = 0 To lst_loanPayment.Items.Count - 1
+            payment = payment + lst_loanPayment.Items(i).SubItems(4).Text
+        Next i
+        txt_grandTotal_Loan.Text = Val(payment)
+        GrandTotalCompute()
+    End Sub
+
+    Private Sub RefreshLoanList()
+        sqlSTR = "select Loans.Loan_ID as 'Loan ID', max(Employee_ID) as 'Employee ID', max(Loan_Date) as 'Loan Date', " & _
+            " max(Loan_Gross_Amount) as 'Loan Gross', max(Loan_Gross_Amount) - sum(case when Payment_Posted = 'Yes' then COALESCE(Gross_Payment, 0) else 0 end) as 'Loan Balance' " & _
+            " from Loans LEFT JOIN Loan_Payments on Loan_Payments.Loan_ID = Loans.Loan_ID" & _
+            " WHERE Loan_Status = 'Active' and Employee_ID=" & employee_id & _
+            " group by Loans.Loan_ID "
+        FillListView(ExecuteSQLQuery(sqlSTR), lst_loans, 0)
     End Sub
 
     Private Sub txt_charge_TextChanged(sender As Object, e As EventArgs) Handles txt_charge.TextChanged
@@ -191,10 +259,10 @@
 "totalHoliday= '" & txt_totalHoliday.Text & "'," & _
 "totalOvertime= '" & txt_totalOvertime.Text & "'," & _
 "totalNight_diff= '" & txt_totalNightDiff.Text & "'," & _
-"totalSSS= '" & txt_SSS.Text & "'," & _
-"totalPhilhealth= '" & txt_philhealth.Text & "'," & _
-"totalPagIbig= '" & txt_pagibig.Text & "'," & _
-"totalTax= '" & txt_tax.Text & "'," & _
+"totalSSS= '" & txt_SSS.Tag & "'," & _
+"totalPhilhealth= '" & txt_philhealth.Tag & "'," & _
+"totalPagIbig= '" & txt_pagibig.Tag & "'," & _
+"totalTax= '" & txt_tax.Tag & "'," & _
 "totalInsurance= '" & txt_insurance.Text & "'," & _
 "totalCharge= '" & txt_charge.Text & "'," & _
 "totalLate= '" & txt_totalLate.Text & "'," & _
@@ -210,13 +278,14 @@
 "grandTotal_Basic= '" & txt_grandTotal_Basic.Text & "'," & _
 "grandTotal_Additional= '" & txt_grandTotal_Additional.Text & "'," & _
 "grandTotal_Gross= '" & txt_grandTotal_Gross.Text & "'," & _
-"grandTotal_Deductions= '" & txt_grandTotal_Deduction.Text & "'," & _
-"grandTotal_Loans= '" & txt_grandTotal_Loan.Text & "'," & _
+"grandTotal_Deduction= '" & txt_grandTotal_Deduction.Text & "'," & _
+"grandTotal_Loan= '" & txt_grandTotal_Loan.Text & "'," & _
 "grandTotal_Net= '" & txt_grandTotal_Net.Text & "'," & _
-"payroll_employeeRemarks= '" & txt_payroll_employeeRemarks.Text & "'," & _
+"payroll_employeeRemarks= '" & txt_payroll_employeeRemarks.Text & "'" & _
 " WHERE Employee_ID = " & employee_id & " and Payroll_ID = " & payroll_id
         ExecuteSQLQuery(sqlSTR)
         MsgBox("Succesfully saved employee payroll details.", MsgBoxStyle.Information, msgBox_header)
+        Me.Close()
     End Sub
 
 
@@ -224,5 +293,9 @@
     Private Sub EditEmployeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditEmployeeToolStripMenuItem.Click
         ShowForm2(FormLOAN_PAYMENT, "add", lst_loans.FocusedItem.Text, payroll_detail_id)
         RefreshLoanPaymentList()
+    End Sub
+
+    Private Sub txt_insurance_TextChanged(sender As Object, e As EventArgs) Handles txt_insurance.TextChanged
+
     End Sub
 End Class
