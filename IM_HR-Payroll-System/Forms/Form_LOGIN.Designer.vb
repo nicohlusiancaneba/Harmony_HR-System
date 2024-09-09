@@ -114,7 +114,7 @@ Partial Class Form_LOGIN
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.PictureBox1.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.Harmony___Name_2
+        Me.PictureBox1.Image = Global.Harmony.My.Resources.Resources.Harmony___Name_2
         Me.PictureBox1.Location = New System.Drawing.Point(4, 1)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(224, 58)

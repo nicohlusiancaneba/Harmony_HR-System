@@ -40,6 +40,14 @@
                 txt_cutoff.ReadOnly = True
                 rtb_remarks.ReadOnly = True
                 dt_payroll.Enabled = False
+            Else
+                cb_Approved.Checked = False
+                cb_Approved.Enabled = True
+                btn_newPayroll.Enabled = True
+                btn_Save.Enabled = True
+                txt_cutoff.ReadOnly = False
+                rtb_remarks.ReadOnly = False
+                dt_payroll.Enabled = True
             End If
 
         Else 'ADD

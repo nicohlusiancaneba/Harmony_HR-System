@@ -42,11 +42,11 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.txt_taxAmount = New System.Windows.Forms.TextBox()
         Me.txt_SSSshare = New System.Windows.Forms.TextBox()
         Me.txt_philhealthShare = New System.Windows.Forms.TextBox()
         Me.txt_pagIbigShare = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.dt_regularizationDate = New System.Windows.Forms.DateTimePicker()
         Me.dt_hiredDate = New System.Windows.Forms.DateTimePicker()
         Me.cmb_division = New System.Windows.Forms.ComboBox()
@@ -279,17 +279,6 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Contributions / Deductions"
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(6, 16)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(80, 126)
-        Me.Label5.TabIndex = 19
-        Me.Label5.Text = "SSS :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Philhealth :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tax :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "PAG-IBIG :"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'txt_taxAmount
         '
         Me.txt_taxAmount.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -321,6 +310,17 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.txt_pagIbigShare.Name = "txt_pagIbigShare"
         Me.txt_pagIbigShare.Size = New System.Drawing.Size(66, 24)
         Me.txt_pagIbigShare.TabIndex = 22
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(6, 16)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(80, 126)
+        Me.Label5.TabIndex = 19
+        Me.Label5.Text = "SSS :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Philhealth :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Tax :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "PAG-IBIG :"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'dt_regularizationDate
         '
@@ -367,7 +367,7 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.cmb_employmentStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_employmentStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_employmentStatus.FormattingEnabled = True
-        Me.cmb_employmentStatus.Items.AddRange(New Object() {"", "Regular", "Probationary", "Outsource"})
+        Me.cmb_employmentStatus.Items.AddRange(New Object() {"", "Owner", "Regular", "Probationary", "Probationary (Extended)", "Outsource"})
         Me.cmb_employmentStatus.Location = New System.Drawing.Point(181, 52)
         Me.cmb_employmentStatus.Name = "cmb_employmentStatus"
         Me.cmb_employmentStatus.Size = New System.Drawing.Size(121, 28)
@@ -386,6 +386,7 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.txt_monthlySalary.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_monthlySalary.Location = New System.Drawing.Point(181, 333)
         Me.txt_monthlySalary.Name = "txt_monthlySalary"
+        Me.txt_monthlySalary.ReadOnly = True
         Me.txt_monthlySalary.Size = New System.Drawing.Size(86, 26)
         Me.txt_monthlySalary.TabIndex = 22
         '
@@ -502,7 +503,7 @@ Partial Class FormEMPLOYEES_DETAILS
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.employees
+        Me.PictureBox1.Image = Global.Harmony.My.Resources.Resources.employees
         Me.PictureBox1.Location = New System.Drawing.Point(12, 9)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(30, 30)

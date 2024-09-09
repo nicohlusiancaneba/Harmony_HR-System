@@ -55,14 +55,14 @@ Partial Class FormPAYROLL
         '
         'EditEmployeeToolStripMenuItem
         '
-        Me.EditEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.edit
+        Me.EditEmployeeToolStripMenuItem.Image = Global.Harmony.My.Resources.Resources.edit
         Me.EditEmployeeToolStripMenuItem.Name = "EditEmployeeToolStripMenuItem"
         Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
         Me.EditEmployeeToolStripMenuItem.Text = "Edit Payroll"
         '
         'DeleteEmployeeToolStripMenuItem
         '
-        Me.DeleteEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.bin
+        Me.DeleteEmployeeToolStripMenuItem.Image = Global.Harmony.My.Resources.Resources.bin
         Me.DeleteEmployeeToolStripMenuItem.Name = "DeleteEmployeeToolStripMenuItem"
         Me.DeleteEmployeeToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
         Me.DeleteEmployeeToolStripMenuItem.Text = "Delete Payroll"
@@ -122,7 +122,7 @@ Partial Class FormPAYROLL
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.payroll
+        Me.PictureBox1.Image = Global.Harmony.My.Resources.Resources.payroll
         Me.PictureBox1.Location = New System.Drawing.Point(8, 9)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(55, 54)

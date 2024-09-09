@@ -198,7 +198,7 @@ Partial Class MDIMain
         'PictureBox1
         '
         Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PictureBox1.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.Harmony_GIF
+        Me.PictureBox1.Image = Global.Harmony.My.Resources.Resources.Harmony_GIF
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(172, 186)

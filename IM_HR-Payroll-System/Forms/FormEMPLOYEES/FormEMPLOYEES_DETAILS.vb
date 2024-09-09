@@ -6,39 +6,45 @@
             sqlSTR = "select * from employees where Employee_ID=" & employee_id
             ExecuteSQLQuery(sqlSTR)
 
-            txt_IDno.Text = sqlDT.Rows(0)("Employee_ID")
-            txt_lastName.Text = sqlDT.Rows(0)("Last_Name")
-            txt_firstName.Text = sqlDT.Rows(0)("First_Name")
-            txt_middleName.Text = sqlDT.Rows(0)("Middle_Name")
+            txt_IDno.Text = sqlDT.Rows(0)("Employee_ID").ToString
+            txt_lastName.Text = sqlDT.Rows(0)("Last_Name").ToString
+            txt_firstName.Text = sqlDT.Rows(0)("First_Name").ToString
+            txt_middleName.Text = sqlDT.Rows(0)("Middle_Name").ToString
             dt_birthDate.Text = sqlDT.Rows(0)("Date_of_Birth")
-            cmb_gender.Text = sqlDT.Rows(0)("Gender")
+            cmb_gender.Text = sqlDT.Rows(0)("Gender").ToString
             cmb_civilStatus.Text = sqlDT.Rows(0)("Civil_Status").ToString()
-            txt_address.Text = sqlDT.Rows(0)("Address")
-            txt_contactNo.Text = sqlDT.Rows(0)("Contact_No")
-            txt_emergencyContactPerson.Text = sqlDT.Rows(0)("Emergency_Contact_Person")
-            txt_emergencyRelationship.Text = sqlDT.Rows(0)("Emergency_Relationship")
-            txt_emergencyAddress.Text = sqlDT.Rows(0)("Emergency_Address")
-            txt_emergencyContactNo.Text = sqlDT.Rows(0)("Emergency_Contact_No")
-            txt_bankNo.Text = sqlDT.Rows(0)("Payroll_Account_Number")
+            txt_address.Text = sqlDT.Rows(0)("Address").ToString
+            txt_contactNo.Text = sqlDT.Rows(0)("Contact_No").ToString
+            txt_emergencyContactPerson.Text = sqlDT.Rows(0)("Emergency_Contact_Person").ToString
+            txt_emergencyRelationship.Text = sqlDT.Rows(0)("Emergency_Relationship").ToString
+            txt_emergencyAddress.Text = sqlDT.Rows(0)("Emergency_Address").ToString
+            txt_emergencyContactNo.Text = sqlDT.Rows(0)("Emergency_Contact_No").ToString
+            txt_bankNo.Text = sqlDT.Rows(0)("Payroll_Account_Number").ToString
             dt_hiredDate.Text = sqlDT.Rows(0)("Hired_Date")
-            cmb_employmentStatus.Text = sqlDT.Rows(0)("Employment_Status")
+            cmb_employmentStatus.Text = sqlDT.Rows(0)("Employment_Status").ToString
             dt_regularizationDate.Text = sqlDT.Rows(0)("Regularization_Date").ToString
-            txt_jobPosition.Text = sqlDT.Rows(0)("Position")
-            cmb_department.Text = sqlDT.Rows(0)("Department")
-            cmb_division.Text = sqlDT.Rows(0)("Division")
-            txt_startingRate.Text = sqlDT.Rows(0)("Starting_Daily_Rate")
-            txt_currentRate.Text = sqlDT.Rows(0)("Current_Daily_Rate")
-            txt_monthlySalary.Text = sqlDT.Rows(0)("Monthly_Salary")
-            txt_workDaysNo.Text = sqlDT.Rows(0)("No_of_Work_Days_per_Month")
-            txt_SSSno.Text = sqlDT.Rows(0)("SSS_No")
-            txt_PhilhealthNo.Text = sqlDT.Rows(0)("Philhealth_No")
-            txt_TINno.Text = sqlDT.Rows(0)("TIN_No")
-            txt_pagibigNo.Text = sqlDT.Rows(0)("Pag_ibig_No")
+            txt_jobPosition.Text = sqlDT.Rows(0)("Position").ToString
+            cmb_department.Text = sqlDT.Rows(0)("Department").ToString
+            cmb_division.Text = sqlDT.Rows(0)("Division").ToString
+            txt_startingRate.Text = sqlDT.Rows(0)("Starting_Daily_Rate").ToString
+            txt_currentRate.Text = sqlDT.Rows(0)("Current_Daily_Rate").ToString
+            txt_monthlySalary.Text = sqlDT.Rows(0)("Monthly_Salary").ToString
+            txt_workDaysNo.Text = sqlDT.Rows(0)("No_of_Work_Days_per_Month").ToString
+            txt_SSSno.Text = sqlDT.Rows(0)("SSS_No").ToString
+            txt_PhilhealthNo.Text = sqlDT.Rows(0)("Philhealth_No").ToString
+            txt_TINno.Text = sqlDT.Rows(0)("TIN_No").ToString
+            txt_pagibigNo.Text = sqlDT.Rows(0)("Pag_ibig_No").ToString
             txt_SSSshare.Text = sqlDT.Rows(0)("SSS_Share").ToString()
             txt_philhealthShare.Text = sqlDT.Rows(0)("Philhealth_Share").ToString()
             txt_taxAmount.Text = sqlDT.Rows(0)("Tax_Amount").ToString()
             txt_pagIbigShare.Text = sqlDT.Rows(0)("Pag_ibig_Share").ToString()
 
+
+            txt_currentRate.ReadOnly = True
+            'txt_SSSshare.ReadOnly = True
+            'txt_philhealthShare.ReadOnly = True
+            'txt_taxAmount.ReadOnly = True
+            'txt_pagIbigShare.ReadOnly = True
 
         Else 'Add
             txt_IDno.Text = ""
@@ -89,6 +95,10 @@
             dt_regularizationDate.Tag = "null"
         End If
 
+        If txt_IDno.Text = "" Then
+            MsgBox("Employee No. cannot be blank.", MsgBoxStyle.Information, msgBox_header)
+            Exit Sub
+        End If
 
 
         If formOperation = "edit" Then
@@ -187,5 +197,21 @@
             dt_regularizationDate.Enabled = True
             dt_regularizationDate.Text = Today()
         End If
+    End Sub
+
+    Private Sub ComputeMonthlySalary()
+        txt_monthlySalary.Text = Val(txt_currentRate.Text) * Val(txt_workDaysNo.Text)
+    End Sub
+
+    Private Sub txt_currentRate_TextChanged(sender As Object, e As EventArgs) Handles txt_currentRate.TextChanged
+        ComputeMonthlySalary()
+    End Sub
+
+    Private Sub txt_workDaysNo_TextChanged(sender As Object, e As EventArgs) Handles txt_workDaysNo.TextChanged
+        ComputeMonthlySalary()
+    End Sub
+
+    Private Sub txt_emergencyAddress_TextChanged(sender As Object, e As EventArgs) Handles txt_emergencyAddress.TextChanged
+        RemoveCharacters(txt_emergencyAddress, ",")
     End Sub
 End Class

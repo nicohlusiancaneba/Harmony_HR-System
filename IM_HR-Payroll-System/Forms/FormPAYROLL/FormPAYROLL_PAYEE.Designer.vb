@@ -829,7 +829,7 @@ Partial Class FormPAYROLL_PAYEE
         '
         'EditEmployeeToolStripMenuItem
         '
-        Me.EditEmployeeToolStripMenuItem.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.edit
+        Me.EditEmployeeToolStripMenuItem.Image = Global.Harmony.My.Resources.Resources.edit
         Me.EditEmployeeToolStripMenuItem.Name = "EditEmployeeToolStripMenuItem"
         Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(290, 24)
         Me.EditEmployeeToolStripMenuItem.Text = "Add Loan Deduction Payment"
@@ -916,7 +916,7 @@ Partial Class FormPAYROLL_PAYEE
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.payroll
+        Me.PictureBox1.Image = Global.Harmony.My.Resources.Resources.payroll
         Me.PictureBox1.Location = New System.Drawing.Point(12, 9)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(55, 54)
@@ -933,7 +933,7 @@ Partial Class FormPAYROLL_PAYEE
         '
         'ToolStripMenuItem2
         '
-        Me.ToolStripMenuItem2.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.bin
+        Me.ToolStripMenuItem2.Image = Global.Harmony.My.Resources.Resources.bin
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
         Me.ToolStripMenuItem2.Size = New System.Drawing.Size(308, 24)
         Me.ToolStripMenuItem2.Text = "Delete Loan Deduction Payment"

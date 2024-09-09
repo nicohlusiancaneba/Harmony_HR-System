@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.IM_HR_Payroll_System.MDIMain
+            Me.MainForm = Global.Harmony.MDIMain
         End Sub
     End Class
 End Namespace

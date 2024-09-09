@@ -1,5 +1,6 @@
 ﻿Option Explicit On
 Imports System.IO
+Imports System.Text.RegularExpressions
 Module ModProcedure
     Dim xsize As Integer
     Public xID1, xID2 As Integer
@@ -70,6 +71,25 @@ Module ModProcedure
         sqlSTR = " Insert into Audit_Log(Audit_Description, Time_Stamp, Username)" & _
                     " Values ('" & audit_string & "', GETDATE(), '" & xUsername & "')"
         ExecuteSQLQuery(sqlSTR)
+    End Sub
+
+
+    Public Sub OnKeyboardEnter(ByVal control As Control, ByVal action As Action)
+        ' Attach the KeyDown event handler
+        AddHandler control.KeyDown, Sub(sender As Object, e As KeyEventArgs)
+                                        If e.KeyCode = Keys.Enter Then
+                                            e.SuppressKeyPress = True ' To prevent the beep sound on Enter
+                                            action.Invoke() ' Run the passed action
+                                        End If
+                                    End Sub
+    End Sub
+
+    Public Sub RemoveCharacters(ByVal txtBox As TextBox, ByVal charsToRemove As String)
+        ' Create a pattern for the specified characters
+        Dim pattern As String = "[" & Regex.Escape(charsToRemove) & "]"
+
+        ' Use Regex to replace the unwanted characters with an empty string
+        txtBox.Text = Regex.Replace(txtBox.Text, pattern, "")
     End Sub
 
 

@@ -45,7 +45,7 @@ Partial Class FormLOAN_PAYMENT
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.IM_HR_Payroll_System.My.Resources.Resources.loan
+        Me.PictureBox1.Image = Global.Harmony.My.Resources.Resources.loan
         Me.PictureBox1.Location = New System.Drawing.Point(8, 6)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(33, 33)
