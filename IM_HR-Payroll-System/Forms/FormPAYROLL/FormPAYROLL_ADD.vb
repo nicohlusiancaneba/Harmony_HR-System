@@ -40,14 +40,8 @@
                 txt_cutoff.ReadOnly = True
                 rtb_remarks.ReadOnly = True
                 dt_payroll.Enabled = False
-            Else
-                cb_Approved.Checked = False
-                cb_Approved.Enabled = True
-                btn_newPayroll.Enabled = True
-                btn_Save.Enabled = True
-                txt_cutoff.ReadOnly = False
-                rtb_remarks.ReadOnly = False
-                dt_payroll.Enabled = True
+                EditEmployeeToolStripMenuItem.Text = "View Payroll Record"
+                DeleteEmployeeToolStripMenuItem.Enabled = False
             End If
 
         Else 'ADD
@@ -157,10 +151,24 @@
 
     
     Private Sub EditEmployeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditEmployeeToolStripMenuItem.Click
-        ShowForm2(FormPAYROLL_PAYEE, "edit", lst_payrollRecord.FocusedItem.SubItems(1).Text, payroll_Id)
-        grp_Payrollpayee.Visible = False
+        If approved Then
+            ShowForm2(FormPAYROLL_PAYEE, "view", lst_payrollRecord.FocusedItem.SubItems(1).Text, payroll_Id)
+            grp_Payrollpayee.Visible = False
+        Else
+            ShowForm2(FormPAYROLL_PAYEE, "edit", lst_payrollRecord.FocusedItem.SubItems(1).Text, payroll_Id)
+            grp_Payrollpayee.Visible = False
+        End If
+
+
 
         RefreshPayrollDetailList()
+
+
+
+        'ShowForm2(FormPAYROLL_PAYEE, "edit", lst_payrollRecord.FocusedItem.SubItems(1).Text, payroll_Id)
+        'grp_Payrollpayee.Visible = False
+
+        'RefreshPayrollDetailList()
     End Sub
 
 
