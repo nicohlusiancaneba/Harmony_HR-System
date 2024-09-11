@@ -45,7 +45,7 @@
     "WHERE CONCAT(Employee_ID, ' ', Last_Name, ' ', First_Name, ' ', Middle_Name, ' ', Civil_Status, ' ', " & _
     "Gender, ' ', Address, ' ', Contact_No, ' ', Emergency_Contact_Person, ' ',  Employment_Status, ' ', " & _
     "Emergency_Address, ' ', Emergency_Contact_No, ' ', Payroll_Account_Number, ' ', Position, ' ', " & _
-    "Department, ' ', Division, ' ', SSS_No, ' ', Philhealth_No, ' ', TIN_No, ' ', Pag_ibig_No) LIKE '%" & txt_search.Text & "%'"
+    "Department, ' ', Division, ' ', SSS_No, ' ', Philhealth_No, ' ', TIN_No, ' ', Pag_ibig_No) LIKE '%" & txt_search.Text & "%' and Employment_Status like '%" & cmb_employmentStatus.Text & "%'"
         FillListView(ExecuteSQLQuery(sqlSTR), lst_employees, 0)
     End Sub
 
@@ -63,7 +63,26 @@
         End If
     End Sub
 
-    Private Sub txt_search_TextChanged(sender As Object, e As EventArgs) Handles txt_search.TextChanged
+
+
+
+    Private Sub cmb_employmentStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_employmentStatus.SelectedIndexChanged
         SearchEmployeeList()
+    End Sub
+
+    Private Sub btn_searchSubmit_Click(sender As Object, e As EventArgs) Handles btn_searchSubmit.Click
+        SearchEmployeeList()
+
+        searchBox.Visible = False
+    End Sub
+
+    Private Sub btn_searchCancel_Click(sender As Object, e As EventArgs) Handles btn_searchCancel.Click
+        searchBox.Visible = False
+    End Sub
+
+    Private Sub btn_searchEmployee_Click(sender As Object, e As EventArgs) Handles btn_searchEmployee.Click
+        searchBox.Visible = True
+        txt_search.Text = ""
+        CenterGroupBoxRelativeToListView(searchBox, lst_employees)
     End Sub
 End Class

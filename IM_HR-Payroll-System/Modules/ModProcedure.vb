@@ -359,6 +359,65 @@ Module ModProcedure
     '            Return ""
     '        End If
     '    End Function
+    Public Sub TextChangeDelay(textBox As TextBox, functionName As Action(Of String), interval As Integer)
+        ' Create a new instance of the DelayedTextChangedHandler class
+        Dim handler As New DelayedTextChangedHandler(textBox, interval, functionName)
+    End Sub
 
+    Public Sub CenterGroupBoxRelativeToListView(groupBox As GroupBox, listView As ListView)
+        ' Get the center of the ListView
+        Dim listViewCenterX As Integer = listView.Left + (listView.Width \ 2)
+        Dim listViewCenterY As Integer = listView.Top + (listView.Height \ 2)
+
+        ' Calculate the new location for the GroupBox so it is centered relative to the ListView
+        Dim newGroupBoxX As Integer = listViewCenterX - (groupBox.Width \ 2)
+        Dim newGroupBoxY As Integer = listViewCenterY - (groupBox.Height \ 2)
+
+        ' Set the new location of the GroupBox
+        groupBox.Location = New Point(newGroupBoxX, newGroupBoxY)
+    End Sub
 
 End Module
+
+Public Class DelayedTextChangedHandler
+    Private ReadOnly _timer As Timer
+    Private ReadOnly _textBox As TextBox
+    Private ReadOnly _onDelayedTextChanged As Action(Of String)
+
+    ' Constructor to initialize the handler with the TextBox, interval, and the callback function
+    Public Sub New(textBox As TextBox, interval As Integer, onDelayedTextChanged As Action(Of String))
+        _textBox = textBox
+        _onDelayedTextChanged = onDelayedTextChanged
+
+        ' Create and configure the timer
+        _timer = New Timer()
+        _timer.Interval = interval
+        AddHandler _timer.Tick, AddressOf TimerTick
+
+        ' Subscribe to the TextChanged event of the TextBox
+        AddHandler _textBox.TextChanged, AddressOf OnTextChanged
+    End Sub
+
+    ' TextChanged event handler for the TextBox
+    Private Sub OnTextChanged(sender As Object, e As EventArgs)
+        ' Restart the timer whenever text changes
+        _timer.Stop()
+        _timer.Start()
+    End Sub
+
+    ' Timer tick event that fires after the delay
+    Private Sub TimerTick(sender As Object, e As EventArgs)
+        ' Stop the timer and invoke the callback function with the current text
+        _timer.Stop()
+        _onDelayedTextChanged.Invoke(_textBox.Text)
+    End Sub
+
+    ' Dispose of the timer and unsubscribe from events when done
+    Public Sub Dispose()
+        RemoveHandler _textBox.TextChanged, AddressOf OnTextChanged
+        RemoveHandler _timer.Tick, AddressOf TimerTick
+        _timer.Dispose()
+    End Sub
+
+    
+End Class
