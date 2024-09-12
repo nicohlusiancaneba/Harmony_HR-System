@@ -71,4 +71,13 @@
     Private Sub LogoutToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
     End Sub
+
+    Private Sub btn_logout_Click(sender As Object, e As EventArgs) Handles btn_logout.Click
+        For Each frm As Form In Application.OpenForms.Cast(Of Form).ToList()
+            If Not frm Is Me Then
+                frm.Close()
+            End If
+        Next
+        Form_LOGIN.ShowDialog()
+    End Sub
 End Class

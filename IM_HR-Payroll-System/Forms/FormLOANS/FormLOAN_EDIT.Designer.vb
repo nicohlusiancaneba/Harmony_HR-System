@@ -38,6 +38,7 @@ Partial Class FormLOAN_EDIT
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PostPaymentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_cancel = New System.Windows.Forms.Button()
         Me.btn_save = New System.Windows.Forms.Button()
         Me.txt_balanceAmount = New System.Windows.Forms.TextBox()
@@ -52,7 +53,6 @@ Partial Class FormLOAN_EDIT
         Me.txt_employees = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txt_suggestedDeduction = New System.Windows.Forms.TextBox()
-        Me.PostPaymentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -175,7 +175,7 @@ Partial Class FormLOAN_EDIT
         Me.ContextMenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditEmployeeToolStripMenuItem, Me.DeleteEmployeeToolStripMenuItem, Me.PostPaymentToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(177, 98)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(177, 76)
         '
         'EditEmployeeToolStripMenuItem
         '
@@ -190,6 +190,13 @@ Partial Class FormLOAN_EDIT
         Me.DeleteEmployeeToolStripMenuItem.Name = "DeleteEmployeeToolStripMenuItem"
         Me.DeleteEmployeeToolStripMenuItem.Size = New System.Drawing.Size(176, 24)
         Me.DeleteEmployeeToolStripMenuItem.Text = "Delete Loan"
+        '
+        'PostPaymentToolStripMenuItem
+        '
+        Me.PostPaymentToolStripMenuItem.Image = Global.Harmony.My.Resources.Resources.upload
+        Me.PostPaymentToolStripMenuItem.Name = "PostPaymentToolStripMenuItem"
+        Me.PostPaymentToolStripMenuItem.Size = New System.Drawing.Size(176, 24)
+        Me.PostPaymentToolStripMenuItem.Text = "Post Payment"
         '
         'btn_cancel
         '
@@ -336,12 +343,6 @@ Partial Class FormLOAN_EDIT
         Me.txt_suggestedDeduction.Size = New System.Drawing.Size(100, 26)
         Me.txt_suggestedDeduction.TabIndex = 145
         Me.txt_suggestedDeduction.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'PostPaymentToolStripMenuItem
-        '
-        Me.PostPaymentToolStripMenuItem.Name = "PostPaymentToolStripMenuItem"
-        Me.PostPaymentToolStripMenuItem.Size = New System.Drawing.Size(176, 24)
-        Me.PostPaymentToolStripMenuItem.Text = "Post Payment"
         '
         'FormLOAN_EDIT
         '

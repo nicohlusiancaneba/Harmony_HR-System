@@ -125,7 +125,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAA+
-        FAEAAk1TRnQBSQFMAgEBCwEAATABAAEwAQABKAEAASgBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAGg
+        FAEAAk1TRnQBSQFMAgEBCwEAATgBAAE4AQABKAEAASgBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAGg
         AwABeAMAAQEBAAEYBgAB4a4AA/4C+AH5AvsB/E4AAvIB9AGbAZQBpwGIAWQBagGHAWQBbAGeAZoBrAL1
         AfYbAALMAdcBhAFjAWoBhgFdAWABhgFdAWABhgFdAWABhgFdAWABhAFjAWoCywHW/wA8AAP/Au0B8AG7
         AboBxgGaAYcBhQGrAYQBZQGcAXoBZwGuAakBtAP7RQAC8gH0AYMBYwFqAfkBlwFWAf8BmgFVAf8BmgFV
@@ -1306,9 +1306,6 @@
         AYcBwwHwBv8DAAEHA/8B/gEPAv8BhwHjAfEG/wMAAQcQ/wGAAgABHwH/Cw==
 </value>
   </data>
-  <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
-  </metadata>
   <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>132, 17</value>
   </metadata>

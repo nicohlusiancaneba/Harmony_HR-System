@@ -37,6 +37,11 @@
     End Sub
 
     Private Sub cmb_dbname_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_dbname.SelectedIndexChanged
-
+        If cmb_dbname.Text = "BCVR-HR" Then
+            txtip.Text = "bcvr.ph"
+            txtservername.Text = "bcvr.ph, 1433"
+            txtusername.Text = "bcvr"
+            txtpassword.Text = "ButCha!142630!"
+        End If
     End Sub
 End Class

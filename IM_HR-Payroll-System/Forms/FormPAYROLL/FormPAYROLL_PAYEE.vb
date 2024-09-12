@@ -20,10 +20,10 @@
         txt_payOvertime.Text = Format(Val(sqlDT.Rows(0)("Current_Daily_Rate")) / 8 / 60, "N2")
         txt_payNightDiff.Text = Format(((Val(sqlDT.Rows(0)("Current_Daily_Rate")) / 8) * 0.1) / 60, "N2")
 
-        txt_philhealth.Text = sqlDT.Rows(0)("Philhealth_Share")
-        txt_pagibig.Text = sqlDT.Rows(0)("Pag_ibig_Share")
-        txt_SSS.Text = sqlDT.Rows(0)("SSS_Share")
-        txt_tax.Text = sqlDT.Rows(0)("Tax_Amount")
+        txt_philhealth.Text = sqlDT.Rows(0)("Philhealth_Share").ToString
+        txt_pagibig.Text = sqlDT.Rows(0)("Pag_ibig_Share").ToString
+        txt_SSS.Text = sqlDT.Rows(0)("SSS_Share").ToString
+        txt_tax.Text = sqlDT.Rows(0)("Tax_Amount").ToString
         txt_minusLate.Text = Format(Val(sqlDT.Rows(0)("Current_Daily_Rate")) / 8 / 60, "N2")
         txt_minusUndertime.Text = Format(Val(sqlDT.Rows(0)("Current_Daily_Rate")) / 8 / 60, "N2")
 
@@ -37,50 +37,48 @@
         dt_cutoffStart.Text = sqlDT.Rows(0)("Cutoff_Date_Start")
         dt_cutoffEnd.Text = sqlDT.Rows(0)("Cutoff_Date_End")
 
-        txt_numRegular.Text = sqlDT.Rows(0)("numRegular")
-        txt_numSpecial.Text = sqlDT.Rows(0)("numSpecial")
-        txt_numField.Text = sqlDT.Rows(0)("numField")
-        txt_numHoliday.Text = sqlDT.Rows(0)("numHoliday")
-        txt_numOvertime.Text = sqlDT.Rows(0)("numOvertime")
-        txt_numNightDiff.Text = sqlDT.Rows(0)("numNight_diff")
-        txt_totalRegular.Text = sqlDT.Rows(0)("totalRegular")
-        txt_totalSpecial.Text = sqlDT.Rows(0)("totalSpecial")
-        txt_totalField.Text = sqlDT.Rows(0)("totalField")
-        txt_totalHoliday.Text = sqlDT.Rows(0)("totalHoliday")
-        txt_totalOvertime.Text = sqlDT.Rows(0)("totalOvertime")
-        txt_totalNightDiff.Text = sqlDT.Rows(0)("totalNight_diff")
+        txt_numRegular.Text = sqlDT.Rows(0)("numRegular").ToString
+        txt_numSpecial.Text = sqlDT.Rows(0)("numSpecial").ToString
+        txt_numField.Text = sqlDT.Rows(0)("numField").ToString
+        txt_numHoliday.Text = sqlDT.Rows(0)("numHoliday").ToString
+        txt_numOvertime.Text = sqlDT.Rows(0)("numOvertime").ToString
+        txt_numNightDiff.Text = sqlDT.Rows(0)("numNight_diff").ToString
+        txt_totalRegular.Text = sqlDT.Rows(0)("totalRegular").ToString
+        txt_totalSpecial.Text = sqlDT.Rows(0)("totalSpecial").ToString
+        txt_totalField.Text = sqlDT.Rows(0)("totalField").ToString
+        txt_totalHoliday.Text = sqlDT.Rows(0)("totalHoliday").ToString
+        txt_totalOvertime.Text = sqlDT.Rows(0)("totalOvertime").ToString
+        txt_totalNightDiff.Text = sqlDT.Rows(0)("totalNight_diff").ToString
 
         'txt_SSS.Text = sqlDT.Rows(0)("totalSSS")
         'txt_philhealth.Text = sqlDT.Rows(0)("totalPhilhealth")
         'txt_pagibig.Text = sqlDT.Rows(0)("totalPagIbig")
         'txt_tax.Text = sqlDT.Rows(0)("totalTax")
 
-        If CDbl(sqlDT.Rows(0)("total_SSS")) > 0 Then cb_SSS.Checked = True
-        If CDbl(sqlDT.Rows(0)("total_Philhealth")) > 0 Then cb_philhealth.Checked = True
-        If CDbl(sqlDT.Rows(0)("total_PagIbig")) > 0 Then cb_pagibig.Checked = True
-        If CDbl(sqlDT.Rows(0)("total_Tax")) > 0 Then cb_Tax.Checked = True
+        If CDbl(sqlDT.Rows(0)("total_SSS").ToString) > 0 Then cb_SSS.Checked = True
+        If CDbl(sqlDT.Rows(0)("total_Philhealth").ToString) > 0 Then cb_philhealth.Checked = True
+        If CDbl(sqlDT.Rows(0)("total_PagIbig").ToString) > 0 Then cb_pagibig.Checked = True
+        If CDbl(sqlDT.Rows(0)("total_Tax").ToString) > 0 Then cb_Tax.Checked = True
 
-        txt_insurance.Text = sqlDT.Rows(0)("totalInsurance")
-        txt_charge.Text = sqlDT.Rows(0)("totalCharge")
-        txt_totalLate.Text = sqlDT.Rows(0)("totalLate")
-        txt_totalUndertime.Text = sqlDT.Rows(0)("totalUndertime")
-        txt_minusLate.Text = sqlDT.Rows(0)("minusLate")
-        txt_minusUndertime.Text = sqlDT.Rows(0)("minusUndertime")
-        txt_numLate.Text = sqlDT.Rows(0)("numLate")
-        txt_numUndertime.Text = sqlDT.Rows(0)("numUndertime")
+        txt_insurance.Text = sqlDT.Rows(0)("totalInsurance").ToString
+        txt_charge.Text = sqlDT.Rows(0)("totalCharge").ToString
+        txt_totalLate.Text = sqlDT.Rows(0)("totalLate").ToString
+        txt_totalUndertime.Text = sqlDT.Rows(0)("totalUndertime").ToString
+        txt_numLate.Text = sqlDT.Rows(0)("numLate").ToString
+        txt_numUndertime.Text = sqlDT.Rows(0)("numUndertime").ToString
 
-        txt_payAddSpecial.Text = sqlDT.Rows(0)("totalAddSpecial")
-        txt_payAddField.Text = sqlDT.Rows(0)("totalAddField")
-        txt_payAddIncentive.Text = sqlDT.Rows(0)("totalAddIncentive")
-        txt_payAddAllowance.Text = sqlDT.Rows(0)("totalAddAllowance")
+        txt_payAddSpecial.Text = sqlDT.Rows(0)("totalAddSpecial").ToString
+        txt_payAddField.Text = sqlDT.Rows(0)("totalAddField").ToString
+        txt_payAddIncentive.Text = sqlDT.Rows(0)("totalAddIncentive").ToString
+        txt_payAddAllowance.Text = sqlDT.Rows(0)("totalAddAllowance").ToString
 
-        txt_grandTotal_Basic.Text = sqlDT.Rows(0)("grandTotal_Basic")
-        txt_grandTotal_Additional.Text = sqlDT.Rows(0)("grandTotal_Additional")
-        txt_grandTotal_Gross.Text = sqlDT.Rows(0)("grandTotal_Gross")
-        txt_grandTotal_Deduction.Text = sqlDT.Rows(0)("grandTotal_Deduction")
-        txt_grandTotal_Loan.Text = sqlDT.Rows(0)("grandTotal_Loan")
-        txt_grandTotal_Net.Text = sqlDT.Rows(0)("grandTotal_Net")
-        txt_payroll_employeeRemarks.Text = sqlDT.Rows(0)("payroll_employeeRemarks")
+        txt_grandTotal_Basic.Text = sqlDT.Rows(0)("grandTotal_Basic").ToString
+        txt_grandTotal_Additional.Text = sqlDT.Rows(0)("grandTotal_Additional").ToString
+        txt_grandTotal_Gross.Text = sqlDT.Rows(0)("grandTotal_Gross").ToString
+        txt_grandTotal_Deduction.Text = sqlDT.Rows(0)("grandTotal_Deduction").ToString
+        txt_grandTotal_Loan.Text = sqlDT.Rows(0)("grandTotal_Loan").ToString
+        txt_grandTotal_Net.Text = sqlDT.Rows(0)("grandTotal_Net").ToString
+        txt_payroll_employeeRemarks.Text = sqlDT.Rows(0)("payroll_employeeRemarks").ToString
 
 
         DeductionsCompute()
@@ -197,7 +195,7 @@
     End Sub
 
     Private Sub RefreshLoanList()
-        sqlSTR = "select Loans.Loan_ID as 'Loan ID', max(Employee_ID) as 'Employee ID', max(Loan_Date) as 'Loan Date', " & _
+        sqlSTR = "select Loans.Loan_ID as 'Loan ID', max(Employee_ID) as 'Employee ID', max(Loan_Date) as 'Loan Date', max(Suggested_PayPerCutoff) as 'Suggested Payment', " & _
             " max(Loan_Gross_Amount) as 'Loan Gross', max(Loan_Gross_Amount) - sum(case when Payment_Posted = 'Yes' then COALESCE(Gross_Payment, 0) else 0 end) as 'Loan Balance' " & _
             " from Loans LEFT JOIN Loan_Payments on Loan_Payments.Loan_ID = Loans.Loan_ID" & _
             " WHERE Loan_Status = 'Active' and Employee_ID=" & employee_id & _
@@ -301,5 +299,27 @@
 
     Private Sub txt_insurance_TextChanged(sender As Object, e As EventArgs) Handles txt_insurance.TextChanged
 
+    End Sub
+
+
+
+    Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
+        Me.Close()
+    End Sub
+
+
+    Private Sub DeleteLoan_Click(sender As Object, e As EventArgs) Handles DeleteLoan.Click
+        If MsgBox("Do you want to delete this loan payment record?", MsgBoxStyle.YesNo + MsgBoxStyle.Critical, msgBox_header) = MsgBoxResult.Yes Then
+            sqlSTR = "Delete from Loan_Payments where Loan_Payment_ID =" & lst_loanPayment.FocusedItem.Text
+            ExecuteSQLQuery(sqlSTR)
+
+            MsgBox("Deleted loan payment record.", MsgBoxStyle.Information, msgBox_header)
+        End If
+        RefreshLoanPaymentList()
+    End Sub
+
+    Private Sub EditLoan_Click(sender As Object, e As EventArgs) Handles EditLoan.Click
+        ShowForm2(FormLOAN_PAYMENT, "edit", lst_loanPayment.FocusedItem.Text, payroll_detail_id)
+        RefreshLoanPaymentList()
     End Sub
 End Class

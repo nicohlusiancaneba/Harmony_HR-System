@@ -38,7 +38,6 @@ Partial Class FormPAYROLL_ADD
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txt_encodedby = New System.Windows.Forms.Label()
         Me.txt_payroll_ID = New System.Windows.Forms.TextBox()
-        Me.txt_cutoff = New System.Windows.Forms.TextBox()
         Me.txt_TotalgrossPay = New System.Windows.Forms.TextBox()
         Me.txt_TotalnetPay = New System.Windows.Forms.TextBox()
         Me.txt_totalLoansPaid = New System.Windows.Forms.TextBox()
@@ -53,6 +52,9 @@ Partial Class FormPAYROLL_ADD
         Me.btn_submit = New System.Windows.Forms.Button()
         Me.cmb_employees = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.dt_cutoffStart = New System.Windows.Forms.DateTimePicker()
+        Me.dt_cutoffEnd = New System.Windows.Forms.DateTimePicker()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grp_Payrollpayee.SuspendLayout()
@@ -197,14 +199,6 @@ Partial Class FormPAYROLL_ADD
         Me.txt_payroll_ID.Size = New System.Drawing.Size(85, 26)
         Me.txt_payroll_ID.TabIndex = 30
         '
-        'txt_cutoff
-        '
-        Me.txt_cutoff.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_cutoff.Location = New System.Drawing.Point(130, 97)
-        Me.txt_cutoff.Name = "txt_cutoff"
-        Me.txt_cutoff.Size = New System.Drawing.Size(186, 26)
-        Me.txt_cutoff.TabIndex = 31
-        '
         'txt_TotalgrossPay
         '
         Me.txt_TotalgrossPay.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -343,11 +337,43 @@ Partial Class FormPAYROLL_ADD
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Select :"
         '
+        'dt_cutoffStart
+        '
+        Me.dt_cutoffStart.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dt_cutoffStart.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dt_cutoffStart.Location = New System.Drawing.Point(130, 93)
+        Me.dt_cutoffStart.Name = "dt_cutoffStart"
+        Me.dt_cutoffStart.Size = New System.Drawing.Size(119, 26)
+        Me.dt_cutoffStart.TabIndex = 42
+        '
+        'dt_cutoffEnd
+        '
+        Me.dt_cutoffEnd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dt_cutoffEnd.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dt_cutoffEnd.Location = New System.Drawing.Point(264, 93)
+        Me.dt_cutoffEnd.Name = "dt_cutoffEnd"
+        Me.dt_cutoffEnd.Size = New System.Drawing.Size(119, 26)
+        Me.dt_cutoffEnd.TabIndex = 43
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(249, 95)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(14, 20)
+        Me.Label7.TabIndex = 44
+        Me.Label7.Text = "-"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
         'FormPAYROLL_ADD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1119, 585)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.dt_cutoffEnd)
+        Me.Controls.Add(Me.dt_cutoffStart)
         Me.Controls.Add(Me.grp_Payrollpayee)
         Me.Controls.Add(Me.rtb_remarks)
         Me.Controls.Add(Me.btn_newPayroll)
@@ -356,7 +382,6 @@ Partial Class FormPAYROLL_ADD
         Me.Controls.Add(Me.txt_totalDeductions)
         Me.Controls.Add(Me.txt_TotalnetPay)
         Me.Controls.Add(Me.txt_TotalgrossPay)
-        Me.Controls.Add(Me.txt_cutoff)
         Me.Controls.Add(Me.txt_payroll_ID)
         Me.Controls.Add(Me.txt_encodedby)
         Me.Controls.Add(Me.Label6)
@@ -397,7 +422,6 @@ Partial Class FormPAYROLL_ADD
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents txt_encodedby As System.Windows.Forms.Label
     Friend WithEvents txt_payroll_ID As System.Windows.Forms.TextBox
-    Friend WithEvents txt_cutoff As System.Windows.Forms.TextBox
     Friend WithEvents txt_TotalgrossPay As System.Windows.Forms.TextBox
     Friend WithEvents txt_TotalnetPay As System.Windows.Forms.TextBox
     Friend WithEvents txt_totalLoansPaid As System.Windows.Forms.TextBox
@@ -414,4 +438,7 @@ Partial Class FormPAYROLL_ADD
     Friend WithEvents btn_submit As System.Windows.Forms.Button
     Friend WithEvents cmb_employees As System.Windows.Forms.ComboBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents dt_cutoffStart As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dt_cutoffEnd As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

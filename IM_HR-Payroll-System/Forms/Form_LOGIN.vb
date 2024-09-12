@@ -1,6 +1,9 @@
 ﻿Public Class Form_LOGIN
 
     Private Sub Form_LOGIN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        txtuser.Text = ""
+        txtuser.Select()
+        txtpassword.Text = ""
         OnKeyboardEnter(txtuser, AddressOf Login)
         OnKeyboardEnter(txtpassword, AddressOf Login)
     End Sub

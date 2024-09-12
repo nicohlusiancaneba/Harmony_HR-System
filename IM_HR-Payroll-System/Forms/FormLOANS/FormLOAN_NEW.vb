@@ -7,7 +7,7 @@
 
     Private Sub btn_submit_Click(sender As Object, e As EventArgs) Handles btn_submit.Click
         sqlSTR = "INSERT INTO Loans (Loan_Date, Employee_ID, Loan_Net_Amount, Loan_Interest_Rate, Loan_Gross_Amount, Loan_Payment_Start_Date, Loan_Payment_End_Date, Loan_Type, Suggested_PayPerCutoff, Loan_Reason, Loan_Remarks, Loan_Status) VALUES (" & _
-                            "format(GETDATE(), 'mm/dd/yyyy'), '" & _
+                            "'" & DateTime.Now.ToString("MM/dd/yyyy") & "', '" & _
                              Split(cmb_employees.Text, " - ")(0) & "', '" & _
                              txt_netAmount.Text & "', '" & _
                              txt_interestRate.Text & "', '" & _
@@ -18,6 +18,7 @@
                              txt_suggestedDeduction.Text & "', '" & _
                              txt_loanReason.Text & "', '" & _
                              txt_loanRemarks.Text & "', 'Active')"
+
         ExecuteSQLQuery(sqlSTR)
         Me.Close()
     End Sub

@@ -40,7 +40,7 @@
             txt_pagIbigShare.Text = sqlDT.Rows(0)("Pag_ibig_Share").ToString()
 
 
-            txt_currentRate.ReadOnly = True
+            'txt_currentRate.ReadOnly = True
             'txt_SSSshare.ReadOnly = True
             'txt_philhealthShare.ReadOnly = True
             'txt_taxAmount.ReadOnly = True

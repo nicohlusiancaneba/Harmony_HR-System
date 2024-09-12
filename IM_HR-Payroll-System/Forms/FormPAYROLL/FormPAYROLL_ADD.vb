@@ -3,7 +3,6 @@
     Dim approved As Boolean
     Private Sub FormPAYROLL_ADD_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txt_payroll_ID.Text = ""
-        txt_cutoff.Text = ""
         txt_TotalgrossPay.Text = ""
         txt_totalLoansPaid.Text = ""
         txt_totalDeductions.Text = ""
@@ -20,7 +19,6 @@
             ExecuteSQLQuery(sqlSTR)
 
             dt_payroll.Text = sqlDT.Rows(0)("Payroll_Date")
-            txt_cutoff.Text = sqlDT.Rows(0)("Cutoff_Period")
             txt_TotalgrossPay.Text = sqlDT.Rows(0)("Total_GrossPay")
             txt_TotalnetPay.Text = sqlDT.Rows(0)("Total_NetPay")
             txt_totalDeductions.Text = sqlDT.Rows(0)("Total_Deductions")
@@ -37,11 +35,14 @@
                 cb_Approved.Enabled = False
                 btn_newPayroll.Enabled = False
                 btn_Save.Enabled = False
-                txt_cutoff.ReadOnly = True
+                dt_cutoffStart.Enabled = False
+                dt_cutoffEnd.Enabled = False
                 rtb_remarks.ReadOnly = True
                 dt_payroll.Enabled = False
                 EditEmployeeToolStripMenuItem.Text = "View Payroll Record"
                 DeleteEmployeeToolStripMenuItem.Enabled = False
+            Else
+                cb_Approved.Checked = False
             End If
 
         Else 'ADD
@@ -56,10 +57,22 @@
     End Sub
 
     Private Sub RefreshPayrollDetailList()
-        sqlSTR = "Select Payroll_Detail_ID as ID, Payroll_Details.Employee_ID as 'Employee ID', CONCAT(Last_Name, ', ', First_Name) as 'Employee', grandTotal_Basic as 'Total Basic Pay', grandTotal_Additional as 'Total Additional Pay', " & _
-                "grandTotal_Gross as 'Total Gross', grandTotal_Deduction as 'Total Deduction', grandTotal_Loan as 'Total Loan Payment', grandTotal_Net as 'Total Net' " & _
-                "from Payroll_Details INNER JOIN Employees on Employees.Employee_ID = Payroll_Details.Employee_ID where Payroll_ID = " & payroll_Id
+        Dim net, gross, loan, deduction As Double
+        sqlSTR = "Select Payroll_Detail_ID as ID, Payroll_Details.Employee_ID as 'Employee ID', CONCAT(Last_Name, ', ', First_Name) as 'Employee', FORMAT(grandTotal_Basic, 'N2') AS 'Total Basic Pay', FORMAT(grandTotal_Additional, 'N2') AS 'Total Additional Pay', FORMAT(grandTotal_Gross, 'N2') AS 'Total Gross', " & _
+                "FORMAT(grandTotal_Deduction, 'N2') AS 'Total Deduction', FORMAT(grandTotal_Loan, 'N2') AS 'Total Loan Payment', FORMAT(grandTotal_Net, 'N2') AS 'Total Net' " & _
+                "from Payroll_Details INNER JOIN Employees on Employees.Employee_ID = Payroll_Details.Employee_ID where Payroll_ID = " & payroll_Id & " order by Payroll_Details.Employee_ID"
         FillListView(ExecuteSQLQuery(sqlSTR), lst_payrollRecord, 0)
+
+        For i = 0 To lst_payrollRecord.Items.Count - 1
+            gross = gross + CDbl(lst_payrollRecord.Items(i).SubItems(5).Text)
+            deduction = deduction + CDbl(lst_payrollRecord.Items(i).SubItems(6).Text)
+            loan = loan + CDbl(lst_payrollRecord.Items(i).SubItems(7).Text)
+            Net = Net + CDbl(lst_payrollRecord.Items(i).SubItems(8).Text)
+        Next
+        txt_TotalgrossPay.Text = Format(gross, "N2")
+        txt_totalDeductions.Text = Format(deduction, "N2")
+        txt_totalLoansPaid.Text = Format(loan, "N2")
+        txt_TotalnetPay.Text = Format(Net, "N2")
     End Sub
 
 
@@ -67,11 +80,14 @@
         Me.Close()
     End Sub
 
+
+
     Private Sub btn_Save_Click(sender As Object, e As EventArgs) Handles btn_Save.Click
         If formOperation = "edit" Then
             sqlSTR = "UPDATE Payroll SET " &
                        "Payroll_Date = '" & dt_payroll.Text & "', " &
-                       "Cutoff_Period = '" & txt_cutoff.Text & "', " &
+                       "Cutoff_Date_Start = '" & dt_cutoffStart.Text & "', " &
+                       "Cutoff_Date_End = '" & dt_cutoffEnd.Text & "', " &
                        "Total_GrossPay = '" & txt_TotalgrossPay.Text & "', " &
                        "Total_NetPay = '" & txt_TotalnetPay.Text & "', " &
                        "Total_Deductions = '" & txt_totalDeductions.Text & "', " &
@@ -87,13 +103,13 @@
 
 
         Else 'Add
-            sqlSTR = "INSERT INTO Payroll (Payroll_Date, Cutoff_Period, Total_GrossPay, Total_NetPay, Total_Deductions, Total_LoansPaid, Payroll_Remarks, Encoded_by,) " &
-                      "VALUES ('" & dt_payroll.Text & "', '" & txt_cutoff.Text & "', '" & txt_TotalgrossPay.Text & "', '" & txt_TotalnetPay.Text & "', '" & txt_totalDeductions.Text & "', '" & txt_totalLoansPaid.Text & "', '" & rtb_remarks.Text & "', '" & xUsername & "')"
+            sqlSTR = "INSERT INTO Payroll (Payroll_Date, Cutoff_Date_Start, Cutoff_Date_End, Total_GrossPay, Total_NetPay, Total_Deductions, Total_LoansPaid, Payroll_Remarks, Encoded_by) " &
+                      "VALUES ('" & dt_payroll.Text & "', '" & dt_cutoffStart.Text & "', '" & dt_cutoffEnd.Text & "', '" & txt_TotalgrossPay.Text & "', '" & txt_TotalnetPay.Text & "', '" & txt_totalDeductions.Text & "', '" & txt_totalLoansPaid.Text & "', '" & rtb_remarks.Text & "', '" & xUsername & "')"
             ExecuteSQLQuery(sqlSTR)
         End If
 
         If cb_Approved.Checked Then
-            If MsgBox("Would you like to approve this payroll record? Please note that once approved, it cannot be modified.", MsgBoxStyle.YesNo + MsgBoxStyle.Critical, msgBox_header) = MsgBoxResult.Yes Then
+            If MsgBox("Would you like to approve this payroll record? Please note that once approved, it cannot be modified.", MsgBoxStyle.YesNo + MsgBoxStyle.Information, msgBox_header) = MsgBoxResult.Yes Then
                 sqlSTR = "Update Payroll set Payroll_Approved='Yes', Approved_by='" & xUsername & "' where Payroll_ID=" & payroll_Id
                 ExecuteSQLQuery(sqlSTR)
 
@@ -101,6 +117,9 @@
                     sqlSTR = "Update Loan_Payments set Payment_Posted = 'Yes' where Payroll_Detail_ID =" & lst_payrollRecord.FocusedItem.Text
                     ExecuteSQLQuery(sqlSTR)
                 Next
+            Else
+                cb_Approved.Checked = False
+                Exit Sub
             End If
             MsgBox("Succesfully APPROVED payroll record.", MsgBoxStyle.Information, msgBox_header)
         Else
@@ -172,7 +191,5 @@
     End Sub
 
 
-    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles cb_Approved.CheckedChanged
 
-    End Sub
 End Class

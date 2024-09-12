@@ -89,6 +89,9 @@ Partial Class FormPAYROLL_PAYEE
         Me.EditEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.lst_loanPayment = New System.Windows.Forms.ListView()
+        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditLoan = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteLoan = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.btn_Save = New System.Windows.Forms.Button()
@@ -96,8 +99,6 @@ Partial Class FormPAYROLL_PAYEE
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txt_payroll_employeeRemarks = New System.Windows.Forms.RichTextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.txt_EmployeeID = New System.Windows.Forms.TextBox()
         Me.txt_employeeName = New System.Windows.Forms.TextBox()
         Me.dt_cutoffEnd = New System.Windows.Forms.DateTimePicker()
@@ -109,8 +110,8 @@ Partial Class FormPAYROLL_PAYEE
         Me.GroupBox5.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ContextMenuStrip2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -825,14 +826,14 @@ Partial Class FormPAYROLL_PAYEE
         Me.ContextMenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditEmployeeToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(291, 28)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(214, 50)
         '
         'EditEmployeeToolStripMenuItem
         '
-        Me.EditEmployeeToolStripMenuItem.Image = Global.Harmony.My.Resources.Resources.edit
+        Me.EditEmployeeToolStripMenuItem.Image = Global.Harmony.My.Resources.Resources.Plus
         Me.EditEmployeeToolStripMenuItem.Name = "EditEmployeeToolStripMenuItem"
-        Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(290, 24)
-        Me.EditEmployeeToolStripMenuItem.Text = "Add Loan Deduction Payment"
+        Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(213, 24)
+        Me.EditEmployeeToolStripMenuItem.Text = "Add Loan Payment"
         '
         'GroupBox6
         '
@@ -846,6 +847,7 @@ Partial Class FormPAYROLL_PAYEE
         '
         'lst_loanPayment
         '
+        Me.lst_loanPayment.ContextMenuStrip = Me.ContextMenuStrip2
         Me.lst_loanPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lst_loanPayment.FullRowSelect = True
         Me.lst_loanPayment.GridLines = True
@@ -856,6 +858,27 @@ Partial Class FormPAYROLL_PAYEE
         Me.lst_loanPayment.TabIndex = 17
         Me.lst_loanPayment.UseCompatibleStateImageBehavior = False
         Me.lst_loanPayment.View = System.Windows.Forms.View.Details
+        '
+        'ContextMenuStrip2
+        '
+        Me.ContextMenuStrip2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditLoan, Me.DeleteLoan})
+        Me.ContextMenuStrip2.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip2.Size = New System.Drawing.Size(232, 52)
+        '
+        'EditLoan
+        '
+        Me.EditLoan.Image = Global.Harmony.My.Resources.Resources.edit
+        Me.EditLoan.Name = "EditLoan"
+        Me.EditLoan.Size = New System.Drawing.Size(231, 24)
+        Me.EditLoan.Text = "Edit Loan Payment"
+        '
+        'DeleteLoan
+        '
+        Me.DeleteLoan.Image = Global.Harmony.My.Resources.Resources.bin
+        Me.DeleteLoan.Name = "DeleteLoan"
+        Me.DeleteLoan.Size = New System.Drawing.Size(231, 24)
+        Me.DeleteLoan.Text = "Delete Loan Payment"
         '
         'ImageList1
         '
@@ -923,20 +946,6 @@ Partial Class FormPAYROLL_PAYEE
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 38
         Me.PictureBox1.TabStop = False
-        '
-        'ContextMenuStrip2
-        '
-        Me.ContextMenuStrip2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.ContextMenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem2})
-        Me.ContextMenuStrip2.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip2.Size = New System.Drawing.Size(309, 28)
-        '
-        'ToolStripMenuItem2
-        '
-        Me.ToolStripMenuItem2.Image = Global.Harmony.My.Resources.Resources.bin
-        Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(308, 24)
-        Me.ToolStripMenuItem2.Text = "Delete Loan Deduction Payment"
         '
         'txt_EmployeeID
         '
@@ -1018,8 +1027,8 @@ Partial Class FormPAYROLL_PAYEE
         Me.GroupBox5.ResumeLayout(False)
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.GroupBox6.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStrip2.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1097,9 +1106,10 @@ Partial Class FormPAYROLL_PAYEE
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents EditEmployeeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ContextMenuStrip2 As System.Windows.Forms.ContextMenuStrip
-    Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DeleteLoan As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents txt_EmployeeID As System.Windows.Forms.TextBox
     Friend WithEvents txt_employeeName As System.Windows.Forms.TextBox
     Friend WithEvents dt_cutoffEnd As System.Windows.Forms.DateTimePicker
     Friend WithEvents dt_cutoffStart As System.Windows.Forms.DateTimePicker
+    Friend WithEvents EditLoan As System.Windows.Forms.ToolStripMenuItem
 End Class

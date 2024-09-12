@@ -34,18 +34,24 @@ Partial Class FormEMPLOYEES
         Me.txt_search = New System.Windows.Forms.TextBox()
         Me.btn_newEmployee = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btn_searchEmployee = New System.Windows.Forms.Button()
-        Me.cmb_employmentStatus = New System.Windows.Forms.ComboBox()
         Me.searchBox = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.btn_searchCancel = New System.Windows.Forms.Button()
         Me.btn_searchSubmit = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.rb_Outsource = New System.Windows.Forms.RadioButton()
+        Me.rb_Probationary = New System.Windows.Forms.RadioButton()
+        Me.rb_Regular = New System.Windows.Forms.RadioButton()
+        Me.rb_All = New System.Windows.Forms.RadioButton()
+        Me.rb_Resigned = New System.Windows.Forms.RadioButton()
+        Me.rb_Terminated = New System.Windows.Forms.RadioButton()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.searchBox.SuspendLayout()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'lst_employees
@@ -57,7 +63,7 @@ Partial Class FormEMPLOYEES
         Me.lst_employees.Location = New System.Drawing.Point(8, 104)
         Me.lst_employees.Margin = New System.Windows.Forms.Padding(2)
         Me.lst_employees.Name = "lst_employees"
-        Me.lst_employees.Size = New System.Drawing.Size(866, 177)
+        Me.lst_employees.Size = New System.Drawing.Size(1062, 177)
         Me.lst_employees.TabIndex = 8
         Me.lst_employees.UseCompatibleStateImageBehavior = False
         Me.lst_employees.View = System.Windows.Forms.View.Details
@@ -144,22 +150,12 @@ Partial Class FormEMPLOYEES
         Me.PictureBox1.TabIndex = 9
         Me.PictureBox1.TabStop = False
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(11, 75)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(156, 20)
-        Me.Label4.TabIndex = 15
-        Me.Label4.Text = "Employment Status :"
-        '
         'Panel1
         '
         Me.Panel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.Controls.Add(Me.btn_searchEmployee)
         Me.Panel1.Controls.Add(Me.btn_newEmployee)
-        Me.Panel1.Location = New System.Drawing.Point(549, 40)
+        Me.Panel1.Location = New System.Drawing.Point(745, 40)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(325, 62)
         Me.Panel1.TabIndex = 16
@@ -179,17 +175,6 @@ Partial Class FormEMPLOYEES
         Me.btn_searchEmployee.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_searchEmployee.UseVisualStyleBackColor = True
         '
-        'cmb_employmentStatus
-        '
-        Me.cmb_employmentStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_employmentStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmb_employmentStatus.FormattingEnabled = True
-        Me.cmb_employmentStatus.Items.AddRange(New Object() {"", "Owner", "Regular", "Probationary", "Probationary (Extended)", "Outsource"})
-        Me.cmb_employmentStatus.Location = New System.Drawing.Point(170, 71)
-        Me.cmb_employmentStatus.Name = "cmb_employmentStatus"
-        Me.cmb_employmentStatus.Size = New System.Drawing.Size(142, 28)
-        Me.cmb_employmentStatus.TabIndex = 16
-        '
         'searchBox
         '
         Me.searchBox.Controls.Add(Me.Label3)
@@ -204,6 +189,16 @@ Partial Class FormEMPLOYEES
         Me.searchBox.TabStop = False
         Me.searchBox.Text = "Search"
         Me.searchBox.Visible = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(6, 28)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(77, 20)
+        Me.Label3.TabIndex = 18
+        Me.Label3.Text = "Keyword :"
         '
         'btn_searchCancel
         '
@@ -223,23 +218,97 @@ Partial Class FormEMPLOYEES
         Me.btn_searchSubmit.Text = "Submit"
         Me.btn_searchSubmit.UseVisualStyleBackColor = True
         '
-        'Label3
+        'Panel2
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(6, 28)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(77, 20)
-        Me.Label3.TabIndex = 18
-        Me.Label3.Text = "Keyword :"
+        Me.Panel2.Controls.Add(Me.rb_Terminated)
+        Me.Panel2.Controls.Add(Me.rb_Resigned)
+        Me.Panel2.Controls.Add(Me.rb_Outsource)
+        Me.Panel2.Controls.Add(Me.rb_Probationary)
+        Me.Panel2.Controls.Add(Me.rb_Regular)
+        Me.Panel2.Controls.Add(Me.rb_All)
+        Me.Panel2.Location = New System.Drawing.Point(8, 69)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(582, 33)
+        Me.Panel2.TabIndex = 18
+        '
+        'rb_Outsource
+        '
+        Me.rb_Outsource.AutoSize = True
+        Me.rb_Outsource.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rb_Outsource.Location = New System.Drawing.Point(262, 5)
+        Me.rb_Outsource.Name = "rb_Outsource"
+        Me.rb_Outsource.Size = New System.Drawing.Size(101, 24)
+        Me.rb_Outsource.TabIndex = 3
+        Me.rb_Outsource.TabStop = True
+        Me.rb_Outsource.Text = "Outsource"
+        Me.rb_Outsource.UseVisualStyleBackColor = True
+        '
+        'rb_Probationary
+        '
+        Me.rb_Probationary.AutoSize = True
+        Me.rb_Probationary.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rb_Probationary.Location = New System.Drawing.Point(140, 5)
+        Me.rb_Probationary.Name = "rb_Probationary"
+        Me.rb_Probationary.Size = New System.Drawing.Size(116, 24)
+        Me.rb_Probationary.TabIndex = 2
+        Me.rb_Probationary.TabStop = True
+        Me.rb_Probationary.Text = "Probationary"
+        Me.rb_Probationary.UseVisualStyleBackColor = True
+        '
+        'rb_Regular
+        '
+        Me.rb_Regular.AutoSize = True
+        Me.rb_Regular.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rb_Regular.Location = New System.Drawing.Point(53, 5)
+        Me.rb_Regular.Name = "rb_Regular"
+        Me.rb_Regular.Size = New System.Drawing.Size(83, 24)
+        Me.rb_Regular.TabIndex = 1
+        Me.rb_Regular.TabStop = True
+        Me.rb_Regular.Text = "Regular"
+        Me.rb_Regular.UseVisualStyleBackColor = True
+        '
+        'rb_All
+        '
+        Me.rb_All.AutoSize = True
+        Me.rb_All.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rb_All.Location = New System.Drawing.Point(3, 5)
+        Me.rb_All.Name = "rb_All"
+        Me.rb_All.Size = New System.Drawing.Size(44, 24)
+        Me.rb_All.TabIndex = 0
+        Me.rb_All.TabStop = True
+        Me.rb_All.Text = "All"
+        Me.rb_All.UseVisualStyleBackColor = True
+        '
+        'rb_Resigned
+        '
+        Me.rb_Resigned.AutoSize = True
+        Me.rb_Resigned.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rb_Resigned.Location = New System.Drawing.Point(367, 5)
+        Me.rb_Resigned.Name = "rb_Resigned"
+        Me.rb_Resigned.Size = New System.Drawing.Size(95, 24)
+        Me.rb_Resigned.TabIndex = 4
+        Me.rb_Resigned.TabStop = True
+        Me.rb_Resigned.Text = "Resigned"
+        Me.rb_Resigned.UseVisualStyleBackColor = True
+        '
+        'rb_Terminated
+        '
+        Me.rb_Terminated.AutoSize = True
+        Me.rb_Terminated.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rb_Terminated.Location = New System.Drawing.Point(468, 6)
+        Me.rb_Terminated.Name = "rb_Terminated"
+        Me.rb_Terminated.Size = New System.Drawing.Size(107, 24)
+        Me.rb_Terminated.TabIndex = 5
+        Me.rb_Terminated.TabStop = True
+        Me.rb_Terminated.Text = "Terminated"
+        Me.rb_Terminated.UseVisualStyleBackColor = True
         '
         'FormEMPLOYEES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(879, 292)
-        Me.Controls.Add(Me.cmb_employmentStatus)
-        Me.Controls.Add(Me.Label4)
+        Me.ClientSize = New System.Drawing.Size(1075, 287)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.searchBox)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label2)
@@ -254,6 +323,8 @@ Partial Class FormEMPLOYEES
         Me.Panel1.ResumeLayout(False)
         Me.searchBox.ResumeLayout(False)
         Me.searchBox.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -268,12 +339,17 @@ Partial Class FormEMPLOYEES
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents EditEmployeeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DeleteEmployeeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
-    Friend WithEvents cmb_employmentStatus As System.Windows.Forms.ComboBox
     Friend WithEvents searchBox As System.Windows.Forms.GroupBox
     Friend WithEvents btn_searchSubmit As System.Windows.Forms.Button
     Friend WithEvents btn_searchEmployee As System.Windows.Forms.Button
     Friend WithEvents btn_searchCancel As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents rb_Outsource As System.Windows.Forms.RadioButton
+    Friend WithEvents rb_Probationary As System.Windows.Forms.RadioButton
+    Friend WithEvents rb_Regular As System.Windows.Forms.RadioButton
+    Friend WithEvents rb_All As System.Windows.Forms.RadioButton
+    Friend WithEvents rb_Terminated As System.Windows.Forms.RadioButton
+    Friend WithEvents rb_Resigned As System.Windows.Forms.RadioButton
 End Class

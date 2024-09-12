@@ -20,14 +20,14 @@
         sqlSTR = "SELECT " & _
     "Payroll_ID AS 'Payroll ID', " & _
     "Payroll_Date AS 'Payroll Date', " & _
-    "Cutoff_Period AS 'Cutoff Period', " & _
+    "CONCAT(Cutoff_Date_Start, ' to ', Cutoff_Date_End) AS 'Cutoff Period', " & _
     "Total_GrossPay AS 'Total Gross Pay', " & _
     "Total_NetPay AS 'Total Net Pay', " & _
     "Total_Deductions AS 'Total Deductions', " & _
     "Total_LoansPaid AS 'Total Loans Paid', " & _
     "Payroll_Remarks AS 'Remarks', " & _
     "Encoded_by AS 'Encoded By', " & _
-    "Payroll_Approved AS 'Payroll Approved', " & _
+    "COALESCE(Payroll_Approved, 'No') AS 'Payroll Approved', " & _
     "Approved_by AS 'Approved By' " & _
     "FROM Payroll;"
         FillListView(ExecuteSQLQuery(sqlSTR), lst_payroll, 0)
@@ -45,5 +45,10 @@
 
     Private Sub DeleteEmployeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteEmployeeToolStripMenuItem.Click
 
+    End Sub
+
+    Private Sub lst_payroll_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles lst_payroll.MouseDoubleClick
+        ShowForm1(FormPAYROLL_ADD, "edit", lst_payroll.FocusedItem.Text)
+        RefreshPayrollList()
     End Sub
 End Class
