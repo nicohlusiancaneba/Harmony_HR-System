@@ -58,8 +58,8 @@
 
     Private Sub RefreshPayrollDetailList()
         Dim net, gross, loan, deduction As Double
-        sqlSTR = "Select Payroll_Detail_ID as ID, Payroll_Details.Employee_ID as 'Employee ID', CONCAT(Last_Name, ', ', First_Name) as 'Employee', FORMAT(grandTotal_Basic, 'N2') AS 'Total Basic Pay', FORMAT(grandTotal_Additional, 'N2') AS 'Total Additional Pay', FORMAT(grandTotal_Gross, 'N2') AS 'Total Gross', " & _
-                "FORMAT(grandTotal_Deduction, 'N2') AS 'Total Deduction', FORMAT(grandTotal_Loan, 'N2') AS 'Total Loan Payment', FORMAT(grandTotal_Net, 'N2') AS 'Total Net' " & _
+        sqlSTR = "Select Payroll_Detail_ID as ID, Payroll_Details.Employee_ID as 'Employee ID', CONCAT(Last_Name, ', ', First_Name) as 'Employee', FORMAT(COALESCE(grandTotal_Basic, 0), 'N2') AS 'Total Basic Pay', FORMAT(COALESCE(grandTotal_Additional, 0), 'N2') AS 'Total Additional Pay', FORMAT(COALESCE(grandTotal_Gross, 0), 'N2') AS 'Total Gross', " & _
+                "FORMAT(COALESCE(grandTotal_Deduction, 0), 'N2') AS 'Total Deduction', FORMAT(COALESCE(grandTotal_Loan, 0), 'N2') AS 'Total Loan Payment', FORMAT(COALESCE(grandTotal_Net, 0), 'N2') AS 'Total Net' " & _
                 "from Payroll_Details INNER JOIN Employees on Employees.Employee_ID = Payroll_Details.Employee_ID where Payroll_ID = " & payroll_Id & " order by Payroll_Details.Employee_ID"
         FillListView(ExecuteSQLQuery(sqlSTR), lst_payrollRecord, 0)
 
@@ -103,9 +103,13 @@
 
 
         Else 'Add
-            sqlSTR = "INSERT INTO Payroll (Payroll_Date, Cutoff_Date_Start, Cutoff_Date_End, Total_GrossPay, Total_NetPay, Total_Deductions, Total_LoansPaid, Payroll_Remarks, Encoded_by) " &
-                      "VALUES ('" & dt_payroll.Text & "', '" & dt_cutoffStart.Text & "', '" & dt_cutoffEnd.Text & "', '" & txt_TotalgrossPay.Text & "', '" & txt_TotalnetPay.Text & "', '" & txt_totalDeductions.Text & "', '" & txt_totalLoansPaid.Text & "', '" & rtb_remarks.Text & "', '" & xUsername & "')"
+            sqlSTR = "select payroll_id from payroll where payroll_id =" & payroll_Id
             ExecuteSQLQuery(sqlSTR)
+            If sqlDT.Rows.Count = 0 Then
+                sqlSTR = "INSERT INTO Payroll (Payroll_Date, Cutoff_Date_Start, Cutoff_Date_End, Total_GrossPay, Total_NetPay, Total_Deductions, Total_LoansPaid, Payroll_Remarks, Encoded_by) " &
+                      "VALUES ('" & dt_payroll.Text & "', '" & dt_cutoffStart.Text & "', '" & dt_cutoffEnd.Text & "', '" & txt_TotalgrossPay.Text & "', '" & txt_TotalnetPay.Text & "', '" & txt_totalDeductions.Text & "', '" & txt_totalLoansPaid.Text & "', '" & rtb_remarks.Text & "', '" & xUsername & "')"
+                ExecuteSQLQuery(sqlSTR)
+            End If
         End If
 
         If cb_Approved.Checked Then
@@ -114,7 +118,7 @@
                 ExecuteSQLQuery(sqlSTR)
 
                 For i = 0 To lst_payrollRecord.Items.Count - 1
-                    sqlSTR = "Update Loan_Payments set Payment_Posted = 'Yes' where Payroll_Detail_ID =" & lst_payrollRecord.FocusedItem.Text
+                    sqlSTR = "Update Loan_Payments set Payment_Posted = 'Yes' where Payroll_Detail_ID =" & lst_payrollRecord.Items(i).SubItems(0).Text
                     ExecuteSQLQuery(sqlSTR)
                 Next
             Else
@@ -150,6 +154,13 @@
             Exit Sub
         End If
 
+        If formOperation <> "edit" Then
+            sqlSTR = "INSERT INTO Payroll (Payroll_Date, Cutoff_Date_Start, Cutoff_Date_End, Total_GrossPay, Total_NetPay, Total_Deductions, Total_LoansPaid, Payroll_Remarks, Encoded_by) " &
+                      "VALUES ('" & dt_payroll.Text & "', '" & dt_cutoffStart.Text & "', '" & dt_cutoffEnd.Text & "', '" & txt_TotalgrossPay.Text & "', '" & txt_TotalnetPay.Text & "', '" & txt_totalDeductions.Text & "', '" & txt_totalLoansPaid.Text & "', '" & rtb_remarks.Text & "', '" & xUsername & "')"
+            ExecuteSQLQuery(sqlSTR)
+        End If
+
+
         sqlSTR = "INSERT INTO Payroll_Details (Employee_ID, Payroll_ID) VALUES (" & Split(cmb_employees.Text, " - ")(0) & ", " & payroll_Id & ")"
         ExecuteSQLQuery(sqlSTR)
 
@@ -178,18 +189,29 @@
             grp_Payrollpayee.Visible = False
         End If
 
+        RefreshPayrollDetailList()
+    End Sub
 
+    Private Sub lst_payrollRecord_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles lst_payrollRecord.MouseDoubleClick
+        If approved Then
+            ShowForm2(FormPAYROLL_PAYEE, "view", lst_payrollRecord.FocusedItem.SubItems(1).Text, payroll_Id)
+            grp_Payrollpayee.Visible = False
+        Else
+            ShowForm2(FormPAYROLL_PAYEE, "edit", lst_payrollRecord.FocusedItem.SubItems(1).Text, payroll_Id)
+            grp_Payrollpayee.Visible = False
+        End If
 
         RefreshPayrollDetailList()
-
-
-
-        'ShowForm2(FormPAYROLL_PAYEE, "edit", lst_payrollRecord.FocusedItem.SubItems(1).Text, payroll_Id)
-        'grp_Payrollpayee.Visible = False
-
-        'RefreshPayrollDetailList()
     End Sub
 
 
+    Private Sub DeleteEmployeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteEmployeeToolStripMenuItem.Click
+        If MsgBox("Do you want to delete this payroll detail record?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, msgBox_header) = MsgBoxResult.Yes Then
+            sqlSTR = "Delete payroll_details where Payroll_Detail_ID=" & lst_payrollRecord.FocusedItem.Text
+            ExecuteSQLQuery(sqlSTR)
 
+            MsgBox("Deleted payroll detail record.", MsgBoxStyle.Information, msgBox_header)
+        End If
+        RefreshPayrollDetailList()
+    End Sub
 End Class

@@ -90,3 +90,4 @@ B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony - HR System.applicat
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony - HR System.exe
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony - HR System.xml
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony - HR System.pdb
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormADJUSTMENTS.resources

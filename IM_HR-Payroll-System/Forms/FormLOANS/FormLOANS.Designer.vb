@@ -24,8 +24,6 @@ Partial Class FormLOANS
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLOANS))
-        Me.txt_search = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
@@ -35,27 +33,14 @@ Partial Class FormLOANS
         Me.lst_loans = New System.Windows.Forms.ListView()
         Me.btn_newLoan = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.rb_Paid = New System.Windows.Forms.RadioButton()
+        Me.rb_Active = New System.Windows.Forms.RadioButton()
+        Me.rb_All = New System.Windows.Forms.RadioButton()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'txt_search
-        '
-        Me.txt_search.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_search.Location = New System.Drawing.Point(87, 68)
-        Me.txt_search.Name = "txt_search"
-        Me.txt_search.Size = New System.Drawing.Size(244, 26)
-        Me.txt_search.TabIndex = 20
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(13, 71)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(68, 20)
-        Me.Label3.TabIndex = 19
-        Me.Label3.Text = "Search :"
         '
         'Label2
         '
@@ -89,7 +74,7 @@ Partial Class FormLOANS
         Me.ContextMenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditEmployeeToolStripMenuItem, Me.DeleteEmployeeToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(166, 74)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(166, 52)
         '
         'EditEmployeeToolStripMenuItem
         '
@@ -144,15 +129,60 @@ Partial Class FormLOANS
         Me.PictureBox1.TabIndex = 15
         Me.PictureBox1.TabStop = False
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.rb_Paid)
+        Me.Panel2.Controls.Add(Me.rb_Active)
+        Me.Panel2.Controls.Add(Me.rb_All)
+        Me.Panel2.Location = New System.Drawing.Point(8, 69)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(199, 33)
+        Me.Panel2.TabIndex = 24
+        '
+        'rb_Paid
+        '
+        Me.rb_Paid.AutoSize = True
+        Me.rb_Paid.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rb_Paid.Location = New System.Drawing.Point(129, 5)
+        Me.rb_Paid.Name = "rb_Paid"
+        Me.rb_Paid.Size = New System.Drawing.Size(58, 24)
+        Me.rb_Paid.TabIndex = 2
+        Me.rb_Paid.TabStop = True
+        Me.rb_Paid.Text = "Paid"
+        Me.rb_Paid.UseVisualStyleBackColor = True
+        '
+        'rb_Active
+        '
+        Me.rb_Active.AutoSize = True
+        Me.rb_Active.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rb_Active.Location = New System.Drawing.Point(53, 5)
+        Me.rb_Active.Name = "rb_Active"
+        Me.rb_Active.Size = New System.Drawing.Size(70, 24)
+        Me.rb_Active.TabIndex = 1
+        Me.rb_Active.TabStop = True
+        Me.rb_Active.Text = "Active"
+        Me.rb_Active.UseVisualStyleBackColor = True
+        '
+        'rb_All
+        '
+        Me.rb_All.AutoSize = True
+        Me.rb_All.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rb_All.Location = New System.Drawing.Point(3, 5)
+        Me.rb_All.Name = "rb_All"
+        Me.rb_All.Size = New System.Drawing.Size(44, 24)
+        Me.rb_All.TabIndex = 0
+        Me.rb_All.TabStop = True
+        Me.rb_All.Text = "All"
+        Me.rb_All.UseVisualStyleBackColor = True
+        '
         'FormLOANS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(879, 178)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.lst_loans)
         Me.Controls.Add(Me.btn_newLoan)
-        Me.Controls.Add(Me.txt_search)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
@@ -161,12 +191,12 @@ Partial Class FormLOANS
         Me.Text = "FormLOANS"
         Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents txt_search As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
@@ -176,4 +206,8 @@ Partial Class FormLOANS
     Friend WithEvents DeleteEmployeeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents btn_newLoan As System.Windows.Forms.Button
     Friend WithEvents lst_loans As System.Windows.Forms.ListView
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents rb_Paid As System.Windows.Forms.RadioButton
+    Friend WithEvents rb_Active As System.Windows.Forms.RadioButton
+    Friend WithEvents rb_All As System.Windows.Forms.RadioButton
 End Class

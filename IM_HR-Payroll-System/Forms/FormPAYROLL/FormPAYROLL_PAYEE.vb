@@ -1,8 +1,21 @@
 ﻿Public Class FormPAYROLL_PAYEE
     Private payroll_id, employee_id, payroll_detail_id As Integer
     Private Sub FormPAYROLL_PAYEE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cb_pagibig.Checked = False
+        cb_SSS.Checked = False
+        cb_philhealth.Checked = False
+        cb_Tax.Checked = False
+
         If formOperation = "view" Then
-            Me.Enabled = False
+
+            gb_BasicPay.Enabled = False
+            gb_Deductions.Enabled = False
+            gb_Loans.Enabled = False
+            gb_loanPayment.Enabled = False
+            gb_Additional.Enabled = False
+            gb_total.Enabled = False
+
+            btn_Save.Enabled = False
         End If
 
         employee_id = xID1
@@ -195,7 +208,7 @@
     End Sub
 
     Private Sub RefreshLoanList()
-        sqlSTR = "select Loans.Loan_ID as 'Loan ID', max(Employee_ID) as 'Employee ID', max(Loan_Date) as 'Loan Date', max(Suggested_PayPerCutoff) as 'Suggested Payment', " & _
+        sqlSTR = "select Loans.Loan_ID as 'Loan ID', max(Employee_ID) as 'Employee ID', CONCAT(MAX(Loan_Payment_Start_Date), ' to ', MAX(Loan_Payment_End_Date)) as 'Cutoff Payment Due', max(Suggested_PayPerCutoff) as 'Suggested Payment', " & _
             " max(Loan_Gross_Amount) as 'Loan Gross', max(Loan_Gross_Amount) - sum(case when Payment_Posted = 'Yes' then COALESCE(Gross_Payment, 0) else 0 end) as 'Loan Balance' " & _
             " from Loans LEFT JOIN Loan_Payments on Loan_Payments.Loan_ID = Loans.Loan_ID" & _
             " WHERE Loan_Status = 'Active' and Employee_ID=" & employee_id & _

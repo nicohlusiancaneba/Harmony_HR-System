@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Formatter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        textarea {
+            width: calc(100% - 20px);
+            height: 150px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            resize: none;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        pre {
+            text-align: left;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 4px;
+            white-space: pre-wrap; /* Allows line breaks to be preserved */
+            word-wrap: break-word;
+            margin-top: 10px;
+            max-height: 200px; /* Set a maximum height */
+            overflow-y: auto;  /* Enable vertical scrolling */
+            text-align: left;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function formatText() {
+            // Get the input text from the textarea
+            var inputText = document.getElementById('inputText').value;
+            // Split the input text into lines
+            var lines = inputText.split('\n');
+            // Initialize an empty array to hold formatted lines
+            var formattedLines = [];
+            
+            // Iterate over each line and format it
+            for (var i = 0; i < lines.length; i++) {
+                if (i === lines.length - 1) {
+                    // Last line without "& _"
+                    formattedLines.push('"' + lines[i].trim() + '"');
+                } else {
+                    // Other lines with "& _"
+                    formattedLines.push('"' + lines[i].trim() + ' " & _');
+                }
+            }
+            
+            // Join the formatted lines with newline characters
+            var outputText = formattedLines.join('\n');
+            // Display the formatted text in the output area
+            var outputElement = document.getElementById('outputText');
+            outputElement.textContent = outputText;
+            // Scroll to the bottom to show the latest content
+            outputElement.scrollTop = outputElement.scrollHeight;
+        }
+
+        function copyToClipboard() {
+            // Get the output text
+            var outputElement = document.getElementById('outputText');
+            var range = document.createRange();
+            range.selectNode(outputElement);
+            var selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            
+            try {
+                document.execCommand('copy');
+                alert('Text copied to clipboard!');
+            } catch (err) {
+                alert('Failed to copy text.');
+            }
+            // Clear selection
+            selection.removeAllRanges();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Text Formatter</h1>
+        <textarea id="inputText" placeholder="Enter text here..."></textarea><br>
+        <div class="buttons">
+            <button onclick="formatText()">Format Text</button>
+            
+        </div>
+        <h2>Formatted Output:</h2>
+        <pre id="outputText"></pre>
+<button onclick="copyToClipboard()">Copy to Clipboard</button>
+    </div>
+</body>
+</html>

@@ -25,7 +25,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPAYROLL_PAYEE))
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.gb_BasicPay = New System.Windows.Forms.GroupBox()
         Me.txt_payNightDiff = New System.Windows.Forms.TextBox()
         Me.txt_numNightDiff = New System.Windows.Forms.TextBox()
         Me.txt_totalNightDiff = New System.Windows.Forms.TextBox()
@@ -46,13 +46,13 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_numRegular = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.gb_Additional = New System.Windows.Forms.GroupBox()
         Me.txt_payAddAllowance = New System.Windows.Forms.TextBox()
         Me.txt_payAddIncentive = New System.Windows.Forms.TextBox()
         Me.txt_payAddField = New System.Windows.Forms.TextBox()
         Me.txt_payAddSpecial = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.gb_Deductions = New System.Windows.Forms.GroupBox()
         Me.txt_totalUndertime = New System.Windows.Forms.TextBox()
         Me.txt_totalLate = New System.Windows.Forms.TextBox()
         Me.cb_pagibig = New System.Windows.Forms.CheckBox()
@@ -73,7 +73,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_minusLate = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.gb_total = New System.Windows.Forms.GroupBox()
         Me.txt_grandTotal_Additional = New System.Windows.Forms.TextBox()
         Me.txt_grandTotal_Basic = New System.Windows.Forms.TextBox()
         Me.txt_grandTotal_Loan = New System.Windows.Forms.TextBox()
@@ -83,11 +83,11 @@ Partial Class FormPAYROLL_PAYEE
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txt_grandTotal_Gross = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.gb_Loans = New System.Windows.Forms.GroupBox()
         Me.lst_loans = New System.Windows.Forms.ListView()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.gb_loanPayment = New System.Windows.Forms.GroupBox()
         Me.lst_loanPayment = New System.Windows.Forms.ListView()
         Me.ContextMenuStrip2 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditLoan = New System.Windows.Forms.ToolStripMenuItem()
@@ -103,13 +103,13 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_employeeName = New System.Windows.Forms.TextBox()
         Me.dt_cutoffEnd = New System.Windows.Forms.DateTimePicker()
         Me.dt_cutoffStart = New System.Windows.Forms.DateTimePicker()
-        Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
-        Me.GroupBox5.SuspendLayout()
+        Me.gb_BasicPay.SuspendLayout()
+        Me.gb_Additional.SuspendLayout()
+        Me.gb_Deductions.SuspendLayout()
+        Me.gb_total.SuspendLayout()
+        Me.gb_Loans.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
+        Me.gb_loanPayment.SuspendLayout()
         Me.ContextMenuStrip2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -125,34 +125,34 @@ Partial Class FormPAYROLL_PAYEE
         Me.Label2.Text = "Employee ID :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Name :"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'GroupBox1
+        'gb_BasicPay
         '
-        Me.GroupBox1.Controls.Add(Me.txt_payNightDiff)
-        Me.GroupBox1.Controls.Add(Me.txt_numNightDiff)
-        Me.GroupBox1.Controls.Add(Me.txt_totalNightDiff)
-        Me.GroupBox1.Controls.Add(Me.txt_payOvertime)
-        Me.GroupBox1.Controls.Add(Me.txt_numOvertime)
-        Me.GroupBox1.Controls.Add(Me.txt_payHoliday)
-        Me.GroupBox1.Controls.Add(Me.txt_numHoliday)
-        Me.GroupBox1.Controls.Add(Me.txt_payField)
-        Me.GroupBox1.Controls.Add(Me.txt_numField)
-        Me.GroupBox1.Controls.Add(Me.txt_paySpecial)
-        Me.GroupBox1.Controls.Add(Me.txt_numSpecial)
-        Me.GroupBox1.Controls.Add(Me.txt_totalOvertime)
-        Me.GroupBox1.Controls.Add(Me.txt_totalHoliday)
-        Me.GroupBox1.Controls.Add(Me.txt_totalField)
-        Me.GroupBox1.Controls.Add(Me.txt_totalSpecial)
-        Me.GroupBox1.Controls.Add(Me.txt_totalRegular)
-        Me.GroupBox1.Controls.Add(Me.txt_payRegular)
-        Me.GroupBox1.Controls.Add(Me.txt_numRegular)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 81)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(459, 258)
-        Me.GroupBox1.TabIndex = 21
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Basic Pay"
+        Me.gb_BasicPay.Controls.Add(Me.txt_payNightDiff)
+        Me.gb_BasicPay.Controls.Add(Me.txt_numNightDiff)
+        Me.gb_BasicPay.Controls.Add(Me.txt_totalNightDiff)
+        Me.gb_BasicPay.Controls.Add(Me.txt_payOvertime)
+        Me.gb_BasicPay.Controls.Add(Me.txt_numOvertime)
+        Me.gb_BasicPay.Controls.Add(Me.txt_payHoliday)
+        Me.gb_BasicPay.Controls.Add(Me.txt_numHoliday)
+        Me.gb_BasicPay.Controls.Add(Me.txt_payField)
+        Me.gb_BasicPay.Controls.Add(Me.txt_numField)
+        Me.gb_BasicPay.Controls.Add(Me.txt_paySpecial)
+        Me.gb_BasicPay.Controls.Add(Me.txt_numSpecial)
+        Me.gb_BasicPay.Controls.Add(Me.txt_totalOvertime)
+        Me.gb_BasicPay.Controls.Add(Me.txt_totalHoliday)
+        Me.gb_BasicPay.Controls.Add(Me.txt_totalField)
+        Me.gb_BasicPay.Controls.Add(Me.txt_totalSpecial)
+        Me.gb_BasicPay.Controls.Add(Me.txt_totalRegular)
+        Me.gb_BasicPay.Controls.Add(Me.txt_payRegular)
+        Me.gb_BasicPay.Controls.Add(Me.txt_numRegular)
+        Me.gb_BasicPay.Controls.Add(Me.Label3)
+        Me.gb_BasicPay.Controls.Add(Me.Label1)
+        Me.gb_BasicPay.Location = New System.Drawing.Point(12, 81)
+        Me.gb_BasicPay.Name = "gb_BasicPay"
+        Me.gb_BasicPay.Size = New System.Drawing.Size(459, 258)
+        Me.gb_BasicPay.TabIndex = 21
+        Me.gb_BasicPay.TabStop = False
+        Me.gb_BasicPay.Text = "Basic Pay"
         '
         'txt_payNightDiff
         '
@@ -379,19 +379,19 @@ Partial Class FormPAYROLL_PAYEE
     "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Night Diff. :"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'GroupBox2
+        'gb_Additional
         '
-        Me.GroupBox2.Controls.Add(Me.txt_payAddAllowance)
-        Me.GroupBox2.Controls.Add(Me.txt_payAddIncentive)
-        Me.GroupBox2.Controls.Add(Me.txt_payAddField)
-        Me.GroupBox2.Controls.Add(Me.txt_payAddSpecial)
-        Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Location = New System.Drawing.Point(808, 81)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(187, 171)
-        Me.GroupBox2.TabIndex = 22
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Additional Pay"
+        Me.gb_Additional.Controls.Add(Me.txt_payAddAllowance)
+        Me.gb_Additional.Controls.Add(Me.txt_payAddIncentive)
+        Me.gb_Additional.Controls.Add(Me.txt_payAddField)
+        Me.gb_Additional.Controls.Add(Me.txt_payAddSpecial)
+        Me.gb_Additional.Controls.Add(Me.Label4)
+        Me.gb_Additional.Location = New System.Drawing.Point(808, 81)
+        Me.gb_Additional.Name = "gb_Additional"
+        Me.gb_Additional.Size = New System.Drawing.Size(187, 171)
+        Me.gb_Additional.TabIndex = 22
+        Me.gb_Additional.TabStop = False
+        Me.gb_Additional.Text = "Additional Pay"
         '
         'txt_payAddAllowance
         '
@@ -444,34 +444,34 @@ Partial Class FormPAYROLL_PAYEE
         Me.Label4.Text = "Special :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Field :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Incentive :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Allowance :"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'GroupBox3
+        'gb_Deductions
         '
-        Me.GroupBox3.Controls.Add(Me.txt_totalUndertime)
-        Me.GroupBox3.Controls.Add(Me.txt_totalLate)
-        Me.GroupBox3.Controls.Add(Me.cb_pagibig)
-        Me.GroupBox3.Controls.Add(Me.cb_philhealth)
-        Me.GroupBox3.Controls.Add(Me.cb_Tax)
-        Me.GroupBox3.Controls.Add(Me.cb_SSS)
-        Me.GroupBox3.Controls.Add(Me.txt_numUndertime)
-        Me.GroupBox3.Controls.Add(Me.txt_minusUndertime)
-        Me.GroupBox3.Controls.Add(Me.txt_insurance)
-        Me.GroupBox3.Controls.Add(Me.txt_SSS)
-        Me.GroupBox3.Controls.Add(Me.txt_tax)
-        Me.GroupBox3.Controls.Add(Me.txt_charge)
-        Me.GroupBox3.Controls.Add(Me.txt_philhealth)
-        Me.GroupBox3.Controls.Add(Me.txt_pagibig)
-        Me.GroupBox3.Controls.Add(Me.Label8)
-        Me.GroupBox3.Controls.Add(Me.txt_numLate)
-        Me.GroupBox3.Controls.Add(Me.Label7)
-        Me.GroupBox3.Controls.Add(Me.txt_minusLate)
-        Me.GroupBox3.Controls.Add(Me.Label6)
-        Me.GroupBox3.Controls.Add(Me.Label5)
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 347)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(459, 219)
-        Me.GroupBox3.TabIndex = 24
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Deductions / Contributions"
+        Me.gb_Deductions.Controls.Add(Me.txt_totalUndertime)
+        Me.gb_Deductions.Controls.Add(Me.txt_totalLate)
+        Me.gb_Deductions.Controls.Add(Me.cb_pagibig)
+        Me.gb_Deductions.Controls.Add(Me.cb_philhealth)
+        Me.gb_Deductions.Controls.Add(Me.cb_Tax)
+        Me.gb_Deductions.Controls.Add(Me.cb_SSS)
+        Me.gb_Deductions.Controls.Add(Me.txt_numUndertime)
+        Me.gb_Deductions.Controls.Add(Me.txt_minusUndertime)
+        Me.gb_Deductions.Controls.Add(Me.txt_insurance)
+        Me.gb_Deductions.Controls.Add(Me.txt_SSS)
+        Me.gb_Deductions.Controls.Add(Me.txt_tax)
+        Me.gb_Deductions.Controls.Add(Me.txt_charge)
+        Me.gb_Deductions.Controls.Add(Me.txt_philhealth)
+        Me.gb_Deductions.Controls.Add(Me.txt_pagibig)
+        Me.gb_Deductions.Controls.Add(Me.Label8)
+        Me.gb_Deductions.Controls.Add(Me.txt_numLate)
+        Me.gb_Deductions.Controls.Add(Me.Label7)
+        Me.gb_Deductions.Controls.Add(Me.txt_minusLate)
+        Me.gb_Deductions.Controls.Add(Me.Label6)
+        Me.gb_Deductions.Controls.Add(Me.Label5)
+        Me.gb_Deductions.Location = New System.Drawing.Point(12, 347)
+        Me.gb_Deductions.Name = "gb_Deductions"
+        Me.gb_Deductions.Size = New System.Drawing.Size(459, 219)
+        Me.gb_Deductions.TabIndex = 24
+        Me.gb_Deductions.TabStop = False
+        Me.gb_Deductions.Text = "Deductions / Contributions"
         '
         'txt_totalUndertime
         '
@@ -686,24 +686,24 @@ Partial Class FormPAYROLL_PAYEE
         Me.Label5.Text = "SSS :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Philhealth :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "PAG - IBIG :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Late :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Undertime :"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'GroupBox4
+        'gb_total
         '
-        Me.GroupBox4.Controls.Add(Me.txt_grandTotal_Additional)
-        Me.GroupBox4.Controls.Add(Me.txt_grandTotal_Basic)
-        Me.GroupBox4.Controls.Add(Me.txt_grandTotal_Loan)
-        Me.GroupBox4.Controls.Add(Me.txt_grandTotal_Deduction)
-        Me.GroupBox4.Controls.Add(Me.txt_grandTotal_Net)
-        Me.GroupBox4.Controls.Add(Me.Label11)
-        Me.GroupBox4.Controls.Add(Me.Label10)
-        Me.GroupBox4.Controls.Add(Me.txt_grandTotal_Gross)
-        Me.GroupBox4.Controls.Add(Me.Label9)
-        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(808, 258)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(187, 308)
-        Me.GroupBox4.TabIndex = 30
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Grand Total"
+        Me.gb_total.Controls.Add(Me.txt_grandTotal_Additional)
+        Me.gb_total.Controls.Add(Me.txt_grandTotal_Basic)
+        Me.gb_total.Controls.Add(Me.txt_grandTotal_Loan)
+        Me.gb_total.Controls.Add(Me.txt_grandTotal_Deduction)
+        Me.gb_total.Controls.Add(Me.txt_grandTotal_Net)
+        Me.gb_total.Controls.Add(Me.Label11)
+        Me.gb_total.Controls.Add(Me.Label10)
+        Me.gb_total.Controls.Add(Me.txt_grandTotal_Gross)
+        Me.gb_total.Controls.Add(Me.Label9)
+        Me.gb_total.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gb_total.Location = New System.Drawing.Point(808, 258)
+        Me.gb_total.Name = "gb_total"
+        Me.gb_total.Size = New System.Drawing.Size(187, 308)
+        Me.gb_total.TabIndex = 30
+        Me.gb_total.TabStop = False
+        Me.gb_total.Text = "Grand Total"
         '
         'txt_grandTotal_Additional
         '
@@ -797,20 +797,20 @@ Partial Class FormPAYROLL_PAYEE
         Me.Label9.Text = "Basic :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Additional :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Gross :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Deduction :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Loan :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
-        'GroupBox5
+        'gb_Loans
         '
-        Me.GroupBox5.Controls.Add(Me.lst_loans)
-        Me.GroupBox5.Location = New System.Drawing.Point(478, 81)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(324, 272)
-        Me.GroupBox5.TabIndex = 31
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Loans"
+        Me.gb_Loans.Controls.Add(Me.lst_loans)
+        Me.gb_Loans.Location = New System.Drawing.Point(478, 81)
+        Me.gb_Loans.Name = "gb_Loans"
+        Me.gb_Loans.Size = New System.Drawing.Size(324, 272)
+        Me.gb_Loans.TabIndex = 31
+        Me.gb_Loans.TabStop = False
+        Me.gb_Loans.Text = "Loans"
         '
         'lst_loans
         '
         Me.lst_loans.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.lst_loans.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lst_loans.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lst_loans.FullRowSelect = True
         Me.lst_loans.GridLines = True
         Me.lst_loans.Location = New System.Drawing.Point(5, 18)
@@ -826,7 +826,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.ContextMenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditEmployeeToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(214, 50)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(214, 28)
         '
         'EditEmployeeToolStripMenuItem
         '
@@ -835,20 +835,20 @@ Partial Class FormPAYROLL_PAYEE
         Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(213, 24)
         Me.EditEmployeeToolStripMenuItem.Text = "Add Loan Payment"
         '
-        'GroupBox6
+        'gb_loanPayment
         '
-        Me.GroupBox6.Controls.Add(Me.lst_loanPayment)
-        Me.GroupBox6.Location = New System.Drawing.Point(477, 359)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(324, 207)
-        Me.GroupBox6.TabIndex = 32
-        Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Loan Payment"
+        Me.gb_loanPayment.Controls.Add(Me.lst_loanPayment)
+        Me.gb_loanPayment.Location = New System.Drawing.Point(477, 359)
+        Me.gb_loanPayment.Name = "gb_loanPayment"
+        Me.gb_loanPayment.Size = New System.Drawing.Size(324, 207)
+        Me.gb_loanPayment.TabIndex = 32
+        Me.gb_loanPayment.TabStop = False
+        Me.gb_loanPayment.Text = "Loan Payment"
         '
         'lst_loanPayment
         '
         Me.lst_loanPayment.ContextMenuStrip = Me.ContextMenuStrip2
-        Me.lst_loanPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lst_loanPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lst_loanPayment.FullRowSelect = True
         Me.lst_loanPayment.GridLines = True
         Me.lst_loanPayment.Location = New System.Drawing.Point(5, 18)
@@ -1001,12 +1001,12 @@ Partial Class FormPAYROLL_PAYEE
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.btn_Cancel)
         Me.Controls.Add(Me.btn_Save)
-        Me.Controls.Add(Me.GroupBox6)
-        Me.Controls.Add(Me.GroupBox5)
-        Me.Controls.Add(Me.GroupBox4)
-        Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.gb_loanPayment)
+        Me.Controls.Add(Me.gb_Loans)
+        Me.Controls.Add(Me.gb_total)
+        Me.Controls.Add(Me.gb_Deductions)
+        Me.Controls.Add(Me.gb_Additional)
+        Me.Controls.Add(Me.gb_BasicPay)
         Me.Controls.Add(Me.Label2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
@@ -1016,17 +1016,17 @@ Partial Class FormPAYROLL_PAYEE
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Payroll Payee Record"
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
-        Me.GroupBox5.ResumeLayout(False)
+        Me.gb_BasicPay.ResumeLayout(False)
+        Me.gb_BasicPay.PerformLayout()
+        Me.gb_Additional.ResumeLayout(False)
+        Me.gb_Additional.PerformLayout()
+        Me.gb_Deductions.ResumeLayout(False)
+        Me.gb_Deductions.PerformLayout()
+        Me.gb_total.ResumeLayout(False)
+        Me.gb_total.PerformLayout()
+        Me.gb_Loans.ResumeLayout(False)
         Me.ContextMenuStrip1.ResumeLayout(False)
-        Me.GroupBox6.ResumeLayout(False)
+        Me.gb_loanPayment.ResumeLayout(False)
         Me.ContextMenuStrip2.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -1034,19 +1034,19 @@ Partial Class FormPAYROLL_PAYEE
 
     End Sub
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents gb_BasicPay As System.Windows.Forms.GroupBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txt_totalRegular As System.Windows.Forms.TextBox
     Friend WithEvents txt_payRegular As System.Windows.Forms.TextBox
     Friend WithEvents txt_numRegular As System.Windows.Forms.TextBox
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents gb_Additional As System.Windows.Forms.GroupBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents txt_totalOvertime As System.Windows.Forms.TextBox
     Friend WithEvents txt_totalHoliday As System.Windows.Forms.TextBox
     Friend WithEvents txt_totalField As System.Windows.Forms.TextBox
     Friend WithEvents txt_totalSpecial As System.Windows.Forms.TextBox
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents gb_Deductions As System.Windows.Forms.GroupBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txt_payAddSpecial As System.Windows.Forms.TextBox
@@ -1055,13 +1055,13 @@ Partial Class FormPAYROLL_PAYEE
     Friend WithEvents txt_numLate As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents txt_minusLate As System.Windows.Forms.TextBox
-    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents gb_total As System.Windows.Forms.GroupBox
     Friend WithEvents txt_grandTotal_Gross As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents txt_grandTotal_Net As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
+    Friend WithEvents gb_Loans As System.Windows.Forms.GroupBox
     Friend WithEvents txt_payOvertime As System.Windows.Forms.TextBox
     Friend WithEvents txt_numOvertime As System.Windows.Forms.TextBox
     Friend WithEvents txt_payHoliday As System.Windows.Forms.TextBox
@@ -1081,7 +1081,7 @@ Partial Class FormPAYROLL_PAYEE
     Friend WithEvents txt_grandTotal_Loan As System.Windows.Forms.TextBox
     Friend WithEvents txt_grandTotal_Deduction As System.Windows.Forms.TextBox
     Friend WithEvents lst_loans As System.Windows.Forms.ListView
-    Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
+    Friend WithEvents gb_loanPayment As System.Windows.Forms.GroupBox
     Friend WithEvents lst_loanPayment As System.Windows.Forms.ListView
     Friend WithEvents txt_payNightDiff As System.Windows.Forms.TextBox
     Friend WithEvents txt_numNightDiff As System.Windows.Forms.TextBox

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VB.NET Code Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        pre {
+            text-align: left;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 4px;
+            white-space: pre-wrap; /* Allows line breaks to be preserved */
+            word-wrap: break-word;
+            margin-top: 10px;
+            max-height: 200px; /* Set a maximum height */
+            overflow-y: auto;  /* Enable vertical scrolling */
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function generateCode() {
+            var txtName = document.getElementById('txt_name').value;
+            var mouseDoubleClickCode = `Private Sub ${txtName}_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles ${txtName}.MouseDoubleClick\n` +
+                                       `    'Function Here\n` +
+                                       `End Sub\n\n`;
+
+            var keyDownCode = `Private Sub ${txtName}_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles ${txtName}.KeyDown\n` +
+                              `    If e.KeyCode = 13 Then\n` +
+                              `        'Function Here\n` +
+                              `    End If\n` +
+                              `End Sub`;
+
+            document.getElementById('output').textContent = mouseDoubleClickCode + keyDownCode;
+        }
+
+        function copyCode() {
+            var output = document.getElementById('output');
+            var range = document.createRange();
+            range.selectNode(output);
+            var selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            document.execCommand('copy');
+            alert("Code copied to clipboard!");
+            selection.removeAllRanges();
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>VB.NET Code Generator</h1>
+        
+        <input type="text" id="txt_name" placeholder="Enter control name..."><br>
+        <div class="buttons">
+            <button onclick="generateCode()">Generate Code</button>
+            <button onclick="copyCode()">Copy to Clipboard</button>
+        </div>
+        
+        <h2>Generated Code:</h2>
+        <pre id="output"></pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Harmony_DataSet" targetNamespace="http://tempuri.org/Harmony_DataSet.xsd" xmlns:mstns="http://tempuri.org/Harmony_DataSet.xsd" xmlns="http://tempuri.org/Harmony_DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Harmony_DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Harmony_DataSet" msprop:Generator_UserDSName="Harmony_DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Payslip" msprop:Generator_TableClassName="PayslipDataTable" msprop:Generator_TableVarName="tablePayslip" msprop:Generator_TablePropName="Payslip" msprop:Generator_RowDeletingName="PayslipRowDeleting" msprop:Generator_RowChangingName="PayslipRowChanging" msprop:Generator_RowEvHandlerName="PayslipRowChangeEventHandler" msprop:Generator_RowDeletedName="PayslipRowDeleted" msprop:Generator_UserTableName="Payslip" msprop:Generator_RowChangedName="PayslipRowChanged" msprop:Generator_RowEvArgName="PayslipRowChangeEvent" msprop:Generator_RowClassName="PayslipRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Employee_ID" msprop:Generator_ColumnVarNameInTable="columnEmployee_ID" msprop:Generator_ColumnPropNameInRow="Employee_ID" msprop:Generator_ColumnPropNameInTable="Employee_IDColumn" msprop:Generator_UserColumnName="Employee_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Payroll_ID" msprop:Generator_ColumnVarNameInTable="columnPayroll_ID" msprop:Generator_ColumnPropNameInRow="Payroll_ID" msprop:Generator_ColumnPropNameInTable="Payroll_IDColumn" msprop:Generator_UserColumnName="Payroll_ID" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

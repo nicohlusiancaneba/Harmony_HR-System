@@ -28,8 +28,6 @@ Partial Class FormPAYROLL
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DeleteEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.txt_search = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.btn_newPayroll = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -51,7 +49,7 @@ Partial Class FormPAYROLL
         Me.ContextMenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditEmployeeToolStripMenuItem, Me.DeleteEmployeeToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(176, 74)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(176, 52)
         '
         'EditEmployeeToolStripMenuItem
         '
@@ -66,24 +64,6 @@ Partial Class FormPAYROLL
         Me.DeleteEmployeeToolStripMenuItem.Name = "DeleteEmployeeToolStripMenuItem"
         Me.DeleteEmployeeToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
         Me.DeleteEmployeeToolStripMenuItem.Text = "Delete Payroll"
-        '
-        'txt_search
-        '
-        Me.txt_search.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_search.Location = New System.Drawing.Point(86, 68)
-        Me.txt_search.Name = "txt_search"
-        Me.txt_search.Size = New System.Drawing.Size(244, 26)
-        Me.txt_search.TabIndex = 21
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(12, 71)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(68, 20)
-        Me.Label3.TabIndex = 20
-        Me.Label3.Text = "Search :"
         '
         'btn_newPayroll
         '
@@ -149,8 +129,6 @@ Partial Class FormPAYROLL
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(879, 178)
-        Me.Controls.Add(Me.txt_search)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.btn_newPayroll)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -169,8 +147,6 @@ Partial Class FormPAYROLL
     Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents EditEmployeeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DeleteEmployeeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents txt_search As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents btn_newPayroll As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label

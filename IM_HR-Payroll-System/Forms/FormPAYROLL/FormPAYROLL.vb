@@ -51,4 +51,6 @@
         ShowForm1(FormPAYROLL_ADD, "edit", lst_payroll.FocusedItem.Text)
         RefreshPayrollList()
     End Sub
+
+
 End Class

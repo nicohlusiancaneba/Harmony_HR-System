@@ -57,6 +57,12 @@
     End Sub
 
     Private Sub btn_adjustments_Click(sender As Object, e As EventArgs) Handles btn_adjustments.Click
+        With FormADJUSTMENTS
+            .TopLevel = False
+            Panel2.Controls.Add(FormADJUSTMENTS)
+            .BringToFront()
+            .Show()
+        End With
         activeButtonForm(btn_adjustments)
     End Sub
 

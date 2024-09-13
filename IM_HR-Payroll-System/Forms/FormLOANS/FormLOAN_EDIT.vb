@@ -102,6 +102,19 @@
         RefreshLoanPaymentList()
     End Sub
 
+    Private Sub lst_loanPayment_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles lst_loanPayment.MouseDoubleClick
+        If lst_loanPayment.FocusedItem.SubItems(2).Text <> "" Then
+            MsgBox("Cannot edit this loan payment, payment is deducted from paryoll.", MsgBoxStyle.Exclamation, msgBox_header)
+            Exit Sub
+        End If
+
+
+
+        ShowForm1(FormLOAN_PAYMENT, "edit", lst_loanPayment.FocusedItem.Text)
+        RefreshLoanPaymentList()
+    End Sub
+
+
     Private Sub DeleteEmployeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteEmployeeToolStripMenuItem.Click
         If lst_loanPayment.FocusedItem.SubItems(2).Text <> "" Then
             MsgBox("Cannot delete this loan payment, payment is deducted from paryoll.", MsgBoxStyle.Exclamation, msgBox_header)
@@ -146,5 +159,14 @@
             MsgBox("Loan payment posted.", MsgBoxStyle.Information, msgBox_header)
         End If
         RefreshLoanPaymentList()
+    End Sub
+
+    Private Sub cmb_loanStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_loanStatus.SelectedIndexChanged
+        If cmb_loanStatus.Text = "Paid" Then
+            If CDbl(txt_balanceAmount.Text) > 0 Then
+                MsgBox("The loan balance remains unpaid.", MsgBoxStyle.Exclamation, msgBox_header)
+                cmb_loanStatus.Text = "Active"
+            End If
+        End If
     End Sub
 End Class
