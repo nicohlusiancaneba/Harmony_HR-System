@@ -9,7 +9,8 @@
         serverName = CnString
         Me.Close()
 
-
+        'db As String, ip As String, server As String, user As String, pass As String
+        UpdateServerSettings(cmb_dbname.Text, txtip.Text, txtservername.Text, txtusername.Text, txtpassword.Text)
         MDIMain.Show()
     End Sub
 

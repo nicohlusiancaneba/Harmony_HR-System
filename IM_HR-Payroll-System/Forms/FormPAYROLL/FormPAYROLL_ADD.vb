@@ -214,4 +214,8 @@
         End If
         RefreshPayrollDetailList()
     End Sub
+
+    Private Sub PrintEmployeePayslipToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrintEmployeePayslipToolStripMenuItem.Click
+        ShowForm1(FormPRINT_PAYSLIP, "add", payroll_Id)
+    End Sub
 End Class

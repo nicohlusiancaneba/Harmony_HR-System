@@ -104,6 +104,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\.Misc\FormSETTINGS.Designer.vb">
+      <DependentUpon>FormSETTINGS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\.Misc\FormSETTINGS.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FormADJUSTMENTS\FormADJUSTMENTS.Designer.vb">
       <DependentUpon>FormADJUSTMENTS.vb</DependentUpon>
     </Compile>
@@ -217,6 +223,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\.Misc\FormSETTINGS.resx">
+      <DependentUpon>FormSETTINGS.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormADJUSTMENTS\FormADJUSTMENTS.resx">
       <DependentUpon>FormADJUSTMENTS.vb</DependentUpon>
     </EmbeddedResource>
@@ -265,7 +274,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Payslip_Employee.rdlc" />
+    <Content Include="Reports\Payslip_Employee.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="Harmony_DataSet.xsc">
@@ -343,6 +354,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\settings.png" />
     <None Include="Resources\upload.png" />
     <None Include="Resources\Plus.png" />
     <None Include="Resources\add.png" />

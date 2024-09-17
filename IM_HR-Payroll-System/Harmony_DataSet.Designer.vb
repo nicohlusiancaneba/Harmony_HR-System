@@ -284,8 +284,104 @@ Partial Public Class Harmony_DataSet
         Inherits Global.System.Data.TypedTableBase(Of PayslipRow)
         
         Private columnEmployee_ID As Global.System.Data.DataColumn
-
+        
         Private columnPayroll_ID As Global.System.Data.DataColumn
+        
+        Private columnLast_Name As Global.System.Data.DataColumn
+        
+        Private columnFirst_Name As Global.System.Data.DataColumn
+        
+        Private columnPayroll_Date As Global.System.Data.DataColumn
+        
+        Private columnCutoff_Date_Start As Global.System.Data.DataColumn
+        
+        Private columnCutoff_Date_End As Global.System.Data.DataColumn
+        
+        Private columnpayRegular As Global.System.Data.DataColumn
+        
+        Private columnpaySpecial As Global.System.Data.DataColumn
+        
+        Private columnpayField As Global.System.Data.DataColumn
+        
+        Private columnpayHoliday As Global.System.Data.DataColumn
+        
+        Private columnpayOvertime As Global.System.Data.DataColumn
+        
+        Private columnpayNight_diff As Global.System.Data.DataColumn
+        
+        Private columnnumRegular As Global.System.Data.DataColumn
+        
+        Private columnnumSpecial As Global.System.Data.DataColumn
+        
+        Private columnnumField As Global.System.Data.DataColumn
+        
+        Private columnnumHoliday As Global.System.Data.DataColumn
+        
+        Private columnnumOvertime As Global.System.Data.DataColumn
+        
+        Private columnnumNight_diff As Global.System.Data.DataColumn
+
+        Private columntotalRegular As Global.System.Data.DataColumn
+
+        Private columntotalSpecial As Global.System.Data.DataColumn
+
+        Private columntotalField As Global.System.Data.DataColumn
+
+        Private columntotalHoliday As Global.System.Data.DataColumn
+
+        Private columntotalOvertime As Global.System.Data.DataColumn
+
+        Private columntotalNight_diff As Global.System.Data.DataColumn
+
+        Private columntotalSSS As Global.System.Data.DataColumn
+
+        Private columntotalPhilhealth As Global.System.Data.DataColumn
+
+        Private columntotalPagIbig As Global.System.Data.DataColumn
+
+        Private columntotalTax As Global.System.Data.DataColumn
+
+        Private columntotalInsurance As Global.System.Data.DataColumn
+
+        Private columntotalCharge As Global.System.Data.DataColumn
+
+        Private columntotalLate As Global.System.Data.DataColumn
+
+        Private columntotalUndertime As Global.System.Data.DataColumn
+
+        Private columnminusLate As Global.System.Data.DataColumn
+
+        Private columnminusUndertime As Global.System.Data.DataColumn
+
+        Private columnnumLate As Global.System.Data.DataColumn
+
+        Private columnnumUndertime As Global.System.Data.DataColumn
+
+        Private columntotalAddSpecial As Global.System.Data.DataColumn
+
+        Private columntotalAddField As Global.System.Data.DataColumn
+
+        Private columntotalAddIncentive As Global.System.Data.DataColumn
+
+        Private columntotalAddAllowance As Global.System.Data.DataColumn
+
+        Private columngrandTotal_Basic As Global.System.Data.DataColumn
+
+        Private columngrandTotal_Additional As Global.System.Data.DataColumn
+
+        Private columngrandTotal_Gross As Global.System.Data.DataColumn
+
+        Private columngrandTotal_Deduction As Global.System.Data.DataColumn
+
+        Private columngrandTotal_Loan As Global.System.Data.DataColumn
+
+        Private columngrandTotal_Net As Global.System.Data.DataColumn
+
+        Private columnpayroll_employeeRemarks As Global.System.Data.DataColumn
+
+        Private columnPayroll_Approved As Global.System.Data.DataColumn
+
+        Private columnEncoded_by As Global.System.Data.DataColumn
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
@@ -339,6 +435,390 @@ Partial Public Class Harmony_DataSet
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property Last_NameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnLast_Name
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property First_NameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFirst_Name
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property Payroll_DateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPayroll_Date
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property Cutoff_Date_StartColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCutoff_Date_Start
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property Cutoff_Date_EndColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCutoff_Date_End
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property payRegularColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpayRegular
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property paySpecialColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpaySpecial
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property payFieldColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpayField
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property payHolidayColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpayHoliday
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property payOvertimeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpayOvertime
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property payNight_diffColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpayNight_diff
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property numRegularColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnumRegular
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property numSpecialColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnumSpecial
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property numFieldColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnumField
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property numHolidayColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnumHoliday
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property numOvertimeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnumOvertime
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property numNight_diffColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnumNight_diff
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalRegularColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalRegular
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalSpecialColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalSpecial
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalFieldColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalField
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalHolidayColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalHoliday
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalOvertimeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalOvertime
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalNight_diffColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalNight_diff
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalSSSColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalSSS
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalPhilhealthColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalPhilhealth
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalPagIbigColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalPagIbig
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalTaxColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalTax
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalInsuranceColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalInsurance
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalChargeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalCharge
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalLateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalLate
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalUndertimeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalUndertime
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property minusLateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnminusLate
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property minusUndertimeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnminusUndertime
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property numLateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnumLate
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property numUndertimeColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnumUndertime
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalAddSpecialColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalAddSpecial
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalAddFieldColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalAddField
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalAddIncentiveColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalAddIncentive
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalAddAllowanceColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalAddAllowance
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property grandTotal_BasicColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columngrandTotal_Basic
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property grandTotal_AdditionalColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columngrandTotal_Additional
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property grandTotal_GrossColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columngrandTotal_Gross
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property grandTotal_DeductionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columngrandTotal_Deduction
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property grandTotal_LoanColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columngrandTotal_Loan
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property grandTotal_NetColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columngrandTotal_Net
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property payroll_employeeRemarksColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpayroll_employeeRemarks
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property Payroll_ApprovedColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnPayroll_Approved
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property Encoded_byColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEncoded_by
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -375,9 +855,59 @@ Partial Public Class Harmony_DataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddPayslipRow(ByVal Employee_ID As String, ByVal Payroll_ID As String) As PayslipRow
+        Public Overloads Function AddPayslipRow( _
+                    ByVal Employee_ID As String, _
+                    ByVal Payroll_ID As String, _
+                    ByVal Last_Name As String, _
+                    ByVal First_Name As String, _
+                    ByVal Payroll_Date As String, _
+                    ByVal Cutoff_Date_Start As String, _
+                    ByVal Cutoff_Date_End As String, _
+                    ByVal payRegular As String, _
+                    ByVal paySpecial As String, _
+                    ByVal payField As String, _
+                    ByVal payHoliday As String, _
+                    ByVal payOvertime As String, _
+                    ByVal payNight_diff As String, _
+                    ByVal numRegular As String, _
+                    ByVal numSpecial As String, _
+                    ByVal numField As String, _
+                    ByVal numHoliday As String, _
+                    ByVal numOvertime As String, _
+                    ByVal numNight_diff As String, _
+                    ByVal totalRegular As String, _
+                    ByVal totalSpecial As String, _
+                    ByVal totalField As String, _
+                    ByVal totalHoliday As String, _
+                    ByVal totalOvertime As String, _
+                    ByVal totalNight_diff As String, _
+                    ByVal totalSSS As String, _
+                    ByVal totalPhilhealth As String, _
+                    ByVal totalPagIbig As String, _
+                    ByVal totalTax As String, _
+                    ByVal totalInsurance As String, _
+                    ByVal totalCharge As String, _
+                    ByVal totalLate As String, _
+                    ByVal totalUndertime As String, _
+                    ByVal minusLate As String, _
+                    ByVal minusUndertime As String, _
+                    ByVal numLate As String, _
+                    ByVal numUndertime As String, _
+                    ByVal totalAddSpecial As String, _
+                    ByVal totalAddField As String, _
+                    ByVal totalAddIncentive As String, _
+                    ByVal totalAddAllowance As String, _
+                    ByVal grandTotal_Basic As String, _
+                    ByVal grandTotal_Additional As String, _
+                    ByVal grandTotal_Gross As String, _
+                    ByVal grandTotal_Deduction As String, _
+                    ByVal grandTotal_Loan As String, _
+                    ByVal grandTotal_Net As String, _
+                    ByVal payroll_employeeRemarks As String, _
+                    ByVal Payroll_Approved As String, _
+                    ByVal Encoded_by As String) As PayslipRow
             Dim rowPayslipRow As PayslipRow = CType(Me.NewRow, PayslipRow)
-            Dim columnValuesArray() As Object = New Object() {Employee_ID, Payroll_ID}
+            Dim columnValuesArray() As Object = New Object() {Employee_ID, Payroll_ID, Last_Name, First_Name, Payroll_Date, Cutoff_Date_Start, Cutoff_Date_End, payRegular, paySpecial, payField, payHoliday, payOvertime, payNight_diff, numRegular, numSpecial, numField, numHoliday, numOvertime, numNight_diff, totalRegular, totalSpecial, totalField, totalHoliday, totalOvertime, totalNight_diff, totalSSS, totalPhilhealth, totalPagIbig, totalTax, totalInsurance, totalCharge, totalLate, totalUndertime, minusLate, minusUndertime, numLate, numUndertime, totalAddSpecial, totalAddField, totalAddIncentive, totalAddAllowance, grandTotal_Basic, grandTotal_Additional, grandTotal_Gross, grandTotal_Deduction, grandTotal_Loan, grandTotal_Net, payroll_employeeRemarks, Payroll_Approved, Encoded_by}
             rowPayslipRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowPayslipRow)
             Return rowPayslipRow
@@ -402,6 +932,54 @@ Partial Public Class Harmony_DataSet
         Friend Sub InitVars()
             Me.columnEmployee_ID = MyBase.Columns("Employee_ID")
             Me.columnPayroll_ID = MyBase.Columns("Payroll_ID")
+            Me.columnLast_Name = MyBase.Columns("Last_Name")
+            Me.columnFirst_Name = MyBase.Columns("First_Name")
+            Me.columnPayroll_Date = MyBase.Columns("Payroll_Date")
+            Me.columnCutoff_Date_Start = MyBase.Columns("Cutoff_Date_Start")
+            Me.columnCutoff_Date_End = MyBase.Columns("Cutoff_Date_End")
+            Me.columnpayRegular = MyBase.Columns("payRegular")
+            Me.columnpaySpecial = MyBase.Columns("paySpecial")
+            Me.columnpayField = MyBase.Columns("payField")
+            Me.columnpayHoliday = MyBase.Columns("payHoliday")
+            Me.columnpayOvertime = MyBase.Columns("payOvertime")
+            Me.columnpayNight_diff = MyBase.Columns("payNight_diff")
+            Me.columnnumRegular = MyBase.Columns("numRegular")
+            Me.columnnumSpecial = MyBase.Columns("numSpecial")
+            Me.columnnumField = MyBase.Columns("numField")
+            Me.columnnumHoliday = MyBase.Columns("numHoliday")
+            Me.columnnumOvertime = MyBase.Columns("numOvertime")
+            Me.columnnumNight_diff = MyBase.Columns("numNight_diff")
+            Me.columntotalRegular = MyBase.Columns("totalRegular")
+            Me.columntotalSpecial = MyBase.Columns("totalSpecial")
+            Me.columntotalField = MyBase.Columns("totalField")
+            Me.columntotalHoliday = MyBase.Columns("totalHoliday")
+            Me.columntotalOvertime = MyBase.Columns("totalOvertime")
+            Me.columntotalNight_diff = MyBase.Columns("totalNight_diff")
+            Me.columntotalSSS = MyBase.Columns("totalSSS")
+            Me.columntotalPhilhealth = MyBase.Columns("totalPhilhealth")
+            Me.columntotalPagIbig = MyBase.Columns("totalPagIbig")
+            Me.columntotalTax = MyBase.Columns("totalTax")
+            Me.columntotalInsurance = MyBase.Columns("totalInsurance")
+            Me.columntotalCharge = MyBase.Columns("totalCharge")
+            Me.columntotalLate = MyBase.Columns("totalLate")
+            Me.columntotalUndertime = MyBase.Columns("totalUndertime")
+            Me.columnminusLate = MyBase.Columns("minusLate")
+            Me.columnminusUndertime = MyBase.Columns("minusUndertime")
+            Me.columnnumLate = MyBase.Columns("numLate")
+            Me.columnnumUndertime = MyBase.Columns("numUndertime")
+            Me.columntotalAddSpecial = MyBase.Columns("totalAddSpecial")
+            Me.columntotalAddField = MyBase.Columns("totalAddField")
+            Me.columntotalAddIncentive = MyBase.Columns("totalAddIncentive")
+            Me.columntotalAddAllowance = MyBase.Columns("totalAddAllowance")
+            Me.columngrandTotal_Basic = MyBase.Columns("grandTotal_Basic")
+            Me.columngrandTotal_Additional = MyBase.Columns("grandTotal_Additional")
+            Me.columngrandTotal_Gross = MyBase.Columns("grandTotal_Gross")
+            Me.columngrandTotal_Deduction = MyBase.Columns("grandTotal_Deduction")
+            Me.columngrandTotal_Loan = MyBase.Columns("grandTotal_Loan")
+            Me.columngrandTotal_Net = MyBase.Columns("grandTotal_Net")
+            Me.columnpayroll_employeeRemarks = MyBase.Columns("payroll_employeeRemarks")
+            Me.columnPayroll_Approved = MyBase.Columns("Payroll_Approved")
+            Me.columnEncoded_by = MyBase.Columns("Encoded_by")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -411,6 +989,102 @@ Partial Public Class Harmony_DataSet
             MyBase.Columns.Add(Me.columnEmployee_ID)
             Me.columnPayroll_ID = New Global.System.Data.DataColumn("Payroll_ID", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnPayroll_ID)
+            Me.columnLast_Name = New Global.System.Data.DataColumn("Last_Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnLast_Name)
+            Me.columnFirst_Name = New Global.System.Data.DataColumn("First_Name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFirst_Name)
+            Me.columnPayroll_Date = New Global.System.Data.DataColumn("Payroll_Date", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPayroll_Date)
+            Me.columnCutoff_Date_Start = New Global.System.Data.DataColumn("Cutoff_Date_Start", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCutoff_Date_Start)
+            Me.columnCutoff_Date_End = New Global.System.Data.DataColumn("Cutoff_Date_End", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCutoff_Date_End)
+            Me.columnpayRegular = New Global.System.Data.DataColumn("payRegular", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpayRegular)
+            Me.columnpaySpecial = New Global.System.Data.DataColumn("paySpecial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpaySpecial)
+            Me.columnpayField = New Global.System.Data.DataColumn("payField", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpayField)
+            Me.columnpayHoliday = New Global.System.Data.DataColumn("payHoliday", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpayHoliday)
+            Me.columnpayOvertime = New Global.System.Data.DataColumn("payOvertime", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpayOvertime)
+            Me.columnpayNight_diff = New Global.System.Data.DataColumn("payNight_diff", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpayNight_diff)
+            Me.columnnumRegular = New Global.System.Data.DataColumn("numRegular", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnumRegular)
+            Me.columnnumSpecial = New Global.System.Data.DataColumn("numSpecial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnumSpecial)
+            Me.columnnumField = New Global.System.Data.DataColumn("numField", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnumField)
+            Me.columnnumHoliday = New Global.System.Data.DataColumn("numHoliday", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnumHoliday)
+            Me.columnnumOvertime = New Global.System.Data.DataColumn("numOvertime", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnumOvertime)
+            Me.columnnumNight_diff = New Global.System.Data.DataColumn("numNight_diff", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnumNight_diff)
+            Me.columntotalRegular = New Global.System.Data.DataColumn("totalRegular", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalRegular)
+            Me.columntotalSpecial = New Global.System.Data.DataColumn("totalSpecial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalSpecial)
+            Me.columntotalField = New Global.System.Data.DataColumn("totalField", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalField)
+            Me.columntotalHoliday = New Global.System.Data.DataColumn("totalHoliday", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalHoliday)
+            Me.columntotalOvertime = New Global.System.Data.DataColumn("totalOvertime", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalOvertime)
+            Me.columntotalNight_diff = New Global.System.Data.DataColumn("totalNight_diff", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalNight_diff)
+            Me.columntotalSSS = New Global.System.Data.DataColumn("totalSSS", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalSSS)
+            Me.columntotalPhilhealth = New Global.System.Data.DataColumn("totalPhilhealth", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalPhilhealth)
+            Me.columntotalPagIbig = New Global.System.Data.DataColumn("totalPagIbig", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalPagIbig)
+            Me.columntotalTax = New Global.System.Data.DataColumn("totalTax", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalTax)
+            Me.columntotalInsurance = New Global.System.Data.DataColumn("totalInsurance", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalInsurance)
+            Me.columntotalCharge = New Global.System.Data.DataColumn("totalCharge", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalCharge)
+            Me.columntotalLate = New Global.System.Data.DataColumn("totalLate", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalLate)
+            Me.columntotalUndertime = New Global.System.Data.DataColumn("totalUndertime", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalUndertime)
+            Me.columnminusLate = New Global.System.Data.DataColumn("minusLate", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnminusLate)
+            Me.columnminusUndertime = New Global.System.Data.DataColumn("minusUndertime", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnminusUndertime)
+            Me.columnnumLate = New Global.System.Data.DataColumn("numLate", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnumLate)
+            Me.columnnumUndertime = New Global.System.Data.DataColumn("numUndertime", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnumUndertime)
+            Me.columntotalAddSpecial = New Global.System.Data.DataColumn("totalAddSpecial", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalAddSpecial)
+            Me.columntotalAddField = New Global.System.Data.DataColumn("totalAddField", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalAddField)
+            Me.columntotalAddIncentive = New Global.System.Data.DataColumn("totalAddIncentive", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalAddIncentive)
+            Me.columntotalAddAllowance = New Global.System.Data.DataColumn("totalAddAllowance", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalAddAllowance)
+            Me.columngrandTotal_Basic = New Global.System.Data.DataColumn("grandTotal_Basic", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columngrandTotal_Basic)
+            Me.columngrandTotal_Additional = New Global.System.Data.DataColumn("grandTotal_Additional", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columngrandTotal_Additional)
+            Me.columngrandTotal_Gross = New Global.System.Data.DataColumn("grandTotal_Gross", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columngrandTotal_Gross)
+            Me.columngrandTotal_Deduction = New Global.System.Data.DataColumn("grandTotal_Deduction", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columngrandTotal_Deduction)
+            Me.columngrandTotal_Loan = New Global.System.Data.DataColumn("grandTotal_Loan", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columngrandTotal_Loan)
+            Me.columngrandTotal_Net = New Global.System.Data.DataColumn("grandTotal_Net", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columngrandTotal_Net)
+            Me.columnpayroll_employeeRemarks = New Global.System.Data.DataColumn("payroll_employeeRemarks", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpayroll_employeeRemarks)
+            Me.columnPayroll_Approved = New Global.System.Data.DataColumn("Payroll_Approved", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnPayroll_Approved)
+            Me.columnEncoded_by = New Global.System.Data.DataColumn("Encoded_by", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEncoded_by)
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -587,6 +1261,726 @@ Partial Public Class Harmony_DataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Last_Name() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.Last_NameColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Last_Name' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.Last_NameColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property First_Name() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.First_NameColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'First_Name' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.First_NameColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Payroll_Date() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.Payroll_DateColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Payroll_Date' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.Payroll_DateColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Cutoff_Date_Start() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.Cutoff_Date_StartColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Cutoff_Date_Start' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.Cutoff_Date_StartColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Cutoff_Date_End() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.Cutoff_Date_EndColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Cutoff_Date_End' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.Cutoff_Date_EndColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property payRegular() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.payRegularColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'payRegular' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.payRegularColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property paySpecial() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.paySpecialColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'paySpecial' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.paySpecialColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property payField() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.payFieldColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'payField' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.payFieldColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property payHoliday() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.payHolidayColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'payHoliday' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.payHolidayColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property payOvertime() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.payOvertimeColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'payOvertime' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.payOvertimeColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property payNight_diff() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.payNight_diffColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'payNight_diff' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.payNight_diffColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property numRegular() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.numRegularColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'numRegular' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.numRegularColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property numSpecial() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.numSpecialColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'numSpecial' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.numSpecialColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property numField() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.numFieldColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'numField' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.numFieldColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property numHoliday() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.numHolidayColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'numHoliday' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.numHolidayColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property numOvertime() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.numOvertimeColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'numOvertime' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.numOvertimeColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property numNight_diff() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.numNight_diffColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'numNight_diff' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.numNight_diffColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalRegular() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalRegularColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalRegular' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalRegularColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalSpecial() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalSpecialColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalSpecial' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalSpecialColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalField() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalFieldColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalField' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalFieldColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalHoliday() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalHolidayColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalHoliday' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalHolidayColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalOvertime() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalOvertimeColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalOvertime' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalOvertimeColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalNight_diff() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalNight_diffColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalNight_diff' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalNight_diffColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalSSS() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalSSSColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalSSS' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalSSSColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalPhilhealth() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalPhilhealthColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalPhilhealth' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalPhilhealthColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalPagIbig() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalPagIbigColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalPagIbig' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalPagIbigColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalTax() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalTaxColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalTax' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalTaxColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalInsurance() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalInsuranceColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalInsurance' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalInsuranceColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalCharge() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalChargeColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalCharge' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalChargeColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalLate() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalLateColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalLate' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalLateColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalUndertime() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalUndertimeColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalUndertime' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalUndertimeColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property minusLate() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.minusLateColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'minusLate' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.minusLateColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property minusUndertime() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.minusUndertimeColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'minusUndertime' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.minusUndertimeColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property numLate() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.numLateColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'numLate' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.numLateColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property numUndertime() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.numUndertimeColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'numUndertime' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.numUndertimeColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalAddSpecial() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalAddSpecialColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalAddSpecial' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalAddSpecialColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalAddField() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalAddFieldColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalAddField' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalAddFieldColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalAddIncentive() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalAddIncentiveColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalAddIncentive' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalAddIncentiveColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalAddAllowance() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalAddAllowanceColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalAddAllowance' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalAddAllowanceColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property grandTotal_Basic() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.grandTotal_BasicColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'grandTotal_Basic' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.grandTotal_BasicColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property grandTotal_Additional() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.grandTotal_AdditionalColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'grandTotal_Additional' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.grandTotal_AdditionalColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property grandTotal_Gross() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.grandTotal_GrossColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'grandTotal_Gross' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.grandTotal_GrossColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property grandTotal_Deduction() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.grandTotal_DeductionColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'grandTotal_Deduction' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.grandTotal_DeductionColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property grandTotal_Loan() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.grandTotal_LoanColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'grandTotal_Loan' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.grandTotal_LoanColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property grandTotal_Net() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.grandTotal_NetColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'grandTotal_Net' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.grandTotal_NetColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property payroll_employeeRemarks() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.payroll_employeeRemarksColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'payroll_employeeRemarks' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.payroll_employeeRemarksColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Payroll_Approved() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.Payroll_ApprovedColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Payroll_Approved' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.Payroll_ApprovedColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Encoded_by() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.Encoded_byColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Encoded_by' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.Encoded_byColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function IsEmployee_IDNull() As Boolean
             Return Me.IsNull(Me.tablePayslip.Employee_IDColumn)
         End Function
@@ -607,6 +2001,582 @@ Partial Public Class Harmony_DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetPayroll_IDNull()
             Me(Me.tablePayslip.Payroll_IDColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsLast_NameNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.Last_NameColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetLast_NameNull()
+            Me(Me.tablePayslip.Last_NameColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsFirst_NameNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.First_NameColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetFirst_NameNull()
+            Me(Me.tablePayslip.First_NameColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsPayroll_DateNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.Payroll_DateColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetPayroll_DateNull()
+            Me(Me.tablePayslip.Payroll_DateColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsCutoff_Date_StartNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.Cutoff_Date_StartColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetCutoff_Date_StartNull()
+            Me(Me.tablePayslip.Cutoff_Date_StartColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsCutoff_Date_EndNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.Cutoff_Date_EndColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetCutoff_Date_EndNull()
+            Me(Me.tablePayslip.Cutoff_Date_EndColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IspayRegularNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.payRegularColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetpayRegularNull()
+            Me(Me.tablePayslip.payRegularColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IspaySpecialNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.paySpecialColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetpaySpecialNull()
+            Me(Me.tablePayslip.paySpecialColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IspayFieldNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.payFieldColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetpayFieldNull()
+            Me(Me.tablePayslip.payFieldColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IspayHolidayNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.payHolidayColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetpayHolidayNull()
+            Me(Me.tablePayslip.payHolidayColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IspayOvertimeNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.payOvertimeColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetpayOvertimeNull()
+            Me(Me.tablePayslip.payOvertimeColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IspayNight_diffNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.payNight_diffColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetpayNight_diffNull()
+            Me(Me.tablePayslip.payNight_diffColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsnumRegularNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.numRegularColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetnumRegularNull()
+            Me(Me.tablePayslip.numRegularColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsnumSpecialNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.numSpecialColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetnumSpecialNull()
+            Me(Me.tablePayslip.numSpecialColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsnumFieldNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.numFieldColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetnumFieldNull()
+            Me(Me.tablePayslip.numFieldColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsnumHolidayNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.numHolidayColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetnumHolidayNull()
+            Me(Me.tablePayslip.numHolidayColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsnumOvertimeNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.numOvertimeColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetnumOvertimeNull()
+            Me(Me.tablePayslip.numOvertimeColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsnumNight_diffNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.numNight_diffColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetnumNight_diffNull()
+            Me(Me.tablePayslip.numNight_diffColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalRegularNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalRegularColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalRegularNull()
+            Me(Me.tablePayslip.totalRegularColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalSpecialNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalSpecialColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalSpecialNull()
+            Me(Me.tablePayslip.totalSpecialColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalFieldNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalFieldColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalFieldNull()
+            Me(Me.tablePayslip.totalFieldColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalHolidayNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalHolidayColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalHolidayNull()
+            Me(Me.tablePayslip.totalHolidayColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalOvertimeNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalOvertimeColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalOvertimeNull()
+            Me(Me.tablePayslip.totalOvertimeColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalNight_diffNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalNight_diffColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalNight_diffNull()
+            Me(Me.tablePayslip.totalNight_diffColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalSSSNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalSSSColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalSSSNull()
+            Me(Me.tablePayslip.totalSSSColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalPhilhealthNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalPhilhealthColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalPhilhealthNull()
+            Me(Me.tablePayslip.totalPhilhealthColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalPagIbigNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalPagIbigColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalPagIbigNull()
+            Me(Me.tablePayslip.totalPagIbigColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalTaxNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalTaxColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalTaxNull()
+            Me(Me.tablePayslip.totalTaxColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalInsuranceNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalInsuranceColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalInsuranceNull()
+            Me(Me.tablePayslip.totalInsuranceColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalChargeNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalChargeColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalChargeNull()
+            Me(Me.tablePayslip.totalChargeColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalLateNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalLateColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalLateNull()
+            Me(Me.tablePayslip.totalLateColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalUndertimeNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalUndertimeColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalUndertimeNull()
+            Me(Me.tablePayslip.totalUndertimeColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsminusLateNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.minusLateColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetminusLateNull()
+            Me(Me.tablePayslip.minusLateColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsminusUndertimeNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.minusUndertimeColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetminusUndertimeNull()
+            Me(Me.tablePayslip.minusUndertimeColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsnumLateNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.numLateColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetnumLateNull()
+            Me(Me.tablePayslip.numLateColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsnumUndertimeNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.numUndertimeColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetnumUndertimeNull()
+            Me(Me.tablePayslip.numUndertimeColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalAddSpecialNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalAddSpecialColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalAddSpecialNull()
+            Me(Me.tablePayslip.totalAddSpecialColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalAddFieldNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalAddFieldColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalAddFieldNull()
+            Me(Me.tablePayslip.totalAddFieldColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalAddIncentiveNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalAddIncentiveColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalAddIncentiveNull()
+            Me(Me.tablePayslip.totalAddIncentiveColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalAddAllowanceNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalAddAllowanceColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalAddAllowanceNull()
+            Me(Me.tablePayslip.totalAddAllowanceColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsgrandTotal_BasicNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.grandTotal_BasicColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetgrandTotal_BasicNull()
+            Me(Me.tablePayslip.grandTotal_BasicColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsgrandTotal_AdditionalNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.grandTotal_AdditionalColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetgrandTotal_AdditionalNull()
+            Me(Me.tablePayslip.grandTotal_AdditionalColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsgrandTotal_GrossNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.grandTotal_GrossColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetgrandTotal_GrossNull()
+            Me(Me.tablePayslip.grandTotal_GrossColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsgrandTotal_DeductionNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.grandTotal_DeductionColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetgrandTotal_DeductionNull()
+            Me(Me.tablePayslip.grandTotal_DeductionColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsgrandTotal_LoanNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.grandTotal_LoanColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetgrandTotal_LoanNull()
+            Me(Me.tablePayslip.grandTotal_LoanColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsgrandTotal_NetNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.grandTotal_NetColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetgrandTotal_NetNull()
+            Me(Me.tablePayslip.grandTotal_NetColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Ispayroll_employeeRemarksNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.payroll_employeeRemarksColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Setpayroll_employeeRemarksNull()
+            Me(Me.tablePayslip.payroll_employeeRemarksColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsPayroll_ApprovedNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.Payroll_ApprovedColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetPayroll_ApprovedNull()
+            Me(Me.tablePayslip.Payroll_ApprovedColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsEncoded_byNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.Encoded_byColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetEncoded_byNull()
+            Me(Me.tablePayslip.Encoded_byColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

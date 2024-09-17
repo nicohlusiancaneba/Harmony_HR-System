@@ -27,8 +27,8 @@
         txt_EmployeeID.Text = sqlDT.Rows(0)("Employee_Id")
         txt_employeeName.Text = sqlDT.Rows(0)("EmployeeName")
         txt_payRegular.Text = sqlDT.Rows(0)("Current_Daily_Rate")
-        txt_paySpecial.Text = sqlDT.Rows(0)("Current_Daily_Rate")
-        txt_payField.Text = sqlDT.Rows(0)("Current_Daily_Rate")
+        txt_paySpecial.Text = 0
+        txt_payField.Text = 0
         txt_payHoliday.Text = sqlDT.Rows(0)("Current_Daily_Rate")
         txt_payOvertime.Text = Format(Val(sqlDT.Rows(0)("Current_Daily_Rate")) / 8 / 60, "N2")
         txt_payNightDiff.Text = Format(((Val(sqlDT.Rows(0)("Current_Daily_Rate")) / 8) * 0.1) / 60, "N2")

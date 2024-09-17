@@ -26,21 +26,21 @@ Partial Class FormSERVER_SETTINGS
         Me.cmdCancel = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.cmb_dbname = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.txtpassword = New System.Windows.Forms.TextBox()
         Me.txtusername = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.txtservername = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.txtip = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.cmdSave = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'OpenFileDialog1
@@ -50,7 +50,7 @@ Partial Class FormSERVER_SETTINGS
         'cmdCancel
         '
         Me.cmdCancel.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdCancel.Location = New System.Drawing.Point(186, 158)
+        Me.cmdCancel.Location = New System.Drawing.Point(196, 264)
         Me.cmdCancel.Name = "cmdCancel"
         Me.cmdCancel.Size = New System.Drawing.Size(75, 31)
         Me.cmdCancel.TabIndex = 12
@@ -59,119 +59,66 @@ Partial Class FormSERVER_SETTINGS
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.cmb_dbname)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.txtpassword)
-        Me.GroupBox1.Controls.Add(Me.txtusername)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.txtservername)
-        Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtip)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Controls.Add(Me.txtpassword)
+        Me.GroupBox1.Controls.Add(Me.txtservername)
+        Me.GroupBox1.Controls.Add(Me.txtusername)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 70)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(249, 140)
+        Me.GroupBox1.Size = New System.Drawing.Size(259, 188)
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
         '
         'cmb_dbname
         '
         Me.cmb_dbname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_dbname.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.cmb_dbname.FormattingEnabled = True
         Me.cmb_dbname.Items.AddRange(New Object() {"", "BCVR-HR"})
-        Me.cmb_dbname.Location = New System.Drawing.Point(99, 13)
+        Me.cmb_dbname.Location = New System.Drawing.Point(111, 13)
         Me.cmb_dbname.Name = "cmb_dbname"
-        Me.cmb_dbname.Size = New System.Drawing.Size(73, 21)
+        Me.cmb_dbname.Size = New System.Drawing.Size(73, 24)
         Me.cmb_dbname.TabIndex = 13
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(26, 16)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(67, 13)
-        Me.Label1.TabIndex = 12
-        Me.Label1.Text = "Database :"
         '
         'txtpassword
         '
-        Me.txtpassword.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtpassword.Location = New System.Drawing.Point(99, 103)
+        Me.txtpassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.txtpassword.Location = New System.Drawing.Point(111, 154)
         Me.txtpassword.Name = "txtpassword"
         Me.txtpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtpassword.Size = New System.Drawing.Size(132, 21)
+        Me.txtpassword.Size = New System.Drawing.Size(132, 23)
         Me.txtpassword.TabIndex = 7
         '
         'txtusername
         '
-        Me.txtusername.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtusername.Location = New System.Drawing.Point(99, 80)
+        Me.txtusername.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.txtusername.Location = New System.Drawing.Point(111, 117)
         Me.txtusername.Name = "txtusername"
-        Me.txtusername.Size = New System.Drawing.Size(132, 21)
+        Me.txtusername.Size = New System.Drawing.Size(132, 23)
         Me.txtusername.TabIndex = 6
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(26, 106)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(67, 13)
-        Me.Label6.TabIndex = 5
-        Me.Label6.Text = "Password :"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(19, 83)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(74, 13)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "User Name :"
         '
         'txtservername
         '
-        Me.txtservername.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtservername.Location = New System.Drawing.Point(99, 58)
+        Me.txtservername.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.txtservername.Location = New System.Drawing.Point(111, 82)
         Me.txtservername.Name = "txtservername"
-        Me.txtservername.Size = New System.Drawing.Size(132, 21)
+        Me.txtservername.Size = New System.Drawing.Size(132, 23)
         Me.txtservername.TabIndex = 3
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(7, 62)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(86, 13)
-        Me.Label4.TabIndex = 2
-        Me.Label4.Text = "Server Name :"
         '
         'txtip
         '
-        Me.txtip.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtip.Location = New System.Drawing.Point(99, 36)
+        Me.txtip.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.txtip.Location = New System.Drawing.Point(111, 48)
         Me.txtip.Name = "txtip"
-        Me.txtip.Size = New System.Drawing.Size(132, 21)
+        Me.txtip.Size = New System.Drawing.Size(132, 23)
         Me.txtip.TabIndex = 1
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(19, 39)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(74, 13)
-        Me.Label3.TabIndex = 0
-        Me.Label3.Text = "IP Address :"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(38, 301)
+        Me.Label9.Location = New System.Drawing.Point(46, 348)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(139, 13)
         Me.Label9.TabIndex = 11
@@ -180,7 +127,7 @@ Partial Class FormSERVER_SETTINGS
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(222, 301)
+        Me.Label8.Location = New System.Drawing.Point(230, 348)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(128, 13)
         Me.Label8.TabIndex = 10
@@ -191,7 +138,7 @@ Partial Class FormSERVER_SETTINGS
         Me.RadioButton2.AutoSize = True
         Me.RadioButton2.Checked = True
         Me.RadioButton2.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton2.Location = New System.Drawing.Point(198, 287)
+        Me.RadioButton2.Location = New System.Drawing.Point(206, 334)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(169, 17)
         Me.RadioButton2.TabIndex = 9
@@ -203,7 +150,7 @@ Partial Class FormSERVER_SETTINGS
         '
         Me.RadioButton1.AutoSize = True
         Me.RadioButton1.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton1.Location = New System.Drawing.Point(24, 287)
+        Me.RadioButton1.Location = New System.Drawing.Point(32, 334)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(160, 17)
         Me.RadioButton1.TabIndex = 8
@@ -213,18 +160,62 @@ Partial Class FormSERVER_SETTINGS
         'cmdSave
         '
         Me.cmdSave.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdSave.Location = New System.Drawing.Point(105, 158)
+        Me.cmdSave.Location = New System.Drawing.Point(115, 264)
         Me.cmdSave.Name = "cmdSave"
         Me.cmdSave.Size = New System.Drawing.Size(75, 31)
         Me.cmdSave.TabIndex = 11
         Me.cmdSave.Text = "&Save"
         Me.cmdSave.UseVisualStyleBackColor = True
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(73, 40)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(165, 20)
+        Me.Label2.TabIndex = 17
+        Me.Label2.Text = "Adjust server settings."
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(71, 9)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(200, 31)
+        Me.Label7.TabIndex = 16
+        Me.Label7.Text = "Server Settings"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Harmony.My.Resources.Resources.settings
+        Me.PictureBox1.Location = New System.Drawing.Point(10, 9)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(55, 54)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 15
+        Me.PictureBox1.TabStop = False
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(6, 16)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(99, 153)
+        Me.Label11.TabIndex = 18
+        Me.Label11.Text = "Database :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "IP Address :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Server Name :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Username :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Password :"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'FormSERVER_SETTINGS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(271, 196)
+        Me.ClientSize = New System.Drawing.Size(281, 305)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.cmdCancel)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label9)
@@ -242,6 +233,7 @@ Partial Class FormSERVER_SETTINGS
         Me.Text = "Server Settings"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -255,13 +247,12 @@ Partial Class FormSERVER_SETTINGS
     Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
     Friend WithEvents txtpassword As System.Windows.Forms.TextBox
     Friend WithEvents txtusername As System.Windows.Forms.TextBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txtservername As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents txtip As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents cmdSave As System.Windows.Forms.Button
     Friend WithEvents cmb_dbname As System.Windows.Forms.ComboBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label11 As System.Windows.Forms.Label
 End Class

@@ -31,6 +31,16 @@
             MsgBox("Invalid Username or Password.")
             Exit Sub
         End If
+
+        sqlSTR = "select Business_Name from Global_Data"
+        ExecuteSQLQuery(sqlSTR)
+
+        If sqlDT.Rows.Count > 0 Then
+            MDIMain.CompanyName.Text = "Company: " & sqlDT.Rows(0)("Business_Name").ToString
+        End If
+
+
+
     End Sub
 
 

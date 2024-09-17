@@ -91,3 +91,9 @@ B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony - HR System.exe
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony - HR System.xml
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony - HR System.pdb
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormADJUSTMENTS.resources
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\IM_HR-Payroll-System.vbprojResolveAssemblyReference.cache
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormSETTINGS.resources
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormPRINT_PAYSLIP.resources
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\RdlCompile.cache
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\RdlCompile.compiled
+B:\Harmony_HR-System\IM_HR-Payroll-System\bin\Debug\Reports\Payslip_Employee.rdlc

@@ -555,6 +555,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_minusUndertime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_minusUndertime.Location = New System.Drawing.Point(123, 175)
         Me.txt_minusUndertime.Name = "txt_minusUndertime"
+        Me.txt_minusUndertime.ReadOnly = True
         Me.txt_minusUndertime.Size = New System.Drawing.Size(56, 26)
         Me.txt_minusUndertime.TabIndex = 16
         Me.txt_minusUndertime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -661,6 +662,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.txt_minusLate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_minusLate.Location = New System.Drawing.Point(123, 133)
         Me.txt_minusLate.Name = "txt_minusLate"
+        Me.txt_minusLate.ReadOnly = True
         Me.txt_minusLate.Size = New System.Drawing.Size(56, 26)
         Me.txt_minusLate.TabIndex = 14
         Me.txt_minusLate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center

@@ -3,6 +3,9 @@
     Private Sub MDIMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Panel1.Height = Me.Height
 
+
+
+
         'Dim temp As Integer = 5 + 4.46
         'btn_employees.Height = Panel1.Height / temp
         'btn_payroll.Height = Panel1.Height / temp
@@ -24,6 +27,14 @@
         btn_loans.BackColor = Color.White
 
         clickedButton.BackColor = Color.Gainsboro
+    End Sub
+
+    Private Sub ResetActiveButtonform()
+        btn_employees.BackColor = Color.White
+        btn_leave.BackColor = Color.White
+        btn_payroll.BackColor = Color.White
+        btn_adjustments.BackColor = Color.White
+        btn_loans.BackColor = Color.White
     End Sub
 
     Private Sub btn_employees_Click(sender As Object, e As EventArgs) Handles btn_employees.Click
@@ -79,11 +90,21 @@
     End Sub
 
     Private Sub btn_logout_Click(sender As Object, e As EventArgs) Handles btn_logout.Click
+        CompanyName.Text = ""
+
+
         For Each frm As Form In Application.OpenForms.Cast(Of Form).ToList()
             If Not frm Is Me Then
                 frm.Close()
             End If
         Next
+        Me.Enabled = False
+        ResetActiveButtonform()
         Form_LOGIN.ShowDialog()
+
+    End Sub
+
+    Private Sub btn_settings_Click(sender As Object, e As EventArgs) Handles btn_settings.Click
+        FormSETTINGS.ShowDialog()
     End Sub
 End Class

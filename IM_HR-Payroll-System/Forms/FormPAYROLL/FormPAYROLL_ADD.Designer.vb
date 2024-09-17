@@ -55,16 +55,20 @@ Partial Class FormPAYROLL_ADD
         Me.dt_cutoffStart = New System.Windows.Forms.DateTimePicker()
         Me.dt_cutoffEnd = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.PrintEmployeePayslipToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExportToBankFormatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grp_Payrollpayee.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(14, 59)
+        Me.Label2.Location = New System.Drawing.Point(14, 85)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(110, 60)
         Me.Label2.TabIndex = 19
@@ -77,7 +81,7 @@ Partial Class FormPAYROLL_ADD
         Me.lst_payrollRecord.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lst_payrollRecord.FullRowSelect = True
         Me.lst_payrollRecord.GridLines = True
-        Me.lst_payrollRecord.Location = New System.Drawing.Point(11, 156)
+        Me.lst_payrollRecord.Location = New System.Drawing.Point(11, 182)
         Me.lst_payrollRecord.Margin = New System.Windows.Forms.Padding(2)
         Me.lst_payrollRecord.Name = "lst_payrollRecord"
         Me.lst_payrollRecord.Size = New System.Drawing.Size(1098, 381)
@@ -90,7 +94,7 @@ Partial Class FormPAYROLL_ADD
         Me.ContextMenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditEmployeeToolStripMenuItem, Me.DeleteEmployeeToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(232, 74)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(232, 52)
         '
         'EditEmployeeToolStripMenuItem
         '
@@ -110,7 +114,7 @@ Partial Class FormPAYROLL_ADD
         '
         Me.cb_Approved.AutoSize = True
         Me.cb_Approved.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_Approved.Location = New System.Drawing.Point(847, 545)
+        Me.cb_Approved.Location = New System.Drawing.Point(847, 571)
         Me.cb_Approved.Name = "cb_Approved"
         Me.cb_Approved.Size = New System.Drawing.Size(96, 24)
         Me.cb_Approved.TabIndex = 21
@@ -120,7 +124,7 @@ Partial Class FormPAYROLL_ADD
         'btn_Cancel
         '
         Me.btn_Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Cancel.Location = New System.Drawing.Point(1039, 542)
+        Me.btn_Cancel.Location = New System.Drawing.Point(1039, 568)
         Me.btn_Cancel.Name = "btn_Cancel"
         Me.btn_Cancel.Size = New System.Drawing.Size(70, 30)
         Me.btn_Cancel.TabIndex = 23
@@ -130,7 +134,7 @@ Partial Class FormPAYROLL_ADD
         'btn_Save
         '
         Me.btn_Save.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Save.Location = New System.Drawing.Point(963, 542)
+        Me.btn_Save.Location = New System.Drawing.Point(963, 568)
         Me.btn_Save.Name = "btn_Save"
         Me.btn_Save.Size = New System.Drawing.Size(70, 30)
         Me.btn_Save.TabIndex = 22
@@ -141,7 +145,7 @@ Partial Class FormPAYROLL_ADD
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(343, 15)
+        Me.Label1.Location = New System.Drawing.Point(343, 41)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(129, 100)
         Me.Label1.TabIndex = 24
@@ -152,7 +156,7 @@ Partial Class FormPAYROLL_ADD
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(923, 15)
+        Me.Label3.Location = New System.Drawing.Point(923, 41)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(52, 20)
         Me.Label3.TabIndex = 25
@@ -163,7 +167,7 @@ Partial Class FormPAYROLL_ADD
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(627, 15)
+        Me.Label4.Location = New System.Drawing.Point(627, 41)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(137, 60)
         Me.Label4.TabIndex = 26
@@ -174,7 +178,7 @@ Partial Class FormPAYROLL_ADD
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(42, 9)
+        Me.Label6.Location = New System.Drawing.Point(42, 35)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(155, 26)
         Me.Label6.TabIndex = 28
@@ -184,7 +188,7 @@ Partial Class FormPAYROLL_ADD
         '
         Me.txt_encodedby.AutoSize = True
         Me.txt_encodedby.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_encodedby.Location = New System.Drawing.Point(12, 545)
+        Me.txt_encodedby.Location = New System.Drawing.Point(12, 571)
         Me.txt_encodedby.Name = "txt_encodedby"
         Me.txt_encodedby.Size = New System.Drawing.Size(101, 20)
         Me.txt_encodedby.TabIndex = 29
@@ -193,7 +197,7 @@ Partial Class FormPAYROLL_ADD
         'txt_payroll_ID
         '
         Me.txt_payroll_ID.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_payroll_ID.Location = New System.Drawing.Point(130, 56)
+        Me.txt_payroll_ID.Location = New System.Drawing.Point(130, 82)
         Me.txt_payroll_ID.Name = "txt_payroll_ID"
         Me.txt_payroll_ID.ReadOnly = True
         Me.txt_payroll_ID.Size = New System.Drawing.Size(85, 26)
@@ -202,7 +206,7 @@ Partial Class FormPAYROLL_ADD
         'txt_TotalgrossPay
         '
         Me.txt_TotalgrossPay.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_TotalgrossPay.Location = New System.Drawing.Point(478, 12)
+        Me.txt_TotalgrossPay.Location = New System.Drawing.Point(478, 38)
         Me.txt_TotalgrossPay.Name = "txt_TotalgrossPay"
         Me.txt_TotalgrossPay.ReadOnly = True
         Me.txt_TotalgrossPay.Size = New System.Drawing.Size(99, 26)
@@ -211,7 +215,7 @@ Partial Class FormPAYROLL_ADD
         'txt_TotalnetPay
         '
         Me.txt_TotalnetPay.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_TotalnetPay.Location = New System.Drawing.Point(478, 53)
+        Me.txt_TotalnetPay.Location = New System.Drawing.Point(478, 79)
         Me.txt_TotalnetPay.Name = "txt_TotalnetPay"
         Me.txt_TotalnetPay.ReadOnly = True
         Me.txt_TotalnetPay.Size = New System.Drawing.Size(99, 26)
@@ -220,7 +224,7 @@ Partial Class FormPAYROLL_ADD
         'txt_totalLoansPaid
         '
         Me.txt_totalLoansPaid.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_totalLoansPaid.Location = New System.Drawing.Point(770, 56)
+        Me.txt_totalLoansPaid.Location = New System.Drawing.Point(770, 82)
         Me.txt_totalLoansPaid.Name = "txt_totalLoansPaid"
         Me.txt_totalLoansPaid.ReadOnly = True
         Me.txt_totalLoansPaid.Size = New System.Drawing.Size(99, 26)
@@ -229,7 +233,7 @@ Partial Class FormPAYROLL_ADD
         'txt_totalDeductions
         '
         Me.txt_totalDeductions.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_totalDeductions.Location = New System.Drawing.Point(770, 15)
+        Me.txt_totalDeductions.Location = New System.Drawing.Point(770, 41)
         Me.txt_totalDeductions.Name = "txt_totalDeductions"
         Me.txt_totalDeductions.ReadOnly = True
         Me.txt_totalDeductions.Size = New System.Drawing.Size(99, 26)
@@ -239,7 +243,7 @@ Partial Class FormPAYROLL_ADD
         '
         Me.dt_payroll.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dt_payroll.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dt_payroll.Location = New System.Drawing.Point(990, 15)
+        Me.dt_payroll.Location = New System.Drawing.Point(990, 41)
         Me.dt_payroll.Name = "dt_payroll"
         Me.dt_payroll.Size = New System.Drawing.Size(119, 26)
         Me.dt_payroll.TabIndex = 37
@@ -253,7 +257,7 @@ Partial Class FormPAYROLL_ADD
         '
         'rtb_remarks
         '
-        Me.rtb_remarks.Location = New System.Drawing.Point(478, 90)
+        Me.rtb_remarks.Location = New System.Drawing.Point(478, 116)
         Me.rtb_remarks.Name = "rtb_remarks"
         Me.rtb_remarks.Size = New System.Drawing.Size(391, 51)
         Me.rtb_remarks.TabIndex = 40
@@ -266,7 +270,7 @@ Partial Class FormPAYROLL_ADD
         Me.btn_newPayroll.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_newPayroll.ImageKey = "plus.png"
         Me.btn_newPayroll.ImageList = Me.ImageList1
-        Me.btn_newPayroll.Location = New System.Drawing.Point(983, 98)
+        Me.btn_newPayroll.Location = New System.Drawing.Point(983, 124)
         Me.btn_newPayroll.Name = "btn_newPayroll"
         Me.btn_newPayroll.Size = New System.Drawing.Size(124, 43)
         Me.btn_newPayroll.TabIndex = 39
@@ -277,7 +281,7 @@ Partial Class FormPAYROLL_ADD
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.Harmony.My.Resources.Resources.payroll
-        Me.PictureBox1.Location = New System.Drawing.Point(9, 7)
+        Me.PictureBox1.Location = New System.Drawing.Point(9, 33)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(30, 30)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -291,7 +295,7 @@ Partial Class FormPAYROLL_ADD
         Me.grp_Payrollpayee.Controls.Add(Me.cmb_employees)
         Me.grp_Payrollpayee.Controls.Add(Me.Label5)
         Me.grp_Payrollpayee.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.grp_Payrollpayee.Location = New System.Drawing.Point(357, 279)
+        Me.grp_Payrollpayee.Location = New System.Drawing.Point(357, 305)
         Me.grp_Payrollpayee.Name = "grp_Payrollpayee"
         Me.grp_Payrollpayee.Size = New System.Drawing.Size(434, 98)
         Me.grp_Payrollpayee.TabIndex = 41
@@ -341,7 +345,7 @@ Partial Class FormPAYROLL_ADD
         '
         Me.dt_cutoffStart.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dt_cutoffStart.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dt_cutoffStart.Location = New System.Drawing.Point(130, 93)
+        Me.dt_cutoffStart.Location = New System.Drawing.Point(130, 119)
         Me.dt_cutoffStart.Name = "dt_cutoffStart"
         Me.dt_cutoffStart.Size = New System.Drawing.Size(119, 26)
         Me.dt_cutoffStart.TabIndex = 42
@@ -350,7 +354,7 @@ Partial Class FormPAYROLL_ADD
         '
         Me.dt_cutoffEnd.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dt_cutoffEnd.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dt_cutoffEnd.Location = New System.Drawing.Point(264, 93)
+        Me.dt_cutoffEnd.Location = New System.Drawing.Point(264, 119)
         Me.dt_cutoffEnd.Name = "dt_cutoffEnd"
         Me.dt_cutoffEnd.Size = New System.Drawing.Size(119, 26)
         Me.dt_cutoffEnd.TabIndex = 43
@@ -359,18 +363,41 @@ Partial Class FormPAYROLL_ADD
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(249, 95)
+        Me.Label7.Location = New System.Drawing.Point(249, 121)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(14, 20)
         Me.Label7.TabIndex = 44
         Me.Label7.Text = "-"
         Me.Label7.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrintEmployeePayslipToolStripMenuItem, Me.ExportToBankFormatToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1119, 25)
+        Me.MenuStrip1.TabIndex = 45
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'PrintEmployeePayslipToolStripMenuItem
+        '
+        Me.PrintEmployeePayslipToolStripMenuItem.Name = "PrintEmployeePayslipToolStripMenuItem"
+        Me.PrintEmployeePayslipToolStripMenuItem.Size = New System.Drawing.Size(98, 21)
+        Me.PrintEmployeePayslipToolStripMenuItem.Text = "Print Payslip"
+        '
+        'ExportToBankFormatToolStripMenuItem
+        '
+        Me.ExportToBankFormatToolStripMenuItem.Name = "ExportToBankFormatToolStripMenuItem"
+        Me.ExportToBankFormatToolStripMenuItem.Size = New System.Drawing.Size(160, 21)
+        Me.ExportToBankFormatToolStripMenuItem.Text = "Export to Bank Format"
+        '
         'FormPAYROLL_ADD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1119, 585)
+        Me.ClientSize = New System.Drawing.Size(1119, 608)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.dt_cutoffEnd)
         Me.Controls.Add(Me.dt_cutoffStart)
@@ -395,6 +422,7 @@ Partial Class FormPAYROLL_ADD
         Me.Controls.Add(Me.lst_payrollRecord)
         Me.Controls.Add(Me.Label2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormPAYROLL_ADD"
@@ -406,6 +434,8 @@ Partial Class FormPAYROLL_ADD
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grp_Payrollpayee.ResumeLayout(False)
         Me.grp_Payrollpayee.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -441,4 +471,7 @@ Partial Class FormPAYROLL_ADD
     Friend WithEvents dt_cutoffStart As System.Windows.Forms.DateTimePicker
     Friend WithEvents dt_cutoffEnd As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents PrintEmployeePayslipToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ExportToBankFormatToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

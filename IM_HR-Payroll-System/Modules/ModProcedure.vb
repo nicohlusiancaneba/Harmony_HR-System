@@ -92,6 +92,32 @@ Module ModProcedure
         txtBox.Text = Regex.Replace(txtBox.Text, pattern, "")
     End Sub
 
+    Public Sub UpdateServerSettings(db As String, ip As String, server As String, user As String, pass As String)
+        sqlSTR = "select * from Global_Data"
+        ExecuteSQLQuery(sqlSTR)
+
+        If sqlDT.Rows.Count > 0 Then
+            sqlSTR = "Update Global_Data set Server_Database='" & db & "', Server_IP='" & ip & "', Server_Name='" & server & "', Server_Username='" & user & "', Server_Password='" & pass & "'"
+        Else
+            sqlSTR = "INSERT INTO Global_Data (Server_Database, Server_IP, Server_Name, Server_Username, Server_Password) " &
+         "VALUES ('" & db & "', '" & ip & "', '" & server & "', '" & user & "', '" & pass & "')"
+        End If
+        ExecuteSQLQuery(sqlSTR)
+    End Sub
+
+    Public Sub LoadServerSettings(db As ComboBox, ip As TextBox, server As TextBox, user As TextBox, pass As TextBox)
+        sqlSTR = "select * from Global_Data"
+        ExecuteSQLQuery(sqlSTR)
+
+        If sqlDT.Rows.Count > 0 Then
+            db.Text = sqlDT.Rows(0)("Server_Database")
+            ip.Text = sqlDT.Rows(0)("Server_IP")
+            server.Text = sqlDT.Rows(0)("Server_Name")
+            user.Text = sqlDT.Rows(0)("Server_Username")
+            pass.Text = sqlDT.Rows(0)("Server_Password")
+        End If
+    End Sub
+
 
     '    Public Function str_Filter(ByVal Text As TextBox, ByVal ascKey1 As Integer, ByVal ascKey2 As Integer, ByVal ascKey3 As Integer, ByVal N_Repeat As Integer)
     '        On Error Resume Next
