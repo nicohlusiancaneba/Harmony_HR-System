@@ -33,8 +33,13 @@ Partial Class FormPAYROLL
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lst_payroll = New System.Windows.Forms.ListView()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.rb_Approved = New System.Windows.Forms.RadioButton()
+        Me.rb_Pending = New System.Windows.Forms.RadioButton()
+        Me.rb_All = New System.Windows.Forms.RadioButton()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
         'ImageList1
@@ -124,11 +129,58 @@ Partial Class FormPAYROLL
         Me.lst_payroll.UseCompatibleStateImageBehavior = False
         Me.lst_payroll.View = System.Windows.Forms.View.Details
         '
+        'Panel2
+        '
+        Me.Panel2.Controls.Add(Me.rb_Approved)
+        Me.Panel2.Controls.Add(Me.rb_Pending)
+        Me.Panel2.Controls.Add(Me.rb_All)
+        Me.Panel2.Location = New System.Drawing.Point(6, 69)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(277, 33)
+        Me.Panel2.TabIndex = 20
+        '
+        'rb_Approved
+        '
+        Me.rb_Approved.AutoSize = True
+        Me.rb_Approved.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rb_Approved.Location = New System.Drawing.Point(140, 5)
+        Me.rb_Approved.Name = "rb_Approved"
+        Me.rb_Approved.Size = New System.Drawing.Size(95, 24)
+        Me.rb_Approved.TabIndex = 2
+        Me.rb_Approved.TabStop = True
+        Me.rb_Approved.Text = "Approved"
+        Me.rb_Approved.UseVisualStyleBackColor = True
+        '
+        'rb_Pending
+        '
+        Me.rb_Pending.AutoSize = True
+        Me.rb_Pending.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rb_Pending.Location = New System.Drawing.Point(53, 5)
+        Me.rb_Pending.Name = "rb_Pending"
+        Me.rb_Pending.Size = New System.Drawing.Size(85, 24)
+        Me.rb_Pending.TabIndex = 1
+        Me.rb_Pending.TabStop = True
+        Me.rb_Pending.Text = "Pending"
+        Me.rb_Pending.UseVisualStyleBackColor = True
+        '
+        'rb_All
+        '
+        Me.rb_All.AutoSize = True
+        Me.rb_All.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rb_All.Location = New System.Drawing.Point(3, 5)
+        Me.rb_All.Name = "rb_All"
+        Me.rb_All.Size = New System.Drawing.Size(44, 24)
+        Me.rb_All.TabIndex = 0
+        Me.rb_All.TabStop = True
+        Me.rb_All.Text = "All"
+        Me.rb_All.UseVisualStyleBackColor = True
+        '
         'FormPAYROLL
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(879, 178)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.btn_newPayroll)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -139,6 +191,8 @@ Partial Class FormPAYROLL
         Me.Text = "FormPAYROLL"
         Me.ContextMenuStrip1.ResumeLayout(False)
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -152,4 +206,8 @@ Partial Class FormPAYROLL
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents lst_payroll As System.Windows.Forms.ListView
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents rb_Approved As System.Windows.Forms.RadioButton
+    Friend WithEvents rb_Pending As System.Windows.Forms.RadioButton
+    Friend WithEvents rb_All As System.Windows.Forms.RadioButton
 End Class

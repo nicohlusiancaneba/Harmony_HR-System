@@ -29,7 +29,7 @@
     "Encoded_by AS 'Encoded By', " & _
     "COALESCE(Payroll_Approved, 'No') AS 'Payroll Approved', " & _
     "Approved_by AS 'Approved By' " & _
-    "FROM Payroll;"
+    "FROM Payroll order by Payroll_ID;"
         FillListView(ExecuteSQLQuery(sqlSTR), lst_payroll, 0)
     End Sub
 
@@ -44,7 +44,19 @@
     End Sub
 
     Private Sub DeleteEmployeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteEmployeeToolStripMenuItem.Click
+        If lst_payroll.FocusedItem.SubItems(9).Text = "No" Then
+            If MsgBox("Do you want to delete this payroll record?", MsgBoxStyle.YesNo + MsgBoxStyle.Critical, msgBox_header) = MsgBoxResult.Yes Then
 
+                sqlSTR = "Delete from Payroll where Payroll_ID =" & lst_payroll.FocusedItem.Text
+                ExecuteSQLQuery(sqlSTR)
+
+                MsgBox("Deleted Payroll record.", MsgBoxStyle.Information, msgBox_header)
+            End If
+        Else
+            MsgBox("Cannot delete approved Payroll record.", MsgBoxStyle.Information, msgBox_header)
+        End If
+
+        RefreshPayrollList()
     End Sub
 
     Private Sub lst_payroll_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles lst_payroll.MouseDoubleClick

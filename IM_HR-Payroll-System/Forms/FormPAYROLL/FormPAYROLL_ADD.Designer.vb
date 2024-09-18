@@ -114,7 +114,7 @@ Partial Class FormPAYROLL_ADD
         '
         Me.cb_Approved.AutoSize = True
         Me.cb_Approved.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cb_Approved.Location = New System.Drawing.Point(847, 571)
+        Me.cb_Approved.Location = New System.Drawing.Point(937, 575)
         Me.cb_Approved.Name = "cb_Approved"
         Me.cb_Approved.Size = New System.Drawing.Size(96, 24)
         Me.cb_Approved.TabIndex = 21
@@ -124,7 +124,7 @@ Partial Class FormPAYROLL_ADD
         'btn_Cancel
         '
         Me.btn_Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Cancel.Location = New System.Drawing.Point(1039, 568)
+        Me.btn_Cancel.Location = New System.Drawing.Point(1037, 650)
         Me.btn_Cancel.Name = "btn_Cancel"
         Me.btn_Cancel.Size = New System.Drawing.Size(70, 30)
         Me.btn_Cancel.TabIndex = 23
@@ -134,7 +134,7 @@ Partial Class FormPAYROLL_ADD
         'btn_Save
         '
         Me.btn_Save.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Save.Location = New System.Drawing.Point(963, 568)
+        Me.btn_Save.Location = New System.Drawing.Point(1039, 571)
         Me.btn_Save.Name = "btn_Save"
         Me.btn_Save.Size = New System.Drawing.Size(70, 30)
         Me.btn_Save.TabIndex = 22
@@ -376,7 +376,7 @@ Partial Class FormPAYROLL_ADD
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrintEmployeePayslipToolStripMenuItem, Me.ExportToBankFormatToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1119, 25)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1115, 25)
         Me.MenuStrip1.TabIndex = 45
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -396,7 +396,8 @@ Partial Class FormPAYROLL_ADD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1119, 608)
+        Me.ClientSize = New System.Drawing.Size(1115, 608)
+        Me.ControlBox = False
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.dt_cutoffEnd)

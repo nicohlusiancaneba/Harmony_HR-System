@@ -55,6 +55,14 @@ Harmony-HRSystem
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Harmony.My.Resources.Resources.login">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Harmony.My.Resources.Resources.logout">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Harmony.My.Resources.Resources.payroll">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -79,11 +87,23 @@ Harmony-HRSystem
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:Harmony.Harmony_DataSet.Online_BankingDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:Harmony.Harmony_DataSet.PayslipRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:Harmony.Harmony_DataSet.Online_BankingRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:Harmony.Harmony_DataSet.PayslipRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Harmony.Harmony_DataSet.Online_BankingRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>

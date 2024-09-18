@@ -10,9 +10,9 @@
             txt_lastName.Text = sqlDT.Rows(0)("Last_Name").ToString
             txt_firstName.Text = sqlDT.Rows(0)("First_Name").ToString
             txt_middleName.Text = sqlDT.Rows(0)("Middle_Name").ToString
-            dt_birthDate.Text = sqlDT.Rows(0)("Date_of_Birth")
+            dt_birthDate.Text = sqlDT.Rows(0)("Date_of_Birth").ToString
             cmb_gender.Text = sqlDT.Rows(0)("Gender").ToString
-            cmb_civilStatus.Text = sqlDT.Rows(0)("Civil_Status").ToString()
+            cmb_civilStatus.Text = sqlDT.Rows(0)("Civil_Status").ToString
             txt_address.Text = sqlDT.Rows(0)("Address").ToString
             txt_contactNo.Text = sqlDT.Rows(0)("Contact_No").ToString
             txt_emergencyContactPerson.Text = sqlDT.Rows(0)("Emergency_Contact_Person").ToString
@@ -20,7 +20,7 @@
             txt_emergencyAddress.Text = sqlDT.Rows(0)("Emergency_Address").ToString
             txt_emergencyContactNo.Text = sqlDT.Rows(0)("Emergency_Contact_No").ToString
             txt_bankNo.Text = sqlDT.Rows(0)("Payroll_Account_Number").ToString
-            dt_hiredDate.Text = sqlDT.Rows(0)("Hired_Date")
+            dt_hiredDate.Text = sqlDT.Rows(0)("Hired_Date").ToString
             cmb_employmentStatus.Text = sqlDT.Rows(0)("Employment_Status").ToString
             dt_regularizationDate.Text = sqlDT.Rows(0)("Regularization_Date").ToString
             txt_jobPosition.Text = sqlDT.Rows(0)("Position").ToString
@@ -35,9 +35,9 @@
             txt_TINno.Text = sqlDT.Rows(0)("TIN_No").ToString
             txt_pagibigNo.Text = sqlDT.Rows(0)("Pag_ibig_No").ToString
             txt_SSSshare.Text = sqlDT.Rows(0)("SSS_Share").ToString()
-            txt_philhealthShare.Text = sqlDT.Rows(0)("Philhealth_Share").ToString()
-            txt_taxAmount.Text = sqlDT.Rows(0)("Tax_Amount").ToString()
-            txt_pagIbigShare.Text = sqlDT.Rows(0)("Pag_ibig_Share").ToString()
+            txt_philhealthShare.Text = sqlDT.Rows(0)("Philhealth_Share").ToString
+            txt_taxAmount.Text = sqlDT.Rows(0)("Tax_Amount").ToString
+            txt_pagIbigShare.Text = sqlDT.Rows(0)("Pag_ibig_Share").ToString
 
 
             'txt_currentRate.ReadOnly = True

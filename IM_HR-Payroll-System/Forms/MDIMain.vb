@@ -1,9 +1,15 @@
-﻿Public Class MDIMain
+﻿Imports System.Deployment.Application
+
+Public Class MDIMain
 
     Private Sub MDIMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Panel1.Height = Me.Height
 
-
+        If ApplicationDeployment.IsNetworkDeployed Then
+            Version.Text = "Harmony v." & ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString()
+        Else
+            Version.Text = "Debug"
+        End If
 
 
         'Dim temp As Integer = 5 + 4.46
@@ -91,7 +97,7 @@
 
     Private Sub btn_logout_Click(sender As Object, e As EventArgs) Handles btn_logout.Click
         CompanyName.Text = ""
-
+        User.Text = ""
 
         For Each frm As Form In Application.OpenForms.Cast(Of Form).ToList()
             If Not frm Is Me Then

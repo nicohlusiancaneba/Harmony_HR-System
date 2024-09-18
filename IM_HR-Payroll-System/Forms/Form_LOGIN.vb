@@ -36,9 +36,10 @@
         ExecuteSQLQuery(sqlSTR)
 
         If sqlDT.Rows.Count > 0 Then
-            MDIMain.CompanyName.Text = "Company: " & sqlDT.Rows(0)("Business_Name").ToString
+            business_name = sqlDT.Rows(0)("Business_Name").ToString
+            MDIMain.CompanyName.Text = "Company: " & business_name
         End If
-
+        MDIMain.User.Text = "User: " & xUsername
 
 
     End Sub
@@ -54,7 +55,7 @@
 
     Private Sub cmdclose_Click(sender As Object, e As EventArgs) Handles cmdclose.Click
         If MsgBox("Are you sure want to exit system?", MsgBoxStyle.YesNo, "") = MsgBoxResult.Yes Then
-            Application.Exit()
+            End
         Else
             Exit Sub
         End If

@@ -10,6 +10,8 @@
         rtb_remarks.Text = ""
         approved = False
 
+        
+
 
         If formOperation = "edit" Then
             payroll_Id = xID1
@@ -19,6 +21,8 @@
             ExecuteSQLQuery(sqlSTR)
 
             dt_payroll.Text = sqlDT.Rows(0)("Payroll_Date")
+            dt_cutoffStart.Text = sqlDT.Rows(0)("Cutoff_Date_Start")
+            dt_cutoffEnd.Text = sqlDT.Rows(0)("Cutoff_Date_End")
             txt_TotalgrossPay.Text = sqlDT.Rows(0)("Total_GrossPay")
             txt_TotalnetPay.Text = sqlDT.Rows(0)("Total_NetPay")
             txt_totalDeductions.Text = sqlDT.Rows(0)("Total_Deductions")
@@ -41,8 +45,19 @@
                 dt_payroll.Enabled = False
                 EditEmployeeToolStripMenuItem.Text = "View Payroll Record"
                 DeleteEmployeeToolStripMenuItem.Enabled = False
+                Me.ControlBox = True
             Else
                 cb_Approved.Checked = False
+                cb_Approved.Enabled = True
+                btn_newPayroll.Enabled = True
+                btn_Save.Enabled = True
+                dt_cutoffStart.Enabled = True
+                dt_cutoffEnd.Enabled = True
+                rtb_remarks.ReadOnly = False
+                dt_payroll.Enabled = True
+                EditEmployeeToolStripMenuItem.Text = "Edit Payroll Record"
+                DeleteEmployeeToolStripMenuItem.Enabled = True
+                Me.ControlBox = False
             End If
 
         Else 'ADD
@@ -54,25 +69,33 @@
         End If
 
         RefreshPayrollDetailList()
+
+       
     End Sub
+
+
+
+
+
+
 
     Private Sub RefreshPayrollDetailList()
         Dim net, gross, loan, deduction As Double
         sqlSTR = "Select Payroll_Detail_ID as ID, Payroll_Details.Employee_ID as 'Employee ID', CONCAT(Last_Name, ', ', First_Name) as 'Employee', FORMAT(COALESCE(grandTotal_Basic, 0), 'N2') AS 'Total Basic Pay', FORMAT(COALESCE(grandTotal_Additional, 0), 'N2') AS 'Total Additional Pay', FORMAT(COALESCE(grandTotal_Gross, 0), 'N2') AS 'Total Gross', " & _
                 "FORMAT(COALESCE(grandTotal_Deduction, 0), 'N2') AS 'Total Deduction', FORMAT(COALESCE(grandTotal_Loan, 0), 'N2') AS 'Total Loan Payment', FORMAT(COALESCE(grandTotal_Net, 0), 'N2') AS 'Total Net' " & _
-                "from Payroll_Details INNER JOIN Employees on Employees.Employee_ID = Payroll_Details.Employee_ID where Payroll_ID = " & payroll_Id & " order by Payroll_Details.Employee_ID"
+                "from Payroll_Details INNER JOIN Employees on Employees.Employee_ID = Payroll_Details.Employee_ID where Payroll_ID = " & payroll_Id & " order by Last_Name, First_Name"
         FillListView(ExecuteSQLQuery(sqlSTR), lst_payrollRecord, 0)
 
         For i = 0 To lst_payrollRecord.Items.Count - 1
             gross = gross + CDbl(lst_payrollRecord.Items(i).SubItems(5).Text)
             deduction = deduction + CDbl(lst_payrollRecord.Items(i).SubItems(6).Text)
             loan = loan + CDbl(lst_payrollRecord.Items(i).SubItems(7).Text)
-            Net = Net + CDbl(lst_payrollRecord.Items(i).SubItems(8).Text)
+            net = net + CDbl(lst_payrollRecord.Items(i).SubItems(8).Text)
         Next
         txt_TotalgrossPay.Text = Format(gross, "N2")
         txt_totalDeductions.Text = Format(deduction, "N2")
         txt_totalLoansPaid.Text = Format(loan, "N2")
-        txt_TotalnetPay.Text = Format(Net, "N2")
+        txt_TotalnetPay.Text = Format(net, "N2")
     End Sub
 
 
@@ -83,6 +106,10 @@
 
 
     Private Sub btn_Save_Click(sender As Object, e As EventArgs) Handles btn_Save.Click
+        Save()
+    End Sub
+
+    Private Sub Save()
         If formOperation = "edit" Then
             sqlSTR = "UPDATE Payroll SET " &
                        "Payroll_Date = '" & dt_payroll.Text & "', " &
@@ -103,7 +130,7 @@
 
 
         Else 'Add
-            sqlSTR = "select payroll_id from payroll where payroll_id =" & payroll_Id
+            sqlSTR = "select payroll_id from payroll where payroll_id =" & txt_payroll_ID.Text
             ExecuteSQLQuery(sqlSTR)
             If sqlDT.Rows.Count = 0 Then
                 sqlSTR = "INSERT INTO Payroll (Payroll_Date, Cutoff_Date_Start, Cutoff_Date_End, Total_GrossPay, Total_NetPay, Total_Deductions, Total_LoansPaid, Payroll_Remarks, Encoded_by) " &
@@ -136,11 +163,9 @@
 
 
 
-
-
     '//////////////////////////////////////////////////////////////////////////////////////////////////////
     Private Sub btn_newPayroll_Click(sender As Object, e As EventArgs) Handles btn_newPayroll.Click
-        sqlSTR = "Select * from employees where Employment_Status != 'Inactive'"
+        sqlSTR = "Select * from employees where Employment_Status != 'Inactive' order by Last_Name, First_Name"
         FILLComboBox_Employee(sqlSTR, cmb_employees)
         grp_Payrollpayee.Visible = True
     End Sub
@@ -158,6 +183,8 @@
             sqlSTR = "INSERT INTO Payroll (Payroll_Date, Cutoff_Date_Start, Cutoff_Date_End, Total_GrossPay, Total_NetPay, Total_Deductions, Total_LoansPaid, Payroll_Remarks, Encoded_by) " &
                       "VALUES ('" & dt_payroll.Text & "', '" & dt_cutoffStart.Text & "', '" & dt_cutoffEnd.Text & "', '" & txt_TotalgrossPay.Text & "', '" & txt_TotalnetPay.Text & "', '" & txt_totalDeductions.Text & "', '" & txt_totalLoansPaid.Text & "', '" & rtb_remarks.Text & "', '" & xUsername & "')"
             ExecuteSQLQuery(sqlSTR)
+
+            formOperation = "edit"
         End If
 
 
@@ -176,10 +203,10 @@
         RefreshPayrollDetailList()
     End Sub
     '//////////////////////////////////////////////////////////////////////////////////////////////////////
-    
 
 
-    
+
+
     Private Sub EditEmployeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditEmployeeToolStripMenuItem.Click
         If approved Then
             ShowForm2(FormPAYROLL_PAYEE, "view", lst_payrollRecord.FocusedItem.SubItems(1).Text, payroll_Id)
@@ -216,6 +243,25 @@
     End Sub
 
     Private Sub PrintEmployeePayslipToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrintEmployeePayslipToolStripMenuItem.Click
-        ShowForm1(FormPRINT_PAYSLIP, "add", payroll_Id)
+        If approved Then
+            ShowForm1(FormPRINT_PAYSLIP, "add", payroll_Id)
+        Else
+            MsgBox("Payroll not approved; try again once approved.", MsgBoxStyle.Exclamation, msgBox_header)
+            Exit Sub
+        End If
+
+
+
+    End Sub
+
+    Private Sub ExportToBankFormatToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExportToBankFormatToolStripMenuItem.Click
+        If approved Then
+            ShowForm1(FormEXPORT_ONLINE_BANK, "add", payroll_Id)
+        Else
+            MsgBox("Payroll not approved; try again once approved.", MsgBoxStyle.Exclamation, msgBox_header)
+            Exit Sub
+        End If
+
+
     End Sub
 End Class

@@ -6,6 +6,7 @@ Module ModProcedure
     Public xID1, xID2 As Integer
     Public formOperation As String
     Public msgBox_header As String = "Harmony | HR & Payroll Management System"
+    Public business_name As String
     'load data in the listview
     Public Sub FillListView(ByVal sqlData As DataTable, ByVal lvList As ListView, ByVal imageID As Integer)
         Dim i As Integer

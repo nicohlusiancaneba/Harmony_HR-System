@@ -25,13 +25,9 @@ Partial Class MDIMain
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MDIMain))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btn_settings = New System.Windows.Forms.Button()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.CompanyName = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.btn_settings = New System.Windows.Forms.Button()
         Me.btn_employees = New System.Windows.Forms.Button()
         Me.btn_loans = New System.Windows.Forms.Button()
         Me.btn_payroll = New System.Windows.Forms.Button()
@@ -39,11 +35,17 @@ Partial Class MDIMain
         Me.btn_leave = New System.Windows.Forms.Button()
         Me.btn_logout = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.CompanyName = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.Version = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.User = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -58,6 +60,20 @@ Partial Class MDIMain
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(174, 861)
         Me.Panel1.TabIndex = 1
+        '
+        'btn_settings
+        '
+        Me.btn_settings.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_settings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_settings.ImageKey = "settings.png"
+        Me.btn_settings.ImageList = Me.ImageList1
+        Me.btn_settings.Location = New System.Drawing.Point(7, 726)
+        Me.btn_settings.Name = "btn_settings"
+        Me.btn_settings.Size = New System.Drawing.Size(155, 50)
+        Me.btn_settings.TabIndex = 8
+        Me.btn_settings.Text = "           Settings"
+        Me.btn_settings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_settings.UseVisualStyleBackColor = True
         '
         'ImageList1
         '
@@ -86,57 +102,6 @@ Partial Class MDIMain
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(168, 304)
         Me.Panel3.TabIndex = 9
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.Control
-        Me.Panel2.Controls.Add(Me.StatusStrip1)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel2.ForeColor = System.Drawing.Color.Black
-        Me.Panel2.Location = New System.Drawing.Point(174, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1044, 861)
-        Me.Panel2.TabIndex = 2
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.CompanyName})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 839)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.StatusStrip1.Size = New System.Drawing.Size(1044, 22)
-        Me.StatusStrip1.TabIndex = 0
-        Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'ToolStripStatusLabel1
-        '
-        Me.ToolStripStatusLabel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(144, 17)
-        Me.ToolStripStatusLabel1.Text = "Powered by I.M. Solutions"
-        '
-        'CompanyName
-        '
-        Me.CompanyName.BackColor = System.Drawing.Color.YellowGreen
-        Me.CompanyName.Name = "CompanyName"
-        Me.CompanyName.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.CompanyName.Size = New System.Drawing.Size(0, 17)
-        '
-        'btn_settings
-        '
-        Me.btn_settings.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_settings.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_settings.ImageKey = "settings.png"
-        Me.btn_settings.ImageList = Me.ImageList1
-        Me.btn_settings.Location = New System.Drawing.Point(7, 726)
-        Me.btn_settings.Name = "btn_settings"
-        Me.btn_settings.Size = New System.Drawing.Size(155, 50)
-        Me.btn_settings.TabIndex = 8
-        Me.btn_settings.Text = "           Settings"
-        Me.btn_settings.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_settings.UseVisualStyleBackColor = True
         '
         'btn_employees
         '
@@ -243,6 +208,55 @@ Partial Class MDIMain
         Me.PictureBox1.TabIndex = 6
         Me.PictureBox1.TabStop = False
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.SystemColors.Control
+        Me.Panel2.Controls.Add(Me.StatusStrip1)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel2.ForeColor = System.Drawing.Color.Black
+        Me.Panel2.Location = New System.Drawing.Point(174, 0)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(1044, 861)
+        Me.Panel2.TabIndex = 2
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel1, Me.Version, Me.CompanyName, Me.User})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 839)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.StatusStrip1.Size = New System.Drawing.Size(1044, 22)
+        Me.StatusStrip1.TabIndex = 0
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
+        'ToolStripStatusLabel1
+        '
+        Me.ToolStripStatusLabel1.BackColor = System.Drawing.Color.PaleGoldenrod
+        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
+        Me.ToolStripStatusLabel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(144, 17)
+        Me.ToolStripStatusLabel1.Text = "Powered by I.M. Solutions"
+        '
+        'CompanyName
+        '
+        Me.CompanyName.BackColor = System.Drawing.Color.LightSalmon
+        Me.CompanyName.Name = "CompanyName"
+        Me.CompanyName.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.CompanyName.Size = New System.Drawing.Size(0, 17)
+        '
+        'Version
+        '
+        Me.Version.BackColor = System.Drawing.Color.YellowGreen
+        Me.Version.Name = "Version"
+        Me.Version.Size = New System.Drawing.Size(0, 17)
+        '
+        'User
+        '
+        Me.User.BackColor = System.Drawing.SystemColors.MenuHighlight
+        Me.User.Name = "User"
+        Me.User.Size = New System.Drawing.Size(0, 17)
+        '
         'MDIMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -259,11 +273,11 @@ Partial Class MDIMain
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Panel1.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -282,5 +296,7 @@ Partial Class MDIMain
     Friend WithEvents Panel3 As System.Windows.Forms.Panel
     Friend WithEvents btn_settings As System.Windows.Forms.Button
     Friend WithEvents CompanyName As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents Version As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents User As System.Windows.Forms.ToolStripStatusLabel
 
 End Class
