@@ -157,7 +157,7 @@
             MsgBox("Succesfully SAVED payroll record.", MsgBoxStyle.Information, msgBox_header)
         End If
 
-
+        FormPAYROLL.RefreshPayrollList()
         Me.Close()
     End Sub
 
@@ -191,7 +191,7 @@
         sqlSTR = "INSERT INTO Payroll_Details (Employee_ID, Payroll_ID) VALUES (" & Split(cmb_employees.Text, " - ")(0) & ", " & payroll_Id & ")"
         ExecuteSQLQuery(sqlSTR)
 
-        ShowForm2(FormPAYROLL_PAYEE, "add", Split(cmb_employees.Text, " - ")(0), payroll_Id)
+        ShowForm2(FormPAYROLL_PAYEE, formOperation, Split(cmb_employees.Text, " - ")(0), payroll_Id)
         grp_Payrollpayee.Visible = False
 
         RefreshPayrollDetailList()

@@ -1,6 +1,7 @@
 ﻿Public Class FormLOAN_PAYMENT
 
     Dim loan_id, payroll_detail_ID, loan_payment_id As Integer
+    Dim balance_amount As Double
     Private Sub FormLOAN_PAYMENT_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
@@ -22,6 +23,10 @@
             dt_paymentDate.Text = Today()
             txt_grossAmount.Text = ""
             txt_remarks.Text = ""
+
+            sqlSTR = ""
+            ExecuteSQLQuery(sqlSTR)
+            balance_amount = 0
         End If
 
 

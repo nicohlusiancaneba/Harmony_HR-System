@@ -16,7 +16,7 @@
     End Sub
 
 
-    Private Sub RefreshPayrollList()
+    Public Sub RefreshPayrollList()
         sqlSTR = "SELECT " & _
     "Payroll_ID AS 'Payroll ID', " & _
     "Payroll_Date AS 'Payroll Date', " & _
