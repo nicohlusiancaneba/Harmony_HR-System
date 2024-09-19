@@ -24,7 +24,7 @@
 
 
         sqlSTR = "SELECT Loan_ID AS 'Loan ID', Loans.Employee_ID AS 'Employee ID', CONCAT(Last_Name, ', ', First_Name) as Employee, Loan_Date AS 'Loan Date', Loan_Net_Amount AS 'Loan Net Amount', CONCAT(Loan_Interest_Rate, '%') AS 'Loan Interest Rate', Loan_Gross_Amount AS 'Loan Gross Amount', " & _
-            " Loan_Payment_Start_Date AS 'Loan Payment Start Date', Loan_Payment_End_Date AS 'Loan Payment End Date', Loan_Reason AS 'Loan Reason', Loan_Remarks AS 'Loan Remarks', Loan_Status AS 'Loan Status' FROM Loans INNER JOIN Employees ON Employees.Employee_ID = Loans.Employee_ID where Loan_Status like '%" & status & "%'"
+            " Loan_Payment_Start_Date AS 'Loan Payment Start Date', Loan_Payment_End_Date AS 'Loan Payment End Date', Loan_Reason AS 'Loan Reason', Loan_Remarks AS 'Loan Remarks', Loan_Status AS 'Loan Status' FROM Loans INNER JOIN Employees ON Employees.Employee_ID = Loans.Employee_ID where Loan_Status like '%" & status & "%' order by Loan_Date, Last_Name, First_Name "
         FillListView(ExecuteSQLQuery(sqlSTR), lst_loans, 0)
     End Sub
 
@@ -44,21 +44,16 @@
     End Sub
 
     Private Sub DeleteEmployeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteEmployeeToolStripMenuItem.Click
-        If MsgBox("Do you want to delete this loan record?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, msgBox_header) = MsgBoxResult.Yes Then
-            sqlSTR = "select Loan_Payment_ID from Loan_Payments where loan_id =" & lst_loans.FocusedItem.Text
-            ExecuteSQLQuery(sqlSTR)
-            If sqlDT.Rows.Count > 0 Then
-                MsgBox("The loan record cannot be deleted because there are active payments associated with it.", MsgBoxStyle.Critical, msgBox_header)
-
-            Else
-                sqlSTR = "Delete from Loans where Loan_ID =" & lst_loans.FocusedItem.Text
-                ExecuteSQLQuery(sqlSTR)
-
-                MsgBox("Deleted loan record.", MsgBoxStyle.Information, msgBox_header)
-            End If
-
-
+        sqlSTR = "select Loan_Payment_ID from Loan_Payments where loan_id =" & lst_loans.FocusedItem.Text
+        ExecuteSQLQuery(sqlSTR)
+        If sqlDT.Rows.Count > 0 Then
+            MsgBox("The loan record cannot be deleted because there are active payments associated with it.", MsgBoxStyle.Critical, msgBox_header)
+            Exit Sub
         End If
+
+        sqlSTR = "Delete from Loans where Loan_ID =" & lst_loans.FocusedItem.Text
+        ExecuteSQLQuery(sqlSTR)
+        MsgBox("Deleted loan record.", MsgBoxStyle.Information, msgBox_header)
         RefreshLoansList()
     End Sub
 

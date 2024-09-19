@@ -11,12 +11,22 @@
 
 
 
-
+        rb_Pending.Checked = True
         RefreshPayrollList()
     End Sub
 
 
     Public Sub RefreshPayrollList()
+        Dim status As String = ""
+        If rb_All.Checked Then
+            status = ""
+        ElseIf rb_Approved.Checked Then
+            status = " where COALESCE(Payroll_Approved, 'No') = 'Yes' "
+        ElseIf rb_Pending.Checked Then
+            status = " where COALESCE(Payroll_Approved, 'No') = 'No' "
+        End If
+
+
         sqlSTR = "SELECT " & _
     "Payroll_ID AS 'Payroll ID', " & _
     "Payroll_Date AS 'Payroll Date', " & _
@@ -29,7 +39,7 @@
     "Encoded_by AS 'Encoded By', " & _
     "COALESCE(Payroll_Approved, 'No') AS 'Payroll Approved', " & _
     "Approved_by AS 'Approved By' " & _
-    "FROM Payroll order by Payroll_ID;"
+    "FROM Payroll " & status & " order by Payroll_ID "
         FillListView(ExecuteSQLQuery(sqlSTR), lst_payroll, 0)
     End Sub
 
@@ -65,4 +75,15 @@
     End Sub
 
 
+    Private Sub rb_All_CheckedChanged(sender As Object, e As EventArgs) Handles rb_All.CheckedChanged
+        RefreshPayrollList()
+    End Sub
+
+    Private Sub rb_Pending_CheckedChanged(sender As Object, e As EventArgs) Handles rb_Pending.CheckedChanged
+        RefreshPayrollList()
+    End Sub
+
+    Private Sub rb_Approved_CheckedChanged(sender As Object, e As EventArgs) Handles rb_Approved.CheckedChanged
+        RefreshPayrollList()
+    End Sub
 End Class

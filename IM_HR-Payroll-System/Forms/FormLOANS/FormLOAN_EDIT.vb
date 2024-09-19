@@ -1,5 +1,6 @@
 ﻿Public Class FormLOAN_EDIT
     Dim Loan_ID, employee_id As Integer
+    Dim Balance_Amount As Double
     Private Sub FormLOAN_EDIT_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Loan_ID = xID1
 
@@ -23,7 +24,7 @@
 
     Private Sub RefreshLoanPaymentList()
         sqlSTR = "select Loan_Payment_ID as ID, Loan_ID as 'Loan ID', Payroll_Detail_ID as 'Payroll Detail ID', Payment_Date as 'Payment Date', " & _
-                "Gross_Payment as 'Payment', Payment_Remarks as Remarks, Payment_Posted as 'Payment Posted' from Loan_Payments where Loan_ID=" & Loan_ID
+                "Gross_Payment as 'Payment', Payment_Remarks as Remarks, Payment_Posted as 'Payment Posted' from Loan_Payments where Loan_ID=" & Loan_ID & " order by Payment_Date, Loan_Payment_ID"
         FillListView(ExecuteSQLQuery(sqlSTR), lst_loanPayment, 0)
         ComputeBalance()
     End Sub
@@ -59,17 +60,17 @@
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         sqlSTR = "Update Loans SET " & _
-"Loan_Net_Amount= '" & txt_netAmount.Text & "'," & _
-"Loan_Gross_Amount= '" & txt_grossAmount.Text & "'," & _
-"Loan_Interest_Rate= '" & txt_interestRate.Text & "'," & _
-"Loan_Payment_Start_Date= '" & dt_payStartDate.Text & "'," & _
-"Loan_Payment_End_Date= '" & dt_payEndDate.Text & "'," & _
-"Loan_Reason= '" & txt_loanReason.Text & "'," & _
-"Loan_Remarks= '" & txt_loanRemarks.Text & "'," & _
-"Loan_Status= '" & cmb_loanStatus.Text & "'," & _
-"Loan_Type= '" & cmb_loanType.Text & "'," & _
-"Suggested_PayPerCutoff= '" & txt_suggestedDeduction.Text & "' " & _
-"where Loan_ID =" & Loan_ID
+                    "Loan_Net_Amount= '" & txt_netAmount.Text & "'," & _
+                    "Loan_Gross_Amount= '" & txt_grossAmount.Text & "'," & _
+                    "Loan_Interest_Rate= '" & txt_interestRate.Text & "'," & _
+                    "Loan_Payment_Start_Date= '" & dt_payStartDate.Text & "'," & _
+                    "Loan_Payment_End_Date= '" & dt_payEndDate.Text & "'," & _
+                    "Loan_Reason= '" & txt_loanReason.Text & "'," & _
+                    "Loan_Remarks= '" & txt_loanRemarks.Text & "'," & _
+                    "Loan_Status= '" & cmb_loanStatus.Text & "'," & _
+                    "Loan_Type= '" & cmb_loanType.Text & "'," & _
+                    "Suggested_PayPerCutoff= '" & txt_suggestedDeduction.Text & "' " & _
+                    "where Loan_ID =" & Loan_ID
         ExecuteSQLQuery(sqlSTR)
         MsgBox("Succesfully saved loan details.", MsgBoxStyle.Information, msgBox_header)
         Me.Close()
@@ -143,6 +144,12 @@
     End Sub
 
     Private Sub PostPaymentToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PostPaymentToolStripMenuItem.Click
+        CheckLoanBalance()
+        If CDbl(lst_loanPayment.FocusedItem.SubItems(4).Text) > Balance_Amount Then
+            MsgBox("Payment posting was not processed, current balance is " & Format(Balance_Amount, "N2") & ", try again.", MsgBoxStyle.Information, msgBox_header)
+            Exit Sub
+        End If
+
         If lst_loanPayment.FocusedItem.SubItems(6).Text = "Yes" Then
             MsgBox("Loan payment already posted.", MsgBoxStyle.Exclamation, msgBox_header)
             Exit Sub
@@ -167,6 +174,22 @@
                 MsgBox("The loan balance remains unpaid.", MsgBoxStyle.Exclamation, msgBox_header)
                 cmb_loanStatus.Text = "Active"
             End If
+        End If
+    End Sub
+
+
+    Public Sub CheckLoanBalance()
+        sqlSTR = "select max(Loan_Gross_Amount) - sum(case when Payment_Posted='Yes' then COALESCE(Gross_Payment, 0) else 0 end) as Balance_Amount  from Loans " & _
+                        "left join Loan_Payments on Loan_Payments.Loan_ID = Loans.Loan_ID " & _
+                        "where Loans.Loan_ID = " & Loan_ID & _
+                        "group by Loans.Loan_ID"
+        ExecuteSQLQuery(sqlSTR)
+        Balance_Amount = sqlDT.Rows(0)("Balance_Amount")
+    End Sub
+
+    Private Sub txt_balanceAmount_TextChanged(sender As Object, e As EventArgs) Handles txt_balanceAmount.TextChanged
+        If CDbl(txt_balanceAmount.Text) < 1 Then
+            cmb_loanStatus.Text = "Paid"
         End If
     End Sub
 End Class

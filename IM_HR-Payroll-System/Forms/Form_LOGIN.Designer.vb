@@ -41,7 +41,7 @@ Partial Class Form_LOGIN
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(50, 134)
+        Me.Label2.Location = New System.Drawing.Point(50, 136)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(103, 20)
         Me.Label2.TabIndex = 32
@@ -52,7 +52,7 @@ Partial Class Form_LOGIN
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.Black
-        Me.Label1.Location = New System.Drawing.Point(47, 107)
+        Me.Label1.Location = New System.Drawing.Point(47, 109)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(106, 20)
         Me.Label1.TabIndex = 31
@@ -61,7 +61,7 @@ Partial Class Form_LOGIN
         'txtpassword
         '
         Me.txtpassword.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtpassword.Location = New System.Drawing.Point(151, 130)
+        Me.txtpassword.Location = New System.Drawing.Point(151, 132)
         Me.txtpassword.Name = "txtpassword"
         Me.txtpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtpassword.Size = New System.Drawing.Size(134, 26)
@@ -70,7 +70,7 @@ Partial Class Form_LOGIN
         'txtuser
         '
         Me.txtuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.txtuser.Location = New System.Drawing.Point(151, 102)
+        Me.txtuser.Location = New System.Drawing.Point(151, 104)
         Me.txtuser.Name = "txtuser"
         Me.txtuser.Size = New System.Drawing.Size(134, 26)
         Me.txtuser.TabIndex = 27
@@ -102,7 +102,7 @@ Partial Class Form_LOGIN
         Me.cmdserver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.cmdserver.ImageKey = "settings.png"
         Me.cmdserver.ImageList = Me.ImageList1
-        Me.cmdserver.Location = New System.Drawing.Point(7, 161)
+        Me.cmdserver.Location = New System.Drawing.Point(7, 173)
         Me.cmdserver.Name = "cmdserver"
         Me.cmdserver.Size = New System.Drawing.Size(95, 35)
         Me.cmdserver.TabIndex = 33
@@ -118,7 +118,7 @@ Partial Class Form_LOGIN
         Me.cmdclose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.cmdclose.ImageKey = "logout.png"
         Me.cmdclose.ImageList = Me.ImageList1
-        Me.cmdclose.Location = New System.Drawing.Point(228, 161)
+        Me.cmdclose.Location = New System.Drawing.Point(228, 173)
         Me.cmdclose.Name = "cmdclose"
         Me.cmdclose.Size = New System.Drawing.Size(92, 34)
         Me.cmdclose.TabIndex = 30
@@ -134,7 +134,7 @@ Partial Class Form_LOGIN
         Me.cmdlogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.cmdlogin.ImageKey = "login.png"
         Me.cmdlogin.ImageList = Me.ImageList1
-        Me.cmdlogin.Location = New System.Drawing.Point(140, 161)
+        Me.cmdlogin.Location = New System.Drawing.Point(140, 173)
         Me.cmdlogin.Name = "cmdlogin"
         Me.cmdlogin.Size = New System.Drawing.Size(86, 34)
         Me.cmdlogin.TabIndex = 29
@@ -146,7 +146,7 @@ Partial Class Form_LOGIN
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(329, 205)
+        Me.ClientSize = New System.Drawing.Size(325, 213)
         Me.ControlBox = False
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.cmdserver)

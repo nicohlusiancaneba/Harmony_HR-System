@@ -1,7 +1,7 @@
 ﻿Public Class FormLOAN_NEW
 
     Private Sub FormLOAN_NEW_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        sqlSTR = "Select * from employees where Employment_Status != 'Inactive'"
+        sqlSTR = "Select * from employees where Employment_Status != 'Inactive' Order by Last_Name, First_Name "
         FILLComboBox_Employee(sqlSTR, cmb_employees)
     End Sub
 

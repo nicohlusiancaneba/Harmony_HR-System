@@ -140,6 +140,7 @@
         End If
 
         If cb_Approved.Checked Then
+
             If MsgBox("Would you like to approve this payroll record? Please note that once approved, it cannot be modified.", MsgBoxStyle.YesNo + MsgBoxStyle.Information, msgBox_header) = MsgBoxResult.Yes Then
                 sqlSTR = "Update Payroll set Payroll_Approved='Yes', Approved_by='" & xUsername & "' where Payroll_ID=" & payroll_Id
                 ExecuteSQLQuery(sqlSTR)
@@ -148,6 +149,7 @@
                     sqlSTR = "Update Loan_Payments set Payment_Posted = 'Yes' where Payroll_Detail_ID =" & lst_payrollRecord.Items(i).SubItems(0).Text
                     ExecuteSQLQuery(sqlSTR)
                 Next
+                UpdateLoanStatus()
             Else
                 cb_Approved.Checked = False
                 Exit Sub
@@ -264,4 +266,50 @@
 
 
     End Sub
+
+    Private Sub UpdateLoanStatus()
+        sqlSTR = "select Loans.Loan_ID, " & _
+            "max(Loan_Gross_Amount) as 'Loan Gross', " & _
+            "max(Loan_Gross_Amount) - sum(case when Payment_Posted = 'Yes' then COALESCE(Gross_Payment, 0) else 0 end) as 'Loan_Balance' " & _
+            "from Loans LEFT JOIN Loan_Payments on Loan_Payments.Loan_ID = Loans.Loan_ID " & _
+            "group by Loans.Loan_ID " & _
+            "having max(Loan_Gross_Amount) - sum(case when Payment_Posted = 'Yes' then COALESCE(Gross_Payment, 0) else 0 end) < 1 " & _
+            "and MAX(Loan_Status) = 'Active'"
+        ExecuteSQLQuery(sqlSTR)
+
+        If sqlDT.Rows.Count > 0 Then
+            Dim LoanID_List As New List(Of Integer)()
+            For i = 0 To sqlDT.Rows.Count - 1
+                LoanID_List(i) = sqlDT.Rows(i)("Loan_ID")
+            Next
+            For Each value As Integer In LoanID_List
+                sqlSTR = "update Loans set Loan_Status = 'Paid' where Loan_ID=" & value
+                ExecuteSQLQuery(sqlSTR)
+            Next
+        End If
+    End Sub
+
+
+    'Private Function HasLoanPostingError() As Boolean
+    '    sqlSTR = "select max(Employees.Employee_ID) as Employee_Id, Concat(max(Last_Name), ', ' , max(first_name)) as Name, sum(COALESCE(Gross_Payment, 0)) as Gross, max(Loan_Gross_Amount) - sum(case when Payment_Posted='Yes' then COALESCE(Gross_Payment, 0) else 0 end) as Balance_Amount, Loans.Loan_ID  from Loan_Payments " & _
+    '                "left join Loans on Loans.Loan_ID = Loan_Payments.Loan_ID " & _
+    '                "left join Payroll_Details on Payroll_Details.Payroll_Detail_ID = Loan_Payments.Payroll_Detail_ID " & _
+    '                "left join Payroll on Payroll.Payroll_ID = Payroll_Details.Payroll_ID " & _
+    '                "left join Employees on Employees.Employee_ID = Payroll_Details.Employee_ID " & _
+    '                "where Payroll.Payroll_ID =" & payroll_Id & _
+    '                "group by Loans.Loan_ID " & _
+    '                "having sum(COALESCE(Gross_Payment, 0)) > max(Loan_Gross_Amount) - sum(case when Payment_Posted='Yes' then COALESCE(Gross_Payment, 0) else 0 end)"
+    '    ExecuteSQLQuery(sqlSTR)
+
+    '    If sqlDT.Rows.Count > 0 Then
+    '        Dim list As String = ""
+    '        For i = 0 To sqlDT.Rows.Count - 1
+    '            list = list & sqlDT.Rows(i)("Employee_Id") & " - " & sqlDT.Rows(i)("Name") & "(Loan ID: " & sqlDT.Rows(i)("Loan_Id") & ")" & vbCrLf
+    '        Next
+    '        MsgBox("The following have discrepancies in loan payments:" & vbCrLf & list & vbCrLf & "Fix errors, then try again.", MsgBoxStyle.Critical, msgBox_header)
+    '        Return True
+    '    End If
+    '    Return False
+    'End Function
+
 End Class

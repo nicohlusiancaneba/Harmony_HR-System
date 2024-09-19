@@ -828,7 +828,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.ContextMenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditEmployeeToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(214, 28)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(214, 50)
         '
         'EditEmployeeToolStripMenuItem
         '
@@ -853,7 +853,7 @@ Partial Class FormPAYROLL_PAYEE
         Me.lst_loanPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lst_loanPayment.FullRowSelect = True
         Me.lst_loanPayment.GridLines = True
-        Me.lst_loanPayment.Location = New System.Drawing.Point(5, 18)
+        Me.lst_loanPayment.Location = New System.Drawing.Point(1, 18)
         Me.lst_loanPayment.Margin = New System.Windows.Forms.Padding(2)
         Me.lst_loanPayment.Name = "lst_loanPayment"
         Me.lst_loanPayment.Size = New System.Drawing.Size(314, 184)

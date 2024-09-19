@@ -306,6 +306,9 @@
 
 
     Private Sub EditEmployeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditEmployeeToolStripMenuItem.Click
+        If LoanID_hasLoanPayment() Then
+            Exit Sub
+        End If
         ShowForm2(FormLOAN_PAYMENT, "add", lst_loans.FocusedItem.Text, payroll_detail_id)
         RefreshLoanPaymentList()
     End Sub
@@ -335,4 +338,14 @@
         ShowForm2(FormLOAN_PAYMENT, "edit", lst_loanPayment.FocusedItem.Text, payroll_detail_id)
         RefreshLoanPaymentList()
     End Sub
+
+    Private Function LoanID_hasLoanPayment() As Boolean
+        For i = 0 To lst_loanPayment.Items.Count - 1
+            If lst_loans.FocusedItem.Text = lst_loanPayment.Items(i).SubItems(1).Text Then
+                MsgBox("Loan payment record already exists below, update and try again.", MsgBoxStyle.Information, msgBox_header)
+                Return True
+            End If
+        Next
+        Return False
+    End Function
 End Class
