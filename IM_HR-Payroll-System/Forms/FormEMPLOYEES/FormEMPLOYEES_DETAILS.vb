@@ -180,6 +180,7 @@
         ExecuteSQLQuery(sqlSTR)
         MsgBox("Succesfully saved employee details.", MsgBoxStyle.Information, msgBox_header)
         Me.Close()
+        FormEMPLOYEES.rb_Regular.Checked = True
         FormEMPLOYEES.RefreshEmployeeList()
     End Sub
 

@@ -22,7 +22,6 @@ Partial Class FormEMPLOYEES_DETAILS
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormEMPLOYEES_DETAILS))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dt_birthDate = New System.Windows.Forms.DateTimePicker()
@@ -69,12 +68,19 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.btn_Save = New System.Windows.Forms.Button()
         Me.btn_Cancel = New System.Windows.Forms.Button()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -101,7 +107,7 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.GroupBox1.Controls.Add(Me.txt_lastName)
         Me.GroupBox1.Controls.Add(Me.txt_IDno)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 45)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 3)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(350, 380)
         Me.GroupBox1.TabIndex = 1
@@ -194,7 +200,7 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.GroupBox2.Controls.Add(Me.txt_emergencyRelationship)
         Me.GroupBox2.Controls.Add(Me.txt_emergencyContactPerson)
         Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Location = New System.Drawing.Point(368, 45)
+        Me.GroupBox2.Location = New System.Drawing.Point(362, 3)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(362, 167)
         Me.GroupBox2.TabIndex = 2
@@ -246,6 +252,7 @@ Partial Class FormEMPLOYEES_DETAILS
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.GroupBox5)
         Me.GroupBox3.Controls.Add(Me.dt_regularizationDate)
         Me.GroupBox3.Controls.Add(Me.dt_hiredDate)
@@ -258,9 +265,9 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.GroupBox3.Controls.Add(Me.txt_startingRate)
         Me.GroupBox3.Controls.Add(Me.txt_jobPosition)
         Me.GroupBox3.Controls.Add(Me.Label3)
-        Me.GroupBox3.Location = New System.Drawing.Point(736, 12)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 6)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(462, 413)
+        Me.GroupBox3.Size = New System.Drawing.Size(732, 375)
         Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Employment Record"
@@ -272,9 +279,9 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.GroupBox5.Controls.Add(Me.txt_philhealthShare)
         Me.GroupBox5.Controls.Add(Me.txt_pagIbigShare)
         Me.GroupBox5.Controls.Add(Me.Label5)
-        Me.GroupBox5.Location = New System.Drawing.Point(290, 249)
+        Me.GroupBox5.Location = New System.Drawing.Point(524, 69)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(160, 153)
+        Me.GroupBox5.Size = New System.Drawing.Size(190, 153)
         Me.GroupBox5.TabIndex = 16
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Contributions / Deductions"
@@ -282,33 +289,33 @@ Partial Class FormEMPLOYEES_DETAILS
         'txt_taxAmount
         '
         Me.txt_taxAmount.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_taxAmount.Location = New System.Drawing.Point(83, 87)
+        Me.txt_taxAmount.Location = New System.Drawing.Point(92, 87)
         Me.txt_taxAmount.Name = "txt_taxAmount"
-        Me.txt_taxAmount.Size = New System.Drawing.Size(66, 24)
+        Me.txt_taxAmount.Size = New System.Drawing.Size(86, 24)
         Me.txt_taxAmount.TabIndex = 23
         '
         'txt_SSSshare
         '
         Me.txt_SSSshare.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SSSshare.Location = New System.Drawing.Point(83, 16)
+        Me.txt_SSSshare.Location = New System.Drawing.Point(92, 16)
         Me.txt_SSSshare.Name = "txt_SSSshare"
-        Me.txt_SSSshare.Size = New System.Drawing.Size(66, 24)
+        Me.txt_SSSshare.Size = New System.Drawing.Size(86, 24)
         Me.txt_SSSshare.TabIndex = 20
         '
         'txt_philhealthShare
         '
         Me.txt_philhealthShare.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_philhealthShare.Location = New System.Drawing.Point(83, 50)
+        Me.txt_philhealthShare.Location = New System.Drawing.Point(92, 50)
         Me.txt_philhealthShare.Name = "txt_philhealthShare"
-        Me.txt_philhealthShare.Size = New System.Drawing.Size(66, 24)
+        Me.txt_philhealthShare.Size = New System.Drawing.Size(86, 24)
         Me.txt_philhealthShare.TabIndex = 21
         '
         'txt_pagIbigShare
         '
         Me.txt_pagIbigShare.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_pagIbigShare.Location = New System.Drawing.Point(83, 122)
+        Me.txt_pagIbigShare.Location = New System.Drawing.Point(92, 122)
         Me.txt_pagIbigShare.Name = "txt_pagIbigShare"
-        Me.txt_pagIbigShare.Size = New System.Drawing.Size(66, 24)
+        Me.txt_pagIbigShare.Size = New System.Drawing.Size(86, 24)
         Me.txt_pagIbigShare.TabIndex = 22
         '
         'Label5
@@ -326,7 +333,7 @@ Partial Class FormEMPLOYEES_DETAILS
         '
         Me.dt_regularizationDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dt_regularizationDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dt_regularizationDate.Location = New System.Drawing.Point(181, 94)
+        Me.dt_regularizationDate.Location = New System.Drawing.Point(181, 55)
         Me.dt_regularizationDate.Name = "dt_regularizationDate"
         Me.dt_regularizationDate.Size = New System.Drawing.Size(121, 26)
         Me.dt_regularizationDate.TabIndex = 27
@@ -346,7 +353,7 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.cmb_division.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_division.FormattingEnabled = True
         Me.cmb_division.Items.AddRange(New Object() {"Accounting Division", "Finance Division", "Purchasing Division", "", "Sales Division ", "Marketing Division", "", "Distribution  Division", "Warehouse Division", "Logistics Division", "", "FDA Concerns  Division", "Pharmacy Divison", "QC & QA Division", "CPE Division", "", "IT System Mgmt. Division", "Inventory Management Division", "Software/Web  App Division", "", "Iriga Branch", "Catanduanes Branch", "Masbate Branch", "Sorsogon Branch", "", "Performance Mgmt, Training & Devt. and Operations Division", "Staffing & Personnel Mgmt. Division", "Compensation & Benefits Division", "Legal", "Nurse / Safety Staff"})
-        Me.cmb_division.Location = New System.Drawing.Point(181, 211)
+        Me.cmb_division.Location = New System.Drawing.Point(181, 172)
         Me.cmb_division.Name = "cmb_division"
         Me.cmb_division.Size = New System.Drawing.Size(269, 28)
         Me.cmb_division.TabIndex = 26
@@ -357,7 +364,7 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.cmb_department.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_department.FormattingEnabled = True
         Me.cmb_department.Items.AddRange(New Object() {"", "Accounting & Finance Department", "Branch Store Operations Department", "Distribution & Warehouse Department", "Human Resource Department", "Information Technology & Inventory Department", "Regulatory Affairs Department", "Sales & Marketing Department"})
-        Me.cmb_department.Location = New System.Drawing.Point(181, 172)
+        Me.cmb_department.Location = New System.Drawing.Point(181, 133)
         Me.cmb_department.Name = "cmb_department"
         Me.cmb_department.Size = New System.Drawing.Size(269, 28)
         Me.cmb_department.TabIndex = 25
@@ -368,7 +375,7 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.cmb_employmentStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_employmentStatus.FormattingEnabled = True
         Me.cmb_employmentStatus.Items.AddRange(New Object() {"", "Owner", "Regular", "Probationary", "Probationary (Extended)", "Outsource", "Resigned", "Terminated"})
-        Me.cmb_employmentStatus.Location = New System.Drawing.Point(181, 52)
+        Me.cmb_employmentStatus.Location = New System.Drawing.Point(593, 19)
         Me.cmb_employmentStatus.Name = "cmb_employmentStatus"
         Me.cmb_employmentStatus.Size = New System.Drawing.Size(121, 28)
         Me.cmb_employmentStatus.TabIndex = 18
@@ -376,7 +383,7 @@ Partial Class FormEMPLOYEES_DETAILS
         'txt_workDaysNo
         '
         Me.txt_workDaysNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_workDaysNo.Location = New System.Drawing.Point(181, 373)
+        Me.txt_workDaysNo.Location = New System.Drawing.Point(181, 334)
         Me.txt_workDaysNo.Name = "txt_workDaysNo"
         Me.txt_workDaysNo.Size = New System.Drawing.Size(86, 26)
         Me.txt_workDaysNo.TabIndex = 23
@@ -384,7 +391,7 @@ Partial Class FormEMPLOYEES_DETAILS
         'txt_monthlySalary
         '
         Me.txt_monthlySalary.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_monthlySalary.Location = New System.Drawing.Point(181, 333)
+        Me.txt_monthlySalary.Location = New System.Drawing.Point(181, 294)
         Me.txt_monthlySalary.Name = "txt_monthlySalary"
         Me.txt_monthlySalary.ReadOnly = True
         Me.txt_monthlySalary.Size = New System.Drawing.Size(86, 26)
@@ -393,7 +400,7 @@ Partial Class FormEMPLOYEES_DETAILS
         'txt_currentRate
         '
         Me.txt_currentRate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_currentRate.Location = New System.Drawing.Point(181, 293)
+        Me.txt_currentRate.Location = New System.Drawing.Point(181, 254)
         Me.txt_currentRate.Name = "txt_currentRate"
         Me.txt_currentRate.Size = New System.Drawing.Size(86, 26)
         Me.txt_currentRate.TabIndex = 21
@@ -401,7 +408,7 @@ Partial Class FormEMPLOYEES_DETAILS
         'txt_startingRate
         '
         Me.txt_startingRate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_startingRate.Location = New System.Drawing.Point(181, 254)
+        Me.txt_startingRate.Location = New System.Drawing.Point(181, 215)
         Me.txt_startingRate.Name = "txt_startingRate"
         Me.txt_startingRate.Size = New System.Drawing.Size(86, 26)
         Me.txt_startingRate.TabIndex = 20
@@ -409,7 +416,7 @@ Partial Class FormEMPLOYEES_DETAILS
         'txt_jobPosition
         '
         Me.txt_jobPosition.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_jobPosition.Location = New System.Drawing.Point(181, 134)
+        Me.txt_jobPosition.Location = New System.Drawing.Point(181, 95)
         Me.txt_jobPosition.Name = "txt_jobPosition"
         Me.txt_jobPosition.Size = New System.Drawing.Size(197, 26)
         Me.txt_jobPosition.TabIndex = 19
@@ -420,9 +427,11 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(17, 16)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(158, 380)
+        Me.Label3.Size = New System.Drawing.Size(158, 340)
         Me.Label3.TabIndex = 0
-        Me.Label3.Text = resources.GetString("Label3.Text")
+        Me.Label3.Text = "Hired Date :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Regularization Date :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Job Position :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Department : " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Divis" & _
+    "ion :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Starting Daily Rate :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Current Daily Rate :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Monthly Salary :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Wo" & _
+    "rk Days / Month :"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'GroupBox4
@@ -433,7 +442,7 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.GroupBox4.Controls.Add(Me.txt_SSSno)
         Me.GroupBox4.Controls.Add(Me.txt_bankNo)
         Me.GroupBox4.Controls.Add(Me.Label4)
-        Me.GroupBox4.Location = New System.Drawing.Point(368, 218)
+        Me.GroupBox4.Location = New System.Drawing.Point(362, 176)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(362, 207)
         Me.GroupBox4.TabIndex = 3
@@ -514,7 +523,7 @@ Partial Class FormEMPLOYEES_DETAILS
         'btn_Save
         '
         Me.btn_Save.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Save.Location = New System.Drawing.Point(1052, 431)
+        Me.btn_Save.Location = New System.Drawing.Point(614, 464)
         Me.btn_Save.Name = "btn_Save"
         Me.btn_Save.Size = New System.Drawing.Size(70, 30)
         Me.btn_Save.TabIndex = 14
@@ -524,26 +533,68 @@ Partial Class FormEMPLOYEES_DETAILS
         'btn_Cancel
         '
         Me.btn_Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Cancel.Location = New System.Drawing.Point(1128, 431)
+        Me.btn_Cancel.Location = New System.Drawing.Point(690, 464)
         Me.btn_Cancel.Name = "btn_Cancel"
         Me.btn_Cancel.Size = New System.Drawing.Size(70, 30)
         Me.btn_Cancel.TabIndex = 15
         Me.btn_Cancel.Text = "&Cancel"
         Me.btn_Cancel.UseVisualStyleBackColor = True
         '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Location = New System.Drawing.Point(12, 45)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(752, 413)
+        Me.TabControl1.TabIndex = 16
+        '
+        'TabPage1
+        '
+        Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage1.Controls.Add(Me.GroupBox1)
+        Me.TabPage1.Controls.Add(Me.GroupBox2)
+        Me.TabPage1.Controls.Add(Me.GroupBox4)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(744, 387)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Page 1"
+        '
+        'TabPage2
+        '
+        Me.TabPage2.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage2.Controls.Add(Me.GroupBox3)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(744, 387)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Page 2"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(431, 22)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(156, 20)
+        Me.Label7.TabIndex = 28
+        Me.Label7.Text = "Employment Status :"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'FormEMPLOYEES_DETAILS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1208, 471)
+        Me.ClientSize = New System.Drawing.Size(771, 501)
+        Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.btn_Cancel)
         Me.Controls.Add(Me.btn_Save)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.GroupBox4)
-        Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -564,6 +615,9 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage2.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -614,4 +668,8 @@ Partial Class FormEMPLOYEES_DETAILS
     Friend WithEvents txt_taxAmount As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
 End Class
