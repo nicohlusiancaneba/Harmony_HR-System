@@ -1,6 +1,8 @@
 ﻿Public Class FormEMPLOYEES_DETAILS
     Dim employee_id As Integer
     Private Sub FormEMPLOYEES_DETAILS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TabControl1.SelectedIndex = 0
+
         If formOperation = "edit" Then
             employee_id = xID1
             sqlSTR = "select * from employees where Employee_ID=" & employee_id

@@ -23,8 +23,17 @@
         End If
 
 
-        sqlSTR = "SELECT Loan_ID AS 'Loan ID', Loans.Employee_ID AS 'Employee ID', CONCAT(Last_Name, ', ', First_Name) as Employee, Loan_Date AS 'Loan Date', Loan_Net_Amount AS 'Loan Net Amount', CONCAT(Loan_Interest_Rate, '%') AS 'Loan Interest Rate', Loan_Gross_Amount AS 'Loan Gross Amount', " & _
-            " Loan_Payment_Start_Date AS 'Loan Payment Start Date', Loan_Payment_End_Date AS 'Loan Payment End Date', Loan_Reason AS 'Loan Reason', Loan_Remarks AS 'Loan Remarks', Loan_Status AS 'Loan Status' FROM Loans INNER JOIN Employees ON Employees.Employee_ID = Loans.Employee_ID where Loan_Status like '%" & status & "%' order by Loan_Date, Last_Name, First_Name "
+        sqlSTR = "SELECT Loans.Loan_ID AS 'Loan ID', MAX(Loans.Employee_ID) AS 'Employee ID', MAX(CONCAT(Last_Name, ', ', First_Name)) AS Employee, " & _
+                    "MAX(Loan_Date) AS 'Loan Date', MAX(Loan_Type) AS 'Loan Type', MAX(Loan_Net_Amount) AS 'Loan Net', MAX(CONCAT(Loan_Interest_Rate, '%')) AS 'Interest Rate', " & _
+                    "MAX(Loan_Gross_Amount) AS 'Loan Gross', max(Loan_Gross_Amount) - sum(case when Payment_Posted = 'Yes' then COALESCE(Gross_Payment, 0) else 0 end) as 'Loan Balance', " & _
+                    "MAX(Loan_Payment_Start_Date) AS 'Loan Payment Start Date', MAX(Loan_Payment_End_Date) AS 'Loan Payment End Date', " & _
+                    "MAX(Loan_Reason) AS 'Loan Reason', MAX(Loan_Remarks) AS 'Loan Remarks', MAX(Loan_Status) AS 'Loan Status' " & _
+                    "FROM Loans " & _
+                    "LEFT JOIN Loan_Payments ON Loan_Payments.Loan_ID = Loans.Loan_ID " & _
+                    "INNER JOIN Employees ON Employees.Employee_ID = Loans.Employee_ID " & _
+                    "WHERE Loan_Status LIKE '%" & status & "%' " & _
+                    "GROUP BY Loans.Loan_ID " & _
+                    "ORDER BY MAX(Loan_Date), MAX(Last_Name), MAX(First_Name);"
         FillListView(ExecuteSQLQuery(sqlSTR), lst_loans, 0)
     End Sub
 

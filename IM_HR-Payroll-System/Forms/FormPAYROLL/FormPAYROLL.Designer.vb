@@ -54,7 +54,7 @@ Partial Class FormPAYROLL
         Me.ContextMenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditEmployeeToolStripMenuItem, Me.DeleteEmployeeToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(176, 52)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(176, 74)
         '
         'EditEmployeeToolStripMenuItem
         '

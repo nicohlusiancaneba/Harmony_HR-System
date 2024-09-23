@@ -40,6 +40,7 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.txt_emergencyContactPerson = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.txt_taxAmount = New System.Windows.Forms.TextBox()
         Me.txt_SSSshare = New System.Windows.Forms.TextBox()
@@ -71,7 +72,6 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -271,6 +271,17 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Employment Record"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(431, 22)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(156, 20)
+        Me.Label7.TabIndex = 28
+        Me.Label7.Text = "Employment Status :"
+        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'GroupBox5
         '
@@ -574,17 +585,6 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Page 2"
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(431, 22)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(156, 20)
-        Me.Label7.TabIndex = 28
-        Me.Label7.Text = "Employment Status :"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'FormEMPLOYEES_DETAILS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -603,7 +603,6 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Employee Record"
-        Me.TopMost = True
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)

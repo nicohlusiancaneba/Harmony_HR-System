@@ -6,6 +6,7 @@
     End Sub
 
     Private Sub btn_submit_Click(sender As Object, e As EventArgs) Handles btn_submit.Click
+
         sqlSTR = "INSERT INTO Loans (Loan_Date, Employee_ID, Loan_Net_Amount, Loan_Interest_Rate, Loan_Gross_Amount, Loan_Payment_Start_Date, Loan_Payment_End_Date, Loan_Type, Suggested_PayPerCutoff, Loan_Reason, Loan_Remarks, Loan_Status) VALUES (" & _
                             "'" & DateTime.Now.ToString("MM/dd/yyyy") & "', '" & _
                              Split(cmb_employees.Text, " - ")(0) & "', '" & _
@@ -85,6 +86,7 @@
 
     Private Sub suggestedLoanDeduction()
         txt_suggestedDeduction.Text = Val(txt_grossAmount.Text) / SuggestedNumberOfPayments()
+        txt_suggestedDeduction.Text = Math.Round(CDbl(txt_suggestedDeduction.Text), 2).ToString("0.00")
     End Sub
 
     Private Sub dt_payStartDate_ValueChanged(sender As Object, e As EventArgs) Handles dt_payStartDate.ValueChanged

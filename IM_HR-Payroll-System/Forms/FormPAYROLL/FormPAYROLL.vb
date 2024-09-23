@@ -57,8 +57,20 @@
         If lst_payroll.FocusedItem.SubItems(9).Text = "No" Then
             If MsgBox("Do you want to delete this payroll record?", MsgBoxStyle.YesNo + MsgBoxStyle.Critical, msgBox_header) = MsgBoxResult.Yes Then
 
+                sqlSTR = "DELETE lp " & _
+                        "FROM Loan_Payments lp " & _
+                        "INNER JOIN Payroll_Details pd ON pd.Payroll_Detail_ID = lp.Payroll_Detail_ID " & _
+                        "INNER JOIN Payroll p ON p.Payroll_ID = pd.Payroll_ID " & _
+                        "WHERE lp.Payment_Posted = 'No' AND pd.Payroll_ID =" & lst_payroll.FocusedItem.Text
+                ExecuteSQLQuery(sqlSTR)
+
                 sqlSTR = "Delete from Payroll where Payroll_ID =" & lst_payroll.FocusedItem.Text
                 ExecuteSQLQuery(sqlSTR)
+
+                sqlSTR = "Delete from Payroll_Details where Payroll_ID =" & lst_payroll.FocusedItem.Text
+                ExecuteSQLQuery(sqlSTR)
+
+                
 
                 MsgBox("Deleted Payroll record.", MsgBoxStyle.Information, msgBox_header)
             End If

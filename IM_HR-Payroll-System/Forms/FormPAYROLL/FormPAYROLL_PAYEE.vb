@@ -195,20 +195,21 @@
     End Sub
 
     Private Sub RefreshLoanPaymentList()
-        sqlSTR = "select Loan_Payment_ID as ID, Loan_ID as 'Loan ID', Payroll_Detail_ID as 'Payroll Detail ID', Payment_Date as 'Payment Date', " & _
-                "Gross_Payment as 'Payment', Payment_Remarks as Remarks from Loan_Payments where payroll_detail_id=" & payroll_detail_id
+        sqlSTR = "select Loan_Payment_ID as ID, Loan_Payments.Loan_ID as 'Loan ID', Payroll_Detail_ID as 'Payroll Detail ID', Loan_Type as 'Loan Type', Payment_Date as 'Payment Date', " & _
+                "Gross_Payment as 'Payment', Payment_Remarks as Remarks from Loan_Payments " & _
+                "INNER JOIN Loans on Loans.Loan_ID = Loan_Payments.Loan_ID where payroll_detail_id=" & payroll_detail_id
         FillListView(ExecuteSQLQuery(sqlSTR), lst_loanPayment, 0)
 
         Dim payment As Double = 0
         For i As Integer = 0 To lst_loanPayment.Items.Count - 1
-            payment = payment + lst_loanPayment.Items(i).SubItems(4).Text
+            payment = payment + lst_loanPayment.Items(i).SubItems(5).Text
         Next i
         txt_grandTotal_Loan.Text = Val(payment)
         GrandTotalCompute()
     End Sub
 
     Private Sub RefreshLoanList()
-        sqlSTR = "select Loans.Loan_ID as 'Loan ID', max(Employee_ID) as 'Employee ID', CONCAT(MAX(Loan_Payment_Start_Date), ' to ', MAX(Loan_Payment_End_Date)) as 'Cutoff Payment Due', max(Suggested_PayPerCutoff) as 'Suggested Payment', " & _
+        sqlSTR = "select Loans.Loan_ID as 'ID', MAX(Loan_Type) AS 'Loan Type', CONCAT(MAX(Loan_Payment_Start_Date), ' to ', MAX(Loan_Payment_End_Date)) as 'Loan Duration', max(Suggested_PayPerCutoff) as 'Suggested Payment', " & _
             " max(Loan_Gross_Amount) as 'Loan Gross', max(Loan_Gross_Amount) - sum(case when Payment_Posted = 'Yes' then COALESCE(Gross_Payment, 0) else 0 end) as 'Loan Balance' " & _
             " from Loans LEFT JOIN Loan_Payments on Loan_Payments.Loan_ID = Loans.Loan_ID" & _
             " WHERE Loan_Status = 'Active' and Employee_ID=" & employee_id & _

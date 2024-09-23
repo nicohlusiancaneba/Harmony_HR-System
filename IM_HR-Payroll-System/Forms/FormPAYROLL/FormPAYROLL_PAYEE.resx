@@ -117,21 +117,210 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="Label2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="gb_BasicPay.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_payNightDiff.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_numNightDiff.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_totalNightDiff.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_payOvertime.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_numOvertime.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_payHoliday.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_numHoliday.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_payField.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_numField.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_paySpecial.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_numSpecial.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_totalOvertime.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_totalHoliday.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_totalField.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_totalSpecial.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_totalRegular.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_payRegular.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_numRegular.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label3.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <data name="Label3.Text" xml:space="preserve">
-    <value>x               day(s)     Total :
+    <value>x                   day(s)     Total :
 
-x               day(s)     Total :
+x                   day(s)     Total :
 
-x               day(s)     Total :
+x                   day(s)     Total :
 
-x               day(s)     Total :
+x                   day(s)     Total :
 
-x               min(s)     Total :
+x                   min(s)     Total :
 
-x               min(s)     Total :</value>
+x                   min(s)     Total :</value>
   </data>
+  <metadata name="Label1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="gb_Additional.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_payAddAllowance.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_payAddIncentive.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_payAddField.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_payAddSpecial.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label4.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="gb_Deductions.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_totalUndertime.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_totalLate.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cb_pagibig.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cb_philhealth.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cb_Tax.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="cb_SSS.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_numUndertime.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_minusUndertime.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_insurance.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_SSS.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_tax.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_charge.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_philhealth.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_pagibig.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label8.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_numLate.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label7.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_minusLate.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label6.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label5.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="gb_total.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_grandTotal_Additional.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_grandTotal_Basic.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_grandTotal_Loan.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_grandTotal_Deduction.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_grandTotal_Net.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label11.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label10.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_grandTotal_Gross.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label9.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="gb_Loans.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lst_loans.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="ContextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>451, 19</value>
+  </metadata>
+  <metadata name="gb_loanPayment.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="lst_loanPayment.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
   <metadata name="ContextMenuStrip2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>608, 19</value>
@@ -144,44 +333,77 @@ x               min(s)     Total :</value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADO
-        CAAAAk1TRnQBSQFMAgEBAgEAAcABAAHAAQABDwEAAQ8BAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAE8
-        AwABDwMAAQEBAAEgBQABEAEOHgADFQEdAz0BaAFVAVcBVQG3AVkBYAFZAesBLgFxASwB/AFTAWQBUwHx
+        CAAAAk1TRnQBSQFMAgEBAgEAAcgBAAHIAQABDwEAAQ8BAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAE8
+        AwABDwMAAQEBAAEgBQABEAEOHgADFQEdAz0BaAFVAVcBVQG3AVkBYAFZAesBLQFwASsB/AFTAWQBUwHx
         AVkBXAFZAckBRQFGAUUBfgMgAS8oAAMEAQYDKgFBA0YBfwNLAY4DSwGOA0gBgwMvAUkDBwEJfwABAQMr
-        AUIDWQHHAUcBdwFGAfkBLAGuASgB/wEsAa4BKAH/ASwBrgEoAf8BLAGuASgB/wEsAa4BKAH/ASsBdAEr
+        AUIDWQHHAUcBdAFGAfkBKwGuAScB/wErAa4BJwH/ASsBrgEnAf8BKwGuAScB/wErAa4BJwH/ASsBcwEr
         AfwBWQFdAVkB1wM7AWMDAAEBBAADBAEFAy8BSQM1AVYDNQFWAzUBVgMxAU0EAAMoATwDQgF0AxYBHgMP
-        ARQDDwEUAxEBFwM/AWwDLwFKfAADIgExAVoBXwFaAdsBLAGuASgB/wEsAa4BKAH/ASwBrgEoAf8BLAGu
-        ASgB/wEsAa4BKAH/ASwBrgEoAf8BLAGuASgB/wEsAa4BKAH/ASwBrgEoAf8BLAGuASgB/wM7AWQEAANT
+        ARQDDwEUAxEBFwM/AWwDLwFKfAADIgExAVoBXwFaAdsBKwGuAScB/wErAa4BJwH/ASsBrgEnAf8BKwGu
+        AScB/wErAa4BJwH/ASsBrgEnAf8BKwGuAScB/wErAa4BJwH/ASsBrgEnAf8BKwGuAScB/wM7AWQEAANT
         AagDQwF3AzUBVQM1AVUDNQFVAzABSwQAA0IBdQMaASUEAAMtAUYDLgFHBAADEQEXA0gBg3gAAwIBAwNU
-        Aa8BLAGuASgB/wEsAa4BKAH/ASwBrgEoAf8BLAGuASgB/wFHAboBRAH/AcEB4gG/Af8BgAHIAWUB/wEs
-        Aa4BKAH/ASwBrgEoAf8BLAGuASgB/wEsAa4BKAH/AVkBXQFZAdcDIAEvA2AB1hgAA0oBigMNARIDLgFH
-        A0QBegNEAXoDLgFHAw8BFANLAY54AAMqAUEBRwF3AUYB+QEsAa4BKAH/ASwBrgEoAf8BLAGuASgB/wEs
-        Aa4BKAH/AVsBwwFYBf8BogHYAaAB/wEsAa4BKAH/ASwBrgEoAf8BLAGuASgB/wEsAa4BKAH/ASsBdAEr
-        AfwDRQF9A14B1RgAA0kBiAMPARQDLQFGA0QBeQNEAXoDLQFGAxABFQNLAY54AAFTAVUBUwGtASwBrgEo
-        Af8BLAGuASgB/wEsAa4BKAH/ASwBrgEoAf8BLAGuASgB/wFbAcMBWAX/AaIB2AGgAf8BLAGuASgB/wEs
-        Aa4BKAH/ASwBrgEoAf8BLAGuASgB/wEsAa4BKAH/AVkBXAFZAckDXgHVGAADQAFwAx8BLAQAAy0BRgMu
-        AUcEAAMWAR4DRgF/eAACXAFVAeoBLAGuASgB/wEsAa4BKAH/AVcBwAFUAf8BoQHXAZ8B/wGhAdcBnwH/
-        AcAB4gG/Bf8B1QHsAdUB/wGiAdgBoAH/AaIB2AGgAf8BgQHIAWYB/wEsAa4BKAH/ASwBrgEoAf8BUwFk
+        Aa8BKwGuAScB/wErAa4BJwH/ASsBrgEnAf8BKwGuAScB/wFGAboBQwH/AcEB4gG/Af8BgAHIAWQB/wEr
+        Aa4BJwH/ASsBrgEnAf8BKwGuAScB/wErAa4BJwH/AVkBXQFZAdcDIAEvA2AB1hgAA0oBigMNARIDLgFH
+        A0QBegNEAXoDLgFHAw8BFANLAY54AAMqAUEBRwF0AUYB+QErAa4BJwH/ASsBrgEnAf8BKwGuAScB/wEr
+        Aa4BJwH/AVoBwwFXBf8BogHYAaAB/wErAa4BJwH/ASsBrgEnAf8BKwGuAScB/wErAa4BJwH/ASsBcwEr
+        AfwDRQF9A14B1RgAA0kBiAMPARQDLQFGA0QBeQNEAXoDLQFGAxABFQNLAY54AAFTAVUBUwGtASsBrgEn
+        Af8BKwGuAScB/wErAa4BJwH/ASsBrgEnAf8BKwGuAScB/wFaAcMBVwX/AaIB2AGgAf8BKwGuAScB/wEr
+        Aa4BJwH/ASsBrgEnAf8BKwGuAScB/wErAa4BJwH/AVkBXAFZAckDXgHVGAADQAFwAx8BLAQAAy0BRgMu
+        AUcEAAMWAR4DRgF/eAACXAFVAeoBKwGuAScB/wErAa4BJwH/AVYBwAFTAf8BoQHXAZ8B/wGhAdcBnwH/
+        AcAB4gG/Bf8B1QHsAdUB/wGiAdgBoAH/AaIB2AGgAf8BgQHIAWUB/wErAa4BJwH/ASsBrgEnAf8BUwFk
         AVMB8QNeAdUDBwEKAyYBOQMuAUgDLgFIAy4BRwMNARIDIwEzA0QBegMfASwDDwEUAw0BEQMaASUDQgF0
-        AyoBQHgAAU8BcwFLAfsBLAGuASgB/wEsAa4BKAH/AaEB1AGfHf8BwQHiAcAB/wEsAa4BKAH/ASwBrgEo
-        Af8BLgFxASwB/ANeAdUDBwEKAyYBOQMuAUcDLgFHAy0BRgMNARIDAgEDAyMBMwNAAXADSQGIA0oBigNC
-        AXUDKAE8AwQBBngAAVsBYQFbAeEBLAGuASgB/wEsAa4BKAH/AT4BtgE6Af8BWwHEAVgB/wFbAcQBWAH/
-        AaAB0wGeBf8BwAHiAb8B/wFbAcMBWAH/AVsBwwFYAf8BSAG6AUQB/wEsAa4BKAH/ASwBrgEoAf8BWQFg
-        AVkB6wNeAdULAAEBAwABAQMAAQEDAAEBAwABAZQAA0wBkgEsAa4BKAH/ASwBrgEoAf8BLAGuASgB/wEs
-        Aa4BKAH/ASwBrgEoAf8BWgHDAVcF/wGiAdgBoQH/ASwBrgEoAf8BLAGuASgB/wEsAa4BKAH/ASwBrgEo
-        Af8BLAGuASgB/wFVAVcBVQG3A14B1QMMARADNwFbA0EBcgNBAXIDQQFyA0EBcgNBAXIDMwFSBAADMwFT
-        AwYBCIQAAxoBJAFNAV8BTAHzASwBrgEoAf8BLAGuASgB/wEsAa4BKAH/ASwBrgEoAf8BWgHDAVcF/wGi
-        AdgBoQH/ASwBrgEoAf8BLAGuASgB/wEsAa4BKAH/ASwBrgEoAf8BRwF3AUUB+QM9AWgDXgHVAwMBBAMR
-        ARcDFAEcAxQBHAMUARwDFAEcAxQBHAMPARQEAANHAYADCgEOiAABSwFMAUsBjwEsAa4BKAH/ASwBrgEo
-        Af8BLAGuASgB/wEsAa4BKAH/AT0BtgE6Af8BogHUAaAB/wFYAcABVAH/ASwBrgEoAf8BLAGuASgB/wEs
-        Aa4BKAH/ASwBrgEoAf8DWQHHAxUBHQNeAdUDAwEEAxgBIQMeASsDHgErAxEBFxAAA0cBgAMKAQ6IAAMY
-        ASEDVgGzASwBrgEoAf8BLAGuASgB/wEsAa4BKAH/ASwBrgEoAf8BLAGuASgB/wEsAa4BKAH/ASwBrgEo
-        Af8BLAGuASgB/wEsAa4BKAH/AVoBXwFaAdsDLAFDBAADXgHVAwwBEAM3AVsDQAFxA0ABcQMtAUYQAANH
-        AYADCgEOjAADGAEhAUsBTAFLAY8BTQFfAUwB8wEsAa4BKAH/ASwBrgEoAf8BLAGuASgB/wEsAa4BKAH/
-        ASwBrgEoAf8BRwF3AUUB+QNUAa4DIgExCAADXgHVAwcBChwAAwQBBQNKAYwDBwEJlAADGgEkA0wBkgFb
-        AWEBWwHhAU8BcwFLAfsCXAFVAeoBUwFVAVMBrQMqAUEDAgEDDAADLgFHA14B1QNeAdUDXgHVA14B1QNe
+        AyoBQHgAAU8BcAFLAfsBKwGuAScB/wErAa4BJwH/AaEB1AGfHf8BwQHiAcAB/wErAa4BJwH/ASsBrgEn
+        Af8BLQFwASsB/ANeAdUDBwEKAyYBOQMuAUcDLgFHAy0BRgMNARIDAgEDAyMBMwNAAXADSQGIA0oBigNC
+        AXUDKAE8AwQBBngAAVsBYQFbAeEBKwGuAScB/wErAa4BJwH/AT0BtgE5Af8BWgHEAVcB/wFaAcQBVwH/
+        AaAB0wGeBf8BwAHiAb8B/wFaAcMBVwH/AVoBwwFXAf8BRwG6AUMB/wErAa4BJwH/ASsBrgEnAf8BWQFg
+        AVkB6wNeAdULAAEBAwABAQMAAQEDAAEBAwABAZQAA0wBkgErAa4BJwH/ASsBrgEnAf8BKwGuAScB/wEr
+        Aa4BJwH/ASsBrgEnAf8BWQHDAVYF/wGiAdgBoQH/ASsBrgEnAf8BKwGuAScB/wErAa4BJwH/ASsBrgEn
+        Af8BKwGuAScB/wFVAVcBVQG3A14B1QMMARADNwFbA0EBcgNBAXIDQQFyA0EBcgNBAXIDMwFSBAADMwFT
+        AwYBCIQAAxoBJAFNAV8BTAHzASsBrgEnAf8BKwGuAScB/wErAa4BJwH/ASsBrgEnAf8BWQHDAVYF/wGi
+        AdgBoQH/ASsBrgEnAf8BKwGuAScB/wErAa4BJwH/ASsBrgEnAf8BRwF0AUUB+QM9AWgDXgHVAwMBBAMR
+        ARcDFAEcAxQBHAMUARwDFAEcAxQBHAMPARQEAANHAYADCgEOiAABSwFMAUsBjwErAa4BJwH/ASsBrgEn
+        Af8BKwGuAScB/wErAa4BJwH/ATwBtgE5Af8BogHUAaAB/wFXAcABUwH/ASsBrgEnAf8BKwGuAScB/wEr
+        Aa4BJwH/ASsBrgEnAf8DWQHHAxUBHQNeAdUDAwEEAxgBIQMeASsDHgErAxEBFxAAA0cBgAMKAQ6IAAMY
+        ASEDVgGzASsBrgEnAf8BKwGuAScB/wErAa4BJwH/ASsBrgEnAf8BKwGuAScB/wErAa4BJwH/ASsBrgEn
+        Af8BKwGuAScB/wErAa4BJwH/AVoBXwFaAdsDLAFDBAADXgHVAwwBEAM3AVsDQAFxA0ABcQMtAUYQAANH
+        AYADCgEOjAADGAEhAUsBTAFLAY8BTQFfAUwB8wErAa4BJwH/ASsBrgEnAf8BKwGuAScB/wErAa4BJwH/
+        ASsBrgEnAf8BRwF0AUUB+QNUAa4DIgExCAADXgHVAwcBChwAAwQBBQNKAYwDBwEJlAADGgEkA0wBkgFb
+        AWEBWwHhAU8BcAFLAfsCXAFVAeoBUwFVAVMBrQMqAUEDAgEDDAADLgFHA14B1QNeAdUDXgHVA14B1QNe
         AdUDXgHVA14B1QNeAdUDXgHZAy0BRYgAAUIBTQE+BwABPgMAASgDAAE8AwABDwMAAQEBAAEBBQABeBcA
         A/8BAAHgAQ8B/AUAAYABAgEEBQABgAECAQQBkAYAAfwHAAH8BwAB/AGQFgABwQH8BwABnAcAAZwEAAGA
         AQABBwGcBAABgAECAQcBnAQAAcABBgF/ARwEAAHwAQ4BAAE8BAAL
 </value>
   </data>
+  <metadata name="btn_Cancel.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="btn_Save.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label12.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Label13.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_payroll_employeeRemarks.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="PictureBox1.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_EmployeeID.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="txt_employeeName.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dt_cutoffEnd.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dt_cutoffStart.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

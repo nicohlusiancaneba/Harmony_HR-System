@@ -45,7 +45,7 @@
                 dt_payroll.Enabled = False
                 EditEmployeeToolStripMenuItem.Text = "View Payroll Record"
                 DeleteEmployeeToolStripMenuItem.Enabled = False
-                Me.ControlBox = True
+                'Me.ControlBox = True
             Else
                 cb_Approved.Checked = False
                 cb_Approved.Enabled = True
@@ -57,7 +57,7 @@
                 dt_payroll.Enabled = True
                 EditEmployeeToolStripMenuItem.Text = "Edit Payroll Record"
                 DeleteEmployeeToolStripMenuItem.Enabled = True
-                Me.ControlBox = False
+                'Me.ControlBox = False
             End If
 
         Else 'ADD
@@ -66,6 +66,7 @@
 
             payroll_Id = sqlDT.Rows(0)("Payroll_ID")
             txt_payroll_ID.Text = payroll_Id
+            txt_encodedby.Text = "Encoded by : " & xUsername
         End If
 
         RefreshPayrollDetailList()
@@ -100,6 +101,9 @@
 
 
     Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
+        If lst_payrollRecord.Items.Count > 0 And approved = False Then
+            Save()
+        End If
         Me.Close()
     End Sub
 
@@ -123,12 +127,6 @@
                        "WHERE Payroll_ID =" & payroll_Id
             ExecuteSQLQuery(sqlSTR)
 
-            If Not txt_encodedby.Text.Contains(xUsername) Then
-                sqlSTR = "Update Payroll SET Encoded_by = Concat(Encoded_by, ', " & xUsername & "') where Payroll_ID =" & payroll_Id
-                ExecuteSQLQuery(sqlSTR)
-            End If
-
-
         Else 'Add
             sqlSTR = "select payroll_id from payroll where payroll_id =" & txt_payroll_ID.Text
             ExecuteSQLQuery(sqlSTR)
@@ -137,6 +135,11 @@
                       "VALUES ('" & dt_payroll.Text & "', '" & dt_cutoffStart.Text & "', '" & dt_cutoffEnd.Text & "', '" & txt_TotalgrossPay.Text & "', '" & txt_TotalnetPay.Text & "', '" & txt_totalDeductions.Text & "', '" & txt_totalLoansPaid.Text & "', '" & rtb_remarks.Text & "', '" & xUsername & "')"
                 ExecuteSQLQuery(sqlSTR)
             End If
+        End If
+
+        If Not txt_encodedby.Text.Contains(xUsername) Then
+            sqlSTR = "Update Payroll SET Encoded_by = Concat(Encoded_by, ', " & xUsername & "') where Payroll_ID =" & payroll_Id
+            ExecuteSQLQuery(sqlSTR)
         End If
 
         If cb_Approved.Checked Then
@@ -156,8 +159,10 @@
             End If
             MsgBox("Succesfully APPROVED payroll record.", MsgBoxStyle.Information, msgBox_header)
         Else
-            MsgBox("Succesfully SAVED payroll record.", MsgBoxStyle.Information, msgBox_header)
+            'MsgBox("Succesfully SAVED payroll record.", MsgBoxStyle.Information, msgBox_header)
         End If
+
+
 
         FormPAYROLL.RefreshPayrollList()
         Me.Close()
@@ -181,7 +186,10 @@
             Exit Sub
         End If
 
-        If formOperation <> "edit" Then
+
+        sqlSTR = "select Payroll_ID from Payroll where Payroll_ID =" & payroll_Id
+        ExecuteSQLQuery(sqlSTR)
+        If sqlDT.Rows.Count = 0 Then
             sqlSTR = "INSERT INTO Payroll (Payroll_Date, Cutoff_Date_Start, Cutoff_Date_End, Total_GrossPay, Total_NetPay, Total_Deductions, Total_LoansPaid, Payroll_Remarks, Encoded_by) " &
                       "VALUES ('" & dt_payroll.Text & "', '" & dt_cutoffStart.Text & "', '" & dt_cutoffEnd.Text & "', '" & txt_TotalgrossPay.Text & "', '" & txt_TotalnetPay.Text & "', '" & txt_totalDeductions.Text & "', '" & txt_totalLoansPaid.Text & "', '" & rtb_remarks.Text & "', '" & xUsername & "')"
             ExecuteSQLQuery(sqlSTR)
@@ -197,6 +205,8 @@
         grp_Payrollpayee.Visible = False
 
         RefreshPayrollDetailList()
+
+
     End Sub
 
     Private Sub btn_cancelSubmit_Click(sender As Object, e As EventArgs) Handles btn_cancelSubmit.Click
