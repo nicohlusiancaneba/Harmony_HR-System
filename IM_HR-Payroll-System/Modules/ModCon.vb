@@ -173,6 +173,27 @@ Module ModCon
         End Try
     End Sub
 
+    Public Sub ListView_ToClipboard(listView As ListView)
+        ' Initialize a StringBuilder to store the data to be copied
+        Dim clipboardText As New System.Text.StringBuilder()
+
+        ' Copy the header row
+        For Each column As ColumnHeader In listView.Columns
+            clipboardText.Append(column.Text & vbTab)
+        Next
+        clipboardText.AppendLine()
+
+        ' Copy each item and its subitems
+        For Each item As ListViewItem In listView.Items
+            For Each subItem As ListViewItem.ListViewSubItem In item.SubItems
+                clipboardText.Append(subItem.Text & vbTab)
+            Next
+            clipboardText.AppendLine()
+        Next
+
+        ' Copy the text to the clipboard
+        Clipboard.SetText(clipboardText.ToString())
+    End Sub
 
 End Module
 

@@ -8,6 +8,7 @@
             "inner join Employees on Employees.Employee_ID = Payroll_Details.Employee_ID " & _
             "where Payroll_ID = " & payroll_id
         ExecuteSQLQuery(sqlSTR)
+        FillListView(sqlDT, lst_payrollView, 0)
 
         'Dim businessName_RP As New ReportParameter("Business_Name", business_name)
         With Me.ReportViewer1.LocalReport
@@ -28,5 +29,7 @@
             .SetPageSettings(pageSettings)
         End With
         ReportViewer1.RefreshReport()
+        ListView_ToClipboard(lst_payrollView)
+        MsgBox("Data copied to clipboard.", MsgBoxStyle.Information, msgBox_header)
     End Sub
 End Class

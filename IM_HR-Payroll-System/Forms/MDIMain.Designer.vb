@@ -38,8 +38,8 @@ Partial Class MDIMain
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.CompanyName = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Version = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.CompanyName = New System.Windows.Forms.ToolStripStatusLabel()
         Me.User = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel1.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -154,6 +154,7 @@ Partial Class MDIMain
         'btn_adjustments
         '
         Me.btn_adjustments.BackColor = System.Drawing.Color.White
+        Me.btn_adjustments.Enabled = False
         Me.btn_adjustments.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_adjustments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_adjustments.ImageKey = "adjustment.png"
@@ -170,6 +171,7 @@ Partial Class MDIMain
         'btn_leave
         '
         Me.btn_leave.BackColor = System.Drawing.Color.White
+        Me.btn_leave.Enabled = False
         Me.btn_leave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_leave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_leave.ImageKey = "leave.png"
@@ -238,18 +240,18 @@ Partial Class MDIMain
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(144, 17)
         Me.ToolStripStatusLabel1.Text = "Powered by I.M. Solutions"
         '
+        'Version
+        '
+        Me.Version.BackColor = System.Drawing.Color.YellowGreen
+        Me.Version.Name = "Version"
+        Me.Version.Size = New System.Drawing.Size(0, 17)
+        '
         'CompanyName
         '
         Me.CompanyName.BackColor = System.Drawing.Color.LightSalmon
         Me.CompanyName.Name = "CompanyName"
         Me.CompanyName.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.CompanyName.Size = New System.Drawing.Size(0, 17)
-        '
-        'Version
-        '
-        Me.Version.BackColor = System.Drawing.Color.YellowGreen
-        Me.Version.Name = "Version"
-        Me.Version.Size = New System.Drawing.Size(0, 17)
         '
         'User
         '

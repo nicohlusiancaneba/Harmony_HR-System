@@ -172,7 +172,7 @@
 
     '//////////////////////////////////////////////////////////////////////////////////////////////////////
     Private Sub btn_newPayroll_Click(sender As Object, e As EventArgs) Handles btn_newPayroll.Click
-        sqlSTR = "Select * from employees where Employment_Status != 'Inactive' order by Last_Name, First_Name"
+        sqlSTR = "Select * from employees where Employment_Status != 'Resigned' or Employment_Status != 'Terminated' order by Last_Name, First_Name"
         FILLComboBox_Employee(sqlSTR, cmb_employees)
         grp_Payrollpayee.Visible = True
     End Sub
@@ -290,7 +290,7 @@
         If sqlDT.Rows.Count > 0 Then
             Dim LoanID_List As New List(Of Integer)()
             For i = 0 To sqlDT.Rows.Count - 1
-                LoanID_List(i) = sqlDT.Rows(i)("Loan_ID")
+                LoanID_List.Add(sqlDT.Rows(i)("Loan_ID"))
             Next
             For Each value As Integer In LoanID_List
                 sqlSTR = "update Loans set Loan_Status = 'Paid' where Loan_ID=" & value
@@ -322,4 +322,7 @@
     '    Return False
     'End Function
 
+    Private Sub ViewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewToolStripMenuItem.Click
+        ShowForm1(FormVIEW_PAYROLL, "view", payroll_Id)
+    End Sub
 End Class

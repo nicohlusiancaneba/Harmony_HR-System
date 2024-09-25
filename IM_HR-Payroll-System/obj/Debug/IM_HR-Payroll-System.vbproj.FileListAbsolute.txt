@@ -99,3 +99,4 @@ B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\RdlCompile.compiled
 B:\Harmony_HR-System\IM_HR-Payroll-System\bin\Debug\Reports\Payslip_Employee.rdlc
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormEXPORT_ONLINE_BANK.resources
 B:\Harmony_HR-System\IM_HR-Payroll-System\bin\Debug\Reports\Payroll_Export.rdlc
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormVIEW_PAYROLL.resources
