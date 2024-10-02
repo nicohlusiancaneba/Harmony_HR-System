@@ -44,7 +44,6 @@
     "Payroll_Account_Number AS 'Bank Account Number', SSS_No AS 'SSS No', Philhealth_No AS 'Philhealth No', " & _
     "TIN_No AS 'TIN No', Pag_ibig_No AS 'Pag-ibig No', Hired_Date AS 'Hired Date', Employment_Status AS 'Employment Status', " & _
     "Regularization_Date AS 'Regularization Date', Position AS 'Position', Department AS 'Department', Division AS 'Division', " & _
-    "Starting_Daily_Rate AS 'Starting Daily Rate', Current_Daily_Rate AS 'Current Daily Rate', Monthly_Salary AS 'Monthly Salary', " & _
     "No_of_Work_Days_per_Month AS 'Work Days/Month' FROM EMPLOYEES where Employment_Status Like '%" & status & "%' order by Employee_ID"
 
         FillListView(ExecuteSQLQuery(sqlSTR), lst_employees, 0)

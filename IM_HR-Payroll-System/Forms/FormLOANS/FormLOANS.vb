@@ -24,8 +24,8 @@
 
 
         sqlSTR = "SELECT Loans.Loan_ID AS 'Loan ID', MAX(Loans.Employee_ID) AS 'Employee ID', MAX(CONCAT(Last_Name, ', ', First_Name)) AS Employee, " & _
-                    "MAX(Loan_Date) AS 'Loan Date', MAX(Loan_Type) AS 'Loan Type', MAX(Loan_Net_Amount) AS 'Loan Net', MAX(CONCAT(Loan_Interest_Rate, '%')) AS 'Interest Rate', " & _
-                    "MAX(Loan_Gross_Amount) AS 'Loan Gross', max(Loan_Gross_Amount) - sum(case when Payment_Posted = 'Yes' then COALESCE(Gross_Payment, 0) else 0 end) as 'Loan Balance', " & _
+                    "MAX(Loan_Date) AS 'Loan Date', MAX(Loan_Type) AS 'Loan Type', FORMAT(MAX(Loan_Net_Amount), 'N2') AS 'Loan Net', MAX(CONCAT(Loan_Interest_Rate, '%')) AS 'Interest Rate', " & _
+                    "FORMAT(MAX(Loan_Gross_Amount), 'N2') AS 'Loan Gross', FORMAT(max(Loan_Gross_Amount) - sum(case when Payment_Posted = 'Yes' then COALESCE(Gross_Payment, 0) else 0 end), 'N2') as 'Loan Balance', " & _
                     "MAX(Loan_Payment_Start_Date) AS 'Loan Payment Start Date', MAX(Loan_Payment_End_Date) AS 'Loan Payment End Date', " & _
                     "MAX(Loan_Reason) AS 'Loan Reason', MAX(Loan_Remarks) AS 'Loan Remarks', MAX(Loan_Status) AS 'Loan Status' " & _
                     "FROM Loans " & _

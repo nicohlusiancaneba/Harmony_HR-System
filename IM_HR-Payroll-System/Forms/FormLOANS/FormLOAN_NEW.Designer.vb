@@ -175,7 +175,7 @@ Partial Class FormLOAN_NEW
         Me.cmb_loanType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_loanType.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_loanType.FormattingEnabled = True
-        Me.cmb_loanType.Items.AddRange(New Object() {"", "Cash Advance", "Emergency", "Personal", "Product"})
+        Me.cmb_loanType.Items.AddRange(New Object() {"", "Allowance Advance", "Cash Advance", "Emergency", "Personal", "Product"})
         Me.cmb_loanType.Location = New System.Drawing.Point(180, 98)
         Me.cmb_loanType.Name = "cmb_loanType"
         Me.cmb_loanType.Size = New System.Drawing.Size(127, 28)

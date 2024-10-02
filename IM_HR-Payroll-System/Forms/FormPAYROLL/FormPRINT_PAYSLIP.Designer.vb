@@ -25,6 +25,7 @@ Partial Class FormPRINT_PAYSLIP
         Me.ReportViewer1 = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.cmb_employees = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
         Me.SuspendLayout()
         '
         'ReportViewer1
@@ -55,6 +56,10 @@ Partial Class FormPRINT_PAYSLIP
         Me.Label5.TabIndex = 2
         Me.Label5.Text = "Employee :"
         '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.UseEXDialog = True
+        '
         'FormPRINT_PAYSLIP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -78,4 +83,5 @@ Partial Class FormPRINT_PAYSLIP
     Friend WithEvents ReportViewer1 As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents cmb_employees As System.Windows.Forms.ComboBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents PrintDialog1 As System.Windows.Forms.PrintDialog
 End Class

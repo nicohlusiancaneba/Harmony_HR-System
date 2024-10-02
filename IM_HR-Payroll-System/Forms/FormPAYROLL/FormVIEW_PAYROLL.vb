@@ -24,6 +24,9 @@
             "grandTotal_Deduction as 'Total Deductions', " & _
             "COALESCE((select sum(Gross_Payment) from Loan_Payments as LP " & _
             "inner join Loans on Loans.Loan_ID = LP.Loan_ID " & _
+            "where Loan_Type = 'Allowance Advance' and LP.Payroll_Detail_ID = Payroll_Details.Payroll_Detail_ID), 0.00) as '[K] Allowance Advance', " & _
+            "COALESCE((select sum(Gross_Payment) from Loan_Payments as LP " & _
+            "inner join Loans on Loans.Loan_ID = LP.Loan_ID " & _
             "where Loan_Type = 'Cash Advance' and LP.Payroll_Detail_ID = Payroll_Details.Payroll_Detail_ID), 0.00) as '[K] Cash Advance', " & _
             "COALESCE((select sum(Gross_Payment) from Loan_Payments as LP " & _
             "inner join Loans on Loans.Loan_ID = LP.Loan_ID " & _

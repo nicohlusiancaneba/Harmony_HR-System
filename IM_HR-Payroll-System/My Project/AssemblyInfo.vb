@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("IM_HR-Payroll-System")> 
+<Assembly: AssemblyTitle("Harmony - HR System")> 
 <Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("IM_HR-Payroll-System")> 
+<Assembly: AssemblyCompany("IM Solutions")> 
+<Assembly: AssemblyProduct("Harmony - HR System")> 
 <Assembly: AssemblyCopyright("Copyright ©  2024")> 
 <Assembly: AssemblyTrademark("")> 
 

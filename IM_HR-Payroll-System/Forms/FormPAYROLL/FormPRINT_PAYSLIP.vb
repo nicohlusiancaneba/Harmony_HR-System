@@ -14,9 +14,26 @@ Public Class FormPRINT_PAYSLIP
     Private Sub cmb_employees_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_employees.SelectedIndexChanged
         ReportViewer1.Reset()
         employee_id = Split(cmb_employees.Text, " - ")(0)
-        sqlSTR = "select *, Format(numOvertime, 'N2') as numOvertime_hr, Format(numNight_diff, 'N2') as numNight_diff_hr, Format(numLate, 'N2') as numLate_hr, Format(numUndertime, 'N2') as numUndertime_hr  from Payroll_Details " & _
-                    "inner join Payroll on Payroll.Payroll_ID = Payroll_Details.Payroll_ID " & _
-                    "inner join Employees on Employees.Employee_ID = Payroll_Details.Employee_ID where Payroll_Details.Employee_ID=" & employee_id & " and Payroll_Details.Payroll_ID=" & payroll_id
+        sqlSTR = "select *, Format(numOvertime, 'N2') as numOvertime_hr, Format(numNight_diff, 'N2') as numNight_diff_hr, " & _
+                "Format(numLate, 'N2') as numLate_hr, Format(numUndertime, 'N2') as numUndertime_hr, " & _
+                "COALESCE((select sum(Gross_Payment) from Loan_Payments as LP " & _
+                "inner join Loans on Loans.Loan_ID = LP.Loan_ID " & _
+                "where Loan_Type = 'Allowance Advance' and LP.Payroll_Detail_ID = Payroll_Details.Payroll_Detail_ID), 0.00) as Allowance_Advance, " & _
+                "COALESCE((select sum(Gross_Payment) from Loan_Payments as LP " & _
+                "inner join Loans on Loans.Loan_ID = LP.Loan_ID " & _
+                "where Loan_Type = 'Cash Advance' and LP.Payroll_Detail_ID = Payroll_Details.Payroll_Detail_ID), 0.00) as Cash_Advance, " & _
+                "COALESCE((select sum(Gross_Payment) from Loan_Payments as LP " & _
+                "inner join Loans on Loans.Loan_ID = LP.Loan_ID " & _
+                "where Loan_Type = 'Personal' and LP.Payroll_Detail_ID = Payroll_Details.Payroll_Detail_ID), 0.00) as Personal, " & _
+                "COALESCE((select sum(Gross_Payment) from Loan_Payments as LP " & _
+                "inner join Loans on Loans.Loan_ID = LP.Loan_ID " & _
+                "where Loan_Type = 'Emergency' and LP.Payroll_Detail_ID = Payroll_Details.Payroll_Detail_ID), 0.00) as Emergency, " & _
+                "COALESCE((select sum(Gross_Payment) from Loan_Payments as LP " & _
+                "inner join Loans on Loans.Loan_ID = LP.Loan_ID " & _
+                "where Loan_Type = 'Product' and LP.Payroll_Detail_ID = Payroll_Details.Payroll_Detail_ID), 0.00) as Others " & _
+                "from Payroll_Details " & _
+                "inner join Payroll on Payroll.Payroll_ID = Payroll_Details.Payroll_ID " & _
+                "inner join Employees on Employees.Employee_ID = Payroll_Details.Employee_ID where Payroll_Details.Employee_ID=" & employee_id & " and Payroll_Details.Payroll_ID=" & payroll_id
         ExecuteSQLQuery(sqlSTR)
 
         Dim businessName_RP As New ReportParameter("Business_Name", business_name)
@@ -40,4 +57,7 @@ Public Class FormPRINT_PAYSLIP
         ReportViewer1.RefreshReport()
 
     End Sub
+
+
+
 End Class
