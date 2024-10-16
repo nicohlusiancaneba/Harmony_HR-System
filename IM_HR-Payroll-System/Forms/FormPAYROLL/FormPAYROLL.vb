@@ -4,7 +4,7 @@
         Me.Height = MDIMain.Panel2.Height - 22
         Me.Width = MDIMain.Panel2.Width
         lst_payroll.Width = Me.Width - 20
-        lst_payroll.Height = Me.Height - 120
+        lst_payroll.Height = Me.Height - 80
 
 
 
@@ -17,14 +17,14 @@
 
 
     Public Sub RefreshPayrollList()
-        Dim status As String = ""
-        If rb_All.Checked Then
-            status = ""
-        ElseIf rb_Approved.Checked Then
-            status = " where COALESCE(Payroll_Approved, 'No') = 'Yes' "
-        ElseIf rb_Pending.Checked Then
-            status = " where COALESCE(Payroll_Approved, 'No') = 'No' "
-        End If
+        'Dim status As String = ""
+        'If rb_All.Checked Then
+        '    status = ""
+        'ElseIf rb_Approved.Checked Then
+        '    status = " where COALESCE(Payroll_Approved, 'No') = 'Yes' "
+        'ElseIf rb_Pending.Checked Then
+        '    status = " where COALESCE(Payroll_Approved, 'No') = 'No' "
+        'End If
 
 
         sqlSTR = "SELECT " & _
@@ -39,8 +39,16 @@
     "Encoded_by AS 'Encoded By', " & _
     "COALESCE(Payroll_Approved, 'No') AS 'Payroll Approved', " & _
     "Approved_by AS 'Approved By' " & _
-    "FROM Payroll " & status & " order by Payroll_ID "
+    "FROM Payroll order by COALESCE(Payroll_Approved, 'No'), Payroll_ID "
         FillListView(ExecuteSQLQuery(sqlSTR), lst_payroll, 0)
+
+        For Each item As ListViewItem In lst_payroll.Items
+            If item.SubItems(9).Text = "No" Then
+                item.ForeColor = Color.Red
+            Else
+                item.ForeColor = Color.Black
+            End If
+        Next
     End Sub
 
     Private Sub btn_newPayroll_Click(sender As Object, e As EventArgs) Handles btn_newPayroll.Click
