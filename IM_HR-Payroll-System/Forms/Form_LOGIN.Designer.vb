@@ -146,16 +146,16 @@ Partial Class Form_LOGIN
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(325, 213)
+        Me.ClientSize = New System.Drawing.Size(321, 209)
         Me.ControlBox = False
+        Me.Controls.Add(Me.txtpassword)
+        Me.Controls.Add(Me.txtuser)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.cmdserver)
+        Me.Controls.Add(Me.cmdclose)
+        Me.Controls.Add(Me.cmdlogin)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtpassword)
-        Me.Controls.Add(Me.cmdclose)
-        Me.Controls.Add(Me.txtuser)
-        Me.Controls.Add(Me.cmdlogin)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False

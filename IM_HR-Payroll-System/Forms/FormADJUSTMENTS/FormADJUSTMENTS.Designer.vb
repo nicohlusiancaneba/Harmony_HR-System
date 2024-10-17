@@ -26,7 +26,6 @@ Partial Class FormADJUSTMENTS
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormADJUSTMENTS))
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.EditAdjustment = New System.Windows.Forms.ToolStripMenuItem()
@@ -47,11 +46,12 @@ Partial Class FormADJUSTMENTS
         Me.btn_searchAdjustment = New System.Windows.Forms.Button()
         Me.btn_newAdjustment = New System.Windows.Forms.Button()
         Me.lst_adjusments = New System.Windows.Forms.ListView()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.searchBox.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label2
@@ -74,16 +74,6 @@ Partial Class FormADJUSTMENTS
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "Adjustments Record"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Harmony.My.Resources.Resources.adjustment
-        Me.PictureBox1.Location = New System.Drawing.Point(8, 9)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(55, 54)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 12
-        Me.PictureBox1.TabStop = False
-        '
         'ImageList1
         '
         Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
@@ -97,21 +87,21 @@ Partial Class FormADJUSTMENTS
         Me.ContextMenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditAdjustment, Me.DeleteAdjustment})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(200, 52)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(211, 52)
         '
         'EditAdjustment
         '
         Me.EditAdjustment.Image = Global.Harmony.My.Resources.Resources.edit
         Me.EditAdjustment.Name = "EditAdjustment"
-        Me.EditAdjustment.Size = New System.Drawing.Size(199, 24)
-        Me.EditAdjustment.Text = "Edit Employee"
+        Me.EditAdjustment.Size = New System.Drawing.Size(210, 24)
+        Me.EditAdjustment.Text = "Edit Adjustment"
         '
         'DeleteAdjustment
         '
         Me.DeleteAdjustment.Image = Global.Harmony.My.Resources.Resources.bin
         Me.DeleteAdjustment.Name = "DeleteAdjustment"
-        Me.DeleteAdjustment.Size = New System.Drawing.Size(199, 24)
-        Me.DeleteAdjustment.Text = "Delete Employee"
+        Me.DeleteAdjustment.Size = New System.Drawing.Size(210, 24)
+        Me.DeleteAdjustment.Text = "Delete Adjustment"
         '
         'Panel2
         '
@@ -303,6 +293,16 @@ Partial Class FormADJUSTMENTS
         Me.lst_adjusments.UseCompatibleStateImageBehavior = False
         Me.lst_adjusments.View = System.Windows.Forms.View.Details
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Harmony.My.Resources.Resources.adjustment
+        Me.PictureBox1.Location = New System.Drawing.Point(8, 9)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(55, 54)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 12
+        Me.PictureBox1.TabStop = False
+        '
         'FormADJUSTMENTS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -318,13 +318,13 @@ Partial Class FormADJUSTMENTS
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "FormADJUSTMENTS"
         Me.Text = "FormADJUSTMENTS"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         Me.searchBox.ResumeLayout(False)
         Me.searchBox.PerformLayout()
         Me.Panel1.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

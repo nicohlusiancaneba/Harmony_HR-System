@@ -92,8 +92,9 @@
             sqlSTR = "Delete from Employees where Employee_ID =" & lst_employees.FocusedItem.Text
             ExecuteSQLQuery(sqlSTR)
 
-            MsgBox("Delete employee record.", MsgBoxStyle.Information, msgBox_header)
+            MsgBox("Deleted employee record.", MsgBoxStyle.Information, msgBox_header)
         End If
+        RefreshEmployeeList()
     End Sub
 
 

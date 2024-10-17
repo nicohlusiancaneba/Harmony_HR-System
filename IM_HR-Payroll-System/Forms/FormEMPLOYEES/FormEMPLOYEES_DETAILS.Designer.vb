@@ -363,7 +363,6 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.cmb_division.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_division.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_division.FormattingEnabled = True
-        Me.cmb_division.Items.AddRange(New Object() {"Accounting Division", "Finance Division", "Purchasing Division", "", "Sales Division ", "Marketing Division", "", "Distribution  Division", "Warehouse Division", "Logistics Division", "", "FDA Concerns  Division", "Pharmacy Divison", "QC & QA Division", "CPE Division", "", "IT System Mgmt. Division", "Inventory Management Division", "Software/Web  App Division", "", "Iriga Branch", "Catanduanes Branch", "Masbate Branch", "Sorsogon Branch", "", "Performance Mgmt, Training & Devt. and Operations Division", "Staffing & Personnel Mgmt. Division", "Compensation & Benefits Division", "Legal", "Nurse / Safety Staff"})
         Me.cmb_division.Location = New System.Drawing.Point(181, 172)
         Me.cmb_division.Name = "cmb_division"
         Me.cmb_division.Size = New System.Drawing.Size(269, 28)
@@ -374,7 +373,6 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.cmb_department.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_department.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_department.FormattingEnabled = True
-        Me.cmb_department.Items.AddRange(New Object() {"", "Accounting & Finance Department", "Branch Store Operations Department", "Distribution & Warehouse Department", "Human Resource Department", "Information Technology & Inventory Department", "Regulatory Affairs Department", "Sales & Marketing Department"})
         Me.cmb_department.Location = New System.Drawing.Point(181, 133)
         Me.cmb_department.Name = "cmb_department"
         Me.cmb_department.Size = New System.Drawing.Size(269, 28)
@@ -429,7 +427,7 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.txt_jobPosition.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_jobPosition.Location = New System.Drawing.Point(181, 95)
         Me.txt_jobPosition.Name = "txt_jobPosition"
-        Me.txt_jobPosition.Size = New System.Drawing.Size(197, 26)
+        Me.txt_jobPosition.Size = New System.Drawing.Size(269, 26)
         Me.txt_jobPosition.TabIndex = 19
         '
         'Label3

@@ -325,4 +325,8 @@
     Private Sub ViewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ViewToolStripMenuItem.Click
         ShowForm1(FormVIEW_PAYROLL, "view", payroll_Id)
     End Sub
+
+    Private Sub cb_Approved_CheckedChanged(sender As Object, e As EventArgs) Handles cb_Approved.CheckedChanged
+
+    End Sub
 End Class

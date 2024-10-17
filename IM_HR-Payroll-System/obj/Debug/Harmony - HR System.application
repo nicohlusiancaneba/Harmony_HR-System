@@ -7,14 +7,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Harmony - HR System.exe.manifest" size="15155">
+    <dependentAssembly dependencyType="install" codebase="Harmony - HR System.exe.manifest" size="15468">
       <assemblyIdentity name="Harmony - HR System.exe" version="1.0.0.24" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NZMDLF8eYEXaWmPwwcEGzpcB5ZMbBrqwE8jf86LqY6I=</dsig:DigestValue>
+        <dsig:DigestValue>NtnTSVYWRH5RPkzS92j9Sq4sFo3531YTdWT/BGsAWWI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -3,6 +3,9 @@
     Private Sub FormEMPLOYEES_DETAILS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TabControl1.SelectedIndex = 0
 
+        FILLComboBox2("select Dropdown_ID, Dropdown_Description from Dropdowns where Dropdown_Type = 'Department' order by Dropdown_Description", cmb_department)
+        FILLComboBox2("select Dropdown_ID, Dropdown_Description from Dropdowns where Dropdown_Type = 'Division' order by Dropdown_Description", cmb_division)
+
         If formOperation = "edit" Then
             employee_id = xID1
             sqlSTR = "select * from employees where Employee_ID=" & employee_id

@@ -28,6 +28,8 @@ Partial Class MDIMain
         Me.btn_settings = New System.Windows.Forms.Button()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.btn_employees = New System.Windows.Forms.Button()
         Me.btn_loans = New System.Windows.Forms.Button()
         Me.btn_payroll = New System.Windows.Forms.Button()
@@ -90,9 +92,13 @@ Partial Class MDIMain
         Me.ImageList1.Images.SetKeyName(8, "employees.png")
         Me.ImageList1.Images.SetKeyName(9, "logout.png")
         Me.ImageList1.Images.SetKeyName(10, "settings.png")
+        Me.ImageList1.Images.SetKeyName(11, "evaluation.png")
+        Me.ImageList1.Images.SetKeyName(12, "reports.png")
         '
         'Panel3
         '
+        Me.Panel3.Controls.Add(Me.Button2)
+        Me.Panel3.Controls.Add(Me.Button1)
         Me.Panel3.Controls.Add(Me.btn_employees)
         Me.Panel3.Controls.Add(Me.btn_loans)
         Me.Panel3.Controls.Add(Me.btn_payroll)
@@ -100,8 +106,42 @@ Partial Class MDIMain
         Me.Panel3.Controls.Add(Me.btn_leave)
         Me.Panel3.Location = New System.Drawing.Point(3, 219)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(168, 304)
+        Me.Panel3.Size = New System.Drawing.Size(168, 433)
         Me.Panel3.TabIndex = 9
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.White
+        Me.Button2.Enabled = False
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.ImageKey = "reports.png"
+        Me.Button2.ImageList = Me.ImageList1
+        Me.Button2.Location = New System.Drawing.Point(7, 363)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(155, 50)
+        Me.Button2.TabIndex = 8
+        Me.Button2.Tag = "button"
+        Me.Button2.Text = "           Reports"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.White
+        Me.Button1.Enabled = False
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.ImageKey = "evaluation.png"
+        Me.Button1.ImageList = Me.ImageList1
+        Me.Button1.Location = New System.Drawing.Point(7, 303)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(155, 50)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Tag = "button"
+        Me.Button1.Text = "           Evaluation"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'btn_employees
         '
@@ -154,7 +194,6 @@ Partial Class MDIMain
         'btn_adjustments
         '
         Me.btn_adjustments.BackColor = System.Drawing.Color.White
-        Me.btn_adjustments.Enabled = False
         Me.btn_adjustments.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_adjustments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_adjustments.ImageKey = "adjustment.png"
@@ -300,5 +339,7 @@ Partial Class MDIMain
     Friend WithEvents CompanyName As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents Version As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents User As System.Windows.Forms.ToolStripStatusLabel
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 
 End Class

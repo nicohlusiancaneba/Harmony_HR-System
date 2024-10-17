@@ -142,6 +142,7 @@ Partial Class FormLOAN_EDIT
         Me.txt_interestRate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_interestRate.Location = New System.Drawing.Point(153, 132)
         Me.txt_interestRate.Name = "txt_interestRate"
+        Me.txt_interestRate.ReadOnly = True
         Me.txt_interestRate.Size = New System.Drawing.Size(43, 26)
         Me.txt_interestRate.TabIndex = 32
         Me.txt_interestRate.Text = "0"
@@ -152,6 +153,7 @@ Partial Class FormLOAN_EDIT
         Me.txt_netAmount.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_netAmount.Location = New System.Drawing.Point(153, 92)
         Me.txt_netAmount.Name = "txt_netAmount"
+        Me.txt_netAmount.ReadOnly = True
         Me.txt_netAmount.Size = New System.Drawing.Size(100, 26)
         Me.txt_netAmount.TabIndex = 31
         Me.txt_netAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
