@@ -84,6 +84,12 @@ Public Class MDIMain
     End Sub
 
     Private Sub btn_leave_Click(sender As Object, e As EventArgs) Handles btn_leave.Click
+        With FormLEAVE
+            .TopLevel = False
+            Panel2.Controls.Add(FormLEAVE)
+            .BringToFront()
+            .Show()
+        End With
         activeButtonForm(btn_leave)
     End Sub
 

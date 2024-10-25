@@ -138,6 +138,18 @@
     <Compile Include="Forms\FormEMPLOYEES\FormEMPLOYEES_DETAILS.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\FormLEAVE\FormLEAVE.Designer.vb">
+      <DependentUpon>FormLEAVE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLEAVE\FormLEAVE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormLEAVE\FormLEAVE_DETAILS.Designer.vb">
+      <DependentUpon>FormLEAVE_DETAILS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormLEAVE\FormLEAVE_DETAILS.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\FormLOANS\FormLOANS.Designer.vb">
       <DependentUpon>FormLOANS.vb</DependentUpon>
     </Compile>
@@ -261,6 +273,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEMPLOYEES\FormEMPLOYEES_DETAILS.resx">
       <DependentUpon>FormEMPLOYEES_DETAILS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLEAVE\FormLEAVE.resx">
+      <DependentUpon>FormLEAVE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormLEAVE\FormLEAVE_DETAILS.resx">
+      <DependentUpon>FormLEAVE_DETAILS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLOANS\FormLOANS.resx">
       <DependentUpon>FormLOANS.vb</DependentUpon>

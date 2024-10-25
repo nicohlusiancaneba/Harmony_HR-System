@@ -210,7 +210,6 @@ Partial Class MDIMain
         'btn_leave
         '
         Me.btn_leave.BackColor = System.Drawing.Color.White
-        Me.btn_leave.Enabled = False
         Me.btn_leave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_leave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_leave.ImageKey = "leave.png"
