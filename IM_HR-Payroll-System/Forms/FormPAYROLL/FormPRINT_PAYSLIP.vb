@@ -13,6 +13,11 @@ Public Class FormPRINT_PAYSLIP
 
     Private Sub cmb_employees_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_employees.SelectedIndexChanged
         ReportViewer1.Reset()
+
+        If cmb_employees.Text = "" Then
+            Exit Sub
+        End If
+
         employee_id = Split(cmb_employees.Text, " - ")(0)
         sqlSTR = "select *, Format(numOvertime, 'N2') as numOvertime_hr, Format(numNight_diff, 'N2') as numNight_diff_hr, " & _
                 "Format(numLate, 'N2') as numLate_hr, Format(numUndertime, 'N2') as numUndertime_hr, " & _

@@ -137,6 +137,7 @@ Partial Class FormLEAVE
         '
         'lst_leaves
         '
+        Me.lst_leaves.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lst_leaves.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lst_leaves.FullRowSelect = True
         Me.lst_leaves.GridLines = True
