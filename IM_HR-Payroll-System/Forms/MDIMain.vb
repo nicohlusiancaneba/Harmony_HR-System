@@ -31,6 +31,8 @@ Public Class MDIMain
         btn_payroll.BackColor = Color.White
         btn_adjustments.BackColor = Color.White
         btn_loans.BackColor = Color.White
+        btn_evaluation.BackColor = Color.White
+        btn_reports.BackColor = Color.White
 
         clickedButton.BackColor = Color.Gainsboro
     End Sub
@@ -118,5 +120,20 @@ Public Class MDIMain
 
     Private Sub btn_settings_Click(sender As Object, e As EventArgs) Handles btn_settings.Click
         FormSETTINGS.ShowDialog()
+    End Sub
+
+
+    Private Sub btn_evaluation_Click(sender As Object, e As EventArgs) Handles btn_evaluation.Click
+        With FormEVALUATION
+            .TopLevel = False
+            Panel2.Controls.Add(FormEVALUATION)
+            .BringToFront()
+            .Show()
+        End With
+        activeButtonForm(btn_evaluation)
+    End Sub
+
+    Private Sub btn_reports_Click(sender As Object, e As EventArgs) Handles btn_reports.Click
+
     End Sub
 End Class

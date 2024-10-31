@@ -28,8 +28,8 @@ Partial Class MDIMain
         Me.btn_settings = New System.Windows.Forms.Button()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_reports = New System.Windows.Forms.Button()
+        Me.btn_evaluation = New System.Windows.Forms.Button()
         Me.btn_employees = New System.Windows.Forms.Button()
         Me.btn_loans = New System.Windows.Forms.Button()
         Me.btn_payroll = New System.Windows.Forms.Button()
@@ -97,8 +97,8 @@ Partial Class MDIMain
         '
         'Panel3
         '
-        Me.Panel3.Controls.Add(Me.Button2)
-        Me.Panel3.Controls.Add(Me.Button1)
+        Me.Panel3.Controls.Add(Me.btn_reports)
+        Me.Panel3.Controls.Add(Me.btn_evaluation)
         Me.Panel3.Controls.Add(Me.btn_employees)
         Me.Panel3.Controls.Add(Me.btn_loans)
         Me.Panel3.Controls.Add(Me.btn_payroll)
@@ -109,39 +109,38 @@ Partial Class MDIMain
         Me.Panel3.Size = New System.Drawing.Size(168, 433)
         Me.Panel3.TabIndex = 9
         '
-        'Button2
+        'btn_reports
         '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.Enabled = False
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.ImageKey = "reports.png"
-        Me.Button2.ImageList = Me.ImageList1
-        Me.Button2.Location = New System.Drawing.Point(7, 363)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(155, 50)
-        Me.Button2.TabIndex = 8
-        Me.Button2.Tag = "button"
-        Me.Button2.Text = "           Reports"
-        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btn_reports.BackColor = System.Drawing.Color.White
+        Me.btn_reports.Enabled = False
+        Me.btn_reports.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_reports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_reports.ImageKey = "reports.png"
+        Me.btn_reports.ImageList = Me.ImageList1
+        Me.btn_reports.Location = New System.Drawing.Point(7, 363)
+        Me.btn_reports.Name = "btn_reports"
+        Me.btn_reports.Size = New System.Drawing.Size(155, 50)
+        Me.btn_reports.TabIndex = 8
+        Me.btn_reports.Tag = "button"
+        Me.btn_reports.Text = "           Reports"
+        Me.btn_reports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_reports.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btn_evaluation
         '
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.Enabled = False
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.ImageKey = "evaluation.png"
-        Me.Button1.ImageList = Me.ImageList1
-        Me.Button1.Location = New System.Drawing.Point(7, 303)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(155, 50)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Tag = "button"
-        Me.Button1.Text = "           Evaluation"
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btn_evaluation.BackColor = System.Drawing.Color.White
+        Me.btn_evaluation.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_evaluation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_evaluation.ImageKey = "evaluation.png"
+        Me.btn_evaluation.ImageList = Me.ImageList1
+        Me.btn_evaluation.Location = New System.Drawing.Point(7, 303)
+        Me.btn_evaluation.Name = "btn_evaluation"
+        Me.btn_evaluation.Size = New System.Drawing.Size(155, 50)
+        Me.btn_evaluation.TabIndex = 6
+        Me.btn_evaluation.Tag = "button"
+        Me.btn_evaluation.Text = "           Evaluation"
+        Me.btn_evaluation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_evaluation.UseVisualStyleBackColor = False
         '
         'btn_employees
         '
@@ -338,7 +337,7 @@ Partial Class MDIMain
     Friend WithEvents CompanyName As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents Version As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents User As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btn_reports As System.Windows.Forms.Button
+    Friend WithEvents btn_evaluation As System.Windows.Forms.Button
 
 End Class

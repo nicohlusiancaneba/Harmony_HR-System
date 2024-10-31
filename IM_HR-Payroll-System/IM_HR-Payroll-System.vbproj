@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>26</ApplicationRevision>
+    <ApplicationRevision>30</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -82,7 +82,9 @@
   <ItemGroup>
     <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -96,6 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Microsoft.VisualBasic.PowerPacks" />
     <Import Include="System" />
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
@@ -136,6 +139,18 @@
       <DependentUpon>FormEMPLOYEES_DETAILS.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormEMPLOYEES\FormEMPLOYEES_DETAILS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEVALUATION\FormEVALUATION.Designer.vb">
+      <DependentUpon>FormEVALUATION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEVALUATION\FormEVALUATION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEVALUATION\FormEVALUATION_DETAILS.Designer.vb">
+      <DependentUpon>FormEVALUATION_DETAILS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEVALUATION\FormEVALUATION_DETAILS.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormLEAVE\FormLEAVE.Designer.vb">
@@ -257,6 +272,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\reports2.png" />
     <None Include="Resources\login.png" />
     <None Include="Resources\logout.png" />
     <EmbeddedResource Include="Forms\.Misc\FormSETTINGS.resx">
@@ -273,6 +289,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEMPLOYEES\FormEMPLOYEES_DETAILS.resx">
       <DependentUpon>FormEMPLOYEES_DETAILS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEVALUATION\FormEVALUATION.resx">
+      <DependentUpon>FormEVALUATION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEVALUATION\FormEVALUATION_DETAILS.resx">
+      <DependentUpon>FormEVALUATION_DETAILS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormLEAVE\FormLEAVE.resx">
       <DependentUpon>FormLEAVE.vb</DependentUpon>
@@ -368,6 +390,16 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+    <PublishFile Include="Microsoft.VisualBasic.PowerPacks.Vs">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\harmony1.png" />
@@ -413,14 +445,21 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\settings.png" />
     <None Include="Resources\upload.png" />
     <None Include="Resources\Plus.png" />
     <None Include="Resources\add.png" />
+    <None Include="Resources\evaluation2.png" />
     <Content Include="Resources\harmony1.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

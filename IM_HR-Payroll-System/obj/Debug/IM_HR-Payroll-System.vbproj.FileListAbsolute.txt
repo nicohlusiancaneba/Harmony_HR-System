@@ -103,3 +103,6 @@ B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormVIEW_PAYROLL.res
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormADJUSTMENT_DETAILS.resources
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormLEAVE.resources
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormLEAVE_DETAILS.resources
+B:\Harmony_HR-System\IM_HR-Payroll-System\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+B:\Harmony_HR-System\IM_HR-Payroll-System\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormEVALUATION.resources

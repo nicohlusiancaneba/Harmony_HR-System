@@ -124,7 +124,6 @@ Partial Class FormLEAVE_DETAILS
         'txt_totalDays
         '
         Me.txt_totalDays.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_totalDays.Increment = New Decimal(New Integer() {5, 0, 0, 65536})
         Me.txt_totalDays.Location = New System.Drawing.Point(634, 55)
         Me.txt_totalDays.Name = "txt_totalDays"
         Me.txt_totalDays.Size = New System.Drawing.Size(51, 26)
