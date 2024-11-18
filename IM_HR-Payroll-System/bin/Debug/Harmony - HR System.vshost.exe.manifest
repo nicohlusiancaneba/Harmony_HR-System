@@ -63,14 +63,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Harmony - HR System.exe" size="7626240">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Harmony - HR System.exe" size="7645184">
       <assemblyIdentity name="Harmony - HR System" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>nzLj/qpQutncdmkfMvrc7O0sqr7F0RBkHBKRAyGSMr8=</dsig:DigestValue>
+        <dsig:DigestValue>VBvllQ/bR4HIWxHEinjRBOYY+lcQrGj4Ih8g7MUonVg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

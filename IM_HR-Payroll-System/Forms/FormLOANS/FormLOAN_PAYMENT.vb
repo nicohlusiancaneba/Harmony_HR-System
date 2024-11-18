@@ -17,8 +17,8 @@
             txt_remarks.Text = sqlDT.Rows(0)("Payment_Remarks").ToString
             loan_id = sqlDT.Rows(0)("Loan_ID")
 
-            sqlSTR = "select Loans.Loan_ID as 'Loan ID', max(Employee_ID) as 'Employee ID', CONCAT(MAX(Loan_Payment_Start_Date), ' to ', MAX(Loan_Payment_End_Date)) as 'Cutoff Payment Due', max(Suggested_PayPerCutoff) as 'Suggested Payment', " & _
-            " max(Loan_Gross_Amount) as 'Loan Gross', max(Loan_Gross_Amount) - sum(case when Payment_Posted = 'Yes' then COALESCE(Gross_Payment, 0) else 0 end) as 'Loan_Balance' " & _
+            sqlSTR = "select Loans.Loan_ID as 'Loan ID', max(Employee_ID) as 'Employee ID', CONCAT(MAX(Loan_Payment_Start_Date), ' to ', MAX(Loan_Payment_End_Date)) as 'Cutoff Payment Due', FORMAT(max(Suggested_PayPerCutoff), 'F2') as 'Suggested Payment', " & _
+            " max(Loan_Gross_Amount) as 'Loan Gross', FORMAT(max(Loan_Gross_Amount) - sum(case when Payment_Posted = 'Yes' then COALESCE(Gross_Payment, 0) else 0 end), 'F2') as 'Loan_Balance' " & _
             " from Loans LEFT JOIN Loan_Payments on Loan_Payments.Loan_ID = Loans.Loan_ID" & _
             " WHERE Loan_Status = 'Active' and Loans.Loan_ID=" & loan_id & _
             " group by Loans.Loan_ID "
@@ -33,8 +33,8 @@
             txt_grossAmount.Text = ""
             txt_remarks.Text = ""
 
-            sqlSTR = "select Loans.Loan_ID as 'Loan ID', max(Employee_ID) as 'Employee ID', CONCAT(MAX(Loan_Payment_Start_Date), ' to ', MAX(Loan_Payment_End_Date)) as 'Cutoff Payment Due', max(Suggested_PayPerCutoff) as 'Suggested_Payment', " & _
-            " max(Loan_Gross_Amount) as 'Loan Gross', max(Loan_Gross_Amount) - sum(case when Payment_Posted = 'Yes' then COALESCE(Gross_Payment, 0) else 0 end) as 'Loan_Balance' " & _
+            sqlSTR = "select Loans.Loan_ID as 'Loan ID', max(Employee_ID) as 'Employee ID', CONCAT(MAX(Loan_Payment_Start_Date), ' to ', MAX(Loan_Payment_End_Date)) as 'Cutoff Payment Due', FORMAT(max(Suggested_PayPerCutoff), 'F2') as 'Suggested_Payment', " & _
+            " max(Loan_Gross_Amount) as 'Loan Gross', FORMAT(max(Loan_Gross_Amount) - sum(case when Payment_Posted = 'Yes' then COALESCE(Gross_Payment, 0) else 0 end), 'F2') as 'Loan_Balance' " & _
             " from Loans LEFT JOIN Loan_Payments on Loan_Payments.Loan_ID = Loans.Loan_ID" & _
             " WHERE Loan_Status = 'Active' and Loans.Loan_ID=" & loan_id & _
             " group by Loans.Loan_ID "
@@ -72,7 +72,7 @@
     End Sub
 
     Public Sub CheckBalance(txtbox As TextBox, balance As Double)
-        If loan_id = 0 Or loan_payment_id = 0 Then
+        If loan_id = 0 Then
             Exit Sub
         End If
 

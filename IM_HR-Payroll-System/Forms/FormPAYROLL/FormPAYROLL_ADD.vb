@@ -178,6 +178,8 @@
     End Sub
 
     Private Sub btn_submit_Click(sender As Object, e As EventArgs) Handles btn_submit.Click
+        If cmb_employees.Text = "" Then Exit Sub
+
         sqlSTR = "select Employee_ID from Payroll_Details where Employee_ID =" & Split(cmb_employees.Text, " - ")(0) & " and Payroll_ID = " & payroll_Id
         ExecuteSQLQuery(sqlSTR)
 
@@ -327,6 +329,10 @@
     End Sub
 
     Private Sub cb_Approved_CheckedChanged(sender As Object, e As EventArgs) Handles cb_Approved.CheckedChanged
+
+    End Sub
+
+    Private Sub cmb_employees_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_employees.SelectedIndexChanged
 
     End Sub
 End Class
