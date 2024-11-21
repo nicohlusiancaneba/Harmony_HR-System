@@ -1,6 +1,8 @@
 ﻿Option Explicit On
 Imports System.IO
 Imports System.Text.RegularExpressions
+Imports System.Net
+
 Module ModProcedure
     Dim xsize As Integer
     Public xID1, xID2 As Integer
@@ -118,6 +120,261 @@ Module ModProcedure
             pass.Text = sqlDT.Rows(0)("Server_Password")
         End If
     End Sub
+
+    Public Function WebDav_UploadFile(subfolder As String, destinationPath As String, filename As String) As Boolean
+        Dim fileToUpload As String = ""
+        Try
+            fileToUpload = destinationPath
+
+            Dim fileLength As Long = My.Computer.FileSystem.GetFileInfo(fileToUpload).Length
+            Dim url As String = "https://bcvr.ph/w3bd4v/" & subfolder
+            Dim port As String = "443"
+
+            'If the port was provided, then insert it into the url.
+            If port <> "" Then
+
+
+                Dim u As New Uri(url)
+
+                'Get the host (example: "www.example.com")
+                Dim host As String = u.Host
+
+                'Replace the host with the host:port
+                url = url.Replace(host, host & ":" & port)
+
+            End If
+
+            'url = url.TrimEnd("/"c) & "/" & IO.Path.GetFileName(fileToUpload)
+            url = url.TrimEnd("/"c) & "/" & filename & IO.Path.GetExtension(fileToUpload)
+
+            'WebDav_DeleteFile(url)
+
+
+            Dim userName As String = "bcvr"
+            Dim password As String = "ButCha!142630!"
+
+            'Create the request
+            Dim request As HttpWebRequest = _
+                 DirectCast(System.Net.HttpWebRequest.Create(url), HttpWebRequest)
+
+            'Set the User Name and Password
+            request.Credentials = New NetworkCredential(userName, password)
+
+            'Let the server know we want to "put" a file on it
+            request.Method = WebRequestMethods.Http.Put
+
+            'Set the length of the content (file) we are sending
+            request.ContentLength = fileLength
+
+
+            '* This is required for our WebDav server *
+            request.SendChunked = True
+            request.Headers.Add("Translate: f")
+            request.AllowWriteStreamBuffering = True
+
+
+            'Send the request to the server, and get the 
+            ' server's (file) Stream in return.
+            Dim s As IO.Stream = request.GetRequestStream()
+            'Dim s As New IO.FileStream(destinationFile, IO.FileMode.Create, IO.FileAccess.Write) = request.GetRequestStream()
+
+            'Open the file so we can read the data from it
+            Dim fs As New IO.FileStream(fileToUpload, IO.FileMode.Open, IO.FileAccess.Read)
+            'Dim fs As New IO.FileStream(fileToUpload, IO.FileMode.Create, IO.FileAccess.Write)
+            'Create the buffer for storing the bytes read from the file
+            Dim byteTransferRate As Integer = 1024
+            Dim bytes(byteTransferRate - 1) As Byte
+            Dim bytesRead As Integer = 0
+            Dim totalBytesRead As Long = 0
+
+            'Read from the file and write it to the server's stream.
+            Do
+                'Read from the file
+                bytesRead = fs.Read(bytes, 0, bytes.Length)
+
+                If bytesRead > 0 Then
+
+                    totalBytesRead += bytesRead
+
+                    'Write to stream
+                    s.Write(bytes, 0, bytesRead)
+                End If
+
+            Loop While bytesRead > 0
+
+            'Close the server stream
+            s.Close()
+            s.Dispose()
+            s = Nothing
+
+            'Close the file
+            fs.Close()
+            fs.Dispose()
+            fs = Nothing
+
+
+
+            Dim response As HttpWebResponse = DirectCast(request.GetResponse(), HttpWebResponse)
+
+
+            'Get the StatusCode from the server's Response
+            Dim code As HttpStatusCode = response.StatusCode
+
+            'Close the response
+            response.Close()
+            response = Nothing
+
+            'Validate the uploaded file.
+            ' Check the totalBytesRead and the fileLength: Both must be an exact match.
+            '
+            ' Check the StatusCode from the server and make sure the file was "Created"
+            ' Note: There are many different possible status codes. You can choose
+            ' which ones you want to test for by looking at the "HttpStatusCode" enumerator.
+            If totalBytesRead = fileLength AndAlso _
+                code = HttpStatusCode.Created Then
+
+                MsgBox("The file has uploaded successfully!", MsgBoxStyle.Information, msgBox_header)
+                Return True
+            Else
+
+                MsgBox("The file did not upload successfully.", MsgBoxStyle.Critical, msgBox_header)
+                Return False
+            End If
+
+
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+
+
+
+
+    End Function
+
+
+    Public Sub WebDav_DownloadFile(subfolder As String, fileToDownload As String)
+
+        'Dim fileLength As Long = My.Computer.FileSystem.GetFileInfo(fileToDownload).Length
+        Dim url As String = "https://bcvr.ph/w3bd4v/" & subfolder
+        Dim port As String = "443"
+
+        'If the port was provided, then insert it into the url.
+        If port <> "" Then
+
+
+            Dim u As New Uri(url)
+
+            'Get the host (example: "www.example.com")
+            Dim host As String = u.Host
+
+            'Replace the host with the host:port
+            url = url.Replace(host, host & ":" & port)
+
+        End If
+
+        'url = url.TrimEnd("/"c) & "/" & IO.Path.GetFileName(fileToUpload)
+        url = url.TrimEnd("/"c) & "/" & IO.Path.GetFileName(fileToDownload)
+
+        Dim fileName As String = Path.GetFileName(url)
+        Dim fileExtension As String = Path.GetExtension(fileName).ToLower()
+
+        ' Initialize SaveFileDialog
+        Dim saveFileDialog As New SaveFileDialog()
+
+        ' Set a dynamic filter based on file extension
+        Select Case fileExtension
+            Case ".zip"
+                saveFileDialog.Filter = "ZIP Files (.zip)|.zip"
+            Case ".jpg", ".jpeg"
+                saveFileDialog.Filter = "JPEG Image Files (.jpg, *.jpeg)|.jpg;*.jpeg"
+            Case ".png"
+                saveFileDialog.Filter = "PNG Image Files (.png)|.png"
+            Case ".txt"
+                saveFileDialog.Filter = "Text Files (.txt)|.txt"
+            Case ".pdf"
+                saveFileDialog.Filter = "PDF Files (.pdf)|.pdf"
+            Case ".doc", ".docx"
+                saveFileDialog.Filter = "Word Documents (.doc, *.docx)|.doc;*.docx"
+            Case ".xls", ".xlsx"
+                saveFileDialog.Filter = "Excel Files (.xls, *.xlsx)|.xls;*.xlsx"
+            Case ".ppt", ".pptx"
+                saveFileDialog.Filter = "PowerPoint Files (.ppt, *.pptx)|.ppt;*.pptx"
+            Case ".csv"
+                saveFileDialog.Filter = "CSV Files (.csv)|.csv"
+            Case ".xml"
+                saveFileDialog.Filter = "XML Files (.xml)|.xml"
+            Case Else
+                saveFileDialog.Filter = "All Files (.)|*.*" ' Default for unknown extensions
+        End Select
+
+        ' Set the initial file name in the dialog based on the URL
+        saveFileDialog.FileName = fileName
+
+        ' Show the SaveFileDialog and check if the user clicked Save
+        If saveFileDialog.ShowDialog() = DialogResult.OK Then
+            ' Get the destination file path from the SaveFileDialog
+            Dim destinationPath As String = saveFileDialog.FileName
+
+            ' Download the file using WebClient
+            Try
+                ' Create a new WebClient instance
+                Using webClient As New WebClient()
+                    ' Download the file to the selected path
+                    webClient.DownloadFile(url, destinationPath)
+                    MsgBox("File downloaded successfully!", MsgBoxStyle.Information, msgBox_header)
+                End Using
+            Catch ex As Exception
+                MsgBox("Error: " & ex.Message, MsgBoxStyle.Information, msgBox_header)
+            End Try
+        End If
+
+    End Sub
+
+
+    Public Sub WebDav_DeleteFile(subfolder As String, fileName As String)
+        ' WebDAV server URL for the file you want to delete
+        Dim webDavUrl As String = "https://bcvr.ph/w3bd4v/" & subfolder & "/" & fileName ' Replace with your file URL
+
+        ' Create the HttpWebRequest for the DELETE request
+        Dim request As HttpWebRequest = CType(WebRequest.Create(webDavUrl), HttpWebRequest)
+
+        ' Set the HTTP method to DELETE
+        request.Method = "DELETE"
+
+        ' Set credentials if the WebDAV server requires authentication (Basic Auth in this case)
+        request.Credentials = New NetworkCredential("bcvr", "ButCha!142630!") ' Replace with actual credentials
+
+        ' Optional: Set headers if needed, e.g., for WebDAV-specific operations
+        request.Headers.Add("Authorization", "Basic " + Convert.ToBase64String(System.Text.Encoding.ASCII.GetBytes("username:password"))) ' Optional if using Basic Authentication
+
+        Try
+            ' Send the request and get the response
+            Dim response As HttpWebResponse = CType(request.GetResponse(), HttpWebResponse)
+
+            ' Check if the response status is OK (200) or successful (e.g., 204 No Content)
+            If response.StatusCode = HttpStatusCode.NoContent Then
+                Console.WriteLine("File deleted successfully!")
+            Else
+                Console.WriteLine("Failed to delete file. Status Code: " & response.StatusCode)
+            End If
+
+            ' Close the response
+            response.Close()
+        Catch ex As WebException
+            ' Handle any exceptions that occur during the HTTP request
+            If ex.Response IsNot Nothing Then
+                Dim response As HttpWebResponse = CType(ex.Response, HttpWebResponse)
+                Console.WriteLine("Error: " & response.StatusCode)
+            Else
+                Console.WriteLine("Exception: " & ex.Message)
+            End If
+        End Try
+
+    End Sub
+
+
+
 
 
     '    Public Function str_Filter(ByVal Text As TextBox, ByVal ascKey1 As Integer, ByVal ascKey2 As Integer, ByVal ascKey3 As Integer, ByVal N_Repeat As Integer)
@@ -446,5 +703,5 @@ Public Class DelayedTextChangedHandler
         _timer.Dispose()
     End Sub
 
-    
+
 End Class

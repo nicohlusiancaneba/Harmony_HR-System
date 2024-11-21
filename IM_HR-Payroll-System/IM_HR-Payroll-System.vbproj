@@ -23,11 +23,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>31</ApplicationRevision>
+    <ApplicationRevision>33</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -139,6 +140,12 @@
       <DependentUpon>FormEMPLOYEES_DETAILS.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormEMPLOYEES\FormEMPLOYEES_DETAILS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEMPLOYEES\FormFILE_MANAGE.Designer.vb">
+      <DependentUpon>FormFILE_MANAGE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FormEMPLOYEES\FormFILE_MANAGE.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FormEVALUATION\FormEVALUATION.Designer.vb">
@@ -272,6 +279,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\User.png" />
     <None Include="Resources\reports2.png" />
     <None Include="Resources\login.png" />
     <None Include="Resources\logout.png" />
@@ -289,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEMPLOYEES\FormEMPLOYEES_DETAILS.resx">
       <DependentUpon>FormEMPLOYEES_DETAILS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormEMPLOYEES\FormFILE_MANAGE.resx">
+      <DependentUpon>FormFILE_MANAGE.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormEVALUATION\FormEVALUATION.resx">
       <DependentUpon>FormEVALUATION.vb</DependentUpon>
@@ -445,11 +456,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.VisualBasic.PowerPacks.10.0">
-      <Visible>False</Visible>
-      <ProductName>Microsoft Visual Basic PowerPacks 10.0</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\settings.png" />
@@ -457,6 +463,7 @@
     <None Include="Resources\Plus.png" />
     <None Include="Resources\add.png" />
     <None Include="Resources\evaluation2.png" />
+    <None Include="Resources\download.png" />
     <Content Include="Resources\harmony1.ico" />
   </ItemGroup>
   <ItemGroup />

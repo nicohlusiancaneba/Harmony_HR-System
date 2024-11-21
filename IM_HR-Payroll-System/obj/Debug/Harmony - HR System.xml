@@ -23,6 +23,10 @@ Harmony-HRSystem
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Harmony.My.Resources.Resources.download">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Harmony.My.Resources.Resources.edit">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -84,6 +88,10 @@ Harmony-HRSystem
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:Harmony.My.Resources.Resources.upload">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Harmony.My.Resources.Resources.User">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

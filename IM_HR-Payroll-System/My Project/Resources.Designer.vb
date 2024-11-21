@@ -83,6 +83,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property download() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("download", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property edit() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("edit", resourceCulture)
@@ -236,6 +246,16 @@ Namespace My.Resources
         Friend ReadOnly Property upload() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("upload", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property User() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("User", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

@@ -1,4 +1,7 @@
-﻿Public Class FormEMPLOYEES_DETAILS
+﻿Imports System.Net
+Imports System.IO
+
+Public Class FormEMPLOYEES_DETAILS
     Dim employee_id As Integer
     Private Sub FormEMPLOYEES_DETAILS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TabControl1.SelectedIndex = 0
@@ -8,6 +11,7 @@
 
         If formOperation = "edit" Then
             employee_id = xID1
+            Load_EmployeePicture()
             sqlSTR = "select * from employees where Employee_ID=" & employee_id
             ExecuteSQLQuery(sqlSTR)
 
@@ -45,11 +49,13 @@
             txt_pagIbigShare.Text = sqlDT.Rows(0)("Pag_ibig_Share").ToString
 
 
-            'txt_currentRate.ReadOnly = True
-            'txt_SSSshare.ReadOnly = True
-            'txt_philhealthShare.ReadOnly = True
-            'txt_taxAmount.ReadOnly = True
-            'txt_pagIbigShare.ReadOnly = True
+            txt_currentRate.ReadOnly = True
+            txt_SSSshare.ReadOnly = True
+            txt_philhealthShare.ReadOnly = True
+            txt_taxAmount.ReadOnly = True
+            txt_pagIbigShare.ReadOnly = True
+
+            RefreshList_Files()
 
         Else 'Add
             txt_IDno.Text = ""
@@ -85,6 +91,14 @@
             dt_birthDate.Text = Today()
             dt_hiredDate.Text = Today()
             dt_regularizationDate.Text = Today()
+
+
+            txt_currentRate.ReadOnly = False
+            txt_SSSshare.ReadOnly = False
+            txt_philhealthShare.ReadOnly = False
+            txt_taxAmount.ReadOnly = False
+            txt_pagIbigShare.ReadOnly = False
+
         End If
 
 
@@ -185,8 +199,16 @@
         ExecuteSQLQuery(sqlSTR)
         MsgBox("Succesfully saved employee details.", MsgBoxStyle.Information, msgBox_header)
         Me.Close()
-        FormEMPLOYEES.rb_Regular.Checked = True
-        FormEMPLOYEES.RefreshEmployeeList()
+        'FormEMPLOYEES.rb_Regular.Checked = True
+
+    End Sub
+
+
+    Private Sub RefreshList_Files()
+        sqlSTR = "select File_ID as ID, Date_Modified as 'Date Modified', " & _
+                    "File_Type as 'File Type', File_Name as 'Filename', File_Remarks as 'Remarks' from Files " & _
+                    "where Employee_ID =" & employee_id
+        FillListView(ExecuteSQLQuery(sqlSTR), lst_empFiles, 0)
     End Sub
 
 
@@ -220,4 +242,77 @@
     Private Sub txt_emergencyAddress_TextChanged(sender As Object, e As EventArgs) Handles txt_emergencyAddress.TextChanged
         RemoveCharacters(txt_emergencyAddress, ",")
     End Sub
+
+
+    Public Sub Load_EmployeePicture()
+        Dim fileName As String = ""
+        sqlSTR = "select file_name from Files where file_type ='Picture' and employee_id =" & employee_id
+        ExecuteSQLQuery(sqlSTR)
+        If sqlDT.Rows.Count = 1 Then
+            fileName = sqlDT.Rows(0)("file_name").ToString
+        Else
+            'fileName = "user.png"
+            employee_Picture.Image = My.Resources.User
+            Exit Sub
+        End If
+
+        Try
+            Dim imageUrl As String = "https://bcvr.ph/w3bd4v/Harmony/" & fileName
+
+            ' Create WebRequest
+            Dim request As WebRequest = WebRequest.Create(imageUrl)
+
+            ' Use Using for WebResponse and Stream
+            Using response As WebResponse = request.GetResponse(),
+                  stream As Stream = response.GetResponseStream()
+
+                ' Load the image into the PictureBox
+                employee_Picture.Image = Image.FromStream(stream)
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error loading image: " & ex.Message)
+        End Try
+
+    End Sub
+
+
+    Private Sub btn_newFile_Click(sender As Object, e As EventArgs) Handles btn_newFile.Click
+        Dim temp As String = formOperation
+        ShowForm1(FormFILE_MANAGE, "add", employee_id)
+        RefreshList_Files()
+        formOperation = temp
+    End Sub
+
+    Private Sub btn_download_Click(sender As Object, e As EventArgs) Handles btn_download.Click
+        lst_empFiles.Focus()
+        WebDav_DownloadFile("Harmony", lst_empFiles.FocusedItem.SubItems(3).Text)
+    End Sub
+
+    Private Sub lst_empFiles_MouseDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.MouseEventArgs) Handles lst_empFiles.MouseDoubleClick
+        WebDav_DownloadFile("Harmony", lst_empFiles.FocusedItem.SubItems(3).Text)
+    End Sub
+
+
+
+    Private Sub btn_Delete_Click(sender As Object, e As EventArgs) Handles btn_Delete.Click
+        If MsgBox("Do you want to delete this file record?", MsgBoxStyle.YesNo + MsgBoxStyle.Critical, msgBox_header) = MsgBoxResult.Yes Then
+            WebDav_DeleteFile("Harmony", lst_empFiles.FocusedItem.SubItems(3).Text)
+            sqlSTR = "Delete from Files where File_ID =" & lst_empFiles.FocusedItem.Text
+            ExecuteSQLQuery(sqlSTR)
+
+            MsgBox("Deleted file record.", MsgBoxStyle.Information, msgBox_header)
+        End If
+        RefreshList_Files()
+    End Sub
+
+    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
+        If TabControl1.SelectedIndex = 2 Then
+            If formOperation <> "edit" Then
+                MsgBox("Operation not allowed. Please add the employee first before uploading the necessary files, then try again.", MsgBoxStyle.Information, msgBox_header)
+                TabControl1.SelectedIndex = 0
+            End If
+
+        End If
+    End Sub
+
 End Class
