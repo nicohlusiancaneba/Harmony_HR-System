@@ -9,6 +9,7 @@
     Private Sub RefreshList()
         sqlSTR = "select Payroll_Details.Employee_ID as 'Employee ID', CONCAT(Last_Name, ', ', First_Name, ' ', Left(Middle_Name, 1), '.') as 'Employee', " & _
             "payRegular as '[A] Daily Rate', numRegular as '[A] Day(s)', totalRegular as '[A] Subtotal', " & _
+            "numLeave as '[A] Leave', totalLeave as '[A] Subtotal', " & _
             "numHoliday as '[B] Holiday', totalHoliday as '[B] Subtotal', " & _
             "paySpecial as '[C] Special Rate', numSpecial as '[C] Day(s)', totalSpecial as '[C] Subtotal', " & _
             "payField as '[D] Field Rate', numField as '[D] Day(s)', totalField as '[D] Subtotal', " & _

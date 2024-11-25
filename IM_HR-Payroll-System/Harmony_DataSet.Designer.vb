@@ -436,6 +436,12 @@ Partial Public Class Harmony_DataSet
 
         Private columnOthers As Global.System.Data.DataColumn
 
+        Private columnpayLeave As Global.System.Data.DataColumn
+
+        Private columnnumLeave As Global.System.Data.DataColumn
+
+        Private columntotalLeave As Global.System.Data.DataColumn
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
@@ -944,6 +950,30 @@ Partial Public Class Harmony_DataSet
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property payLeaveColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnpayLeave
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property numLeaveColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnumLeave
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totalLeaveColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotalLeave
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -1039,9 +1069,12 @@ Partial Public Class Harmony_DataSet
                     ByVal Cash_Advance As String, _
                     ByVal Emergency As String, _
                     ByVal Personal As String, _
-                    ByVal Others As String) As PayslipRow
+                    ByVal Others As String, _
+                    ByVal payLeave As String, _
+                    ByVal numLeave As String, _
+                    ByVal totalLeave As String) As PayslipRow
             Dim rowPayslipRow As PayslipRow = CType(Me.NewRow, PayslipRow)
-            Dim columnValuesArray() As Object = New Object() {Employee_ID, Payroll_ID, Last_Name, First_Name, Payroll_Date, Cutoff_Date_Start, Cutoff_Date_End, payRegular, paySpecial, payField, payHoliday, payOvertime, payNight_diff, numRegular, numSpecial, numField, numHoliday, numOvertime, numNight_diff, totalRegular, totalSpecial, totalField, totalHoliday, totalOvertime, totalNight_diff, totalSSS, totalPhilhealth, totalPagIbig, totalTax, totalInsurance, totalCharge, totalLate, totalUndertime, minusLate, minusUndertime, numLate, numUndertime, totalAddSpecial, totalAddField, totalAddIncentive, totalAddAllowance, grandTotal_Basic, grandTotal_Additional, grandTotal_Gross, grandTotal_Deduction, grandTotal_Loan, grandTotal_Net, payroll_employeeRemarks, Payroll_Approved, Encoded_by, numOvertime_hr, numNight_diff_hr, numLate_hr, numUndertime_hr, Allowance_Advance, Cash_Advance, Emergency, Personal, Others}
+            Dim columnValuesArray() As Object = New Object() {Employee_ID, Payroll_ID, Last_Name, First_Name, Payroll_Date, Cutoff_Date_Start, Cutoff_Date_End, payRegular, paySpecial, payField, payHoliday, payOvertime, payNight_diff, numRegular, numSpecial, numField, numHoliday, numOvertime, numNight_diff, totalRegular, totalSpecial, totalField, totalHoliday, totalOvertime, totalNight_diff, totalSSS, totalPhilhealth, totalPagIbig, totalTax, totalInsurance, totalCharge, totalLate, totalUndertime, minusLate, minusUndertime, numLate, numUndertime, totalAddSpecial, totalAddField, totalAddIncentive, totalAddAllowance, grandTotal_Basic, grandTotal_Additional, grandTotal_Gross, grandTotal_Deduction, grandTotal_Loan, grandTotal_Net, payroll_employeeRemarks, Payroll_Approved, Encoded_by, numOvertime_hr, numNight_diff_hr, numLate_hr, numUndertime_hr, Allowance_Advance, Cash_Advance, Emergency, Personal, Others, payLeave, numLeave, totalLeave}
             rowPayslipRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowPayslipRow)
             Return rowPayslipRow
@@ -1123,6 +1156,9 @@ Partial Public Class Harmony_DataSet
             Me.columnEmergency = MyBase.Columns("Emergency")
             Me.columnPersonal = MyBase.Columns("Personal")
             Me.columnOthers = MyBase.Columns("Others")
+            Me.columnpayLeave = MyBase.Columns("payLeave")
+            Me.columnnumLeave = MyBase.Columns("numLeave")
+            Me.columntotalLeave = MyBase.Columns("totalLeave")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -1246,6 +1282,12 @@ Partial Public Class Harmony_DataSet
             MyBase.Columns.Add(Me.columnPersonal)
             Me.columnOthers = New Global.System.Data.DataColumn("Others", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnOthers)
+            Me.columnpayLeave = New Global.System.Data.DataColumn("payLeave", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnpayLeave)
+            Me.columnnumLeave = New Global.System.Data.DataColumn("numLeave", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnumLeave)
+            Me.columntotalLeave = New Global.System.Data.DataColumn("totalLeave", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotalLeave)
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -2594,6 +2636,51 @@ Partial Public Class Harmony_DataSet
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property payLeave() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.payLeaveColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'payLeave' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.payLeaveColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property numLeave() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.numLeaveColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'numLeave' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.numLeaveColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totalLeave() As String
+            Get
+                Try
+                    Return CType(Me(Me.tablePayslip.totalLeaveColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totalLeave' in table 'Payslip' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tablePayslip.totalLeaveColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function IsEmployee_IDNull() As Boolean
             Return Me.IsNull(Me.tablePayslip.Employee_IDColumn)
         End Function
@@ -3298,6 +3385,42 @@ Partial Public Class Harmony_DataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetOthersNull()
             Me(Me.tablePayslip.OthersColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IspayLeaveNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.payLeaveColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetpayLeaveNull()
+            Me(Me.tablePayslip.payLeaveColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsnumLeaveNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.numLeaveColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetnumLeaveNull()
+            Me(Me.tablePayslip.numLeaveColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalLeaveNull() As Boolean
+            Return Me.IsNull(Me.tablePayslip.totalLeaveColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalLeaveNull()
+            Me(Me.tablePayslip.totalLeaveColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 

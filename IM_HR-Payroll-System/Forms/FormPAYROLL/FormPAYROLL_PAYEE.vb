@@ -30,6 +30,7 @@
         txt_paySpecial.Text = 0
         txt_payField.Text = 0
         txt_payHoliday.Text = sqlDT.Rows(0)("Current_Daily_Rate")
+        txt_payLeave.Text = sqlDT.Rows(0)("Current_Daily_Rate")
         txt_payOvertime.Text = Format(Val(sqlDT.Rows(0)("Current_Daily_Rate")) / 8 / 60, "N2")
         txt_payNightDiff.Text = Format(((Val(sqlDT.Rows(0)("Current_Daily_Rate")) / 8) * 0.1) / 60, "N2")
 
@@ -54,12 +55,14 @@
         txt_numSpecial.Text = sqlDT.Rows(0)("numSpecial").ToString
         txt_numField.Text = sqlDT.Rows(0)("numField").ToString
         txt_numHoliday.Text = sqlDT.Rows(0)("numHoliday").ToString
+        txt_numLeave.Text = sqlDT.Rows(0)("numLeave").ToString
         txt_numOvertime.Text = sqlDT.Rows(0)("numOvertime").ToString
         txt_numNightDiff.Text = sqlDT.Rows(0)("numNight_diff").ToString
         txt_totalRegular.Text = sqlDT.Rows(0)("totalRegular").ToString
         txt_totalSpecial.Text = sqlDT.Rows(0)("totalSpecial").ToString
         txt_totalField.Text = sqlDT.Rows(0)("totalField").ToString
         txt_totalHoliday.Text = sqlDT.Rows(0)("totalHoliday").ToString
+        txt_totalLeave.Text = sqlDT.Rows(0)("totalLeave").ToString
         txt_totalOvertime.Text = sqlDT.Rows(0)("totalOvertime").ToString
         txt_totalNightDiff.Text = sqlDT.Rows(0)("totalNight_diff").ToString
 
@@ -79,6 +82,9 @@
         txt_totalUndertime.Text = sqlDT.Rows(0)("totalUndertime").ToString
         txt_numLate.Text = sqlDT.Rows(0)("numLate").ToString
         txt_numUndertime.Text = sqlDT.Rows(0)("numUndertime").ToString
+
+        txt_totalNumAbsent.Text = sqlDT.Rows(0)("totalNumAbsent").ToString
+        txt_totalNumLate.Text = sqlDT.Rows(0)("totalNumLate").ToString
 
         txt_payAddSpecial.Text = sqlDT.Rows(0)("totalAddSpecial").ToString
         txt_payAddField.Text = sqlDT.Rows(0)("totalAddField").ToString
@@ -160,6 +166,7 @@
         txt_totalSpecial.Text = Val(txt_paySpecial.Text) * Val(txt_numSpecial.Text)
         txt_totalField.Text = Val(txt_payField.Text) * Val(txt_numField.Text)
         txt_totalHoliday.Text = Val(txt_payHoliday.Text) * Val(txt_numHoliday.Text)
+        txt_totalLeave.Text = Val(txt_payLeave.Text) * Val(txt_numLeave.Text)
         txt_totalOvertime.Text = Val(txt_payOvertime.Text) * Val(txt_numOvertime.Text)
         txt_totalNightDiff.Text = Val(txt_payNightDiff.Text) * Val(txt_numNightDiff.Text)
 
@@ -167,7 +174,7 @@
     End Sub
 
     Private Sub GrandTotalCompute()
-        txt_grandTotal_Basic.Text = (Val(txt_totalRegular.Text) + Val(txt_totalSpecial.Text) + Val(txt_totalField.Text) + Val(txt_totalHoliday.Text) + Val(txt_totalOvertime.Text) + Val(txt_totalNightDiff.Text))
+        txt_grandTotal_Basic.Text = (Val(txt_totalRegular.Text) + Val(txt_totalSpecial.Text) + Val(txt_totalField.Text) + Val(txt_totalHoliday.Text) + Val(txt_totalLeave.Text) + Val(txt_totalOvertime.Text) + Val(txt_totalNightDiff.Text))
         txt_grandTotal_Additional.Text = Val(txt_payAddSpecial.Text) + Val(txt_payAddField.Text) + Val(txt_payAddIncentive.Text) + Val(txt_payAddAllowance.Text)
         txt_grandTotal_Gross.Text = Val(txt_grandTotal_Basic.Text) + Val(txt_grandTotal_Additional.Text)
 
@@ -261,18 +268,21 @@
 "paySpecial= '" & txt_paySpecial.Text & "'," & _
 "payField= '" & txt_payField.Text & "'," & _
 "payHoliday= '" & txt_payHoliday.Text & "'," & _
+"payLeave= '" & txt_payLeave.Text & "'," & _
 "payOvertime= '" & txt_payOvertime.Text & "'," & _
 "payNight_diff= '" & txt_payNightDiff.Text & "'," & _
 "numRegular= '" & txt_numRegular.Text & "'," & _
 "numSpecial= '" & txt_numSpecial.Text & "'," & _
 "numField= '" & txt_numField.Text & "'," & _
 "numHoliday= '" & txt_numHoliday.Text & "'," & _
+"numLeave= '" & txt_numLeave.Text & "'," & _
 "numOvertime= '" & txt_numOvertime.Text & "'," & _
 "numNight_diff= '" & txt_numNightDiff.Text & "'," & _
 "totalRegular= '" & txt_totalRegular.Text & "'," & _
 "totalSpecial= '" & txt_totalSpecial.Text & "'," & _
 "totalField= '" & txt_totalField.Text & "'," & _
 "totalHoliday= '" & txt_totalHoliday.Text & "'," & _
+"totalLeave= '" & txt_totalLeave.Text & "'," & _
 "totalOvertime= '" & txt_totalOvertime.Text & "'," & _
 "totalNight_diff= '" & txt_totalNightDiff.Text & "'," & _
 "totalSSS= '" & txt_SSS.Tag & "'," & _
@@ -297,6 +307,8 @@
 "grandTotal_Deduction= '" & txt_grandTotal_Deduction.Text & "'," & _
 "grandTotal_Loan= '" & txt_grandTotal_Loan.Text & "'," & _
 "grandTotal_Net= '" & txt_grandTotal_Net.Text & "'," & _
+"totalNumAbsent= '" & txt_totalNumAbsent.Text & "'," & _
+"totalNumLate= '" & txt_totalNumLate.Text & "'," & _
 "payroll_employeeRemarks= '" & txt_payroll_employeeRemarks.Text & "'" & _
 " WHERE Employee_ID = " & employee_id & " and Payroll_ID = " & payroll_id
         ExecuteSQLQuery(sqlSTR)
