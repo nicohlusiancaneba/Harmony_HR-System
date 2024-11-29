@@ -26,6 +26,8 @@
             rb_selected = "SSS"
         ElseIf rb_tax.Checked Then
             rb_selected = "Tax"
+        ElseIf rb_reg.Checked Then
+            rb_selected = "Regularization"
         End If
 
 

@@ -1,10 +1,13 @@
 ﻿Public Class FormADJUSTMENT_DETAILS
     Dim Adjustment_ID As Integer
     Dim approved As String
+    Dim finishedLoad As Boolean
+
     Private Sub FormADJUSTMENT_DETAILS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         sqlSTR = "select * from Employees where Employment_Status != 'Resigned' or Employment_Status != 'Terminated' " & _
                 " order by Last_Name, First_Name"
         FILLComboBox_Employee(sqlSTR, cmb_employees)
+        finishedLoad = False
 
 
         If formOperation = "edit" Then
@@ -15,13 +18,14 @@
                         "INNER JOIN Employees on Employees.Employee_ID = Adjustments.Employee_ID " & _
                         "where Adjustment_ID =" & Adjustment_ID
             ExecuteSQLQuery(sqlSTR)
-
             cmb_employees.Text = sqlDT.Rows(0)("Employee").ToString
             txt_New.Text = sqlDT.Rows(0)("New_Value").ToString
             txt_Prev.Text = sqlDT.Rows(0)("Prev_Value").ToString
             approved = sqlDT.Rows(0)("Adj_Approved").ToString
             dt_dateAdj.Text = sqlDT.Rows(0)("Date_Adjusted").ToString
             cmb_adjustmentType.Text = sqlDT.Rows(0)("Adjustment_Type").ToString
+
+            
 
             If approved = "Yes" Then
                 cb_Approved.Checked = True
@@ -44,7 +48,15 @@
                 Label1.Visible = False
                 dt_dateAdj.Visible = False
             End If
+
+            finishedLoad = True
         Else
+            sqlSTR = "SELECT IDENT_CURRENT('Adjustments') + IDENT_INCR('Adjustments') AS Adjustment_ID"
+            ExecuteSQLQuery(sqlSTR)
+
+            Adjustment_ID = sqlDT.Rows(0)("Adjustment_ID")
+
+
             cmb_employees.Text = ""
             cmb_adjustmentType.Text = ""
             txt_New.Text = ""
@@ -88,6 +100,8 @@
                     type = "Philhealth_Share"
                 ElseIf cmb_adjustmentType.Text = "Tax" Then
                     type = "Tax_Amount"
+                ElseIf cmb_adjustmentType.Text = "Regularization" Then
+                    type = "Employment_Status = 'Regular', Regularization_Date"
                 End If
 
                 sqlSTR = "Update Employees set " & type & " = '" & txt_New.Text & "'  where Employee_ID=" & Split(cmb_employees.Text, " - ")(0)
@@ -114,21 +128,60 @@
     Private Sub cmb_adjustmentType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_adjustmentType.SelectedIndexChanged
         If cmb_employees.Text = "" Then Exit Sub
 
-        sqlSTR = "select Current_Daily_Rate, SSS_Share, Philhealth_Share, Tax_Amount, Pag_ibig_Share from Employees where Employee_ID =" & Split(cmb_employees.Text, " - ")(0)
-        ExecuteSQLQuery(sqlSTR)
+        If approved <> "Yes" Then
+            sqlSTR = "select Regularization_Date, Current_Daily_Rate, SSS_Share, Philhealth_Share, Tax_Amount, Pag_ibig_Share from Employees where Employee_ID =" & Split(cmb_employees.Text, " - ")(0)
+            ExecuteSQLQuery(sqlSTR)
 
-        If cmb_adjustmentType.Text = "Salary" Then
-            txt_Prev.Text = sqlDT.Rows(0)("Current_Daily_Rate").ToString
-        ElseIf cmb_adjustmentType.Text = "SSS" Then
-            txt_Prev.Text = sqlDT.Rows(0)("SSS_Share").ToString
-        ElseIf cmb_adjustmentType.Text = "Pag-Ibig" Then
-            txt_Prev.Text = sqlDT.Rows(0)("Pag_ibig_Share").ToString
-        ElseIf cmb_adjustmentType.Text = "Philhealth" Then
-            txt_Prev.Text = sqlDT.Rows(0)("Philhealth_Share").ToString
-        ElseIf cmb_adjustmentType.Text = "Tax" Then
-            txt_Prev.Text = sqlDT.Rows(0)("Tax_Amount").ToString
+            If cmb_adjustmentType.Text = "Salary" Then
+                txt_Prev.Text = sqlDT.Rows(0)("Current_Daily_Rate").ToString
+            ElseIf cmb_adjustmentType.Text = "SSS" Then
+                txt_Prev.Text = sqlDT.Rows(0)("SSS_Share").ToString
+            ElseIf cmb_adjustmentType.Text = "Pag-Ibig" Then
+                txt_Prev.Text = sqlDT.Rows(0)("Pag_ibig_Share").ToString
+            ElseIf cmb_adjustmentType.Text = "Philhealth" Then
+                txt_Prev.Text = sqlDT.Rows(0)("Philhealth_Share").ToString
+            ElseIf cmb_adjustmentType.Text = "Tax" Then
+                txt_Prev.Text = sqlDT.Rows(0)("Tax_Amount").ToString
+            End If
+
+            If cmb_adjustmentType.Text = "Regularization" Then
+                txt_Prev.Text = "n/a"
+                txt_New.Text = Today()
+                txt_New.ReadOnly = True
+            Else
+                txt_New.Text = ""
+                txt_New.ReadOnly = False
+            End If
         End If
+
+        
+
+
+
     End Sub
 
 
+    Private Sub cmb_employees_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_employees.SelectedIndexChanged
+        If finishedLoad Then
+            sqlSTR = "select Employee_ID from Employees where Employment_Status != 'Regular' and Employee_ID=" & Split(cmb_employees.Text, " - ")(0)
+            ExecuteSQLQuery(sqlSTR)
+            cmb_adjustmentType.Items.Clear()
+            If sqlDT.Rows.Count > 0 Then
+                cmb_adjustmentType.Items.Add("Regularization")
+                cmb_adjustmentType.Items.Add("Salary")
+                cmb_adjustmentType.Items.Add("SSS")
+                cmb_adjustmentType.Items.Add("Pag-Ibig")
+                cmb_adjustmentType.Items.Add("Philhealth")
+                cmb_adjustmentType.Items.Add("Tax")
+            Else
+                cmb_adjustmentType.Items.Add("Salary")
+                cmb_adjustmentType.Items.Add("SSS")
+                cmb_adjustmentType.Items.Add("Pag-Ibig")
+                cmb_adjustmentType.Items.Add("Philhealth")
+                cmb_adjustmentType.Items.Add("Tax")
+            End If
+        End If
+
+        
+    End Sub
 End Class

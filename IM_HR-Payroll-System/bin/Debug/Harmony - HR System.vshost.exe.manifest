@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Harmony - HR System.exe" version="1.0.0.34" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="Harmony - HR System.exe" version="1.0.0.38" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="Resources\harmony1.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -63,14 +63,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Harmony - HR System.exe" size="7726080">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Harmony - HR System.exe" size="7730176">
       <assemblyIdentity name="Harmony - HR System" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>SnokxeyoNsOLrdRA6AiqcD9Jt7uzTfFTYHbzODlUSbY=</dsig:DigestValue>
+        <dsig:DigestValue>knnIUi9QLxzYgQOrQ7qxnwvLF4yHqLTpyQ2PIHpWBJY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -236,13 +236,13 @@
       <dsig:DigestValue>VHXP8K1na2QsENn/Wcqh+hU2KHxe/ElAyquDc6hlMcs=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Reports\Payslip_Employee.rdlc" size="1521427">
+  <file name="Reports\Payslip_Employee.rdlc" size="1521705">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>r6J/UEIGsC2bjyb7guy3mIAQdJuUaIBLXsillrp2Y/8=</dsig:DigestValue>
+      <dsig:DigestValue>Ttv0rdR5PGCDDhBh6NhkgMj+aRNA7ncNipqrAkpyMy4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\harmony1.ico" size="216924">

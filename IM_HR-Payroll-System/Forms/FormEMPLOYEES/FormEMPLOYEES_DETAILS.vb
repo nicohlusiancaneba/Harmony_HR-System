@@ -3,16 +3,19 @@ Imports System.IO
 
 Public Class FormEMPLOYEES_DETAILS
     Dim employee_id As Integer
+    Dim tempReg_Date, tempEmpStatus As String
+    Dim finishedLoad As Boolean
     Private Sub FormEMPLOYEES_DETAILS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TabControl1.SelectedIndex = 0
-
+        finishedLoad = False
+        tempEmpStatus = ""
         FILLComboBox2("select Dropdown_ID, Dropdown_Description from Dropdowns where Dropdown_Type = 'Department' order by Dropdown_Description", cmb_department)
         FILLComboBox2("select Dropdown_ID, Dropdown_Description from Dropdowns where Dropdown_Type = 'Division' order by Dropdown_Description", cmb_division)
 
         If formOperation = "edit" Then
             employee_id = xID1
-            Load_EmployeePicture()
-            sqlSTR = "select * from employees where Employee_ID=" & employee_id
+
+            sqlSTR = "select *, FORMAT(Regularization_Date, 'MM/dd/yyyy') as Regularization_Date2 from employees where Employee_ID=" & employee_id
             ExecuteSQLQuery(sqlSTR)
 
             txt_IDno.Text = sqlDT.Rows(0)("Employee_ID").ToString
@@ -30,8 +33,8 @@ Public Class FormEMPLOYEES_DETAILS
             txt_emergencyContactNo.Text = sqlDT.Rows(0)("Emergency_Contact_No").ToString
             txt_bankNo.Text = sqlDT.Rows(0)("Payroll_Account_Number").ToString
             dt_hiredDate.Text = sqlDT.Rows(0)("Hired_Date").ToString
+            txt_regularizationDate.Text = sqlDT.Rows(0)("Regularization_Date2").ToString
             cmb_employmentStatus.Text = sqlDT.Rows(0)("Employment_Status").ToString
-            dt_regularizationDate.Text = sqlDT.Rows(0)("Regularization_Date").ToString
             txt_jobPosition.Text = sqlDT.Rows(0)("Position").ToString
             cmb_department.Text = sqlDT.Rows(0)("Department").ToString
             cmb_division.Text = sqlDT.Rows(0)("Division").ToString
@@ -47,7 +50,7 @@ Public Class FormEMPLOYEES_DETAILS
             txt_philhealthShare.Text = sqlDT.Rows(0)("Philhealth_Share").ToString
             txt_taxAmount.Text = sqlDT.Rows(0)("Tax_Amount").ToString
             txt_pagIbigShare.Text = sqlDT.Rows(0)("Pag_ibig_Share").ToString
-
+            txt_endEmpDate.Text = sqlDT.Rows(0)("End_Of_EmploymentDate").ToString
 
             txt_currentRate.ReadOnly = True
             txt_SSSshare.ReadOnly = True
@@ -55,6 +58,10 @@ Public Class FormEMPLOYEES_DETAILS
             txt_taxAmount.ReadOnly = True
             txt_pagIbigShare.ReadOnly = True
 
+            finishedLoad = True
+            tempEmpStatus = cmb_employmentStatus.Text
+
+            Load_EmployeePicture()
             RefreshList_Files()
 
         Else 'Add
@@ -90,7 +97,7 @@ Public Class FormEMPLOYEES_DETAILS
 
             dt_birthDate.Text = Today()
             dt_hiredDate.Text = Today()
-            dt_regularizationDate.Text = Today()
+
 
 
             txt_currentRate.ReadOnly = False
@@ -101,17 +108,14 @@ Public Class FormEMPLOYEES_DETAILS
 
         End If
 
-
-
-
     End Sub
 
 
     Private Sub btn_Save_Click(sender As Object, e As EventArgs) Handles btn_Save.Click
-        If dt_regularizationDate.Enabled = True Then
-            dt_regularizationDate.Tag = "'" & dt_regularizationDate.Text & "'"
+        If txt_regularizationDate.Text = "" Then
+            txt_regularizationDate.Tag = "null"
         Else
-            dt_regularizationDate.Tag = "null"
+            txt_regularizationDate.Tag = "'" & txt_regularizationDate.Text & "'"
         End If
 
         If txt_IDno.Text = "" Then
@@ -138,7 +142,7 @@ Public Class FormEMPLOYEES_DETAILS
     "Payroll_Account_Number = '" & txt_bankNo.Text & "', " & _
     "Hired_Date = '" & dt_hiredDate.Text & "', " & _
     "Employment_Status = '" & cmb_employmentStatus.Text & "', " & _
-    "Regularization_Date = " & dt_regularizationDate.Tag & ", " & _
+    "Regularization_Date = " & txt_regularizationDate.Tag & ", " & _
     "Position = '" & txt_jobPosition.Text & "', " & _
     "Department = '" & cmb_department.Text & "', " & _
     "Division = '" & cmb_division.Text & "', " & _
@@ -155,12 +159,19 @@ Public Class FormEMPLOYEES_DETAILS
     "Tax_Amount = '" & txt_taxAmount.Text & "', " & _
     "Pag_ibig_Share = '" & txt_pagIbigShare.Text & "' " & _
     "WHERE Employee_ID = " & employee_id
+            ExecuteSQLQuery(sqlSTR)
+
+            If cmb_employmentStatus.Text = "Resigned" Or cmb_employmentStatus.Text = "Terminated" Then
+                sqlSTR = "Update Employees set End_Of_EmploymentDate='" & txt_endEmpDate.Text & "' where Employee_ID =" & employee_id
+                ExecuteSQLQuery(sqlSTR)
+            End If
+
 
         Else 'Add
             sqlSTR = "INSERT INTO Employees (" &
          "Employee_ID, Last_Name, First_Name, Middle_Name, Date_of_Birth, Gender, Civil_Status, Address, Contact_No, " &
          "Emergency_Contact_Person, Emergency_Relationship, Emergency_Address, Emergency_Contact_No, " &
-         "Payroll_Account_Number, Hired_Date, Employment_Status, Regularization_Date, Position, Department, Division, " &
+         "Payroll_Account_Number, Hired_Date, Employment_Status,  Position, Department, Division, " &
          "Starting_Daily_Rate, Current_Daily_Rate, Monthly_Salary, No_of_Work_Days_per_Month, SSS_No, Philhealth_No, " &
          "TIN_No, Pag_ibig_No, SSS_Share, Philhealth_Share, Tax_Amount, Pag_ibig_Share) VALUES ('" &
          txt_IDno.Text & "', '" &
@@ -179,7 +190,6 @@ Public Class FormEMPLOYEES_DETAILS
          txt_bankNo.Text & "', '" &
          dt_hiredDate.Text & "', '" &
          cmb_employmentStatus.Text & "', " &
-         dt_regularizationDate.Tag & ", '" &
          txt_jobPosition.Text & "', '" &
          cmb_department.Text & "', '" &
          cmb_division.Text & "', '" &
@@ -195,8 +205,9 @@ Public Class FormEMPLOYEES_DETAILS
          txt_philhealthShare.Text & "', '" &
          txt_taxAmount.Text & "', '" &
          txt_pagIbigShare.Text & "')"
+            ExecuteSQLQuery(sqlSTR)
         End If
-        ExecuteSQLQuery(sqlSTR)
+
         MsgBox("Succesfully saved employee details.", MsgBoxStyle.Information, msgBox_header)
         Me.Close()
         'FormEMPLOYEES.rb_Regular.Checked = True
@@ -218,14 +229,26 @@ Public Class FormEMPLOYEES_DETAILS
     End Sub
 
     Private Sub cmb_employmentStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_employmentStatus.SelectedIndexChanged
-        If cmb_employmentStatus.Text <> "Regular" Then
-            dt_regularizationDate.Enabled = False
-            dt_regularizationDate.Text = Today()
-        Else
-            dt_regularizationDate.Enabled = True
-            dt_regularizationDate.Text = Today()
+        If finishedLoad And tempEmpStatus <> cmb_employmentStatus.Text And cmb_employmentStatus.Text = "Regular" Then
+            MsgBox("Update the employment status to 'Regular' in the Adjustments record instead.", MsgBoxStyle.Information, msgBox_header)
+            cmb_employmentStatus.Text = tempEmpStatus
         End If
+
+        If cmb_employmentStatus.Text.Contains("Probationary") Then
+            txt_regularizationDate.Text = ""
+        End If
+
+        If cmb_employmentStatus.Text = "Resigned" Or cmb_employmentStatus.Text = "Terminated" Then
+            If txt_endEmpDate.Text = "" Then txt_endEmpDate.Text = Today()
+            Label11.Visible = True
+            txt_endEmpDate.Visible = True
+        Else
+            Label11.Visible = False
+            txt_endEmpDate.Visible = False
+        End If
+
     End Sub
+
 
     Private Sub ComputeMonthlySalary()
         txt_monthlySalary.Text = Val(txt_currentRate.Text) * Val(txt_workDaysNo.Text)
@@ -314,5 +337,6 @@ Public Class FormEMPLOYEES_DETAILS
 
         End If
     End Sub
+
 
 End Class

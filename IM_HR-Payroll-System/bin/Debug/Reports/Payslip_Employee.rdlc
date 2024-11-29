@@ -318,7 +318,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=IIf(First(Fields!payRegular.Value, "DataSet1") = 0, "", FormatNumber(First(Fields!payRegular.Value, "DataSet1"), 2))</Value>
+                              <Value>=Microsoft.VisualBasic.Interaction.IIf(First(Fields!payRegular.Value, "DataSet1") = 0, "", Microsoft.VisualBasic.Strings.FormatNumber(First(Fields!payRegular.Value, "DataSet1"), 2))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -445,7 +445,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=IIf(First(Fields!paySpecial.Value, "DataSet1") = 0, "", FormatNumber(First(Fields!paySpecial.Value, "DataSet1"), 2))</Value>
+                              <Value>=Microsoft.VisualBasic.Interaction.IIf(First(Fields!paySpecial.Value, "DataSet1") = 0, "", Microsoft.VisualBasic.Strings.FormatNumber(First(Fields!paySpecial.Value, "DataSet1"), 2))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -572,7 +572,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=IIf(First(Fields!payField.Value, "DataSet1") = 0, "", FormatNumber(First(Fields!payField.Value, "DataSet1"), 2))</Value>
+                              <Value>=Microsoft.VisualBasic.Interaction.IIf(First(Fields!payField.Value, "DataSet1") = 0, "", Microsoft.VisualBasic.Strings.FormatNumber(First(Fields!payField.Value, "DataSet1"), 2))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -699,7 +699,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=IIf(First(Fields!payHoliday.Value, "DataSet1") = 0, "", FormatNumber(First(Fields!payHoliday.Value, "DataSet1"), 2))</Value>
+                              <Value>=Microsoft.VisualBasic.Interaction.IIf(First(Fields!payHoliday.Value, "DataSet1") = 0, "", Microsoft.VisualBasic.Strings.FormatNumber(First(Fields!payHoliday.Value, "DataSet1"), 2))</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1554,7 +1554,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Special &amp; Field</Value>
+                              <Value>Additional Special &amp; Field</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -6332,7 +6332,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Special &amp; Field</Value>
+                              <Value>Additional Special &amp; Field</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -9554,7 +9554,7 @@
         </Style>
       </Rectangle>
     </ReportItems>
-    <Height>11.69in</Height>
+    <Height>11.57in</Height>
     <Style />
   </Body>
   <Width>8.27in</Width>

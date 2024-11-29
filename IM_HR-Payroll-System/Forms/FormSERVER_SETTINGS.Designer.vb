@@ -25,11 +25,12 @@ Partial Class FormSERVER_SETTINGS
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.cmdCancel = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.cmb_dbname = New System.Windows.Forms.ComboBox()
-        Me.txtpassword = New System.Windows.Forms.TextBox()
-        Me.txtusername = New System.Windows.Forms.TextBox()
-        Me.txtservername = New System.Windows.Forms.TextBox()
         Me.txtip = New System.Windows.Forms.TextBox()
+        Me.txtpassword = New System.Windows.Forms.TextBox()
+        Me.txtservername = New System.Windows.Forms.TextBox()
+        Me.txtusername = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
@@ -38,7 +39,6 @@ Partial Class FormSERVER_SETTINGS
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -71,6 +71,17 @@ Partial Class FormSERVER_SETTINGS
         Me.GroupBox1.TabIndex = 10
         Me.GroupBox1.TabStop = False
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(6, 16)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(99, 153)
+        Me.Label11.TabIndex = 18
+        Me.Label11.Text = "Database :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "IP Address :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Server Name :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Username :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Password :"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
         'cmb_dbname
         '
         Me.cmb_dbname.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -79,8 +90,16 @@ Partial Class FormSERVER_SETTINGS
         Me.cmb_dbname.Items.AddRange(New Object() {"", "BCVR-HR"})
         Me.cmb_dbname.Location = New System.Drawing.Point(111, 13)
         Me.cmb_dbname.Name = "cmb_dbname"
-        Me.cmb_dbname.Size = New System.Drawing.Size(73, 24)
+        Me.cmb_dbname.Size = New System.Drawing.Size(89, 24)
         Me.cmb_dbname.TabIndex = 13
+        '
+        'txtip
+        '
+        Me.txtip.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.txtip.Location = New System.Drawing.Point(111, 48)
+        Me.txtip.Name = "txtip"
+        Me.txtip.Size = New System.Drawing.Size(132, 23)
+        Me.txtip.TabIndex = 1
         '
         'txtpassword
         '
@@ -91,14 +110,6 @@ Partial Class FormSERVER_SETTINGS
         Me.txtpassword.Size = New System.Drawing.Size(132, 23)
         Me.txtpassword.TabIndex = 7
         '
-        'txtusername
-        '
-        Me.txtusername.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.txtusername.Location = New System.Drawing.Point(111, 117)
-        Me.txtusername.Name = "txtusername"
-        Me.txtusername.Size = New System.Drawing.Size(132, 23)
-        Me.txtusername.TabIndex = 6
-        '
         'txtservername
         '
         Me.txtservername.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
@@ -107,13 +118,13 @@ Partial Class FormSERVER_SETTINGS
         Me.txtservername.Size = New System.Drawing.Size(132, 23)
         Me.txtservername.TabIndex = 3
         '
-        'txtip
+        'txtusername
         '
-        Me.txtip.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.txtip.Location = New System.Drawing.Point(111, 48)
-        Me.txtip.Name = "txtip"
-        Me.txtip.Size = New System.Drawing.Size(132, 23)
-        Me.txtip.TabIndex = 1
+        Me.txtusername.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.txtusername.Location = New System.Drawing.Point(111, 117)
+        Me.txtusername.Name = "txtusername"
+        Me.txtusername.Size = New System.Drawing.Size(132, 23)
+        Me.txtusername.TabIndex = 6
         '
         'Label9
         '
@@ -196,17 +207,6 @@ Partial Class FormSERVER_SETTINGS
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 15
         Me.PictureBox1.TabStop = False
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(6, 16)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(99, 153)
-        Me.Label11.TabIndex = 18
-        Me.Label11.Text = "Database :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "IP Address :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Server Name :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Username :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Password :"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'FormSERVER_SETTINGS
         '

@@ -47,6 +47,7 @@ Partial Class FormADJUSTMENTS
         Me.btn_newAdjustment = New System.Windows.Forms.Button()
         Me.lst_adjusments = New System.Windows.Forms.ListView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.rb_reg = New System.Windows.Forms.RadioButton()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.searchBox.SuspendLayout()
@@ -105,6 +106,7 @@ Partial Class FormADJUSTMENTS
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.rb_reg)
         Me.Panel2.Controls.Add(Me.rb_tax)
         Me.Panel2.Controls.Add(Me.rb_Philhealth)
         Me.Panel2.Controls.Add(Me.rb_PagIBIG)
@@ -113,7 +115,7 @@ Partial Class FormADJUSTMENTS
         Me.Panel2.Controls.Add(Me.rb_All)
         Me.Panel2.Location = New System.Drawing.Point(8, 69)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(469, 33)
+        Me.Panel2.Size = New System.Drawing.Size(606, 33)
         Me.Panel2.TabIndex = 27
         '
         'rb_tax
@@ -303,6 +305,18 @@ Partial Class FormADJUSTMENTS
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
         '
+        'rb_reg
+        '
+        Me.rb_reg.AutoSize = True
+        Me.rb_reg.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rb_reg.Location = New System.Drawing.Point(470, 5)
+        Me.rb_reg.Name = "rb_reg"
+        Me.rb_reg.Size = New System.Drawing.Size(129, 24)
+        Me.rb_reg.TabIndex = 6
+        Me.rb_reg.TabStop = True
+        Me.rb_reg.Text = "Regularization"
+        Me.rb_reg.UseVisualStyleBackColor = True
+        '
         'FormADJUSTMENTS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -352,4 +366,5 @@ Partial Class FormADJUSTMENTS
     Friend WithEvents btn_searchAdjustment As System.Windows.Forms.Button
     Friend WithEvents btn_newAdjustment As System.Windows.Forms.Button
     Friend WithEvents lst_adjusments As System.Windows.Forms.ListView
+    Friend WithEvents rb_reg As System.Windows.Forms.RadioButton
 End Class

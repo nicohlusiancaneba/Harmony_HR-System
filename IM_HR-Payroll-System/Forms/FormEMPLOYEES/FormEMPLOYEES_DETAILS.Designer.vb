@@ -42,8 +42,8 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.txt_emergencyContactPerson = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.dt_regularizationDate = New System.Windows.Forms.DateTimePicker()
         Me.dt_hiredDate = New System.Windows.Forms.DateTimePicker()
+        Me.txt_regularizationDate = New System.Windows.Forms.TextBox()
         Me.cmb_division = New System.Windows.Forms.ComboBox()
         Me.cmb_department = New System.Windows.Forms.ComboBox()
         Me.txt_workDaysNo = New System.Windows.Forms.TextBox()
@@ -85,6 +85,9 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.btn_newFile = New System.Windows.Forms.Button()
         Me.lst_empFiles = New System.Windows.Forms.ListView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.dt_endEmpDate = New System.Windows.Forms.DateTimePicker()
+        Me.txt_endEmpDate = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -268,8 +271,8 @@ Partial Class FormEMPLOYEES_DETAILS
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.dt_regularizationDate)
         Me.GroupBox3.Controls.Add(Me.dt_hiredDate)
+        Me.GroupBox3.Controls.Add(Me.txt_regularizationDate)
         Me.GroupBox3.Controls.Add(Me.cmb_division)
         Me.GroupBox3.Controls.Add(Me.cmb_department)
         Me.GroupBox3.Controls.Add(Me.txt_workDaysNo)
@@ -285,15 +288,6 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Employment Record"
         '
-        'dt_regularizationDate
-        '
-        Me.dt_regularizationDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dt_regularizationDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dt_regularizationDate.Location = New System.Drawing.Point(163, 55)
-        Me.dt_regularizationDate.Name = "dt_regularizationDate"
-        Me.dt_regularizationDate.Size = New System.Drawing.Size(121, 26)
-        Me.dt_regularizationDate.TabIndex = 27
-        '
         'dt_hiredDate
         '
         Me.dt_hiredDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -302,6 +296,15 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.dt_hiredDate.Name = "dt_hiredDate"
         Me.dt_hiredDate.Size = New System.Drawing.Size(121, 26)
         Me.dt_hiredDate.TabIndex = 16
+        '
+        'txt_regularizationDate
+        '
+        Me.txt_regularizationDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_regularizationDate.Location = New System.Drawing.Point(163, 54)
+        Me.txt_regularizationDate.Name = "txt_regularizationDate"
+        Me.txt_regularizationDate.ReadOnly = True
+        Me.txt_regularizationDate.Size = New System.Drawing.Size(101, 26)
+        Me.txt_regularizationDate.TabIndex = 17
         '
         'cmb_division
         '
@@ -740,11 +743,45 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.PictureBox1.TabIndex = 12
         Me.PictureBox1.TabStop = False
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(12, 469)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(195, 20)
+        Me.Label11.TabIndex = 29
+        Me.Label11.Text = "End of Employment Date :"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.Label11.Visible = False
+        '
+        'dt_endEmpDate
+        '
+        Me.dt_endEmpDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dt_endEmpDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dt_endEmpDate.Location = New System.Drawing.Point(456, 465)
+        Me.dt_endEmpDate.Name = "dt_endEmpDate"
+        Me.dt_endEmpDate.Size = New System.Drawing.Size(121, 26)
+        Me.dt_endEmpDate.TabIndex = 19
+        Me.dt_endEmpDate.Visible = False
+        '
+        'txt_endEmpDate
+        '
+        Me.txt_endEmpDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_endEmpDate.Location = New System.Drawing.Point(209, 467)
+        Me.txt_endEmpDate.Name = "txt_endEmpDate"
+        Me.txt_endEmpDate.ReadOnly = True
+        Me.txt_endEmpDate.Size = New System.Drawing.Size(101, 26)
+        Me.txt_endEmpDate.TabIndex = 30
+        '
         'FormEMPLOYEES_DETAILS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(779, 503)
+        Me.Controls.Add(Me.txt_endEmpDate)
+        Me.Controls.Add(Me.dt_endEmpDate)
+        Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.btn_Cancel)
         Me.Controls.Add(Me.btn_Save)
@@ -807,7 +844,6 @@ Partial Class FormEMPLOYEES_DETAILS
     Friend WithEvents txt_emergencyAddress As System.Windows.Forms.TextBox
     Friend WithEvents txt_emergencyRelationship As System.Windows.Forms.TextBox
     Friend WithEvents txt_emergencyContactPerson As System.Windows.Forms.TextBox
-    Friend WithEvents dt_regularizationDate As System.Windows.Forms.DateTimePicker
     Friend WithEvents dt_hiredDate As System.Windows.Forms.DateTimePicker
     Friend WithEvents cmb_division As System.Windows.Forms.ComboBox
     Friend WithEvents cmb_department As System.Windows.Forms.ComboBox
@@ -843,4 +879,8 @@ Partial Class FormEMPLOYEES_DETAILS
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents btn_download As System.Windows.Forms.Button
+    Friend WithEvents txt_regularizationDate As System.Windows.Forms.TextBox
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents dt_endEmpDate As System.Windows.Forms.DateTimePicker
+    Friend WithEvents txt_endEmpDate As System.Windows.Forms.TextBox
 End Class

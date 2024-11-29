@@ -103,7 +103,7 @@ Partial Class FormADJUSTMENT_DETAILS
         Me.cmb_adjustmentType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_adjustmentType.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_adjustmentType.FormattingEnabled = True
-        Me.cmb_adjustmentType.Items.AddRange(New Object() {"Salary", "SSS", "Pag-Ibig", "Philhealth", "Tax"})
+        Me.cmb_adjustmentType.Items.AddRange(New Object() {"Regularization", "Salary", "SSS", "Pag-Ibig", "Philhealth", "Tax"})
         Me.cmb_adjustmentType.Location = New System.Drawing.Point(152, 97)
         Me.cmb_adjustmentType.Name = "cmb_adjustmentType"
         Me.cmb_adjustmentType.Size = New System.Drawing.Size(127, 28)

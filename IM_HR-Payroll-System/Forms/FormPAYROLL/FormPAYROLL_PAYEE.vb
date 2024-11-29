@@ -26,13 +26,17 @@
 
         txt_EmployeeID.Text = sqlDT.Rows(0)("Employee_Id")
         txt_employeeName.Text = sqlDT.Rows(0)("EmployeeName")
-        txt_payRegular.Text = sqlDT.Rows(0)("Current_Daily_Rate")
+
         txt_paySpecial.Text = 0
         txt_payField.Text = 0
+
+        'for new
+        txt_payRegular.Text = sqlDT.Rows(0)("Current_Daily_Rate")
         txt_payHoliday.Text = sqlDT.Rows(0)("Current_Daily_Rate")
         txt_payLeave.Text = sqlDT.Rows(0)("Current_Daily_Rate")
         txt_payOvertime.Text = Format(Val(sqlDT.Rows(0)("Current_Daily_Rate")) / 8 / 60, "N2")
         txt_payNightDiff.Text = Format(((Val(sqlDT.Rows(0)("Current_Daily_Rate")) / 8) * 0.1) / 60, "N2")
+
 
         txt_philhealth.Text = sqlDT.Rows(0)("Philhealth_Share").ToString
         txt_pagibig.Text = sqlDT.Rows(0)("Pag_ibig_Share").ToString
@@ -43,13 +47,24 @@
 
 
 
-        sqlSTR = "select *, COALESCE(totalSSS, 0) as total_SSS, COALESCE(totalPhilhealth, 0) as total_Philhealth, COALESCE(totalPagIbig, 0) as total_PagIbig, COALESCE(totalTax, 0) as total_Tax from Payroll_Details INNER JOIN Payroll on Payroll.Payroll_ID = Payroll_Details.Payroll_ID " & _
+        sqlSTR = "select *, COALESCE(totalSSS, 0) as total_SSS, COALESCE(totalPhilhealth, 0) as total_Philhealth, COALESCE(totalPagIbig, 0) as total_PagIbig, COALESCE(totalTax, 0) as total_Tax, COALESCE(payRegular, 0) as payRegular2 from Payroll_Details INNER JOIN Payroll on Payroll.Payroll_ID = Payroll_Details.Payroll_ID " & _
             " where Employee_ID =" & employee_id & " and Payroll_Details.Payroll_id =" & payroll_id
         ExecuteSQLQuery(sqlSTR)
 
         payroll_detail_id = sqlDT.Rows(0)("Payroll_Detail_ID")
         dt_cutoffStart.Text = sqlDT.Rows(0)("Cutoff_Date_Start")
         dt_cutoffEnd.Text = sqlDT.Rows(0)("Cutoff_Date_End")
+
+
+
+        If sqlDT.Rows(0)("payRegular2") <> 0 Then
+            txt_payRegular.Text = sqlDT.Rows(0)("payRegular2")
+            txt_payHoliday.Text = sqlDT.Rows(0)("payRegular2")
+            txt_payLeave.Text = sqlDT.Rows(0)("payRegular2")
+            txt_payOvertime.Text = Format(Val(sqlDT.Rows(0)("payRegular2")) / 8 / 60, "N2")
+            txt_payNightDiff.Text = Format(((Val(sqlDT.Rows(0)("payRegular2")) / 8) * 0.1) / 60, "N2")
+        End If
+
 
         txt_numRegular.Text = sqlDT.Rows(0)("numRegular").ToString
         txt_numSpecial.Text = sqlDT.Rows(0)("numSpecial").ToString
