@@ -251,6 +251,10 @@ Public Class FormEMPLOYEES_DETAILS
 
 
     Private Sub ComputeMonthlySalary()
+        If txt_currentRate.Text = "0" Then
+            'txt_monthlySalary.Text = Val(txt_startingRate.Text) * Val(txt_workDaysNo.Text)
+            txt_currentRate.Text = txt_startingRate.Text
+        End If
         txt_monthlySalary.Text = Val(txt_currentRate.Text) * Val(txt_workDaysNo.Text)
     End Sub
 

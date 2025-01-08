@@ -59,6 +59,10 @@ Harmony-HRSystem
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Harmony.My.Resources.Resources.loading_arrow">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Harmony.My.Resources.Resources.loan">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -76,6 +80,10 @@ Harmony-HRSystem
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:Harmony.My.Resources.Resources.Plus">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Harmony.My.Resources.Resources.refresh">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

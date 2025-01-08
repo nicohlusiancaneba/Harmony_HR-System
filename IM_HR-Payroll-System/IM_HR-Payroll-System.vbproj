@@ -13,7 +13,7 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>B:\bcvr_computers\harmony_build\</PublishUrl>
+    <PublishUrl>G:\My Drive\harmony_build\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,7 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>39</ApplicationRevision>
+    <ApplicationRevision>46</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -279,6 +279,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\loading-arrow.png" />
+    <None Include="Resources\refresh.png" />
     <None Include="Resources\User.png" />
     <None Include="Resources\reports2.png" />
     <None Include="Resources\login.png" />

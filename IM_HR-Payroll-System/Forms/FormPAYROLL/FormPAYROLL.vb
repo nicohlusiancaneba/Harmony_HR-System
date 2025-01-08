@@ -106,4 +106,8 @@
     Private Sub rb_Approved_CheckedChanged(sender As Object, e As EventArgs) Handles rb_Approved.CheckedChanged
         RefreshPayrollList()
     End Sub
+
+    Private Sub btn_refreshPayroll_Click(sender As Object, e As EventArgs) Handles btn_refreshPayroll.Click
+        RefreshPayrollList()
+    End Sub
 End Class

@@ -26,20 +26,21 @@ Partial Class FormPAYROLL
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPAYROLL))
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.EditEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DeleteEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.btn_newPayroll = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lst_payroll = New System.Windows.Forms.ListView()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.rb_Approved = New System.Windows.Forms.RadioButton()
         Me.rb_Pending = New System.Windows.Forms.RadioButton()
         Me.rb_All = New System.Windows.Forms.RadioButton()
+        Me.btn_newPayroll = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.EditEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.btn_refreshPayroll = New System.Windows.Forms.Button()
         Me.ContextMenuStrip1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ImageList1
@@ -48,6 +49,7 @@ Partial Class FormPAYROLL
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         Me.ImageList1.Images.SetKeyName(0, "plus.png")
         Me.ImageList1.Images.SetKeyName(1, "add.png")
+        Me.ImageList1.Images.SetKeyName(2, "loading-arrow.png")
         '
         'ContextMenuStrip1
         '
@@ -55,35 +57,6 @@ Partial Class FormPAYROLL
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditEmployeeToolStripMenuItem, Me.DeleteEmployeeToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(176, 52)
-        '
-        'EditEmployeeToolStripMenuItem
-        '
-        Me.EditEmployeeToolStripMenuItem.Image = Global.Harmony.My.Resources.Resources.edit
-        Me.EditEmployeeToolStripMenuItem.Name = "EditEmployeeToolStripMenuItem"
-        Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
-        Me.EditEmployeeToolStripMenuItem.Text = "Edit Payroll"
-        '
-        'DeleteEmployeeToolStripMenuItem
-        '
-        Me.DeleteEmployeeToolStripMenuItem.Image = Global.Harmony.My.Resources.Resources.bin
-        Me.DeleteEmployeeToolStripMenuItem.Name = "DeleteEmployeeToolStripMenuItem"
-        Me.DeleteEmployeeToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
-        Me.DeleteEmployeeToolStripMenuItem.Text = "Delete Payroll"
-        '
-        'btn_newPayroll
-        '
-        Me.btn_newPayroll.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_newPayroll.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btn_newPayroll.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_newPayroll.ImageKey = "plus.png"
-        Me.btn_newPayroll.ImageList = Me.ImageList1
-        Me.btn_newPayroll.Location = New System.Drawing.Point(749, 26)
-        Me.btn_newPayroll.Name = "btn_newPayroll"
-        Me.btn_newPayroll.Size = New System.Drawing.Size(118, 43)
-        Me.btn_newPayroll.TabIndex = 19
-        Me.btn_newPayroll.Text = "New Payroll"
-        Me.btn_newPayroll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btn_newPayroll.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -104,16 +77,6 @@ Partial Class FormPAYROLL
         Me.Label1.Size = New System.Drawing.Size(97, 31)
         Me.Label1.TabIndex = 17
         Me.Label1.Text = "Payroll"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Harmony.My.Resources.Resources.payroll
-        Me.PictureBox1.Location = New System.Drawing.Point(8, 9)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(55, 54)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 16
-        Me.PictureBox1.TabStop = False
         '
         'lst_payroll
         '
@@ -176,11 +139,66 @@ Partial Class FormPAYROLL
         Me.rb_All.Text = "All"
         Me.rb_All.UseVisualStyleBackColor = True
         '
+        'btn_newPayroll
+        '
+        Me.btn_newPayroll.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_newPayroll.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btn_newPayroll.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_newPayroll.ImageKey = "plus.png"
+        Me.btn_newPayroll.ImageList = Me.ImageList1
+        Me.btn_newPayroll.Location = New System.Drawing.Point(749, 26)
+        Me.btn_newPayroll.Name = "btn_newPayroll"
+        Me.btn_newPayroll.Size = New System.Drawing.Size(118, 43)
+        Me.btn_newPayroll.TabIndex = 19
+        Me.btn_newPayroll.Text = "New Payroll"
+        Me.btn_newPayroll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_newPayroll.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Harmony.My.Resources.Resources.payroll
+        Me.PictureBox1.Location = New System.Drawing.Point(8, 9)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(55, 54)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 16
+        Me.PictureBox1.TabStop = False
+        '
+        'EditEmployeeToolStripMenuItem
+        '
+        Me.EditEmployeeToolStripMenuItem.Image = Global.Harmony.My.Resources.Resources.edit
+        Me.EditEmployeeToolStripMenuItem.Name = "EditEmployeeToolStripMenuItem"
+        Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
+        Me.EditEmployeeToolStripMenuItem.Text = "Edit Payroll"
+        '
+        'DeleteEmployeeToolStripMenuItem
+        '
+        Me.DeleteEmployeeToolStripMenuItem.Image = Global.Harmony.My.Resources.Resources.bin
+        Me.DeleteEmployeeToolStripMenuItem.Name = "DeleteEmployeeToolStripMenuItem"
+        Me.DeleteEmployeeToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
+        Me.DeleteEmployeeToolStripMenuItem.Text = "Delete Payroll"
+        '
+        'btn_refreshPayroll
+        '
+        Me.btn_refreshPayroll.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_refreshPayroll.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btn_refreshPayroll.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_refreshPayroll.ImageKey = "loading-arrow.png"
+        Me.btn_refreshPayroll.ImageList = Me.ImageList1
+        Me.btn_refreshPayroll.Location = New System.Drawing.Point(594, 26)
+        Me.btn_refreshPayroll.Name = "btn_refreshPayroll"
+        Me.btn_refreshPayroll.Size = New System.Drawing.Size(149, 43)
+        Me.btn_refreshPayroll.TabIndex = 21
+        Me.btn_refreshPayroll.Text = "Refresh Payroll"
+        Me.btn_refreshPayroll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_refreshPayroll.UseVisualStyleBackColor = True
+        '
         'FormPAYROLL
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(879, 150)
+        Me.Controls.Add(Me.btn_refreshPayroll)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.btn_newPayroll)
         Me.Controls.Add(Me.Label2)
@@ -191,9 +209,9 @@ Partial Class FormPAYROLL
         Me.Name = "FormPAYROLL"
         Me.Text = "FormPAYROLL"
         Me.ContextMenuStrip1.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -211,4 +229,5 @@ Partial Class FormPAYROLL
     Friend WithEvents rb_Approved As System.Windows.Forms.RadioButton
     Friend WithEvents rb_Pending As System.Windows.Forms.RadioButton
     Friend WithEvents rb_All As System.Windows.Forms.RadioButton
+    Friend WithEvents btn_refreshPayroll As System.Windows.Forms.Button
 End Class

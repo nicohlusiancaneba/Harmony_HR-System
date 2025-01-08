@@ -91,7 +91,6 @@ B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony - HR System.exe
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony - HR System.xml
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony - HR System.pdb
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormADJUSTMENTS.resources
-B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\IM_HR-Payroll-System.vbprojResolveAssemblyReference.cache
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormSETTINGS.resources
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormPRINT_PAYSLIP.resources
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\RdlCompile.cache
@@ -108,3 +107,4 @@ B:\Harmony_HR-System\IM_HR-Payroll-System\bin\Debug\Microsoft.VisualBasic.PowerP
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormEVALUATION.resources
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormEVALUATION_DETAILS.resources
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormFILE_MANAGE.resources
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\IM_HR-Payroll-System.vbprojResolveAssemblyReference.cache

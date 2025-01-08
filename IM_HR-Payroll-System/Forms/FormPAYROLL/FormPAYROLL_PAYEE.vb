@@ -16,6 +16,15 @@
             gb_total.Enabled = False
 
             btn_Save.Enabled = False
+        Else
+            gb_BasicPay.Enabled = True
+            gb_Deductions.Enabled = True
+            gb_Loans.Enabled = True
+            gb_loanPayment.Enabled = True
+            gb_Additional.Enabled = True
+            gb_total.Enabled = True
+
+            btn_Save.Enabled = True
         End If
 
         employee_id = xID1
