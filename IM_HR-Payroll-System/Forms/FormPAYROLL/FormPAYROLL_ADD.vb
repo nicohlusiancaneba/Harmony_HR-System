@@ -61,6 +61,17 @@
             End If
 
         Else 'ADD
+            cb_Approved.Checked = False
+            cb_Approved.Enabled = True
+            btn_newPayroll.Enabled = True
+            btn_Save.Enabled = True
+            dt_cutoffStart.Enabled = True
+            dt_cutoffEnd.Enabled = True
+            rtb_remarks.ReadOnly = False
+            dt_payroll.Enabled = True
+            DeleteEmployeeToolStripMenuItem.Enabled = True
+
+
             sqlSTR = "SELECT IDENT_CURRENT('Payroll') + IDENT_INCR('Payroll') AS Payroll_ID"
             ExecuteSQLQuery(sqlSTR)
 

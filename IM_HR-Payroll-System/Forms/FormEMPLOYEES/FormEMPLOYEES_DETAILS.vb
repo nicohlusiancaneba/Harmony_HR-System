@@ -189,7 +189,7 @@ Public Class FormEMPLOYEES_DETAILS
          txt_emergencyContactNo.Text & "', '" &
          txt_bankNo.Text & "', '" &
          dt_hiredDate.Text & "', '" &
-         cmb_employmentStatus.Text & "', " &
+         cmb_employmentStatus.Text & "', '" &
          txt_jobPosition.Text & "', '" &
          cmb_department.Text & "', '" &
          cmb_division.Text & "', '" &
