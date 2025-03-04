@@ -27,66 +27,69 @@ Partial Class FormEVALUATION_DETAILS
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown3 = New System.Windows.Forms.NumericUpDown()
+        Me.num_Consistency = New System.Windows.Forms.NumericUpDown()
+        Me.num_Productivity = New System.Windows.Forms.NumericUpDown()
+        Me.num_QualityOfWork = New System.Windows.Forms.NumericUpDown()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.NumericUpDown4 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown5 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown6 = New System.Windows.Forms.NumericUpDown()
+        Me.num_CommunicationSkills = New System.Windows.Forms.NumericUpDown()
+        Me.num_ProblemSolving = New System.Windows.Forms.NumericUpDown()
+        Me.num_TechnicalSkills = New System.Windows.Forms.NumericUpDown()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.NumericUpDown7 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown8 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown9 = New System.Windows.Forms.NumericUpDown()
+        Me.num_Professionalism = New System.Windows.Forms.NumericUpDown()
+        Me.num_Dependability = New System.Windows.Forms.NumericUpDown()
+        Me.num_Teamwork = New System.Windows.Forms.NumericUpDown()
+        Me.num_Attendance = New System.Windows.Forms.NumericUpDown()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.NumericUpDown10 = New System.Windows.Forms.NumericUpDown()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.NumericUpDown12 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown13 = New System.Windows.Forms.NumericUpDown()
+        Me.num_Initiative = New System.Windows.Forms.NumericUpDown()
+        Me.num_GoalFulfillment = New System.Windows.Forms.NumericUpDown()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.NumericUpDown11 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown14 = New System.Windows.Forms.NumericUpDown()
+        Me.num_LearningAbility = New System.Windows.Forms.NumericUpDown()
+        Me.num_Flexibility = New System.Windows.Forms.NumericUpDown()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.NumericUpDown15 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown16 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown17 = New System.Windows.Forms.NumericUpDown()
+        Me.num_ConflictResolution = New System.Windows.Forms.NumericUpDown()
+        Me.num_TeamManagement = New System.Windows.Forms.NumericUpDown()
+        Me.num_DecisionMaking = New System.Windows.Forms.NumericUpDown()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.txt_remarks = New System.Windows.Forms.RichTextBox()
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.btn_Save = New System.Windows.Forms.Button()
         Me.cmb_employees = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.dt_evalDate = New System.Windows.Forms.DateTimePicker()
+        Me.cb_Validated = New System.Windows.Forms.CheckBox()
+        Me.txt_grand_Total = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txt_rateDescription = New System.Windows.Forms.TextBox()
+        Me.cmb_evaluator = New System.Windows.Forms.ComboBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.num_Consistency, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.num_Productivity, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.num_QualityOfWork, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.num_CommunicationSkills, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.num_ProblemSolving, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.num_TechnicalSkills, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.num_Professionalism, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.num_Dependability, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.num_Teamwork, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.num_Attendance, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
-        CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.num_Initiative, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.num_GoalFulfillment, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox5.SuspendLayout()
-        CType(Me.NumericUpDown11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.num_LearningAbility, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.num_Flexibility, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
-        CType(Me.NumericUpDown15, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown16, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown17, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.num_ConflictResolution, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.num_TeamManagement, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.num_DecisionMaking, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox7.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -114,11 +117,11 @@ Partial Class FormEVALUATION_DETAILS
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(12, 56)
+        Me.Label2.Location = New System.Drawing.Point(12, 66)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(87, 60)
+        Me.Label2.Size = New System.Drawing.Size(84, 100)
         Me.Label2.TabIndex = 19
-        Me.Label2.Text = "Date :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Employee :"
+        Me.Label2.Text = "Date :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Evaluee :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Evaluator :"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'Label3
@@ -134,91 +137,103 @@ Partial Class FormEVALUATION_DETAILS
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.NumericUpDown3)
-        Me.GroupBox1.Controls.Add(Me.NumericUpDown2)
-        Me.GroupBox1.Controls.Add(Me.NumericUpDown1)
+        Me.GroupBox1.Controls.Add(Me.num_Consistency)
+        Me.GroupBox1.Controls.Add(Me.num_Productivity)
+        Me.GroupBox1.Controls.Add(Me.num_QualityOfWork)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 144)
+        Me.GroupBox1.Location = New System.Drawing.Point(16, 176)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(230, 139)
         Me.GroupBox1.TabIndex = 21
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Job Performance (30%)"
         '
-        'NumericUpDown1
+        'num_Consistency
         '
-        Me.NumericUpDown1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NumericUpDown1.Location = New System.Drawing.Point(175, 25)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(41, 26)
-        Me.NumericUpDown1.TabIndex = 22
-        Me.NumericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumericUpDown1.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_Consistency.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.num_Consistency.Location = New System.Drawing.Point(175, 104)
+        Me.num_Consistency.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.num_Consistency.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_Consistency.Name = "num_Consistency"
+        Me.num_Consistency.Size = New System.Drawing.Size(41, 26)
+        Me.num_Consistency.TabIndex = 24
+        Me.num_Consistency.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.num_Consistency.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'NumericUpDown2
+        'num_Productivity
         '
-        Me.NumericUpDown2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NumericUpDown2.Location = New System.Drawing.Point(175, 65)
-        Me.NumericUpDown2.Name = "NumericUpDown2"
-        Me.NumericUpDown2.Size = New System.Drawing.Size(41, 26)
-        Me.NumericUpDown2.TabIndex = 23
-        Me.NumericUpDown2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumericUpDown2.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_Productivity.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.num_Productivity.Location = New System.Drawing.Point(175, 65)
+        Me.num_Productivity.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.num_Productivity.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_Productivity.Name = "num_Productivity"
+        Me.num_Productivity.Size = New System.Drawing.Size(41, 26)
+        Me.num_Productivity.TabIndex = 23
+        Me.num_Productivity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.num_Productivity.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'NumericUpDown3
+        'num_QualityOfWork
         '
-        Me.NumericUpDown3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NumericUpDown3.Location = New System.Drawing.Point(175, 104)
-        Me.NumericUpDown3.Name = "NumericUpDown3"
-        Me.NumericUpDown3.Size = New System.Drawing.Size(41, 26)
-        Me.NumericUpDown3.TabIndex = 24
-        Me.NumericUpDown3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumericUpDown3.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_QualityOfWork.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.num_QualityOfWork.Location = New System.Drawing.Point(175, 25)
+        Me.num_QualityOfWork.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.num_QualityOfWork.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_QualityOfWork.Name = "num_QualityOfWork"
+        Me.num_QualityOfWork.Size = New System.Drawing.Size(41, 26)
+        Me.num_QualityOfWork.TabIndex = 22
+        Me.num_QualityOfWork.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.num_QualityOfWork.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown4)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown5)
-        Me.GroupBox2.Controls.Add(Me.NumericUpDown6)
+        Me.GroupBox2.Controls.Add(Me.num_CommunicationSkills)
+        Me.GroupBox2.Controls.Add(Me.num_ProblemSolving)
+        Me.GroupBox2.Controls.Add(Me.num_TechnicalSkills)
         Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.GroupBox2.Location = New System.Drawing.Point(16, 289)
+        Me.GroupBox2.Location = New System.Drawing.Point(16, 321)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(230, 139)
         Me.GroupBox2.TabIndex = 25
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Capabilities (20%)"
         '
-        'NumericUpDown4
+        'num_CommunicationSkills
         '
-        Me.NumericUpDown4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NumericUpDown4.Location = New System.Drawing.Point(175, 107)
-        Me.NumericUpDown4.Name = "NumericUpDown4"
-        Me.NumericUpDown4.Size = New System.Drawing.Size(41, 26)
-        Me.NumericUpDown4.TabIndex = 24
-        Me.NumericUpDown4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumericUpDown4.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_CommunicationSkills.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.num_CommunicationSkills.Location = New System.Drawing.Point(175, 107)
+        Me.num_CommunicationSkills.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.num_CommunicationSkills.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_CommunicationSkills.Name = "num_CommunicationSkills"
+        Me.num_CommunicationSkills.Size = New System.Drawing.Size(41, 26)
+        Me.num_CommunicationSkills.TabIndex = 24
+        Me.num_CommunicationSkills.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.num_CommunicationSkills.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'NumericUpDown5
+        'num_ProblemSolving
         '
-        Me.NumericUpDown5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NumericUpDown5.Location = New System.Drawing.Point(175, 65)
-        Me.NumericUpDown5.Name = "NumericUpDown5"
-        Me.NumericUpDown5.Size = New System.Drawing.Size(41, 26)
-        Me.NumericUpDown5.TabIndex = 23
-        Me.NumericUpDown5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumericUpDown5.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_ProblemSolving.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.num_ProblemSolving.Location = New System.Drawing.Point(175, 65)
+        Me.num_ProblemSolving.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.num_ProblemSolving.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_ProblemSolving.Name = "num_ProblemSolving"
+        Me.num_ProblemSolving.Size = New System.Drawing.Size(41, 26)
+        Me.num_ProblemSolving.TabIndex = 23
+        Me.num_ProblemSolving.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.num_ProblemSolving.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'NumericUpDown6
+        'num_TechnicalSkills
         '
-        Me.NumericUpDown6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NumericUpDown6.Location = New System.Drawing.Point(175, 25)
-        Me.NumericUpDown6.Name = "NumericUpDown6"
-        Me.NumericUpDown6.Size = New System.Drawing.Size(41, 26)
-        Me.NumericUpDown6.TabIndex = 22
-        Me.NumericUpDown6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumericUpDown6.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_TechnicalSkills.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.num_TechnicalSkills.Location = New System.Drawing.Point(175, 25)
+        Me.num_TechnicalSkills.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.num_TechnicalSkills.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_TechnicalSkills.Name = "num_TechnicalSkills"
+        Me.num_TechnicalSkills.Size = New System.Drawing.Size(41, 26)
+        Me.num_TechnicalSkills.TabIndex = 22
+        Me.num_TechnicalSkills.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.num_TechnicalSkills.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label4
         '
@@ -233,48 +248,66 @@ Partial Class FormEVALUATION_DETAILS
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.NumericUpDown10)
-        Me.GroupBox3.Controls.Add(Me.NumericUpDown7)
-        Me.GroupBox3.Controls.Add(Me.NumericUpDown8)
-        Me.GroupBox3.Controls.Add(Me.NumericUpDown9)
+        Me.GroupBox3.Controls.Add(Me.num_Professionalism)
+        Me.GroupBox3.Controls.Add(Me.num_Dependability)
+        Me.GroupBox3.Controls.Add(Me.num_Teamwork)
+        Me.GroupBox3.Controls.Add(Me.num_Attendance)
         Me.GroupBox3.Controls.Add(Me.Label5)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.GroupBox3.Location = New System.Drawing.Point(16, 444)
+        Me.GroupBox3.Location = New System.Drawing.Point(16, 476)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(230, 186)
         Me.GroupBox3.TabIndex = 26
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Behavioral Attributes (20%)"
         '
-        'NumericUpDown7
+        'num_Professionalism
         '
-        Me.NumericUpDown7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NumericUpDown7.Location = New System.Drawing.Point(175, 107)
-        Me.NumericUpDown7.Name = "NumericUpDown7"
-        Me.NumericUpDown7.Size = New System.Drawing.Size(41, 26)
-        Me.NumericUpDown7.TabIndex = 24
-        Me.NumericUpDown7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumericUpDown7.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_Professionalism.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.num_Professionalism.Location = New System.Drawing.Point(175, 143)
+        Me.num_Professionalism.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.num_Professionalism.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_Professionalism.Name = "num_Professionalism"
+        Me.num_Professionalism.Size = New System.Drawing.Size(41, 26)
+        Me.num_Professionalism.TabIndex = 25
+        Me.num_Professionalism.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.num_Professionalism.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'NumericUpDown8
+        'num_Dependability
         '
-        Me.NumericUpDown8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NumericUpDown8.Location = New System.Drawing.Point(175, 65)
-        Me.NumericUpDown8.Name = "NumericUpDown8"
-        Me.NumericUpDown8.Size = New System.Drawing.Size(41, 26)
-        Me.NumericUpDown8.TabIndex = 23
-        Me.NumericUpDown8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumericUpDown8.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_Dependability.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.num_Dependability.Location = New System.Drawing.Point(175, 107)
+        Me.num_Dependability.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.num_Dependability.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_Dependability.Name = "num_Dependability"
+        Me.num_Dependability.Size = New System.Drawing.Size(41, 26)
+        Me.num_Dependability.TabIndex = 24
+        Me.num_Dependability.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.num_Dependability.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'NumericUpDown9
+        'num_Teamwork
         '
-        Me.NumericUpDown9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NumericUpDown9.Location = New System.Drawing.Point(175, 25)
-        Me.NumericUpDown9.Name = "NumericUpDown9"
-        Me.NumericUpDown9.Size = New System.Drawing.Size(41, 26)
-        Me.NumericUpDown9.TabIndex = 22
-        Me.NumericUpDown9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumericUpDown9.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_Teamwork.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.num_Teamwork.Location = New System.Drawing.Point(175, 65)
+        Me.num_Teamwork.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.num_Teamwork.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_Teamwork.Name = "num_Teamwork"
+        Me.num_Teamwork.Size = New System.Drawing.Size(41, 26)
+        Me.num_Teamwork.TabIndex = 23
+        Me.num_Teamwork.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.num_Teamwork.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        '
+        'num_Attendance
+        '
+        Me.num_Attendance.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.num_Attendance.Location = New System.Drawing.Point(175, 25)
+        Me.num_Attendance.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.num_Attendance.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_Attendance.Name = "num_Attendance"
+        Me.num_Attendance.Size = New System.Drawing.Size(41, 26)
+        Me.num_Attendance.TabIndex = 22
+        Me.num_Attendance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.num_Attendance.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label5
         '
@@ -287,48 +320,42 @@ Partial Class FormEVALUATION_DETAILS
         Me.Label5.Text = "Attendance:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Teamwork:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Dependability:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Professionalism:"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'NumericUpDown10
-        '
-        Me.NumericUpDown10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NumericUpDown10.Location = New System.Drawing.Point(175, 143)
-        Me.NumericUpDown10.Name = "NumericUpDown10"
-        Me.NumericUpDown10.Size = New System.Drawing.Size(41, 26)
-        Me.NumericUpDown10.TabIndex = 25
-        Me.NumericUpDown10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumericUpDown10.Value = New Decimal(New Integer() {1, 0, 0, 0})
-        '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.NumericUpDown12)
-        Me.GroupBox4.Controls.Add(Me.NumericUpDown13)
+        Me.GroupBox4.Controls.Add(Me.num_Initiative)
+        Me.GroupBox4.Controls.Add(Me.num_GoalFulfillment)
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.GroupBox4.Location = New System.Drawing.Point(276, 144)
+        Me.GroupBox4.Location = New System.Drawing.Point(288, 176)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(230, 101)
         Me.GroupBox4.TabIndex = 25
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Goal Achievement (10%)"
         '
-        'NumericUpDown12
+        'num_Initiative
         '
-        Me.NumericUpDown12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NumericUpDown12.Location = New System.Drawing.Point(175, 65)
-        Me.NumericUpDown12.Name = "NumericUpDown12"
-        Me.NumericUpDown12.Size = New System.Drawing.Size(41, 26)
-        Me.NumericUpDown12.TabIndex = 23
-        Me.NumericUpDown12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumericUpDown12.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_Initiative.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.num_Initiative.Location = New System.Drawing.Point(175, 65)
+        Me.num_Initiative.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.num_Initiative.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_Initiative.Name = "num_Initiative"
+        Me.num_Initiative.Size = New System.Drawing.Size(41, 26)
+        Me.num_Initiative.TabIndex = 23
+        Me.num_Initiative.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.num_Initiative.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'NumericUpDown13
+        'num_GoalFulfillment
         '
-        Me.NumericUpDown13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NumericUpDown13.Location = New System.Drawing.Point(175, 25)
-        Me.NumericUpDown13.Name = "NumericUpDown13"
-        Me.NumericUpDown13.Size = New System.Drawing.Size(41, 26)
-        Me.NumericUpDown13.TabIndex = 22
-        Me.NumericUpDown13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumericUpDown13.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_GoalFulfillment.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.num_GoalFulfillment.Location = New System.Drawing.Point(175, 25)
+        Me.num_GoalFulfillment.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.num_GoalFulfillment.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_GoalFulfillment.Name = "num_GoalFulfillment"
+        Me.num_GoalFulfillment.Size = New System.Drawing.Size(41, 26)
+        Me.num_GoalFulfillment.TabIndex = 22
+        Me.num_GoalFulfillment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.num_GoalFulfillment.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label6
         '
@@ -343,36 +370,40 @@ Partial Class FormEVALUATION_DETAILS
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.NumericUpDown11)
-        Me.GroupBox5.Controls.Add(Me.NumericUpDown14)
+        Me.GroupBox5.Controls.Add(Me.num_LearningAbility)
+        Me.GroupBox5.Controls.Add(Me.num_Flexibility)
         Me.GroupBox5.Controls.Add(Me.Label7)
         Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.GroupBox5.Location = New System.Drawing.Point(276, 251)
+        Me.GroupBox5.Location = New System.Drawing.Point(288, 283)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(230, 101)
         Me.GroupBox5.TabIndex = 26
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Adaptability (10%)"
         '
-        'NumericUpDown11
+        'num_LearningAbility
         '
-        Me.NumericUpDown11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NumericUpDown11.Location = New System.Drawing.Point(175, 65)
-        Me.NumericUpDown11.Name = "NumericUpDown11"
-        Me.NumericUpDown11.Size = New System.Drawing.Size(41, 26)
-        Me.NumericUpDown11.TabIndex = 23
-        Me.NumericUpDown11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumericUpDown11.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_LearningAbility.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.num_LearningAbility.Location = New System.Drawing.Point(175, 65)
+        Me.num_LearningAbility.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.num_LearningAbility.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_LearningAbility.Name = "num_LearningAbility"
+        Me.num_LearningAbility.Size = New System.Drawing.Size(41, 26)
+        Me.num_LearningAbility.TabIndex = 23
+        Me.num_LearningAbility.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.num_LearningAbility.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'NumericUpDown14
+        'num_Flexibility
         '
-        Me.NumericUpDown14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NumericUpDown14.Location = New System.Drawing.Point(175, 25)
-        Me.NumericUpDown14.Name = "NumericUpDown14"
-        Me.NumericUpDown14.Size = New System.Drawing.Size(41, 26)
-        Me.NumericUpDown14.TabIndex = 22
-        Me.NumericUpDown14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumericUpDown14.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_Flexibility.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.num_Flexibility.Location = New System.Drawing.Point(175, 25)
+        Me.num_Flexibility.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.num_Flexibility.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_Flexibility.Name = "num_Flexibility"
+        Me.num_Flexibility.Size = New System.Drawing.Size(41, 26)
+        Me.num_Flexibility.TabIndex = 22
+        Me.num_Flexibility.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.num_Flexibility.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label7
         '
@@ -387,47 +418,53 @@ Partial Class FormEVALUATION_DETAILS
         '
         'GroupBox6
         '
-        Me.GroupBox6.Controls.Add(Me.NumericUpDown15)
-        Me.GroupBox6.Controls.Add(Me.NumericUpDown16)
-        Me.GroupBox6.Controls.Add(Me.NumericUpDown17)
+        Me.GroupBox6.Controls.Add(Me.num_ConflictResolution)
+        Me.GroupBox6.Controls.Add(Me.num_TeamManagement)
+        Me.GroupBox6.Controls.Add(Me.num_DecisionMaking)
         Me.GroupBox6.Controls.Add(Me.Label8)
         Me.GroupBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.GroupBox6.Location = New System.Drawing.Point(276, 358)
+        Me.GroupBox6.Location = New System.Drawing.Point(288, 390)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(230, 139)
         Me.GroupBox6.TabIndex = 25
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Leadership (10%)"
         '
-        'NumericUpDown15
+        'num_ConflictResolution
         '
-        Me.NumericUpDown15.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NumericUpDown15.Location = New System.Drawing.Point(175, 104)
-        Me.NumericUpDown15.Name = "NumericUpDown15"
-        Me.NumericUpDown15.Size = New System.Drawing.Size(41, 26)
-        Me.NumericUpDown15.TabIndex = 24
-        Me.NumericUpDown15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumericUpDown15.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_ConflictResolution.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.num_ConflictResolution.Location = New System.Drawing.Point(175, 104)
+        Me.num_ConflictResolution.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.num_ConflictResolution.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_ConflictResolution.Name = "num_ConflictResolution"
+        Me.num_ConflictResolution.Size = New System.Drawing.Size(41, 26)
+        Me.num_ConflictResolution.TabIndex = 24
+        Me.num_ConflictResolution.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.num_ConflictResolution.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'NumericUpDown16
+        'num_TeamManagement
         '
-        Me.NumericUpDown16.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NumericUpDown16.Location = New System.Drawing.Point(175, 65)
-        Me.NumericUpDown16.Name = "NumericUpDown16"
-        Me.NumericUpDown16.Size = New System.Drawing.Size(41, 26)
-        Me.NumericUpDown16.TabIndex = 23
-        Me.NumericUpDown16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumericUpDown16.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_TeamManagement.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.num_TeamManagement.Location = New System.Drawing.Point(175, 65)
+        Me.num_TeamManagement.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.num_TeamManagement.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_TeamManagement.Name = "num_TeamManagement"
+        Me.num_TeamManagement.Size = New System.Drawing.Size(41, 26)
+        Me.num_TeamManagement.TabIndex = 23
+        Me.num_TeamManagement.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.num_TeamManagement.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
-        'NumericUpDown17
+        'num_DecisionMaking
         '
-        Me.NumericUpDown17.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.NumericUpDown17.Location = New System.Drawing.Point(175, 25)
-        Me.NumericUpDown17.Name = "NumericUpDown17"
-        Me.NumericUpDown17.Size = New System.Drawing.Size(41, 26)
-        Me.NumericUpDown17.TabIndex = 22
-        Me.NumericUpDown17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.NumericUpDown17.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_DecisionMaking.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.num_DecisionMaking.Location = New System.Drawing.Point(175, 25)
+        Me.num_DecisionMaking.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
+        Me.num_DecisionMaking.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.num_DecisionMaking.Name = "num_DecisionMaking"
+        Me.num_DecisionMaking.Size = New System.Drawing.Size(41, 26)
+        Me.num_DecisionMaking.TabIndex = 22
+        Me.num_DecisionMaking.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.num_DecisionMaking.Value = New Decimal(New Integer() {1, 0, 0, 0})
         '
         'Label8
         '
@@ -442,27 +479,27 @@ Partial Class FormEVALUATION_DETAILS
         '
         'GroupBox7
         '
-        Me.GroupBox7.Controls.Add(Me.RichTextBox1)
+        Me.GroupBox7.Controls.Add(Me.txt_remarks)
         Me.GroupBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.GroupBox7.Location = New System.Drawing.Point(276, 503)
+        Me.GroupBox7.Location = New System.Drawing.Point(288, 535)
         Me.GroupBox7.Name = "GroupBox7"
         Me.GroupBox7.Size = New System.Drawing.Size(230, 127)
         Me.GroupBox7.TabIndex = 26
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Remarks"
         '
-        'RichTextBox1
+        'txt_remarks
         '
-        Me.RichTextBox1.Location = New System.Drawing.Point(6, 23)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(218, 96)
-        Me.RichTextBox1.TabIndex = 0
-        Me.RichTextBox1.Text = ""
+        Me.txt_remarks.Location = New System.Drawing.Point(6, 23)
+        Me.txt_remarks.Name = "txt_remarks"
+        Me.txt_remarks.Size = New System.Drawing.Size(218, 96)
+        Me.txt_remarks.TabIndex = 0
+        Me.txt_remarks.Text = ""
         '
         'btn_Cancel
         '
         Me.btn_Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Cancel.Location = New System.Drawing.Point(436, 646)
+        Me.btn_Cancel.Location = New System.Drawing.Point(448, 672)
         Me.btn_Cancel.Name = "btn_Cancel"
         Me.btn_Cancel.Size = New System.Drawing.Size(70, 30)
         Me.btn_Cancel.TabIndex = 28
@@ -472,7 +509,7 @@ Partial Class FormEVALUATION_DETAILS
         'btn_Save
         '
         Me.btn_Save.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Save.Location = New System.Drawing.Point(360, 646)
+        Me.btn_Save.Location = New System.Drawing.Point(372, 672)
         Me.btn_Save.Name = "btn_Save"
         Me.btn_Save.Size = New System.Drawing.Size(70, 30)
         Me.btn_Save.TabIndex = 27
@@ -486,7 +523,7 @@ Partial Class FormEVALUATION_DETAILS
         Me.cmb_employees.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_employees.FormattingEnabled = True
         Me.cmb_employees.IntegralHeight = False
-        Me.cmb_employees.Location = New System.Drawing.Point(101, 93)
+        Me.cmb_employees.Location = New System.Drawing.Point(101, 103)
         Me.cmb_employees.Name = "cmb_employees"
         Me.cmb_employees.Size = New System.Drawing.Size(250, 28)
         Me.cmb_employees.TabIndex = 30
@@ -495,50 +532,87 @@ Partial Class FormEVALUATION_DETAILS
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(356, 54)
+        Me.Label9.Location = New System.Drawing.Point(330, 66)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(52, 20)
         Me.Label9.TabIndex = 31
         Me.Label9.Text = "Rate :"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'DateTimePicker1
+        'dt_evalDate
         '
-        Me.DateTimePicker1.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(101, 54)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(126, 26)
-        Me.DateTimePicker1.TabIndex = 32
+        Me.dt_evalDate.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.dt_evalDate.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.dt_evalDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dt_evalDate.Location = New System.Drawing.Point(101, 65)
+        Me.dt_evalDate.Name = "dt_evalDate"
+        Me.dt_evalDate.Size = New System.Drawing.Size(126, 26)
+        Me.dt_evalDate.TabIndex = 32
         '
-        'RichTextBox2
+        'cb_Validated
         '
-        Me.RichTextBox2.Location = New System.Drawing.Point(420, 41)
-        Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(80, 80)
-        Me.RichTextBox2.TabIndex = 1
-        Me.RichTextBox2.Text = ""
+        Me.cb_Validated.AutoSize = True
+        Me.cb_Validated.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.cb_Validated.Location = New System.Drawing.Point(271, 676)
+        Me.cb_Validated.Name = "cb_Validated"
+        Me.cb_Validated.Size = New System.Drawing.Size(95, 24)
+        Me.cb_Validated.TabIndex = 33
+        Me.cb_Validated.Text = "Validated"
+        Me.cb_Validated.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'txt_grand_Total
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.CheckBox1.Location = New System.Drawing.Point(256, 650)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(95, 24)
-        Me.CheckBox1.TabIndex = 33
-        Me.CheckBox1.Text = "Validated"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.txt_grand_Total.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_grand_Total.Location = New System.Drawing.Point(388, 47)
+        Me.txt_grand_Total.Name = "txt_grand_Total"
+        Me.txt_grand_Total.ReadOnly = True
+        Me.txt_grand_Total.Size = New System.Drawing.Size(105, 53)
+        Me.txt_grand_Total.TabIndex = 34
+        Me.txt_grand_Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.Label10.Location = New System.Drawing.Point(489, 60)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(38, 31)
+        Me.Label10.TabIndex = 35
+        Me.Label10.Text = "%"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'txt_rateDescription
+        '
+        Me.txt_rateDescription.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_rateDescription.Location = New System.Drawing.Point(388, 106)
+        Me.txt_rateDescription.Name = "txt_rateDescription"
+        Me.txt_rateDescription.ReadOnly = True
+        Me.txt_rateDescription.Size = New System.Drawing.Size(109, 23)
+        Me.txt_rateDescription.TabIndex = 36
+        Me.txt_rateDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'cmb_evaluator
+        '
+        Me.cmb_evaluator.DropDownHeight = 200
+        Me.cmb_evaluator.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_evaluator.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmb_evaluator.FormattingEnabled = True
+        Me.cmb_evaluator.IntegralHeight = False
+        Me.cmb_evaluator.Location = New System.Drawing.Point(101, 143)
+        Me.cmb_evaluator.Name = "cmb_evaluator"
+        Me.cmb_evaluator.Size = New System.Drawing.Size(250, 28)
+        Me.cmb_evaluator.TabIndex = 37
         '
         'FormEVALUATION_DETAILS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(532, 693)
-        Me.Controls.Add(Me.CheckBox1)
-        Me.Controls.Add(Me.RichTextBox2)
-        Me.Controls.Add(Me.DateTimePicker1)
+        Me.ClientSize = New System.Drawing.Size(535, 721)
+        Me.Controls.Add(Me.cmb_evaluator)
+        Me.Controls.Add(Me.txt_rateDescription)
+        Me.Controls.Add(Me.txt_grand_Total)
+        Me.Controls.Add(Me.cb_Validated)
+        Me.Controls.Add(Me.dt_evalDate)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.cmb_employees)
         Me.Controls.Add(Me.btn_Cancel)
@@ -553,6 +627,7 @@ Partial Class FormEVALUATION_DETAILS
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Label10)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormEVALUATION_DETAILS"
@@ -563,33 +638,33 @@ Partial Class FormEVALUATION_DETAILS
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.num_Consistency, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.num_Productivity, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.num_QualityOfWork, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.num_CommunicationSkills, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.num_ProblemSolving, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.num_TechnicalSkills, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.NumericUpDown7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.num_Professionalism, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.num_Dependability, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.num_Teamwork, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.num_Attendance, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
-        CType(Me.NumericUpDown12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.num_Initiative, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.num_GoalFulfillment, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
-        CType(Me.NumericUpDown11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.num_LearningAbility, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.num_Flexibility, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
-        CType(Me.NumericUpDown15, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown16, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown17, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.num_ConflictResolution, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.num_TeamManagement, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.num_DecisionMaking, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox7.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -600,40 +675,43 @@ Partial Class FormEVALUATION_DETAILS
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents NumericUpDown3 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown2 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown1 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents num_Consistency As System.Windows.Forms.NumericUpDown
+    Friend WithEvents num_Productivity As System.Windows.Forms.NumericUpDown
+    Friend WithEvents num_QualityOfWork As System.Windows.Forms.NumericUpDown
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents NumericUpDown4 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown5 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown6 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents num_CommunicationSkills As System.Windows.Forms.NumericUpDown
+    Friend WithEvents num_ProblemSolving As System.Windows.Forms.NumericUpDown
+    Friend WithEvents num_TechnicalSkills As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents NumericUpDown10 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown7 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown8 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown9 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents num_Professionalism As System.Windows.Forms.NumericUpDown
+    Friend WithEvents num_Dependability As System.Windows.Forms.NumericUpDown
+    Friend WithEvents num_Teamwork As System.Windows.Forms.NumericUpDown
+    Friend WithEvents num_Attendance As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents NumericUpDown12 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown13 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents num_Initiative As System.Windows.Forms.NumericUpDown
+    Friend WithEvents num_GoalFulfillment As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
-    Friend WithEvents NumericUpDown11 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown14 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents num_LearningAbility As System.Windows.Forms.NumericUpDown
+    Friend WithEvents num_Flexibility As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
-    Friend WithEvents NumericUpDown15 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown16 As System.Windows.Forms.NumericUpDown
-    Friend WithEvents NumericUpDown17 As System.Windows.Forms.NumericUpDown
+    Friend WithEvents num_ConflictResolution As System.Windows.Forms.NumericUpDown
+    Friend WithEvents num_TeamManagement As System.Windows.Forms.NumericUpDown
+    Friend WithEvents num_DecisionMaking As System.Windows.Forms.NumericUpDown
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
-    Friend WithEvents RichTextBox1 As System.Windows.Forms.RichTextBox
+    Friend WithEvents txt_remarks As System.Windows.Forms.RichTextBox
     Friend WithEvents btn_Cancel As System.Windows.Forms.Button
     Friend WithEvents btn_Save As System.Windows.Forms.Button
     Friend WithEvents cmb_employees As System.Windows.Forms.ComboBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents RichTextBox2 As System.Windows.Forms.RichTextBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents dt_evalDate As System.Windows.Forms.DateTimePicker
+    Friend WithEvents cb_Validated As System.Windows.Forms.CheckBox
+    Friend WithEvents txt_grand_Total As System.Windows.Forms.TextBox
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents txt_rateDescription As System.Windows.Forms.TextBox
+    Friend WithEvents cmb_evaluator As System.Windows.Forms.ComboBox
 End Class
