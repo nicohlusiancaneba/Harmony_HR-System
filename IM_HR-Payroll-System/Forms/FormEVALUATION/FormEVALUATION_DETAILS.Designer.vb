@@ -23,37 +23,47 @@ Partial Class FormEVALUATION_DETAILS
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.num_Consistency = New System.Windows.Forms.NumericUpDown()
-        Me.num_Productivity = New System.Windows.Forms.NumericUpDown()
-        Me.num_QualityOfWork = New System.Windows.Forms.NumericUpDown()
+        Me.lnk_Consistency = New System.Windows.Forms.LinkLabel()
+        Me.lnk_QualityOfWork = New System.Windows.Forms.LinkLabel()
+        Me.txt_QualityOfWork = New System.Windows.Forms.TextBox()
+        Me.lnk_Productivity = New System.Windows.Forms.LinkLabel()
+        Me.txt_Productivity = New System.Windows.Forms.TextBox()
+        Me.txt_Consistency = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.num_CommunicationSkills = New System.Windows.Forms.NumericUpDown()
-        Me.num_ProblemSolving = New System.Windows.Forms.NumericUpDown()
-        Me.num_TechnicalSkills = New System.Windows.Forms.NumericUpDown()
-        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lnk_CommunicationSkills = New System.Windows.Forms.LinkLabel()
+        Me.lnk_TechnicalSkills = New System.Windows.Forms.LinkLabel()
+        Me.txt_CommunicationSkills = New System.Windows.Forms.TextBox()
+        Me.txt_TechnicalSkills = New System.Windows.Forms.TextBox()
+        Me.txt_ProblemSolving = New System.Windows.Forms.TextBox()
+        Me.lnk_ProblemSolving = New System.Windows.Forms.LinkLabel()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.num_Professionalism = New System.Windows.Forms.NumericUpDown()
-        Me.num_Dependability = New System.Windows.Forms.NumericUpDown()
-        Me.num_Teamwork = New System.Windows.Forms.NumericUpDown()
-        Me.num_Attendance = New System.Windows.Forms.NumericUpDown()
-        Me.Label5 = New System.Windows.Forms.Label()
+        Me.lnk_Professionalism = New System.Windows.Forms.LinkLabel()
+        Me.txt_Professionalism = New System.Windows.Forms.TextBox()
+        Me.lnk_Dependability = New System.Windows.Forms.LinkLabel()
+        Me.txt_Attendance = New System.Windows.Forms.TextBox()
+        Me.lnk_Attendance = New System.Windows.Forms.LinkLabel()
+        Me.lnk_Teamwork = New System.Windows.Forms.LinkLabel()
+        Me.txt_Dependability = New System.Windows.Forms.TextBox()
+        Me.txt_Teamwork = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.num_Initiative = New System.Windows.Forms.NumericUpDown()
-        Me.num_GoalFulfillment = New System.Windows.Forms.NumericUpDown()
-        Me.Label6 = New System.Windows.Forms.Label()
+        Me.lnk_GoalFulfillment = New System.Windows.Forms.LinkLabel()
+        Me.txt_Initiative = New System.Windows.Forms.TextBox()
+        Me.txt_GoalFulfillment = New System.Windows.Forms.TextBox()
+        Me.lnk_Initiative = New System.Windows.Forms.LinkLabel()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.num_LearningAbility = New System.Windows.Forms.NumericUpDown()
-        Me.num_Flexibility = New System.Windows.Forms.NumericUpDown()
-        Me.Label7 = New System.Windows.Forms.Label()
+        Me.lnk_Flexibility = New System.Windows.Forms.LinkLabel()
+        Me.txt_Flexibility = New System.Windows.Forms.TextBox()
+        Me.txt_LearningAbility = New System.Windows.Forms.TextBox()
+        Me.lnk_LearningAbility = New System.Windows.Forms.LinkLabel()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
-        Me.num_ConflictResolution = New System.Windows.Forms.NumericUpDown()
-        Me.num_TeamManagement = New System.Windows.Forms.NumericUpDown()
-        Me.num_DecisionMaking = New System.Windows.Forms.NumericUpDown()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.lnk_ConflictResolution = New System.Windows.Forms.LinkLabel()
+        Me.lnk_DecisionMaking = New System.Windows.Forms.LinkLabel()
+        Me.lnk_TeamManagement = New System.Windows.Forms.LinkLabel()
+        Me.txt_ConflictResolution = New System.Windows.Forms.TextBox()
+        Me.txt_TeamManagement = New System.Windows.Forms.TextBox()
+        Me.txt_DecisionMaking = New System.Windows.Forms.TextBox()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
         Me.txt_remarks = New System.Windows.Forms.RichTextBox()
         Me.btn_Cancel = New System.Windows.Forms.Button()
@@ -66,31 +76,15 @@ Partial Class FormEVALUATION_DETAILS
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txt_rateDescription = New System.Windows.Forms.TextBox()
         Me.cmb_evaluator = New System.Windows.Forms.ComboBox()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.num_Consistency, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.num_Productivity, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.num_QualityOfWork, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.num_CommunicationSkills, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.num_ProblemSolving, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.num_TechnicalSkills, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.num_Professionalism, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.num_Dependability, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.num_Teamwork, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.num_Attendance, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
-        CType(Me.num_Initiative, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.num_GoalFulfillment, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox5.SuspendLayout()
-        CType(Me.num_LearningAbility, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.num_Flexibility, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
-        CType(Me.num_ConflictResolution, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.num_TeamManagement, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.num_DecisionMaking, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox7.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -103,16 +97,6 @@ Partial Class FormEVALUATION_DETAILS
         Me.Label1.TabIndex = 18
         Me.Label1.Text = "Employee Evaluation"
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.Harmony.My.Resources.Resources.evaluation2
-        Me.PictureBox1.Location = New System.Drawing.Point(8, 9)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(37, 31)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 17
-        Me.PictureBox1.TabStop = False
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -124,23 +108,14 @@ Partial Class FormEVALUATION_DETAILS
         Me.Label2.Text = "Date :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Evaluee :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Evaluator :"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(49, 27)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(120, 100)
-        Me.Label3.TabIndex = 20
-        Me.Label3.Text = "Quality of Work:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Productivity:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Consistency:"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.num_Consistency)
-        Me.GroupBox1.Controls.Add(Me.num_Productivity)
-        Me.GroupBox1.Controls.Add(Me.num_QualityOfWork)
-        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.lnk_Consistency)
+        Me.GroupBox1.Controls.Add(Me.lnk_QualityOfWork)
+        Me.GroupBox1.Controls.Add(Me.txt_QualityOfWork)
+        Me.GroupBox1.Controls.Add(Me.lnk_Productivity)
+        Me.GroupBox1.Controls.Add(Me.txt_Productivity)
+        Me.GroupBox1.Controls.Add(Me.txt_Consistency)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.GroupBox1.Location = New System.Drawing.Point(16, 176)
         Me.GroupBox1.Name = "GroupBox1"
@@ -149,48 +124,83 @@ Partial Class FormEVALUATION_DETAILS
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Job Performance (30%)"
         '
-        'num_Consistency
+        'lnk_Consistency
         '
-        Me.num_Consistency.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.num_Consistency.Location = New System.Drawing.Point(175, 104)
-        Me.num_Consistency.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.num_Consistency.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.num_Consistency.Name = "num_Consistency"
-        Me.num_Consistency.Size = New System.Drawing.Size(41, 26)
-        Me.num_Consistency.TabIndex = 24
-        Me.num_Consistency.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.num_Consistency.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.lnk_Consistency.AutoSize = True
+        Me.lnk_Consistency.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnk_Consistency.Location = New System.Drawing.Point(66, 98)
+        Me.lnk_Consistency.Name = "lnk_Consistency"
+        Me.lnk_Consistency.Size = New System.Drawing.Size(95, 20)
+        Me.lnk_Consistency.TabIndex = 43
+        Me.lnk_Consistency.TabStop = True
+        Me.lnk_Consistency.Tag = "txt_Consistency"
+        Me.lnk_Consistency.Text = "Consistency"
         '
-        'num_Productivity
+        'lnk_QualityOfWork
         '
-        Me.num_Productivity.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.num_Productivity.Location = New System.Drawing.Point(175, 65)
-        Me.num_Productivity.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.num_Productivity.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.num_Productivity.Name = "num_Productivity"
-        Me.num_Productivity.Size = New System.Drawing.Size(41, 26)
-        Me.num_Productivity.TabIndex = 23
-        Me.num_Productivity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.num_Productivity.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.lnk_QualityOfWork.AutoSize = True
+        Me.lnk_QualityOfWork.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnk_QualityOfWork.Location = New System.Drawing.Point(39, 32)
+        Me.lnk_QualityOfWork.Name = "lnk_QualityOfWork"
+        Me.lnk_QualityOfWork.Size = New System.Drawing.Size(116, 20)
+        Me.lnk_QualityOfWork.TabIndex = 38
+        Me.lnk_QualityOfWork.TabStop = True
+        Me.lnk_QualityOfWork.Tag = "txt_QualityOfWork"
+        Me.lnk_QualityOfWork.Text = "Quality of Work"
         '
-        'num_QualityOfWork
+        'txt_QualityOfWork
         '
-        Me.num_QualityOfWork.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.num_QualityOfWork.Location = New System.Drawing.Point(175, 25)
-        Me.num_QualityOfWork.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.num_QualityOfWork.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.num_QualityOfWork.Name = "num_QualityOfWork"
-        Me.num_QualityOfWork.Size = New System.Drawing.Size(41, 26)
-        Me.num_QualityOfWork.TabIndex = 22
-        Me.num_QualityOfWork.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.num_QualityOfWork.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.txt_QualityOfWork.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_QualityOfWork.Location = New System.Drawing.Point(169, 28)
+        Me.txt_QualityOfWork.Name = "txt_QualityOfWork"
+        Me.txt_QualityOfWork.ReadOnly = True
+        Me.txt_QualityOfWork.Size = New System.Drawing.Size(31, 26)
+        Me.txt_QualityOfWork.TabIndex = 39
+        Me.txt_QualityOfWork.Text = "0"
+        Me.txt_QualityOfWork.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lnk_Productivity
+        '
+        Me.lnk_Productivity.AutoSize = True
+        Me.lnk_Productivity.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnk_Productivity.Location = New System.Drawing.Point(66, 63)
+        Me.lnk_Productivity.Name = "lnk_Productivity"
+        Me.lnk_Productivity.Size = New System.Drawing.Size(89, 20)
+        Me.lnk_Productivity.TabIndex = 42
+        Me.lnk_Productivity.TabStop = True
+        Me.lnk_Productivity.Tag = "txt_Productivity"
+        Me.lnk_Productivity.Text = "Productivity"
+        '
+        'txt_Productivity
+        '
+        Me.txt_Productivity.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_Productivity.Location = New System.Drawing.Point(169, 60)
+        Me.txt_Productivity.Name = "txt_Productivity"
+        Me.txt_Productivity.ReadOnly = True
+        Me.txt_Productivity.Size = New System.Drawing.Size(31, 26)
+        Me.txt_Productivity.TabIndex = 40
+        Me.txt_Productivity.Text = "0"
+        Me.txt_Productivity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_Consistency
+        '
+        Me.txt_Consistency.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_Consistency.Location = New System.Drawing.Point(169, 92)
+        Me.txt_Consistency.Name = "txt_Consistency"
+        Me.txt_Consistency.ReadOnly = True
+        Me.txt_Consistency.Size = New System.Drawing.Size(31, 26)
+        Me.txt_Consistency.TabIndex = 41
+        Me.txt_Consistency.Text = "0"
+        Me.txt_Consistency.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.num_CommunicationSkills)
-        Me.GroupBox2.Controls.Add(Me.num_ProblemSolving)
-        Me.GroupBox2.Controls.Add(Me.num_TechnicalSkills)
-        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.lnk_CommunicationSkills)
+        Me.GroupBox2.Controls.Add(Me.lnk_TechnicalSkills)
+        Me.GroupBox2.Controls.Add(Me.txt_CommunicationSkills)
+        Me.GroupBox2.Controls.Add(Me.txt_TechnicalSkills)
+        Me.GroupBox2.Controls.Add(Me.txt_ProblemSolving)
+        Me.GroupBox2.Controls.Add(Me.lnk_ProblemSolving)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.GroupBox2.Location = New System.Drawing.Point(16, 321)
         Me.GroupBox2.Name = "GroupBox2"
@@ -199,60 +209,85 @@ Partial Class FormEVALUATION_DETAILS
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Capabilities (20%)"
         '
-        'num_CommunicationSkills
+        'lnk_CommunicationSkills
         '
-        Me.num_CommunicationSkills.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.num_CommunicationSkills.Location = New System.Drawing.Point(175, 107)
-        Me.num_CommunicationSkills.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.num_CommunicationSkills.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.num_CommunicationSkills.Name = "num_CommunicationSkills"
-        Me.num_CommunicationSkills.Size = New System.Drawing.Size(41, 26)
-        Me.num_CommunicationSkills.TabIndex = 24
-        Me.num_CommunicationSkills.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.num_CommunicationSkills.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.lnk_CommunicationSkills.AutoSize = True
+        Me.lnk_CommunicationSkills.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnk_CommunicationSkills.Location = New System.Drawing.Point(2, 94)
+        Me.lnk_CommunicationSkills.Name = "lnk_CommunicationSkills"
+        Me.lnk_CommunicationSkills.Size = New System.Drawing.Size(159, 20)
+        Me.lnk_CommunicationSkills.TabIndex = 49
+        Me.lnk_CommunicationSkills.TabStop = True
+        Me.lnk_CommunicationSkills.Tag = "txt_CommunicationSkills"
+        Me.lnk_CommunicationSkills.Text = "Communication Skills"
         '
-        'num_ProblemSolving
+        'lnk_TechnicalSkills
         '
-        Me.num_ProblemSolving.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.num_ProblemSolving.Location = New System.Drawing.Point(175, 65)
-        Me.num_ProblemSolving.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.num_ProblemSolving.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.num_ProblemSolving.Name = "num_ProblemSolving"
-        Me.num_ProblemSolving.Size = New System.Drawing.Size(41, 26)
-        Me.num_ProblemSolving.TabIndex = 23
-        Me.num_ProblemSolving.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.num_ProblemSolving.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.lnk_TechnicalSkills.AutoSize = True
+        Me.lnk_TechnicalSkills.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnk_TechnicalSkills.Location = New System.Drawing.Point(45, 29)
+        Me.lnk_TechnicalSkills.Name = "lnk_TechnicalSkills"
+        Me.lnk_TechnicalSkills.Size = New System.Drawing.Size(116, 20)
+        Me.lnk_TechnicalSkills.TabIndex = 44
+        Me.lnk_TechnicalSkills.TabStop = True
+        Me.lnk_TechnicalSkills.Tag = "txt_TechnicalSkills"
+        Me.lnk_TechnicalSkills.Text = "Technical Skills"
         '
-        'num_TechnicalSkills
+        'txt_CommunicationSkills
         '
-        Me.num_TechnicalSkills.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.num_TechnicalSkills.Location = New System.Drawing.Point(175, 25)
-        Me.num_TechnicalSkills.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.num_TechnicalSkills.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.num_TechnicalSkills.Name = "num_TechnicalSkills"
-        Me.num_TechnicalSkills.Size = New System.Drawing.Size(41, 26)
-        Me.num_TechnicalSkills.TabIndex = 22
-        Me.num_TechnicalSkills.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.num_TechnicalSkills.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.txt_CommunicationSkills.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_CommunicationSkills.Location = New System.Drawing.Point(175, 89)
+        Me.txt_CommunicationSkills.Name = "txt_CommunicationSkills"
+        Me.txt_CommunicationSkills.ReadOnly = True
+        Me.txt_CommunicationSkills.Size = New System.Drawing.Size(31, 26)
+        Me.txt_CommunicationSkills.TabIndex = 47
+        Me.txt_CommunicationSkills.Text = "0"
+        Me.txt_CommunicationSkills.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label4
+        'txt_TechnicalSkills
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(6, 27)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(163, 100)
-        Me.Label4.TabIndex = 20
-        Me.Label4.Text = "Technical Skills:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Problem Solving:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Communication Skills:"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.txt_TechnicalSkills.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_TechnicalSkills.Location = New System.Drawing.Point(175, 25)
+        Me.txt_TechnicalSkills.Name = "txt_TechnicalSkills"
+        Me.txt_TechnicalSkills.ReadOnly = True
+        Me.txt_TechnicalSkills.Size = New System.Drawing.Size(31, 26)
+        Me.txt_TechnicalSkills.TabIndex = 45
+        Me.txt_TechnicalSkills.Text = "0"
+        Me.txt_TechnicalSkills.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_ProblemSolving
+        '
+        Me.txt_ProblemSolving.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_ProblemSolving.Location = New System.Drawing.Point(175, 57)
+        Me.txt_ProblemSolving.Name = "txt_ProblemSolving"
+        Me.txt_ProblemSolving.ReadOnly = True
+        Me.txt_ProblemSolving.Size = New System.Drawing.Size(31, 26)
+        Me.txt_ProblemSolving.TabIndex = 46
+        Me.txt_ProblemSolving.Text = "0"
+        Me.txt_ProblemSolving.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lnk_ProblemSolving
+        '
+        Me.lnk_ProblemSolving.AutoSize = True
+        Me.lnk_ProblemSolving.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnk_ProblemSolving.Location = New System.Drawing.Point(39, 63)
+        Me.lnk_ProblemSolving.Name = "lnk_ProblemSolving"
+        Me.lnk_ProblemSolving.Size = New System.Drawing.Size(122, 20)
+        Me.lnk_ProblemSolving.TabIndex = 48
+        Me.lnk_ProblemSolving.TabStop = True
+        Me.lnk_ProblemSolving.Tag = "txt_ProblemSolving"
+        Me.lnk_ProblemSolving.Text = "Problem Solving"
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.num_Professionalism)
-        Me.GroupBox3.Controls.Add(Me.num_Dependability)
-        Me.GroupBox3.Controls.Add(Me.num_Teamwork)
-        Me.GroupBox3.Controls.Add(Me.num_Attendance)
-        Me.GroupBox3.Controls.Add(Me.Label5)
+        Me.GroupBox3.Controls.Add(Me.lnk_Professionalism)
+        Me.GroupBox3.Controls.Add(Me.txt_Professionalism)
+        Me.GroupBox3.Controls.Add(Me.lnk_Dependability)
+        Me.GroupBox3.Controls.Add(Me.txt_Attendance)
+        Me.GroupBox3.Controls.Add(Me.lnk_Attendance)
+        Me.GroupBox3.Controls.Add(Me.lnk_Teamwork)
+        Me.GroupBox3.Controls.Add(Me.txt_Dependability)
+        Me.GroupBox3.Controls.Add(Me.txt_Teamwork)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.GroupBox3.Location = New System.Drawing.Point(16, 476)
         Me.GroupBox3.Name = "GroupBox3"
@@ -261,70 +296,104 @@ Partial Class FormEVALUATION_DETAILS
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Behavioral Attributes (20%)"
         '
-        'num_Professionalism
+        'lnk_Professionalism
         '
-        Me.num_Professionalism.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.num_Professionalism.Location = New System.Drawing.Point(175, 143)
-        Me.num_Professionalism.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.num_Professionalism.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.num_Professionalism.Name = "num_Professionalism"
-        Me.num_Professionalism.Size = New System.Drawing.Size(41, 26)
-        Me.num_Professionalism.TabIndex = 25
-        Me.num_Professionalism.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.num_Professionalism.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.lnk_Professionalism.AutoSize = True
+        Me.lnk_Professionalism.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnk_Professionalism.Location = New System.Drawing.Point(35, 139)
+        Me.lnk_Professionalism.Name = "lnk_Professionalism"
+        Me.lnk_Professionalism.Size = New System.Drawing.Size(120, 20)
+        Me.lnk_Professionalism.TabIndex = 57
+        Me.lnk_Professionalism.TabStop = True
+        Me.lnk_Professionalism.Tag = "txt_Professionalism"
+        Me.lnk_Professionalism.Text = "Professionalism"
         '
-        'num_Dependability
+        'txt_Professionalism
         '
-        Me.num_Dependability.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.num_Dependability.Location = New System.Drawing.Point(175, 107)
-        Me.num_Dependability.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.num_Dependability.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.num_Dependability.Name = "num_Dependability"
-        Me.num_Dependability.Size = New System.Drawing.Size(41, 26)
-        Me.num_Dependability.TabIndex = 24
-        Me.num_Dependability.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.num_Dependability.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.txt_Professionalism.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_Professionalism.Location = New System.Drawing.Point(175, 133)
+        Me.txt_Professionalism.Name = "txt_Professionalism"
+        Me.txt_Professionalism.ReadOnly = True
+        Me.txt_Professionalism.Size = New System.Drawing.Size(31, 26)
+        Me.txt_Professionalism.TabIndex = 56
+        Me.txt_Professionalism.Text = "0"
+        Me.txt_Professionalism.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'num_Teamwork
+        'lnk_Dependability
         '
-        Me.num_Teamwork.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.num_Teamwork.Location = New System.Drawing.Point(175, 65)
-        Me.num_Teamwork.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.num_Teamwork.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.num_Teamwork.Name = "num_Teamwork"
-        Me.num_Teamwork.Size = New System.Drawing.Size(41, 26)
-        Me.num_Teamwork.TabIndex = 23
-        Me.num_Teamwork.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.num_Teamwork.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.lnk_Dependability.AutoSize = True
+        Me.lnk_Dependability.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnk_Dependability.Location = New System.Drawing.Point(50, 97)
+        Me.lnk_Dependability.Name = "lnk_Dependability"
+        Me.lnk_Dependability.Size = New System.Drawing.Size(105, 20)
+        Me.lnk_Dependability.TabIndex = 55
+        Me.lnk_Dependability.TabStop = True
+        Me.lnk_Dependability.Tag = "txt_Dependability"
+        Me.lnk_Dependability.Text = "Dependability"
         '
-        'num_Attendance
+        'txt_Attendance
         '
-        Me.num_Attendance.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.num_Attendance.Location = New System.Drawing.Point(175, 25)
-        Me.num_Attendance.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.num_Attendance.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.num_Attendance.Name = "num_Attendance"
-        Me.num_Attendance.Size = New System.Drawing.Size(41, 26)
-        Me.num_Attendance.TabIndex = 22
-        Me.num_Attendance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.num_Attendance.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.txt_Attendance.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_Attendance.Location = New System.Drawing.Point(175, 27)
+        Me.txt_Attendance.Name = "txt_Attendance"
+        Me.txt_Attendance.ReadOnly = True
+        Me.txt_Attendance.Size = New System.Drawing.Size(31, 26)
+        Me.txt_Attendance.TabIndex = 51
+        Me.txt_Attendance.Text = "0"
+        Me.txt_Attendance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label5
+        'lnk_Attendance
         '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(45, 25)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(124, 140)
-        Me.Label5.TabIndex = 20
-        Me.Label5.Text = "Attendance:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Teamwork:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Dependability:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Professionalism:"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.lnk_Attendance.AutoSize = True
+        Me.lnk_Attendance.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnk_Attendance.Location = New System.Drawing.Point(69, 30)
+        Me.lnk_Attendance.Name = "lnk_Attendance"
+        Me.lnk_Attendance.Size = New System.Drawing.Size(92, 20)
+        Me.lnk_Attendance.TabIndex = 50
+        Me.lnk_Attendance.TabStop = True
+        Me.lnk_Attendance.Tag = "txt_Attendance"
+        Me.lnk_Attendance.Text = "Attendance"
+        '
+        'lnk_Teamwork
+        '
+        Me.lnk_Teamwork.AutoSize = True
+        Me.lnk_Teamwork.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnk_Teamwork.Location = New System.Drawing.Point(73, 65)
+        Me.lnk_Teamwork.Name = "lnk_Teamwork"
+        Me.lnk_Teamwork.Size = New System.Drawing.Size(82, 20)
+        Me.lnk_Teamwork.TabIndex = 54
+        Me.lnk_Teamwork.TabStop = True
+        Me.lnk_Teamwork.Tag = "txt_Teamwork"
+        Me.lnk_Teamwork.Text = "Teamwork"
+        '
+        'txt_Dependability
+        '
+        Me.txt_Dependability.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_Dependability.Location = New System.Drawing.Point(175, 91)
+        Me.txt_Dependability.Name = "txt_Dependability"
+        Me.txt_Dependability.ReadOnly = True
+        Me.txt_Dependability.Size = New System.Drawing.Size(31, 26)
+        Me.txt_Dependability.TabIndex = 53
+        Me.txt_Dependability.Text = "0"
+        Me.txt_Dependability.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_Teamwork
+        '
+        Me.txt_Teamwork.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_Teamwork.Location = New System.Drawing.Point(175, 59)
+        Me.txt_Teamwork.Name = "txt_Teamwork"
+        Me.txt_Teamwork.ReadOnly = True
+        Me.txt_Teamwork.Size = New System.Drawing.Size(31, 26)
+        Me.txt_Teamwork.TabIndex = 52
+        Me.txt_Teamwork.Text = "0"
+        Me.txt_Teamwork.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.num_Initiative)
-        Me.GroupBox4.Controls.Add(Me.num_GoalFulfillment)
-        Me.GroupBox4.Controls.Add(Me.Label6)
+        Me.GroupBox4.Controls.Add(Me.lnk_GoalFulfillment)
+        Me.GroupBox4.Controls.Add(Me.txt_Initiative)
+        Me.GroupBox4.Controls.Add(Me.txt_GoalFulfillment)
+        Me.GroupBox4.Controls.Add(Me.lnk_Initiative)
         Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.GroupBox4.Location = New System.Drawing.Point(288, 176)
         Me.GroupBox4.Name = "GroupBox4"
@@ -333,46 +402,58 @@ Partial Class FormEVALUATION_DETAILS
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Goal Achievement (10%)"
         '
-        'num_Initiative
+        'lnk_GoalFulfillment
         '
-        Me.num_Initiative.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.num_Initiative.Location = New System.Drawing.Point(175, 65)
-        Me.num_Initiative.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.num_Initiative.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.num_Initiative.Name = "num_Initiative"
-        Me.num_Initiative.Size = New System.Drawing.Size(41, 26)
-        Me.num_Initiative.TabIndex = 23
-        Me.num_Initiative.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.num_Initiative.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.lnk_GoalFulfillment.AutoSize = True
+        Me.lnk_GoalFulfillment.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnk_GoalFulfillment.Location = New System.Drawing.Point(45, 31)
+        Me.lnk_GoalFulfillment.Name = "lnk_GoalFulfillment"
+        Me.lnk_GoalFulfillment.Size = New System.Drawing.Size(119, 20)
+        Me.lnk_GoalFulfillment.TabIndex = 44
+        Me.lnk_GoalFulfillment.TabStop = True
+        Me.lnk_GoalFulfillment.Tag = "txt_GoalFulfillment"
+        Me.lnk_GoalFulfillment.Text = "Goal Fulfillment"
         '
-        'num_GoalFulfillment
+        'txt_Initiative
         '
-        Me.num_GoalFulfillment.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.num_GoalFulfillment.Location = New System.Drawing.Point(175, 25)
-        Me.num_GoalFulfillment.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.num_GoalFulfillment.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.num_GoalFulfillment.Name = "num_GoalFulfillment"
-        Me.num_GoalFulfillment.Size = New System.Drawing.Size(41, 26)
-        Me.num_GoalFulfillment.TabIndex = 22
-        Me.num_GoalFulfillment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.num_GoalFulfillment.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.txt_Initiative.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_Initiative.Location = New System.Drawing.Point(178, 57)
+        Me.txt_Initiative.Name = "txt_Initiative"
+        Me.txt_Initiative.ReadOnly = True
+        Me.txt_Initiative.Size = New System.Drawing.Size(31, 26)
+        Me.txt_Initiative.TabIndex = 46
+        Me.txt_Initiative.Text = "0"
+        Me.txt_Initiative.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label6
+        'txt_GoalFulfillment
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(49, 27)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(123, 60)
-        Me.Label6.TabIndex = 20
-        Me.Label6.Text = "Goal Fulfillment:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Initiative:"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.txt_GoalFulfillment.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_GoalFulfillment.Location = New System.Drawing.Point(178, 25)
+        Me.txt_GoalFulfillment.Name = "txt_GoalFulfillment"
+        Me.txt_GoalFulfillment.ReadOnly = True
+        Me.txt_GoalFulfillment.Size = New System.Drawing.Size(31, 26)
+        Me.txt_GoalFulfillment.TabIndex = 45
+        Me.txt_GoalFulfillment.Text = "0"
+        Me.txt_GoalFulfillment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lnk_Initiative
+        '
+        Me.lnk_Initiative.AutoSize = True
+        Me.lnk_Initiative.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnk_Initiative.Location = New System.Drawing.Point(97, 63)
+        Me.lnk_Initiative.Name = "lnk_Initiative"
+        Me.lnk_Initiative.Size = New System.Drawing.Size(67, 20)
+        Me.lnk_Initiative.TabIndex = 47
+        Me.lnk_Initiative.TabStop = True
+        Me.lnk_Initiative.Tag = "txt_Initiative"
+        Me.lnk_Initiative.Text = "Initiative"
         '
         'GroupBox5
         '
-        Me.GroupBox5.Controls.Add(Me.num_LearningAbility)
-        Me.GroupBox5.Controls.Add(Me.num_Flexibility)
-        Me.GroupBox5.Controls.Add(Me.Label7)
+        Me.GroupBox5.Controls.Add(Me.lnk_Flexibility)
+        Me.GroupBox5.Controls.Add(Me.txt_Flexibility)
+        Me.GroupBox5.Controls.Add(Me.txt_LearningAbility)
+        Me.GroupBox5.Controls.Add(Me.lnk_LearningAbility)
         Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.GroupBox5.Location = New System.Drawing.Point(288, 283)
         Me.GroupBox5.Name = "GroupBox5"
@@ -381,47 +462,60 @@ Partial Class FormEVALUATION_DETAILS
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Adaptability (10%)"
         '
-        'num_LearningAbility
+        'lnk_Flexibility
         '
-        Me.num_LearningAbility.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.num_LearningAbility.Location = New System.Drawing.Point(175, 65)
-        Me.num_LearningAbility.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.num_LearningAbility.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.num_LearningAbility.Name = "num_LearningAbility"
-        Me.num_LearningAbility.Size = New System.Drawing.Size(41, 26)
-        Me.num_LearningAbility.TabIndex = 23
-        Me.num_LearningAbility.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.num_LearningAbility.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.lnk_Flexibility.AutoSize = True
+        Me.lnk_Flexibility.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnk_Flexibility.Location = New System.Drawing.Point(93, 31)
+        Me.lnk_Flexibility.Name = "lnk_Flexibility"
+        Me.lnk_Flexibility.Size = New System.Drawing.Size(71, 20)
+        Me.lnk_Flexibility.TabIndex = 48
+        Me.lnk_Flexibility.TabStop = True
+        Me.lnk_Flexibility.Tag = "txt_Flexibility"
+        Me.lnk_Flexibility.Text = "Flexibility"
         '
-        'num_Flexibility
+        'txt_Flexibility
         '
-        Me.num_Flexibility.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.num_Flexibility.Location = New System.Drawing.Point(175, 25)
-        Me.num_Flexibility.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.num_Flexibility.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.num_Flexibility.Name = "num_Flexibility"
-        Me.num_Flexibility.Size = New System.Drawing.Size(41, 26)
-        Me.num_Flexibility.TabIndex = 22
-        Me.num_Flexibility.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.num_Flexibility.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.txt_Flexibility.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_Flexibility.Location = New System.Drawing.Point(178, 25)
+        Me.txt_Flexibility.Name = "txt_Flexibility"
+        Me.txt_Flexibility.ReadOnly = True
+        Me.txt_Flexibility.Size = New System.Drawing.Size(31, 26)
+        Me.txt_Flexibility.TabIndex = 49
+        Me.txt_Flexibility.Text = "0"
+        Me.txt_Flexibility.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label7
+        'txt_LearningAbility
         '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(49, 27)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(120, 60)
-        Me.Label7.TabIndex = 20
-        Me.Label7.Text = "Flexibility:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Learning Ability:"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.txt_LearningAbility.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_LearningAbility.Location = New System.Drawing.Point(178, 57)
+        Me.txt_LearningAbility.Name = "txt_LearningAbility"
+        Me.txt_LearningAbility.ReadOnly = True
+        Me.txt_LearningAbility.Size = New System.Drawing.Size(31, 26)
+        Me.txt_LearningAbility.TabIndex = 50
+        Me.txt_LearningAbility.Text = "0"
+        Me.txt_LearningAbility.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'lnk_LearningAbility
+        '
+        Me.lnk_LearningAbility.AutoSize = True
+        Me.lnk_LearningAbility.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnk_LearningAbility.Location = New System.Drawing.Point(48, 63)
+        Me.lnk_LearningAbility.Name = "lnk_LearningAbility"
+        Me.lnk_LearningAbility.Size = New System.Drawing.Size(116, 20)
+        Me.lnk_LearningAbility.TabIndex = 51
+        Me.lnk_LearningAbility.TabStop = True
+        Me.lnk_LearningAbility.Tag = "txt_LearningAbility"
+        Me.lnk_LearningAbility.Text = "Learning Ability"
         '
         'GroupBox6
         '
-        Me.GroupBox6.Controls.Add(Me.num_ConflictResolution)
-        Me.GroupBox6.Controls.Add(Me.num_TeamManagement)
-        Me.GroupBox6.Controls.Add(Me.num_DecisionMaking)
-        Me.GroupBox6.Controls.Add(Me.Label8)
+        Me.GroupBox6.Controls.Add(Me.lnk_ConflictResolution)
+        Me.GroupBox6.Controls.Add(Me.lnk_DecisionMaking)
+        Me.GroupBox6.Controls.Add(Me.lnk_TeamManagement)
+        Me.GroupBox6.Controls.Add(Me.txt_ConflictResolution)
+        Me.GroupBox6.Controls.Add(Me.txt_TeamManagement)
+        Me.GroupBox6.Controls.Add(Me.txt_DecisionMaking)
         Me.GroupBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.GroupBox6.Location = New System.Drawing.Point(288, 390)
         Me.GroupBox6.Name = "GroupBox6"
@@ -430,52 +524,74 @@ Partial Class FormEVALUATION_DETAILS
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Leadership (10%)"
         '
-        'num_ConflictResolution
+        'lnk_ConflictResolution
         '
-        Me.num_ConflictResolution.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.num_ConflictResolution.Location = New System.Drawing.Point(175, 104)
-        Me.num_ConflictResolution.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.num_ConflictResolution.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.num_ConflictResolution.Name = "num_ConflictResolution"
-        Me.num_ConflictResolution.Size = New System.Drawing.Size(41, 26)
-        Me.num_ConflictResolution.TabIndex = 24
-        Me.num_ConflictResolution.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.num_ConflictResolution.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.lnk_ConflictResolution.AutoSize = True
+        Me.lnk_ConflictResolution.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnk_ConflictResolution.Location = New System.Drawing.Point(22, 103)
+        Me.lnk_ConflictResolution.Name = "lnk_ConflictResolution"
+        Me.lnk_ConflictResolution.Size = New System.Drawing.Size(142, 20)
+        Me.lnk_ConflictResolution.TabIndex = 55
+        Me.lnk_ConflictResolution.TabStop = True
+        Me.lnk_ConflictResolution.Tag = "txt_ConflictResolution"
+        Me.lnk_ConflictResolution.Text = "Conflict Resolution"
         '
-        'num_TeamManagement
+        'lnk_DecisionMaking
         '
-        Me.num_TeamManagement.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.num_TeamManagement.Location = New System.Drawing.Point(175, 65)
-        Me.num_TeamManagement.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.num_TeamManagement.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.num_TeamManagement.Name = "num_TeamManagement"
-        Me.num_TeamManagement.Size = New System.Drawing.Size(41, 26)
-        Me.num_TeamManagement.TabIndex = 23
-        Me.num_TeamManagement.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.num_TeamManagement.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.lnk_DecisionMaking.AutoSize = True
+        Me.lnk_DecisionMaking.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnk_DecisionMaking.Location = New System.Drawing.Point(39, 37)
+        Me.lnk_DecisionMaking.Name = "lnk_DecisionMaking"
+        Me.lnk_DecisionMaking.Size = New System.Drawing.Size(125, 20)
+        Me.lnk_DecisionMaking.TabIndex = 50
+        Me.lnk_DecisionMaking.TabStop = True
+        Me.lnk_DecisionMaking.Tag = "txt_DecisionMaking"
+        Me.lnk_DecisionMaking.Text = "Decision Making"
         '
-        'num_DecisionMaking
+        'lnk_TeamManagement
         '
-        Me.num_DecisionMaking.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.num_DecisionMaking.Location = New System.Drawing.Point(175, 25)
-        Me.num_DecisionMaking.Maximum = New Decimal(New Integer() {10, 0, 0, 0})
-        Me.num_DecisionMaking.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
-        Me.num_DecisionMaking.Name = "num_DecisionMaking"
-        Me.num_DecisionMaking.Size = New System.Drawing.Size(41, 26)
-        Me.num_DecisionMaking.TabIndex = 22
-        Me.num_DecisionMaking.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.num_DecisionMaking.Value = New Decimal(New Integer() {1, 0, 0, 0})
+        Me.lnk_TeamManagement.AutoSize = True
+        Me.lnk_TeamManagement.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lnk_TeamManagement.Location = New System.Drawing.Point(17, 71)
+        Me.lnk_TeamManagement.Name = "lnk_TeamManagement"
+        Me.lnk_TeamManagement.Size = New System.Drawing.Size(147, 20)
+        Me.lnk_TeamManagement.TabIndex = 54
+        Me.lnk_TeamManagement.TabStop = True
+        Me.lnk_TeamManagement.Tag = "txt_TeamManagement"
+        Me.lnk_TeamManagement.Text = "Team Management"
         '
-        'Label8
+        'txt_ConflictResolution
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(18, 27)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(151, 100)
-        Me.Label8.TabIndex = 20
-        Me.Label8.Text = "Decision Making:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Team Management:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Conflict Resolution:"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.txt_ConflictResolution.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_ConflictResolution.Location = New System.Drawing.Point(178, 97)
+        Me.txt_ConflictResolution.Name = "txt_ConflictResolution"
+        Me.txt_ConflictResolution.ReadOnly = True
+        Me.txt_ConflictResolution.Size = New System.Drawing.Size(31, 26)
+        Me.txt_ConflictResolution.TabIndex = 53
+        Me.txt_ConflictResolution.Text = "0"
+        Me.txt_ConflictResolution.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_TeamManagement
+        '
+        Me.txt_TeamManagement.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_TeamManagement.Location = New System.Drawing.Point(178, 65)
+        Me.txt_TeamManagement.Name = "txt_TeamManagement"
+        Me.txt_TeamManagement.ReadOnly = True
+        Me.txt_TeamManagement.Size = New System.Drawing.Size(31, 26)
+        Me.txt_TeamManagement.TabIndex = 52
+        Me.txt_TeamManagement.Text = "0"
+        Me.txt_TeamManagement.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'txt_DecisionMaking
+        '
+        Me.txt_DecisionMaking.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.txt_DecisionMaking.Location = New System.Drawing.Point(178, 33)
+        Me.txt_DecisionMaking.Name = "txt_DecisionMaking"
+        Me.txt_DecisionMaking.ReadOnly = True
+        Me.txt_DecisionMaking.Size = New System.Drawing.Size(31, 26)
+        Me.txt_DecisionMaking.TabIndex = 51
+        Me.txt_DecisionMaking.Text = "0"
+        Me.txt_DecisionMaking.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'GroupBox7
         '
@@ -603,11 +719,21 @@ Partial Class FormEVALUATION_DETAILS
         Me.cmb_evaluator.Size = New System.Drawing.Size(250, 28)
         Me.cmb_evaluator.TabIndex = 37
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.Harmony.My.Resources.Resources.evaluation2
+        Me.PictureBox1.Location = New System.Drawing.Point(8, 9)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(37, 31)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 17
+        Me.PictureBox1.TabStop = False
+        '
         'FormEVALUATION_DETAILS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(535, 721)
+        Me.ClientSize = New System.Drawing.Size(533, 721)
         Me.Controls.Add(Me.cmb_evaluator)
         Me.Controls.Add(Me.txt_rateDescription)
         Me.Controls.Add(Me.txt_grand_Total)
@@ -635,37 +761,20 @@ Partial Class FormEVALUATION_DETAILS
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Employee Evaluation"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.num_Consistency, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.num_Productivity, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.num_QualityOfWork, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.num_CommunicationSkills, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.num_ProblemSolving, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.num_TechnicalSkills, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
-        CType(Me.num_Professionalism, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.num_Dependability, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.num_Teamwork, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.num_Attendance, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
-        CType(Me.num_Initiative, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.num_GoalFulfillment, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
-        CType(Me.num_LearningAbility, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.num_Flexibility, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
-        CType(Me.num_ConflictResolution, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.num_TeamManagement, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.num_DecisionMaking, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox7.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -673,35 +782,12 @@ Partial Class FormEVALUATION_DETAILS
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents num_Consistency As System.Windows.Forms.NumericUpDown
-    Friend WithEvents num_Productivity As System.Windows.Forms.NumericUpDown
-    Friend WithEvents num_QualityOfWork As System.Windows.Forms.NumericUpDown
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents num_CommunicationSkills As System.Windows.Forms.NumericUpDown
-    Friend WithEvents num_ProblemSolving As System.Windows.Forms.NumericUpDown
-    Friend WithEvents num_TechnicalSkills As System.Windows.Forms.NumericUpDown
-    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents num_Professionalism As System.Windows.Forms.NumericUpDown
-    Friend WithEvents num_Dependability As System.Windows.Forms.NumericUpDown
-    Friend WithEvents num_Teamwork As System.Windows.Forms.NumericUpDown
-    Friend WithEvents num_Attendance As System.Windows.Forms.NumericUpDown
-    Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents num_Initiative As System.Windows.Forms.NumericUpDown
-    Friend WithEvents num_GoalFulfillment As System.Windows.Forms.NumericUpDown
-    Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
-    Friend WithEvents num_LearningAbility As System.Windows.Forms.NumericUpDown
-    Friend WithEvents num_Flexibility As System.Windows.Forms.NumericUpDown
-    Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
-    Friend WithEvents num_ConflictResolution As System.Windows.Forms.NumericUpDown
-    Friend WithEvents num_TeamManagement As System.Windows.Forms.NumericUpDown
-    Friend WithEvents num_DecisionMaking As System.Windows.Forms.NumericUpDown
-    Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents GroupBox7 As System.Windows.Forms.GroupBox
     Friend WithEvents txt_remarks As System.Windows.Forms.RichTextBox
     Friend WithEvents btn_Cancel As System.Windows.Forms.Button
@@ -714,4 +800,38 @@ Partial Class FormEVALUATION_DETAILS
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents txt_rateDescription As System.Windows.Forms.TextBox
     Friend WithEvents cmb_evaluator As System.Windows.Forms.ComboBox
+    Friend WithEvents lnk_QualityOfWork As System.Windows.Forms.LinkLabel
+    Friend WithEvents lnk_Consistency As System.Windows.Forms.LinkLabel
+    Friend WithEvents txt_QualityOfWork As System.Windows.Forms.TextBox
+    Friend WithEvents lnk_Productivity As System.Windows.Forms.LinkLabel
+    Friend WithEvents txt_Productivity As System.Windows.Forms.TextBox
+    Friend WithEvents txt_Consistency As System.Windows.Forms.TextBox
+    Friend WithEvents lnk_CommunicationSkills As System.Windows.Forms.LinkLabel
+    Friend WithEvents lnk_TechnicalSkills As System.Windows.Forms.LinkLabel
+    Friend WithEvents txt_CommunicationSkills As System.Windows.Forms.TextBox
+    Friend WithEvents txt_TechnicalSkills As System.Windows.Forms.TextBox
+    Friend WithEvents txt_ProblemSolving As System.Windows.Forms.TextBox
+    Friend WithEvents lnk_ProblemSolving As System.Windows.Forms.LinkLabel
+    Friend WithEvents lnk_Professionalism As System.Windows.Forms.LinkLabel
+    Friend WithEvents txt_Professionalism As System.Windows.Forms.TextBox
+    Friend WithEvents lnk_Dependability As System.Windows.Forms.LinkLabel
+    Friend WithEvents txt_Attendance As System.Windows.Forms.TextBox
+    Friend WithEvents lnk_Attendance As System.Windows.Forms.LinkLabel
+    Friend WithEvents lnk_Teamwork As System.Windows.Forms.LinkLabel
+    Friend WithEvents txt_Dependability As System.Windows.Forms.TextBox
+    Friend WithEvents txt_Teamwork As System.Windows.Forms.TextBox
+    Friend WithEvents lnk_GoalFulfillment As System.Windows.Forms.LinkLabel
+    Friend WithEvents txt_Initiative As System.Windows.Forms.TextBox
+    Friend WithEvents txt_GoalFulfillment As System.Windows.Forms.TextBox
+    Friend WithEvents lnk_Initiative As System.Windows.Forms.LinkLabel
+    Friend WithEvents lnk_Flexibility As System.Windows.Forms.LinkLabel
+    Friend WithEvents txt_Flexibility As System.Windows.Forms.TextBox
+    Friend WithEvents txt_LearningAbility As System.Windows.Forms.TextBox
+    Friend WithEvents lnk_LearningAbility As System.Windows.Forms.LinkLabel
+    Friend WithEvents lnk_ConflictResolution As System.Windows.Forms.LinkLabel
+    Friend WithEvents lnk_DecisionMaking As System.Windows.Forms.LinkLabel
+    Friend WithEvents lnk_TeamManagement As System.Windows.Forms.LinkLabel
+    Friend WithEvents txt_ConflictResolution As System.Windows.Forms.TextBox
+    Friend WithEvents txt_TeamManagement As System.Windows.Forms.TextBox
+    Friend WithEvents txt_DecisionMaking As System.Windows.Forms.TextBox
 End Class

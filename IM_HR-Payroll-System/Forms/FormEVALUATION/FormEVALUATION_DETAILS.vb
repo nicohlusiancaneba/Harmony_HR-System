@@ -1,6 +1,7 @@
 ﻿Public Class FormEVALUATION_DETAILS
     Dim evaluation_ID, employee_ID As Integer
-
+    Public criteriaScore As Integer = 0
+    Public criteriaText As String
     Private Sub FormEVALUATION_DETAILS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         sqlSTR = "Select * from employees where Employment_Status != 'Resigned' or Employment_Status != 'Terminated' order by Last_Name, First_Name"
         FILLComboBox_Employee(sqlSTR, cmb_employees)
@@ -15,23 +16,23 @@
                 cmb_employees.Text = sqlDT.Rows(0)("EmployeeName")
                 cmb_evaluator.Text = sqlDT.Rows(0)("Evaluator_Name")
                 dt_evalDate.Text = sqlDT.Rows(0)("Evaluation_Date")
-                num_QualityOfWork.Text = sqlDT.Rows(0)("Quality_of_Work")
-                num_Productivity.Text = sqlDT.Rows(0)("Productivity")
-                num_Consistency.Text = sqlDT.Rows(0)("Consistency")
-                num_TechnicalSkills.Text = sqlDT.Rows(0)("Technical_Skills")
-                num_ProblemSolving.Text = sqlDT.Rows(0)("Problem_Solving")
-                num_CommunicationSkills.Text = sqlDT.Rows(0)("Communication_Skills")
-                num_Attendance.Text = sqlDT.Rows(0)("Attendance")
-                num_Teamwork.Text = sqlDT.Rows(0)("Teamwork")
-                num_Dependability.Text = sqlDT.Rows(0)("Dependability")
-                num_Professionalism.Text = sqlDT.Rows(0)("Professionalism")
-                num_GoalFulfillment.Text = sqlDT.Rows(0)("Goal_Fulfillment")
-                num_Initiative.Text = sqlDT.Rows(0)("Initiative")
-                num_Flexibility.Text = sqlDT.Rows(0)("Flexibility")
-                num_LearningAbility.Text = sqlDT.Rows(0)("Learning_Ability")
-                num_DecisionMaking.Text = sqlDT.Rows(0)("Decision_Making")
-                num_TeamManagement.Text = sqlDT.Rows(0)("Team_Management")
-                num_ConflictResolution.Text = sqlDT.Rows(0)("Conflict_Resolution")
+                txt_QualityOfWork.Text = sqlDT.Rows(0)("Quality_of_Work")
+                txt_Productivity.Text = sqlDT.Rows(0)("Productivity")
+                txt_Consistency.Text = sqlDT.Rows(0)("Consistency")
+                txt_TechnicalSkills.Text = sqlDT.Rows(0)("Technical_Skills")
+                txt_ProblemSolving.Text = sqlDT.Rows(0)("Problem_Solving")
+                txt_CommunicationSkills.Text = sqlDT.Rows(0)("Communication_Skills")
+                txt_Attendance.Text = sqlDT.Rows(0)("Attendance")
+                txt_Teamwork.Text = sqlDT.Rows(0)("Teamwork")
+                txt_Dependability.Text = sqlDT.Rows(0)("Dependability")
+                txt_Professionalism.Text = sqlDT.Rows(0)("Professionalism")
+                txt_GoalFulfillment.Text = sqlDT.Rows(0)("Goal_Fulfillment")
+                txt_Initiative.Text = sqlDT.Rows(0)("Initiative")
+                txt_Flexibility.Text = sqlDT.Rows(0)("Flexibility")
+                txt_LearningAbility.Text = sqlDT.Rows(0)("Learning_Ability")
+                txt_DecisionMaking.Text = sqlDT.Rows(0)("Decision_Making")
+                txt_TeamManagement.Text = sqlDT.Rows(0)("Team_Management")
+                txt_ConflictResolution.Text = sqlDT.Rows(0)("Conflict_Resolution")
                 cb_Validated.Tag = sqlDT.Rows(0)("Evaluation_Validated")
             End If
 
@@ -41,7 +42,23 @@
             dt_evalDate.Text = Today()
             cmb_employees.SelectedIndex = -1
             txt_remarks.Text = ""
-            ResetNumFields()
+            txt_QualityOfWork.Text = "0"
+            txt_Productivity.Text = "0"
+            txt_Consistency.Text = "0"
+            txt_TechnicalSkills.Text = "0"
+            txt_ProblemSolving.Text = "0"
+            txt_CommunicationSkills.Text = "0"
+            txt_Attendance.Text = "0"
+            txt_Teamwork.Text = "0"
+            txt_Dependability.Text = "0"
+            txt_Professionalism.Text = "0"
+            txt_GoalFulfillment.Text = "0"
+            txt_Initiative.Text = "0"
+            txt_Flexibility.Text = "0"
+            txt_LearningAbility.Text = "0"
+            txt_DecisionMaking.Text = "0"
+            txt_TeamManagement.Text = "0"
+            txt_ConflictResolution.Text = "0"
             cb_Validated.Checked = False
             TotalPercentage_Compute()
         End If
@@ -50,51 +67,59 @@
             cb_Validated.Checked = True
             dt_evalDate.Enabled = False
             cmb_employees.Enabled = False
-            num_QualityOfWork.Enabled = False
-            num_Productivity.Enabled = False
-            num_Consistency.Enabled = False
-            num_TechnicalSkills.Enabled = False
-            num_ProblemSolving.Enabled = False
-            num_CommunicationSkills.Enabled = False
-            num_Attendance.Enabled = False
-            num_Teamwork.Enabled = False
-            num_Dependability.Enabled = False
-            num_Professionalism.Enabled = False
-            num_GoalFulfillment.Enabled = False
-            num_Initiative.Enabled = False
-            num_Flexibility.Enabled = False
-            num_LearningAbility.Enabled = False
-            num_DecisionMaking.Enabled = False
-            num_TeamManagement.Enabled = False
-            num_ConflictResolution.Enabled = False
+            txt_QualityOfWork.Enabled = False
+            txt_Productivity.Enabled = False
+            txt_Consistency.Enabled = False
+            txt_TechnicalSkills.Enabled = False
+            txt_ProblemSolving.Enabled = False
+            txt_CommunicationSkills.Enabled = False
+            txt_Attendance.Enabled = False
+            txt_Teamwork.Enabled = False
+            txt_Dependability.Enabled = False
+            txt_Professionalism.Enabled = False
+            txt_GoalFulfillment.Enabled = False
+            txt_Initiative.Enabled = False
+            txt_Flexibility.Enabled = False
+            txt_LearningAbility.Enabled = False
+            txt_DecisionMaking.Enabled = False
+            txt_TeamManagement.Enabled = False
+            txt_ConflictResolution.Enabled = False
             cb_Validated.Enabled = False
         Else
             cb_Validated.Checked = False
             dt_evalDate.Enabled = True
             cmb_employees.Enabled = True
-            num_QualityOfWork.Enabled = True
-            num_Productivity.Enabled = True
-            num_Consistency.Enabled = True
-            num_TechnicalSkills.Enabled = True
-            num_ProblemSolving.Enabled = True
-            num_CommunicationSkills.Enabled = True
-            num_Attendance.Enabled = True
-            num_Teamwork.Enabled = True
-            num_Dependability.Enabled = True
-            num_Professionalism.Enabled = True
-            num_GoalFulfillment.Enabled = True
-            num_Initiative.Enabled = True
-            num_Flexibility.Enabled = True
-            num_LearningAbility.Enabled = True
-            num_DecisionMaking.Enabled = True
-            num_TeamManagement.Enabled = True
-            num_ConflictResolution.Enabled = True
+            txt_QualityOfWork.Enabled = True
+            txt_Productivity.Enabled = True
+            txt_Consistency.Enabled = True
+            txt_TechnicalSkills.Enabled = True
+            txt_ProblemSolving.Enabled = True
+            txt_CommunicationSkills.Enabled = True
+            txt_Attendance.Enabled = True
+            txt_Teamwork.Enabled = True
+            txt_Dependability.Enabled = True
+            txt_Professionalism.Enabled = True
+            txt_GoalFulfillment.Enabled = True
+            txt_Initiative.Enabled = True
+            txt_Flexibility.Enabled = True
+            txt_LearningAbility.Enabled = True
+            txt_DecisionMaking.Enabled = True
+            txt_TeamManagement.Enabled = True
+            txt_ConflictResolution.Enabled = True
             cb_Validated.Enabled = True
         End If
 
     End Sub
 
+
+
+
     Private Sub btn_Save_Click(sender As Object, e As EventArgs) Handles btn_Save.Click
+        If Catched_ZeroBlank() Then
+            MsgBox("Check criteria scores – they cannot be left blank or set to zero.", MsgBoxStyle.Exclamation, msgBox_header)
+            Exit Sub
+        End If
+
         If cb_Validated.Checked Then
             cb_Validated.Tag = "Yes"
             If MsgBox("Would you like to validate this evaluation record? Please note that once validated, it cannot be modified.", MsgBoxStyle.YesNo + MsgBoxStyle.Information, msgBox_header) = MsgBoxResult.No Then
@@ -107,18 +132,18 @@
         End If
 
         If cmb_employees.Text = "" Then
-            MsgBox("Evaluee cannot be blank, try again.")
+            MsgBox("Evaluee cannot be blank, try again.", MsgBoxStyle.Exclamation, msgBox_header)
             Exit Sub
         End If
 
         If cmb_evaluator.Text = "" Then
-            MsgBox("Evaluator cannot be blank, try again.")
+            MsgBox("Evaluator cannot be blank, try again.", MsgBoxStyle.Exclamation, msgBox_header)
             Exit Sub
         End If
 
 
         If cmb_employees.Text = cmb_evaluator.Text Then
-            MsgBox("Evaluee and Evaluator cannot be the same, try again.")
+            MsgBox("Evaluee and Evaluator cannot be the same, try again.", MsgBoxStyle.Exclamation, msgBox_header)
             Exit Sub
         End If
 
@@ -127,23 +152,23 @@
     "Evaluation_Date = '" & dt_evalDate.Text & "', " & _
     "Employee_ID = " & Split(cmb_employees.Text, " - ")(0) & ", " & _
     "Evaluator_ID = " & Split(cmb_evaluator.Text, " - ")(0) & ", " & _
-    "Quality_of_Work = " & num_QualityOfWork.Text & ", " & _
-    "Productivity = " & num_Productivity.Text & ", " & _
-    "Consistency = " & num_Consistency.Text & ", " & _
-    "Technical_Skills = " & num_TechnicalSkills.Text & ", " & _
-    "Problem_Solving = " & num_ProblemSolving.Text & ", " & _
-    "Communication_Skills = " & num_CommunicationSkills.Text & ", " & _
-    "Attendance = " & num_Attendance.Text & ", " & _
-    "Teamwork = " & num_Teamwork.Text & ", " & _
-    "Dependability = " & num_Dependability.Text & ", " & _
-    "Professionalism = " & num_Professionalism.Text & ", " & _
-    "Goal_Fulfillment = " & num_GoalFulfillment.Text & ", " & _
-    "Initiative = " & num_Initiative.Text & ", " & _
-    "Flexibility = " & num_Flexibility.Text & ", " & _
-    "Learning_Ability = " & num_LearningAbility.Text & ", " & _
-    "Decision_Making = " & num_DecisionMaking.Text & ", " & _
-    "Team_Management = " & num_TeamManagement.Text & ", " & _
-    "Conflict_Resolution = " & num_ConflictResolution.Text & ", " & _
+    "Quality_of_Work = " & txt_QualityOfWork.Text & ", " & _
+    "Productivity = " & txt_Productivity.Text & ", " & _
+    "Consistency = " & txt_Consistency.Text & ", " & _
+    "Technical_Skills = " & txt_TechnicalSkills.Text & ", " & _
+    "Problem_Solving = " & txt_ProblemSolving.Text & ", " & _
+    "Communication_Skills = " & txt_CommunicationSkills.Text & ", " & _
+    "Attendance = " & txt_Attendance.Text & ", " & _
+    "Teamwork = " & txt_Teamwork.Text & ", " & _
+    "Dependability = " & txt_Dependability.Text & ", " & _
+    "Professionalism = " & txt_Professionalism.Text & ", " & _
+    "Goal_Fulfillment = " & txt_GoalFulfillment.Text & ", " & _
+    "Initiative = " & txt_Initiative.Text & ", " & _
+    "Flexibility = " & txt_Flexibility.Text & ", " & _
+    "Learning_Ability = " & txt_LearningAbility.Text & ", " & _
+    "Decision_Making = " & txt_DecisionMaking.Text & ", " & _
+    "Team_Management = " & txt_TeamManagement.Text & ", " & _
+    "Conflict_Resolution = " & txt_ConflictResolution.Text & ", " & _
     "Evaluation_Remarks = '" & txt_remarks.Text & "', " & _
     "Total_Percentage = '" & txt_grand_Total.Text & "', " & _
     "Evaluation_Description = '" & txt_rateDescription.Text & "', " & _
@@ -159,12 +184,12 @@
     "Evaluation_Remarks, Evaluation_Description, Evaluation_Validated, Total_Percentage, Evaluator_ID) " & _
     "VALUES ('" & dt_evalDate.Text & "', " & _
     Split(cmb_employees.Text, " - ")(0) & ", " & _
-    num_QualityOfWork.Text & ", " & num_Productivity.Text & ", " & num_Consistency.Text & ", " & _
-    num_TechnicalSkills.Text & ", " & num_ProblemSolving.Text & ", " & num_CommunicationSkills.Text & ", " & _
-    num_Attendance.Text & ", " & num_Teamwork.Text & ", " & num_Dependability.Text & ", " & _
-    num_Professionalism.Text & ", " & num_GoalFulfillment.Text & ", " & num_Initiative.Text & ", " & _
-    num_Flexibility.Text & ", " & num_LearningAbility.Text & ", " & num_DecisionMaking.Text & ", " & _
-    num_TeamManagement.Text & ", " & num_ConflictResolution.Text & ", " & _
+    txt_QualityOfWork.Text & ", " & txt_Productivity.Text & ", " & txt_Consistency.Text & ", " & _
+    txt_TechnicalSkills.Text & ", " & txt_ProblemSolving.Text & ", " & txt_CommunicationSkills.Text & ", " & _
+    txt_Attendance.Text & ", " & txt_Teamwork.Text & ", " & txt_Dependability.Text & ", " & _
+    txt_Professionalism.Text & ", " & txt_GoalFulfillment.Text & ", " & txt_Initiative.Text & ", " & _
+    txt_Flexibility.Text & ", " & txt_LearningAbility.Text & ", " & txt_DecisionMaking.Text & ", " & _
+    txt_TeamManagement.Text & ", " & txt_ConflictResolution.Text & ", " & _
     "'" & txt_remarks.Text & "', '" & txt_rateDescription.Text & "', '" & cb_Validated.Tag & "', " & txt_grand_Total.Text & ", " & Split(cmb_evaluator.Text, " - ")(0) & ")"
             ExecuteSQLQuery(sqlSTR)
         End If
@@ -175,12 +200,12 @@
     Private Sub TotalPercentage_Compute()
         Dim Job_Performance, Capabilities, Behavorial_Attributes,
             Goal_Achievement, Adaptability, Leadership, Grand_Total As Double
-        Job_Performance = (((CInt(num_QualityOfWork.Text) + CInt(num_Productivity.Text) + CInt(num_Consistency.Text)) / 30) * 0.3) * 100
-        Capabilities = (((CInt(num_TechnicalSkills.Text) + CInt(num_ProblemSolving.Text) + CInt(num_CommunicationSkills.Text)) / 30) * 0.2) * 100
-        Behavorial_Attributes = (((CInt(num_Attendance.Text) + CInt(num_Teamwork.Text) + CInt(num_Dependability.Text) + CInt(num_Professionalism.Text)) / 40) * 0.2) * 100
-        Goal_Achievement = (((CInt(num_GoalFulfillment.Text) + CInt(num_Initiative.Text)) / 20) * 0.1) * 100
-        Adaptability = (((CInt(num_Flexibility.Text) + CInt(num_LearningAbility.Text)) / 20) * 0.1) * 100
-        Leadership = (((CInt(num_DecisionMaking.Text) + CInt(num_TeamManagement.Text) + CInt(num_ConflictResolution.Text)) / 30) * 0.1) * 100
+        Job_Performance = (((Val(txt_QualityOfWork.Text) + Val(txt_Productivity.Text) + Val(txt_Consistency.Text)) / 30) * 0.3) * 100
+        Capabilities = (((Val(txt_TechnicalSkills.Text) + Val(txt_ProblemSolving.Text) + Val(txt_CommunicationSkills.Text)) / 30) * 0.2) * 100
+        Behavorial_Attributes = (((Val(txt_Attendance.Text) + Val(txt_Teamwork.Text) + Val(txt_Dependability.Text) + Val(txt_Professionalism.Text)) / 40) * 0.2) * 100
+        Goal_Achievement = (((Val(txt_GoalFulfillment.Text) + Val(txt_Initiative.Text)) / 20) * 0.1) * 100
+        Adaptability = (((Val(txt_Flexibility.Text) + Val(txt_LearningAbility.Text)) / 20) * 0.1) * 100
+        Leadership = (((Val(txt_DecisionMaking.Text) + Val(txt_TeamManagement.Text) + Val(txt_ConflictResolution.Text)) / 30) * 0.1) * 100
         Grand_Total = Job_Performance + Capabilities + Behavorial_Attributes +
             Goal_Achievement + Adaptability + Leadership
         txt_grand_Total.Text = Grand_Total.ToString("F2")
@@ -207,48 +232,86 @@
 
     End Sub
 
-    Private Sub num_ValueChanged(sender As Object, e As EventArgs) Handles num_QualityOfWork.TextChanged, num_Productivity.TextChanged,
-                                                                            num_Consistency.TextChanged, num_TechnicalSkills.TextChanged,
-                                                                            num_ProblemSolving.TextChanged, num_CommunicationSkills.TextChanged,
-                                                                            num_Attendance.TextChanged, num_Teamwork.TextChanged, num_Dependability.TextChanged,
-                                                                            num_Professionalism.TextChanged, num_GoalFulfillment.TextChanged, num_Initiative.TextChanged,
-                                                                            num_Flexibility.TextChanged, num_LearningAbility.TextChanged, num_DecisionMaking.TextChanged,
-                                                                            num_TeamManagement.TextChanged, num_ConflictResolution.TextChanged
+    Private Sub txt_ValueChanged(sender As Object, e As EventArgs) Handles txt_QualityOfWork.TextChanged, txt_Productivity.TextChanged,
+                                                                            txt_Consistency.TextChanged, txt_TechnicalSkills.TextChanged,
+                                                                            txt_ProblemSolving.TextChanged, txt_CommunicationSkills.TextChanged,
+                                                                            txt_Attendance.TextChanged, txt_Teamwork.TextChanged, txt_Dependability.TextChanged,
+                                                                            txt_Professionalism.TextChanged, txt_GoalFulfillment.TextChanged, txt_Initiative.TextChanged,
+                                                                            txt_Flexibility.TextChanged, txt_LearningAbility.TextChanged, txt_DecisionMaking.TextChanged,
+                                                                            txt_TeamManagement.TextChanged, txt_ConflictResolution.TextChanged
 
-        Dim numControl As NumericUpDown = TryCast(sender, NumericUpDown)
+        Dim numControl As TextBox = TryCast(sender, TextBox)
 
-        If numControl.Text = "" Then numControl.Text = 1
+        If numControl.Text = "" Then numControl.Text = 0
         If CInt(numControl.Text) > 10 Then numControl.Text = 10
-        If CInt(numControl.Text) < 1 Then numControl.Text = 1
+        If CInt(numControl.Text) < 0 Then numControl.Text = 0
 
         TotalPercentage_Compute()
     End Sub
 
-    Private Sub ResetNumFields()
-        ' Loop through all controls in the form, including those inside GroupBoxes
-        For Each ctrl As Control In Me.Controls
-            ResetNumericUpDowns(ctrl) ' Call recursive function
-        Next
-    End Sub
-
-    Private Sub ResetNumericUpDowns(parent As Control)
-        ' Loop through all child controls
-        For Each ctrl As Control In parent.Controls
-            ' Check if the control is a NumericUpDown and its name starts with "num_"
-            If TypeOf ctrl Is NumericUpDown AndAlso ctrl.Name.StartsWith("num_") Then
-                Dim numCtrl As NumericUpDown = DirectCast(ctrl, NumericUpDown)
-                numCtrl.Value = 1 ' Reset value to 1
-            End If
-
-            ' If the control has child controls (like a GroupBox or Panel), call recursively
-            If ctrl.HasChildren Then
-                ResetNumericUpDowns(ctrl)
-            End If
-        Next
-    End Sub
+    
 
 
     Private Sub btn_Cancel_Click(sender As Object, e As EventArgs) Handles btn_Cancel.Click
         Me.Close()
     End Sub
+
+    Private Sub lnk_QualityOfWork_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles lnk_QualityOfWork.LinkClicked, lnk_Productivity.LinkClicked,
+                                                                            lnk_Consistency.LinkClicked, lnk_TechnicalSkills.LinkClicked,
+                                                                            lnk_ProblemSolving.LinkClicked, lnk_CommunicationSkills.LinkClicked,
+                                                                            lnk_Attendance.LinkClicked, lnk_Teamwork.LinkClicked, lnk_Dependability.LinkClicked,
+                                                                            lnk_Professionalism.LinkClicked, lnk_GoalFulfillment.LinkClicked, lnk_Initiative.LinkClicked,
+                                                                            lnk_Flexibility.LinkClicked, lnk_LearningAbility.LinkClicked, lnk_DecisionMaking.LinkClicked,
+                                                                            lnk_TeamManagement.LinkClicked, lnk_ConflictResolution.LinkClicked
+        Dim lnkLabel As LinkLabel = TryCast(sender, LinkLabel)
+
+        EvaluationPerCriteria(lnkLabel.Text, GetTextBoxByName(lnkLabel.Tag))
+    End Sub
+
+    Private Sub EvaluationPerCriteria(criteriaName As String, criteriaTotal As TextBox)
+        criteriaScore = 0
+        criteriaText = criteriaName
+        FormEVALUATION_QUESTIONS.ShowDialog()
+        criteriaTotal.Text = criteriaScore
+    End Sub
+
+    Private Function GetTextBoxByName(textBoxName As String) As TextBox
+        ' Loop through all controls on the form
+        For Each ctrl As Control In Me.Controls
+            ' Check only GroupBoxes
+            If TypeOf ctrl Is GroupBox Then
+                ' Loop through all controls inside the GroupBox
+                For Each innerCtrl As Control In ctrl.Controls
+                    If TypeOf innerCtrl Is TextBox AndAlso innerCtrl.Name = textBoxName Then
+                        Return DirectCast(innerCtrl, TextBox)
+                    End If
+                Next
+            End If
+        Next
+        Return Nothing
+    End Function
+
+    Private Function Catched_ZeroBlank() As Boolean
+        ' Loop through all controls on the form
+        For Each ctrl As Control In Me.Controls
+            ' Check only GroupBoxes
+            If TypeOf ctrl Is GroupBox Then
+                ' Loop through all TextBoxes inside the GroupBox
+                For Each innerCtrl As Control In ctrl.Controls
+                    If TypeOf innerCtrl Is TextBox AndAlso innerCtrl.Name.StartsWith("txt_") Then
+                        Dim txtBox As TextBox = DirectCast(innerCtrl, TextBox)
+
+                        ' Check if TextBox is blank or zero
+                        If String.IsNullOrWhiteSpace(txtBox.Text) OrElse txtBox.Text = "0" Then
+                            Return True ' Found a blank or zero TextBox
+                        End If
+                    End If
+                Next
+            End If
+        Next
+        Return False ' No blank or zero TextBox found
+    End Function
+
+ 
+
 End Class
