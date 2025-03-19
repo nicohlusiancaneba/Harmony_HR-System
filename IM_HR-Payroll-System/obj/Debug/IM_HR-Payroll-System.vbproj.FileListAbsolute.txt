@@ -109,3 +109,5 @@ B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormEVALUATION_DETAI
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormFILE_MANAGE.resources
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\IM_HR-Payroll-System.vbprojResolveAssemblyReference.cache
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormEVALUATION_QUESTIONS.resources
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormREPORTS.resources
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormREPORT_CREATE.resources

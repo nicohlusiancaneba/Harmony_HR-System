@@ -43,6 +43,45 @@ Module ModProcedure
         Next i
     End Sub
 
+    Public Sub totalsListView(ByVal listViewName As ListView, ByVal columnsToSum As String)
+        ' Parse the column indices from the input string
+        Dim columns As List(Of Integer) = columnsToSum.Split(",").Select(Function(c) Convert.ToInt32(c.Trim())).ToList()
+
+        ' Initialize total values for the specified columns
+        Dim totals As New Dictionary(Of Integer, Decimal)
+        For Each colIndex In columns
+            totals(colIndex) = 0D
+        Next
+
+        ' Calculate the sum for the specified columns
+        For Each item As ListViewItem In listViewName.Items
+            For Each colIndex In columns
+                Dim value As Decimal
+                If Decimal.TryParse(item.SubItems(colIndex).Text, value) Then
+                    totals(colIndex) += value
+                End If
+            Next
+        Next
+
+        ' Create a new row for totals
+        Dim totalItem As New ListViewItem("")
+
+        ' Populate the row with totals and blanks where needed
+        For i As Integer = 1 To listViewName.Columns.Count - 1
+            If columns.Contains(i) Then
+                totalItem.SubItems.Add(totals(i).ToString("N2")) ' Format as needed
+            Else
+                totalItem.SubItems.Add("") ' Leave blank
+            End If
+        Next
+
+        totalItem.BackColor = Color.Black
+        totalItem.ForeColor = Color.White
+
+        ' Add the total row to the ListView
+        listViewName.Items.Add(totalItem)
+    End Sub
+
     Public Sub ShowForm1(frm As Form, operation As String, id1 As Integer)
         frm.MaximizeBox = False
         frm.MinimizeBox = False

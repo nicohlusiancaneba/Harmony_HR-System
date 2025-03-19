@@ -112,7 +112,6 @@ Partial Class MDIMain
         'btn_reports
         '
         Me.btn_reports.BackColor = System.Drawing.Color.White
-        Me.btn_reports.Enabled = False
         Me.btn_reports.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_reports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.btn_reports.ImageKey = "reports.png"

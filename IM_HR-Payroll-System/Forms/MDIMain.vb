@@ -134,6 +134,12 @@ Public Class MDIMain
     End Sub
 
     Private Sub btn_reports_Click(sender As Object, e As EventArgs) Handles btn_reports.Click
-
+        With FormREPORTS
+            .TopLevel = False
+            Panel2.Controls.Add(FormREPORTS)
+            .BringToFront()
+            .Show()
+        End With
+        activeButtonForm(btn_reports)
     End Sub
 End Class

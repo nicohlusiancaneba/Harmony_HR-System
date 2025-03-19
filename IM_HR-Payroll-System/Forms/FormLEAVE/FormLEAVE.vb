@@ -16,9 +16,9 @@
         If rb_pending.Checked Then
             status = "where Leave_Status = 'Pending'"
         ElseIf rb_Upcoming.Checked Then
-            status = "where Leave_Status = 'Approved' and (Leave_Start >= GETDATE() and Leave_End >= GETDATE())"
+            status = "where Leave_Status = 'Approved' and (Leave_Start >= FORMAT(GETDATE(), 'yyyy-MM-dd') AND Leave_End >= FORMAT(GETDATE(), 'yyyy-MM-dd'))"
         ElseIf rb_Finished.Checked Then
-            status = "where Leave_Status = 'Approved' and Leave_End < GETDATE()"
+            status = "where Leave_Status = 'Approved' and Leave_End < FORMAT(GETDATE(), 'yyyy-MM-dd')"
         ElseIf rb_Rejected.Checked Then
             status = "where Leave_Status = 'Rejected'"
         End If
