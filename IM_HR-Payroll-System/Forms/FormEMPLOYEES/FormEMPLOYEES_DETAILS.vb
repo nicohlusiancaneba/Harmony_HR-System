@@ -105,7 +105,7 @@ Public Class FormEMPLOYEES_DETAILS
             txt_philhealthShare.ReadOnly = False
             txt_taxAmount.ReadOnly = False
             txt_pagIbigShare.ReadOnly = False
-
+            employee_Picture.Image = Nothing
         End If
 
     End Sub

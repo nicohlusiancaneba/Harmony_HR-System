@@ -37,8 +37,16 @@
                     "FROM Adjustments " & _
                     "inner join Employees on Employees.Employee_ID = Adjustments.Employee_ID where Adjustment_Type like '%" & rb_selected & "%' and " & _
                     "CONCAT(Employees.Employee_ID, ' ', Last_Name, ' ', First_Name, ' ', Middle_Name, ' ', Adjustment_Type, ' ', Prev_Value, ' ', New_Value) like '%" & txt_search.Text & "%'" & _
-                    "order by Adjustment_Type, Last_Name, First_Name "
+                    "order by Adj_Approved, Adjustment_Type, Last_Name, First_Name "
         FillListView(ExecuteSQLQuery(sqlSTR), lst_adjusments, 0)
+
+        For Each item As ListViewItem In lst_adjusments.Items
+            If item.SubItems(6).Text = "No" Then
+                item.ForeColor = Color.Red
+            Else
+                item.ForeColor = Color.Black
+            End If
+        Next
     End Sub
 
     Private Sub btn_searchAdjustment_Click(sender As Object, e As EventArgs) Handles btn_searchAdjustment.Click

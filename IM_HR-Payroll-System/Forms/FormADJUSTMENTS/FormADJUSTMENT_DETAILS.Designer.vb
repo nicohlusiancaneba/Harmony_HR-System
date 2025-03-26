@@ -34,6 +34,7 @@ Partial Class FormADJUSTMENT_DETAILS
         Me.cb_Approved = New System.Windows.Forms.CheckBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dt_dateAdj = New System.Windows.Forms.DateTimePicker()
+        Me.dt_regularization = New System.Windows.Forms.DateTimePicker()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -81,7 +82,7 @@ Partial Class FormADJUSTMENT_DETAILS
         'btn_Cancel
         '
         Me.btn_Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Cancel.Location = New System.Drawing.Point(426, 230)
+        Me.btn_Cancel.Location = New System.Drawing.Point(444, 229)
         Me.btn_Cancel.Name = "btn_Cancel"
         Me.btn_Cancel.Size = New System.Drawing.Size(70, 30)
         Me.btn_Cancel.TabIndex = 19
@@ -91,7 +92,7 @@ Partial Class FormADJUSTMENT_DETAILS
         'btn_Save
         '
         Me.btn_Save.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Save.Location = New System.Drawing.Point(350, 230)
+        Me.btn_Save.Location = New System.Drawing.Point(368, 229)
         Me.btn_Save.Name = "btn_Save"
         Me.btn_Save.Size = New System.Drawing.Size(70, 30)
         Me.btn_Save.TabIndex = 18
@@ -141,7 +142,7 @@ Partial Class FormADJUSTMENT_DETAILS
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(260, 181)
+        Me.Label1.Location = New System.Drawing.Point(279, 180)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(119, 20)
         Me.Label1.TabIndex = 24
@@ -154,17 +155,27 @@ Partial Class FormADJUSTMENT_DETAILS
         Me.dt_dateAdj.Enabled = False
         Me.dt_dateAdj.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dt_dateAdj.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dt_dateAdj.Location = New System.Drawing.Point(385, 179)
+        Me.dt_dateAdj.Location = New System.Drawing.Point(404, 178)
         Me.dt_dateAdj.Name = "dt_dateAdj"
         Me.dt_dateAdj.Size = New System.Drawing.Size(110, 26)
         Me.dt_dateAdj.TabIndex = 25
         Me.dt_dateAdj.Visible = False
         '
+        'dt_regularization
+        '
+        Me.dt_regularization.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dt_regularization.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dt_regularization.Location = New System.Drawing.Point(152, 178)
+        Me.dt_regularization.Name = "dt_regularization"
+        Me.dt_regularization.Size = New System.Drawing.Size(110, 26)
+        Me.dt_regularization.TabIndex = 26
+        Me.dt_regularization.Visible = False
+        '
         'FormADJUSTMENT_DETAILS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(508, 272)
+        Me.ClientSize = New System.Drawing.Size(528, 272)
         Me.Controls.Add(Me.dt_dateAdj)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cb_Approved)
@@ -177,6 +188,7 @@ Partial Class FormADJUSTMENT_DETAILS
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.dt_regularization)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -202,4 +214,5 @@ Partial Class FormADJUSTMENT_DETAILS
     Friend WithEvents cb_Approved As System.Windows.Forms.CheckBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents dt_dateAdj As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dt_regularization As System.Windows.Forms.DateTimePicker
 End Class

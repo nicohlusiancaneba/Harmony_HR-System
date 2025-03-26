@@ -40,6 +40,8 @@ Partial Class FormLEAVE
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btn_searchLeave = New System.Windows.Forms.Button()
         Me.btn_newLeave = New System.Windows.Forms.Button()
+        Me.rb_All = New System.Windows.Forms.RadioButton()
+        Me.rb_onLeave = New System.Windows.Forms.RadioButton()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.ContextMenuStrip1.SuspendLayout()
@@ -78,20 +80,22 @@ Partial Class FormLEAVE
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.rb_onLeave)
+        Me.Panel2.Controls.Add(Me.rb_All)
         Me.Panel2.Controls.Add(Me.rb_Rejected)
         Me.Panel2.Controls.Add(Me.rb_Finished)
         Me.Panel2.Controls.Add(Me.rb_Upcoming)
         Me.Panel2.Controls.Add(Me.rb_pending)
         Me.Panel2.Location = New System.Drawing.Point(12, 71)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(420, 33)
+        Me.Panel2.Size = New System.Drawing.Size(573, 33)
         Me.Panel2.TabIndex = 20
         '
         'rb_Rejected
         '
         Me.rb_Rejected.AutoSize = True
         Me.rb_Rejected.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rb_Rejected.Location = New System.Drawing.Point(301, 5)
+        Me.rb_Rejected.Location = New System.Drawing.Point(401, 5)
         Me.rb_Rejected.Name = "rb_Rejected"
         Me.rb_Rejected.Size = New System.Drawing.Size(91, 24)
         Me.rb_Rejected.TabIndex = 3
@@ -103,7 +107,7 @@ Partial Class FormLEAVE
         '
         Me.rb_Finished.AutoSize = True
         Me.rb_Finished.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rb_Finished.Location = New System.Drawing.Point(201, 5)
+        Me.rb_Finished.Location = New System.Drawing.Point(301, 5)
         Me.rb_Finished.Name = "rb_Finished"
         Me.rb_Finished.Size = New System.Drawing.Size(87, 24)
         Me.rb_Finished.TabIndex = 2
@@ -154,7 +158,7 @@ Partial Class FormLEAVE
         Me.ContextMenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditLeaveToolStripMenuItem, Me.DeleteLeaveToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(173, 74)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(173, 52)
         '
         'EditLeaveToolStripMenuItem
         '
@@ -202,6 +206,7 @@ Partial Class FormLEAVE
         Me.btn_searchLeave.Text = "Search Leave"
         Me.btn_searchLeave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_searchLeave.UseVisualStyleBackColor = True
+        Me.btn_searchLeave.Visible = False
         '
         'btn_newLeave
         '
@@ -217,6 +222,30 @@ Partial Class FormLEAVE
         Me.btn_newLeave.Text = "New Leave"
         Me.btn_newLeave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_newLeave.UseVisualStyleBackColor = True
+        '
+        'rb_All
+        '
+        Me.rb_All.AutoSize = True
+        Me.rb_All.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rb_All.Location = New System.Drawing.Point(503, 5)
+        Me.rb_All.Name = "rb_All"
+        Me.rb_All.Size = New System.Drawing.Size(44, 24)
+        Me.rb_All.TabIndex = 4
+        Me.rb_All.TabStop = True
+        Me.rb_All.Text = "All"
+        Me.rb_All.UseVisualStyleBackColor = True
+        '
+        'rb_onLeave
+        '
+        Me.rb_onLeave.AutoSize = True
+        Me.rb_onLeave.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rb_onLeave.Location = New System.Drawing.Point(201, 5)
+        Me.rb_onLeave.Name = "rb_onLeave"
+        Me.rb_onLeave.Size = New System.Drawing.Size(90, 24)
+        Me.rb_onLeave.TabIndex = 5
+        Me.rb_onLeave.TabStop = True
+        Me.rb_onLeave.Text = "On-leave"
+        Me.rb_onLeave.UseVisualStyleBackColor = True
         '
         'FormLEAVE
         '
@@ -257,4 +286,6 @@ Partial Class FormLEAVE
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents btn_searchLeave As System.Windows.Forms.Button
     Friend WithEvents btn_newLeave As System.Windows.Forms.Button
+    Friend WithEvents rb_All As System.Windows.Forms.RadioButton
+    Friend WithEvents rb_onLeave As System.Windows.Forms.RadioButton
 End Class

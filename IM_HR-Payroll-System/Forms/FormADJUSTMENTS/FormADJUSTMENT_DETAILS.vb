@@ -32,6 +32,7 @@
                 cb_Approved.Enabled = False
                 cmb_employees.Enabled = False
                 cmb_adjustmentType.Enabled = False
+                dt_regularization.Enabled = False
                 txt_New.ReadOnly = True
                 btn_Save.Enabled = False
 
@@ -42,6 +43,7 @@
                 cb_Approved.Enabled = True
                 cmb_employees.Enabled = True
                 cmb_adjustmentType.Enabled = True
+                dt_regularization.Enabled = True
                 txt_New.ReadOnly = False
                 btn_Save.Enabled = True
 
@@ -58,14 +60,40 @@
 
 
             cmb_employees.Text = ""
-            cmb_adjustmentType.Text = ""
+            cmb_adjustmentType.SelectedIndex = -1
             txt_New.Text = ""
             txt_Prev.Text = ""
             cb_Approved.Checked = False
+            txt_New.Visible = True
+            dt_regularization.Visible = False
+
+            cb_Approved.Checked = False
+            cb_Approved.Enabled = True
+            cmb_employees.Enabled = True
+            cmb_adjustmentType.Enabled = True
+            dt_regularization.Enabled = True
+            txt_New.ReadOnly = False
+            btn_Save.Enabled = True
+
+            Label1.Visible = False
+            dt_dateAdj.Visible = False
         End If
     End Sub
 
     Private Sub btn_Save_Click(sender As Object, e As EventArgs) Handles btn_Save.Click
+        If cmb_adjustmentType.Text = "Regularization" Then
+            txt_New.Text = dt_regularization.Text
+
+            sqlSTR = "select employee_id from employees where Employment_Status not like '%Probationary%' and employee_Id =" & Split(cmb_employees.Text, " - ")(0)
+            ExecuteSQLQuery(sqlSTR)
+
+            If sqlDT.Rows.Count > 0 Then
+                MsgBox("The selected employee is not on probation. Try again.", MsgBoxStyle.Information, msgBox_header)
+                Exit Sub
+            End If
+        End If
+
+
         If Val(txt_New.Text) = Val(txt_Prev.Text) Then
             MsgBox("Value Invalid, try again.", MsgBoxStyle.Exclamation, msgBox_header)
             Exit Sub
@@ -148,9 +176,13 @@
                 txt_Prev.Text = "n/a"
                 txt_New.Text = Today()
                 txt_New.ReadOnly = True
+                txt_New.Visible = False
+                dt_regularization.Visible = True
             Else
                 txt_New.Text = ""
                 txt_New.ReadOnly = False
+                txt_New.Visible = True
+                dt_regularization.Visible = False
             End If
         End If
 
@@ -183,5 +215,9 @@
         End If
 
         
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
     End Sub
 End Class

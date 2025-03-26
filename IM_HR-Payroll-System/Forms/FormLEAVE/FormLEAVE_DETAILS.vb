@@ -22,6 +22,8 @@
 
             If cmb_status.Text = "Approved" Then
                 btn_Save.Enabled = False
+            Else
+                btn_Save.Enabled = True
             End If
         Else
             cmb_employees.Text = ""
@@ -41,6 +43,14 @@
     End Sub
 
     Private Sub btn_Save_Click(sender As Object, e As EventArgs) Handles btn_Save.Click
+        If txt_Supervisor.Text = "" Or cmb_status.Text = "" Or cmb_Category.Text = "" Then
+            MsgBox("Some required fields are empty. Please fill them in and try again.", MsgBoxStyle.Information, msgBox_header)
+            Exit Sub
+        End If
+
+
+
+
         If cmb_status.Text = "Approved" Then
             If MsgBox("Would you like to approve this leave record? Please note that once approved, it cannot be modified.", MsgBoxStyle.YesNo + MsgBoxStyle.Information, msgBox_header) = MsgBoxResult.No Then
                 Exit Sub

@@ -17,10 +17,14 @@
             status = "where Leave_Status = 'Pending'"
         ElseIf rb_Upcoming.Checked Then
             status = "where Leave_Status = 'Approved' and (Leave_Start >= FORMAT(GETDATE(), 'yyyy-MM-dd') AND Leave_End >= FORMAT(GETDATE(), 'yyyy-MM-dd'))"
+        ElseIf rb_onLeave.Checked Then
+            status = "WHERE Leave_Status = 'Approved' AND FORMAT(GETDATE(), 'yyyy-MM-dd') BETWEEN Leave_Start AND Leave_End"
         ElseIf rb_Finished.Checked Then
             status = "where Leave_Status = 'Approved' and Leave_End < FORMAT(GETDATE(), 'yyyy-MM-dd')"
         ElseIf rb_Rejected.Checked Then
             status = "where Leave_Status = 'Rejected'"
+        ElseIf rb_All.Checked Then
+            status = ""
         End If
 
 
@@ -28,7 +32,7 @@
                     "Date_Applied as 'Date Applied', Immediate_Supervisor as Supervisor, Leave_Category as Category, Leave_Start as 'Leave Start', " & _
                     "Leave_end as 'Leave End', Leave_TotalDays as 'Total Day(s)', Leave_Reason as Reason, Leave_Remarks as Remarks, Leave_Status as Status " & _
                     "from Leaves " & _
-                    "INNER JOIN Employees on Employees.Employee_ID = Leaves.Employee_ID " & status & " order by Leave_ID"
+                    "INNER JOIN Employees on Employees.Employee_ID = Leaves.Employee_ID " & status & " order by Leave_Start, Employee"
 
         FillListView(ExecuteSQLQuery(sqlSTR), lst_leaves, 0)
 
@@ -83,6 +87,10 @@
             MsgBox("Cannot delete approved Leave record.", MsgBoxStyle.Information, msgBox_header)
         End If
 
+        RefreshList()
+    End Sub
+
+    Private Sub rb_All_CheckedChanged(sender As Object, e As EventArgs) Handles rb_All.CheckedChanged
         RefreshList()
     End Sub
 End Class
