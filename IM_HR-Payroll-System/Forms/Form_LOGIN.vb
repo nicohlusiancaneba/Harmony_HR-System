@@ -1,4 +1,6 @@
-﻿Public Class Form_LOGIN
+﻿Imports System.Deployment.Application
+
+Public Class Form_LOGIN
 
     Private Sub Form_LOGIN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtuser.Text = ""
@@ -42,11 +44,38 @@
         MDIMain.User.Text = "User: " & xUsername
 
 
+        If ApplicationDeployment.IsNetworkDeployed Then
+            Dim currentVersion As Version = ApplicationDeployment.CurrentDeployment.CurrentVersion
+
+            sqlSTR = "select top 1 System_Version from Global_Data"
+            ExecuteSQLQuery(sqlSTR)
+
+            Dim dbVersion As New Version(sqlDT.Rows(0)("System_Version").ToString)
+
+
+            If currentVersion < dbVersion Then
+                MsgBox("A new updated version (" & dbVersion.ToString() & ") is available." & vbCrLf & _
+       "Please update your system to fix errors, resolve bugs, and minimize incorrect outputs and inputs.", _
+       MsgBoxStyle.Information, "System Update Available")
+            End If
+
+            If currentVersion > dbVersion Then
+                sqlSTR = "Update Global_Data set System_Version='" & currentVersion.ToString & "'"
+                ExecuteSQLQuery(sqlSTR)
+            End If
+        End If
+        
+        
+
     End Sub
 
 
     Private Sub cmdlogin_Click(sender As Object, e As EventArgs) Handles cmdlogin.Click
         Login()
+
+        
+
+
     End Sub
 
     Private Sub cmdserver_Click(sender As Object, e As EventArgs) Handles cmdserver.Click
@@ -64,5 +93,8 @@
 
 
 
-    
+
+    Private Sub txtuser_TextChanged(sender As Object, e As EventArgs) Handles txtuser.TextChanged
+
+    End Sub
 End Class

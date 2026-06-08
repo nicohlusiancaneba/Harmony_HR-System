@@ -186,6 +186,7 @@ Partial Class FormREPORT_CREATE
         Me.Controls.Add(Me.groupboxDates)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PictureBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "FormREPORT_CREATE"

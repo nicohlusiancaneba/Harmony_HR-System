@@ -28,7 +28,7 @@
             txt_totalDeductions.Text = sqlDT.Rows(0)("Total_Deductions")
             txt_totalLoansPaid.Text = sqlDT.Rows(0)("Total_LoansPaid")
             rtb_remarks.Text = sqlDT.Rows(0)("Payroll_Remarks")
-            txt_encodedby.Text = "Encoded by : " & sqlDT.Rows(0)("Encoded_by")
+            txt_encodedby.Text = sqlDT.Rows(0)("Encoded_by")
 
             If sqlDT.Rows(0)("Payroll_Approved").ToString = "Yes" Then
                 approved = True
@@ -77,7 +77,7 @@
 
             payroll_Id = sqlDT.Rows(0)("Payroll_ID")
             txt_payroll_ID.Text = payroll_Id
-            txt_encodedby.Text = "Encoded by : " & xUsername
+            txt_encodedby.Text = xUsername
         End If
 
         RefreshPayrollDetailList()
@@ -143,20 +143,25 @@
             ExecuteSQLQuery(sqlSTR)
             If sqlDT.Rows.Count = 0 Then
                 sqlSTR = "INSERT INTO Payroll (Payroll_Date, Cutoff_Date_Start, Cutoff_Date_End, Total_GrossPay, Total_NetPay, Total_Deductions, Total_LoansPaid, Payroll_Remarks, Encoded_by) " &
-                      "VALUES ('" & dt_payroll.Text & "', '" & dt_cutoffStart.Text & "', '" & dt_cutoffEnd.Text & "', '" & txt_TotalgrossPay.Text & "', '" & txt_TotalnetPay.Text & "', '" & txt_totalDeductions.Text & "', '" & txt_totalLoansPaid.Text & "', '" & rtb_remarks.Text & "', '" & xUsername & "')"
+                      "VALUES ('" & dt_payroll.Text & "', '" & dt_cutoffStart.Text & "', '" & dt_cutoffEnd.Text & "', '" & txt_TotalgrossPay.Text & "', '" & txt_TotalnetPay.Text & "', '" & txt_totalDeductions.Text & "', '" & txt_totalLoansPaid.Text & "', '" & rtb_remarks.Text & "', lower('" & xUsername & "'))"
                 ExecuteSQLQuery(sqlSTR)
             End If
         End If
 
-        If Not txt_encodedby.Text.Contains(xUsername) Then
-            sqlSTR = "Update Payroll SET Encoded_by = Concat(Encoded_by, ', " & xUsername & "') where Payroll_ID =" & payroll_Id
+        If Not ("," & txt_encodedby.Text.ToLower() & ",").Contains("," & xUsername.ToLower() & ",") Then
+            sqlSTR = "UPDATE Payroll SET Checked_by = " & _
+                     "CASE " & _
+                     "WHEN Checked_by IS NULL OR LTRIM(RTRIM(Checked_by)) = '' THEN '" & xUsername & "' " & _
+                     "WHEN Checked_by NOT LIKE '%" & xUsername & "%' THEN Checked_by + ', " & xUsername & "' " & _
+                     "ELSE Checked_by END " & _
+                     "WHERE Payroll_ID = " & payroll_Id
             ExecuteSQLQuery(sqlSTR)
         End If
 
         If cb_Approved.Checked Then
 
             If MsgBox("Would you like to approve this payroll record? Please note that once approved, it cannot be modified.", MsgBoxStyle.YesNo + MsgBoxStyle.Information, msgBox_header) = MsgBoxResult.Yes Then
-                sqlSTR = "Update Payroll set Payroll_Approved='Yes', Approved_by='" & xUsername & "' where Payroll_ID=" & payroll_Id
+                sqlSTR = "Update Payroll set Payroll_Approved='Yes', Approved_by= lower('" & xUsername & "') where Payroll_ID=" & payroll_Id
                 ExecuteSQLQuery(sqlSTR)
 
                 For i = 0 To lst_payrollRecord.Items.Count - 1
@@ -346,4 +351,6 @@
     Private Sub cmb_employees_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_employees.SelectedIndexChanged
 
     End Sub
+
+
 End Class

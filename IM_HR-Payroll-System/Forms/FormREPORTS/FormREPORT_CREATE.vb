@@ -123,6 +123,7 @@
             "FROM Loans " & _
             "LEFT JOIN Loan_Payments ON Loan_Payments.Loan_ID = Loans.Loan_ID " & _
             "INNER JOIN Employees ON Employees.Employee_ID = Loans.Employee_ID " & _
+            " where Loan_Status ='Active' " & _
             "GROUP BY Loans.Loan_ID " & _
             "HAVING MAX(Loan_Gross_Amount) - SUM( " & _
             "CASE " & _
@@ -184,7 +185,7 @@
                     "Philhealth_No AS 'PhilHealth No.', " & _
                     "TIN_No AS 'TIN No.', " & _
                     "Pag_ibig_No AS 'Pag-IBIG No.' " & _
-                    "FROM Employees; " & _
+                    "FROM Employees " & _
                     "where Hired_Date >= '" & dt_from.Text & "'"
                 .reportLabel.Text = "New Employees hired starting " & dt_from.Text
             ElseIf cmb_reportType.Text = "New Loans" Then

@@ -1,5 +1,5 @@
 ﻿Public Class FormPAYROLL
-
+    Dim whereSQL As String
     Private Sub FormPAYROLL_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.Height = MDIMain.Panel2.Height - 22
         Me.Width = MDIMain.Panel2.Width
@@ -7,13 +7,15 @@
         lst_payroll.Height = Me.Height - 80
 
 
-
+        whereSQL = " and Cutoff_Date_Start >= DATEADD(DAY, -6, EOMONTH(GETDATE(), -1)) and Cutoff_Date_End <= EOMONTH(GETDATE()) "
 
 
 
         rb_Pending.Checked = True
         RefreshPayrollList()
     End Sub
+
+
 
 
     Public Sub RefreshPayrollList()
@@ -37,13 +39,14 @@
     "Total_LoansPaid AS 'Total Loans Paid', " & _
     "Payroll_Remarks AS 'Remarks', " & _
     "Encoded_by AS 'Encoded By', " & _
+    "Checked_by AS 'Checked By', " & _
     "COALESCE(Payroll_Approved, 'No') AS 'Payroll Approved', " & _
     "Approved_by AS 'Approved By' " & _
-    "FROM Payroll order by COALESCE(Payroll_Approved, 'No'), Payroll_ID "
+    "FROM Payroll where 1=1 " & whereSQL & " order by COALESCE(Payroll_Approved, 'No'), Payroll_ID "
         FillListView(ExecuteSQLQuery(sqlSTR), lst_payroll, 0)
 
         For Each item As ListViewItem In lst_payroll.Items
-            If item.SubItems(9).Text = "No" Then
+            If item.SubItems(10).Text = "No" Then
                 item.ForeColor = Color.Red
             Else
                 item.ForeColor = Color.Black
@@ -62,7 +65,7 @@
     End Sub
 
     Private Sub DeleteEmployeeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteEmployeeToolStripMenuItem.Click
-        If lst_payroll.FocusedItem.SubItems(9).Text = "No" Then
+        If lst_payroll.FocusedItem.SubItems(10).Text = "No" Then
             If MsgBox("Do you want to delete this payroll record?", MsgBoxStyle.YesNo + MsgBoxStyle.Critical, msgBox_header) = MsgBoxResult.Yes Then
 
                 sqlSTR = "DELETE Loan_Payments " & _
@@ -78,7 +81,7 @@
                 sqlSTR = "Delete from Payroll_Details where Payroll_ID =" & lst_payroll.FocusedItem.Text
                 ExecuteSQLQuery(sqlSTR)
 
-                
+
 
                 MsgBox("Deleted Payroll record.", MsgBoxStyle.Information, msgBox_header)
             End If
@@ -108,6 +111,26 @@
     End Sub
 
     Private Sub btn_refreshPayroll_Click(sender As Object, e As EventArgs) Handles btn_refreshPayroll.Click
+        whereSQL = " and Cutoff_Date_Start >= DATEADD(DAY, -6, EOMONTH(GETDATE(), -1)) and Cutoff_Date_End <= EOMONTH(GETDATE()) "
         RefreshPayrollList()
+    End Sub
+
+    Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
+        grpFilter.Visible = False
+    End Sub
+
+    Private Sub btn_submit_Click(sender As Object, e As EventArgs) Handles btn_submit.Click
+        grpFilter.Visible = False
+
+        whereSQL = " and Cutoff_Date_Start >= '" & dt_start.Text & "' and Cutoff_Date_End <= '" & dt_end.Text & "' "
+
+        RefreshPayrollList()
+    End Sub
+
+   
+
+    Private Sub btn_filter_Click(sender As Object, e As EventArgs) Handles btn_filter.Click
+        grpFilter.Visible = True
+        CenterGroupBoxRelativeToListView(grpFilter, lst_payroll)
     End Sub
 End Class

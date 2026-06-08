@@ -26,6 +26,8 @@ Partial Class FormPRINT_PAYSLIP
         Me.cmb_employees = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
+        Me.btnLoadAllSimple = New System.Windows.Forms.Button()
+        Me.btnLoadAll = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ReportViewer1
@@ -60,11 +62,33 @@ Partial Class FormPRINT_PAYSLIP
         '
         Me.PrintDialog1.UseEXDialog = True
         '
+        'btnLoadAllSimple
+        '
+        Me.btnLoadAllSimple.Location = New System.Drawing.Point(758, 6)
+        Me.btnLoadAllSimple.Name = "btnLoadAllSimple"
+        Me.btnLoadAllSimple.Size = New System.Drawing.Size(75, 23)
+        Me.btnLoadAllSimple.TabIndex = 4
+        Me.btnLoadAllSimple.Text = "Button1"
+        Me.btnLoadAllSimple.UseVisualStyleBackColor = True
+        Me.btnLoadAllSimple.Visible = False
+        '
+        'btnLoadAll
+        '
+        Me.btnLoadAll.Location = New System.Drawing.Point(876, 6)
+        Me.btnLoadAll.Name = "btnLoadAll"
+        Me.btnLoadAll.Size = New System.Drawing.Size(75, 23)
+        Me.btnLoadAll.TabIndex = 5
+        Me.btnLoadAll.Text = "Button1"
+        Me.btnLoadAll.UseVisualStyleBackColor = True
+        Me.btnLoadAll.Visible = False
+        '
         'FormPRINT_PAYSLIP
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(963, 516)
+        Me.Controls.Add(Me.btnLoadAll)
+        Me.Controls.Add(Me.btnLoadAllSimple)
         Me.Controls.Add(Me.cmb_employees)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.ReportViewer1)
@@ -84,4 +108,6 @@ Partial Class FormPRINT_PAYSLIP
     Friend WithEvents cmb_employees As System.Windows.Forms.ComboBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents PrintDialog1 As System.Windows.Forms.PrintDialog
+    Friend WithEvents btnLoadAllSimple As System.Windows.Forms.Button
+    Friend WithEvents btnLoadAll As System.Windows.Forms.Button
 End Class

@@ -26,6 +26,8 @@ Partial Class FormPAYROLL
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormPAYROLL))
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.EditEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DeleteEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lst_payroll = New System.Windows.Forms.ListView()
@@ -35,12 +37,19 @@ Partial Class FormPAYROLL
         Me.rb_All = New System.Windows.Forms.RadioButton()
         Me.btn_newPayroll = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.EditEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DeleteEmployeeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.btn_refreshPayroll = New System.Windows.Forms.Button()
+        Me.btn_filter = New System.Windows.Forms.Button()
+        Me.grpFilter = New System.Windows.Forms.GroupBox()
+        Me.btn_cancel = New System.Windows.Forms.Button()
+        Me.btn_submit = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.dt_end = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.dt_start = New System.Windows.Forms.DateTimePicker()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.grpFilter.SuspendLayout()
         Me.SuspendLayout()
         '
         'ImageList1
@@ -50,6 +59,7 @@ Partial Class FormPAYROLL
         Me.ImageList1.Images.SetKeyName(0, "plus.png")
         Me.ImageList1.Images.SetKeyName(1, "add.png")
         Me.ImageList1.Images.SetKeyName(2, "loading-arrow.png")
+        Me.ImageList1.Images.SetKeyName(3, "filter.png")
         '
         'ContextMenuStrip1
         '
@@ -57,6 +67,20 @@ Partial Class FormPAYROLL
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditEmployeeToolStripMenuItem, Me.DeleteEmployeeToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.Size = New System.Drawing.Size(176, 52)
+        '
+        'EditEmployeeToolStripMenuItem
+        '
+        Me.EditEmployeeToolStripMenuItem.Image = Global.Harmony.My.Resources.Resources.edit
+        Me.EditEmployeeToolStripMenuItem.Name = "EditEmployeeToolStripMenuItem"
+        Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
+        Me.EditEmployeeToolStripMenuItem.Text = "Edit Payroll"
+        '
+        'DeleteEmployeeToolStripMenuItem
+        '
+        Me.DeleteEmployeeToolStripMenuItem.Image = Global.Harmony.My.Resources.Resources.bin
+        Me.DeleteEmployeeToolStripMenuItem.Name = "DeleteEmployeeToolStripMenuItem"
+        Me.DeleteEmployeeToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
+        Me.DeleteEmployeeToolStripMenuItem.Text = "Delete Payroll"
         '
         'Label2
         '
@@ -87,7 +111,7 @@ Partial Class FormPAYROLL
         Me.lst_payroll.Location = New System.Drawing.Point(6, 74)
         Me.lst_payroll.Margin = New System.Windows.Forms.Padding(2)
         Me.lst_payroll.Name = "lst_payroll"
-        Me.lst_payroll.Size = New System.Drawing.Size(866, 64)
+        Me.lst_payroll.Size = New System.Drawing.Size(954, 178)
         Me.lst_payroll.TabIndex = 15
         Me.lst_payroll.UseCompatibleStateImageBehavior = False
         Me.lst_payroll.View = System.Windows.Forms.View.Details
@@ -97,7 +121,7 @@ Partial Class FormPAYROLL
         Me.Panel2.Controls.Add(Me.rb_Approved)
         Me.Panel2.Controls.Add(Me.rb_Pending)
         Me.Panel2.Controls.Add(Me.rb_All)
-        Me.Panel2.Location = New System.Drawing.Point(8, 228)
+        Me.Panel2.Location = New System.Drawing.Point(6, 407)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(277, 33)
         Me.Panel2.TabIndex = 20
@@ -146,7 +170,7 @@ Partial Class FormPAYROLL
         Me.btn_newPayroll.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_newPayroll.ImageKey = "plus.png"
         Me.btn_newPayroll.ImageList = Me.ImageList1
-        Me.btn_newPayroll.Location = New System.Drawing.Point(749, 26)
+        Me.btn_newPayroll.Location = New System.Drawing.Point(842, 26)
         Me.btn_newPayroll.Name = "btn_newPayroll"
         Me.btn_newPayroll.Size = New System.Drawing.Size(118, 43)
         Me.btn_newPayroll.TabIndex = 19
@@ -164,20 +188,6 @@ Partial Class FormPAYROLL
         Me.PictureBox1.TabIndex = 16
         Me.PictureBox1.TabStop = False
         '
-        'EditEmployeeToolStripMenuItem
-        '
-        Me.EditEmployeeToolStripMenuItem.Image = Global.Harmony.My.Resources.Resources.edit
-        Me.EditEmployeeToolStripMenuItem.Name = "EditEmployeeToolStripMenuItem"
-        Me.EditEmployeeToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
-        Me.EditEmployeeToolStripMenuItem.Text = "Edit Payroll"
-        '
-        'DeleteEmployeeToolStripMenuItem
-        '
-        Me.DeleteEmployeeToolStripMenuItem.Image = Global.Harmony.My.Resources.Resources.bin
-        Me.DeleteEmployeeToolStripMenuItem.Name = "DeleteEmployeeToolStripMenuItem"
-        Me.DeleteEmployeeToolStripMenuItem.Size = New System.Drawing.Size(175, 24)
-        Me.DeleteEmployeeToolStripMenuItem.Text = "Delete Payroll"
-        '
         'btn_refreshPayroll
         '
         Me.btn_refreshPayroll.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -185,7 +195,7 @@ Partial Class FormPAYROLL
         Me.btn_refreshPayroll.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_refreshPayroll.ImageKey = "loading-arrow.png"
         Me.btn_refreshPayroll.ImageList = Me.ImageList1
-        Me.btn_refreshPayroll.Location = New System.Drawing.Point(594, 26)
+        Me.btn_refreshPayroll.Location = New System.Drawing.Point(687, 26)
         Me.btn_refreshPayroll.Name = "btn_refreshPayroll"
         Me.btn_refreshPayroll.Size = New System.Drawing.Size(149, 43)
         Me.btn_refreshPayroll.TabIndex = 21
@@ -193,11 +203,97 @@ Partial Class FormPAYROLL
         Me.btn_refreshPayroll.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_refreshPayroll.UseVisualStyleBackColor = True
         '
+        'btn_filter
+        '
+        Me.btn_filter.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_filter.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btn_filter.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_filter.ImageKey = "filter.png"
+        Me.btn_filter.ImageList = Me.ImageList1
+        Me.btn_filter.Location = New System.Drawing.Point(598, 26)
+        Me.btn_filter.Name = "btn_filter"
+        Me.btn_filter.Size = New System.Drawing.Size(83, 43)
+        Me.btn_filter.TabIndex = 22
+        Me.btn_filter.Text = "Filter"
+        Me.btn_filter.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_filter.UseVisualStyleBackColor = True
+        '
+        'grpFilter
+        '
+        Me.grpFilter.Controls.Add(Me.btn_cancel)
+        Me.grpFilter.Controls.Add(Me.btn_submit)
+        Me.grpFilter.Controls.Add(Me.Label4)
+        Me.grpFilter.Controls.Add(Me.dt_end)
+        Me.grpFilter.Controls.Add(Me.Label3)
+        Me.grpFilter.Controls.Add(Me.dt_start)
+        Me.grpFilter.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.grpFilter.Location = New System.Drawing.Point(301, 111)
+        Me.grpFilter.Name = "grpFilter"
+        Me.grpFilter.Size = New System.Drawing.Size(347, 100)
+        Me.grpFilter.TabIndex = 23
+        Me.grpFilter.TabStop = False
+        Me.grpFilter.Text = "Select Cutoff Period"
+        Me.grpFilter.Visible = False
+        '
+        'btn_cancel
+        '
+        Me.btn_cancel.Location = New System.Drawing.Point(253, 59)
+        Me.btn_cancel.Name = "btn_cancel"
+        Me.btn_cancel.Size = New System.Drawing.Size(75, 33)
+        Me.btn_cancel.TabIndex = 5
+        Me.btn_cancel.Text = "Cancel"
+        Me.btn_cancel.UseVisualStyleBackColor = True
+        '
+        'btn_submit
+        '
+        Me.btn_submit.Location = New System.Drawing.Point(172, 59)
+        Me.btn_submit.Name = "btn_submit"
+        Me.btn_submit.Size = New System.Drawing.Size(75, 33)
+        Me.btn_submit.TabIndex = 4
+        Me.btn_submit.Text = "Submit"
+        Me.btn_submit.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(189, 33)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(33, 17)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "To :"
+        '
+        'dt_end
+        '
+        Me.dt_end.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dt_end.Location = New System.Drawing.Point(227, 30)
+        Me.dt_end.Name = "dt_end"
+        Me.dt_end.Size = New System.Drawing.Size(101, 23)
+        Me.dt_end.TabIndex = 2
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(7, 34)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(48, 17)
+        Me.Label3.TabIndex = 1
+        Me.Label3.Text = "From :"
+        '
+        'dt_start
+        '
+        Me.dt_start.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dt_start.Location = New System.Drawing.Point(65, 31)
+        Me.dt_start.Name = "dt_start"
+        Me.dt_start.Size = New System.Drawing.Size(101, 23)
+        Me.dt_start.TabIndex = 0
+        '
         'FormPAYROLL
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(879, 150)
+        Me.ClientSize = New System.Drawing.Size(972, 261)
+        Me.Controls.Add(Me.grpFilter)
+        Me.Controls.Add(Me.btn_filter)
         Me.Controls.Add(Me.btn_refreshPayroll)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.btn_newPayroll)
@@ -212,6 +308,8 @@ Partial Class FormPAYROLL
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grpFilter.ResumeLayout(False)
+        Me.grpFilter.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -230,4 +328,12 @@ Partial Class FormPAYROLL
     Friend WithEvents rb_Pending As System.Windows.Forms.RadioButton
     Friend WithEvents rb_All As System.Windows.Forms.RadioButton
     Friend WithEvents btn_refreshPayroll As System.Windows.Forms.Button
+    Friend WithEvents btn_filter As System.Windows.Forms.Button
+    Friend WithEvents grpFilter As System.Windows.Forms.GroupBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents dt_end As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents dt_start As System.Windows.Forms.DateTimePicker
+    Friend WithEvents btn_cancel As System.Windows.Forms.Button
+    Friend WithEvents btn_submit As System.Windows.Forms.Button
 End Class

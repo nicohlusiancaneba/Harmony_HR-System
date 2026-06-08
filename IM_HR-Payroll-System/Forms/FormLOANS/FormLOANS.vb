@@ -98,7 +98,7 @@
                     "FROM Loans " & _
                     "LEFT JOIN Loan_Payments ON Loan_Payments.Loan_ID = Loans.Loan_ID " & _
                     "INNER JOIN Employees ON Employees.Employee_ID = Loans.Employee_ID " & _
-                    "WHERE CONCAT(Loans.Loan_ID, ' ', Loans.Employee_ID, ' ', Last_Name, ' ', First_Name)  LIKE '%" & txt_search.Text & "%' " & _
+                    "WHERE CONCAT(Loans.Loan_ID, ' ', Loans.Employee_ID, ' ', Last_Name, ' ', First_Name, ' ', Loan_Type, ' ', Loan_Remarks)  LIKE '%" & txt_search.Text & "%' " & _
                     "GROUP BY Loans.Loan_ID " & _
                     "ORDER BY MAX(Loan_Date), MAX(Last_Name), MAX(First_Name);"
         FillListView(ExecuteSQLQuery(sqlSTR), lst_loans, 0)

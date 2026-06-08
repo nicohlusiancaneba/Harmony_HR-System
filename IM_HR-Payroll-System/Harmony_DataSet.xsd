@@ -77,6 +77,8 @@
               <xs:element name="payLeave" msprop:Generator_ColumnVarNameInTable="columnpayLeave" msprop:Generator_ColumnPropNameInRow="payLeave" msprop:Generator_ColumnPropNameInTable="payLeaveColumn" msprop:Generator_UserColumnName="payLeave" type="xs:string" minOccurs="0" />
               <xs:element name="numLeave" msprop:Generator_ColumnVarNameInTable="columnnumLeave" msprop:Generator_ColumnPropNameInRow="numLeave" msprop:Generator_ColumnPropNameInTable="numLeaveColumn" msprop:Generator_UserColumnName="numLeave" type="xs:string" minOccurs="0" />
               <xs:element name="totalLeave" msprop:Generator_ColumnVarNameInTable="columntotalLeave" msprop:Generator_ColumnPropNameInRow="totalLeave" msprop:Generator_ColumnPropNameInTable="totalLeaveColumn" msprop:Generator_UserColumnName="totalLeave" type="xs:string" minOccurs="0" />
+              <xs:element name="SSSloan" msprop:Generator_ColumnVarNameInTable="columnSSSloan" msprop:Generator_ColumnPropNameInRow="SSSloan" msprop:Generator_ColumnPropNameInTable="SSSloanColumn" msprop:Generator_UserColumnName="SSSloan" type="xs:string" minOccurs="0" />
+              <xs:element name="PAGIBIGloan" msprop:Generator_ColumnVarNameInTable="columnPAGIBIGloan" msprop:Generator_ColumnPropNameInRow="PAGIBIGloan" msprop:Generator_ColumnPropNameInTable="PAGIBIGloanColumn" msprop:Generator_UserColumnName="PAGIBIGloan" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -170,7 +170,7 @@
 
     Private Sub cmb_loanStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_loanStatus.SelectedIndexChanged
         If cmb_loanStatus.Text = "Paid" Then
-            If CDbl(txt_balanceAmount.Text) > 0 Then
+            If CDbl(txt_balanceAmount.Text) > 10 Then
                 MsgBox("The loan balance remains unpaid.", MsgBoxStyle.Exclamation, msgBox_header)
                 cmb_loanStatus.Text = "Active"
             End If

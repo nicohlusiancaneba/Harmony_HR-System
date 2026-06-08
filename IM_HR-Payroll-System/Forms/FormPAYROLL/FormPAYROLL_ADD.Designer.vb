@@ -59,6 +59,8 @@ Partial Class FormPAYROLL_ADD
         Me.PrintEmployeePayslipToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExportToBankFormatToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.SearchToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grp_Payrollpayee.SuspendLayout()
@@ -129,7 +131,7 @@ Partial Class FormPAYROLL_ADD
         Me.btn_Cancel.Name = "btn_Cancel"
         Me.btn_Cancel.Size = New System.Drawing.Size(70, 30)
         Me.btn_Cancel.TabIndex = 23
-        Me.btn_Cancel.Text = "&Cancel"
+        Me.btn_Cancel.Text = "&Close"
         Me.btn_Cancel.UseVisualStyleBackColor = True
         '
         'btn_Save
@@ -189,11 +191,11 @@ Partial Class FormPAYROLL_ADD
         '
         Me.txt_encodedby.AutoSize = True
         Me.txt_encodedby.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_encodedby.Location = New System.Drawing.Point(12, 571)
+        Me.txt_encodedby.Location = New System.Drawing.Point(113, 569)
         Me.txt_encodedby.Name = "txt_encodedby"
-        Me.txt_encodedby.Size = New System.Drawing.Size(101, 20)
+        Me.txt_encodedby.Size = New System.Drawing.Size(45, 20)
         Me.txt_encodedby.TabIndex = 29
-        Me.txt_encodedby.Text = "Encoded by :"
+        Me.txt_encodedby.Text = "____"
         '
         'txt_payroll_ID
         '
@@ -271,7 +273,7 @@ Partial Class FormPAYROLL_ADD
         Me.btn_newPayroll.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_newPayroll.ImageKey = "plus.png"
         Me.btn_newPayroll.ImageList = Me.ImageList1
-        Me.btn_newPayroll.Location = New System.Drawing.Point(985, 124)
+        Me.btn_newPayroll.Location = New System.Drawing.Point(987, 124)
         Me.btn_newPayroll.Name = "btn_newPayroll"
         Me.btn_newPayroll.Size = New System.Drawing.Size(124, 43)
         Me.btn_newPayroll.TabIndex = 39
@@ -374,10 +376,10 @@ Partial Class FormPAYROLL_ADD
         'MenuStrip1
         '
         Me.MenuStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrintEmployeePayslipToolStripMenuItem, Me.ExportToBankFormatToolStripMenuItem, Me.ViewToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PrintEmployeePayslipToolStripMenuItem, Me.ExportToBankFormatToolStripMenuItem, Me.ViewToolStripMenuItem, Me.SearchToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1118, 25)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1113, 25)
         Me.MenuStrip1.TabIndex = 45
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -399,12 +401,29 @@ Partial Class FormPAYROLL_ADD
         Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(198, 21)
         Me.ViewToolStripMenuItem.Text = "Comprehensive Payroll View"
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(7, 569)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(101, 20)
+        Me.Label8.TabIndex = 46
+        Me.Label8.Text = "Encoded by :"
+        '
+        'SearchToolStripMenuItem
+        '
+        Me.SearchToolStripMenuItem.Name = "SearchToolStripMenuItem"
+        Me.SearchToolStripMenuItem.Size = New System.Drawing.Size(65, 21)
+        Me.SearchToolStripMenuItem.Text = "Search"
+        '
         'FormPAYROLL_ADD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1118, 606)
+        Me.ClientSize = New System.Drawing.Size(1113, 603)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.dt_cutoffEnd)
@@ -483,4 +502,6 @@ Partial Class FormPAYROLL_ADD
     Friend WithEvents PrintEmployeePayslipToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ExportToBankFormatToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ViewToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents SearchToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

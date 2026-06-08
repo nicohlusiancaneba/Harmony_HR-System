@@ -7,9 +7,15 @@ Public Class MDIMain
 
         If ApplicationDeployment.IsNetworkDeployed Then
             Version.Text = "Harmony v." & ApplicationDeployment.CurrentDeployment.CurrentVersion.ToString()
+
+
+            
+
         Else
             Version.Text = "Debug"
         End If
+
+
 
 
         'Dim temp As Integer = 5 + 4.46

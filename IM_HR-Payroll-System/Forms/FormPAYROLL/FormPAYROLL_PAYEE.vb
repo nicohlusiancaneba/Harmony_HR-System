@@ -56,7 +56,7 @@
 
 
 
-        sqlSTR = "select *, COALESCE(totalSSS, 0) as total_SSS, COALESCE(totalPhilhealth, 0) as total_Philhealth, COALESCE(totalPagIbig, 0) as total_PagIbig, COALESCE(totalTax, 0) as total_Tax, COALESCE(payRegular, 0) as payRegular2 from Payroll_Details INNER JOIN Payroll on Payroll.Payroll_ID = Payroll_Details.Payroll_ID " & _
+        sqlSTR = "select *, COALESCE(totalSSS, 0) as total_SSS, COALESCE(totalPhilhealth, 0) as total_Philhealth, COALESCE(totalPagIbig, 0) as total_PagIbig, COALESCE(totalTax, 0) as total_Tax, COALESCE(payRegular, 0) as payRegular2, COALESCE(paySpecial, 0) as paySpecial2, COALESCE(payField, 0) as payField2 from Payroll_Details INNER JOIN Payroll on Payroll.Payroll_ID = Payroll_Details.Payroll_ID " & _
             " where Employee_ID =" & employee_id & " and Payroll_Details.Payroll_id =" & payroll_id
         ExecuteSQLQuery(sqlSTR)
 
@@ -73,7 +73,8 @@
             txt_payOvertime.Text = Format(Val(sqlDT.Rows(0)("payRegular2")) / 8 / 60, "N2")
             txt_payNightDiff.Text = Format(((Val(sqlDT.Rows(0)("payRegular2")) / 8) * 0.1) / 60, "N2")
         End If
-
+        txt_paySpecial.Text = sqlDT.Rows(0)("paySpecial2")
+        txt_payField.Text = sqlDT.Rows(0)("payField2")
 
         txt_numRegular.Text = sqlDT.Rows(0)("numRegular").ToString
         txt_numSpecial.Text = sqlDT.Rows(0)("numSpecial").ToString
