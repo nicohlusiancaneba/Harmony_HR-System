@@ -97,4 +97,8 @@ Public Class Form_LOGIN
     Private Sub txtuser_TextChanged(sender As Object, e As EventArgs) Handles txtuser.TextChanged
 
     End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+        Main.ShowDialog()
+    End Sub
 End Class

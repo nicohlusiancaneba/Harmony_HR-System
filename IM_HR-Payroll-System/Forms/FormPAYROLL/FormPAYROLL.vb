@@ -133,4 +133,20 @@
         grpFilter.Visible = True
         CenterGroupBoxRelativeToListView(grpFilter, lst_payroll)
     End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub dt_end_ValueChanged(sender As Object, e As EventArgs) Handles dt_end.ValueChanged
+
+    End Sub
+
+    Private Sub dt_start_ValueChanged(sender As Object, e As EventArgs) Handles dt_start.ValueChanged
+
+    End Sub
+
+    Private Sub GenerateMultiplePayrollBOBToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GenerateMultiplePayrollBOBToolStripMenuItem.Click
+        FormPAYROLL_GENERATE_BOB.ShowDialog()
+    End Sub
 End Class

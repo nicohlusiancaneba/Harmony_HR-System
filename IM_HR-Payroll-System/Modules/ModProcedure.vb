@@ -43,6 +43,15 @@ Module ModProcedure
         Next i
     End Sub
 
+    Public Sub center_RelativeTo(reference As Object, centeredObj As Object)
+        centeredObj.Left = (reference.Width - centeredObj.Width) / 2
+        centeredObj.Top = (reference.Height - centeredObj.Height) / 2
+    End Sub
+
+    Public Sub centerVertical_RelativeTo(reference As Object, centeredObj As Object)
+        centeredObj.Top = (reference.Height - centeredObj.Height) / 2
+    End Sub
+
     Public Sub totalsListView(ByVal listViewName As ListView, ByVal columnsToSum As String)
         ' Parse the column indices from the input string
         Dim columns As List(Of Integer) = columnsToSum.Split(",").Select(Function(c) Convert.ToInt32(c.Trim())).ToList()
@@ -412,7 +421,244 @@ Module ModProcedure
 
     End Sub
 
+    Public Sub InputTextBox_TextChanged(sender As Object, e As EventArgs)
+        Dim txtBox As TextBox = TryCast(sender, TextBox)
+        If txtBox IsNot Nothing Then
+            'txtBox.Text = str_Filter(txtBox, 32, 126, 0, 0)
+            txtBox.Text = Regex.Replace(txtBox.Text, "['""]", "")
+            txtBox.SelectionStart = txtBox.Text.Length ' Keep cursor at end
+        End If
+    End Sub
 
+    Public Sub checkbox_CheckedValue(cb As CheckBox, tag As String)
+        If cb.Checked Then
+            cb.Tag = tag
+        Else
+            cb.Tag = ""
+        End If
+    End Sub
+
+    Public Function str_Filter(ByVal Text As Object, ByVal ascKey1 As Integer, ByVal ascKey2 As Integer, ByVal ascKey3 As Integer, ByVal N_Repeat As Integer)
+        On Error Resume Next
+        Dim Delimeter As String
+        Dim X As Long
+        Dim intStr As String
+        Dim NumberToRepeatCharacter As Integer
+        Dim ExcludeChars() As Integer = {39, 34, 38, 58, 59}  ' ASCII values for '44,', ''', '"', '&', ':', ';'
+        Dim cursorPosition As Integer = Text.SelectionStart
+        ' First loop to determine invalid characters
+        For X = 1 To Len(Text.Text)
+            Dim currentCharAscii As Integer = Asc(Mid(Text.Text, X, 1))
+
+            ' If within valid range or matches ascKey3, continue; otherwise, mark as delimiter
+            If (currentCharAscii >= ascKey1 And currentCharAscii <= ascKey2) Or (currentCharAscii = ascKey3) Then
+                If Array.IndexOf(ExcludeChars, currentCharAscii) = -1 Then
+                    ' Character is allowed
+                Else
+                    Delimeter = Chr(currentCharAscii) ' Excluded character found
+                End If
+            Else
+                Delimeter = Chr(currentCharAscii) ' Out-of-range character found
+            End If
+        Next
+
+        ' Second loop to construct the filtered string
+        intStr = ""
+        For X = 1 To Len(Text.Text)
+            Dim currentCharAscii As Integer = Asc(Mid(Text.Text, X, 1))
+
+            ' If repetition limit applies to ascKey3
+            If N_Repeat > 0 And currentCharAscii = ascKey3 Then
+                If NumberToRepeatCharacter >= N_Repeat Then
+                    SendKeys.Send("{END}")
+                    Exit For
+                End If
+                NumberToRepeatCharacter += 1
+            End If
+
+            ' If character is not in the exclusion list and not a delimiter, add to output
+            If Mid(Text.Text, X, 1) <> Delimeter And Array.IndexOf(ExcludeChars, currentCharAscii) = -1 Then
+                intStr &= Mid(Text.Text, X, 1)
+            End If
+        Next
+
+
+        Text.SelectionStart = Text.TextLength
+
+        str_Filter = intStr
+    End Function
+
+    ' Handler for TextBox inputNum filtering
+    Public Sub InputNum_TextChanged(sender As Object, e As EventArgs)
+        Dim txtBox As TextBox = DirectCast(sender, TextBox)
+        Dim selStart As Integer = txtBox.SelectionStart
+
+        ' Remove invalid characters (allow digits and one period)
+        Dim rawText As String = Regex.Replace(txtBox.Text, "[^0-9.]", "")
+
+        ' Keep only one period
+        Dim firstDotIndex As Integer = rawText.IndexOf("."c)
+        If firstDotIndex >= 0 Then
+            Dim beforeDot As String = rawText.Substring(0, firstDotIndex + 1)
+            Dim afterDot As String = rawText.Substring(firstDotIndex + 1).Replace(".", "")
+            rawText = beforeDot & afterDot
+        End If
+
+        ' Update only if modified
+        If txtBox.Text <> rawText Then
+            txtBox.Text = rawText
+            txtBox.SelectionStart = Math.Min(selStart, txtBox.Text.Length)
+        End If
+
+        ' Default to 0 if empty
+        If txtBox.Text = "" Then
+            txtBox.Text = "0"
+            txtBox.SelectionStart = txtBox.Text.Length
+        End If
+    End Sub
+
+    Public Sub InputNum1_TextChanged(sender As Object, e As EventArgs)
+        Dim txtBox As TextBox = DirectCast(sender, TextBox)
+        Dim selStart As Integer = txtBox.SelectionStart
+
+        ' Remove invalid characters (allow digits and one period)
+        Dim rawText As String = Regex.Replace(txtBox.Text, "[^1-9]", "")
+
+        ' Keep only one period
+        Dim firstDotIndex As Integer = rawText.IndexOf("."c)
+        If firstDotIndex >= 0 Then
+            Dim beforeDot As String = rawText.Substring(0, firstDotIndex + 1)
+            Dim afterDot As String = rawText.Substring(firstDotIndex + 1).Replace(".", "")
+            rawText = beforeDot & afterDot
+        End If
+
+        ' Update only if modified
+        If txtBox.Text <> rawText Then
+            txtBox.Text = rawText
+            txtBox.SelectionStart = Math.Min(selStart, txtBox.Text.Length)
+        End If
+
+        ' Default to 0 if empty
+        If txtBox.Text = "" Then
+            txtBox.Text = "1"
+            txtBox.SelectionStart = txtBox.Text.Length
+        End If
+    End Sub
+
+    ' Optional: Handler if you need to log or react to NumericUpDown changes
+    Public Sub InputNum_ValueChanged(sender As Object, e As EventArgs)
+        ' Example: You can access the value here if needed
+        Dim numControl As NumericUpDown = DirectCast(sender, NumericUpDown)
+        Dim currentValue As Decimal = numControl.Value
+        ' Debug.Print("Value changed: " & currentValue.ToString())
+    End Sub
+
+    ' Assign inputNum handler for TextBoxes and NumericUpDowns
+    Public Sub inputNum_ChangedHandler(parent As Control)
+        For Each ctrl As Control In parent.Controls
+            If ctrl.Tag IsNot Nothing AndAlso ctrl.Tag.ToString().ToLower() = "inputnum" Then
+                If TypeOf ctrl Is TextBox Then
+                    AddHandler DirectCast(ctrl, TextBox).TextChanged, AddressOf InputNum_TextChanged
+                ElseIf TypeOf ctrl Is NumericUpDown Then
+                    AddHandler DirectCast(ctrl, NumericUpDown).ValueChanged, AddressOf InputNum_ValueChanged
+                End If
+            End If
+
+            ' Recursively apply to child containers
+            If ctrl.HasChildren Then
+                inputNum_ChangedHandler(ctrl)
+            End If
+        Next
+    End Sub
+
+    Public Sub inputNum1_ChangedHandler(parent As Control)
+        For Each ctrl As Control In parent.Controls
+            If ctrl.Tag IsNot Nothing AndAlso ctrl.Tag.ToString().ToLower() = "inputnum1" Then
+                If TypeOf ctrl Is TextBox Then
+                    AddHandler DirectCast(ctrl, TextBox).TextChanged, AddressOf InputNum1_TextChanged
+                ElseIf TypeOf ctrl Is NumericUpDown Then
+                    AddHandler DirectCast(ctrl, NumericUpDown).ValueChanged, AddressOf InputNum_ValueChanged
+                End If
+            End If
+
+            ' Recursively apply to child containers
+            If ctrl.HasChildren Then
+                inputNum1_ChangedHandler(ctrl)
+            End If
+        Next
+    End Sub
+
+
+    Public Sub inputText_ChangedHandler(ctrl As Control)
+        For Each c As Control In ctrl.Controls
+            If TypeOf c Is TextBox AndAlso c.Tag IsNot Nothing AndAlso c.Tag.ToString().ToLower() = "inputtext" Then
+                AddHandler DirectCast(c, TextBox).TextChanged, AddressOf InputTextBox_TextChanged
+            ElseIf c.HasChildren Then
+                inputText_ChangedHandler(c) ' Recursive for nested controls
+            End If
+        Next
+    End Sub
+
+    Public Sub ClearGroupBoxInputs(group As Control)
+        For Each ctrl As Control In group.Controls
+            If ctrl.Tag IsNot Nothing Then
+                Select Case ctrl.Tag.ToString()
+                    Case "inputText"
+                        If TypeOf ctrl Is TextBox Then
+                            CType(ctrl, TextBox).Clear()
+                        ElseIf TypeOf ctrl Is ComboBox Then
+                            CType(ctrl, ComboBox).SelectedIndex = -1
+                        ElseIf TypeOf ctrl Is RichTextBox Then
+                            CType(ctrl, RichTextBox).Clear()
+                        End If
+
+                    Case "inputNum"
+                        If TypeOf ctrl Is TextBox Then
+                            Dim txt As TextBox = CType(ctrl, TextBox)
+                            If IsNumeric(txt.Text) Then
+                                txt.Text = "0"
+                            Else
+                                txt.Clear()
+                            End If
+                        ElseIf TypeOf ctrl Is NumericUpDown Then
+                            CType(ctrl, NumericUpDown).Value = 0
+                        End If
+
+                    Case "inputNum1"
+                        If TypeOf ctrl Is TextBox Then
+                            Dim txt As TextBox = CType(ctrl, TextBox)
+                            If IsNumeric(txt.Text) Then
+                                txt.Text = "1"
+                            Else
+                                txt.Clear()
+                            End If
+                        ElseIf TypeOf ctrl Is NumericUpDown Then
+                            CType(ctrl, NumericUpDown).Value = 1
+                        End If
+
+                    Case "inputNum2"
+                        If TypeOf ctrl Is TextBox Then
+                            Dim txt As TextBox = CType(ctrl, TextBox)
+                            If IsNumeric(txt.Text) Then
+                                txt.Text = "0"
+                            Else
+                                txt.Clear()
+                            End If
+                        ElseIf TypeOf ctrl Is NumericUpDown Then
+                            CType(ctrl, NumericUpDown).Value = 1
+                        End If
+                End Select
+            End If
+
+            ' Allow UI to process messages
+            Application.DoEvents()
+
+            ' Recursively handle nested controls
+            If ctrl.HasChildren Then
+                ClearGroupBoxInputs(ctrl)
+            End If
+        Next
+    End Sub
 
 
 

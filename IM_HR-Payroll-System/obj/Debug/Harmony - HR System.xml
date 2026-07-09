@@ -43,15 +43,15 @@ Harmony-HRSystem
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member><member name="P:Harmony.My.Resources.Resources.Harmony___Name">
-	<summary>
-  Looks up a localized resource of type System.Drawing.Bitmap.
-</summary>
 </member><member name="P:Harmony.My.Resources.Resources.Harmony___Name_2">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:Harmony.My.Resources.Resources.Harmony_GIF">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Harmony.My.Resources.Resources.harmony_name">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

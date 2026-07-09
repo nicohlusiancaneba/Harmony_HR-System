@@ -133,16 +133,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Harmony___Name() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("Harmony - Name", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property Harmony___Name_2() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Harmony - Name 2", resourceCulture)
@@ -156,6 +146,16 @@ Namespace My.Resources
         Friend ReadOnly Property Harmony_GIF() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Harmony-GIF", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property harmony_name() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("harmony_name", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

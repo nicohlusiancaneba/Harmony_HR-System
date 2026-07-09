@@ -111,3 +111,8 @@ B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\IM_HR-Payroll-System.vbprojR
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormEVALUATION_QUESTIONS.resources
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormREPORTS.resources
 B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormREPORT_CREATE.resources
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FormPAYROLL_GENERATE_BOB.resources
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FrmEMPLOYEES.resources
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.Main.resources
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FrmEMPLOYEE_DETAILS.resources
+B:\Harmony_HR-System\IM_HR-Payroll-System\obj\Debug\Harmony.FrmFILE_MANAGE.resources

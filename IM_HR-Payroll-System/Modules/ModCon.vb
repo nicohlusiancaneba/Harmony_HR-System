@@ -1,5 +1,6 @@
 ﻿Imports System.Data.OleDb
-
+Imports System.IO
+Imports System.Text.RegularExpressions
 
 Module ModCon
 
@@ -19,7 +20,12 @@ Module ModCon
     ''                                  "Password=angelito"
     ''192.168.1.104;" & _'                           
 
-    Public CnString As String
+    Public CnString As String = "Provider=SQLOLEDB;" & _
+                               "Data Source=bcvr.ph" & _
+                               ";Network=bcvr.ph, 1433" & _
+                               ";Initial Catalog=BCVR-HR" & _
+                               ";User Id=bcvr" & _
+                               ";Password=ButCha!142630!"
     'Public CnString2 As String
 
     ''Public conn As OleDbConnection = New OleDbConnection(cnString)
@@ -65,20 +71,28 @@ Module ModCon
             openedFileStream.Read(dataBytes, 0, openedFileStream.Length)
             openedFileStream.Close()
             tmpStr = System.Text.Encoding.Unicode.GetString(dataBytes)
-
+            MsgBox(tmpStr)
             With FormSERVER_SETTINGS
-                If Split(tmpStr, ":")(4) = "1" Then
-                    CnString = "Provider=SQLOLEDB;" & _
-                               "Data Source=" & Split(tmpStr, ":")(0) & _
-                               ";Network=" & Split(tmpStr, ":")(1) & _
-                               ";Initial Catalog=" & Split(tmpStr, ":")(5) & _
-                               ";User Id=" & Split(tmpStr, ":")(2) & _
-                               ";Password=" & Split(tmpStr, ":")(3)
-                Else
+                'If Split(tmpStr, ":")(4) = "1" Then
+                '    CnString = "Provider=SQLOLEDB;" & _
+                '               "Data Source=" & Split(tmpStr, ":")(0) & _
+                '               ";Network=" & Split(tmpStr, ":")(1) & _
+                '               ";Initial Catalog=" & Split(tmpStr, ":")(5) & _
+                '               ";User Id=" & Split(tmpStr, ":")(2) & _
+                '               ";Password=" & Split(tmpStr, ":")(3)
 
-                    CnString = "Provider=SQLOLEDB;Server=" & Split(tmpStr, ":")(1) & _
-                               ";Database=" & Split(tmpStr, ":")(5) & "; Trusted_Connection=yes;"
-                End If
+
+                'Else
+
+                '    CnString = "Provider=SQLOLEDB;Server=" & Split(tmpStr, ":")(1) & _
+                '               ";Database=" & Split(tmpStr, ":")(5) & "; Trusted_Connection=yes;"
+                'End If
+                CnString = "Provider=SQLOLEDB;" & _
+                               "Data Source=bcvr.ph" & _
+                               ";Network=bcvr.ph, 1433" & _
+                               ";Initial Catalog=BCVR-HR" & _
+                               ";User Id=bcvr" & _
+                               ";Password=ButCha!142630!"
             End With
             Dim sqlCon As New OleDbConnection
             sqlCon.ConnectionString = CnString
@@ -111,6 +125,40 @@ Module ModCon
             'MsgBox("Error No. " & Err.Number & " Invalid database or no database found !! Adjust settings first", MsgBoxStyle.Critical, "Sales And Inventory")
             'MsgBox(SQLQuery)
         End Try
+        Return sqlDT
+    End Function
+
+
+    Public Function ExecuteSQLQuery_plusFile(ByVal SQLQuery As String, ByVal uploaded_filepath As String) As DataTable
+        Try
+            ' Find the @Param placeholder in the query (e.g. @File_Type) that represents the file data
+            Dim paramMatch As Match = Regex.Match(SQLQuery, "@\w+")
+
+            If Not paramMatch.Success Then
+                MsgBox("No @parameter found in the query for the file data.")
+                Return sqlDT
+            End If
+
+            Dim paramName As String = paramMatch.Value
+
+            ' OleDb does not support named parameters - it uses positional "?" placeholders
+            Dim finalQuery As String = SQLQuery.Replace(paramName, "?")
+
+            Dim fileBytes As Byte() = File.ReadAllBytes(uploaded_filepath)
+
+            Using sqlCon As New OleDbConnection(CnString)
+                Using cmd As New OleDbCommand(finalQuery, sqlCon)
+                    cmd.Parameters.Add("?", OleDbType.Binary).Value = fileBytes
+
+                    sqlCon.Open()
+                    cmd.ExecuteNonQuery()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            MsgBox("Error : " & ex.Message)
+        End Try
+
         Return sqlDT
     End Function
 

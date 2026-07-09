@@ -85,13 +85,12 @@ Partial Class Form_LOGIN
         '
         'PictureBox1
         '
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.PictureBox1.Image = Global.Harmony.My.Resources.Resources.Harmony___Name_2
-        Me.PictureBox1.Location = New System.Drawing.Point(4, 1)
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(316, 94)
+        Me.PictureBox1.Size = New System.Drawing.Size(296, 86)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 34
+        Me.PictureBox1.TabIndex = 29
         Me.PictureBox1.TabStop = False
         '
         'cmdserver
@@ -146,7 +145,7 @@ Partial Class Form_LOGIN
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(324, 216)
+        Me.ClientSize = New System.Drawing.Size(320, 212)
         Me.ControlBox = False
         Me.Controls.Add(Me.txtpassword)
         Me.Controls.Add(Me.txtuser)

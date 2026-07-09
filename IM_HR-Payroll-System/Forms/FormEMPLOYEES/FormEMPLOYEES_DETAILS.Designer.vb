@@ -67,32 +67,32 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.btn_Cancel = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.employee_Picture = New System.Windows.Forms.PictureBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.btn_download = New System.Windows.Forms.Button()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.btn_Delete = New System.Windows.Forms.Button()
-        Me.btn_newFile = New System.Windows.Forms.Button()
-        Me.lst_empFiles = New System.Windows.Forms.ListView()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.dt_endEmpDate = New System.Windows.Forms.DateTimePicker()
         Me.txt_endEmpDate = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
+        Me.lst_empFiles = New System.Windows.Forms.ListView()
+        Me.btn_newFile = New System.Windows.Forms.Button()
+        Me.btn_Delete = New System.Windows.Forms.Button()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.btn_download = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.employee_Picture, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
-        Me.TabPage3.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label1
@@ -510,6 +510,30 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Page 1"
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.SystemColors.GrayText
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label13.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label13.Location = New System.Drawing.Point(359, 288)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(228, 15)
+        Me.Label13.TabIndex = 32
+        Me.Label13.Text = "Contributions / Deductions Amount"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.SystemColors.GrayText
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label12.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label12.Location = New System.Drawing.Point(10, 9)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(113, 15)
+        Me.Label12.TabIndex = 31
+        Me.Label12.Text = "Personal Details"
+        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -565,36 +589,41 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Page 2"
         '
-        'TabPage3
+        'Label16
         '
-        Me.TabPage3.BackColor = System.Drawing.SystemColors.Control
-        Me.TabPage3.Controls.Add(Me.Label9)
-        Me.TabPage3.Controls.Add(Me.btn_download)
-        Me.TabPage3.Controls.Add(Me.Label10)
-        Me.TabPage3.Controls.Add(Me.btn_Delete)
-        Me.TabPage3.Controls.Add(Me.btn_newFile)
-        Me.TabPage3.Controls.Add(Me.lst_empFiles)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(744, 387)
-        Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Page 3"
+        Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.SystemColors.GrayText
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label16.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label16.Location = New System.Drawing.Point(368, 180)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(119, 15)
+        Me.Label16.TabIndex = 34
+        Me.Label16.Text = "Account Numbers"
         '
-        'btn_download
+        'Label15
         '
-        Me.btn_download.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btn_download.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btn_download.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.btn_download.ImageKey = "download.png"
-        Me.btn_download.ImageList = Me.ImageList1
-        Me.btn_download.Location = New System.Drawing.Point(403, 6)
-        Me.btn_download.Name = "btn_download"
-        Me.btn_download.Size = New System.Drawing.Size(99, 30)
-        Me.btn_download.TabIndex = 18
-        Me.btn_download.Text = "Download"
-        Me.btn_download.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btn_download.UseVisualStyleBackColor = True
+        Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.SystemColors.GrayText
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label15.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label15.Location = New System.Drawing.Point(368, 6)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(158, 15)
+        Me.Label15.TabIndex = 33
+        Me.Label15.Text = "Emergency Contact Info"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.BackColor = System.Drawing.SystemColors.GrayText
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.Label14.ForeColor = System.Drawing.SystemColors.ControlLightLight
+        Me.Label14.Location = New System.Drawing.Point(6, 6)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(136, 15)
+        Me.Label14.TabIndex = 32
+        Me.Label14.Text = "Employment Record"
         '
         'ImageList1
         '
@@ -606,60 +635,6 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.ImageList1.Images.SetKeyName(3, "bin.png")
         Me.ImageList1.Images.SetKeyName(4, "edit.png")
         Me.ImageList1.Images.SetKeyName(5, "download.png")
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(623, 10)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(14, 20)
-        Me.Label10.TabIndex = 17
-        Me.Label10.Text = "|"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'btn_Delete
-        '
-        Me.btn_Delete.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btn_Delete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btn_Delete.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.btn_Delete.ImageKey = "bin.png"
-        Me.btn_Delete.ImageList = Me.ImageList1
-        Me.btn_Delete.Location = New System.Drawing.Point(508, 6)
-        Me.btn_Delete.Name = "btn_Delete"
-        Me.btn_Delete.Size = New System.Drawing.Size(110, 30)
-        Me.btn_Delete.TabIndex = 15
-        Me.btn_Delete.Text = "Delete File"
-        Me.btn_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btn_Delete.UseVisualStyleBackColor = True
-        '
-        'btn_newFile
-        '
-        Me.btn_newFile.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.btn_newFile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btn_newFile.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.btn_newFile.ImageKey = "plus.png"
-        Me.btn_newFile.ImageList = Me.ImageList1
-        Me.btn_newFile.Location = New System.Drawing.Point(639, 6)
-        Me.btn_newFile.Name = "btn_newFile"
-        Me.btn_newFile.Size = New System.Drawing.Size(99, 30)
-        Me.btn_newFile.TabIndex = 13
-        Me.btn_newFile.Text = "New File"
-        Me.btn_newFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btn_newFile.UseVisualStyleBackColor = True
-        '
-        'lst_empFiles
-        '
-        Me.lst_empFiles.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.lst_empFiles.FullRowSelect = True
-        Me.lst_empFiles.GridLines = True
-        Me.lst_empFiles.Location = New System.Drawing.Point(5, 41)
-        Me.lst_empFiles.Margin = New System.Windows.Forms.Padding(2)
-        Me.lst_empFiles.Name = "lst_empFiles"
-        Me.lst_empFiles.Size = New System.Drawing.Size(734, 341)
-        Me.lst_empFiles.TabIndex = 9
-        Me.lst_empFiles.UseCompatibleStateImageBehavior = False
-        Me.lst_empFiles.View = System.Windows.Forms.View.Details
         '
         'PictureBox1
         '
@@ -702,65 +677,73 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.txt_endEmpDate.Size = New System.Drawing.Size(101, 26)
         Me.txt_endEmpDate.TabIndex = 30
         '
-        'Label12
+        'lst_empFiles
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.BackColor = System.Drawing.SystemColors.GrayText
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label12.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label12.Location = New System.Drawing.Point(10, 9)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(113, 15)
-        Me.Label12.TabIndex = 31
-        Me.Label12.Text = "Personal Details"
+        Me.lst_empFiles.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.lst_empFiles.FullRowSelect = True
+        Me.lst_empFiles.GridLines = True
+        Me.lst_empFiles.Location = New System.Drawing.Point(5, 41)
+        Me.lst_empFiles.Margin = New System.Windows.Forms.Padding(2)
+        Me.lst_empFiles.Name = "lst_empFiles"
+        Me.lst_empFiles.Size = New System.Drawing.Size(734, 341)
+        Me.lst_empFiles.TabIndex = 9
+        Me.lst_empFiles.UseCompatibleStateImageBehavior = False
+        Me.lst_empFiles.View = System.Windows.Forms.View.Details
         '
-        'Label13
+        'btn_newFile
         '
-        Me.Label13.AutoSize = True
-        Me.Label13.BackColor = System.Drawing.SystemColors.GrayText
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label13.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label13.Location = New System.Drawing.Point(359, 288)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(228, 15)
-        Me.Label13.TabIndex = 32
-        Me.Label13.Text = "Contributions / Deductions Amount"
+        Me.btn_newFile.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_newFile.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btn_newFile.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.btn_newFile.ImageKey = "plus.png"
+        Me.btn_newFile.ImageList = Me.ImageList1
+        Me.btn_newFile.Location = New System.Drawing.Point(639, 6)
+        Me.btn_newFile.Name = "btn_newFile"
+        Me.btn_newFile.Size = New System.Drawing.Size(99, 30)
+        Me.btn_newFile.TabIndex = 13
+        Me.btn_newFile.Text = "New File"
+        Me.btn_newFile.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_newFile.UseVisualStyleBackColor = True
         '
-        'Label14
+        'btn_Delete
         '
-        Me.Label14.AutoSize = True
-        Me.Label14.BackColor = System.Drawing.SystemColors.GrayText
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label14.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label14.Location = New System.Drawing.Point(6, 6)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(136, 15)
-        Me.Label14.TabIndex = 32
-        Me.Label14.Text = "Employment Record"
+        Me.btn_Delete.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_Delete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btn_Delete.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.btn_Delete.ImageKey = "bin.png"
+        Me.btn_Delete.ImageList = Me.ImageList1
+        Me.btn_Delete.Location = New System.Drawing.Point(508, 6)
+        Me.btn_Delete.Name = "btn_Delete"
+        Me.btn_Delete.Size = New System.Drawing.Size(110, 30)
+        Me.btn_Delete.TabIndex = 15
+        Me.btn_Delete.Text = "Delete File"
+        Me.btn_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_Delete.UseVisualStyleBackColor = True
         '
-        'Label15
+        'Label10
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.BackColor = System.Drawing.SystemColors.GrayText
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label15.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label15.Location = New System.Drawing.Point(368, 6)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(158, 15)
-        Me.Label15.TabIndex = 33
-        Me.Label15.Text = "Emergency Contact Info"
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(623, 10)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(0, 20)
+        Me.Label10.TabIndex = 17
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'Label16
+        'btn_download
         '
-        Me.Label16.AutoSize = True
-        Me.Label16.BackColor = System.Drawing.SystemColors.GrayText
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.Label16.ForeColor = System.Drawing.SystemColors.ControlLightLight
-        Me.Label16.Location = New System.Drawing.Point(368, 180)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(119, 15)
-        Me.Label16.TabIndex = 34
-        Me.Label16.Text = "Account Numbers"
+        Me.btn_download.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.btn_download.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btn_download.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.btn_download.ImageKey = "download.png"
+        Me.btn_download.ImageList = Me.ImageList1
+        Me.btn_download.Location = New System.Drawing.Point(403, 6)
+        Me.btn_download.Name = "btn_download"
+        Me.btn_download.Size = New System.Drawing.Size(99, 30)
+        Me.btn_download.TabIndex = 18
+        Me.btn_download.Text = "Download"
+        Me.btn_download.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_download.UseVisualStyleBackColor = True
         '
         'Label9
         '
@@ -770,9 +753,24 @@ Partial Class FormEMPLOYEES_DETAILS
         Me.Label9.ForeColor = System.Drawing.SystemColors.ControlLightLight
         Me.Label9.Location = New System.Drawing.Point(6, 15)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(210, 15)
+        Me.Label9.Size = New System.Drawing.Size(0, 15)
         Me.Label9.TabIndex = 33
-        Me.Label9.Text = "Scanned Documents / 201 Files"
+        '
+        'TabPage3
+        '
+        Me.TabPage3.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage3.Controls.Add(Me.Label9)
+        Me.TabPage3.Controls.Add(Me.btn_download)
+        Me.TabPage3.Controls.Add(Me.Label10)
+        Me.TabPage3.Controls.Add(Me.btn_Delete)
+        Me.TabPage3.Controls.Add(Me.btn_newFile)
+        Me.TabPage3.Controls.Add(Me.lst_empFiles)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(744, 387)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Page 3"
         '
         'FormEMPLOYEES_DETAILS
         '
@@ -801,9 +799,9 @@ Partial Class FormEMPLOYEES_DETAILS
         CType(Me.employee_Picture, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -854,13 +852,7 @@ Partial Class FormEMPLOYEES_DETAILS
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents employee_Picture As System.Windows.Forms.PictureBox
-    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
-    Friend WithEvents lst_empFiles As System.Windows.Forms.ListView
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
-    Friend WithEvents btn_newFile As System.Windows.Forms.Button
-    Friend WithEvents btn_Delete As System.Windows.Forms.Button
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents btn_download As System.Windows.Forms.Button
     Friend WithEvents txt_regularizationDate As System.Windows.Forms.TextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents dt_endEmpDate As System.Windows.Forms.DateTimePicker
@@ -870,5 +862,11 @@ Partial Class FormEMPLOYEES_DETAILS
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents TabPage3 As System.Windows.Forms.TabPage
     Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents btn_download As System.Windows.Forms.Button
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents btn_Delete As System.Windows.Forms.Button
+    Friend WithEvents btn_newFile As System.Windows.Forms.Button
+    Friend WithEvents lst_empFiles As System.Windows.Forms.ListView
 End Class
