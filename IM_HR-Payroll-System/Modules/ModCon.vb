@@ -163,7 +163,21 @@ Module ModCon
     End Function
 
     
+    Public Function ResizeImage(ByVal img As Image, ByVal maxSize As Integer) As Image
+        If img Is Nothing Then Return Nothing
 
+        Dim ratio As Double = Math.Min(maxSize / img.Width, maxSize / img.Height)
+        Dim newWidth As Integer = CInt(img.Width * ratio)
+        Dim newHeight As Integer = CInt(img.Height * ratio)
+
+        Dim newImg As New Bitmap(newWidth, newHeight)
+        Using g As Graphics = Graphics.FromImage(newImg)
+            g.InterpolationMode = Drawing2D.InterpolationMode.HighQualityBicubic
+            g.DrawImage(img, 0, 0, newWidth, newHeight)
+        End Using
+
+        Return newImg
+    End Function
 
     Public Sub FILLComboBox(ByVal sql As String, ByVal cb As ComboBox)
         Dim conn As OleDbConnection = New OleDbConnection(CnString)

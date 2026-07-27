@@ -29,30 +29,35 @@ Partial Class FrmEMPLOYEES
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.dgv_panel = New System.Windows.Forms.Panel()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.grpFilter = New System.Windows.Forms.GroupBox()
+        Me.dt_toRegular = New System.Windows.Forms.DateTimePicker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.dt_fromRegular = New System.Windows.Forms.DateTimePicker()
+        Me.cb_regularization = New System.Windows.Forms.CheckBox()
+        Me.dt_toHired = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
-        Me.CheckBox8 = New System.Windows.Forms.CheckBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
-        Me.CheckBox7 = New System.Windows.Forms.CheckBox()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.CheckBox6 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.dt_fromHired = New System.Windows.Forms.DateTimePicker()
+        Me.cmb_status = New System.Windows.Forms.ComboBox()
+        Me.cb_status = New System.Windows.Forms.CheckBox()
+        Me.btn_submit = New System.Windows.Forms.Button()
+        Me.btn_cancel = New System.Windows.Forms.Button()
+        Me.cmb_department = New System.Windows.Forms.ComboBox()
+        Me.cb_department = New System.Windows.Forms.CheckBox()
+        Me.txt_position = New System.Windows.Forms.TextBox()
+        Me.cb_position = New System.Windows.Forms.CheckBox()
+        Me.cb_hiredDate = New System.Windows.Forms.CheckBox()
+        Me.cb_civilStatus = New System.Windows.Forms.CheckBox()
+        Me.cmb_civilStatus = New System.Windows.Forms.ComboBox()
+        Me.cb_gender = New System.Windows.Forms.CheckBox()
+        Me.cmb_gender = New System.Windows.Forms.ComboBox()
+        Me.txt_name = New System.Windows.Forms.TextBox()
+        Me.cb_name = New System.Windows.Forms.CheckBox()
+        Me.txt_employeeID = New System.Windows.Forms.TextBox()
+        Me.cb_employeeID = New System.Windows.Forms.CheckBox()
         Me.dgv_employees = New System.Windows.Forms.DataGridView()
         Me.Number = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Employee_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Employee_Picture = New System.Windows.Forms.DataGridViewImageColumn()
         Me.Last_Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.First_Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Middle_Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -61,11 +66,12 @@ Partial Class FrmEMPLOYEES
         Me.Department = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Birthday = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Employment_Date = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lst_employees = New System.Windows.Forms.ListView()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         Me.dgv_panel.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.grpFilter.SuspendLayout()
         CType(Me.dgv_employees, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -115,8 +121,9 @@ Partial Class FrmEMPLOYEES
         'dgv_panel
         '
         Me.dgv_panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.dgv_panel.Controls.Add(Me.GroupBox1)
+        Me.dgv_panel.Controls.Add(Me.grpFilter)
         Me.dgv_panel.Controls.Add(Me.dgv_employees)
+        Me.dgv_panel.Controls.Add(Me.lst_employees)
         Me.dgv_panel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgv_panel.Location = New System.Drawing.Point(10, 10)
         Me.dgv_panel.Name = "dgv_panel"
@@ -124,215 +131,254 @@ Partial Class FrmEMPLOYEES
         Me.dgv_panel.Size = New System.Drawing.Size(948, 519)
         Me.dgv_panel.TabIndex = 706
         '
-        'GroupBox1
+        'grpFilter
         '
-        Me.GroupBox1.Controls.Add(Me.DateTimePicker2)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox1.Controls.Add(Me.ComboBox4)
-        Me.GroupBox1.Controls.Add(Me.CheckBox8)
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.ComboBox3)
-        Me.GroupBox1.Controls.Add(Me.CheckBox7)
-        Me.GroupBox1.Controls.Add(Me.TextBox4)
-        Me.GroupBox1.Controls.Add(Me.CheckBox6)
-        Me.GroupBox1.Controls.Add(Me.CheckBox5)
-        Me.GroupBox1.Controls.Add(Me.CheckBox4)
-        Me.GroupBox1.Controls.Add(Me.ComboBox2)
-        Me.GroupBox1.Controls.Add(Me.CheckBox3)
-        Me.GroupBox1.Controls.Add(Me.ComboBox1)
-        Me.GroupBox1.Controls.Add(Me.TextBox2)
-        Me.GroupBox1.Controls.Add(Me.CheckBox2)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Controls.Add(Me.CheckBox1)
-        Me.GroupBox1.Location = New System.Drawing.Point(269, 103)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(380, 298)
-        Me.GroupBox1.TabIndex = 706
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Search"
-        Me.GroupBox1.Visible = False
+        Me.grpFilter.Controls.Add(Me.dt_toRegular)
+        Me.grpFilter.Controls.Add(Me.Label3)
+        Me.grpFilter.Controls.Add(Me.dt_fromRegular)
+        Me.grpFilter.Controls.Add(Me.cb_regularization)
+        Me.grpFilter.Controls.Add(Me.dt_toHired)
+        Me.grpFilter.Controls.Add(Me.Label2)
+        Me.grpFilter.Controls.Add(Me.dt_fromHired)
+        Me.grpFilter.Controls.Add(Me.cmb_status)
+        Me.grpFilter.Controls.Add(Me.cb_status)
+        Me.grpFilter.Controls.Add(Me.btn_submit)
+        Me.grpFilter.Controls.Add(Me.btn_cancel)
+        Me.grpFilter.Controls.Add(Me.cmb_department)
+        Me.grpFilter.Controls.Add(Me.cb_department)
+        Me.grpFilter.Controls.Add(Me.txt_position)
+        Me.grpFilter.Controls.Add(Me.cb_position)
+        Me.grpFilter.Controls.Add(Me.cb_hiredDate)
+        Me.grpFilter.Controls.Add(Me.cb_civilStatus)
+        Me.grpFilter.Controls.Add(Me.cmb_civilStatus)
+        Me.grpFilter.Controls.Add(Me.cb_gender)
+        Me.grpFilter.Controls.Add(Me.cmb_gender)
+        Me.grpFilter.Controls.Add(Me.txt_name)
+        Me.grpFilter.Controls.Add(Me.cb_name)
+        Me.grpFilter.Controls.Add(Me.txt_employeeID)
+        Me.grpFilter.Controls.Add(Me.cb_employeeID)
+        Me.grpFilter.Location = New System.Drawing.Point(269, 103)
+        Me.grpFilter.Name = "grpFilter"
+        Me.grpFilter.Size = New System.Drawing.Size(411, 326)
+        Me.grpFilter.TabIndex = 706
+        Me.grpFilter.TabStop = False
+        Me.grpFilter.Text = "Search"
+        Me.grpFilter.Visible = False
         '
-        'DateTimePicker2
+        'dt_toRegular
         '
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker2.Location = New System.Drawing.Point(257, 138)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(101, 23)
-        Me.DateTimePicker2.TabIndex = 20
+        Me.dt_toRegular.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dt_toRegular.Location = New System.Drawing.Point(300, 167)
+        Me.dt_toRegular.Name = "dt_toRegular"
+        Me.dt_toRegular.Size = New System.Drawing.Size(101, 23)
+        Me.dt_toRegular.TabIndex = 24
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(274, 170)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(20, 17)
+        Me.Label3.TabIndex = 23
+        Me.Label3.Text = "to"
+        '
+        'dt_fromRegular
+        '
+        Me.dt_fromRegular.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dt_fromRegular.Location = New System.Drawing.Point(170, 167)
+        Me.dt_fromRegular.Name = "dt_fromRegular"
+        Me.dt_fromRegular.Size = New System.Drawing.Size(101, 23)
+        Me.dt_fromRegular.TabIndex = 22
+        '
+        'cb_regularization
+        '
+        Me.cb_regularization.AutoSize = True
+        Me.cb_regularization.Location = New System.Drawing.Point(15, 169)
+        Me.cb_regularization.Name = "cb_regularization"
+        Me.cb_regularization.Size = New System.Drawing.Size(152, 21)
+        Me.cb_regularization.TabIndex = 21
+        Me.cb_regularization.Text = "Regularization Date"
+        Me.cb_regularization.UseVisualStyleBackColor = True
+        '
+        'dt_toHired
+        '
+        Me.dt_toHired.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dt_toHired.Location = New System.Drawing.Point(300, 138)
+        Me.dt_toHired.Name = "dt_toHired"
+        Me.dt_toHired.Size = New System.Drawing.Size(101, 23)
+        Me.dt_toHired.TabIndex = 20
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(231, 141)
+        Me.Label2.Location = New System.Drawing.Point(274, 141)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(20, 17)
         Me.Label2.TabIndex = 19
         Me.Label2.Text = "to"
         '
-        'DateTimePicker1
+        'dt_fromHired
         '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker1.Location = New System.Drawing.Point(127, 138)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(101, 23)
-        Me.DateTimePicker1.TabIndex = 18
+        Me.dt_fromHired.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dt_fromHired.Location = New System.Drawing.Point(170, 138)
+        Me.dt_fromHired.Name = "dt_fromHired"
+        Me.dt_fromHired.Size = New System.Drawing.Size(101, 23)
+        Me.dt_fromHired.TabIndex = 18
         '
-        'ComboBox4
+        'cmb_status
         '
-        Me.ComboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox4.FormattingEnabled = True
-        Me.ComboBox4.Location = New System.Drawing.Point(127, 226)
-        Me.ComboBox4.Name = "ComboBox4"
-        Me.ComboBox4.Size = New System.Drawing.Size(113, 24)
-        Me.ComboBox4.TabIndex = 17
+        Me.cmb_status.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_status.FormattingEnabled = True
+        Me.cmb_status.Location = New System.Drawing.Point(170, 255)
+        Me.cmb_status.Name = "cmb_status"
+        Me.cmb_status.Size = New System.Drawing.Size(113, 24)
+        Me.cmb_status.TabIndex = 17
         '
-        'CheckBox8
+        'cb_status
         '
-        Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Location = New System.Drawing.Point(14, 226)
-        Me.CheckBox8.Name = "CheckBox8"
-        Me.CheckBox8.Size = New System.Drawing.Size(67, 21)
-        Me.CheckBox8.TabIndex = 16
-        Me.CheckBox8.Text = "Status"
-        Me.CheckBox8.UseVisualStyleBackColor = True
+        Me.cb_status.AutoSize = True
+        Me.cb_status.Location = New System.Drawing.Point(14, 255)
+        Me.cb_status.Name = "cb_status"
+        Me.cb_status.Size = New System.Drawing.Size(67, 21)
+        Me.cb_status.TabIndex = 16
+        Me.cb_status.Text = "Status"
+        Me.cb_status.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btn_submit
         '
-        Me.Button2.Location = New System.Drawing.Point(196, 258)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(85, 30)
-        Me.Button2.TabIndex = 15
-        Me.Button2.Text = "Save"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btn_submit.Location = New System.Drawing.Point(225, 287)
+        Me.btn_submit.Name = "btn_submit"
+        Me.btn_submit.Size = New System.Drawing.Size(85, 30)
+        Me.btn_submit.TabIndex = 15
+        Me.btn_submit.Text = "Submit"
+        Me.btn_submit.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btn_cancel
         '
-        Me.Button1.Location = New System.Drawing.Point(287, 258)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(85, 30)
-        Me.Button1.TabIndex = 14
-        Me.Button1.Text = "Cancel"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btn_cancel.Location = New System.Drawing.Point(316, 287)
+        Me.btn_cancel.Name = "btn_cancel"
+        Me.btn_cancel.Size = New System.Drawing.Size(85, 30)
+        Me.btn_cancel.TabIndex = 14
+        Me.btn_cancel.Text = "Cancel"
+        Me.btn_cancel.UseVisualStyleBackColor = True
         '
-        'ComboBox3
+        'cmb_department
         '
-        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Location = New System.Drawing.Point(127, 196)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(179, 24)
-        Me.ComboBox3.TabIndex = 13
+        Me.cmb_department.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_department.FormattingEnabled = True
+        Me.cmb_department.Location = New System.Drawing.Point(170, 225)
+        Me.cmb_department.Name = "cmb_department"
+        Me.cmb_department.Size = New System.Drawing.Size(179, 24)
+        Me.cmb_department.TabIndex = 13
         '
-        'CheckBox7
+        'cb_department
         '
-        Me.CheckBox7.AutoSize = True
-        Me.CheckBox7.Location = New System.Drawing.Point(14, 196)
-        Me.CheckBox7.Name = "CheckBox7"
-        Me.CheckBox7.Size = New System.Drawing.Size(101, 21)
-        Me.CheckBox7.TabIndex = 12
-        Me.CheckBox7.Text = "Department"
-        Me.CheckBox7.UseVisualStyleBackColor = True
+        Me.cb_department.AutoSize = True
+        Me.cb_department.Location = New System.Drawing.Point(14, 225)
+        Me.cb_department.Name = "cb_department"
+        Me.cb_department.Size = New System.Drawing.Size(101, 21)
+        Me.cb_department.TabIndex = 12
+        Me.cb_department.Text = "Department"
+        Me.cb_department.UseVisualStyleBackColor = True
         '
-        'TextBox4
+        'txt_position
         '
-        Me.TextBox4.Location = New System.Drawing.Point(127, 167)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(148, 23)
-        Me.TextBox4.TabIndex = 11
+        Me.txt_position.Location = New System.Drawing.Point(170, 196)
+        Me.txt_position.Name = "txt_position"
+        Me.txt_position.Size = New System.Drawing.Size(148, 23)
+        Me.txt_position.TabIndex = 11
         '
-        'CheckBox6
+        'cb_position
         '
-        Me.CheckBox6.AutoSize = True
-        Me.CheckBox6.Location = New System.Drawing.Point(15, 169)
-        Me.CheckBox6.Name = "CheckBox6"
-        Me.CheckBox6.Size = New System.Drawing.Size(77, 21)
-        Me.CheckBox6.TabIndex = 10
-        Me.CheckBox6.Text = "Position"
-        Me.CheckBox6.UseVisualStyleBackColor = True
+        Me.cb_position.AutoSize = True
+        Me.cb_position.Location = New System.Drawing.Point(15, 198)
+        Me.cb_position.Name = "cb_position"
+        Me.cb_position.Size = New System.Drawing.Size(77, 21)
+        Me.cb_position.TabIndex = 10
+        Me.cb_position.Text = "Position"
+        Me.cb_position.UseVisualStyleBackColor = True
         '
-        'CheckBox5
+        'cb_hiredDate
         '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(15, 140)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(95, 21)
-        Me.CheckBox5.TabIndex = 8
-        Me.CheckBox5.Text = "Hired Date"
-        Me.CheckBox5.UseVisualStyleBackColor = True
+        Me.cb_hiredDate.AutoSize = True
+        Me.cb_hiredDate.Location = New System.Drawing.Point(15, 140)
+        Me.cb_hiredDate.Name = "cb_hiredDate"
+        Me.cb_hiredDate.Size = New System.Drawing.Size(95, 21)
+        Me.cb_hiredDate.TabIndex = 8
+        Me.cb_hiredDate.Text = "Hired Date"
+        Me.cb_hiredDate.UseVisualStyleBackColor = True
         '
-        'CheckBox4
+        'cb_civilStatus
         '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(15, 110)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(96, 21)
-        Me.CheckBox4.TabIndex = 7
-        Me.CheckBox4.Text = "Civil Status"
-        Me.CheckBox4.UseVisualStyleBackColor = True
+        Me.cb_civilStatus.AutoSize = True
+        Me.cb_civilStatus.Location = New System.Drawing.Point(15, 110)
+        Me.cb_civilStatus.Name = "cb_civilStatus"
+        Me.cb_civilStatus.Size = New System.Drawing.Size(96, 21)
+        Me.cb_civilStatus.TabIndex = 7
+        Me.cb_civilStatus.Text = "Civil Status"
+        Me.cb_civilStatus.UseVisualStyleBackColor = True
         '
-        'ComboBox2
+        'cmb_civilStatus
         '
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(127, 108)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(82, 24)
-        Me.ComboBox2.TabIndex = 6
+        Me.cmb_civilStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_civilStatus.FormattingEnabled = True
+        Me.cmb_civilStatus.Location = New System.Drawing.Point(170, 108)
+        Me.cmb_civilStatus.Name = "cmb_civilStatus"
+        Me.cmb_civilStatus.Size = New System.Drawing.Size(82, 24)
+        Me.cmb_civilStatus.TabIndex = 6
         '
-        'CheckBox3
+        'cb_gender
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(15, 80)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(75, 21)
-        Me.CheckBox3.TabIndex = 5
-        Me.CheckBox3.Text = "Gender"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.cb_gender.AutoSize = True
+        Me.cb_gender.Location = New System.Drawing.Point(15, 80)
+        Me.cb_gender.Name = "cb_gender"
+        Me.cb_gender.Size = New System.Drawing.Size(75, 21)
+        Me.cb_gender.TabIndex = 5
+        Me.cb_gender.Text = "Gender"
+        Me.cb_gender.UseVisualStyleBackColor = True
         '
-        'ComboBox1
+        'cmb_gender
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(127, 78)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(82, 24)
-        Me.ComboBox1.TabIndex = 4
+        Me.cmb_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_gender.FormattingEnabled = True
+        Me.cmb_gender.Location = New System.Drawing.Point(170, 78)
+        Me.cmb_gender.Name = "cmb_gender"
+        Me.cmb_gender.Size = New System.Drawing.Size(82, 24)
+        Me.cmb_gender.TabIndex = 4
         '
-        'TextBox2
+        'txt_name
         '
-        Me.TextBox2.Location = New System.Drawing.Point(127, 49)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(179, 23)
-        Me.TextBox2.TabIndex = 3
+        Me.txt_name.Location = New System.Drawing.Point(170, 49)
+        Me.txt_name.Name = "txt_name"
+        Me.txt_name.Size = New System.Drawing.Size(179, 23)
+        Me.txt_name.TabIndex = 3
         '
-        'CheckBox2
+        'cb_name
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(15, 51)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(64, 21)
-        Me.CheckBox2.TabIndex = 2
-        Me.CheckBox2.Text = "Name"
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.cb_name.AutoSize = True
+        Me.cb_name.Location = New System.Drawing.Point(15, 51)
+        Me.cb_name.Name = "cb_name"
+        Me.cb_name.Size = New System.Drawing.Size(130, 21)
+        Me.cb_name.TabIndex = 2
+        Me.cb_name.Text = "Employee Name"
+        Me.cb_name.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'txt_employeeID
         '
-        Me.TextBox1.Location = New System.Drawing.Point(127, 20)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(82, 23)
-        Me.TextBox1.TabIndex = 1
+        Me.txt_employeeID.Location = New System.Drawing.Point(170, 20)
+        Me.txt_employeeID.Name = "txt_employeeID"
+        Me.txt_employeeID.Size = New System.Drawing.Size(82, 23)
+        Me.txt_employeeID.TabIndex = 1
         '
-        'CheckBox1
+        'cb_employeeID
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(15, 22)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(106, 21)
-        Me.CheckBox1.TabIndex = 0
-        Me.CheckBox1.Text = "Employee ID"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.cb_employeeID.AutoSize = True
+        Me.cb_employeeID.Location = New System.Drawing.Point(15, 22)
+        Me.cb_employeeID.Name = "cb_employeeID"
+        Me.cb_employeeID.Size = New System.Drawing.Size(106, 21)
+        Me.cb_employeeID.TabIndex = 0
+        Me.cb_employeeID.Text = "Employee ID"
+        Me.cb_employeeID.UseVisualStyleBackColor = True
         '
         'dgv_employees
         '
@@ -342,7 +388,7 @@ Partial Class FrmEMPLOYEES
         Me.dgv_employees.BackgroundColor = System.Drawing.Color.White
         Me.dgv_employees.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgv_employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_employees.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Number, Me.Employee_ID, Me.Last_Name, Me.First_Name, Me.Middle_Name, Me.Employment_Status, Me.Position, Me.Department, Me.Birthday, Me.Employment_Date})
+        Me.dgv_employees.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Number, Me.Employee_ID, Me.Employee_Picture, Me.Last_Name, Me.First_Name, Me.Middle_Name, Me.Employment_Status, Me.Position, Me.Department, Me.Birthday, Me.Employment_Date})
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -351,9 +397,8 @@ Partial Class FrmEMPLOYEES
         DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgv_employees.DefaultCellStyle = DataGridViewCellStyle1
-        Me.dgv_employees.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgv_employees.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
-        Me.dgv_employees.Location = New System.Drawing.Point(5, 5)
+        Me.dgv_employees.Location = New System.Drawing.Point(717, 183)
         Me.dgv_employees.Name = "dgv_employees"
         Me.dgv_employees.ReadOnly = True
         Me.dgv_employees.RowHeadersVisible = False
@@ -362,8 +407,9 @@ Partial Class FrmEMPLOYEES
         Me.dgv_employees.ShowCellToolTips = False
         Me.dgv_employees.ShowEditingIcon = False
         Me.dgv_employees.ShowRowErrors = False
-        Me.dgv_employees.Size = New System.Drawing.Size(938, 509)
+        Me.dgv_employees.Size = New System.Drawing.Size(194, 171)
         Me.dgv_employees.TabIndex = 705
+        Me.dgv_employees.Visible = False
         '
         'Number
         '
@@ -378,6 +424,13 @@ Partial Class FrmEMPLOYEES
         Me.Employee_ID.Name = "Employee_ID"
         Me.Employee_ID.ReadOnly = True
         Me.Employee_ID.Width = 80
+        '
+        'Employee_Picture
+        '
+        Me.Employee_Picture.HeaderText = "Employee Picture"
+        Me.Employee_Picture.Name = "Employee_Picture"
+        Me.Employee_Picture.ReadOnly = True
+        Me.Employee_Picture.Width = 130
         '
         'Last_Name
         '
@@ -434,6 +487,20 @@ Partial Class FrmEMPLOYEES
         Me.Employment_Date.ReadOnly = True
         Me.Employment_Date.Width = 120
         '
+        'lst_employees
+        '
+        Me.lst_employees.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lst_employees.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.lst_employees.FullRowSelect = True
+        Me.lst_employees.GridLines = True
+        Me.lst_employees.Location = New System.Drawing.Point(5, 5)
+        Me.lst_employees.Margin = New System.Windows.Forms.Padding(2)
+        Me.lst_employees.Name = "lst_employees"
+        Me.lst_employees.Size = New System.Drawing.Size(938, 509)
+        Me.lst_employees.TabIndex = 707
+        Me.lst_employees.UseCompatibleStateImageBehavior = False
+        Me.lst_employees.View = System.Windows.Forms.View.Details
+        '
         'FrmEMPLOYEES
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -450,8 +517,8 @@ Partial Class FrmEMPLOYEES
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.dgv_panel.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.grpFilter.ResumeLayout(False)
+        Me.grpFilter.PerformLayout()
         CType(Me.dgv_employees, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -462,29 +529,34 @@ Partial Class FrmEMPLOYEES
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents dgv_employees As System.Windows.Forms.DataGridView
     Friend WithEvents dgv_panel As System.Windows.Forms.Panel
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
-    Friend WithEvents CheckBox7 As System.Windows.Forms.CheckBox
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents CheckBox6 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox5 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox4 As System.Windows.Forms.CheckBox
-    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
-    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents ComboBox4 As System.Windows.Forms.ComboBox
-    Friend WithEvents CheckBox8 As System.Windows.Forms.CheckBox
-    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents grpFilter As System.Windows.Forms.GroupBox
+    Friend WithEvents btn_submit As System.Windows.Forms.Button
+    Friend WithEvents btn_cancel As System.Windows.Forms.Button
+    Friend WithEvents cmb_department As System.Windows.Forms.ComboBox
+    Friend WithEvents cb_department As System.Windows.Forms.CheckBox
+    Friend WithEvents txt_position As System.Windows.Forms.TextBox
+    Friend WithEvents cb_position As System.Windows.Forms.CheckBox
+    Friend WithEvents cb_hiredDate As System.Windows.Forms.CheckBox
+    Friend WithEvents cb_civilStatus As System.Windows.Forms.CheckBox
+    Friend WithEvents cmb_civilStatus As System.Windows.Forms.ComboBox
+    Friend WithEvents cb_gender As System.Windows.Forms.CheckBox
+    Friend WithEvents cmb_gender As System.Windows.Forms.ComboBox
+    Friend WithEvents txt_name As System.Windows.Forms.TextBox
+    Friend WithEvents cb_name As System.Windows.Forms.CheckBox
+    Friend WithEvents txt_employeeID As System.Windows.Forms.TextBox
+    Friend WithEvents cb_employeeID As System.Windows.Forms.CheckBox
+    Friend WithEvents cmb_status As System.Windows.Forms.ComboBox
+    Friend WithEvents cb_status As System.Windows.Forms.CheckBox
+    Friend WithEvents dt_toHired As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dt_fromHired As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dt_toRegular As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents dt_fromRegular As System.Windows.Forms.DateTimePicker
+    Friend WithEvents cb_regularization As System.Windows.Forms.CheckBox
     Friend WithEvents Number As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Employee_ID As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Employee_Picture As System.Windows.Forms.DataGridViewImageColumn
     Friend WithEvents Last_Name As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents First_Name As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Middle_Name As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -493,4 +565,5 @@ Partial Class FrmEMPLOYEES
     Friend WithEvents Department As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Birthday As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Employment_Date As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents lst_employees As System.Windows.Forms.ListView
 End Class

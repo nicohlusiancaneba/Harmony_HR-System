@@ -307,6 +307,7 @@
     <Compile Include="Harmony_DataSet.vb">
       <DependentUpon>Harmony_DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Modules\ModActiveForm.vb" />
     <Compile Include="Modules\ModCode.vb" />
     <Compile Include="Modules\ModCon.vb" />
     <Compile Include="Modules\ModProcedure.vb" />

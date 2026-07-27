@@ -25,16 +25,17 @@ Partial Class FrmEMPLOYEE_DETAILS
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmEMPLOYEE_DETAILS))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label_ID = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.btn_save = New System.Windows.Forms.Button()
         Me.btn_cancel = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.Employee_tabControl = New System.Windows.Forms.TabControl()
         Me.Info = New System.Windows.Forms.TabPage()
         Me.grpEmployeeInfo = New System.Windows.Forms.GroupBox()
+        Me.txt_employmentStatus = New System.Windows.Forms.TextBox()
         Me.Panel_Picture = New System.Windows.Forms.Panel()
         Me.employee_Pic = New System.Windows.Forms.PictureBox()
         Me.txt_emergencyNo = New System.Windows.Forms.TextBox()
@@ -69,7 +70,6 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.txt_bankAccountNo = New System.Windows.Forms.TextBox()
         Me.txt_contact = New System.Windows.Forms.TextBox()
         Me.txt_monthlyRate = New System.Windows.Forms.TextBox()
-        Me.cmb_employmentStatus = New System.Windows.Forms.ComboBox()
         Me.txt_workingDays = New System.Windows.Forms.TextBox()
         Me.txt_jobPosition = New System.Windows.Forms.TextBox()
         Me.txt_currentRate = New System.Windows.Forms.TextBox()
@@ -81,12 +81,9 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Files = New System.Windows.Forms.TabPage()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.grpFiles = New System.Windows.Forms.GroupBox()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.dgv_files = New System.Windows.Forms.DataGridView()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.btn_remove = New System.Windows.Forms.Button()
-        Me.btn_edit = New System.Windows.Forms.Button()
-        Me.btn_add = New System.Windows.Forms.Button()
         Me.File_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Date_Modified = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.File_Type = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -94,43 +91,96 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.File_Extension = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.File_Remarks = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.File_Data = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Download = New System.Windows.Forms.DataGridViewLinkColumn()
+        Me.Download_Link = New System.Windows.Forms.DataGridViewLinkColumn()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.btn_remove = New System.Windows.Forms.Button()
+        Me.btn_edit = New System.Windows.Forms.Button()
+        Me.btn_add = New System.Windows.Forms.Button()
+        Me.Attendance = New System.Windows.Forms.TabPage()
+        Me.Payroll = New System.Windows.Forms.TabPage()
+        Me.grpPayroll = New System.Windows.Forms.GroupBox()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.lst_payroll = New System.Windows.Forms.ListView()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Loans = New System.Windows.Forms.TabPage()
+        Me.Adjustments = New System.Windows.Forms.TabPage()
+        Me.Leaves = New System.Windows.Forms.TabPage()
+        Me.grpLoans = New System.Windows.Forms.GroupBox()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.lst_loans = New System.Windows.Forms.ListView()
+        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.grpAdjustments = New System.Windows.Forms.GroupBox()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.lst_adjustments = New System.Windows.Forms.ListView()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.lst_leaves = New System.Windows.Forms.ListView()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.txt_paidLeaves2 = New System.Windows.Forms.TextBox()
+        Me.txt_paidAvail = New System.Windows.Forms.TextBox()
+        Me.Label20 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
+        Me.Employee_tabControl.SuspendLayout()
         Me.Info.SuspendLayout()
         Me.grpEmployeeInfo.SuspendLayout()
         Me.Panel_Picture.SuspendLayout()
         CType(Me.employee_Pic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Files.SuspendLayout()
         Me.Panel4.SuspendLayout()
+        Me.grpFiles.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         CType(Me.dgv_files, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        Me.Payroll.SuspendLayout()
+        Me.grpPayroll.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        Me.Panel7.SuspendLayout()
+        Me.Loans.SuspendLayout()
+        Me.Adjustments.SuspendLayout()
+        Me.Leaves.SuspendLayout()
+        Me.grpLoans.SuspendLayout()
+        Me.Panel8.SuspendLayout()
+        Me.Panel9.SuspendLayout()
+        Me.grpAdjustments.SuspendLayout()
+        Me.Panel10.SuspendLayout()
+        Me.Panel11.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.Panel12.SuspendLayout()
+        Me.Panel13.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Label2)
+        Me.Panel1.Controls.Add(Me.Label_ID)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(978, 50)
+        Me.Panel1.Size = New System.Drawing.Size(976, 50)
         Me.Panel1.TabIndex = 0
         '
-        'Label2
+        'Label_ID
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(646, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(60, 31)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "ID#"
+        Me.Label_ID.AutoSize = True
+        Me.Label_ID.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label_ID.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.Label_ID.Location = New System.Drawing.Point(646, 9)
+        Me.Label_ID.Name = "Label_ID"
+        Me.Label_ID.Size = New System.Drawing.Size(60, 31)
+        Me.Label_ID.TabIndex = 3
+        Me.Label_ID.Text = "ID#"
         '
         'PictureBox1
         '
@@ -163,7 +213,7 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.Panel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.Panel2.Location = New System.Drawing.Point(0, 564)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(978, 50)
+        Me.Panel2.Size = New System.Drawing.Size(976, 50)
         Me.Panel2.TabIndex = 1
         '
         'btn_save
@@ -196,16 +246,21 @@ Partial Class FrmEMPLOYEE_DETAILS
     "f Birth :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Gender :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Civil Status : " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Address :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Contact No. :"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'TabControl1
+        'Employee_tabControl
         '
-        Me.TabControl1.Controls.Add(Me.Info)
-        Me.TabControl1.Controls.Add(Me.Files)
-        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControl1.Location = New System.Drawing.Point(0, 50)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(978, 514)
-        Me.TabControl1.TabIndex = 3
+        Me.Employee_tabControl.Controls.Add(Me.Info)
+        Me.Employee_tabControl.Controls.Add(Me.Files)
+        Me.Employee_tabControl.Controls.Add(Me.Attendance)
+        Me.Employee_tabControl.Controls.Add(Me.Payroll)
+        Me.Employee_tabControl.Controls.Add(Me.Loans)
+        Me.Employee_tabControl.Controls.Add(Me.Adjustments)
+        Me.Employee_tabControl.Controls.Add(Me.Leaves)
+        Me.Employee_tabControl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Employee_tabControl.Location = New System.Drawing.Point(0, 50)
+        Me.Employee_tabControl.Name = "Employee_tabControl"
+        Me.Employee_tabControl.SelectedIndex = 0
+        Me.Employee_tabControl.Size = New System.Drawing.Size(976, 514)
+        Me.Employee_tabControl.TabIndex = 3
         '
         'Info
         '
@@ -214,12 +269,13 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.Info.Location = New System.Drawing.Point(4, 22)
         Me.Info.Name = "Info"
         Me.Info.Padding = New System.Windows.Forms.Padding(3)
-        Me.Info.Size = New System.Drawing.Size(970, 488)
+        Me.Info.Size = New System.Drawing.Size(968, 488)
         Me.Info.TabIndex = 0
         Me.Info.Text = "Info"
         '
         'grpEmployeeInfo
         '
+        Me.grpEmployeeInfo.Controls.Add(Me.txt_employmentStatus)
         Me.grpEmployeeInfo.Controls.Add(Me.Panel_Picture)
         Me.grpEmployeeInfo.Controls.Add(Me.txt_emergencyNo)
         Me.grpEmployeeInfo.Controls.Add(Me.txt_emergencyRelationship)
@@ -253,7 +309,6 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.grpEmployeeInfo.Controls.Add(Me.txt_bankAccountNo)
         Me.grpEmployeeInfo.Controls.Add(Me.txt_contact)
         Me.grpEmployeeInfo.Controls.Add(Me.txt_monthlyRate)
-        Me.grpEmployeeInfo.Controls.Add(Me.cmb_employmentStatus)
         Me.grpEmployeeInfo.Controls.Add(Me.txt_workingDays)
         Me.grpEmployeeInfo.Controls.Add(Me.txt_jobPosition)
         Me.grpEmployeeInfo.Controls.Add(Me.txt_currentRate)
@@ -264,12 +319,22 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.grpEmployeeInfo.Controls.Add(Me.cmb_division)
         Me.grpEmployeeInfo.Controls.Add(Me.Label3)
         Me.grpEmployeeInfo.Controls.Add(Me.Label4)
-        Me.grpEmployeeInfo.Dock = System.Windows.Forms.DockStyle.Top
+        Me.grpEmployeeInfo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grpEmployeeInfo.Location = New System.Drawing.Point(3, 3)
         Me.grpEmployeeInfo.Name = "grpEmployeeInfo"
-        Me.grpEmployeeInfo.Size = New System.Drawing.Size(964, 482)
+        Me.grpEmployeeInfo.Size = New System.Drawing.Size(962, 482)
         Me.grpEmployeeInfo.TabIndex = 46
         Me.grpEmployeeInfo.TabStop = False
+        '
+        'txt_employmentStatus
+        '
+        Me.txt_employmentStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_employmentStatus.Location = New System.Drawing.Point(483, 33)
+        Me.txt_employmentStatus.Name = "txt_employmentStatus"
+        Me.txt_employmentStatus.ReadOnly = True
+        Me.txt_employmentStatus.Size = New System.Drawing.Size(123, 23)
+        Me.txt_employmentStatus.TabIndex = 47
+        Me.txt_employmentStatus.Tag = "inputText"
         '
         'Panel_Picture
         '
@@ -416,6 +481,7 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.txt_paidLeaves.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_paidLeaves.Location = New System.Drawing.Point(483, 441)
         Me.txt_paidLeaves.Name = "txt_paidLeaves"
+        Me.txt_paidLeaves.ReadOnly = True
         Me.txt_paidLeaves.Size = New System.Drawing.Size(48, 23)
         Me.txt_paidLeaves.TabIndex = 38
         Me.txt_paidLeaves.Tag = "inputText"
@@ -437,9 +503,10 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.txt_PAGIBIGvalue.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_PAGIBIGvalue.Location = New System.Drawing.Point(815, 323)
         Me.txt_PAGIBIGvalue.Name = "txt_PAGIBIGvalue"
+        Me.txt_PAGIBIGvalue.ReadOnly = True
         Me.txt_PAGIBIGvalue.Size = New System.Drawing.Size(83, 23)
         Me.txt_PAGIBIGvalue.TabIndex = 37
-        Me.txt_PAGIBIGvalue.Tag = "inputText"
+        Me.txt_PAGIBIGvalue.Tag = "inputNum"
         '
         'Label10
         '
@@ -458,9 +525,10 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.txt_taxValue.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_taxValue.Location = New System.Drawing.Point(815, 289)
         Me.txt_taxValue.Name = "txt_taxValue"
+        Me.txt_taxValue.ReadOnly = True
         Me.txt_taxValue.Size = New System.Drawing.Size(83, 23)
         Me.txt_taxValue.TabIndex = 36
-        Me.txt_taxValue.Tag = "inputText"
+        Me.txt_taxValue.Tag = "inputNum"
         '
         'txt_lastName
         '
@@ -476,9 +544,10 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.txt_philhealthValue.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_philhealthValue.Location = New System.Drawing.Point(815, 255)
         Me.txt_philhealthValue.Name = "txt_philhealthValue"
+        Me.txt_philhealthValue.ReadOnly = True
         Me.txt_philhealthValue.Size = New System.Drawing.Size(83, 23)
         Me.txt_philhealthValue.TabIndex = 35
-        Me.txt_philhealthValue.Tag = "inputText"
+        Me.txt_philhealthValue.Tag = "inputNum"
         '
         'txt_firstName
         '
@@ -494,9 +563,10 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.txt_sssValue.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_sssValue.Location = New System.Drawing.Point(815, 221)
         Me.txt_sssValue.Name = "txt_sssValue"
+        Me.txt_sssValue.ReadOnly = True
         Me.txt_sssValue.Size = New System.Drawing.Size(83, 23)
         Me.txt_sssValue.TabIndex = 34
-        Me.txt_sssValue.Tag = "inputText"
+        Me.txt_sssValue.Tag = "inputNum"
         '
         'txt_middleName
         '
@@ -612,22 +682,12 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.txt_monthlyRate.TabIndex = 28
         Me.txt_monthlyRate.Tag = "inputText"
         '
-        'cmb_employmentStatus
-        '
-        Me.cmb_employmentStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_employmentStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.cmb_employmentStatus.FormattingEnabled = True
-        Me.cmb_employmentStatus.Items.AddRange(New Object() {"Owner", "Regular", "Probationary", "Probationary (Extended)", "Outsource", "Resigned", "Terminated"})
-        Me.cmb_employmentStatus.Location = New System.Drawing.Point(483, 32)
-        Me.cmb_employmentStatus.Name = "cmb_employmentStatus"
-        Me.cmb_employmentStatus.Size = New System.Drawing.Size(121, 24)
-        Me.cmb_employmentStatus.TabIndex = 19
-        '
         'txt_workingDays
         '
         Me.txt_workingDays.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_workingDays.Location = New System.Drawing.Point(483, 373)
         Me.txt_workingDays.Name = "txt_workingDays"
+        Me.txt_workingDays.ReadOnly = True
         Me.txt_workingDays.Size = New System.Drawing.Size(48, 23)
         Me.txt_workingDays.TabIndex = 27
         Me.txt_workingDays.Tag = "inputText"
@@ -666,6 +726,7 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.txt_startingRate.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_startingRate.Location = New System.Drawing.Point(483, 305)
         Me.txt_startingRate.Name = "txt_startingRate"
+        Me.txt_startingRate.ReadOnly = True
         Me.txt_startingRate.Size = New System.Drawing.Size(83, 23)
         Me.txt_startingRate.TabIndex = 25
         Me.txt_startingRate.Tag = "inputText"
@@ -673,6 +734,7 @@ Partial Class FrmEMPLOYEE_DETAILS
         'cmb_department
         '
         Me.cmb_department.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_department.DropDownWidth = 220
         Me.cmb_department.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.cmb_department.FormattingEnabled = True
         Me.cmb_department.Location = New System.Drawing.Point(483, 100)
@@ -693,6 +755,7 @@ Partial Class FrmEMPLOYEE_DETAILS
         'cmb_division
         '
         Me.cmb_division.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_division.DropDownWidth = 220
         Me.cmb_division.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.cmb_division.FormattingEnabled = True
         Me.cmb_division.Location = New System.Drawing.Point(483, 134)
@@ -715,23 +778,42 @@ Partial Class FrmEMPLOYEE_DETAILS
         '
         Me.Files.BackColor = System.Drawing.Color.White
         Me.Files.Controls.Add(Me.Panel4)
-        Me.Files.Controls.Add(Me.Panel3)
         Me.Files.Location = New System.Drawing.Point(4, 22)
         Me.Files.Name = "Files"
         Me.Files.Padding = New System.Windows.Forms.Padding(3)
-        Me.Files.Size = New System.Drawing.Size(970, 488)
+        Me.Files.Size = New System.Drawing.Size(968, 488)
         Me.Files.TabIndex = 1
         Me.Files.Text = "Files"
         '
         'Panel4
         '
-        Me.Panel4.Controls.Add(Me.dgv_files)
+        Me.Panel4.Controls.Add(Me.grpFiles)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Panel4.Location = New System.Drawing.Point(3, 40)
+        Me.Panel4.Location = New System.Drawing.Point(3, 3)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(964, 445)
+        Me.Panel4.Size = New System.Drawing.Size(962, 482)
         Me.Panel4.TabIndex = 1
+        '
+        'grpFiles
+        '
+        Me.grpFiles.Controls.Add(Me.Panel5)
+        Me.grpFiles.Controls.Add(Me.Panel3)
+        Me.grpFiles.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grpFiles.Location = New System.Drawing.Point(0, 0)
+        Me.grpFiles.Name = "grpFiles"
+        Me.grpFiles.Size = New System.Drawing.Size(962, 482)
+        Me.grpFiles.TabIndex = 707
+        Me.grpFiles.TabStop = False
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.dgv_files)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel5.Location = New System.Drawing.Point(3, 56)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(956, 423)
+        Me.Panel5.TabIndex = 1
         '
         'dgv_files
         '
@@ -741,7 +823,7 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.dgv_files.BackgroundColor = System.Drawing.Color.White
         Me.dgv_files.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgv_files.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_files.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.File_ID, Me.Date_Modified, Me.File_Type, Me.File_Name, Me.File_Extension, Me.File_Remarks, Me.File_Data, Me.Download})
+        Me.dgv_files.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.File_ID, Me.Date_Modified, Me.File_Type, Me.File_Name, Me.File_Extension, Me.File_Remarks, Me.File_Data, Me.Download_Link})
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
@@ -761,59 +843,8 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.dgv_files.ShowCellToolTips = False
         Me.dgv_files.ShowEditingIcon = False
         Me.dgv_files.ShowRowErrors = False
-        Me.dgv_files.Size = New System.Drawing.Size(964, 445)
+        Me.dgv_files.Size = New System.Drawing.Size(956, 423)
         Me.dgv_files.TabIndex = 706
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.Label14)
-        Me.Panel3.Controls.Add(Me.btn_remove)
-        Me.Panel3.Controls.Add(Me.btn_edit)
-        Me.Panel3.Controls.Add(Me.btn_add)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(3, 3)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(964, 37)
-        Me.Panel3.TabIndex = 0
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(867, 10)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(9, 13)
-        Me.Label14.TabIndex = 3
-        Me.Label14.Text = "|"
-        '
-        'btn_remove
-        '
-        Me.btn_remove.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.btn_remove.Location = New System.Drawing.Point(884, 3)
-        Me.btn_remove.Name = "btn_remove"
-        Me.btn_remove.Size = New System.Drawing.Size(75, 28)
-        Me.btn_remove.TabIndex = 2
-        Me.btn_remove.Text = "Remove"
-        Me.btn_remove.UseVisualStyleBackColor = True
-        '
-        'btn_edit
-        '
-        Me.btn_edit.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.btn_edit.Location = New System.Drawing.Point(783, 3)
-        Me.btn_edit.Name = "btn_edit"
-        Me.btn_edit.Size = New System.Drawing.Size(75, 28)
-        Me.btn_edit.TabIndex = 1
-        Me.btn_edit.Text = "Edit"
-        Me.btn_edit.UseVisualStyleBackColor = True
-        '
-        'btn_add
-        '
-        Me.btn_add.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.btn_add.Location = New System.Drawing.Point(702, 3)
-        Me.btn_add.Name = "btn_add"
-        Me.btn_add.Size = New System.Drawing.Size(75, 28)
-        Me.btn_add.TabIndex = 0
-        Me.btn_add.Text = "Add"
-        Me.btn_add.UseVisualStyleBackColor = True
         '
         'File_ID
         '
@@ -863,20 +894,399 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.File_Data.ReadOnly = True
         Me.File_Data.Visible = False
         '
-        'Download
+        'Download_Link
         '
-        Me.Download.HeaderText = "Download"
-        Me.Download.Name = "Download"
-        Me.Download.ReadOnly = True
+        Me.Download_Link.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Download_Link.HeaderText = ""
+        Me.Download_Link.LinkColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.Download_Link.Name = "Download_Link"
+        Me.Download_Link.ReadOnly = True
+        Me.Download_Link.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.Download_Link.Width = 115
+        '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.Label2)
+        Me.Panel3.Controls.Add(Me.Label14)
+        Me.Panel3.Controls.Add(Me.btn_remove)
+        Me.Panel3.Controls.Add(Me.btn_edit)
+        Me.Panel3.Controls.Add(Me.btn_add)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel3.Location = New System.Drawing.Point(3, 19)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(956, 37)
+        Me.Panel3.TabIndex = 0
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(5, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(152, 17)
+        Me.Label2.TabIndex = 8
+        Me.Label2.Text = "List of Files Uploaded :"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(857, 7)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(11, 17)
+        Me.Label14.TabIndex = 3
+        Me.Label14.Text = "|"
+        '
+        'btn_remove
+        '
+        Me.btn_remove.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.btn_remove.Location = New System.Drawing.Point(874, 4)
+        Me.btn_remove.Name = "btn_remove"
+        Me.btn_remove.Size = New System.Drawing.Size(75, 28)
+        Me.btn_remove.TabIndex = 2
+        Me.btn_remove.Text = "Remove"
+        Me.btn_remove.UseVisualStyleBackColor = True
+        '
+        'btn_edit
+        '
+        Me.btn_edit.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.btn_edit.Location = New System.Drawing.Point(773, 4)
+        Me.btn_edit.Name = "btn_edit"
+        Me.btn_edit.Size = New System.Drawing.Size(75, 28)
+        Me.btn_edit.TabIndex = 1
+        Me.btn_edit.Text = "Edit"
+        Me.btn_edit.UseVisualStyleBackColor = True
+        '
+        'btn_add
+        '
+        Me.btn_add.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.btn_add.Location = New System.Drawing.Point(692, 4)
+        Me.btn_add.Name = "btn_add"
+        Me.btn_add.Size = New System.Drawing.Size(75, 28)
+        Me.btn_add.TabIndex = 0
+        Me.btn_add.Text = "Add"
+        Me.btn_add.UseVisualStyleBackColor = True
+        '
+        'Attendance
+        '
+        Me.Attendance.BackColor = System.Drawing.Color.White
+        Me.Attendance.Location = New System.Drawing.Point(4, 22)
+        Me.Attendance.Name = "Attendance"
+        Me.Attendance.Padding = New System.Windows.Forms.Padding(3)
+        Me.Attendance.Size = New System.Drawing.Size(968, 488)
+        Me.Attendance.TabIndex = 2
+        Me.Attendance.Text = "Attendance"
+        '
+        'Payroll
+        '
+        Me.Payroll.BackColor = System.Drawing.Color.White
+        Me.Payroll.Controls.Add(Me.grpPayroll)
+        Me.Payroll.Location = New System.Drawing.Point(4, 22)
+        Me.Payroll.Name = "Payroll"
+        Me.Payroll.Size = New System.Drawing.Size(968, 488)
+        Me.Payroll.TabIndex = 3
+        Me.Payroll.Text = "Payroll"
+        '
+        'grpPayroll
+        '
+        Me.grpPayroll.Controls.Add(Me.Panel6)
+        Me.grpPayroll.Controls.Add(Me.Panel7)
+        Me.grpPayroll.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grpPayroll.Location = New System.Drawing.Point(0, 0)
+        Me.grpPayroll.Name = "grpPayroll"
+        Me.grpPayroll.Size = New System.Drawing.Size(968, 488)
+        Me.grpPayroll.TabIndex = 708
+        Me.grpPayroll.TabStop = False
+        '
+        'Panel6
+        '
+        Me.Panel6.Controls.Add(Me.lst_payroll)
+        Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel6.Location = New System.Drawing.Point(3, 53)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(962, 432)
+        Me.Panel6.TabIndex = 1
+        '
+        'lst_payroll
+        '
+        Me.lst_payroll.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lst_payroll.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.lst_payroll.FullRowSelect = True
+        Me.lst_payroll.GridLines = True
+        Me.lst_payroll.Location = New System.Drawing.Point(0, 0)
+        Me.lst_payroll.Margin = New System.Windows.Forms.Padding(2)
+        Me.lst_payroll.Name = "lst_payroll"
+        Me.lst_payroll.Size = New System.Drawing.Size(962, 432)
+        Me.lst_payroll.TabIndex = 708
+        Me.lst_payroll.UseCompatibleStateImageBehavior = False
+        Me.lst_payroll.View = System.Windows.Forms.View.Details
+        '
+        'Panel7
+        '
+        Me.Panel7.Controls.Add(Me.Label15)
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel7.Location = New System.Drawing.Point(3, 16)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(962, 37)
+        Me.Panel7.TabIndex = 0
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(5, 9)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(148, 17)
+        Me.Label15.TabIndex = 8
+        Me.Label15.Text = "List of Payroll Details :"
+        Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Loans
+        '
+        Me.Loans.BackColor = System.Drawing.Color.White
+        Me.Loans.Controls.Add(Me.grpLoans)
+        Me.Loans.Location = New System.Drawing.Point(4, 22)
+        Me.Loans.Name = "Loans"
+        Me.Loans.Size = New System.Drawing.Size(968, 488)
+        Me.Loans.TabIndex = 4
+        Me.Loans.Text = "Loans"
+        '
+        'Adjustments
+        '
+        Me.Adjustments.BackColor = System.Drawing.Color.White
+        Me.Adjustments.Controls.Add(Me.grpAdjustments)
+        Me.Adjustments.Location = New System.Drawing.Point(4, 22)
+        Me.Adjustments.Name = "Adjustments"
+        Me.Adjustments.Size = New System.Drawing.Size(968, 488)
+        Me.Adjustments.TabIndex = 5
+        Me.Adjustments.Text = "Adjustments"
+        '
+        'Leaves
+        '
+        Me.Leaves.BackColor = System.Drawing.Color.White
+        Me.Leaves.Controls.Add(Me.GroupBox1)
+        Me.Leaves.Location = New System.Drawing.Point(4, 22)
+        Me.Leaves.Name = "Leaves"
+        Me.Leaves.Size = New System.Drawing.Size(968, 488)
+        Me.Leaves.TabIndex = 6
+        Me.Leaves.Text = "Leaves"
+        '
+        'grpLoans
+        '
+        Me.grpLoans.Controls.Add(Me.Panel8)
+        Me.grpLoans.Controls.Add(Me.Panel9)
+        Me.grpLoans.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grpLoans.Location = New System.Drawing.Point(0, 0)
+        Me.grpLoans.Name = "grpLoans"
+        Me.grpLoans.Size = New System.Drawing.Size(968, 488)
+        Me.grpLoans.TabIndex = 709
+        Me.grpLoans.TabStop = False
+        '
+        'Panel8
+        '
+        Me.Panel8.Controls.Add(Me.lst_loans)
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel8.Location = New System.Drawing.Point(3, 53)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(962, 432)
+        Me.Panel8.TabIndex = 1
+        '
+        'lst_loans
+        '
+        Me.lst_loans.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lst_loans.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.lst_loans.FullRowSelect = True
+        Me.lst_loans.GridLines = True
+        Me.lst_loans.Location = New System.Drawing.Point(0, 0)
+        Me.lst_loans.Margin = New System.Windows.Forms.Padding(2)
+        Me.lst_loans.Name = "lst_loans"
+        Me.lst_loans.Size = New System.Drawing.Size(962, 432)
+        Me.lst_loans.TabIndex = 708
+        Me.lst_loans.UseCompatibleStateImageBehavior = False
+        Me.lst_loans.View = System.Windows.Forms.View.Details
+        '
+        'Panel9
+        '
+        Me.Panel9.Controls.Add(Me.Label16)
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel9.Location = New System.Drawing.Point(3, 16)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(962, 37)
+        Me.Panel9.TabIndex = 0
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(5, 9)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(137, 17)
+        Me.Label16.TabIndex = 8
+        Me.Label16.Text = "List of Loan Details :"
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'grpAdjustments
+        '
+        Me.grpAdjustments.Controls.Add(Me.Panel10)
+        Me.grpAdjustments.Controls.Add(Me.Panel11)
+        Me.grpAdjustments.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.grpAdjustments.Location = New System.Drawing.Point(0, 0)
+        Me.grpAdjustments.Name = "grpAdjustments"
+        Me.grpAdjustments.Size = New System.Drawing.Size(968, 488)
+        Me.grpAdjustments.TabIndex = 710
+        Me.grpAdjustments.TabStop = False
+        '
+        'Panel10
+        '
+        Me.Panel10.Controls.Add(Me.lst_adjustments)
+        Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel10.Location = New System.Drawing.Point(3, 53)
+        Me.Panel10.Name = "Panel10"
+        Me.Panel10.Size = New System.Drawing.Size(962, 432)
+        Me.Panel10.TabIndex = 1
+        '
+        'lst_adjustments
+        '
+        Me.lst_adjustments.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lst_adjustments.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.lst_adjustments.FullRowSelect = True
+        Me.lst_adjustments.GridLines = True
+        Me.lst_adjustments.Location = New System.Drawing.Point(0, 0)
+        Me.lst_adjustments.Margin = New System.Windows.Forms.Padding(2)
+        Me.lst_adjustments.Name = "lst_adjustments"
+        Me.lst_adjustments.Size = New System.Drawing.Size(962, 432)
+        Me.lst_adjustments.TabIndex = 708
+        Me.lst_adjustments.UseCompatibleStateImageBehavior = False
+        Me.lst_adjustments.View = System.Windows.Forms.View.Details
+        '
+        'Panel11
+        '
+        Me.Panel11.Controls.Add(Me.Label17)
+        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel11.Location = New System.Drawing.Point(3, 16)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(962, 37)
+        Me.Panel11.TabIndex = 0
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.Location = New System.Drawing.Point(5, 9)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(175, 17)
+        Me.Label17.TabIndex = 8
+        Me.Label17.Text = "List of Adjustment Details :"
+        Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.Panel12)
+        Me.GroupBox1.Controls.Add(Me.Panel13)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 0)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(968, 488)
+        Me.GroupBox1.TabIndex = 711
+        Me.GroupBox1.TabStop = False
+        '
+        'Panel12
+        '
+        Me.Panel12.Controls.Add(Me.lst_leaves)
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel12.Location = New System.Drawing.Point(3, 53)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(962, 432)
+        Me.Panel12.TabIndex = 1
+        '
+        'lst_leaves
+        '
+        Me.lst_leaves.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lst_leaves.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.lst_leaves.FullRowSelect = True
+        Me.lst_leaves.GridLines = True
+        Me.lst_leaves.Location = New System.Drawing.Point(0, 0)
+        Me.lst_leaves.Margin = New System.Windows.Forms.Padding(2)
+        Me.lst_leaves.Name = "lst_leaves"
+        Me.lst_leaves.Size = New System.Drawing.Size(962, 432)
+        Me.lst_leaves.TabIndex = 708
+        Me.lst_leaves.UseCompatibleStateImageBehavior = False
+        Me.lst_leaves.View = System.Windows.Forms.View.Details
+        '
+        'Panel13
+        '
+        Me.Panel13.Controls.Add(Me.txt_paidAvail)
+        Me.Panel13.Controls.Add(Me.Label20)
+        Me.Panel13.Controls.Add(Me.txt_paidLeaves2)
+        Me.Panel13.Controls.Add(Me.Label19)
+        Me.Panel13.Controls.Add(Me.Label18)
+        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel13.Location = New System.Drawing.Point(3, 16)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(962, 37)
+        Me.Panel13.TabIndex = 0
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label18.Location = New System.Drawing.Point(5, 9)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(144, 17)
+        Me.Label18.TabIndex = 8
+        Me.Label18.Text = "List of Leave Details :"
+        Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(496, 9)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(142, 17)
+        Me.Label19.TabIndex = 9
+        Me.Label19.Text = "Annual Paid Leaves :"
+        Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'txt_paidLeaves2
+        '
+        Me.txt_paidLeaves2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.txt_paidLeaves2.Location = New System.Drawing.Point(644, 6)
+        Me.txt_paidLeaves2.Name = "txt_paidLeaves2"
+        Me.txt_paidLeaves2.ReadOnly = True
+        Me.txt_paidLeaves2.Size = New System.Drawing.Size(53, 23)
+        Me.txt_paidLeaves2.TabIndex = 10
+        Me.txt_paidLeaves2.Tag = "inputNum"
+        '
+        'txt_paidAvail
+        '
+        Me.txt_paidAvail.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.txt_paidAvail.Location = New System.Drawing.Point(901, 7)
+        Me.txt_paidAvail.Name = "txt_paidAvail"
+        Me.txt_paidAvail.ReadOnly = True
+        Me.txt_paidAvail.Size = New System.Drawing.Size(53, 23)
+        Me.txt_paidAvail.TabIndex = 12
+        Me.txt_paidAvail.Tag = "inputNum"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(710, 9)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(185, 17)
+        Me.Label20.TabIndex = 11
+        Me.Label20.Text = "Annual Paid Leave Availed :"
+        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'FrmEMPLOYEE_DETAILS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(978, 614)
+        Me.ClientSize = New System.Drawing.Size(976, 614)
         Me.ControlBox = False
-        Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.Employee_tabControl)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -887,7 +1297,7 @@ Partial Class FrmEMPLOYEE_DETAILS
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        Me.TabControl1.ResumeLayout(False)
+        Me.Employee_tabControl.ResumeLayout(False)
         Me.Info.ResumeLayout(False)
         Me.grpEmployeeInfo.ResumeLayout(False)
         Me.grpEmployeeInfo.PerformLayout()
@@ -895,9 +1305,31 @@ Partial Class FrmEMPLOYEE_DETAILS
         CType(Me.employee_Pic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Files.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
+        Me.grpFiles.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
         CType(Me.dgv_files, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
+        Me.Payroll.ResumeLayout(False)
+        Me.grpPayroll.ResumeLayout(False)
+        Me.Panel6.ResumeLayout(False)
+        Me.Panel7.ResumeLayout(False)
+        Me.Panel7.PerformLayout()
+        Me.Loans.ResumeLayout(False)
+        Me.Adjustments.ResumeLayout(False)
+        Me.Leaves.ResumeLayout(False)
+        Me.grpLoans.ResumeLayout(False)
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel9.ResumeLayout(False)
+        Me.Panel9.PerformLayout()
+        Me.grpAdjustments.ResumeLayout(False)
+        Me.Panel10.ResumeLayout(False)
+        Me.Panel11.ResumeLayout(False)
+        Me.Panel11.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.Panel12.ResumeLayout(False)
+        Me.Panel13.ResumeLayout(False)
+        Me.Panel13.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -905,11 +1337,11 @@ Partial Class FrmEMPLOYEE_DETAILS
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label_ID As System.Windows.Forms.Label
     Friend WithEvents btn_save As System.Windows.Forms.Button
     Friend WithEvents btn_cancel As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents Employee_tabControl As System.Windows.Forms.TabControl
     Friend WithEvents Info As System.Windows.Forms.TabPage
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Files As System.Windows.Forms.TabPage
@@ -926,7 +1358,6 @@ Partial Class FrmEMPLOYEE_DETAILS
     Friend WithEvents txt_middleName As System.Windows.Forms.TextBox
     Friend WithEvents txt_firstName As System.Windows.Forms.TextBox
     Friend WithEvents txt_lastName As System.Windows.Forms.TextBox
-    Friend WithEvents cmb_employmentStatus As System.Windows.Forms.ComboBox
     Friend WithEvents txt_contact As System.Windows.Forms.TextBox
     Friend WithEvents txt_address As System.Windows.Forms.TextBox
     Friend WithEvents dt_employmentDate As System.Windows.Forms.DateTimePicker
@@ -964,6 +1395,10 @@ Partial Class FrmEMPLOYEE_DETAILS
     Friend WithEvents btn_remove As System.Windows.Forms.Button
     Friend WithEvents dgv_files As System.Windows.Forms.DataGridView
     Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents txt_employmentStatus As System.Windows.Forms.TextBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents grpFiles As System.Windows.Forms.GroupBox
+    Friend WithEvents Panel5 As System.Windows.Forms.Panel
     Friend WithEvents File_ID As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Date_Modified As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents File_Type As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -971,5 +1406,34 @@ Partial Class FrmEMPLOYEE_DETAILS
     Friend WithEvents File_Extension As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents File_Remarks As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents File_Data As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Download As System.Windows.Forms.DataGridViewLinkColumn
+    Friend WithEvents Download_Link As System.Windows.Forms.DataGridViewLinkColumn
+    Friend WithEvents Attendance As System.Windows.Forms.TabPage
+    Friend WithEvents Payroll As System.Windows.Forms.TabPage
+    Friend WithEvents Loans As System.Windows.Forms.TabPage
+    Friend WithEvents Adjustments As System.Windows.Forms.TabPage
+    Friend WithEvents Leaves As System.Windows.Forms.TabPage
+    Friend WithEvents grpPayroll As System.Windows.Forms.GroupBox
+    Friend WithEvents Panel6 As System.Windows.Forms.Panel
+    Friend WithEvents Panel7 As System.Windows.Forms.Panel
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents lst_payroll As System.Windows.Forms.ListView
+    Friend WithEvents grpLoans As System.Windows.Forms.GroupBox
+    Friend WithEvents Panel8 As System.Windows.Forms.Panel
+    Friend WithEvents lst_loans As System.Windows.Forms.ListView
+    Friend WithEvents Panel9 As System.Windows.Forms.Panel
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents grpAdjustments As System.Windows.Forms.GroupBox
+    Friend WithEvents Panel10 As System.Windows.Forms.Panel
+    Friend WithEvents lst_adjustments As System.Windows.Forms.ListView
+    Friend WithEvents Panel11 As System.Windows.Forms.Panel
+    Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents Panel12 As System.Windows.Forms.Panel
+    Friend WithEvents lst_leaves As System.Windows.Forms.ListView
+    Friend WithEvents Panel13 As System.Windows.Forms.Panel
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents txt_paidLeaves2 As System.Windows.Forms.TextBox
+    Friend WithEvents Label19 As System.Windows.Forms.Label
+    Friend WithEvents txt_paidAvail As System.Windows.Forms.TextBox
+    Friend WithEvents Label20 As System.Windows.Forms.Label
 End Class

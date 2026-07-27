@@ -49,6 +49,8 @@ Public Class FrmFILE_MANAGE
                 End If
             Next
 
+            
+
             sqlSTR = "INSERT INTO File_Docs " & _
                 "(Employee_ID " & _
                 ",Date_Modified " & _
@@ -91,6 +93,8 @@ Public Class FrmFILE_MANAGE
             cmb_FileType.Text = FrmEMPLOYEE_DETAILS.dgv_files.CurrentRow.Cells("File_Type").Value.ToString
             cmb_FileType.Enabled = False
             txt_Remarks.Text = FrmEMPLOYEE_DETAILS.dgv_files.CurrentRow.Cells("File_Remarks").Value.ToString
+
+            
         Else
             txt_uploadedFile.Text = ""
             txt_Remarks.Text = ""

@@ -43,6 +43,39 @@ Module ModProcedure
         Next i
     End Sub
 
+
+    Public Sub FillListView(ByVal sqlData As DataTable, ByVal lvList As ListView, ByVal imgList As ImageList, ByVal imageID As Integer)
+        Dim i As Integer
+        Dim j As Integer
+
+        ' Assign the image list based on the current view mode
+        If lvList.View = View.LargeIcon Then
+            lvList.LargeImageList = imgList
+        Else
+            lvList.SmallImageList = imgList
+        End If
+
+        lvList.Clear()
+        For i = 0 To sqlData.Columns.Count - 1
+            lvList.Columns.Add(sqlData.Columns(i).ColumnName)
+        Next i
+
+        For i = 0 To sqlData.Rows.Count - 1
+            lvList.Items.Add(sqlData.Rows(i).Item(0), imageID)
+            For j = 1 To sqlData.Columns.Count - 1
+                If Not IsDBNull(sqlData.Rows(i).Item(j)) Then
+                    lvList.Items(i).SubItems.Add(sqlData.Rows(i).Item(j))
+                Else
+                    lvList.Items(i).SubItems.Add("")
+                End If
+            Next j
+        Next i
+
+        For i = 0 To sqlData.Columns.Count - 1
+            lvList.Columns(i).Width = -2
+        Next i
+    End Sub
+
     Public Sub center_RelativeTo(reference As Object, centeredObj As Object)
         centeredObj.Left = (reference.Width - centeredObj.Width) / 2
         centeredObj.Top = (reference.Height - centeredObj.Height) / 2
@@ -300,6 +333,30 @@ Module ModProcedure
 
     End Function
 
+    Public Sub listView_Total(lv As ListView, ParamArray columnIndexes() As Integer)
+        For Each colIndex As Integer In columnIndexes
+            If colIndex >= 0 AndAlso colIndex < lv.Columns.Count Then
+                Dim total As Decimal = 0
+                For Each item As ListViewItem In lv.Items
+                    If colIndex < item.SubItems.Count Then
+                        Dim cellValue As String = item.SubItems(colIndex).Text
+                        If IsNumeric(cellValue) Then
+                            total += Convert.ToDecimal(cellValue)
+                        End If
+                    End If
+                Next
+                Dim displayTotal As String
+                If total = Math.Truncate(total) Then
+                    displayTotal = total.ToString("N0")
+                Else
+                    displayTotal = total.ToString("N2")
+                End If
+                Dim originalHeader As String = lv.Columns(colIndex).Text
+                Dim baseHeader As String = originalHeader.Split("("c)(0).Trim()
+                lv.Columns(colIndex).Text = baseHeader & " (" & displayTotal & ")"
+            End If
+        Next
+    End Sub
 
     Public Sub WebDav_DownloadFile(subfolder As String, fileToDownload As String)
 
@@ -430,13 +487,7 @@ Module ModProcedure
         End If
     End Sub
 
-    Public Sub checkbox_CheckedValue(cb As CheckBox, tag As String)
-        If cb.Checked Then
-            cb.Tag = tag
-        Else
-            cb.Tag = ""
-        End If
-    End Sub
+
 
     Public Function str_Filter(ByVal Text As Object, ByVal ascKey1 As Integer, ByVal ascKey2 As Integer, ByVal ascKey3 As Integer, ByVal N_Repeat As Integer)
         On Error Resume Next
@@ -660,6 +711,30 @@ Module ModProcedure
         Next
     End Sub
 
+
+    Public Sub HideTabPage(tc As TabControl, tp As TabPage)
+        If tc.TabPages.Contains(tp) Then
+            tc.TabPages.Remove(tp)
+        End If
+    End Sub
+
+    Public Sub ShowTabPage(tc As TabControl, tp As TabPage, index As Integer)
+        'If Not tc.TabPages.Contains(tp) Then
+        '    tc.TabPages.Insert(index, tp)
+        'End If
+
+        If tc.TabPages.Contains(tp) = False Then
+            tc.TabPages.Insert(index, tp) 'Show tab at index 2
+        End If
+    End Sub
+
+    Public Sub checkbox_CheckedValue(cb As CheckBox, tag As String)
+        If cb.Checked Then
+            cb.Tag = tag
+        Else
+            cb.Tag = ""
+        End If
+    End Sub
 
 
     '    Public Function str_Filter(ByVal Text As TextBox, ByVal ascKey1 As Integer, ByVal ascKey2 As Integer, ByVal ascKey3 As Integer, ByVal N_Repeat As Integer)

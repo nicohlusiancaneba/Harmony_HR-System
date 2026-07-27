@@ -1,6 +1,6 @@
 ﻿Public Class Main
 
-    Private Sub cmd_Employees_Click(sender As Object, e As EventArgs) Handles cmd_Employees.Click
+    Private Sub cmd_Employees_Click(sender As Object, e As EventArgs) Handles cmd_employees.Click
         FrmEMPLOYEES.TopLevel = False
         FrmEMPLOYEES.FormBorderStyle = FormBorderStyle.None
         FrmEMPLOYEES.Dock = DockStyle.Fill
@@ -68,5 +68,141 @@
         End Using
     End Sub
 
+
+    Private Sub cmd_New_Click(sender As Object, e As EventArgs) Handles cmd_New.Click
+        If mainPanel.Controls.Count > 0 Then
+            Dim activeForm As Form = TryCast(mainPanel.Controls(0), Form)
+            If activeForm IsNot Nothing Then
+                FormAdd(activeForm.Name)
+            End If
+        End If
+    End Sub
+
+    Private Sub cmd_View_Click(sender As Object, e As EventArgs) Handles cmd_View.Click
+        If mainPanel.Controls.Count > 0 Then
+            Dim activeForm As Form = TryCast(mainPanel.Controls(0), Form)
+            If activeForm IsNot Nothing Then
+                FormEdit(activeForm.Name)
+            End If
+        End If
+    End Sub
+
+    Private Sub cmd_Delete_Click(sender As Object, e As EventArgs) Handles cmd_Delete.Click
+        If mainPanel.Controls.Count > 0 Then
+            Dim activeForm As Form = TryCast(mainPanel.Controls(0), Form)
+            If activeForm IsNot Nothing Then
+                FormDelete(activeForm.Name)
+            End If
+        End If
+    End Sub
+
+    Private Sub cmd_Search_Click(sender As Object, e As EventArgs) Handles cmd_Search.Click
+        If mainPanel.Controls.Count > 0 Then
+            Dim activeForm As Form = TryCast(mainPanel.Controls(0), Form)
+            If activeForm IsNot Nothing Then
+                FormSearch(activeForm.Name)
+            End If
+        End If
+    End Sub
+
+    Private Sub cmd_Refresh_Click(sender As Object, e As EventArgs) Handles cmd_Refresh.Click
+        If mainPanel.Controls.Count > 0 Then
+            Dim activeForm As Form = TryCast(mainPanel.Controls(0), Form)
+            If activeForm IsNot Nothing Then
+                RefreshList(activeForm.Name)
+            End If
+        End If
+    End Sub
+
+    Private Sub Activate_Topbar(frmName As String)
+        If mainPanel.Controls.Count > 0 Then
+            panel_topBar_navigation.Visible = True
+        End If
+
+        For Each ctrl As Control In sidebar_panel.Controls
+            If TypeOf ctrl Is Button Then
+                ctrl.BackColor = Color.White
+                ctrl.ForeColor = Color.Black
+            End If
+        Next
+
+
+
+
+        cmd_New.Enabled = True
+        cmd_View.Enabled = True
+        cmd_Delete.Enabled = True
+        cmd_Search.Enabled = True
+        cmd_Refresh.Enabled = True
+
+
+
+        Select Case UCase(frmName)
+            Case UCase("cmd_dashboard")
+                cmd_New.Enabled = False
+                cmd_View.Enabled = False
+                cmd_Delete.Enabled = False
+                cmd_Search.Enabled = False
+                cmd_Refresh.Enabled = True
+
+            Case UCase("cmd_employees")
+                cmd_New.Enabled = True
+                cmd_View.Enabled = True
+                cmd_Delete.Enabled = True
+                cmd_Search.Enabled = True
+                cmd_Refresh.Enabled = True
+
+            Case UCase("cmd_attendance")
+                cmd_New.Enabled = True
+                cmd_View.Enabled = True
+                cmd_Delete.Enabled = True
+                cmd_Search.Enabled = True
+                cmd_Refresh.Enabled = True
+
+            Case UCase("cmd_payroll")
+                cmd_New.Enabled = True
+                cmd_View.Enabled = True
+                cmd_Delete.Enabled = True
+                cmd_Search.Enabled = True
+                cmd_Refresh.Enabled = True
+
+            Case UCase("cmd_loans")
+                cmd_New.Enabled = True
+                cmd_View.Enabled = True
+                cmd_Delete.Enabled = True
+                cmd_Search.Enabled = True
+                cmd_Refresh.Enabled = True
+
+            Case UCase("cmd_adjustments")
+                cmd_New.Enabled = True
+                cmd_View.Enabled = True
+                cmd_Delete.Enabled = True
+                cmd_Search.Enabled = True
+                cmd_Refresh.Enabled = True
+
+            Case UCase("cmd_leaves")
+                cmd_New.Enabled = True
+                cmd_View.Enabled = True
+                cmd_Delete.Enabled = True
+                cmd_Search.Enabled = True
+                cmd_Refresh.Enabled = True
+
+            Case UCase("cmd_evaluation")
+                cmd_New.Enabled = True
+                cmd_View.Enabled = True
+                cmd_Delete.Enabled = True
+                cmd_Search.Enabled = True
+                cmd_Refresh.Enabled = True
+
+            Case UCase("cmd_reports")
+                cmd_New.Enabled = True
+                cmd_View.Enabled = True
+                cmd_Delete.Enabled = True
+                cmd_Search.Enabled = True
+                cmd_Refresh.Enabled = True
+
+            
+        End Select
+    End Sub
 
 End Class
