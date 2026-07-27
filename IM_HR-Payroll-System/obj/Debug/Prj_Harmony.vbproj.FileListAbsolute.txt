@@ -1,0 +1,51 @@
+M:\Prj_Harmony\IM_HR-Payroll-System\bin\Debug\Harmony - HR System.exe.config
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony - HR System.exe
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony - HR System.xml
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony - HR System.pdb
+M:\Prj_Harmony\IM_HR-Payroll-System\bin\Debug\Reports\Payslip_Employee.rdlc
+M:\Prj_Harmony\IM_HR-Payroll-System\bin\Debug\Reports\Payroll_Export.rdlc
+M:\Prj_Harmony\IM_HR-Payroll-System\bin\Debug\Harmony - HR System.exe.manifest
+M:\Prj_Harmony\IM_HR-Payroll-System\bin\Debug\Harmony - HR System.application
+M:\Prj_Harmony\IM_HR-Payroll-System\bin\Debug\Harmony - HR System.exe
+M:\Prj_Harmony\IM_HR-Payroll-System\bin\Debug\Harmony - HR System.pdb
+M:\Prj_Harmony\IM_HR-Payroll-System\bin\Debug\Harmony - HR System.xml
+M:\Prj_Harmony\IM_HR-Payroll-System\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+M:\Prj_Harmony\IM_HR-Payroll-System\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.xml
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Prj_Harmony.vbprojResolveAssemblyReference.cache
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormSETTINGS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormADJUSTMENTS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormADJUSTMENT_DETAILS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormEMPLOYEES.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormEMPLOYEES_DETAILS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormFILE_MANAGE.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormEVALUATION.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormEVALUATION_DETAILS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormEVALUATION_QUESTIONS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormLEAVE.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormLEAVE_DETAILS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormLOANS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormLOAN_EDIT.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormLOAN_NEW.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormLOAN_PAYMENT.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormEXPORT_ONLINE_BANK.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormPAYROLL.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormPAYROLL_ADD.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormPAYROLL_GENERATE_BOB.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormPAYROLL_PAYEE.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormPRINT_PAYSLIP.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormVIEW_PAYROLL.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormREPORTS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormREPORT_CREATE.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FormSERVER_SETTINGS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.Form_LOGIN.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmEMPLOYEES.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmEMPLOYEE_DETAILS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmFILE_MANAGE.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.Main.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.MDIMain.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.Resources.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Prj_Harmony.vbproj.GenerateResource.Cache
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\RdlCompile.cache
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\RdlCompile.compiled
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony - HR System.exe.manifest
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony - HR System.application
