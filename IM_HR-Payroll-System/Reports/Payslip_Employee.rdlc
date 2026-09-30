@@ -888,12 +888,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatNumber(
-    First(Fields!totalRegular.Value, "DataSet1") +
-    First(Fields!totalSpecial.Value, "DataSet1") +
-    First(Fields!totalField.Value, "DataSet1") +
-    First(Fields!totalHoliday.Value, "DataSet1"), 
-2)</Value>
+                              <Value>=FormatNumber(First(Fields!grandTotal_Basic.Value, "DataSet1"), 2)</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -5477,12 +5472,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=FormatNumber(
-    First(Fields!totalRegular.Value, "DataSet1") +
-    First(Fields!totalSpecial.Value, "DataSet1") +
-    First(Fields!totalField.Value, "DataSet1") +
-    First(Fields!totalHoliday.Value, "DataSet1"), 
-2)</Value>
+                              <Value>=FormatNumber(First(Fields!grandTotal_Basic.Value, "DataSet1"), 2)</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>

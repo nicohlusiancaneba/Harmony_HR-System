@@ -26,8 +26,10 @@ Partial Class Main
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.sidebar_panel = New System.Windows.Forms.Panel()
-        Me.cmd_dashboard = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.sidebar_images = New System.Windows.Forms.ImageList(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.cmd_dashboard = New System.Windows.Forms.Button()
         Me.cmd_attendance = New System.Windows.Forms.Button()
         Me.cmd_evaluation = New System.Windows.Forms.Button()
         Me.cmd_adjustments = New System.Windows.Forms.Button()
@@ -66,11 +68,13 @@ Partial Class Main
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(174, 761)
+        Me.Panel1.Size = New System.Drawing.Size(174, 881)
         Me.Panel1.TabIndex = 0
         '
         'sidebar_panel
         '
+        Me.sidebar_panel.Controls.Add(Me.Button2)
+        Me.sidebar_panel.Controls.Add(Me.Button1)
         Me.sidebar_panel.Controls.Add(Me.cmd_dashboard)
         Me.sidebar_panel.Controls.Add(Me.cmd_attendance)
         Me.sidebar_panel.Controls.Add(Me.cmd_evaluation)
@@ -82,8 +86,55 @@ Partial Class Main
         Me.sidebar_panel.Controls.Add(Me.cmd_reports)
         Me.sidebar_panel.Location = New System.Drawing.Point(6, 182)
         Me.sidebar_panel.Name = "sidebar_panel"
-        Me.sidebar_panel.Size = New System.Drawing.Size(162, 464)
+        Me.sidebar_panel.Size = New System.Drawing.Size(162, 652)
         Me.sidebar_panel.TabIndex = 4
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.ImageKey = "memo.png"
+        Me.Button2.ImageList = Me.sidebar_images
+        Me.Button2.Location = New System.Drawing.Point(3, 379)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.Button2.Size = New System.Drawing.Size(156, 41)
+        Me.Button2.TabIndex = 11
+        Me.Button2.Text = "          Incidents"
+        Me.Button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'sidebar_images
+        '
+        Me.sidebar_images.ImageStream = CType(resources.GetObject("sidebar_images.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.sidebar_images.TransparentColor = System.Drawing.Color.Transparent
+        Me.sidebar_images.Images.SetKeyName(0, "employees.png")
+        Me.sidebar_images.Images.SetKeyName(1, "statistics.png")
+        Me.sidebar_images.Images.SetKeyName(2, "priority.png")
+        Me.sidebar_images.Images.SetKeyName(3, "clock.png")
+        Me.sidebar_images.Images.SetKeyName(4, "transaction.png")
+        Me.sidebar_images.Images.SetKeyName(5, "money-bag.png")
+        Me.sidebar_images.Images.SetKeyName(6, "compensation.png")
+        Me.sidebar_images.Images.SetKeyName(7, "performance.png")
+        Me.sidebar_images.Images.SetKeyName(8, "calendar.png")
+        Me.sidebar_images.Images.SetKeyName(9, "full-time-job.png")
+        Me.sidebar_images.Images.SetKeyName(10, "working.png")
+        Me.sidebar_images.Images.SetKeyName(11, "memo.png")
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.ImageKey = "full-time-job.png"
+        Me.Button1.ImageList = Me.sidebar_images
+        Me.Button1.Location = New System.Drawing.Point(3, 97)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.Button1.Size = New System.Drawing.Size(156, 41)
+        Me.Button1.TabIndex = 10
+        Me.Button1.Text = "          Shifts"
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'cmd_dashboard
         '
@@ -100,27 +151,13 @@ Partial Class Main
         Me.cmd_dashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.cmd_dashboard.UseVisualStyleBackColor = True
         '
-        'sidebar_images
-        '
-        Me.sidebar_images.ImageStream = CType(resources.GetObject("sidebar_images.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.sidebar_images.TransparentColor = System.Drawing.Color.Transparent
-        Me.sidebar_images.Images.SetKeyName(0, "employees.png")
-        Me.sidebar_images.Images.SetKeyName(1, "statistics.png")
-        Me.sidebar_images.Images.SetKeyName(2, "priority.png")
-        Me.sidebar_images.Images.SetKeyName(3, "clock.png")
-        Me.sidebar_images.Images.SetKeyName(4, "transaction.png")
-        Me.sidebar_images.Images.SetKeyName(5, "money-bag.png")
-        Me.sidebar_images.Images.SetKeyName(6, "compensation.png")
-        Me.sidebar_images.Images.SetKeyName(7, "performance.png")
-        Me.sidebar_images.Images.SetKeyName(8, "calendar.png")
-        '
         'cmd_attendance
         '
         Me.cmd_attendance.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
         Me.cmd_attendance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.cmd_attendance.ImageKey = "clock.png"
         Me.cmd_attendance.ImageList = Me.sidebar_images
-        Me.cmd_attendance.Location = New System.Drawing.Point(3, 97)
+        Me.cmd_attendance.Location = New System.Drawing.Point(3, 144)
         Me.cmd_attendance.Name = "cmd_attendance"
         Me.cmd_attendance.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.cmd_attendance.Size = New System.Drawing.Size(156, 41)
@@ -135,7 +172,7 @@ Partial Class Main
         Me.cmd_evaluation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.cmd_evaluation.ImageKey = "priority.png"
         Me.cmd_evaluation.ImageList = Me.sidebar_images
-        Me.cmd_evaluation.Location = New System.Drawing.Point(3, 332)
+        Me.cmd_evaluation.Location = New System.Drawing.Point(3, 426)
         Me.cmd_evaluation.Name = "cmd_evaluation"
         Me.cmd_evaluation.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.cmd_evaluation.Size = New System.Drawing.Size(156, 41)
@@ -150,7 +187,7 @@ Partial Class Main
         Me.cmd_adjustments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.cmd_adjustments.ImageKey = "transaction.png"
         Me.cmd_adjustments.ImageList = Me.sidebar_images
-        Me.cmd_adjustments.Location = New System.Drawing.Point(3, 238)
+        Me.cmd_adjustments.Location = New System.Drawing.Point(3, 285)
         Me.cmd_adjustments.Name = "cmd_adjustments"
         Me.cmd_adjustments.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.cmd_adjustments.Size = New System.Drawing.Size(156, 41)
@@ -165,7 +202,7 @@ Partial Class Main
         Me.cmd_payroll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.cmd_payroll.ImageKey = "compensation.png"
         Me.cmd_payroll.ImageList = Me.sidebar_images
-        Me.cmd_payroll.Location = New System.Drawing.Point(3, 144)
+        Me.cmd_payroll.Location = New System.Drawing.Point(3, 191)
         Me.cmd_payroll.Name = "cmd_payroll"
         Me.cmd_payroll.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.cmd_payroll.Size = New System.Drawing.Size(156, 41)
@@ -195,7 +232,7 @@ Partial Class Main
         Me.cmd_loans.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.cmd_loans.ImageKey = "money-bag.png"
         Me.cmd_loans.ImageList = Me.sidebar_images
-        Me.cmd_loans.Location = New System.Drawing.Point(3, 191)
+        Me.cmd_loans.Location = New System.Drawing.Point(3, 238)
         Me.cmd_loans.Name = "cmd_loans"
         Me.cmd_loans.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.cmd_loans.Size = New System.Drawing.Size(156, 41)
@@ -210,7 +247,7 @@ Partial Class Main
         Me.cmd_leaves.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.cmd_leaves.ImageKey = "calendar.png"
         Me.cmd_leaves.ImageList = Me.sidebar_images
-        Me.cmd_leaves.Location = New System.Drawing.Point(3, 285)
+        Me.cmd_leaves.Location = New System.Drawing.Point(3, 332)
         Me.cmd_leaves.Name = "cmd_leaves"
         Me.cmd_leaves.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.cmd_leaves.Size = New System.Drawing.Size(156, 41)
@@ -225,7 +262,7 @@ Partial Class Main
         Me.cmd_reports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.cmd_reports.ImageKey = "statistics.png"
         Me.cmd_reports.ImageList = Me.sidebar_images
-        Me.cmd_reports.Location = New System.Drawing.Point(3, 379)
+        Me.cmd_reports.Location = New System.Drawing.Point(3, 473)
         Me.cmd_reports.Name = "cmd_reports"
         Me.cmd_reports.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
         Me.cmd_reports.Size = New System.Drawing.Size(156, 41)
@@ -386,7 +423,7 @@ Partial Class Main
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(174, 741)
+        Me.Panel3.Location = New System.Drawing.Point(174, 861)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(1035, 20)
         Me.Panel3.TabIndex = 2
@@ -397,7 +434,7 @@ Partial Class Main
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel4.Location = New System.Drawing.Point(1189, 63)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(20, 678)
+        Me.Panel4.Size = New System.Drawing.Size(20, 798)
         Me.Panel4.TabIndex = 3
         '
         'Panel_Border
@@ -409,7 +446,7 @@ Partial Class Main
         Me.Panel_Border.Location = New System.Drawing.Point(174, 63)
         Me.Panel_Border.Name = "Panel_Border"
         Me.Panel_Border.Padding = New System.Windows.Forms.Padding(15)
-        Me.Panel_Border.Size = New System.Drawing.Size(1015, 678)
+        Me.Panel_Border.Size = New System.Drawing.Size(1015, 798)
         Me.Panel_Border.TabIndex = 4
         '
         'mainPanel
@@ -418,7 +455,7 @@ Partial Class Main
         Me.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.mainPanel.Location = New System.Drawing.Point(15, 15)
         Me.mainPanel.Name = "mainPanel"
-        Me.mainPanel.Size = New System.Drawing.Size(985, 648)
+        Me.mainPanel.Size = New System.Drawing.Size(985, 768)
         Me.mainPanel.TabIndex = 0
         '
         'Main
@@ -426,12 +463,13 @@ Partial Class Main
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1209, 761)
+        Me.ClientSize = New System.Drawing.Size(1209, 881)
         Me.Controls.Add(Me.Panel_Border)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.panel_topbar)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(800, 800)
         Me.Name = "Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -473,4 +511,6 @@ Partial Class Main
     Friend WithEvents cmd_loans As System.Windows.Forms.Button
     Friend WithEvents cmd_payroll As System.Windows.Forms.Button
     Public WithEvents sidebar_images As System.Windows.Forms.ImageList
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

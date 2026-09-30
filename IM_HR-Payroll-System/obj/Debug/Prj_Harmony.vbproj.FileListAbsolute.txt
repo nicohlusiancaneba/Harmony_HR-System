@@ -49,3 +49,21 @@ M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\RdlCompile.cache
 M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\RdlCompile.compiled
 M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony - HR System.exe.manifest
 M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony - HR System.application
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmSHIFTS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmEXPORT_ONLINE_BANK.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmPAYROLL.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmPAYROLL_DATA.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmPAYROLL_DETAILS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmPAYROLL_GENERATE_BOB.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmPRINT_PAYSLIP.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmVIEW_PAYROLL.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmLOANS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmLOAN_EDIT.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmLOAN_NEW.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmLOAN_PAYMENT.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmADJUSTMENTS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmADJUSTMENT_DETAILS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmLEAVES.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmLEAVE_DETAILS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmINCIDENTS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmINCIDENT_DETAILS.resources

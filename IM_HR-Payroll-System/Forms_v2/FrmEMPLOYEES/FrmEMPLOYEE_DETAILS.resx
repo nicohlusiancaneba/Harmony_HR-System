@@ -507,6 +507,7 @@ Regularization Date :
 
 End Employment Date :
 
+Paid Leave Days :
 
 
 Starting Daily Rate :
@@ -515,9 +516,15 @@ Current Daily Rate :
 
 Working Days :
 
-Monthly Salary :
+Monthly Salary (Actual) :
 
-Paid Leave Days :</value>
+Monthly Salary (SSS) :
+
+Monthly Salary (Philhealth) :
+
+Monthly Salary (PAG-IBIG) :
+
+Monthly Salary (BIR) :</value>
   </data>
   <metadata name="File_ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

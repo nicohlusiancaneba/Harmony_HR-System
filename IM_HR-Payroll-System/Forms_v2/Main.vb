@@ -7,7 +7,7 @@
         mainPanel.Controls.Clear()
         mainPanel.Controls.Add(FrmEMPLOYEES)
         FrmEMPLOYEES.Show()
-        'Activate_Topbar(DirectCast(sender, Button).Name)
+        Activate_Topbar(DirectCast(sender, Button).Name)
         DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
         DirectCast(sender, Button).ForeColor = Color.White
     End Sub
@@ -205,4 +205,51 @@
         End Select
     End Sub
 
+    Private Sub cmd_payroll_Click(sender As Object, e As EventArgs) Handles cmd_payroll.Click
+        FrmPAYROLL.TopLevel = False
+        FrmPAYROLL.FormBorderStyle = FormBorderStyle.None
+        FrmPAYROLL.Dock = DockStyle.Fill
+        mainPanel.Controls.Clear()
+        mainPanel.Controls.Add(FrmPAYROLL)
+        FrmPAYROLL.Show()
+        Activate_Topbar(DirectCast(sender, Button).Name)
+        DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
+        DirectCast(sender, Button).ForeColor = Color.White
+    End Sub
+
+    Private Sub cmd_loans_Click(sender As Object, e As EventArgs) Handles cmd_loans.Click
+        FrmLOANS.TopLevel = False
+        FrmLOANS.FormBorderStyle = FormBorderStyle.None
+        FrmLOANS.Dock = DockStyle.Fill
+        mainPanel.Controls.Clear()
+        mainPanel.Controls.Add(FrmLOANS)
+        FrmLOANS.Show()
+        Activate_Topbar(DirectCast(sender, Button).Name)
+        DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
+        DirectCast(sender, Button).ForeColor = Color.White
+    End Sub
+
+    Private Sub cmd_adjustments_Click(sender As Object, e As EventArgs) Handles cmd_adjustments.Click
+        FrmADJUSTMENTS.TopLevel = False
+        FrmADJUSTMENTS.FormBorderStyle = FormBorderStyle.None
+        FrmADJUSTMENTS.Dock = DockStyle.Fill
+        mainPanel.Controls.Clear()
+        mainPanel.Controls.Add(FrmADJUSTMENTS)
+        FrmADJUSTMENTS.Show()
+        Activate_Topbar(DirectCast(sender, Button).Name)
+        DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
+        DirectCast(sender, Button).ForeColor = Color.White
+    End Sub
+
+    Private Sub cmd_leaves_Click(sender As Object, e As EventArgs) Handles cmd_leaves.Click
+        FrmLEAVES.TopLevel = False
+        FrmLEAVES.FormBorderStyle = FormBorderStyle.None
+        FrmLEAVES.Dock = DockStyle.Fill
+        mainPanel.Controls.Clear()
+        mainPanel.Controls.Add(FrmLEAVES)
+        FrmLEAVES.Show()
+        Activate_Topbar(DirectCast(sender, Button).Name)
+        DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
+        DirectCast(sender, Button).ForeColor = Color.White
+    End Sub
 End Class

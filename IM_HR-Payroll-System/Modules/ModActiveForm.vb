@@ -9,6 +9,33 @@
                     .Refresh_List()
                 End With
 
+            Case UCase("FrmPAYROLL")
+                With FrmPAYROLL
+                    .formAction = "add"
+                    FrmPAYROLL_DETAILS.ShowDialog()
+                    .RefreshPayrollList()
+                End With
+
+            Case UCase("FrmLOANS")
+                With FrmLOANS
+                    FrmLOAN_NEW.ShowDialog()
+                    .Refresh_List()
+                End With
+
+            Case UCase("FrmADJUSTMENTS")
+                With FrmADJUSTMENTS
+                    .formAction = "add"
+                    FrmADJUSTMENT_DETAILS.ShowDialog()
+                    .Refresh_List()
+                End With
+
+            Case UCase("FrmLEAVES")
+                With FrmLEAVES
+                    .formAction = "add"
+                    FrmLEAVE_DETAILS.ShowDialog()
+                    .Refresh_List()
+                End With
+
         End Select
 
         '    Case UCase("FrmSuppliersList")
@@ -24,15 +51,60 @@
         Select Case UCase(frmStr)
             Case UCase("FrmEMPLOYEES")
                 With FrmEMPLOYEES
-                    .dgv_employees.Focus()
-                    If .dgv_employees.Rows.Count > 0 Then
+                    .lst_employees.Focus()
+                    If .lst_employees.Items.Count > 0 Then
                         .formAction = "edit"
                         FrmEMPLOYEE_DETAILS.ShowDialog()
                         .Refresh_List()
                     End If
                 End With
 
+            Case UCase("FrmPAYROLL")
+                With FrmPAYROLL
+                    .lst_payroll.Focus()
+                    If .lst_payroll.Items.Count > 0 Then
+                        .formAction = "edit"
+                        FrmPAYROLL.ShowDialog()
+                        .RefreshPayrollList()
+                    End If
+                End With
+
+            Case UCase("FrmLOANS")
+                With FrmLOANS
+                    .lst_loans.Focus()
+                    If .lst_loans.Items.Count > 0 Then
+                        .Loan_ID = .lst_loans.FocusedItem.Text
+                        FrmLOAN_EDIT.ShowDialog()
+                        .Refresh_List()
+                    End If
+                End With
+
+            Case UCase("FrmADJUSTMENTS")
+                With FrmADJUSTMENTS
+                    .lst_adjustments.Focus()
+                    If .lst_adjustments.Items.Count > 0 Then
+                        .formAction = "edit"
+                        .Adjustment_ID = .lst_adjustments.FocusedItem.Text
+                        FrmADJUSTMENT_DETAILS.ShowDialog()
+                        .Refresh_List()
+                    End If
+                End With
+
+            Case UCase("FrmLEAVES")
+                With FrmLEAVES
+                    .lst_leaves.Focus()
+                    If .lst_leaves.Items.Count > 0 Then
+                        .formAction = "edit"
+                        .Leave_ID = .lst_leaves.FocusedItem.Text
+                        FrmLEAVE_DETAILS.ShowDialog()
+                        .Refresh_List()
+                    End If
+                End With
+
         End Select
+
+
+        
         'Case UCase("FrmPHYSICAL_COUNT")
         'With FrmPHYSICAL_COUNT
         '    .lstphysical.Focus()
@@ -47,6 +119,90 @@
 
     Public Sub FormDelete(ByVal frmStr As String)
         Select Case UCase(frmStr)
+            Case UCase("FrmEMPLOYEES")
+                With FrmEMPLOYEES
+                    .lst_employees.Focus()
+                    sqlSTR = "DECLARE @EmployeeID INT = '" & .lst_employees.FocusedItem.SubItems(0).Text & "'; " & _
+                        "SELECT " & _
+                        "CASE WHEN EXISTS ( " & _
+                        "SELECT 1 FROM Adjustments WHERE Employee_ID = @EmployeeID " & _
+                        "UNION ALL " & _
+                        "SELECT 1 FROM Evaluation WHERE Employee_ID = @EmployeeID " & _
+                        "UNION ALL " & _
+                        "SELECT 1 FROM Leaves WHERE Employee_ID = @EmployeeID " & _
+                        "UNION ALL " & _
+                        "SELECT 1 FROM Loans WHERE Employee_ID = @EmployeeID " & _
+                        "UNION ALL " & _
+                        "SELECT 1 FROM Payroll_Details WHERE Employee_ID = @EmployeeID " & _
+                        ") THEN 'Yes' ELSE 'No' END as ExistsInAnyTable"
+                    ExecuteSQLQuery(sqlSTR)
+
+                    If sqlDT.Rows(0)("ExistsInAnyTable").ToString = "Yes" Then
+                        MsgBox("You cannot delete an employee record with existing transactions.", MsgBoxStyle.Information)
+                        Exit Sub
+                    End If
+
+                    If MsgBox("Do you want to delete this employee record?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, msgBox_header) = MsgBoxResult.Yes Then
+                        sqlSTR = "Delete from Employees where Employee_ID ='" & .lst_employees.FocusedItem.SubItems(0).Text & "'; " & vbCrLf & _
+                        "Delete from File_Docs where Employee_ID ='" & .lst_employees.FocusedItem.SubItems(0).Text & "'; "
+                        ExecuteSQLQuery(sqlSTR)
+                        .Refresh_List()
+                    End If
+
+                End With
+                
+            Case UCase("FrmPAYROLL")
+                With FrmPAYROLL
+                    .lst_payroll.Focus()
+
+                    If .lst_payroll.FocusedItem.SubItems(12).Text = "Yes" Then
+                        MsgBox("You cannot delete an APPROVED payroll record.", MsgBoxStyle.Information)
+                        Exit Sub
+                    End If
+
+                    If MsgBox("Do you want to delete this payroll record?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, msgBox_header) = MsgBoxResult.Yes Then
+                        sqlSTR = "Delete from Payroll where Payroll_ID ='" & .lst_payroll.FocusedItem.SubItems(0).Text & "'; " & vbCrLf & _
+                        " Delete from Payroll_Details where Payroll_ID ='" & .lst_payroll.FocusedItem.SubItems(0).Text & "'; "
+                        ExecuteSQLQuery(sqlSTR)
+                        .RefreshPayrollList()
+                    End If
+                End With
+
+            Case UCase("FrmADJUSTMENTS")
+                With FrmADJUSTMENTS
+                    .lst_adjustments.Focus()
+
+                    If .lst_adjustments.FocusedItem.SubItems(8).Text = "Yes" Then
+                        MsgBox("You cannot delete an APPROVED adjustment record.", MsgBoxStyle.Information)
+                        Exit Sub
+                    End If
+
+                    If MsgBox("Do you want to delete this adjustment record?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, msgBox_header) = MsgBoxResult.Yes Then
+                        sqlSTR = "Delete from Adjustments where Adjustment_ID ='" & .lst_adjustments.FocusedItem.SubItems(0).Text & "'; "
+                        ExecuteSQLQuery(sqlSTR)
+                        .Refresh_List()
+                    End If
+                End With
+
+            Case UCase("FrmLEAVES")
+                With FrmLEAVES
+                    .lst_leaves.Focus()
+
+                    If .lst_leaves.FocusedItem.SubItems(11).Text = "Approved" Then
+                        MsgBox("You cannot delete an APPROVED leave record.", MsgBoxStyle.Information)
+                        Exit Sub
+                    End If
+
+                    If MsgBox("Do you want to delete this adjustment record?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, msgBox_header) = MsgBoxResult.Yes Then
+                        sqlSTR = "Delete from Leaves where Leave_ID ='" & .lst_leaves.FocusedItem.SubItems(0).Text & "'; "
+                        ExecuteSQLQuery(sqlSTR)
+                        .Refresh_List()
+                    End If
+                End With
+
+
+
+
 
         End Select
         'Case UCase("FrmPHYSICAL_COUNT")
@@ -78,6 +234,31 @@
                     center_RelativeTo(.lst_employees, .grpFilter)
                     .grpFilter.Visible = True
                 End With
+
+            Case UCase("FrmPAYROLL")
+                With FrmPAYROLL
+                    center_RelativeTo(.lst_payroll, .grpFilter)
+                    .grpFilter.Visible = True
+                End With
+
+            Case UCase("FrmLOANS")
+                With FrmLOANS
+                    center_RelativeTo(.lst_loans, .grpFilter)
+                    .grpFilter.Visible = True
+                End With
+
+            Case UCase("FrmADJUSTMENTS")
+                With FrmADJUSTMENTS
+                    center_RelativeTo(.lst_adjustments, .grpFilter)
+                    .grpFilter.Visible = True
+                End With
+
+            Case UCase("FrmLEAVES")
+                With FrmLEAVES
+                    center_RelativeTo(.lst_leaves, .grpFilter)
+                    .grpFilter.Visible = True
+                End With
+
         End Select
         'Case UCase("FrmPHYSICAL_COUNT")
         'With FrmPHYSICAL_COUNT
@@ -94,7 +275,37 @@
                     .grpFilter.Visible = False
                     .Refresh_List()
                 End With
+
+            Case UCase("FrmPAYROLL")
+                With FrmPAYROLL
+                    .whereSQL = " and Cutoff_Date_Start >= DATEADD(DAY, -6, EOMONTH(GETDATE(), -1)) and Cutoff_Date_End <= EOMONTH(GETDATE()) "
+                    .grpFilter.Visible = False
+                    .RefreshPayrollList()
+                End With
+
+            Case UCase("FrmLOANS")
+                With FrmLOANS
+                    .whereSQL = " and Loan_Status = 'Active' "
+                    .grpFilter.Visible = False
+                    .Refresh_List()
+                End With
+
+            Case UCase("FrmADJUSTMENTS")
+                With FrmADJUSTMENTS
+                    .whereSQL = " and ((Year(Date_Adjusted) = Year(GETDATE()) and Month(Date_Adjusted) = Month(GETDATE())) or Adj_Approved = 'No') "
+                    .grpFilter.Visible = False
+                    .Refresh_List()
+                End With
+
+            Case UCase("FrmLEAVES")
+                With FrmLEAVES
+                    .whereSQL = " and (Leave_Status = 'Pending' or Leave_Start >= DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), 0) AND Leave_End   <  DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) + 1, 0)) "
+                    .grpFilter.Visible = False
+                    .Refresh_List()
+                End With
         End Select
+
+
         'Case UCase("FrmPHYSICAL_COUNT")
         'With FrmPHYSICAL_COUNT
         '    .whereSQL = " and (CAST(P_Date AS DATE) = CAST(GETDATE() AS DATE) or COALESCE(P_Approved, 'No') = 'No') "

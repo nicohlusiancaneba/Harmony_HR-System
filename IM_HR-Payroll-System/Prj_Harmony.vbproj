@@ -75,7 +75,7 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\harmony1.ico</ApplicationIcon>
+    <ApplicationIcon>Harmony_v3_ico.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
@@ -268,6 +268,18 @@
     <Compile Include="Forms\Form_LOGIN.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms_v2\FrmADJUSTMENTS\FrmADJUSTMENTS.Designer.vb">
+      <DependentUpon>FrmADJUSTMENTS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmADJUSTMENTS\FrmADJUSTMENTS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmADJUSTMENTS\FrmADJUSTMENT_DETAILS.Designer.vb">
+      <DependentUpon>FrmADJUSTMENT_DETAILS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmADJUSTMENTS\FrmADJUSTMENT_DETAILS.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms_v2\FrmEMPLOYEES\FrmEMPLOYEES.Designer.vb">
       <DependentUpon>FrmEMPLOYEES.vb</DependentUpon>
     </Compile>
@@ -284,6 +296,102 @@
       <DependentUpon>FrmFILE_MANAGE.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms_v2\FrmEMPLOYEES\FrmFILE_MANAGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmINCIDENTS\FrmINCIDENTS.Designer.vb">
+      <DependentUpon>FrmINCIDENTS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmINCIDENTS\FrmINCIDENTS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmINCIDENTS\FrmINCIDENT_DETAILS.Designer.vb">
+      <DependentUpon>FrmINCIDENT_DETAILS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmINCIDENTS\FrmINCIDENT_DETAILS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmLEAVES\FrmLEAVES.Designer.vb">
+      <DependentUpon>FrmLEAVES.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmLEAVES\FrmLEAVES.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmLEAVES\FrmLEAVE_DETAILS.Designer.vb">
+      <DependentUpon>FrmLEAVE_DETAILS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmLEAVES\FrmLEAVE_DETAILS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmLOANS\FrmLOANS.Designer.vb">
+      <DependentUpon>FrmLOANS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmLOANS\FrmLOANS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmLOANS\FrmLOAN_EDIT.Designer.vb">
+      <DependentUpon>FrmLOAN_EDIT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmLOANS\FrmLOAN_EDIT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmLOANS\FrmLOAN_NEW.Designer.vb">
+      <DependentUpon>FrmLOAN_NEW.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmLOANS\FrmLOAN_NEW.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmLOANS\FrmLOAN_PAYMENT.Designer.vb">
+      <DependentUpon>FrmLOAN_PAYMENT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmLOANS\FrmLOAN_PAYMENT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmPAYROLL\FrmEXPORT_ONLINE_BANK.Designer.vb">
+      <DependentUpon>FrmEXPORT_ONLINE_BANK.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmPAYROLL\FrmEXPORT_ONLINE_BANK.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmPAYROLL\FrmPAYROLL.Designer.vb">
+      <DependentUpon>FrmPAYROLL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmPAYROLL\FrmPAYROLL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmPAYROLL\FrmPAYROLL_DATA.Designer.vb">
+      <DependentUpon>FrmPAYROLL_DATA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmPAYROLL\FrmPAYROLL_DATA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmPAYROLL\FrmPAYROLL_DETAILS.Designer.vb">
+      <DependentUpon>FrmPAYROLL_DETAILS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmPAYROLL\FrmPAYROLL_DETAILS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmPAYROLL\FrmPAYROLL_GENERATE_BOB.Designer.vb">
+      <DependentUpon>FrmPAYROLL_GENERATE_BOB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmPAYROLL\FrmPAYROLL_GENERATE_BOB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmPAYROLL\FrmPRINT_PAYSLIP.Designer.vb">
+      <DependentUpon>FrmPRINT_PAYSLIP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmPAYROLL\FrmPRINT_PAYSLIP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmPAYROLL\FrmVIEW_PAYROLL.Designer.vb">
+      <DependentUpon>FrmVIEW_PAYROLL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmPAYROLL\FrmVIEW_PAYROLL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmSHIFTS\FrmSHIFTS.Designer.vb">
+      <DependentUpon>FrmSHIFTS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmSHIFTS\FrmSHIFTS.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms_v2\Main.Designer.vb">
@@ -412,6 +520,12 @@
     <EmbeddedResource Include="Forms\Form_LOGIN.resx">
       <DependentUpon>Form_LOGIN.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmADJUSTMENTS\FrmADJUSTMENTS.resx">
+      <DependentUpon>FrmADJUSTMENTS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmADJUSTMENTS\FrmADJUSTMENT_DETAILS.resx">
+      <DependentUpon>FrmADJUSTMENT_DETAILS.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms_v2\FrmEMPLOYEES\FrmEMPLOYEES.resx">
       <DependentUpon>FrmEMPLOYEES.vb</DependentUpon>
     </EmbeddedResource>
@@ -420,6 +534,54 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_v2\FrmEMPLOYEES\FrmFILE_MANAGE.resx">
       <DependentUpon>FrmFILE_MANAGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmINCIDENTS\FrmINCIDENTS.resx">
+      <DependentUpon>FrmINCIDENTS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmINCIDENTS\FrmINCIDENT_DETAILS.resx">
+      <DependentUpon>FrmINCIDENT_DETAILS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmLEAVES\FrmLEAVES.resx">
+      <DependentUpon>FrmLEAVES.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmLEAVES\FrmLEAVE_DETAILS.resx">
+      <DependentUpon>FrmLEAVE_DETAILS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmLOANS\FrmLOANS.resx">
+      <DependentUpon>FrmLOANS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmLOANS\FrmLOAN_EDIT.resx">
+      <DependentUpon>FrmLOAN_EDIT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmLOANS\FrmLOAN_NEW.resx">
+      <DependentUpon>FrmLOAN_NEW.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmLOANS\FrmLOAN_PAYMENT.resx">
+      <DependentUpon>FrmLOAN_PAYMENT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmPAYROLL\FrmEXPORT_ONLINE_BANK.resx">
+      <DependentUpon>FrmEXPORT_ONLINE_BANK.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmPAYROLL\FrmPAYROLL.resx">
+      <DependentUpon>FrmPAYROLL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmPAYROLL\FrmPAYROLL_DATA.resx">
+      <DependentUpon>FrmPAYROLL_DATA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmPAYROLL\FrmPAYROLL_DETAILS.resx">
+      <DependentUpon>FrmPAYROLL_DETAILS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmPAYROLL\FrmPAYROLL_GENERATE_BOB.resx">
+      <DependentUpon>FrmPAYROLL_GENERATE_BOB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmPAYROLL\FrmPRINT_PAYSLIP.resx">
+      <DependentUpon>FrmPRINT_PAYSLIP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmPAYROLL\FrmVIEW_PAYROLL.resx">
+      <DependentUpon>FrmVIEW_PAYROLL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmSHIFTS\FrmSHIFTS.resx">
+      <DependentUpon>FrmSHIFTS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_v2\Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
@@ -433,6 +595,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <Content Include="Harmony_v3_ico.ico" />
     <Content Include="Reports\Payslip_Employee.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

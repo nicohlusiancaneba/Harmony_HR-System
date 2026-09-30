@@ -42,7 +42,7 @@ Public Class FrmEMPLOYEE_DETAILS
             Employee_ID = FrmEMPLOYEES.lst_employees.FocusedItem.SubItems(1).Text
 
             If Employee_ID = "" Then Exit Sub
-            
+
 
             ShowTabPage(Employee_tabControl, Files, 1)
             ShowTabPage(Employee_tabControl, Attendance, 2)
@@ -55,10 +55,14 @@ Public Class FrmEMPLOYEE_DETAILS
             cmb_department.Enabled = False
             cmb_division.Enabled = False
             dt_employmentDate.Enabled = False
+            txt_paidLeaves.ReadOnly = True
 
             txt_startingRate.ReadOnly = True
             txt_workingDays.ReadOnly = True
-            txt_paidLeaves.ReadOnly = True
+            txt_salarySSS.ReadOnly = True
+            txt_salaryPhilhealth.ReadOnly = True
+            txt_salaryPAGIBIG.ReadOnly = True
+            txt_salaryBIR.ReadOnly = True
 
 
             txt_bankAccountNo.ReadOnly = True
@@ -72,7 +76,7 @@ Public Class FrmEMPLOYEE_DETAILS
             txt_PAGIBIGvalue.ReadOnly = True
             txt_taxValue.ReadOnly = True
 
-            
+
 
 
             'INFO TAB
@@ -110,6 +114,10 @@ Public Class FrmEMPLOYEE_DETAILS
                             ",Pag_ibig_Share " & _
                             ",End_Of_EmploymentDate " & _
                             ",Paid_Leaves " & _
+                            ",COALESCE(Monthly_Salary_SSS, 0) as Monthly_Salary_SSS " & _
+                            ",COALESCE(Monthly_Salary_Philhealth, 0) as Monthly_Salary_Philhealth " & _
+                            ",COALESCE(Monthly_Salary_PAGIBIG, 0) as Monthly_Salary_PAGIBIG " & _
+                            ",COALESCE(Monthly_Salary_BIR, 0) as Monthly_Salary_BIR " & _
                             "FROM Employees " & _
                             " where Employee_ID='" & Employee_ID & "';"
             ExecuteSQLQuery(sqlSTR)
@@ -131,12 +139,17 @@ Public Class FrmEMPLOYEE_DETAILS
                 dt_employmentDate.Text = sqlDT.Rows(0)("Hired_Date").ToString
                 txt_regularizationDate.Text = sqlDT.Rows(0)("Regularization_Date").ToString
                 txt_endEmploymentDate.Text = sqlDT.Rows(0)("End_Of_EmploymentDate").ToString
+                txt_paidLeaves.Text = sqlDT.Rows(0)("Paid_Leaves").ToString
 
                 txt_startingRate.Text = sqlDT.Rows(0)("Starting_Daily_Rate").ToString
                 txt_currentRate.Text = sqlDT.Rows(0)("Current_Daily_Rate").ToString
                 txt_workingDays.Text = sqlDT.Rows(0)("No_of_Work_Days_per_Month").ToString
                 txt_monthlyRate.Text = sqlDT.Rows(0)("Monthly_Salary").ToString
-                txt_paidLeaves.Text = sqlDT.Rows(0)("Paid_Leaves").ToString
+                txt_salarySSS.Text = sqlDT.Rows(0)("Monthly_Salary_SSS").ToString
+                txt_salaryPhilhealth.Text = sqlDT.Rows(0)("Monthly_Salary_Philhealth").ToString
+                txt_salaryPAGIBIG.Text = sqlDT.Rows(0)("Monthly_Salary_PAGIBIG").ToString
+                txt_salaryBIR.Text = sqlDT.Rows(0)("Monthly_Salary_BIR").ToString
+
 
                 txt_bankAccountNo.Text = sqlDT.Rows(0)("Payroll_Account_Number").ToString
                 txt_SSSno.Text = sqlDT.Rows(0)("SSS_No").ToString
@@ -150,6 +163,7 @@ Public Class FrmEMPLOYEE_DETAILS
                 txt_PAGIBIGvalue.Text = sqlDT.Rows(0)("Pag_ibig_Share").ToString
 
                 txt_emergencyContact.Text = sqlDT.Rows(0)("Emergency_Contact_Person").ToString
+                txt_emergencyAddress.Text = sqlDT.Rows(0)("Emergency_Address").ToString
                 txt_emergencyRelationship.Text = sqlDT.Rows(0)("Emergency_Relationship").ToString
                 txt_emergencyNo.Text = sqlDT.Rows(0)("Emergency_Contact_No").ToString
 
@@ -198,10 +212,14 @@ Public Class FrmEMPLOYEE_DETAILS
             cmb_department.Enabled = True
             cmb_division.Enabled = True
             dt_employmentDate.Enabled = True
+            txt_paidLeaves.ReadOnly = False
 
             txt_startingRate.ReadOnly = False
             txt_workingDays.ReadOnly = False
-            txt_paidLeaves.ReadOnly = False
+            txt_salarySSS.ReadOnly = False
+            txt_salaryPhilhealth.ReadOnly = False
+            txt_salaryPAGIBIG.ReadOnly = False
+            txt_salaryBIR.ReadOnly = False
 
             txt_bankAccountNo.ReadOnly = False
             txt_SSSno.ReadOnly = False
@@ -248,6 +266,27 @@ Public Class FrmEMPLOYEE_DETAILS
     End Sub
 
     Private Sub Refresh_Attendance()
+        sqlSTR = "select " & _
+                "COALESCE(Payroll_Month, DATENAME(MONTH, Cutoff_Date_End)) as 'Payroll Month', " & _
+                "sum(numRegular) as 'Total Regular Day', " & _
+                "sum(numSpecial) as 'Total Special Day', " & _
+                "sum(COALESCE(numLeave, 0)) as 'Total Leave Day', " & _
+                "sum(numField) as 'Total Field Day', " & _
+                "sum(numHoliday) as 'Total Holiday', " & _
+                "sum(COALESCE(totalNumAbsent, 0)) as 'Total Absent', " & _
+                "sum(COALESCE(totalNumLate, 0)) as 'Total Late' " & _
+                "from Payroll_Details " & _
+                "inner join Payroll on Payroll.Payroll_ID = Payroll_Details.Payroll_ID " & _
+                "where Employee_ID = '" & Employee_ID & "' " & _
+                "and Payroll_Approved = 'Yes' " & _
+                "and Year(Cutoff_Date_End) = Year(GETDATE()) " & _
+                "group by COALESCE(Payroll_Month, DATENAME(MONTH, Cutoff_Date_End)) " & _
+                "order by MAX(Cutoff_Date_Start) desc"
+        FillListView(ExecuteSQLQuery(sqlSTR), lst_attendance, 0)
+
+        If lst_attendance.Items.Count > 0 Then
+            listView_Total(lst_attendance, 1, 2, 3, 4, 5, 6, 7)
+        End If
 
     End Sub
 
@@ -255,6 +294,10 @@ Public Class FrmEMPLOYEE_DETAILS
         sqlSTR = "select " & _
                 "Payroll_Details.Payroll_ID as 'Payroll ID', " & _
                 "CONCAT(Cutoff_Date_Start, ' to ', Cutoff_Date_End) as 'Cutoff Period', " & _
+                "FORMAT(totalSSS, 'N2') as 'Total SSS', " & _
+                "FORMAT(totalPhilhealth, 'N2') as 'Total Philhealth', " & _
+                "FORMAT(totalPagIbig, 'N2') as 'Total PAG-IBIG', " & _
+                "FORMAT(totalTax, 'N2') as 'Total Tax', " & _
                 "FORMAT(grandTotal_Basic, 'N2') as 'Total Basic', " & _
                 "FORMAT(grandTotal_Additional, 'N2') as 'Total Additional', " & _
                 "FORMAT(grandTotal_Gross, 'N2') as 'Total Gross', " & _
@@ -270,7 +313,7 @@ Public Class FrmEMPLOYEE_DETAILS
         FillListView(ExecuteSQLQuery(sqlSTR), lst_payroll, 0)
 
         If lst_payroll.Items.Count > 0 Then
-            listView_Total(lst_payroll, 2, 3, 4, 5, 6, 7)
+            listView_Total(lst_payroll, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
         End If
 
     End Sub
@@ -329,7 +372,7 @@ Public Class FrmEMPLOYEE_DETAILS
                 "Leave_Start as 'Leave Start', " & _
                 "Leave_end as 'Leave End', " & _
                 "Leave_TotalDays as 'Total Day(s)', " & _
-                "CASE WHEN Leave_Category not in ('Leave w/o Pay', 'Bereavement', 'Others') then 'Yes' else 'No' end as 'Paid Leave?', " & _
+                "CASE WHEN Leave_Category not in ('Leave w/o Pay', 'Bereavement', 'Others', 'Other') then 'Yes' else 'No' end as 'Paid Leave?', " & _
                 "Leave_Reason as Reason, " & _
                 "Leave_Remarks as Remarks " & _
                 "from Leaves " & _
@@ -459,6 +502,7 @@ Public Class FrmEMPLOYEE_DETAILS
     ",Address = '" & txt_address.Text & "'" &
     ",Contact_No = '" & txt_contact.Text & "'" &
     ",Emergency_Contact_Person = '" & txt_emergencyContact.Text & "'" &
+    ",Emergency_Address = '" & txt_emergencyAddress.Text & "'" &
     ",Emergency_Relationship = '" & txt_emergencyRelationship.Text & "'" &
     ",Emergency_Contact_No = '" & txt_emergencyNo.Text & "'" &
     ",Civil_Status = '" & cmb_civilStatus.Text & "'" &
@@ -467,9 +511,9 @@ Public Class FrmEMPLOYEE_DETAILS
         Else
             sqlSTR = "INSERT INTO Employees " &
     "(Employee_ID, Last_Name, First_Name, Middle_Name, Date_of_Birth, Gender, Address, Contact_No, " &
-    "Emergency_Contact_Person, Emergency_Relationship, Emergency_Contact_No, " &
+    "Emergency_Contact_Person, Emergency_Address, Emergency_Relationship, Emergency_Contact_No, " &
     "Payroll_Account_Number, Hired_Date, Employment_Status, Position, Department, " &
-    "Division, Starting_Daily_Rate, Current_Daily_Rate, Monthly_Salary, No_of_Work_Days_per_Month, " &
+    "Division, Starting_Daily_Rate, Current_Daily_Rate, Monthly_Salary, Monthly_Salary_SSS, Monthly_Salary_Philhealth, Monthly_Salary_PAGIBIG, Monthly_Salary_BIR, No_of_Work_Days_per_Month, " &
     "SSS_No, Philhealth_No, TIN_No, Pag_ibig_No, Civil_Status, SSS_Share, Philhealth_Share, Tax_Amount, " &
     "Pag_ibig_Share, Paid_Leaves) " &
     "VALUES " &
@@ -482,6 +526,7 @@ Public Class FrmEMPLOYEE_DETAILS
     ",'" & txt_address.Text & "'" &
     ",'" & txt_contact.Text & "'" &
     ",'" & txt_emergencyContact.Text & "'" &
+    ",'" & txt_emergencyAddress.Text & "'" &
     ",'" & txt_emergencyRelationship.Text & "'" &
     ",'" & txt_emergencyNo.Text & "'" &
     ",'" & txt_bankAccountNo.Text & "'" &
@@ -493,6 +538,10 @@ Public Class FrmEMPLOYEE_DETAILS
     ",'" & txt_startingRate.Text & "'" &
     ",'" & txt_currentRate.Text & "'" &
     ",'" & txt_monthlyRate.Text & "'" &
+    ",'" & txt_salarySSS.Text & "'" &
+    ",'" & txt_salaryPhilhealth.Text & "'" &
+    ",'" & txt_salaryPAGIBIG.Text & "'" &
+    ",'" & txt_salaryBIR.Text & "'" &
     ",'" & txt_workingDays.Text & "'" &
     ",'" & txt_SSSno.Text & "'" &
     ",'" & txt_philhealthNo.Text & "'" &
@@ -568,4 +617,6 @@ Public Class FrmEMPLOYEE_DETAILS
     Private Sub txt_paidLeaves_TextChanged(sender As Object, e As EventArgs) Handles txt_paidLeaves.TextChanged
         txt_paidLeaves2.Text = txt_paidLeaves.Text
     End Sub
+
+
 End Class

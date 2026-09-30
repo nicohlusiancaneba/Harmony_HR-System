@@ -21,8 +21,8 @@ Module ModCon
     ''192.168.1.104;" & _'                           
 
     Public CnString As String = "Provider=SQLOLEDB;" & _
-                               "Data Source=bcvr.ph" & _
-                               ";Network=bcvr.ph, 1433" & _
+                               "Data Source=114.29.238.181" & _
+                               ";Network=114.29.238.181, 1433" & _
                                ";Initial Catalog=BCVR-HR" & _
                                ";User Id=bcvr" & _
                                ";Password=ButCha!142630!"
@@ -88,8 +88,8 @@ Module ModCon
                 '               ";Database=" & Split(tmpStr, ":")(5) & "; Trusted_Connection=yes;"
                 'End If
                 CnString = "Provider=SQLOLEDB;" & _
-                               "Data Source=bcvr.ph" & _
-                               ";Network=bcvr.ph, 1433" & _
+                               "Data Source=114.29.238.181" & _
+                               ";Network=114.29.238.181, 1433" & _
                                ";Initial Catalog=BCVR-HR" & _
                                ";User Id=bcvr" & _
                                ";Password=ButCha!142630!"
