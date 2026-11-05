@@ -63,14 +63,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Harmony - HR System.exe" size="9177600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Harmony - HR System.exe" size="9645568">
       <assemblyIdentity name="Harmony - HR System" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>NhotRFZtwjaLYI007bhdLyaEbKVZAiwsxDLs+Wnpezk=</dsig:DigestValue>
+        <dsig:DigestValue>V5AHTqWSA5Nl7zKTNjT331K4cHNoueZ9Opf3BGJyACA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -234,6 +234,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>AlekbHEk4TVMhaSsE3RA3M2f6aKuRVzjtvCHGYE1fhU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Reports\Incident_Report.rdlc" size="400386">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>pFwD4j4KK/9xlQZcnR/l4BhrCX5zkVhmK93cUBIKxk8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Reports\Payroll_Export.rdlc" size="20589">

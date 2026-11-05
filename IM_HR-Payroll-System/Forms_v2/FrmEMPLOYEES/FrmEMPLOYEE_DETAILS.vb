@@ -113,7 +113,7 @@ Public Class FrmEMPLOYEE_DETAILS
                             ",Tax_Amount " & _
                             ",Pag_ibig_Share " & _
                             ",End_Of_EmploymentDate " & _
-                            ",Paid_Leaves " & _
+                            ",COALESCE(Paid_Leaves,0) as Paid_Leaves " & _
                             ",COALESCE(Monthly_Salary_SSS, 0) as Monthly_Salary_SSS " & _
                             ",COALESCE(Monthly_Salary_Philhealth, 0) as Monthly_Salary_Philhealth " & _
                             ",COALESCE(Monthly_Salary_PAGIBIG, 0) as Monthly_Salary_PAGIBIG " & _
@@ -560,6 +560,29 @@ Public Class FrmEMPLOYEE_DETAILS
     End Sub
 
     Private Function HoldSave()
+
+        If formAction = "add" Then
+            If txt_jobPosition.Text = "" Or txt_jobPosition.Text.Length < 5 Then
+                MsgBox("Enter employee's valid job position.")
+                Return True
+            End If
+
+            If txt_startingRate.Text = "" Then
+                MsgBox("Employee's starting daily rate cannot be blank.")
+                Return True
+            End If
+
+            If txt_workingDays.Text = "" Then
+                MsgBox("Employee's number of working days per month cannot be blank.")
+                Return True
+            End If
+
+            If txt_paidLeaves.Text = "" Then
+                MsgBox("Employee's number of leaves per year cannot be blank.")
+                Return True
+            End If
+        End If
+
         If txt_lastName.Text = "" Or txt_firstName.Text = "" Or txt_middleName.Text = "" Then
             MsgBox("Employee's name cannot be incomplete, try again.")
             Return True
@@ -578,26 +601,6 @@ Public Class FrmEMPLOYEE_DETAILS
 
         If txt_contact.Text = "" Or txt_contact.Text.Length < 10 Then
             MsgBox("Enter employee's valid and complete contact number.")
-            Return True
-        End If
-
-        If txt_jobPosition.Text = "" Or txt_jobPosition.Text.Length < 5 Then
-            MsgBox("Enter employee's valid job position.")
-            Return True
-        End If
-
-        If txt_startingRate.Text = "" Then
-            MsgBox("Employee's starting daily rate cannot be blank.")
-            Return True
-        End If
-
-        If txt_workingDays.Text = "" Then
-            MsgBox("Employee's number of working days per month cannot be blank.")
-            Return True
-        End If
-
-        If txt_paidLeaves.Text = "" Then
-            MsgBox("Employee's number of leaves per year cannot be blank.")
             Return True
         End If
 

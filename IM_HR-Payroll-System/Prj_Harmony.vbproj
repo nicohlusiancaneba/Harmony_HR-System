@@ -280,6 +280,24 @@
     <Compile Include="Forms_v2\FrmADJUSTMENTS\FrmADJUSTMENT_DETAILS.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms_v2\FrmATTENDANCE\FrmATTENDANCE.Designer.vb">
+      <DependentUpon>FrmATTENDANCE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmATTENDANCE\FrmATTENDANCE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmATTENDANCE\FrmATTENDANCE_DATA.Designer.vb">
+      <DependentUpon>FrmATTENDANCE_DATA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmATTENDANCE\FrmATTENDANCE_DATA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmATTENDANCE\FrmATTENDANCE_DETAILS.Designer.vb">
+      <DependentUpon>FrmATTENDANCE_DETAILS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmATTENDANCE\FrmATTENDANCE_DETAILS.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms_v2\FrmEMPLOYEES\FrmEMPLOYEES.Designer.vb">
       <DependentUpon>FrmEMPLOYEES.vb</DependentUpon>
     </Compile>
@@ -308,6 +326,30 @@
       <DependentUpon>FrmINCIDENT_DETAILS.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms_v2\FrmINCIDENTS\FrmINCIDENT_DETAILS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmINCIDENTS\FrmINCIDENT_DETAILS_ACTION.Designer.vb">
+      <DependentUpon>FrmINCIDENT_DETAILS_ACTION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmINCIDENTS\FrmINCIDENT_DETAILS_ACTION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmINCIDENTS\FrmINCIDENT_DETAILS_EMPLOYEE.Designer.vb">
+      <DependentUpon>FrmINCIDENT_DETAILS_EMPLOYEE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmINCIDENTS\FrmINCIDENT_DETAILS_EMPLOYEE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmINCIDENTS\FrmINCIDENT_DETAILS_OFFENSES.Designer.vb">
+      <DependentUpon>FrmINCIDENT_DETAILS_OFFENSES.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmINCIDENTS\FrmINCIDENT_DETAILS_OFFENSES.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmINCIDENTS\FrmINCIDENT_DETAILS_PRINT.Designer.vb">
+      <DependentUpon>FrmINCIDENT_DETAILS_PRINT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmINCIDENTS\FrmINCIDENT_DETAILS_PRINT.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms_v2\FrmLEAVES\FrmLEAVES.Designer.vb">
@@ -388,10 +430,22 @@
     <Compile Include="Forms_v2\FrmPAYROLL\FrmVIEW_PAYROLL.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms_v2\FrmREPORTS\FrmREPORTS.Designer.vb">
+      <DependentUpon>FrmREPORTS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmREPORTS\FrmREPORTS.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms_v2\FrmSHIFTS\FrmSHIFTS.Designer.vb">
       <DependentUpon>FrmSHIFTS.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms_v2\FrmSHIFTS\FrmSHIFTS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmSHIFTS\FrmSHIFT_DETAILS.Designer.vb">
+      <DependentUpon>FrmSHIFT_DETAILS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmSHIFTS\FrmSHIFT_DETAILS.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms_v2\Main.Designer.vb">
@@ -436,6 +490,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Reports\Incident_Report.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\loading-arrow.png" />
     <None Include="Resources\refresh.png" />
     <None Include="Resources\User.png" />
@@ -526,6 +583,15 @@
     <EmbeddedResource Include="Forms_v2\FrmADJUSTMENTS\FrmADJUSTMENT_DETAILS.resx">
       <DependentUpon>FrmADJUSTMENT_DETAILS.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmATTENDANCE\FrmATTENDANCE.resx">
+      <DependentUpon>FrmATTENDANCE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmATTENDANCE\FrmATTENDANCE_DATA.resx">
+      <DependentUpon>FrmATTENDANCE_DATA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmATTENDANCE\FrmATTENDANCE_DETAILS.resx">
+      <DependentUpon>FrmATTENDANCE_DETAILS.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms_v2\FrmEMPLOYEES\FrmEMPLOYEES.resx">
       <DependentUpon>FrmEMPLOYEES.vb</DependentUpon>
     </EmbeddedResource>
@@ -540,6 +606,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_v2\FrmINCIDENTS\FrmINCIDENT_DETAILS.resx">
       <DependentUpon>FrmINCIDENT_DETAILS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmINCIDENTS\FrmINCIDENT_DETAILS_ACTION.resx">
+      <DependentUpon>FrmINCIDENT_DETAILS_ACTION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmINCIDENTS\FrmINCIDENT_DETAILS_EMPLOYEE.resx">
+      <DependentUpon>FrmINCIDENT_DETAILS_EMPLOYEE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmINCIDENTS\FrmINCIDENT_DETAILS_OFFENSES.resx">
+      <DependentUpon>FrmINCIDENT_DETAILS_OFFENSES.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmINCIDENTS\FrmINCIDENT_DETAILS_PRINT.resx">
+      <DependentUpon>FrmINCIDENT_DETAILS_PRINT.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_v2\FrmLEAVES\FrmLEAVES.resx">
       <DependentUpon>FrmLEAVES.vb</DependentUpon>
@@ -580,8 +658,14 @@
     <EmbeddedResource Include="Forms_v2\FrmPAYROLL\FrmVIEW_PAYROLL.resx">
       <DependentUpon>FrmVIEW_PAYROLL.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmREPORTS\FrmREPORTS.resx">
+      <DependentUpon>FrmREPORTS.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms_v2\FrmSHIFTS\FrmSHIFTS.resx">
       <DependentUpon>FrmSHIFTS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmSHIFTS\FrmSHIFT_DETAILS.resx">
+      <DependentUpon>FrmSHIFT_DETAILS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_v2\Main.resx">
       <DependentUpon>Main.vb</DependentUpon>

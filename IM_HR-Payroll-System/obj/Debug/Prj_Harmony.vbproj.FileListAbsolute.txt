@@ -67,3 +67,13 @@ M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmLEAVES.resources
 M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmLEAVE_DETAILS.resources
 M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmINCIDENTS.resources
 M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmINCIDENT_DETAILS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmINCIDENT_DETAILS_ACTION.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmINCIDENT_DETAILS_EMPLOYEE.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmINCIDENT_DETAILS_OFFENSES.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmREPORTS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmSHIFT_DETAILS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmINCIDENT_DETAILS_PRINT.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\bin\Debug\Reports\Incident_Report.rdlc
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmATTENDANCE.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmATTENDANCE_DETAILS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmATTENDANCE_DATA.resources

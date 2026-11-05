@@ -95,7 +95,7 @@ Partial Class FrmADJUSTMENT_DETAILS
         Me.cmb_adjustmentType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_adjustmentType.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.cmb_adjustmentType.FormattingEnabled = True
-        Me.cmb_adjustmentType.Items.AddRange(New Object() {"Job Position", "Department", "Division", "Regularization", "Resignation", "Termination", "Rehire", "Salary", "Monthly Salary (SSS)", "Monthly Salary (Philhealth)", "Monthly Salary (PAG-IBIG)", "Monthly Salary (BIR)", "Working Days", "Paid Leave Days", "Bank Account No.", "SSS No.", "Philhealth No.", "Tax ID No. (TIN)", "PAG-IBIG No.", "SSS Share", "Philhealth Share", "Tax Amount", "PAG-IBIG Share"})
+        Me.cmb_adjustmentType.Items.AddRange(New Object() {"Job Position", "Department", "Division", "Shift", "Regularization", "Resignation", "Termination", "Rehire", "Salary", "Monthly Salary (SSS)", "Monthly Salary (Philhealth)", "Monthly Salary (PAG-IBIG)", "Monthly Salary (BIR)", "Working Days", "Paid Leave Days", "Bank Account No.", "SSS No.", "Philhealth No.", "Tax ID No. (TIN)", "PAG-IBIG No.", "SSS Share", "Philhealth Share", "Tax Amount", "PAG-IBIG Share"})
         Me.cmb_adjustmentType.Location = New System.Drawing.Point(134, 14)
         Me.cmb_adjustmentType.Name = "cmb_adjustmentType"
         Me.cmb_adjustmentType.Size = New System.Drawing.Size(127, 24)

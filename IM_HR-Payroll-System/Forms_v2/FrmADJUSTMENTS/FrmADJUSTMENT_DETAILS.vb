@@ -34,7 +34,7 @@
             cmb_newText.Visible = False
             dt_newDate.Visible = False
             txt_newText.Visible = False
-            If cmb_adjustmentType.Text = "Department" Or cmb_adjustmentType.Text = "Division" Then
+            If cmb_adjustmentType.Text = "Department" Or cmb_adjustmentType.Text = "Division" Or cmb_adjustmentType.Text = "Shift" Then
                 cmb_newText.Text = new_value
                 cmb_newText.Visible = True
             ElseIf cmb_adjustmentType.Text = "Regularization" Or cmb_adjustmentType.Text = "Termination" Or cmb_adjustmentType.Text = "Resignation" Or cmb_adjustmentType.Text = "Rehire" Then
@@ -133,13 +133,16 @@
 
         temp_employee = cmb_employees.Text
 
-        If cmb_adjustmentType.Text = "Department" Or cmb_adjustmentType.Text = "Division" Then
+        If cmb_adjustmentType.Text = "Department" Or cmb_adjustmentType.Text = "Division" Or cmb_adjustmentType.Text = "Shift" Then
             cmb_newText.Visible = True
             If cmb_adjustmentType.Text = "Department" Then
                 sqlSTR = "select Dropdown_ID, Dropdown_Description from Dropdowns where Dropdown_Type = 'Department'"
                 FILLComboBox2(sqlSTR, cmb_newText)
             ElseIf cmb_adjustmentType.Text = "Division" Then
                 sqlSTR = "select Dropdown_ID, Dropdown_Description from Dropdowns where Dropdown_Type = 'Division'"
+                FILLComboBox2(sqlSTR, cmb_newText)
+            ElseIf cmb_adjustmentType.Text = "Shift" Then
+                sqlSTR = "select Shift_ID, Shift_Code from Shifts;"
                 FILLComboBox2(sqlSTR, cmb_newText)
             End If
 
@@ -179,15 +182,19 @@
 
     Private Sub btn_Save_Click(sender As Object, e As EventArgs) Handles btn_Save.Click
         Dim new_value As String
-        If cmb_adjustmentType.Text = "Department" Or cmb_adjustmentType.Text = "Division" Then
+        If cmb_adjustmentType.Text = "Department" Or cmb_adjustmentType.Text = "Division" Or cmb_adjustmentType.Text = "Shift" Then
             new_value = cmb_newText.Text
+           
         ElseIf cmb_adjustmentType.Text = "Regularization" Or cmb_adjustmentType.Text = "Termination" Or cmb_adjustmentType.Text = "Resignation" Or cmb_adjustmentType.Text = "Rehire" Then
             new_value = dt_newDate.Text
         Else
             new_value = txt_newText.Text
         End If
 
-
+        If cmb_adjustmentType.Text = "Shift" And txt_Prev.Text = "N/A" Then
+            MsgBox("Shift adjustment failed. No shift is assigned to the selected employee. Assign employee in Shifts first.", MsgBoxStyle.Information)
+            Exit Sub
+        End If
 
         If new_value = txt_Prev.Text Then
             MsgBox("Value Invalid, try again.", MsgBoxStyle.Exclamation, msgBox_header)
@@ -213,66 +220,88 @@
 
         If cb_Approved.Checked Then
             If MsgBox("Do you want to approve this adjustment record? Please note that once approved, you cannot undo this action.", MsgBoxStyle.YesNo + MsgBoxStyle.Critical, msgBox_header) = MsgBoxResult.Yes Then
-                Dim type As String = ""
-                If cmb_adjustmentType.Text = "Salary" Then
-                    type = "Current_Daily_Rate "
-                ElseIf cmb_adjustmentType.Text = "SSS Share" Then
-                    type = "SSS_Share"
-                ElseIf cmb_adjustmentType.Text = "PAG-IBIG Share" Then
-                    type = "Pag_ibig_Share"
-                ElseIf cmb_adjustmentType.Text = "Philhealth Share" Then
-                    type = "Philhealth_Share"
-                ElseIf cmb_adjustmentType.Text = "Tax Amount" Then
-                    type = "Tax_Amount"
-                ElseIf cmb_adjustmentType.Text = "Regularization" Then
-                    type = "Employment_Status = 'Regular', Regularization_Date"
-                ElseIf cmb_adjustmentType.Text = "Termination" Then
-                    type = "Employment_Status = 'Terminated', End_Of_EmploymentDate"
-                ElseIf cmb_adjustmentType.Text = "Resignation" Then
-                    type = "Employment_Status = 'Resigned', End_Of_EmploymentDate"
-                ElseIf cmb_adjustmentType.Text = "Rehire" Then
-                    type = "Employment_Status = 'Probationary', Hired_Date"
-                ElseIf cmb_adjustmentType.Text = "Department" Then
-                    type = "Department"
-                ElseIf cmb_adjustmentType.Text = "Division" Then
-                    type = "Division"
-                ElseIf cmb_adjustmentType.Text = "Job Position" Then
-                    type = "Position"
-                ElseIf cmb_adjustmentType.Text = "Working Days" Then
-                    type = "No_of_Work_Days_per_Month"
-                ElseIf cmb_adjustmentType.Text = "Paid Leave Days" Then
-                    type = "Paid_Leaves"
-                ElseIf cmb_adjustmentType.Text = "Bank Account No." Then
-                    type = "Payroll_Account_Number"
-                ElseIf cmb_adjustmentType.Text = "SSS No." Then
-                    type = "SSS_No"
-                ElseIf cmb_adjustmentType.Text = "Philhealth No." Then
-                    type = "Philhealth_No"
-                ElseIf cmb_adjustmentType.Text = "Tax ID No. (TIN)" Then
-                    type = "TIN_No"
-                ElseIf cmb_adjustmentType.Text = "PAG-IBIG No." Then
-                    type = "Pag_ibig_No"
-                ElseIf cmb_adjustmentType.Text = "Monthly Salary (SSS)" Then
-                    type = "Monthly_Salary_SSS"
-                ElseIf cmb_adjustmentType.Text = "Monthly Salary (Philhealth)" Then
-                    type = "Monthly_Salary_Philhealth"
-                ElseIf cmb_adjustmentType.Text = "Monthly Salary (PAG-IBIG)" Then
-                    type = "Monthly_Salary_PAGIBIG"
-                ElseIf cmb_adjustmentType.Text = "Monthly Salary (BIR)" Then
-                    type = "Monthly_Salary_BIR"
-                End If
-
-                sqlSTR = "Update Employees set " & type & " = '" & new_value & "'  where Employee_ID=" & Split(cmb_employees.Text, " - ")(0)
-                ExecuteSQLQuery(sqlSTR)
+                
 
                 If cmb_adjustmentType.Text = "Salary" Or cmb_adjustmentType.Text = "Working Days" Then
                     sqlSTR = "Update Employees set Monthly_Salary = Current_Daily_Rate * No_of_Work_Days_per_Month " & _
                             " where Employee_ID ='" & Split(cmb_employees.Text, " - ")(0) & "'"
                     ExecuteSQLQuery(sqlSTR)
+
+                ElseIf cmb_adjustmentType.Text = "Shift" Then
+                    sqlSTR = "Update Shifts_Details " & _
+                            "set Shift_ID = (select Shift_ID from Shifts where Shift_Code = '" & new_value & "') " & _
+                            "where Employee_ID = '" & Split(cmb_employees.Text, " - ")(0) & "'; " & _
+                            " " & _
+                            "Update Shifts " & _
+                            "set Employee_Count = (select count(Employee_ID) from Shifts_Details " & _
+                            "inner join Shifts on Shifts.Shift_ID = Shifts_Details.Shift_ID " & _
+                            "where Shift_Code = '" & new_value & "'), " & _
+                            "Updated_By = '" & xUsername & "' " & _
+                            "where Shift_Code = '" & new_value & "';"
+                    ExecuteSQLQuery(sqlSTR)
+
+                Else
+                    Dim type As String = ""
+                    If cmb_adjustmentType.Text = "Salary" Then
+                        type = "Current_Daily_Rate "
+                    ElseIf cmb_adjustmentType.Text = "SSS Share" Then
+                        type = "SSS_Share"
+                    ElseIf cmb_adjustmentType.Text = "PAG-IBIG Share" Then
+                        type = "Pag_ibig_Share"
+                    ElseIf cmb_adjustmentType.Text = "Philhealth Share" Then
+                        type = "Philhealth_Share"
+                    ElseIf cmb_adjustmentType.Text = "Tax Amount" Then
+                        type = "Tax_Amount"
+                    ElseIf cmb_adjustmentType.Text = "Regularization" Then
+                        type = "Employment_Status = 'Regular', Regularization_Date"
+                    ElseIf cmb_adjustmentType.Text = "Termination" Then
+                        type = "Employment_Status = 'Terminated', End_Of_EmploymentDate"
+                    ElseIf cmb_adjustmentType.Text = "Resignation" Then
+                        type = "Employment_Status = 'Resigned', End_Of_EmploymentDate"
+                    ElseIf cmb_adjustmentType.Text = "Rehire" Then
+                        type = "Employment_Status = 'Probationary', Hired_Date"
+                    ElseIf cmb_adjustmentType.Text = "Department" Then
+                        type = "Department"
+                    ElseIf cmb_adjustmentType.Text = "Division" Then
+                        type = "Division"
+                    ElseIf cmb_adjustmentType.Text = "Job Position" Then
+                        type = "Position"
+                    ElseIf cmb_adjustmentType.Text = "Working Days" Then
+                        type = "No_of_Work_Days_per_Month"
+                    ElseIf cmb_adjustmentType.Text = "Paid Leave Days" Then
+                        type = "Paid_Leaves"
+                    ElseIf cmb_adjustmentType.Text = "Bank Account No." Then
+                        type = "Payroll_Account_Number"
+                    ElseIf cmb_adjustmentType.Text = "SSS No." Then
+                        type = "SSS_No"
+                    ElseIf cmb_adjustmentType.Text = "Philhealth No." Then
+                        type = "Philhealth_No"
+                    ElseIf cmb_adjustmentType.Text = "Tax ID No. (TIN)" Then
+                        type = "TIN_No"
+                    ElseIf cmb_adjustmentType.Text = "PAG-IBIG No." Then
+                        type = "Pag_ibig_No"
+                    ElseIf cmb_adjustmentType.Text = "Monthly Salary (SSS)" Then
+                        type = "Monthly_Salary_SSS"
+                    ElseIf cmb_adjustmentType.Text = "Monthly Salary (Philhealth)" Then
+                        type = "Monthly_Salary_Philhealth"
+                    ElseIf cmb_adjustmentType.Text = "Monthly Salary (PAG-IBIG)" Then
+                        type = "Monthly_Salary_PAGIBIG"
+                    ElseIf cmb_adjustmentType.Text = "Monthly Salary (BIR)" Then
+                        type = "Monthly_Salary_BIR"
+                    End If
+
+                    sqlSTR = "Update Employees set " & type & " = '" & new_value & "'  where Employee_ID=" & Split(cmb_employees.Text, " - ")(0)
+                    ExecuteSQLQuery(sqlSTR)
                 End If
 
                 sqlSTR = "Update Adjustments set Date_Adjusted='" & DateTime.Now.ToString("MM/dd/yyyy") & "', Adj_Approved='Yes', Approved_by='" & xUsername & "' where Adjustment_ID='" & Adjustment_ID & "';"
                 ExecuteSQLQuery(sqlSTR)
+
+                If cmb_adjustmentType.Text = "Termination" Or cmb_adjustmentType.Text = "Resignation" Then
+                    sqlSTR = "Delete from Shifts_Details where Employee_ID ='" & Split(cmb_employees.Text, " - ")(0) & "';"
+                    ExecuteSQLQuery(sqlSTR)
+                End If
+
                 MsgBox("Succesfully APPROVED adjustment record.", MsgBoxStyle.Information, msgBox_header)
             Else
                 MsgBox("Succesfully saved adjustment record.", MsgBoxStyle.Information, msgBox_header)
@@ -357,6 +386,8 @@
                 type = "Department"
             ElseIf cmb_adjustmentType.Text = "Division" Then
                 type = "Division"
+            ElseIf cmb_adjustmentType.Text = "Shift" Then
+                type = "COALESCE(Shift_Code, 'N/A')"
             ElseIf cmb_adjustmentType.Text = "Job Position" Then
                 type = "Position"
             ElseIf cmb_adjustmentType.Text = "Working Days" Then
@@ -383,7 +414,7 @@
                 type = "Monthly_Salary_BIR"
             End If
 
-            sqlSTR = "Select " & type & " as current_value from Employees where Employee_ID ='" & Split(cmb_employees.Text, " - ")(0) & "';"
+            sqlSTR = "Select " & type & " as current_value from Employees LEFT JOIN Shifts_Details on Shifts_Details.Employee_ID = Employees.Employee_ID LEFT JOIN Shifts on Shifts.Shift_ID = Shifts_Details.Shift_ID  where Employees.Employee_ID ='" & Split(cmb_employees.Text, " - ")(0) & "';"
             ExecuteSQLQuery(sqlSTR)
 
             If sqlDT.Rows.Count > 0 Then
@@ -415,6 +446,7 @@
     Private Sub cmb_employees_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_employees.SelectedIndexChanged
         If formLoaded Then
             Employee_Current_Value()
+            cmb_newText.Width = txt_Prev.Width
         End If
 
 
@@ -446,7 +478,7 @@
     End Sub
 
 
-    Private Function GetAutoDropDownWidth(cbo As ComboBox, Optional maxWidth As Integer = 300) As Integer
+    Private Function GetAutoDropDownWidth(cbo As ComboBox, Optional maxWidth As Integer = 301) As Integer
         Dim widestWidth As Integer = cbo.Width
 
         For Each item As Object In cbo.Items
@@ -467,6 +499,28 @@
         Return widestWidth
     End Function
 
+
+    'Private Sub AutoSizeComboBox(ByVal cmb As ComboBox, Optional ByVal maxWidth As Integer = 301)
+    '    Dim widest As Integer = 0
+
+    '    For Each item As Object In cmb.Items
+    '        Dim w As Integer = TextRenderer.MeasureText(cmb.GetItemText(item), cmb.Font).Width
+    '        If w > widest Then widest = w
+    '    Next
+
+    '    ' Room for the dropdown arrow and left/right padding
+    '    Dim needed As Integer = widest + SystemInformation.VerticalScrollBarWidth + 8
+
+    '    ' Do not exceed the maximum
+    '    cmb.Width = Math.Min(needed, maxWidth)
+
+    '    ' If the text is wider than the box, let the dropdown list show it in full
+    '    Dim listNeeded As Integer = widest + 8
+    '    If cmb.Items.Count > cmb.MaxDropDownItems Then
+    '        listNeeded += SystemInformation.VerticalScrollBarWidth
+    '    End If
+    '    cmb.DropDownWidth = Math.Max(cmb.Width, listNeeded)
+    'End Sub
 
 
 End Class

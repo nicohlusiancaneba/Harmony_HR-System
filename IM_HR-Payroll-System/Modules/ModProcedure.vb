@@ -76,6 +76,148 @@ Module ModProcedure
         Next i
     End Sub
 
+    Public Sub FillDataGridView_v2(ByVal sqlData As DataTable, ByVal dgv As DataGridView)
+        Dim i As Integer
+        Dim j As Integer
+
+        ' Clear any existing data
+        dgv.Columns.Clear()
+        dgv.Rows.Clear()
+
+        ' Determine which columns are fully numeric, and totals for "Total" columns
+        Dim isNumericCol(sqlData.Columns.Count - 1) As Boolean
+        Dim colTotal(sqlData.Columns.Count - 1) As Double
+        Dim isTotalCol(sqlData.Columns.Count - 1) As Boolean
+
+        For j = 0 To sqlData.Columns.Count - 1
+            isNumericCol(j) = IsColumnNumeric(sqlData, j)
+            isTotalCol(j) = sqlData.Columns(j).ColumnName.IndexOf("Total", StringComparison.OrdinalIgnoreCase) >= 0
+
+            If isNumericCol(j) Then
+                Dim sum As Double = 0
+                For i = 0 To sqlData.Rows.Count - 1
+                    If Not IsDBNull(sqlData.Rows(i).Item(j)) Then
+                        sum += Convert.ToDouble(sqlData.Rows(i).Item(j))
+                    End If
+                Next i
+                colTotal(j) = sum
+            End If
+        Next j
+
+        ' Add columns to DataGridView based on DataTable columns
+        For j = 0 To sqlData.Columns.Count - 1
+            Dim headerText As String = sqlData.Columns(j).ColumnName
+
+            If isTotalCol(j) AndAlso isNumericCol(j) Then
+                headerText = headerText & " (" & colTotal(j).ToString("N2") & ")"
+            End If
+
+            dgv.Columns.Add(sqlData.Columns(j).ColumnName, headerText)
+        Next j
+
+        ' Add rows to DataGridView based on DataTable rows
+        For i = 0 To sqlData.Rows.Count - 1
+            Dim row As New DataGridViewRow()
+            For j = 0 To sqlData.Columns.Count - 1
+                Dim cellValue As Object
+
+                'If Not IsDBNull(sqlData.Rows(i).Item(j)) Then
+                '    If isNumericCol(j) And j > 0 Then
+                '        cellValue = Convert.ToDouble(sqlData.Rows(i).Item(j)).ToString("N2")
+                '    Else
+                '        cellValue = sqlData.Rows(i).Item(j)
+                '    End If
+                'Else
+                '    cellValue = ""
+                'End If
+                If Not IsDBNull(sqlData.Rows(i).Item(j)) Then
+
+                    Dim headerText As String = sqlData.Columns(j).ColumnName
+
+                    Dim skipFormatting As Boolean =
+                        headerText.Equals("ID", StringComparison.OrdinalIgnoreCase) OrElse
+                        headerText.Contains(" ID") OrElse
+                        headerText.Equals("No.", StringComparison.OrdinalIgnoreCase) OrElse
+                        headerText.Contains(" No.")
+
+                    If isNumericCol(j) And j > 0 And Not skipFormatting Then
+                        cellValue = Convert.ToDouble(sqlData.Rows(i).Item(j)).ToString("N2")
+                    Else
+                        cellValue = sqlData.Rows(i).Item(j)
+                    End If
+
+                Else
+                    cellValue = ""
+                End If
+
+                row.Cells.Add(New DataGridViewTextBoxCell() With {.Value = cellValue})
+            Next j
+            dgv.Rows.Add(row)
+        Next i
+
+        ' Right-align numeric columns for readability
+        For j = 0 To dgv.Columns.Count - 1
+            If isNumericCol(j) Then
+                dgv.Columns(j).DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+            End If
+        Next j
+
+        ' Auto-size once to fit content, then cap max width and allow manual resizing
+        Const MaxColWidth As Integer = 350
+
+        For i = 0 To dgv.Columns.Count - 1
+            dgv.Columns(i).AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        Next i
+
+        For i = 0 To dgv.Columns.Count - 1
+            Dim fitWidth As Integer = dgv.Columns(i).Width
+
+            dgv.Columns(i).AutoSizeMode = DataGridViewAutoSizeColumnMode.None
+
+            If fitWidth > MaxColWidth Then
+                dgv.Columns(i).Width = MaxColWidth
+            Else
+                dgv.Columns(i).Width = fitWidth
+            End If
+
+            dgv.Columns(i).Resizable = DataGridViewTriState.True
+        Next i
+        dgv.RowHeadersVisible = True
+        RemoveHandler dgv.RowPostPaint, AddressOf dgv_RowPostPaint
+        AddHandler dgv.RowPostPaint, AddressOf dgv_RowPostPaint
+    End Sub
+
+    Private Function IsColumnNumeric(ByVal sqlData As DataTable, ByVal colIndex As Integer) As Boolean
+        Dim hasValue As Boolean = False
+
+        For i As Integer = 0 To sqlData.Rows.Count - 1
+            Dim val As Object = sqlData.Rows(i).Item(colIndex)
+
+            If Not IsDBNull(val) Then
+                hasValue = True
+                Dim testDouble As Double
+                If Not Double.TryParse(val.ToString(), testDouble) Then
+                    Return False
+                End If
+            End If
+        Next i
+
+        Return hasValue
+    End Function
+
+    Private Sub dgv_RowPostPaint(sender As Object, e As DataGridViewRowPostPaintEventArgs)
+        Dim dgv As DataGridView = DirectCast(sender, DataGridView)
+        Dim rowNumber As String = (e.RowIndex + 1).ToString()
+        Dim centerFormat As New StringFormat() With {
+            .Alignment = StringAlignment.Center,
+            .LineAlignment = StringAlignment.Center
+        }
+
+        Dim headerBounds As New Rectangle(e.RowBounds.Left, e.RowBounds.Top, dgv.RowHeadersWidth, e.RowBounds.Height)
+
+        e.Graphics.DrawString(rowNumber, e.InheritedRowStyle.Font, Brushes.Black, headerBounds, centerFormat)
+    End Sub
+
     Public Sub center_RelativeTo(reference As Object, centeredObj As Object)
         centeredObj.Left = (reference.Width - centeredObj.Width) / 2
         centeredObj.Top = (reference.Height - centeredObj.Height) / 2

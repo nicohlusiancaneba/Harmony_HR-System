@@ -42,7 +42,7 @@ Partial Class FrmINCIDENTS
         Me.cb_name = New System.Windows.Forms.CheckBox()
         Me.txt_employeeID = New System.Windows.Forms.TextBox()
         Me.cb_employeeID = New System.Windows.Forms.CheckBox()
-        Me.lst_adjustments = New System.Windows.Forms.ListView()
+        Me.lst_incidents = New System.Windows.Forms.ListView()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -68,7 +68,7 @@ Partial Class FrmINCIDENTS
         '
         Me.dgv_panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.dgv_panel.Controls.Add(Me.grpFilter)
-        Me.dgv_panel.Controls.Add(Me.lst_adjustments)
+        Me.dgv_panel.Controls.Add(Me.lst_incidents)
         Me.dgv_panel.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgv_panel.Location = New System.Drawing.Point(10, 10)
         Me.dgv_panel.Name = "dgv_panel"
@@ -246,19 +246,19 @@ Partial Class FrmINCIDENTS
         Me.cb_employeeID.Text = "Employee ID"
         Me.cb_employeeID.UseVisualStyleBackColor = True
         '
-        'lst_adjustments
+        'lst_incidents
         '
-        Me.lst_adjustments.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lst_adjustments.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.lst_adjustments.FullRowSelect = True
-        Me.lst_adjustments.GridLines = True
-        Me.lst_adjustments.Location = New System.Drawing.Point(5, 5)
-        Me.lst_adjustments.Margin = New System.Windows.Forms.Padding(2)
-        Me.lst_adjustments.Name = "lst_adjustments"
-        Me.lst_adjustments.Size = New System.Drawing.Size(958, 524)
-        Me.lst_adjustments.TabIndex = 707
-        Me.lst_adjustments.UseCompatibleStateImageBehavior = False
-        Me.lst_adjustments.View = System.Windows.Forms.View.Details
+        Me.lst_incidents.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lst_incidents.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.lst_incidents.FullRowSelect = True
+        Me.lst_incidents.GridLines = True
+        Me.lst_incidents.Location = New System.Drawing.Point(5, 5)
+        Me.lst_incidents.Margin = New System.Windows.Forms.Padding(2)
+        Me.lst_incidents.Name = "lst_incidents"
+        Me.lst_incidents.Size = New System.Drawing.Size(958, 524)
+        Me.lst_incidents.TabIndex = 707
+        Me.lst_incidents.UseCompatibleStateImageBehavior = False
+        Me.lst_incidents.View = System.Windows.Forms.View.Details
         '
         'Panel1
         '
@@ -332,7 +332,7 @@ Partial Class FrmINCIDENTS
     Friend WithEvents cb_name As System.Windows.Forms.CheckBox
     Friend WithEvents txt_employeeID As System.Windows.Forms.TextBox
     Friend WithEvents cb_employeeID As System.Windows.Forms.CheckBox
-    Friend WithEvents lst_adjustments As System.Windows.Forms.ListView
+    Friend WithEvents lst_incidents As System.Windows.Forms.ListView
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label

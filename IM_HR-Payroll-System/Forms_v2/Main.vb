@@ -159,6 +159,13 @@
                 cmd_Search.Enabled = True
                 cmd_Refresh.Enabled = True
 
+            Case UCase("cmd_shifts")
+                cmd_New.Enabled = True
+                cmd_View.Enabled = True
+                cmd_Delete.Enabled = True
+                cmd_Search.Enabled = False
+                cmd_Refresh.Enabled = True
+
             Case UCase("cmd_payroll")
                 cmd_New.Enabled = True
                 cmd_View.Enabled = True
@@ -187,6 +194,13 @@
                 cmd_Search.Enabled = True
                 cmd_Refresh.Enabled = True
 
+            Case UCase("cmd_incidents")
+                cmd_New.Enabled = True
+                cmd_View.Enabled = True
+                cmd_Delete.Enabled = True
+                cmd_Search.Enabled = True
+                cmd_Refresh.Enabled = True
+
             Case UCase("cmd_evaluation")
                 cmd_New.Enabled = True
                 cmd_View.Enabled = True
@@ -196,9 +210,9 @@
 
             Case UCase("cmd_reports")
                 cmd_New.Enabled = True
-                cmd_View.Enabled = True
-                cmd_Delete.Enabled = True
-                cmd_Search.Enabled = True
+                cmd_View.Enabled = False
+                cmd_Delete.Enabled = False
+                cmd_Search.Enabled = False
                 cmd_Refresh.Enabled = True
 
             
@@ -248,6 +262,60 @@
         mainPanel.Controls.Clear()
         mainPanel.Controls.Add(FrmLEAVES)
         FrmLEAVES.Show()
+        Activate_Topbar(DirectCast(sender, Button).Name)
+        DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
+        DirectCast(sender, Button).ForeColor = Color.White
+    End Sub
+
+
+    Private Sub cmd_incidents_Click(sender As Object, e As EventArgs) Handles cmd_incidents.Click
+        FrmINCIDENTS.TopLevel = False
+        FrmINCIDENTS.FormBorderStyle = FormBorderStyle.None
+        FrmINCIDENTS.Dock = DockStyle.Fill
+        mainPanel.Controls.Clear()
+        mainPanel.Controls.Add(FrmINCIDENTS)
+        FrmINCIDENTS.Show()
+        Activate_Topbar(DirectCast(sender, Button).Name)
+        DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
+        DirectCast(sender, Button).ForeColor = Color.White
+    End Sub
+
+    Private Sub cmd_reports_Click(sender As Object, e As EventArgs) Handles cmd_reports.Click
+        FrmREPORTS.TopLevel = False
+        FrmREPORTS.FormBorderStyle = FormBorderStyle.None
+        FrmREPORTS.Dock = DockStyle.Fill
+        mainPanel.Controls.Clear()
+        mainPanel.Controls.Add(FrmREPORTS)
+        FrmREPORTS.Show()
+        Activate_Topbar(DirectCast(sender, Button).Name)
+        DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
+        DirectCast(sender, Button).ForeColor = Color.White
+    End Sub
+
+
+    Private Sub cmd_shifts_Click(sender As Object, e As EventArgs) Handles cmd_shifts.Click
+        FrmSHIFTS.TopLevel = False
+        FrmSHIFTS.FormBorderStyle = FormBorderStyle.None
+        FrmSHIFTS.Dock = DockStyle.Fill
+        mainPanel.Controls.Clear()
+        mainPanel.Controls.Add(FrmSHIFTS)
+        FrmSHIFTS.Show()
+        Activate_Topbar(DirectCast(sender, Button).Name)
+        DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
+        DirectCast(sender, Button).ForeColor = Color.White
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
+
+    End Sub
+
+    Private Sub cmd_attendance_Click(sender As Object, e As EventArgs) Handles cmd_attendance.Click
+        FrmATTENDANCE.TopLevel = False
+        FrmATTENDANCE.FormBorderStyle = FormBorderStyle.None
+        FrmATTENDANCE.Dock = DockStyle.Fill
+        mainPanel.Controls.Clear()
+        mainPanel.Controls.Add(FrmATTENDANCE)
+        FrmATTENDANCE.Show()
         Activate_Topbar(DirectCast(sender, Button).Name)
         DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
         DirectCast(sender, Button).ForeColor = Color.White

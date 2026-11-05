@@ -115,6 +115,22 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:Harmony.Harmony_DataSet.IncidentsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Harmony.Harmony_DataSet.Incident_Details_ActionsDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Harmony.Harmony_DataSet.Incident_Details_EmployeesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:Harmony.Harmony_DataSet.Incident_Details_OffensesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:Harmony.Harmony_DataSet.PayslipRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -123,11 +139,43 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:Harmony.Harmony_DataSet.IncidentsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Harmony.Harmony_DataSet.Incident_Details_ActionsRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Harmony.Harmony_DataSet.Incident_Details_EmployeesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:Harmony.Harmony_DataSet.Incident_Details_OffensesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:Harmony.Harmony_DataSet.PayslipRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
 </member><member name="T:Harmony.Harmony_DataSet.Online_BankingRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Harmony.Harmony_DataSet.IncidentsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Harmony.Harmony_DataSet.Incident_Details_ActionsRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Harmony.Harmony_DataSet.Incident_Details_EmployeesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:Harmony.Harmony_DataSet.Incident_Details_OffensesRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>

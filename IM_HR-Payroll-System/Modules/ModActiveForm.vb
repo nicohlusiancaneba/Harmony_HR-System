@@ -36,6 +36,37 @@
                     .Refresh_List()
                 End With
 
+            Case UCase("FrmINCIDENTS")
+                With FrmINCIDENTS
+                    .formAction = "add"
+                    FrmINCIDENT_DETAILS.ShowDialog()
+                    .Refresh_List()
+                End With
+
+            Case UCase("FrmREPORTS")
+                With FrmREPORTS
+                    .dt_from.Value = New DateTime(Today.Year, Today.Month, 1).AddMonths(-1)
+                    .dt_to.Value = New DateTime(Today.Year, Today.Month, 1).AddDays(-1)
+
+
+                    center_RelativeTo(.dgv_reports, .grpFilter)
+                    .grpFilter.Visible = True
+                End With
+
+            Case UCase("FrmSHIFTS")
+                With FrmSHIFTS
+                    .formAction = "add"
+                    FrmSHIFT_DETAILS.ShowDialog()
+                    .Refresh_List()
+                End With
+
+            Case UCase("FrmATTENDANCE")
+                With FrmATTENDANCE
+                    .formAction = "add"
+                    FrmATTENDANCE_DETAILS.ShowDialog()
+                    .Refresh_List()
+                End With
+
         End Select
 
         '    Case UCase("FrmSuppliersList")
@@ -100,6 +131,39 @@
                         .Refresh_List()
                     End If
                 End With
+
+            Case UCase("FrmINCIDENTS")
+                With FrmINCIDENTS
+                    .lst_incidents.Focus()
+                    If .lst_incidents.Items.Count > 0 Then
+                        .formAction = "edit"
+                        .Incident_ID = .lst_incidents.FocusedItem.Text
+                        FrmINCIDENT_DETAILS.ShowDialog()
+                        .Refresh_List()
+                    End If
+                End With
+
+            Case UCase("FrmSHIFTS")
+                With FrmSHIFTS
+                    .lst_shifts.Focus()
+                    If .lst_shifts.Items.Count > 0 Then
+                        .formAction = "edit"
+                        .Shift_ID = .lst_shifts.FocusedItem.Text
+                        FrmSHIFT_DETAILS.ShowDialog()
+                        .Refresh_List()
+                    End If
+                End With
+
+                'Case UCase("FrmATTENDANCE")
+                '    With FrmATTENDANCE
+                '        .lst_attendance.Focus()
+                '        If .lst_attendance.Items.Count > 0 Then
+                '            .formAction = "edit"
+                '            .Attendance_ID = .lst_attendance.FocusedItem.Text
+                '            FrmATTENDANCE_DETAILS.ShowDialog()
+                '            .Refresh_List()
+                '        End If
+                '    End With
 
         End Select
 
@@ -200,6 +264,37 @@
                     End If
                 End With
 
+            Case UCase("FrmSHIFTS")
+                With FrmSHIFTS
+                    .lst_shifts.Focus()
+
+                    If .lst_shifts.FocusedItem.SubItems(10).Text = "Approved" Then
+                        MsgBox("You cannot delete an APPROVED shift record.", MsgBoxStyle.Information)
+                        Exit Sub
+                    End If
+
+                    If MsgBox("Do you want to delete this shift record?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, msgBox_header) = MsgBoxResult.Yes Then
+                        sqlSTR = "Delete from Shifts where Shift_ID ='" & .lst_shifts.FocusedItem.SubItems(0).Text & "'; " & vbCrLf & _
+                        " Delete from Shifts_Details where Shift_ID ='" & .lst_shifts.FocusedItem.SubItems(0).Text & "'; "
+                        ExecuteSQLQuery(sqlSTR)
+                        .Refresh_List()
+                    End If
+                End With
+
+                'Case UCase("FrmATTENDANCE")
+                '    With FrmATTENDANCE
+                '        .lst_attendance.Focus()
+
+
+
+                '        If MsgBox("Do you want to delete this attendance record?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, msgBox_header) = MsgBoxResult.Yes Then
+                '            sqlSTR = "Delete from Attendance where Attendance_ID ='" & .lst_attendance.FocusedItem.SubItems(0).Text & "'; " & vbCrLf & _
+                '            " Delete from Attendance_Details where Attendance_ID ='" & .lst_attendance.FocusedItem.SubItems(0).Text & "'; "
+                '            ExecuteSQLQuery(sqlSTR)
+                '            .Refresh_List()
+                '        End If
+                '    End With
+
 
 
 
@@ -259,6 +354,24 @@
                     .grpFilter.Visible = True
                 End With
 
+            Case UCase("FrmINCIDENTS")
+                With FrmINCIDENTS
+                    center_RelativeTo(.lst_incidents, .grpFilter)
+                    .grpFilter.Visible = True
+                End With
+
+            Case UCase("FrmSHIFTS")
+                With FrmSHIFTS
+                    center_RelativeTo(.lst_shifts, .grpFilter)
+                    .grpFilter.Visible = True
+                End With
+
+                'Case UCase("FrmATTENDANCE")
+                '    With FrmATTENDANCE
+                '        center_RelativeTo(.lst_attendance, .grpFilter)
+                '        .grpFilter.Visible = True
+                '    End With
+
         End Select
         'Case UCase("FrmPHYSICAL_COUNT")
         'With FrmPHYSICAL_COUNT
@@ -303,6 +416,23 @@
                     .grpFilter.Visible = False
                     .Refresh_List()
                 End With
+
+            Case UCase("FrmREPORTS")
+                With FrmREPORTS
+                    .Refresh_List()
+                End With
+
+            Case UCase("FrmSHIFTS")
+                With FrmSHIFTS
+                    .Refresh_List()
+                End With
+
+            Case UCase("FrmATTENDANCE")
+                With FrmATTENDANCE
+                    .Refresh_List()
+                End With
+
+
         End Select
 
 

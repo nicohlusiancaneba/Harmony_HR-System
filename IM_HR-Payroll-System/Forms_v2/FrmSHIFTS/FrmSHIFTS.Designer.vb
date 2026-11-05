@@ -24,9 +24,9 @@ Partial Class FrmSHIFTS
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmSHIFTS))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.left_panel = New System.Windows.Forms.Panel()
         Me.dgv_panel = New System.Windows.Forms.Panel()
         Me.grpFilter = New System.Windows.Forms.GroupBox()
         Me.dt_toRegular = New System.Windows.Forms.DateTimePicker()
@@ -54,11 +54,16 @@ Partial Class FrmSHIFTS
         Me.txt_employeeID = New System.Windows.Forms.TextBox()
         Me.cb_employeeID = New System.Windows.Forms.CheckBox()
         Me.lst_shifts = New System.Windows.Forms.ListView()
+        Me.right_panel = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.lst_employees = New System.Windows.Forms.ListView()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
+        Me.left_panel.SuspendLayout()
         Me.dgv_panel.SuspendLayout()
         Me.grpFilter.SuspendLayout()
+        Me.right_panel.SuspendLayout()
+        Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -71,17 +76,6 @@ Partial Class FrmSHIFTS
         Me.Panel1.Size = New System.Drawing.Size(1014, 72)
         Me.Panel1.TabIndex = 1
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(68, 14)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(126, 46)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Shifts"
-        '
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
@@ -93,16 +87,27 @@ Partial Class FrmSHIFTS
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
-        'Panel2
+        'Label1
         '
-        Me.Panel2.Controls.Add(Me.dgv_panel)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Panel2.Location = New System.Drawing.Point(0, 72)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Padding = New System.Windows.Forms.Padding(10)
-        Me.Panel2.Size = New System.Drawing.Size(1014, 627)
-        Me.Panel2.TabIndex = 2
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(68, 14)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(126, 46)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Shifts"
+        '
+        'left_panel
+        '
+        Me.left_panel.Controls.Add(Me.dgv_panel)
+        Me.left_panel.Dock = System.Windows.Forms.DockStyle.Left
+        Me.left_panel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.left_panel.Location = New System.Drawing.Point(0, 72)
+        Me.left_panel.Name = "left_panel"
+        Me.left_panel.Padding = New System.Windows.Forms.Padding(10)
+        Me.left_panel.Size = New System.Drawing.Size(616, 627)
+        Me.left_panel.TabIndex = 2
         '
         'dgv_panel
         '
@@ -113,7 +118,7 @@ Partial Class FrmSHIFTS
         Me.dgv_panel.Location = New System.Drawing.Point(10, 10)
         Me.dgv_panel.Name = "dgv_panel"
         Me.dgv_panel.Padding = New System.Windows.Forms.Padding(5)
-        Me.dgv_panel.Size = New System.Drawing.Size(994, 607)
+        Me.dgv_panel.Size = New System.Drawing.Size(596, 607)
         Me.dgv_panel.TabIndex = 706
         '
         'grpFilter
@@ -142,7 +147,7 @@ Partial Class FrmSHIFTS
         Me.grpFilter.Controls.Add(Me.cb_name)
         Me.grpFilter.Controls.Add(Me.txt_employeeID)
         Me.grpFilter.Controls.Add(Me.cb_employeeID)
-        Me.grpFilter.Location = New System.Drawing.Point(269, 103)
+        Me.grpFilter.Location = New System.Drawing.Point(51, 81)
         Me.grpFilter.Name = "grpFilter"
         Me.grpFilter.Size = New System.Drawing.Size(411, 326)
         Me.grpFilter.TabIndex = 706
@@ -374,10 +379,46 @@ Partial Class FrmSHIFTS
         Me.lst_shifts.Location = New System.Drawing.Point(5, 5)
         Me.lst_shifts.Margin = New System.Windows.Forms.Padding(2)
         Me.lst_shifts.Name = "lst_shifts"
-        Me.lst_shifts.Size = New System.Drawing.Size(984, 597)
+        Me.lst_shifts.Size = New System.Drawing.Size(586, 597)
         Me.lst_shifts.TabIndex = 707
         Me.lst_shifts.UseCompatibleStateImageBehavior = False
         Me.lst_shifts.View = System.Windows.Forms.View.Details
+        '
+        'right_panel
+        '
+        Me.right_panel.Controls.Add(Me.Panel4)
+        Me.right_panel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.right_panel.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.right_panel.Location = New System.Drawing.Point(616, 72)
+        Me.right_panel.Name = "right_panel"
+        Me.right_panel.Padding = New System.Windows.Forms.Padding(10)
+        Me.right_panel.Size = New System.Drawing.Size(398, 627)
+        Me.right_panel.TabIndex = 3
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Panel4.Controls.Add(Me.lst_employees)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel4.Location = New System.Drawing.Point(10, 10)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Padding = New System.Windows.Forms.Padding(5)
+        Me.Panel4.Size = New System.Drawing.Size(378, 607)
+        Me.Panel4.TabIndex = 706
+        '
+        'lst_employees
+        '
+        Me.lst_employees.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lst_employees.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.lst_employees.FullRowSelect = True
+        Me.lst_employees.GridLines = True
+        Me.lst_employees.Location = New System.Drawing.Point(5, 5)
+        Me.lst_employees.Margin = New System.Windows.Forms.Padding(2)
+        Me.lst_employees.Name = "lst_employees"
+        Me.lst_employees.Size = New System.Drawing.Size(368, 597)
+        Me.lst_employees.TabIndex = 707
+        Me.lst_employees.UseCompatibleStateImageBehavior = False
+        Me.lst_employees.View = System.Windows.Forms.View.Details
         '
         'FrmSHIFTS
         '
@@ -386,7 +427,8 @@ Partial Class FrmSHIFTS
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1014, 699)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Panel2)
+        Me.Controls.Add(Me.right_panel)
+        Me.Controls.Add(Me.left_panel)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "FrmSHIFTS"
@@ -394,17 +436,19 @@ Partial Class FrmSHIFTS
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
+        Me.left_panel.ResumeLayout(False)
         Me.dgv_panel.ResumeLayout(False)
         Me.grpFilter.ResumeLayout(False)
         Me.grpFilter.PerformLayout()
+        Me.right_panel.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents left_panel As System.Windows.Forms.Panel
     Friend WithEvents dgv_panel As System.Windows.Forms.Panel
     Friend WithEvents grpFilter As System.Windows.Forms.GroupBox
     Friend WithEvents dt_toRegular As System.Windows.Forms.DateTimePicker
@@ -432,4 +476,7 @@ Partial Class FrmSHIFTS
     Friend WithEvents txt_employeeID As System.Windows.Forms.TextBox
     Friend WithEvents cb_employeeID As System.Windows.Forms.CheckBox
     Friend WithEvents lst_shifts As System.Windows.Forms.ListView
+    Friend WithEvents right_panel As System.Windows.Forms.Panel
+    Friend WithEvents Panel4 As System.Windows.Forms.Panel
+    Friend WithEvents lst_employees As System.Windows.Forms.ListView
 End Class
