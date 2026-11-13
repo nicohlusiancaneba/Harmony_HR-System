@@ -3,6 +3,8 @@
 Public Class FrmEMPLOYEES
     Public whereSQL, formAction As String
     Private Sub FrmEMPLOYEES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
+
         FILLComboBox2("select Dropdown_ID, Dropdown_Description from Dropdowns where Dropdown_Type = 'Department' order by Dropdown_Description", cmb_department)
 
         whereSQL = " and Employment_Status != 'Terminated' and Employment_Status != 'Resigned' "

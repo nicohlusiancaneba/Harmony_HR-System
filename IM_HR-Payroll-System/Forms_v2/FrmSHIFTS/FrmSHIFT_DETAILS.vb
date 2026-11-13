@@ -2,6 +2,7 @@
     Dim formAction, Shift_ID, Shift_Status, temp_shift_code, working_days As String
     Public edit As Boolean = False
     Private Sub FrmSHIFT_DETAILS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         inputText_ChangedHandler(Me)
         inputNum_ChangedHandler(Me)
         ClearGroupBoxInputs(grpDetails)

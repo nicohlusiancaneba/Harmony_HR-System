@@ -1,6 +1,7 @@
 ﻿Public Class FrmADJUSTMENTS
     Public whereSQL, formAction, Adjustment_ID As String
     Private Sub FrmADJUSTMENTS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         whereSQL = " and ((Year(Date_Adjusted) = Year(GETDATE()) and Month(Date_Adjusted) = Month(GETDATE())) or Adj_Approved = 'No') "
         Refresh_List()
     End Sub

@@ -388,6 +388,12 @@
     <Compile Include="Forms_v2\FrmLOANS\FrmLOAN_PAYMENT.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms_v2\FrmLOGIN.Designer.vb">
+      <DependentUpon>FrmLOGIN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmLOGIN.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms_v2\FrmPAYROLL\FrmEXPORT_ONLINE_BANK.Designer.vb">
       <DependentUpon>FrmEXPORT_ONLINE_BANK.vb</DependentUpon>
     </Compile>
@@ -473,6 +479,7 @@
     <Compile Include="Modules\ModCode.vb" />
     <Compile Include="Modules\ModCon.vb" />
     <Compile Include="Modules\ModProcedure.vb" />
+    <Compile Include="Modules\ThemeHelper.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -636,6 +643,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_v2\FrmLOANS\FrmLOAN_PAYMENT.resx">
       <DependentUpon>FrmLOAN_PAYMENT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmLOGIN.resx">
+      <DependentUpon>FrmLOGIN.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_v2\FrmPAYROLL\FrmEXPORT_ONLINE_BANK.resx">
       <DependentUpon>FrmEXPORT_ONLINE_BANK.vb</DependentUpon>

@@ -17,11 +17,12 @@ Public Class FrmEMPLOYEE_DETAILS
     End Sub
 
     Private Sub FrmEMPLOYEE_DETAILS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         inputText_ChangedHandler(Me)
         inputNum_ChangedHandler(Me)
         inputNum1_ChangedHandler(Me)
         ClearGroupBoxInputs(grpEmployeeInfo)
-
+        ThemeHelper.ApplyHighlight(Me)
 
 
 

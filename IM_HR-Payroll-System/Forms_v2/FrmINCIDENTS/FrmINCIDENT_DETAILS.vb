@@ -2,6 +2,7 @@
     Public formAction, Incident_ID As String
     Public edit As Boolean = False
     Private Sub FrmINCIDENT_DETAILS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         inputText_ChangedHandler(Me)
         inputNum_ChangedHandler(Me)
 
@@ -165,7 +166,7 @@
 
 
         Else
-            
+
 
 
             grpDetails.Enabled = True

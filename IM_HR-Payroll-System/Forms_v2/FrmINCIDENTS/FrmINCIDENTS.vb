@@ -1,6 +1,7 @@
 ﻿Public Class FrmINCIDENTS
     Public formAction, Incident_ID, whereSQL As String
     Private Sub FrmINCIDENTS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         whereSQL = " AND ((Incident_DateTime >= DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1) " & _
                     "AND Incident_DateTime < DATEADD(MONTH, 1, DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1))) " & _
                     "OR Incident_Status = 'Under Review') "

@@ -1,6 +1,7 @@
 ﻿Public Class FrmLOANS
     Public whereSQL, Loan_ID As String
     Private Sub FrmLOANS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         whereSQL = " and Loan_Status = 'Active' "
 
         Refresh_List()

@@ -1,6 +1,7 @@
 ﻿Public Class FrmSHIFTS
     Public formAction, Shift_ID As String
     Private Sub FrmSHIFTS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         Refresh_List()
     End Sub
 

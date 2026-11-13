@@ -1,6 +1,7 @@
 ﻿Public Class FrmREPORTS
 
     Private Sub FrmREPORTS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         dt_from.Value = New DateTime(Today.Year, Today.Month, 1).AddMonths(-1)
         dt_to.Value = New DateTime(Today.Year, Today.Month, 1).AddDays(-1)
 

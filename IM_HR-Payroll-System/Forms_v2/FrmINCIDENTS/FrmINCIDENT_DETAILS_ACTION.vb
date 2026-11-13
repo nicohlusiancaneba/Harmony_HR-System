@@ -1,6 +1,7 @@
 ﻿Public Class FrmINCIDENT_DETAILS_ACTION
     Dim edit, formloaded As Boolean
     Private Sub FrmINCIDENT_DETAILS_ACTION_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         edit = FrmINCIDENT_DETAILS.edit
 
         inputText_ChangedHandler(Me)

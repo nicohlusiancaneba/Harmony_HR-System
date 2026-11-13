@@ -1,6 +1,7 @@
 ﻿Public Class FrmPAYROLL_GENERATE_BOB
 
     Private Sub FrmPAYROLL_GENERATE_BOB_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         lst_payroll.Items.Clear()
         dgv_payroll.Rows.Clear()
         txt_totalNet.Text = "0.00"

@@ -1,16 +1,19 @@
 ﻿Public Class FrmLOAN_NEW
 
     Private Sub FrmLOAN_NEW_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         'sqlSTR = "Select * from employees where Employment_Status != 'Inactive' Order by Last_Name, First_Name "
         'FILLComboBox_Employee(sqlSTR, cmb_employees)
 
         sqlSTR = "Select Employee_ID, CONCAT(Last_Name, ', ', First_Name, ' ', LEFT(Middle_Name,1), '.') from employees where Employment_Status != 'Terminated' and Employment_Status != 'Resigned' Order by Last_Name, First_Name "
         FILLComboBox(sqlSTR, cmb_employees)
+
+        lbl_encodedBy.Text = "Encoded by : " & xUsername
     End Sub
 
     Private Sub btn_submit_Click(sender As Object, e As EventArgs) Handles btn_submit.Click
 
-        sqlSTR = "INSERT INTO Loans (Loan_Date, Employee_ID, Loan_Net_Amount, Loan_Interest_Rate, Loan_Gross_Amount, Loan_Payment_Start_Date, Loan_Payment_End_Date, Loan_Type, Suggested_PayPerCutoff, Loan_Reason, Loan_Remarks, Loan_Status) VALUES (" & _
+        sqlSTR = "INSERT INTO Loans (Loan_Date, Employee_ID, Loan_Net_Amount, Loan_Interest_Rate, Loan_Gross_Amount, Loan_Payment_Start_Date, Loan_Payment_End_Date, Loan_Type, Suggested_PayPerCutoff, Encoded_By, Loan_Reason, Loan_Remarks, Loan_Status) VALUES (" & _
                             "'" & DateTime.Now.ToString("MM/dd/yyyy") & "', '" & _
                              Split(cmb_employees.Text, " - ")(0) & "', '" & _
                              txt_netAmount.Text & "', '" & _
@@ -20,6 +23,7 @@
                              dt_payEndDate.Text & "', '" & _
                              cmb_loanType.Text & "', '" & _
                              txt_suggestedDeduction.Text & "', '" & _
+                             xUsername & "', '" & _
                              txt_loanReason.Text & "', '" & _
                              txt_loanRemarks.Text & "', 'Active')"
 

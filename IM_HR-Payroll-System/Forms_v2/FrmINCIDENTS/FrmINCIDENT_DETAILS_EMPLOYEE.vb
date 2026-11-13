@@ -1,6 +1,7 @@
 ﻿Public Class FrmINCIDENT_DETAILS_EMPLOYEE
     Dim edit, formLoaded As Boolean
     Private Sub FrmINCIDENT_DETAILS_EMPLOYEE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         edit = FrmINCIDENT_DETAILS.edit
 
         inputText_ChangedHandler(Me)
@@ -8,7 +9,7 @@
         ClearGroupBoxInputs(grpEmployees)
 
         formLoaded = False
-        
+
         cmb_employees.Items.Clear()
 
 

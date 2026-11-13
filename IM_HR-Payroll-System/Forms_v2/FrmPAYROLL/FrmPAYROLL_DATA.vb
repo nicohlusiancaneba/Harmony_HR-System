@@ -2,6 +2,7 @@
     Private edit, formLoaded As Boolean
     Private payroll_id, employee_id, payroll_detail_id As String
     Private Sub FrmPAYROLL_DATA_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         TextBox_NumberHandler()
         TextBox_BasicPayCompute("BasicPay")
         formLoaded = False

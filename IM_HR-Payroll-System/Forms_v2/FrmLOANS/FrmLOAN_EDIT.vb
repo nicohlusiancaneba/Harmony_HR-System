@@ -1,7 +1,10 @@
 ﻿Public Class FrmLOAN_EDIT
     Dim Loan_ID, employee_id As Integer
     Dim Balance_Amount As Double
+    Dim formLoaded As Boolean
     Private Sub FrmLOAN_EDIT_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
+        formLoaded = False
         Loan_ID = FrmLOANS.Loan_ID
 
 
@@ -19,8 +22,9 @@
         cmb_loanStatus.Text = sqlDT.Rows(0)("Loan_Status")
         cmb_loanType.Text = sqlDT.Rows(0)("Loan_Type")
         txt_suggestedDeduction.Text = CDbl(sqlDT.Rows(0)("Suggested_PayPerCutoff").ToString).ToString("N2")
+        lbl_encodedBy.Text = "Encoded by : " & sqlDT.Rows(0)("Encoded_By").ToString()
 
-
+        formLoaded = True
         RefreshLoanPaymentList()
     End Sub
 
@@ -126,12 +130,15 @@
     End Sub
 
     Private Sub cmb_loanStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_loanStatus.SelectedIndexChanged
-        If cmb_loanStatus.Text = "Paid" Then
-            If CDbl(txt_balanceAmount.Text) > 10 Then
-                MsgBox("The loan balance remains unpaid.", MsgBoxStyle.Exclamation, msgBox_header)
-                cmb_loanStatus.Text = "Active"
+        If formLoaded Then
+            If cmb_loanStatus.Text = "Paid" Then
+                If CDbl(txt_balanceAmount.Text) > 10 Then
+                    MsgBox("The loan balance remains unpaid.", MsgBoxStyle.Exclamation, msgBox_header)
+                    cmb_loanStatus.Text = "Active"
+                End If
             End If
         End If
+        
     End Sub
 
 

@@ -1,6 +1,7 @@
 ﻿Public Class FrmEXPORT_ONLINE_BANK
     Dim payroll_id As Integer
     Private Sub FrmEXPORT_ONLINE_BANK_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         ReportViewer1.Reset()
         payroll_id = xID1
         sqlSTR = "select ROW_NUMBER() OVER (ORDER BY Payroll_Details.Employee_ID) as 'Number', Payroll_Account_Number, " & _

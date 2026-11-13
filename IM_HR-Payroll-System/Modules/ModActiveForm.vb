@@ -62,12 +62,18 @@
 
             Case UCase("FrmATTENDANCE")
                 With FrmATTENDANCE
-                    .formAction = "add"
-                    FrmATTENDANCE_DETAILS.ShowDialog()
+                    If .tabControl_Attendance.SelectedTab Is .Tab_Monitoring Then
+                        ' Attendance tab
+                    ElseIf .tabControl_Attendance.SelectedTab Is .Tab_Record Then
+                        .formAction = "add"
+                        FrmATTENDANCE_DETAILS.ShowDialog()
+                    End If
                     .Refresh_List()
                 End With
 
         End Select
+
+        
 
         '    Case UCase("FrmSuppliersList")
         '        With FrmSuppliersList
@@ -154,16 +160,21 @@
                     End If
                 End With
 
-                'Case UCase("FrmATTENDANCE")
-                '    With FrmATTENDANCE
-                '        .lst_attendance.Focus()
-                '        If .lst_attendance.Items.Count > 0 Then
-                '            .formAction = "edit"
-                '            .Attendance_ID = .lst_attendance.FocusedItem.Text
-                '            FrmATTENDANCE_DETAILS.ShowDialog()
-                '            .Refresh_List()
-                '        End If
-                '    End With
+            Case UCase("FrmATTENDANCE")
+                With FrmATTENDANCE
+                    If .tabControl_Attendance.SelectedTab Is .Tab_Monitoring Then
+
+                    ElseIf .tabControl_Attendance.SelectedTab Is .Tab_Record Then
+                        .lst_attendance.Focus()
+                        If .lst_attendance.Items.Count > 0 Then
+                            .formAction = "edit"
+                            .Attendance_ID = .lst_attendance.FocusedItem.Text
+                            FrmATTENDANCE_DETAILS.ShowDialog()
+
+                        End If
+                    End If
+                    .Refresh_List()
+                End With
 
         End Select
 
@@ -281,19 +292,21 @@
                     End If
                 End With
 
-                'Case UCase("FrmATTENDANCE")
-                '    With FrmATTENDANCE
-                '        .lst_attendance.Focus()
+            Case UCase("FrmATTENDANCE")
+                With FrmATTENDANCE
+                    If .tabControl_Attendance.SelectedTab Is .Tab_Monitoring Then
 
+                    ElseIf .tabControl_Attendance.SelectedTab Is .Tab_Record Then
+                        .lst_attendance.Focus()
+                        If MsgBox("Do you want to delete this attendance record?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, msgBox_header) = MsgBoxResult.Yes Then
+                            sqlSTR = "Delete from Attendance where Attendance_ID ='" & .lst_attendance.FocusedItem.SubItems(0).Text & "'; " & vbCrLf & _
+                            " Delete from Attendance_Details where Attendance_ID ='" & .lst_attendance.FocusedItem.SubItems(0).Text & "'; "
+                            ExecuteSQLQuery(sqlSTR)
 
-
-                '        If MsgBox("Do you want to delete this attendance record?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, msgBox_header) = MsgBoxResult.Yes Then
-                '            sqlSTR = "Delete from Attendance where Attendance_ID ='" & .lst_attendance.FocusedItem.SubItems(0).Text & "'; " & vbCrLf & _
-                '            " Delete from Attendance_Details where Attendance_ID ='" & .lst_attendance.FocusedItem.SubItems(0).Text & "'; "
-                '            ExecuteSQLQuery(sqlSTR)
-                '            .Refresh_List()
-                '        End If
-                '    End With
+                        End If
+                    End If
+                    .Refresh_List()
+                End With
 
 
 
@@ -366,11 +379,15 @@
                     .grpFilter.Visible = True
                 End With
 
-                'Case UCase("FrmATTENDANCE")
-                '    With FrmATTENDANCE
-                '        center_RelativeTo(.lst_attendance, .grpFilter)
-                '        .grpFilter.Visible = True
-                '    End With
+            Case UCase("FrmATTENDANCE")
+                With FrmATTENDANCE
+                    If .tabControl_Attendance.SelectedTab Is .Tab_Monitoring Then
+
+                    ElseIf .tabControl_Attendance.SelectedTab Is .Tab_Record Then
+                        center_RelativeTo(.lst_attendance, .grpFilter)
+                        .grpFilter.Visible = True
+                    End If
+                End With
 
         End Select
         'Case UCase("FrmPHYSICAL_COUNT")

@@ -3,11 +3,12 @@
     Dim formAction, Attendance_ID, temp_date As String
     Dim formLoaded As Boolean = False
     Private Sub FrmATTENDANCE_DETAILS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         dgv_employees.Rows.Clear()
 
-        Attendance_ID = ""
+        Attendance_ID = FrmATTENDANCE.Attendance_ID
 
-        dt_attendanceDate.Text = "11/05/2026"
+        'dt_attendanceDate.Text = "11/05/2026"
 
         formAction = FrmATTENDANCE.formAction
 
@@ -29,7 +30,7 @@
                 txt_numUndertime.Text = sqlDT.Rows(0)("Num_Undertime").ToString()
                 txt_numWFH.Text = sqlDT.Rows(0)("Num_WFH").ToString()
                 txt_remarks.Text = sqlDT.Rows(0)("Remarks").ToString()
-                lbl_encodedBy.Text = "Encoded by : " & sqlDT.Rows(0)("Encoded_By ").ToString()
+                lbl_encodedBy.Text = "Encoded by : " & sqlDT.Rows(0)("Encoded_By").ToString()
             Else
                 Me.Close()
             End If
@@ -47,9 +48,9 @@
                     ",Shift_TimeOut " & _
                     ",Lunch_TimeOut " & _
                     ",Lunch_TimeIn " & _
-                    ",Late_TimeIn " & _
-                    ",AM_Undertime " & _
-                    ",PM_Undertime " & _
+                    ",CONVERT(VARCHAR(8), Late_TimeIn, 108) AS Late_TimeIn " & _
+                    ",CONVERT(VARCHAR(8), AM_Undertime, 108) AS AM_Undertime " & _
+                    ",CONVERT(VARCHAR(8), PM_Undertime, 108) AS PM_Undertime" & _
                     ",Remarks " & _
                     ",Updated_By " & _
                     "from Attendance_Details " & _
@@ -147,9 +148,9 @@
                     )
                 Next
             Else
-            MsgBox("No employees with an assigned shift were found for the selected date.", MsgBoxStyle.Information)
-            Me.Close()
-        End If
+                MsgBox("No employees with an assigned shift were found for the selected date.", MsgBoxStyle.Information)
+                Me.Close()
+            End If
 
         End If
 

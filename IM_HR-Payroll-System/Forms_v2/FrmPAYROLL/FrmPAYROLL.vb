@@ -1,6 +1,7 @@
 ﻿Public Class FrmPAYROLL
     Public whereSQL, formAction, payroll_ID As String
     Private Sub FrmPAYROLL_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         sqlSTR = "select '1' as ID, CONCAT(COALESCE(Payroll_Month, DATENAME(MONTH, Cutoff_Date_End)), ' ', Year(Cutoff_Date_End)) as Month_Covered from Payroll " & _
                     "group by CONCAT(COALESCE(Payroll_Month, DATENAME(MONTH, Cutoff_Date_End)), ' ', Year(Cutoff_Date_End)) " & _
                     "order by MAX(Cutoff_Date_End) desc;"

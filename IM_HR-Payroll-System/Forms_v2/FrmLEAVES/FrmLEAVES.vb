@@ -1,6 +1,7 @@
 ﻿Public Class FrmLEAVES
     Public whereSQL, formAction, Leave_ID As String
     Private Sub FrmLEAVES_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         whereSQL = " and (Leave_Status = 'Pending' or Leave_Start >= DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()), 0) AND Leave_End   <  DATEADD(MONTH, DATEDIFF(MONTH, 0, GETDATE()) + 1, 0)) "
         Refresh_List()
     End Sub

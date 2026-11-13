@@ -3,6 +3,7 @@
 
     Public approved, edit, formLoaded As Boolean
     Private Sub FrmPAYROLL_DETAILS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         formLoaded = False
         txt_TotalgrossPay.Text = ""
         txt_totalLoansPaid.Text = ""
@@ -54,7 +55,7 @@
                 btn_Save.Enabled = False
                 ContextMenuStrip1.Enabled = True
                 Payroll_Details.Enabled = False
-                
+
 
             Else
                 cb_Approved.Checked = False
@@ -66,8 +67,8 @@
                 ContextMenuStrip1.Enabled = False
                 Payroll_Details.Enabled = True
 
-                
-                
+
+
             End If
 
             Refresh_Payroll_Details()

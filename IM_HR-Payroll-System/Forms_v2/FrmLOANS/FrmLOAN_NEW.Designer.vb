@@ -42,6 +42,7 @@ Partial Class FrmLOAN_NEW
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.lbl_encodedBy = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -221,6 +222,7 @@ Partial Class FrmLOAN_NEW
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Panel2.Controls.Add(Me.lbl_encodedBy)
         Me.Panel2.Controls.Add(Me.btn_submit)
         Me.Panel2.Controls.Add(Me.btn_cancel)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -240,6 +242,17 @@ Partial Class FrmLOAN_NEW
         Me.Label4.TabIndex = 36
         Me.Label4.Text = "Loan Reason :" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Loan Remarks :"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'lbl_encodedBy
+        '
+        Me.lbl_encodedBy.AutoSize = True
+        Me.lbl_encodedBy.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.lbl_encodedBy.Location = New System.Drawing.Point(12, 15)
+        Me.lbl_encodedBy.Name = "lbl_encodedBy"
+        Me.lbl_encodedBy.Size = New System.Drawing.Size(92, 17)
+        Me.lbl_encodedBy.TabIndex = 43
+        Me.lbl_encodedBy.Text = "Encoded By :"
+        Me.lbl_encodedBy.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'FrmLOAN_NEW
         '
@@ -274,6 +287,7 @@ Partial Class FrmLOAN_NEW
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -297,4 +311,5 @@ Partial Class FrmLOAN_NEW
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lbl_encodedBy As System.Windows.Forms.Label
 End Class

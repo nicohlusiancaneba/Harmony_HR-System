@@ -8,13 +8,14 @@
     End Sub
 
     Private Sub FrmATTENDANCE_DATA_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         cmb_attendanceStatus.SelectedIndex = 0
 
 
-      
 
 
-       
+
+
 
         With FrmATTENDANCE_DETAILS.dgv_employees.CurrentRow
             txt_employeeID.Text = .Cells("Employee_ID").Value.ToString
@@ -29,7 +30,7 @@
             cmb_attendanceStatus.Text = .Cells("Attendance_Status").Value.ToString
 
 
-            
+
 
             If .Cells("Late_TimeIn").Value.ToString <> "" Then
                 cb_lateTimeIn.Checked = True
@@ -62,8 +63,8 @@
             txt_remarks.Text = .Cells("Remarks").Value.ToString
         End With
 
-        
-      
+
+
 
 
 
@@ -251,6 +252,7 @@
                 .Cells("Late_Mins").Value = Math.Max(0, CInt((DateTime.Parse(tp_lateTimeIn.Text).TimeOfDay - DateTime.Parse(txt_shiftStart.Text).TimeOfDay).TotalMinutes))
             Else
                 .Cells("Late_TimeIn").Value = ""
+                .Cells("Late_Mins").Value = 0
             End If
 
             Dim undertime As Integer = 0

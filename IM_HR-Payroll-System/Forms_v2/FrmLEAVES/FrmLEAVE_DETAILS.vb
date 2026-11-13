@@ -3,6 +3,7 @@
     Dim Leave_ID As Integer
     Dim leave_status, formAction As String
     Private Sub FrmLEAVE_DETAILS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         sqlSTR = "select Employee_ID, CONCAT(TRIM(Last_Name), ', ', TRIM(First_Name), ' ', left(TRIM(Middle_Name), 1), '.') from Employees where Employment_Status != 'Resigned' and Employment_Status != 'Terminated' " & _
                  " order by Last_Name, First_Name"
         FILLComboBox(sqlSTR, cmb_employees)
@@ -10,7 +11,7 @@
         cmb_Category.SelectedIndex = 0
         formAction = FrmLEAVES.formAction
         If formAction = "edit" Then
-            leave_id = FrmLEAVES.Leave_ID
+            Leave_ID = FrmLEAVES.Leave_ID
             sqlSTR = "select *, CONCAT(Employees.Employee_ID, ' - ', TRIM(Last_Name), ', ', TRIM(First_Name), ' ', left(TRIM(Middle_Name), 1), '.') as EmployeeDetails from Leaves inner join Employees on Employees.Employee_ID = Leaves.Employee_ID where Leave_ID ='" & Leave_ID & "'"
             ExecuteSQLQuery(sqlSTR)
 

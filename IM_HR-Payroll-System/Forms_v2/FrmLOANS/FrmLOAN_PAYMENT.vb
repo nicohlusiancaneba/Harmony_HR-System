@@ -3,6 +3,7 @@
     Dim loan_id, payroll_detail_ID, loan_payment_id As Integer
     Dim balance_amount As Double
     Private Sub FrmLOAN_PAYMENT_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         loan_id = 0
         loan_payment_id = 0
 

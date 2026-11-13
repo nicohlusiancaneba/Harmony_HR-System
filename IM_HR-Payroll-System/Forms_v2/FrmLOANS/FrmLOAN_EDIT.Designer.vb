@@ -51,13 +51,14 @@ Partial Class FrmLOAN_EDIT
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txt_totalPayment = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.btn_post = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btn_delete = New System.Windows.Forms.Button()
         Me.btn_edit = New System.Windows.Forms.Button()
         Me.btn_add = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.txt_totalPayment = New System.Windows.Forms.TextBox()
+        Me.lbl_encodedBy = New System.Windows.Forms.Label()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -157,7 +158,6 @@ Partial Class FrmLOAN_EDIT
         '
         'lst_loanPayment
         '
-        Me.lst_loanPayment.ContextMenuStrip = Me.ContextMenuStrip1
         Me.lst_loanPayment.Dock = System.Windows.Forms.DockStyle.Top
         Me.lst_loanPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.lst_loanPayment.FullRowSelect = True
@@ -317,6 +317,7 @@ Partial Class FrmLOAN_EDIT
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.lbl_encodedBy)
         Me.Panel3.Controls.Add(Me.btn_cancel)
         Me.Panel3.Controls.Add(Me.btn_save)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
@@ -343,6 +344,27 @@ Partial Class FrmLOAN_EDIT
         Me.GroupBox1.TabIndex = 148
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "List of Payments"
+        '
+        'txt_totalPayment
+        '
+        Me.txt_totalPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.txt_totalPayment.Location = New System.Drawing.Point(652, 258)
+        Me.txt_totalPayment.Name = "txt_totalPayment"
+        Me.txt_totalPayment.ReadOnly = True
+        Me.txt_totalPayment.Size = New System.Drawing.Size(100, 23)
+        Me.txt_totalPayment.TabIndex = 149
+        Me.txt_totalPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Label6.Location = New System.Drawing.Point(506, 261)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(143, 17)
+        Me.Label6.TabIndex = 149
+        Me.Label6.Text = "Total Loan Payment :"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopRight
         '
         'btn_post
         '
@@ -407,26 +429,16 @@ Partial Class FrmLOAN_EDIT
         Me.btn_add.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_add.UseVisualStyleBackColor = True
         '
-        'Label6
+        'lbl_encodedBy
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.Label6.Location = New System.Drawing.Point(506, 261)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(143, 17)
-        Me.Label6.TabIndex = 149
-        Me.Label6.Text = "Total Loan Payment :"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'txt_totalPayment
-        '
-        Me.txt_totalPayment.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.txt_totalPayment.Location = New System.Drawing.Point(652, 258)
-        Me.txt_totalPayment.Name = "txt_totalPayment"
-        Me.txt_totalPayment.ReadOnly = True
-        Me.txt_totalPayment.Size = New System.Drawing.Size(100, 23)
-        Me.txt_totalPayment.TabIndex = 149
-        Me.txt_totalPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.lbl_encodedBy.AutoSize = True
+        Me.lbl_encodedBy.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.lbl_encodedBy.Location = New System.Drawing.Point(9, 17)
+        Me.lbl_encodedBy.Name = "lbl_encodedBy"
+        Me.lbl_encodedBy.Size = New System.Drawing.Size(92, 17)
+        Me.lbl_encodedBy.TabIndex = 42
+        Me.lbl_encodedBy.Text = "Encoded By :"
+        Me.lbl_encodedBy.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'FrmLOAN_EDIT
         '
@@ -465,6 +477,7 @@ Partial Class FrmLOAN_EDIT
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
@@ -505,4 +518,5 @@ Partial Class FrmLOAN_EDIT
     Friend WithEvents btn_post As System.Windows.Forms.Button
     Friend WithEvents txt_totalPayment As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents lbl_encodedBy As System.Windows.Forms.Label
 End Class

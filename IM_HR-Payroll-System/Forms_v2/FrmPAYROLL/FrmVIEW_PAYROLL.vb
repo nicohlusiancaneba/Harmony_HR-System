@@ -1,6 +1,7 @@
 ﻿Public Class FrmVIEW_PAYROLL
     Dim payroll_id As Integer
     Private Sub FrmVIEW_PAYROLL_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         lst_payrollView.Clear()
         payroll_id = xID1
         RefreshList()

@@ -8,12 +8,20 @@
         mainPanel.Controls.Add(FrmEMPLOYEES)
         FrmEMPLOYEES.Show()
         Activate_Topbar(DirectCast(sender, Button).Name)
+        TintSelectedButton(cmd_employees, Color.FromArgb(242, 247, 241))
         DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
-        DirectCast(sender, Button).ForeColor = Color.White
+        DirectCast(sender, Button).ForeColor = Color.FromArgb(242, 247, 241)
+
+
     End Sub
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        ThemeHelper.InstallMenuRenderer()
+        CacheButtonImageKeys()
+
         center_RelativeTo(panel_topbar, panel_topBar_navigation)
+        FrmLOGIN.ShowDialog()
     End Sub
 
     Private Sub Me_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
@@ -121,9 +129,13 @@
 
         For Each ctrl As Control In sidebar_panel.Controls
             If TypeOf ctrl Is Button Then
-                ctrl.BackColor = Color.White
+                'ctrl.BackColor = Color.White
                 ctrl.ForeColor = Color.Black
+                ctrl.BackColor = Color.FromArgb(242, 247, 241)
+                ctrl.ForeColor = Color.FromArgb(29, 135, 112)
             End If
+            RestoreSidebarButtons()
+
         Next
 
 
@@ -215,7 +227,7 @@
                 cmd_Search.Enabled = False
                 cmd_Refresh.Enabled = True
 
-            
+
         End Select
     End Sub
 
@@ -227,8 +239,9 @@
         mainPanel.Controls.Add(FrmPAYROLL)
         FrmPAYROLL.Show()
         Activate_Topbar(DirectCast(sender, Button).Name)
+        TintSelectedButton(cmd_payroll, Color.FromArgb(242, 247, 241))
         DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
-        DirectCast(sender, Button).ForeColor = Color.White
+        DirectCast(sender, Button).ForeColor = Color.FromArgb(242, 247, 241)
     End Sub
 
     Private Sub cmd_loans_Click(sender As Object, e As EventArgs) Handles cmd_loans.Click
@@ -239,8 +252,9 @@
         mainPanel.Controls.Add(FrmLOANS)
         FrmLOANS.Show()
         Activate_Topbar(DirectCast(sender, Button).Name)
+        TintSelectedButton(cmd_loans, Color.FromArgb(242, 247, 241))
         DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
-        DirectCast(sender, Button).ForeColor = Color.White
+        DirectCast(sender, Button).ForeColor = Color.FromArgb(242, 247, 241)
     End Sub
 
     Private Sub cmd_adjustments_Click(sender As Object, e As EventArgs) Handles cmd_adjustments.Click
@@ -251,11 +265,15 @@
         mainPanel.Controls.Add(FrmADJUSTMENTS)
         FrmADJUSTMENTS.Show()
         Activate_Topbar(DirectCast(sender, Button).Name)
+        TintSelectedButton(cmd_adjustments, Color.FromArgb(242, 247, 241))
         DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
-        DirectCast(sender, Button).ForeColor = Color.White
+        DirectCast(sender, Button).ForeColor = Color.FromArgb(242, 247, 241)
     End Sub
 
     Private Sub cmd_leaves_Click(sender As Object, e As EventArgs) Handles cmd_leaves.Click
+        'cmd_leaves.ImageList = sidebar_images_selected
+        'cmd_leaves.ImageKey = "calendar.png"
+
         FrmLEAVES.TopLevel = False
         FrmLEAVES.FormBorderStyle = FormBorderStyle.None
         FrmLEAVES.Dock = DockStyle.Fill
@@ -263,8 +281,9 @@
         mainPanel.Controls.Add(FrmLEAVES)
         FrmLEAVES.Show()
         Activate_Topbar(DirectCast(sender, Button).Name)
+        TintSelectedButton(cmd_leaves, Color.FromArgb(242, 247, 241))
         DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
-        DirectCast(sender, Button).ForeColor = Color.White
+        DirectCast(sender, Button).ForeColor = Color.FromArgb(242, 247, 241)
     End Sub
 
 
@@ -276,8 +295,9 @@
         mainPanel.Controls.Add(FrmINCIDENTS)
         FrmINCIDENTS.Show()
         Activate_Topbar(DirectCast(sender, Button).Name)
+        TintSelectedButton(cmd_incidents, Color.FromArgb(242, 247, 241))
         DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
-        DirectCast(sender, Button).ForeColor = Color.White
+        DirectCast(sender, Button).ForeColor = Color.FromArgb(242, 247, 241)
     End Sub
 
     Private Sub cmd_reports_Click(sender As Object, e As EventArgs) Handles cmd_reports.Click
@@ -288,8 +308,9 @@
         mainPanel.Controls.Add(FrmREPORTS)
         FrmREPORTS.Show()
         Activate_Topbar(DirectCast(sender, Button).Name)
+        TintSelectedButton(cmd_reports, Color.FromArgb(242, 247, 241))
         DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
-        DirectCast(sender, Button).ForeColor = Color.White
+        DirectCast(sender, Button).ForeColor = Color.FromArgb(242, 247, 241)
     End Sub
 
 
@@ -301,8 +322,9 @@
         mainPanel.Controls.Add(FrmSHIFTS)
         FrmSHIFTS.Show()
         Activate_Topbar(DirectCast(sender, Button).Name)
+        TintSelectedButton(cmd_shifts, Color.FromArgb(242, 247, 241))
         DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
-        DirectCast(sender, Button).ForeColor = Color.White
+        DirectCast(sender, Button).ForeColor = Color.FromArgb(242, 247, 241)
     End Sub
 
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
@@ -317,7 +339,82 @@
         mainPanel.Controls.Add(FrmATTENDANCE)
         FrmATTENDANCE.Show()
         Activate_Topbar(DirectCast(sender, Button).Name)
+        TintSelectedButton(cmd_attendance, Color.FromArgb(242, 247, 241))
         DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
-        DirectCast(sender, Button).ForeColor = Color.White
+        DirectCast(sender, Button).ForeColor = Color.FromArgb(242, 247, 241)
+    End Sub
+
+
+
+    Private Sub cmd_dashboard_Click(sender As Object, e As EventArgs) Handles cmd_dashboard.Click
+
+    End Sub
+
+
+    Private buttonImageKeys As New Dictionary(Of Button, String)
+    Private tintedImage As Bitmap
+
+    ' Call once in Form Load, before any button is selected
+    Private Sub CacheButtonImageKeys()
+        buttonImageKeys.Clear()
+        For Each ctrl As Control In sidebar_panel.Controls
+            Dim btn As Button = TryCast(ctrl, Button)
+            If btn IsNot Nothing AndAlso btn.ImageList Is sidebar_images AndAlso btn.ImageKey <> "" Then
+                buttonImageKeys(btn) = btn.ImageKey
+            End If
+        Next
+    End Sub
+
+    ' Tint only the selected button's icon
+    Private Sub TintSelectedButton(selected As Button, tintColor As Color)
+        RestoreSidebarButtons()
+
+        If buttonImageKeys.ContainsKey(selected) Then
+            Using src As New Bitmap(sidebar_images.Images(buttonImageKeys(selected)))
+                tintedImage = TintImage(src, tintColor)
+            End Using
+            selected.Image = tintedImage   ' this clears the button's ImageList/ImageKey
+        End If
+    End Sub
+
+    ' Put every button back to its original ImageList image
+    Private Sub RestoreSidebarButtons()
+        For Each kvp As KeyValuePair(Of Button, String) In buttonImageKeys
+            kvp.Key.ImageList = sidebar_images
+            kvp.Key.ImageKey = kvp.Value
+        Next
+        If tintedImage IsNot Nothing Then
+            tintedImage.Dispose()
+            tintedImage = Nothing
+        End If
+    End Sub
+
+    ' Recolors every non-transparent pixel to tintColor and keeps the alpha
+    Private Function TintImage(src As Bitmap, tintColor As Color) As Bitmap
+        Dim result As New Bitmap(src.Width, src.Height, Imaging.PixelFormat.Format32bppArgb)
+        Dim cm As New Imaging.ColorMatrix(New Single()() {
+            New Single() {0, 0, 0, 0, 0},
+            New Single() {0, 0, 0, 0, 0},
+            New Single() {0, 0, 0, 0, 0},
+            New Single() {0, 0, 0, 1, 0},
+            New Single() {tintColor.R / 255.0F, tintColor.G / 255.0F, tintColor.B / 255.0F, 0, 1}
+        })
+        Using ia As New Imaging.ImageAttributes()
+            ia.SetColorMatrix(cm)
+            Using g As Graphics = Graphics.FromImage(result)
+                g.DrawImage(src, New Rectangle(0, 0, src.Width, src.Height), _
+                            0, 0, src.Width, src.Height, GraphicsUnit.Pixel, ia)
+            End Using
+        End Using
+        Return result
+    End Function
+
+
+    Private Sub cmd_evaluation_Click(sender As Object, e As EventArgs) Handles cmd_evaluation.Click
+
+    End Sub
+
+    Private Sub mainPanel_Paint(sender As Object, e As PaintEventArgs) Handles mainPanel.Paint
+
     End Sub
 End Class

@@ -81,6 +81,7 @@ Public Class FrmFILE_MANAGE
     End Sub
 
     Private Sub FrmFILE_MANAGE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeHelper.ApplyHighlight(Me)
         employee_id = FrmEMPLOYEE_DETAILS.Employee_ID
         edit = FrmEMPLOYEE_DETAILS.edit
 
@@ -94,7 +95,7 @@ Public Class FrmFILE_MANAGE
             cmb_FileType.Enabled = False
             txt_Remarks.Text = FrmEMPLOYEE_DETAILS.dgv_files.CurrentRow.Cells("File_Remarks").Value.ToString
 
-            
+
         Else
             txt_uploadedFile.Text = ""
             txt_Remarks.Text = ""
@@ -102,8 +103,8 @@ Public Class FrmFILE_MANAGE
             file_id = ""
         End If
 
-        
-        
+
+
 
     End Sub
 
