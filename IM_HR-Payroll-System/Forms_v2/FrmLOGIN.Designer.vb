@@ -29,9 +29,9 @@ Partial Class FrmLOGIN
         Me.txt_password = New System.Windows.Forms.TextBox()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.ImageList2 = New System.Windows.Forms.ImageList(Me.components)
+        Me.btn_login = New System.Windows.Forms.Button()
         Me.btn_close = New System.Windows.Forms.Button()
         Me.pic = New System.Windows.Forms.PictureBox()
-        Me.btn_login = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.pic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,16 +78,37 @@ Partial Class FrmLOGIN
         '
         Me.ImageList2.ImageStream = CType(resources.GetObject("ImageList2.ImageStream"), System.Windows.Forms.ImageListStreamer)
         Me.ImageList2.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList2.Images.SetKeyName(0, "Cross2.png")
+        Me.ImageList2.Images.SetKeyName(0, "close.png")
+        Me.ImageList2.Images.SetKeyName(1, "cross2.png")
+        '
+        'btn_login
+        '
+        Me.btn_login.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.btn_login.FlatAppearance.BorderColor = System.Drawing.Color.White
+        Me.btn_login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.btn_login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btn_login.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_login.ForeColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.btn_login.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_login.ImageIndex = 1
+        Me.btn_login.Location = New System.Drawing.Point(406, 382)
+        Me.btn_login.Name = "btn_login"
+        Me.btn_login.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btn_login.Size = New System.Drawing.Size(187, 32)
+        Me.btn_login.TabIndex = 13
+        Me.btn_login.Tag = ""
+        Me.btn_login.Text = "Sign In"
+        Me.btn_login.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_login.UseVisualStyleBackColor = False
         '
         'btn_close
         '
         Me.btn_close.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.btn_close.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(240, Byte), Integer), CType(CType(244, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_close.ImageKey = "Cross2.png"
+        Me.btn_close.ImageKey = "cross2.png"
         Me.btn_close.ImageList = Me.ImageList2
-        Me.btn_close.Location = New System.Drawing.Point(590, 49)
+        Me.btn_close.Location = New System.Drawing.Point(592, 46)
         Me.btn_close.Name = "btn_close"
         Me.btn_close.Size = New System.Drawing.Size(30, 30)
         Me.btn_close.TabIndex = 15
@@ -105,26 +126,6 @@ Partial Class FrmLOGIN
         Me.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pic.TabIndex = 7
         Me.pic.TabStop = False
-        '
-        'btn_login
-        '
-        Me.btn_login.BackColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.btn_login.FlatAppearance.BorderColor = System.Drawing.Color.White
-        Me.btn_login.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
-        Me.btn_login.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btn_login.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.btn_login.ForeColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.btn_login.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_login.ImageIndex = 1
-        Me.btn_login.Location = New System.Drawing.Point(406, 382)
-        Me.btn_login.Name = "btn_login"
-        Me.btn_login.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
-        Me.btn_login.Size = New System.Drawing.Size(187, 32)
-        Me.btn_login.TabIndex = 13
-        Me.btn_login.Tag = ""
-        Me.btn_login.Text = "Sign In"
-        Me.btn_login.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btn_login.UseVisualStyleBackColor = False
         '
         'PictureBox1
         '

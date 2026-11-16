@@ -78,3 +78,4 @@ M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmATTENDANCE.resources
 M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmATTENDANCE_DETAILS.resources
 M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmATTENDANCE_DATA.resources
 M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmLOGIN.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmUSERS.resources

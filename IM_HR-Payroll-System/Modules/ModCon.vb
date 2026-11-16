@@ -162,6 +162,34 @@ Module ModCon
         Return sqlDT
     End Function
 
+    Public Function ExecuteSQLQuery_WithParams(ByVal SQLQuery As String, ByVal paramValues As List(Of Object)) As Integer
+        Dim rowsAffected As Integer = 0
+        Try
+            Using sqlCon As New OleDb.OleDbConnection(CnString)
+                Using cmd As New OleDb.OleDbCommand(SQLQuery, sqlCon)
+                    ' Add parameters in order
+                    If paramValues IsNot Nothing Then
+                        For Each p As Object In paramValues
+                            If p Is Nothing Then
+                                cmd.Parameters.AddWithValue("?", DBNull.Value)
+                            Else
+                                cmd.Parameters.AddWithValue("?", p)
+                            End If
+                        Next
+                    End If
+
+                    sqlCon.Open()
+                    rowsAffected = cmd.ExecuteNonQuery()
+                    sqlCon.Close()
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox("Error: " & ex.Message)
+        End Try
+
+        Return rowsAffected
+    End Function
+
     
     Public Function ResizeImage(ByVal img As Image, ByVal maxSize As Integer) As Image
         If img Is Nothing Then Return Nothing

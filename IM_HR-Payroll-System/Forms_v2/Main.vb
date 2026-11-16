@@ -1,4 +1,6 @@
-﻿Public Class Main
+﻿Imports System.Deployment.Application
+
+Public Class Main
 
     Private Sub cmd_Employees_Click(sender As Object, e As EventArgs) Handles cmd_employees.Click
         FrmEMPLOYEES.TopLevel = False
@@ -19,9 +21,15 @@
 
         ThemeHelper.InstallMenuRenderer()
         CacheButtonImageKeys()
-
+        lbl_version.Text = ""
         center_RelativeTo(panel_topbar, panel_topBar_navigation)
+        panel_topbar.Visible = False
+        mainLeft_Panel.Visible = False
+        mainRight_Panel.Visible = False
+        System_Version()
         FrmLOGIN.ShowDialog()
+
+
     End Sub
 
     Private Sub Me_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
@@ -416,5 +424,70 @@
 
     Private Sub mainPanel_Paint(sender As Object, e As PaintEventArgs) Handles mainPanel.Paint
 
+    End Sub
+
+    Private Sub UsersToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UsersToolStripMenuItem.Click
+        FrmUSERS.ShowDialog()
+    End Sub
+
+
+    Private Sub System_Version()
+        If ApplicationDeployment.IsNetworkDeployed Then
+            Dim currentVersion As Version = ApplicationDeployment.CurrentDeployment.CurrentVersion
+
+            lbl_version.Text = "v." & currentVersion.ToString()
+
+            sqlSTR = "select top 1 System_Version from Global_Data"
+            ExecuteSQLQuery(sqlSTR)
+
+            Dim dbVersion As New Version(sqlDT.Rows(0)("System_Version").ToString)
+
+
+            If currentVersion < dbVersion Then
+                MsgBox("A new updated version (" & dbVersion.ToString() & ") is available." & vbCrLf & _
+       "Please update your system to fix errors, resolve bugs, and minimize incorrect outputs and inputs.", _
+       MsgBoxStyle.Information, "System Update Available")
+            End If
+
+            If currentVersion > dbVersion Then
+                sqlSTR = "Update Global_Data set System_Version='" & currentVersion.ToString & "'"
+                ExecuteSQLQuery(sqlSTR)
+            End If
+        Else
+            lbl_version.Text = "(Debug)"
+        End If
+    End Sub
+
+    Private Sub logout_Click(sender As Object, e As EventArgs) Handles logout.Click
+        closeForms()
+
+
+        panel_topbar.Visible = False
+        mainLeft_Panel.Visible = False
+        mainRight_Panel.Visible = False
+
+
+
+        FrmLOGIN.ShowDialog()
+    End Sub
+
+    Public Sub closeForms()
+
+
+        Dim formsToClose As New List(Of Form)
+
+        For Each openForm As Form In Application.OpenForms
+            If openForm.Name <> "Main" AndAlso openForm.Name <> "FrmLOGIN" Then
+                formsToClose.Add(openForm)
+            End If
+        Next
+
+        For Each form As Form In formsToClose
+            form.Close()
+        Next
+
+
+        RestoreSidebarButtons()
+ 
     End Sub
 End Class

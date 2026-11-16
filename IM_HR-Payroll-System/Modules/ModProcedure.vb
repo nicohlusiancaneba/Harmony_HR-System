@@ -44,6 +44,11 @@ Module ModProcedure
         Next i
     End Sub
 
+    Public Function UcFirst(text As String) As String
+        If String.IsNullOrEmpty(text) Then Return text
+        Return Char.ToUpper(text(0)) & text.Substring(1)
+    End Function
+
 
     Public Sub FillListView(ByVal sqlData As DataTable, ByVal lvList As ListView, ByVal imgList As ImageList, ByVal imageID As Integer)
         Dim i As Integer

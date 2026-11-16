@@ -454,6 +454,12 @@
     <Compile Include="Forms_v2\FrmSHIFTS\FrmSHIFT_DETAILS.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms_v2\FrmUSERS.Designer.vb">
+      <DependentUpon>FrmUSERS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmUSERS.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms_v2\Main.Designer.vb">
       <DependentUpon>Main.vb</DependentUpon>
     </Compile>
@@ -676,6 +682,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_v2\FrmSHIFTS\FrmSHIFT_DETAILS.resx">
       <DependentUpon>FrmSHIFT_DETAILS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmUSERS.resx">
+      <DependentUpon>FrmUSERS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_v2\Main.resx">
       <DependentUpon>Main.vb</DependentUpon>
