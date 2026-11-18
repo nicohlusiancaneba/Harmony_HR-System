@@ -229,6 +229,15 @@ Module ModProcedure
         centeredObj.Top = (reference.Height - centeredObj.Height) / 2
     End Sub
 
+    Public Sub centerX_RelativeTo(reference As Object, centeredObj As Object)
+        centeredObj.Left = (reference.Width - centeredObj.Width) / 2
+
+    End Sub
+
+    Public Sub centerY_RelativeTo(reference As Object, centeredObj As Object)
+        centeredObj.Top = (reference.Height - centeredObj.Height) / 2
+    End Sub
+
     Public Sub centerVertical_RelativeTo(reference As Object, centeredObj As Object)
         centeredObj.Top = (reference.Height - centeredObj.Height) / 2
     End Sub

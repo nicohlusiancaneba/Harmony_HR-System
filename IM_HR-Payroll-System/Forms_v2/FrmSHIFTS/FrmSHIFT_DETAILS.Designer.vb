@@ -23,7 +23,7 @@ Partial Class FrmSHIFT_DETAILS
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmSHIFT_DETAILS))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label_ID = New System.Windows.Forms.Label()
@@ -162,7 +162,7 @@ Partial Class FrmSHIFT_DETAILS
         '
         Me.cb_Approved.AutoSize = True
         Me.cb_Approved.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.cb_Approved.Location = New System.Drawing.Point(514, 14)
+        Me.cb_Approved.Location = New System.Drawing.Point(512, 13)
         Me.cb_Approved.Name = "cb_Approved"
         Me.cb_Approved.Size = New System.Drawing.Size(88, 21)
         Me.cb_Approved.TabIndex = 39
@@ -372,14 +372,14 @@ Partial Class FrmSHIFT_DETAILS
         Me.dgv_employees.BackgroundColor = System.Drawing.Color.White
         Me.dgv_employees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_employees.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Employee_ID, Me.Employee_Name, Me.Job_Title, Me.Department, Me.Assignment_Type, Me.Remarks})
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_employees.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_employees.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_employees.Dock = System.Windows.Forms.DockStyle.Top
         Me.dgv_employees.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.dgv_employees.Location = New System.Drawing.Point(3, 19)
@@ -457,6 +457,7 @@ Partial Class FrmSHIFT_DETAILS
         Me.grpDetails.Controls.Add(Me.Label3)
         Me.grpDetails.Controls.Add(Me.Label1)
         Me.grpDetails.Dock = System.Windows.Forms.DockStyle.Top
+        Me.grpDetails.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.grpDetails.Location = New System.Drawing.Point(10, 5)
         Me.grpDetails.Name = "grpDetails"
         Me.grpDetails.Size = New System.Drawing.Size(780, 218)

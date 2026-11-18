@@ -152,6 +152,8 @@
                 Me.Close()
             End If
 
+            lbl_encodedBy.Text = "Encoded by : " & xUsername
+
         End If
 
 

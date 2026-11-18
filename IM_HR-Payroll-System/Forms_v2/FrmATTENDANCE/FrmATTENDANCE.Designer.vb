@@ -29,29 +29,6 @@ Partial Class FrmATTENDANCE
         Me.tabControl_Attendance = New System.Windows.Forms.TabControl()
         Me.Tab_Monitoring = New System.Windows.Forms.TabPage()
         Me.dgv_employees = New System.Windows.Forms.DataGridView()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.lbl_dateYear = New System.Windows.Forms.Label()
-        Me.Tab_Record = New System.Windows.Forms.TabPage()
-        Me.grpFilter = New System.Windows.Forms.GroupBox()
-        Me.cb_Approved = New System.Windows.Forms.CheckBox()
-        Me.cmb_approved = New System.Windows.Forms.ComboBox()
-        Me.dt_toAdjustment = New System.Windows.Forms.DateTimePicker()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.dt_fromAdjustment = New System.Windows.Forms.DateTimePicker()
-        Me.btn_submit = New System.Windows.Forms.Button()
-        Me.btn_cancel = New System.Windows.Forms.Button()
-        Me.txt_remarks = New System.Windows.Forms.TextBox()
-        Me.cb_remarks = New System.Windows.Forms.CheckBox()
-        Me.cb_adjustmentDate = New System.Windows.Forms.CheckBox()
-        Me.cb_Type = New System.Windows.Forms.CheckBox()
-        Me.cmb_type = New System.Windows.Forms.ComboBox()
-        Me.txt_name = New System.Windows.Forms.TextBox()
-        Me.cb_name = New System.Windows.Forms.CheckBox()
-        Me.txt_employeeID = New System.Windows.Forms.TextBox()
-        Me.cb_employeeID = New System.Windows.Forms.CheckBox()
-        Me.lst_attendance = New System.Windows.Forms.ListView()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Employee_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Employee_Name = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Employment_Status = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -86,8 +63,25 @@ Partial Class FrmATTENDANCE
         Me.TwentyNine = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Thirty = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ThirtyOne = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.lbl_dateYear = New System.Windows.Forms.Label()
+        Me.Tab_Record = New System.Windows.Forms.TabPage()
+        Me.grpFilter = New System.Windows.Forms.GroupBox()
+        Me.dt_toAttendance = New System.Windows.Forms.DateTimePicker()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.dt_fromAttendance = New System.Windows.Forms.DateTimePicker()
+        Me.btn_submit = New System.Windows.Forms.Button()
+        Me.btn_cancel = New System.Windows.Forms.Button()
+        Me.txt_remarks = New System.Windows.Forms.TextBox()
+        Me.cb_remarks = New System.Windows.Forms.CheckBox()
+        Me.cb_attendanceDate = New System.Windows.Forms.CheckBox()
+        Me.txt_attendanceID = New System.Windows.Forms.TextBox()
+        Me.cb_attendanceID = New System.Windows.Forms.CheckBox()
+        Me.lst_attendance = New System.Windows.Forms.ListView()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.dgv_panel.SuspendLayout()
         Me.tabControl_Attendance.SuspendLayout()
@@ -175,244 +169,6 @@ Partial Class FrmATTENDANCE
         Me.dgv_employees.ShowRowErrors = False
         Me.dgv_employees.Size = New System.Drawing.Size(944, 450)
         Me.dgv_employees.TabIndex = 709
-        '
-        'Panel3
-        '
-        Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Controls.Add(Me.lbl_dateYear)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(3, 3)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(944, 39)
-        Me.Panel3.TabIndex = 708
-        '
-        'lbl_dateYear
-        '
-        Me.lbl_dateYear.AutoSize = True
-        Me.lbl_dateYear.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.lbl_dateYear.Location = New System.Drawing.Point(7, 10)
-        Me.lbl_dateYear.Name = "lbl_dateYear"
-        Me.lbl_dateYear.Size = New System.Drawing.Size(134, 20)
-        Me.lbl_dateYear.TabIndex = 0
-        Me.lbl_dateYear.Text = "November 2026"
-        '
-        'Tab_Record
-        '
-        Me.Tab_Record.BackColor = System.Drawing.Color.White
-        Me.Tab_Record.Controls.Add(Me.grpFilter)
-        Me.Tab_Record.Controls.Add(Me.lst_attendance)
-        Me.Tab_Record.Location = New System.Drawing.Point(4, 25)
-        Me.Tab_Record.Name = "Tab_Record"
-        Me.Tab_Record.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tab_Record.Size = New System.Drawing.Size(950, 495)
-        Me.Tab_Record.TabIndex = 1
-        Me.Tab_Record.Text = "Record"
-        '
-        'grpFilter
-        '
-        Me.grpFilter.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.grpFilter.Controls.Add(Me.cb_Approved)
-        Me.grpFilter.Controls.Add(Me.cmb_approved)
-        Me.grpFilter.Controls.Add(Me.dt_toAdjustment)
-        Me.grpFilter.Controls.Add(Me.Label2)
-        Me.grpFilter.Controls.Add(Me.dt_fromAdjustment)
-        Me.grpFilter.Controls.Add(Me.btn_submit)
-        Me.grpFilter.Controls.Add(Me.btn_cancel)
-        Me.grpFilter.Controls.Add(Me.txt_remarks)
-        Me.grpFilter.Controls.Add(Me.cb_remarks)
-        Me.grpFilter.Controls.Add(Me.cb_adjustmentDate)
-        Me.grpFilter.Controls.Add(Me.cb_Type)
-        Me.grpFilter.Controls.Add(Me.cmb_type)
-        Me.grpFilter.Controls.Add(Me.txt_name)
-        Me.grpFilter.Controls.Add(Me.cb_name)
-        Me.grpFilter.Controls.Add(Me.txt_employeeID)
-        Me.grpFilter.Controls.Add(Me.cb_employeeID)
-        Me.grpFilter.Location = New System.Drawing.Point(241, 123)
-        Me.grpFilter.Name = "grpFilter"
-        Me.grpFilter.Size = New System.Drawing.Size(392, 242)
-        Me.grpFilter.TabIndex = 706
-        Me.grpFilter.TabStop = False
-        Me.grpFilter.Text = "Search"
-        Me.grpFilter.Visible = False
-        '
-        'cb_Approved
-        '
-        Me.cb_Approved.AutoSize = True
-        Me.cb_Approved.Location = New System.Drawing.Point(15, 166)
-        Me.cb_Approved.Name = "cb_Approved"
-        Me.cb_Approved.Size = New System.Drawing.Size(88, 21)
-        Me.cb_Approved.TabIndex = 22
-        Me.cb_Approved.Text = "Approved"
-        Me.cb_Approved.UseVisualStyleBackColor = True
-        '
-        'cmb_approved
-        '
-        Me.cmb_approved.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_approved.FormattingEnabled = True
-        Me.cmb_approved.Items.AddRange(New Object() {"Yes", "No"})
-        Me.cmb_approved.Location = New System.Drawing.Point(149, 164)
-        Me.cmb_approved.Name = "cmb_approved"
-        Me.cmb_approved.Size = New System.Drawing.Size(72, 24)
-        Me.cmb_approved.TabIndex = 21
-        '
-        'dt_toAdjustment
-        '
-        Me.dt_toAdjustment.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dt_toAdjustment.Location = New System.Drawing.Point(278, 107)
-        Me.dt_toAdjustment.Name = "dt_toAdjustment"
-        Me.dt_toAdjustment.Size = New System.Drawing.Size(101, 23)
-        Me.dt_toAdjustment.TabIndex = 20
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(253, 110)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(20, 17)
-        Me.Label2.TabIndex = 19
-        Me.Label2.Text = "to"
-        '
-        'dt_fromAdjustment
-        '
-        Me.dt_fromAdjustment.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dt_fromAdjustment.Location = New System.Drawing.Point(149, 107)
-        Me.dt_fromAdjustment.Name = "dt_fromAdjustment"
-        Me.dt_fromAdjustment.Size = New System.Drawing.Size(101, 23)
-        Me.dt_fromAdjustment.TabIndex = 18
-        '
-        'btn_submit
-        '
-        Me.btn_submit.Location = New System.Drawing.Point(203, 197)
-        Me.btn_submit.Name = "btn_submit"
-        Me.btn_submit.Size = New System.Drawing.Size(85, 30)
-        Me.btn_submit.TabIndex = 15
-        Me.btn_submit.Text = "Submit"
-        Me.btn_submit.UseVisualStyleBackColor = True
-        '
-        'btn_cancel
-        '
-        Me.btn_cancel.Location = New System.Drawing.Point(294, 197)
-        Me.btn_cancel.Name = "btn_cancel"
-        Me.btn_cancel.Size = New System.Drawing.Size(85, 30)
-        Me.btn_cancel.TabIndex = 14
-        Me.btn_cancel.Text = "Cancel"
-        Me.btn_cancel.UseVisualStyleBackColor = True
-        '
-        'txt_remarks
-        '
-        Me.txt_remarks.Location = New System.Drawing.Point(149, 135)
-        Me.txt_remarks.Name = "txt_remarks"
-        Me.txt_remarks.Size = New System.Drawing.Size(148, 23)
-        Me.txt_remarks.TabIndex = 11
-        '
-        'cb_remarks
-        '
-        Me.cb_remarks.AutoSize = True
-        Me.cb_remarks.Location = New System.Drawing.Point(15, 137)
-        Me.cb_remarks.Name = "cb_remarks"
-        Me.cb_remarks.Size = New System.Drawing.Size(83, 21)
-        Me.cb_remarks.TabIndex = 10
-        Me.cb_remarks.Text = "Remarks"
-        Me.cb_remarks.UseVisualStyleBackColor = True
-        '
-        'cb_adjustmentDate
-        '
-        Me.cb_adjustmentDate.AutoSize = True
-        Me.cb_adjustmentDate.Location = New System.Drawing.Point(15, 108)
-        Me.cb_adjustmentDate.Name = "cb_adjustmentDate"
-        Me.cb_adjustmentDate.Size = New System.Drawing.Size(131, 21)
-        Me.cb_adjustmentDate.TabIndex = 8
-        Me.cb_adjustmentDate.Text = "Adjustment Date"
-        Me.cb_adjustmentDate.UseVisualStyleBackColor = True
-        '
-        'cb_Type
-        '
-        Me.cb_Type.AutoSize = True
-        Me.cb_Type.Location = New System.Drawing.Point(15, 80)
-        Me.cb_Type.Name = "cb_Type"
-        Me.cb_Type.Size = New System.Drawing.Size(59, 21)
-        Me.cb_Type.TabIndex = 5
-        Me.cb_Type.Text = "Type"
-        Me.cb_Type.UseVisualStyleBackColor = True
-        '
-        'cmb_type
-        '
-        Me.cmb_type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_type.FormattingEnabled = True
-        Me.cmb_type.Items.AddRange(New Object() {"Job Position", "Department", "Division", "Regularization", "Resignation", "Termination", "Rehire", "Salary", "Monthly Salary (SSS)", "Monthly Salary (Philhealth)", "Monthly Salary (PAG-IBIG)", "Monthly Salary (BIR)", "Working Days", "Paid Leave Days", "Bank Account No.", "SSS No.", "Philhealth No.", "Tax ID No. (TIN)", "PAG-IBIG No.", "SSS Share", "Philhealth Share", "Tax Amount", "PAG-IBIG Share"})
-        Me.cmb_type.Location = New System.Drawing.Point(149, 78)
-        Me.cmb_type.Name = "cmb_type"
-        Me.cmb_type.Size = New System.Drawing.Size(148, 24)
-        Me.cmb_type.TabIndex = 4
-        '
-        'txt_name
-        '
-        Me.txt_name.Location = New System.Drawing.Point(149, 49)
-        Me.txt_name.Name = "txt_name"
-        Me.txt_name.Size = New System.Drawing.Size(179, 23)
-        Me.txt_name.TabIndex = 3
-        '
-        'cb_name
-        '
-        Me.cb_name.AutoSize = True
-        Me.cb_name.Location = New System.Drawing.Point(15, 51)
-        Me.cb_name.Name = "cb_name"
-        Me.cb_name.Size = New System.Drawing.Size(130, 21)
-        Me.cb_name.TabIndex = 2
-        Me.cb_name.Text = "Employee Name"
-        Me.cb_name.UseVisualStyleBackColor = True
-        '
-        'txt_employeeID
-        '
-        Me.txt_employeeID.Location = New System.Drawing.Point(149, 20)
-        Me.txt_employeeID.Name = "txt_employeeID"
-        Me.txt_employeeID.Size = New System.Drawing.Size(82, 23)
-        Me.txt_employeeID.TabIndex = 1
-        '
-        'cb_employeeID
-        '
-        Me.cb_employeeID.AutoSize = True
-        Me.cb_employeeID.Location = New System.Drawing.Point(15, 22)
-        Me.cb_employeeID.Name = "cb_employeeID"
-        Me.cb_employeeID.Size = New System.Drawing.Size(106, 21)
-        Me.cb_employeeID.TabIndex = 0
-        Me.cb_employeeID.Text = "Employee ID"
-        Me.cb_employeeID.UseVisualStyleBackColor = True
-        '
-        'lst_attendance
-        '
-        Me.lst_attendance.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lst_attendance.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
-        Me.lst_attendance.FullRowSelect = True
-        Me.lst_attendance.GridLines = True
-        Me.lst_attendance.Location = New System.Drawing.Point(3, 3)
-        Me.lst_attendance.Margin = New System.Windows.Forms.Padding(2)
-        Me.lst_attendance.Name = "lst_attendance"
-        Me.lst_attendance.Size = New System.Drawing.Size(944, 489)
-        Me.lst_attendance.TabIndex = 708
-        Me.lst_attendance.UseCompatibleStateImageBehavior = False
-        Me.lst_attendance.View = System.Windows.Forms.View.Details
-        '
-        'Panel1
-        '
-        Me.Panel1.Controls.Add(Me.PictureBox1)
-        Me.Panel1.Controls.Add(Me.Label1)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(988, 72)
-        Me.Panel1.TabIndex = 6
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(68, 14)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(232, 46)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Attendance"
         '
         'Employee_ID
         '
@@ -624,6 +380,16 @@ Partial Class FrmATTENDANCE
         Me.ThirtyOne.Name = "ThirtyOne"
         Me.ThirtyOne.ReadOnly = True
         '
+        'Panel3
+        '
+        Me.Panel3.Controls.Add(Me.Label3)
+        Me.Panel3.Controls.Add(Me.lbl_dateYear)
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel3.Location = New System.Drawing.Point(3, 3)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(944, 39)
+        Me.Panel3.TabIndex = 708
+        '
         'Label3
         '
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -636,6 +402,160 @@ Partial Class FrmATTENDANCE
         Me.Label3.Text = "L - Late  |  U - Undertime  |  H - Half-Day  |  A - Absent  |  O - On-Leave  |  W" & _
     " - WFH"
         '
+        'lbl_dateYear
+        '
+        Me.lbl_dateYear.AutoSize = True
+        Me.lbl_dateYear.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.lbl_dateYear.Location = New System.Drawing.Point(7, 10)
+        Me.lbl_dateYear.Name = "lbl_dateYear"
+        Me.lbl_dateYear.Size = New System.Drawing.Size(134, 20)
+        Me.lbl_dateYear.TabIndex = 0
+        Me.lbl_dateYear.Text = "November 2026"
+        '
+        'Tab_Record
+        '
+        Me.Tab_Record.BackColor = System.Drawing.Color.White
+        Me.Tab_Record.Controls.Add(Me.grpFilter)
+        Me.Tab_Record.Controls.Add(Me.lst_attendance)
+        Me.Tab_Record.Location = New System.Drawing.Point(4, 25)
+        Me.Tab_Record.Name = "Tab_Record"
+        Me.Tab_Record.Padding = New System.Windows.Forms.Padding(3)
+        Me.Tab_Record.Size = New System.Drawing.Size(950, 495)
+        Me.Tab_Record.TabIndex = 1
+        Me.Tab_Record.Text = "Record"
+        '
+        'grpFilter
+        '
+        Me.grpFilter.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.grpFilter.Controls.Add(Me.dt_toAttendance)
+        Me.grpFilter.Controls.Add(Me.Label2)
+        Me.grpFilter.Controls.Add(Me.dt_fromAttendance)
+        Me.grpFilter.Controls.Add(Me.btn_submit)
+        Me.grpFilter.Controls.Add(Me.btn_cancel)
+        Me.grpFilter.Controls.Add(Me.txt_remarks)
+        Me.grpFilter.Controls.Add(Me.cb_remarks)
+        Me.grpFilter.Controls.Add(Me.cb_attendanceDate)
+        Me.grpFilter.Controls.Add(Me.txt_attendanceID)
+        Me.grpFilter.Controls.Add(Me.cb_attendanceID)
+        Me.grpFilter.Location = New System.Drawing.Point(271, 132)
+        Me.grpFilter.Name = "grpFilter"
+        Me.grpFilter.Size = New System.Drawing.Size(392, 146)
+        Me.grpFilter.TabIndex = 706
+        Me.grpFilter.TabStop = False
+        Me.grpFilter.Text = "Search"
+        Me.grpFilter.Visible = False
+        '
+        'dt_toAttendance
+        '
+        Me.dt_toAttendance.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dt_toAttendance.Location = New System.Drawing.Point(278, 49)
+        Me.dt_toAttendance.Name = "dt_toAttendance"
+        Me.dt_toAttendance.Size = New System.Drawing.Size(101, 23)
+        Me.dt_toAttendance.TabIndex = 20
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(253, 52)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(20, 17)
+        Me.Label2.TabIndex = 19
+        Me.Label2.Text = "to"
+        '
+        'dt_fromAttendance
+        '
+        Me.dt_fromAttendance.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dt_fromAttendance.Location = New System.Drawing.Point(149, 49)
+        Me.dt_fromAttendance.Name = "dt_fromAttendance"
+        Me.dt_fromAttendance.Size = New System.Drawing.Size(101, 23)
+        Me.dt_fromAttendance.TabIndex = 18
+        '
+        'btn_submit
+        '
+        Me.btn_submit.Location = New System.Drawing.Point(203, 106)
+        Me.btn_submit.Name = "btn_submit"
+        Me.btn_submit.Size = New System.Drawing.Size(85, 30)
+        Me.btn_submit.TabIndex = 15
+        Me.btn_submit.Text = "Submit"
+        Me.btn_submit.UseVisualStyleBackColor = True
+        '
+        'btn_cancel
+        '
+        Me.btn_cancel.Location = New System.Drawing.Point(294, 106)
+        Me.btn_cancel.Name = "btn_cancel"
+        Me.btn_cancel.Size = New System.Drawing.Size(85, 30)
+        Me.btn_cancel.TabIndex = 14
+        Me.btn_cancel.Text = "Cancel"
+        Me.btn_cancel.UseVisualStyleBackColor = True
+        '
+        'txt_remarks
+        '
+        Me.txt_remarks.Location = New System.Drawing.Point(149, 77)
+        Me.txt_remarks.Name = "txt_remarks"
+        Me.txt_remarks.Size = New System.Drawing.Size(148, 23)
+        Me.txt_remarks.TabIndex = 11
+        '
+        'cb_remarks
+        '
+        Me.cb_remarks.AutoSize = True
+        Me.cb_remarks.Location = New System.Drawing.Point(15, 79)
+        Me.cb_remarks.Name = "cb_remarks"
+        Me.cb_remarks.Size = New System.Drawing.Size(83, 21)
+        Me.cb_remarks.TabIndex = 10
+        Me.cb_remarks.Text = "Remarks"
+        Me.cb_remarks.UseVisualStyleBackColor = True
+        '
+        'cb_attendanceDate
+        '
+        Me.cb_attendanceDate.AutoSize = True
+        Me.cb_attendanceDate.Location = New System.Drawing.Point(15, 50)
+        Me.cb_attendanceDate.Name = "cb_attendanceDate"
+        Me.cb_attendanceDate.Size = New System.Drawing.Size(133, 21)
+        Me.cb_attendanceDate.TabIndex = 8
+        Me.cb_attendanceDate.Text = "Attendance Date"
+        Me.cb_attendanceDate.UseVisualStyleBackColor = True
+        '
+        'txt_attendanceID
+        '
+        Me.txt_attendanceID.Location = New System.Drawing.Point(149, 20)
+        Me.txt_attendanceID.Name = "txt_attendanceID"
+        Me.txt_attendanceID.Size = New System.Drawing.Size(82, 23)
+        Me.txt_attendanceID.TabIndex = 1
+        '
+        'cb_attendanceID
+        '
+        Me.cb_attendanceID.AutoSize = True
+        Me.cb_attendanceID.Location = New System.Drawing.Point(15, 22)
+        Me.cb_attendanceID.Name = "cb_attendanceID"
+        Me.cb_attendanceID.Size = New System.Drawing.Size(116, 21)
+        Me.cb_attendanceID.TabIndex = 0
+        Me.cb_attendanceID.Text = "Attendance ID"
+        Me.cb_attendanceID.UseVisualStyleBackColor = True
+        '
+        'lst_attendance
+        '
+        Me.lst_attendance.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lst_attendance.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!)
+        Me.lst_attendance.FullRowSelect = True
+        Me.lst_attendance.GridLines = True
+        Me.lst_attendance.Location = New System.Drawing.Point(3, 3)
+        Me.lst_attendance.Margin = New System.Windows.Forms.Padding(2)
+        Me.lst_attendance.Name = "lst_attendance"
+        Me.lst_attendance.Size = New System.Drawing.Size(944, 489)
+        Me.lst_attendance.TabIndex = 708
+        Me.lst_attendance.UseCompatibleStateImageBehavior = False
+        Me.lst_attendance.View = System.Windows.Forms.View.Details
+        '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.Label1)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(988, 72)
+        Me.Panel1.TabIndex = 6
+        '
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
@@ -646,6 +566,17 @@ Partial Class FrmATTENDANCE
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.Label1.Location = New System.Drawing.Point(68, 14)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(232, 46)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Attendance"
         '
         'FrmATTENDANCE
         '
@@ -679,22 +610,16 @@ Partial Class FrmATTENDANCE
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents dgv_panel As System.Windows.Forms.Panel
     Friend WithEvents grpFilter As System.Windows.Forms.GroupBox
-    Friend WithEvents cb_Approved As System.Windows.Forms.CheckBox
-    Friend WithEvents cmb_approved As System.Windows.Forms.ComboBox
-    Friend WithEvents dt_toAdjustment As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dt_toAttendance As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents dt_fromAdjustment As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dt_fromAttendance As System.Windows.Forms.DateTimePicker
     Friend WithEvents btn_submit As System.Windows.Forms.Button
     Friend WithEvents btn_cancel As System.Windows.Forms.Button
     Friend WithEvents txt_remarks As System.Windows.Forms.TextBox
     Friend WithEvents cb_remarks As System.Windows.Forms.CheckBox
-    Friend WithEvents cb_adjustmentDate As System.Windows.Forms.CheckBox
-    Friend WithEvents cb_Type As System.Windows.Forms.CheckBox
-    Friend WithEvents cmb_type As System.Windows.Forms.ComboBox
-    Friend WithEvents txt_name As System.Windows.Forms.TextBox
-    Friend WithEvents cb_name As System.Windows.Forms.CheckBox
-    Friend WithEvents txt_employeeID As System.Windows.Forms.TextBox
-    Friend WithEvents cb_employeeID As System.Windows.Forms.CheckBox
+    Friend WithEvents cb_attendanceDate As System.Windows.Forms.CheckBox
+    Friend WithEvents txt_attendanceID As System.Windows.Forms.TextBox
+    Friend WithEvents cb_attendanceID As System.Windows.Forms.CheckBox
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label

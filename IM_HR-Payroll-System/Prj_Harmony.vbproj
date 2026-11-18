@@ -298,6 +298,12 @@
     <Compile Include="Forms_v2\FrmATTENDANCE\FrmATTENDANCE_DETAILS.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms_v2\FrmDASHBOARD\FrmDASHBOARD.Designer.vb">
+      <DependentUpon>FrmDASHBOARD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmDASHBOARD\FrmDASHBOARD.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms_v2\FrmEMPLOYEES\FrmEMPLOYEES.Designer.vb">
       <DependentUpon>FrmEMPLOYEES.vb</DependentUpon>
     </Compile>
@@ -314,6 +320,24 @@
       <DependentUpon>FrmFILE_MANAGE.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms_v2\FrmEMPLOYEES\FrmFILE_MANAGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmEVALUATION\FrmEVALUATION.Designer.vb">
+      <DependentUpon>FrmEVALUATION.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmEVALUATION\FrmEVALUATION.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmEVALUATION\FrmEVALUATION_DETAILS.Designer.vb">
+      <DependentUpon>FrmEVALUATION_DETAILS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmEVALUATION\FrmEVALUATION_DETAILS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms_v2\FrmEVALUATION\FrmEVALUATION_QUESTIONS.Designer.vb">
+      <DependentUpon>FrmEVALUATION_QUESTIONS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms_v2\FrmEVALUATION\FrmEVALUATION_QUESTIONS.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms_v2\FrmINCIDENTS\FrmINCIDENTS.Designer.vb">
@@ -481,6 +505,7 @@
     <Compile Include="Harmony_DataSet.vb">
       <DependentUpon>Harmony_DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Modules\CardStyle.vb" />
     <Compile Include="Modules\ModActiveForm.vb" />
     <Compile Include="Modules\ModCode.vb" />
     <Compile Include="Modules\ModCon.vb" />
@@ -613,6 +638,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_v2\FrmEMPLOYEES\FrmFILE_MANAGE.resx">
       <DependentUpon>FrmFILE_MANAGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmEVALUATION\FrmEVALUATION.resx">
+      <DependentUpon>FrmEVALUATION.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmEVALUATION\FrmEVALUATION_DETAILS.resx">
+      <DependentUpon>FrmEVALUATION_DETAILS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms_v2\FrmEVALUATION\FrmEVALUATION_QUESTIONS.resx">
+      <DependentUpon>FrmEVALUATION_QUESTIONS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms_v2\FrmINCIDENTS\FrmINCIDENTS.resx">
       <DependentUpon>FrmINCIDENTS.vb</DependentUpon>

@@ -207,4 +207,24 @@
 
         End If
     End Sub
+
+    Private Sub btn_submit_Click(sender As Object, e As EventArgs) Handles btn_submit.Click
+        grpFilter.Visible = False
+
+        checkbox_CheckedValue(cb_attendanceID, " and Attendance_ID = '" & txt_attendanceID.Text & "' ")
+        checkbox_CheckedValue(cb_attendanceDate, " and Attendance_Date between '" & dt_fromAttendance.Text & "' and '" & dt_toAttendance.Text & "' ")
+        checkbox_CheckedValue(cb_remarks, " and Remarks like '%" & txt_remarks.Text & "%' ")
+
+        whereSQL = cb_attendanceID.Tag & cb_attendanceDate.Tag & cb_remarks.Tag
+
+        If whereSQL = "" Then
+            Exit Sub
+        End If
+
+        Refresh_List()
+    End Sub
+
+    Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
+        grpFilter.Visible = False
+    End Sub
 End Class

@@ -25,7 +25,12 @@ Partial Class Main
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.mainLeft_Panel = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.sidebar_panel = New System.Windows.Forms.Panel()
+        Me.lbl_version = New System.Windows.Forms.Label()
+        Me.cmd_incidents = New System.Windows.Forms.Button()
+        Me.sidebar_images = New System.Windows.Forms.ImageList(Me.components)
+        Me.user_panel = New System.Windows.Forms.Panel()
+        Me.pic_User = New System.Windows.Forms.PictureBox()
         Me.lbl_access = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.lbl_username = New System.Windows.Forms.ToolStripMenuItem()
@@ -33,80 +38,154 @@ Partial Class Main
         Me.UsersToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.logout = New System.Windows.Forms.ToolStripMenuItem()
         Me.ShapeContainer2 = New Microsoft.VisualBasic.PowerPacks.ShapeContainer()
-        Me.LineShape2 = New Microsoft.VisualBasic.PowerPacks.LineShape()
         Me.LineShape1 = New Microsoft.VisualBasic.PowerPacks.LineShape()
-        Me.sidebar_panel = New System.Windows.Forms.Panel()
-        Me.sidebar_images = New System.Windows.Forms.ImageList(Me.components)
+        Me.cmd_shifts = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.cmd_dashboard = New System.Windows.Forms.Button()
+        Me.cmd_attendance = New System.Windows.Forms.Button()
+        Me.cmd_reports = New System.Windows.Forms.Button()
+        Me.cmd_evaluation = New System.Windows.Forms.Button()
+        Me.cmd_leaves = New System.Windows.Forms.Button()
+        Me.cmd_adjustments = New System.Windows.Forms.Button()
+        Me.cmd_loans = New System.Windows.Forms.Button()
+        Me.cmd_payroll = New System.Windows.Forms.Button()
+        Me.cmd_employees = New System.Windows.Forms.Button()
         Me.panel_topbar = New System.Windows.Forms.Panel()
         Me.panel_topBar_navigation = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ImageList2 = New System.Windows.Forms.ImageList(Me.components)
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.mainRight_Panel = New System.Windows.Forms.Panel()
-        Me.Panel_Border = New System.Windows.Forms.Panel()
-        Me.mainPanel = New System.Windows.Forms.Panel()
-        Me.sidebar_images_selected = New System.Windows.Forms.ImageList(Me.components)
         Me.cmd_Refresh = New System.Windows.Forms.Button()
+        Me.ImageList2 = New System.Windows.Forms.ImageList(Me.components)
         Me.cmd_New = New System.Windows.Forms.Button()
         Me.cmd_Search = New System.Windows.Forms.Button()
         Me.cmd_View = New System.Windows.Forms.Button()
         Me.cmd_Delete = New System.Windows.Forms.Button()
-        Me.pic_User = New System.Windows.Forms.PictureBox()
-        Me.cmd_incidents = New System.Windows.Forms.Button()
-        Me.cmd_shifts = New System.Windows.Forms.Button()
-        Me.cmd_dashboard = New System.Windows.Forms.Button()
-        Me.cmd_attendance = New System.Windows.Forms.Button()
-        Me.cmd_evaluation = New System.Windows.Forms.Button()
-        Me.cmd_adjustments = New System.Windows.Forms.Button()
-        Me.cmd_payroll = New System.Windows.Forms.Button()
-        Me.cmd_employees = New System.Windows.Forms.Button()
-        Me.cmd_loans = New System.Windows.Forms.Button()
-        Me.cmd_leaves = New System.Windows.Forms.Button()
-        Me.cmd_reports = New System.Windows.Forms.Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.lbl_version = New System.Windows.Forms.Label()
+        Me.Panel_Border = New System.Windows.Forms.Panel()
+        Me.mainPanel = New System.Windows.Forms.Panel()
+        Me.sidebar_images_selected = New System.Windows.Forms.ImageList(Me.components)
         Me.mainLeft_Panel.SuspendLayout()
-        Me.Panel2.SuspendLayout()
-        Me.MenuStrip1.SuspendLayout()
         Me.sidebar_panel.SuspendLayout()
+        Me.user_panel.SuspendLayout()
+        CType(Me.pic_User, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.panel_topbar.SuspendLayout()
         Me.panel_topBar_navigation.SuspendLayout()
-        Me.Panel3.SuspendLayout()
         Me.Panel_Border.SuspendLayout()
-        CType(Me.pic_User, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'mainLeft_Panel
         '
         Me.mainLeft_Panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.mainLeft_Panel.Controls.Add(Me.Panel2)
         Me.mainLeft_Panel.Controls.Add(Me.sidebar_panel)
-        Me.mainLeft_Panel.Controls.Add(Me.PictureBox1)
         Me.mainLeft_Panel.Dock = System.Windows.Forms.DockStyle.Left
         Me.mainLeft_Panel.Location = New System.Drawing.Point(0, 0)
         Me.mainLeft_Panel.Name = "mainLeft_Panel"
-        Me.mainLeft_Panel.Size = New System.Drawing.Size(174, 881)
+        Me.mainLeft_Panel.Padding = New System.Windows.Forms.Padding(14)
+        Me.mainLeft_Panel.Size = New System.Drawing.Size(215, 881)
         Me.mainLeft_Panel.TabIndex = 0
         '
-        'Panel2
+        'sidebar_panel
         '
-        Me.Panel2.Controls.Add(Me.pic_User)
-        Me.Panel2.Controls.Add(Me.lbl_access)
-        Me.Panel2.Controls.Add(Me.MenuStrip1)
-        Me.Panel2.Controls.Add(Me.ShapeContainer2)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(0, 765)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(174, 116)
-        Me.Panel2.TabIndex = 0
+        Me.sidebar_panel.BackColor = System.Drawing.Color.White
+        Me.sidebar_panel.Controls.Add(Me.lbl_version)
+        Me.sidebar_panel.Controls.Add(Me.cmd_incidents)
+        Me.sidebar_panel.Controls.Add(Me.user_panel)
+        Me.sidebar_panel.Controls.Add(Me.cmd_shifts)
+        Me.sidebar_panel.Controls.Add(Me.PictureBox1)
+        Me.sidebar_panel.Controls.Add(Me.cmd_dashboard)
+        Me.sidebar_panel.Controls.Add(Me.cmd_attendance)
+        Me.sidebar_panel.Controls.Add(Me.cmd_reports)
+        Me.sidebar_panel.Controls.Add(Me.cmd_evaluation)
+        Me.sidebar_panel.Controls.Add(Me.cmd_leaves)
+        Me.sidebar_panel.Controls.Add(Me.cmd_adjustments)
+        Me.sidebar_panel.Controls.Add(Me.cmd_loans)
+        Me.sidebar_panel.Controls.Add(Me.cmd_payroll)
+        Me.sidebar_panel.Controls.Add(Me.cmd_employees)
+        Me.sidebar_panel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.sidebar_panel.Location = New System.Drawing.Point(14, 14)
+        Me.sidebar_panel.Name = "sidebar_panel"
+        Me.sidebar_panel.Size = New System.Drawing.Size(187, 853)
+        Me.sidebar_panel.TabIndex = 0
+        '
+        'lbl_version
+        '
+        Me.lbl_version.AutoSize = True
+        Me.lbl_version.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
+        Me.lbl_version.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.lbl_version.Location = New System.Drawing.Point(40, 192)
+        Me.lbl_version.Name = "lbl_version"
+        Me.lbl_version.Padding = New System.Windows.Forms.Padding(3)
+        Me.lbl_version.Size = New System.Drawing.Size(48, 19)
+        Me.lbl_version.TabIndex = 15
+        Me.lbl_version.Text = "Version"
+        '
+        'cmd_incidents
+        '
+        Me.cmd_incidents.FlatAppearance.BorderSize = 0
+        Me.cmd_incidents.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_incidents.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_incidents.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_incidents.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.cmd_incidents.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmd_incidents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_incidents.ImageKey = "memo.png"
+        Me.cmd_incidents.ImageList = Me.sidebar_images
+        Me.cmd_incidents.Location = New System.Drawing.Point(17, 598)
+        Me.cmd_incidents.Name = "cmd_incidents"
+        Me.cmd_incidents.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.cmd_incidents.Size = New System.Drawing.Size(156, 41)
+        Me.cmd_incidents.TabIndex = 11
+        Me.cmd_incidents.Text = "          Incidents"
+        Me.cmd_incidents.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_incidents.UseVisualStyleBackColor = True
+        '
+        'sidebar_images
+        '
+        Me.sidebar_images.ImageStream = CType(resources.GetObject("sidebar_images.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.sidebar_images.TransparentColor = System.Drawing.Color.Transparent
+        Me.sidebar_images.Images.SetKeyName(0, "employees.png")
+        Me.sidebar_images.Images.SetKeyName(1, "statistics.png")
+        Me.sidebar_images.Images.SetKeyName(2, "priority.png")
+        Me.sidebar_images.Images.SetKeyName(3, "clock.png")
+        Me.sidebar_images.Images.SetKeyName(4, "transaction.png")
+        Me.sidebar_images.Images.SetKeyName(5, "money-bag.png")
+        Me.sidebar_images.Images.SetKeyName(6, "compensation.png")
+        Me.sidebar_images.Images.SetKeyName(7, "performance.png")
+        Me.sidebar_images.Images.SetKeyName(8, "calendar.png")
+        Me.sidebar_images.Images.SetKeyName(9, "full-time-job.png")
+        Me.sidebar_images.Images.SetKeyName(10, "working.png")
+        Me.sidebar_images.Images.SetKeyName(11, "memo.png")
+        '
+        'user_panel
+        '
+        Me.user_panel.BackColor = System.Drawing.Color.White
+        Me.user_panel.Controls.Add(Me.pic_User)
+        Me.user_panel.Controls.Add(Me.lbl_access)
+        Me.user_panel.Controls.Add(Me.MenuStrip1)
+        Me.user_panel.Controls.Add(Me.ShapeContainer2)
+        Me.user_panel.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.user_panel.Location = New System.Drawing.Point(0, 784)
+        Me.user_panel.Name = "user_panel"
+        Me.user_panel.Size = New System.Drawing.Size(187, 69)
+        Me.user_panel.TabIndex = 0
+        '
+        'pic_User
+        '
+        Me.pic_User.BackColor = System.Drawing.Color.Transparent
+        Me.pic_User.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pic_User.Location = New System.Drawing.Point(12, 9)
+        Me.pic_User.Name = "pic_User"
+        Me.pic_User.Size = New System.Drawing.Size(50, 50)
+        Me.pic_User.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pic_User.TabIndex = 13
+        Me.pic_User.TabStop = False
         '
         'lbl_access
         '
         Me.lbl_access.AutoSize = True
         Me.lbl_access.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_access.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.lbl_access.Location = New System.Drawing.Point(74, 35)
+        Me.lbl_access.Location = New System.Drawing.Point(74, 37)
         Me.lbl_access.Name = "lbl_access"
         Me.lbl_access.Size = New System.Drawing.Size(53, 17)
         Me.lbl_access.TabIndex = 12
@@ -117,7 +196,7 @@ Partial Class Main
         Me.MenuStrip1.BackColor = System.Drawing.Color.Transparent
         Me.MenuStrip1.Dock = System.Windows.Forms.DockStyle.None
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lbl_username})
-        Me.MenuStrip1.Location = New System.Drawing.Point(61, 7)
+        Me.MenuStrip1.Location = New System.Drawing.Point(61, 9)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(101, 25)
         Me.MenuStrip1.TabIndex = 11
@@ -167,82 +246,245 @@ Partial Class Main
         Me.ShapeContainer2.Location = New System.Drawing.Point(0, 0)
         Me.ShapeContainer2.Margin = New System.Windows.Forms.Padding(0)
         Me.ShapeContainer2.Name = "ShapeContainer2"
-        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape2, Me.LineShape1})
-        Me.ShapeContainer2.Size = New System.Drawing.Size(174, 116)
+        Me.ShapeContainer2.Shapes.AddRange(New Microsoft.VisualBasic.PowerPacks.Shape() {Me.LineShape1})
+        Me.ShapeContainer2.Size = New System.Drawing.Size(187, 69)
         Me.ShapeContainer2.TabIndex = 14
         Me.ShapeContainer2.TabStop = False
         '
-        'LineShape2
-        '
-        Me.LineShape2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.LineShape2.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot
-        Me.LineShape2.Name = "LineShape2"
-        Me.LineShape2.SelectionColor = System.Drawing.Color.Transparent
-        Me.LineShape2.X1 = 9
-        Me.LineShape2.X2 = 165
-        Me.LineShape2.Y1 = 61
-        Me.LineShape2.Y2 = 61
-        '
         'LineShape1
         '
-        Me.LineShape1.AccessibleRole = System.Windows.Forms.AccessibleRole.None
         Me.LineShape1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.LineShape1.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot
         Me.LineShape1.Name = "LineShape1"
-        Me.LineShape1.SelectionColor = System.Drawing.Color.Transparent
-        Me.LineShape1.X1 = 9
-        Me.LineShape1.X2 = 165
-        Me.LineShape1.Y1 = 4
-        Me.LineShape1.Y2 = 4
+        Me.LineShape1.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.LineShape1.X1 = 11
+        Me.LineShape1.X2 = 176
+        Me.LineShape1.Y1 = 2
+        Me.LineShape1.Y2 = 2
         '
-        'sidebar_panel
+        'cmd_shifts
         '
-        Me.sidebar_panel.Controls.Add(Me.cmd_incidents)
-        Me.sidebar_panel.Controls.Add(Me.cmd_shifts)
-        Me.sidebar_panel.Controls.Add(Me.cmd_dashboard)
-        Me.sidebar_panel.Controls.Add(Me.cmd_attendance)
-        Me.sidebar_panel.Controls.Add(Me.cmd_evaluation)
-        Me.sidebar_panel.Controls.Add(Me.cmd_adjustments)
-        Me.sidebar_panel.Controls.Add(Me.cmd_payroll)
-        Me.sidebar_panel.Controls.Add(Me.cmd_employees)
-        Me.sidebar_panel.Controls.Add(Me.cmd_loans)
-        Me.sidebar_panel.Controls.Add(Me.cmd_leaves)
-        Me.sidebar_panel.Controls.Add(Me.cmd_reports)
-        Me.sidebar_panel.Location = New System.Drawing.Point(6, 182)
-        Me.sidebar_panel.Name = "sidebar_panel"
-        Me.sidebar_panel.Size = New System.Drawing.Size(162, 537)
-        Me.sidebar_panel.TabIndex = 4
+        Me.cmd_shifts.FlatAppearance.BorderSize = 0
+        Me.cmd_shifts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_shifts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_shifts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_shifts.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.cmd_shifts.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmd_shifts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_shifts.ImageKey = "full-time-job.png"
+        Me.cmd_shifts.ImageList = Me.sidebar_images
+        Me.cmd_shifts.Location = New System.Drawing.Point(17, 316)
+        Me.cmd_shifts.Name = "cmd_shifts"
+        Me.cmd_shifts.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.cmd_shifts.Size = New System.Drawing.Size(156, 41)
+        Me.cmd_shifts.TabIndex = 10
+        Me.cmd_shifts.Text = "          Shifts"
+        Me.cmd_shifts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_shifts.UseVisualStyleBackColor = True
         '
-        'sidebar_images
+        'PictureBox1
         '
-        Me.sidebar_images.ImageStream = CType(resources.GetObject("sidebar_images.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.sidebar_images.TransparentColor = System.Drawing.Color.Transparent
-        Me.sidebar_images.Images.SetKeyName(0, "employees.png")
-        Me.sidebar_images.Images.SetKeyName(1, "statistics.png")
-        Me.sidebar_images.Images.SetKeyName(2, "priority.png")
-        Me.sidebar_images.Images.SetKeyName(3, "clock.png")
-        Me.sidebar_images.Images.SetKeyName(4, "transaction.png")
-        Me.sidebar_images.Images.SetKeyName(5, "money-bag.png")
-        Me.sidebar_images.Images.SetKeyName(6, "compensation.png")
-        Me.sidebar_images.Images.SetKeyName(7, "performance.png")
-        Me.sidebar_images.Images.SetKeyName(8, "calendar.png")
-        Me.sidebar_images.Images.SetKeyName(9, "full-time-job.png")
-        Me.sidebar_images.Images.SetKeyName(10, "working.png")
-        Me.sidebar_images.Images.SetKeyName(11, "memo.png")
+        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(187, 193)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
+        '
+        'cmd_dashboard
+        '
+        Me.cmd_dashboard.FlatAppearance.BorderSize = 0
+        Me.cmd_dashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_dashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_dashboard.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.cmd_dashboard.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmd_dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_dashboard.ImageKey = "performance.png"
+        Me.cmd_dashboard.ImageList = Me.sidebar_images
+        Me.cmd_dashboard.Location = New System.Drawing.Point(17, 222)
+        Me.cmd_dashboard.Name = "cmd_dashboard"
+        Me.cmd_dashboard.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.cmd_dashboard.Size = New System.Drawing.Size(156, 41)
+        Me.cmd_dashboard.TabIndex = 1
+        Me.cmd_dashboard.Text = "          Dashboard"
+        Me.cmd_dashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_dashboard.UseVisualStyleBackColor = True
+        '
+        'cmd_attendance
+        '
+        Me.cmd_attendance.FlatAppearance.BorderSize = 0
+        Me.cmd_attendance.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_attendance.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_attendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_attendance.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.cmd_attendance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmd_attendance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_attendance.ImageKey = "clock.png"
+        Me.cmd_attendance.ImageList = Me.sidebar_images
+        Me.cmd_attendance.Location = New System.Drawing.Point(17, 363)
+        Me.cmd_attendance.Name = "cmd_attendance"
+        Me.cmd_attendance.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.cmd_attendance.Size = New System.Drawing.Size(156, 41)
+        Me.cmd_attendance.TabIndex = 3
+        Me.cmd_attendance.Text = "          Attendance"
+        Me.cmd_attendance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_attendance.UseVisualStyleBackColor = True
+        '
+        'cmd_reports
+        '
+        Me.cmd_reports.FlatAppearance.BorderSize = 0
+        Me.cmd_reports.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_reports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_reports.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_reports.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.cmd_reports.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmd_reports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_reports.ImageKey = "statistics.png"
+        Me.cmd_reports.ImageList = Me.sidebar_images
+        Me.cmd_reports.Location = New System.Drawing.Point(17, 692)
+        Me.cmd_reports.Name = "cmd_reports"
+        Me.cmd_reports.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.cmd_reports.Size = New System.Drawing.Size(156, 41)
+        Me.cmd_reports.TabIndex = 9
+        Me.cmd_reports.Text = "          Reports"
+        Me.cmd_reports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_reports.UseVisualStyleBackColor = True
+        '
+        'cmd_evaluation
+        '
+        Me.cmd_evaluation.FlatAppearance.BorderSize = 0
+        Me.cmd_evaluation.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_evaluation.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_evaluation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_evaluation.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.cmd_evaluation.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmd_evaluation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_evaluation.ImageKey = "priority.png"
+        Me.cmd_evaluation.ImageList = Me.sidebar_images
+        Me.cmd_evaluation.Location = New System.Drawing.Point(17, 645)
+        Me.cmd_evaluation.Name = "cmd_evaluation"
+        Me.cmd_evaluation.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.cmd_evaluation.Size = New System.Drawing.Size(156, 41)
+        Me.cmd_evaluation.TabIndex = 8
+        Me.cmd_evaluation.Text = "          Evaluation"
+        Me.cmd_evaluation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_evaluation.UseVisualStyleBackColor = True
+        '
+        'cmd_leaves
+        '
+        Me.cmd_leaves.FlatAppearance.BorderSize = 0
+        Me.cmd_leaves.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_leaves.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_leaves.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_leaves.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.cmd_leaves.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmd_leaves.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_leaves.ImageKey = "calendar.png"
+        Me.cmd_leaves.ImageList = Me.sidebar_images
+        Me.cmd_leaves.Location = New System.Drawing.Point(17, 551)
+        Me.cmd_leaves.Name = "cmd_leaves"
+        Me.cmd_leaves.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.cmd_leaves.Size = New System.Drawing.Size(156, 41)
+        Me.cmd_leaves.TabIndex = 7
+        Me.cmd_leaves.Text = "          Leaves"
+        Me.cmd_leaves.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_leaves.UseVisualStyleBackColor = True
+        '
+        'cmd_adjustments
+        '
+        Me.cmd_adjustments.FlatAppearance.BorderSize = 0
+        Me.cmd_adjustments.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_adjustments.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_adjustments.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_adjustments.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.cmd_adjustments.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmd_adjustments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_adjustments.ImageKey = "transaction.png"
+        Me.cmd_adjustments.ImageList = Me.sidebar_images
+        Me.cmd_adjustments.Location = New System.Drawing.Point(17, 504)
+        Me.cmd_adjustments.Name = "cmd_adjustments"
+        Me.cmd_adjustments.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.cmd_adjustments.Size = New System.Drawing.Size(156, 41)
+        Me.cmd_adjustments.TabIndex = 6
+        Me.cmd_adjustments.Text = "          Adjustments"
+        Me.cmd_adjustments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_adjustments.UseVisualStyleBackColor = True
+        '
+        'cmd_loans
+        '
+        Me.cmd_loans.FlatAppearance.BorderSize = 0
+        Me.cmd_loans.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_loans.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_loans.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_loans.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.cmd_loans.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmd_loans.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_loans.ImageKey = "money-bag.png"
+        Me.cmd_loans.ImageList = Me.sidebar_images
+        Me.cmd_loans.Location = New System.Drawing.Point(17, 457)
+        Me.cmd_loans.Name = "cmd_loans"
+        Me.cmd_loans.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.cmd_loans.Size = New System.Drawing.Size(156, 41)
+        Me.cmd_loans.TabIndex = 5
+        Me.cmd_loans.Text = "          Loans"
+        Me.cmd_loans.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_loans.UseVisualStyleBackColor = True
+        '
+        'cmd_payroll
+        '
+        Me.cmd_payroll.FlatAppearance.BorderSize = 0
+        Me.cmd_payroll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_payroll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_payroll.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_payroll.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.cmd_payroll.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmd_payroll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_payroll.ImageKey = "compensation.png"
+        Me.cmd_payroll.ImageList = Me.sidebar_images
+        Me.cmd_payroll.Location = New System.Drawing.Point(17, 410)
+        Me.cmd_payroll.Name = "cmd_payroll"
+        Me.cmd_payroll.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.cmd_payroll.Size = New System.Drawing.Size(156, 41)
+        Me.cmd_payroll.TabIndex = 4
+        Me.cmd_payroll.Text = "          Payroll"
+        Me.cmd_payroll.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_payroll.UseVisualStyleBackColor = True
+        '
+        'cmd_employees
+        '
+        Me.cmd_employees.FlatAppearance.BorderSize = 0
+        Me.cmd_employees.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_employees.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.cmd_employees.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmd_employees.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
+        Me.cmd_employees.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cmd_employees.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_employees.ImageKey = "employees.png"
+        Me.cmd_employees.ImageList = Me.sidebar_images
+        Me.cmd_employees.Location = New System.Drawing.Point(17, 269)
+        Me.cmd_employees.Name = "cmd_employees"
+        Me.cmd_employees.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
+        Me.cmd_employees.Size = New System.Drawing.Size(156, 41)
+        Me.cmd_employees.TabIndex = 2
+        Me.cmd_employees.Text = "          Employees"
+        Me.cmd_employees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.cmd_employees.UseVisualStyleBackColor = True
         '
         'panel_topbar
         '
         Me.panel_topbar.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.panel_topbar.Controls.Add(Me.panel_topBar_navigation)
         Me.panel_topbar.Dock = System.Windows.Forms.DockStyle.Top
-        Me.panel_topbar.Location = New System.Drawing.Point(174, 0)
+        Me.panel_topbar.Location = New System.Drawing.Point(215, 0)
         Me.panel_topbar.Name = "panel_topbar"
-        Me.panel_topbar.Size = New System.Drawing.Size(1035, 63)
+        Me.panel_topbar.Size = New System.Drawing.Size(994, 63)
         Me.panel_topbar.TabIndex = 1
         '
         'panel_topBar_navigation
         '
-        Me.panel_topBar_navigation.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.panel_topBar_navigation.BackColor = System.Drawing.Color.White
         Me.panel_topBar_navigation.Controls.Add(Me.Label1)
         Me.panel_topBar_navigation.Controls.Add(Me.cmd_Refresh)
         Me.panel_topBar_navigation.Controls.Add(Me.cmd_New)
@@ -253,6 +495,7 @@ Partial Class Main
         Me.panel_topBar_navigation.Name = "panel_topBar_navigation"
         Me.panel_topBar_navigation.Size = New System.Drawing.Size(563, 50)
         Me.panel_topBar_navigation.TabIndex = 4
+        Me.panel_topBar_navigation.Visible = False
         '
         'Label1
         '
@@ -265,63 +508,6 @@ Partial Class Main
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "|"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'ImageList2
-        '
-        Me.ImageList2.ImageStream = CType(resources.GetObject("ImageList2.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.ImageList2.TransparentColor = System.Drawing.Color.Transparent
-        Me.ImageList2.Images.SetKeyName(0, "employees.png")
-        Me.ImageList2.Images.SetKeyName(1, "loop.png")
-        Me.ImageList2.Images.SetKeyName(2, "search.png")
-        Me.ImageList2.Images.SetKeyName(3, "trash.png")
-        Me.ImageList2.Images.SetKeyName(4, "filter.png")
-        Me.ImageList2.Images.SetKeyName(5, "new.png")
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.Panel3.Controls.Add(Me.lbl_version)
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(174, 861)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1035, 20)
-        Me.Panel3.TabIndex = 2
-        '
-        'mainRight_Panel
-        '
-        Me.mainRight_Panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.mainRight_Panel.Dock = System.Windows.Forms.DockStyle.Right
-        Me.mainRight_Panel.Location = New System.Drawing.Point(1189, 63)
-        Me.mainRight_Panel.Name = "mainRight_Panel"
-        Me.mainRight_Panel.Size = New System.Drawing.Size(20, 798)
-        Me.mainRight_Panel.TabIndex = 3
-        '
-        'Panel_Border
-        '
-        Me.Panel_Border.BackColor = System.Drawing.Color.White
-        Me.Panel_Border.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Panel_Border.Controls.Add(Me.mainPanel)
-        Me.Panel_Border.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel_Border.Location = New System.Drawing.Point(174, 63)
-        Me.Panel_Border.Name = "Panel_Border"
-        Me.Panel_Border.Padding = New System.Windows.Forms.Padding(15)
-        Me.Panel_Border.Size = New System.Drawing.Size(1015, 798)
-        Me.Panel_Border.TabIndex = 4
-        '
-        'mainPanel
-        '
-        Me.mainPanel.BackColor = System.Drawing.Color.White
-        Me.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.mainPanel.Location = New System.Drawing.Point(15, 15)
-        Me.mainPanel.Name = "mainPanel"
-        Me.mainPanel.Size = New System.Drawing.Size(985, 768)
-        Me.mainPanel.TabIndex = 0
-        '
-        'sidebar_images_selected
-        '
-        Me.sidebar_images_selected.ImageStream = CType(resources.GetObject("sidebar_images_selected.ImageStream"), System.Windows.Forms.ImageListStreamer)
-        Me.sidebar_images_selected.TransparentColor = System.Drawing.Color.Transparent
-        Me.sidebar_images_selected.Images.SetKeyName(0, "calendar.png")
         '
         'cmd_Refresh
         '
@@ -343,6 +529,17 @@ Partial Class Main
         Me.cmd_Refresh.Text = "Refresh"
         Me.cmd_Refresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.cmd_Refresh.UseVisualStyleBackColor = True
+        '
+        'ImageList2
+        '
+        Me.ImageList2.ImageStream = CType(resources.GetObject("ImageList2.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList2.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList2.Images.SetKeyName(0, "employees.png")
+        Me.ImageList2.Images.SetKeyName(1, "loop.png")
+        Me.ImageList2.Images.SetKeyName(2, "search.png")
+        Me.ImageList2.Images.SetKeyName(3, "trash.png")
+        Me.ImageList2.Images.SetKeyName(4, "filter.png")
+        Me.ImageList2.Images.SetKeyName(5, "new.png")
         '
         'cmd_New
         '
@@ -428,260 +625,33 @@ Partial Class Main
         Me.cmd_Delete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.cmd_Delete.UseVisualStyleBackColor = True
         '
-        'pic_User
+        'Panel_Border
         '
-        Me.pic_User.BackColor = System.Drawing.Color.Transparent
-        Me.pic_User.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pic_User.Location = New System.Drawing.Point(12, 7)
-        Me.pic_User.Name = "pic_User"
-        Me.pic_User.Size = New System.Drawing.Size(50, 50)
-        Me.pic_User.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pic_User.TabIndex = 13
-        Me.pic_User.TabStop = False
+        Me.Panel_Border.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.Panel_Border.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Panel_Border.Controls.Add(Me.mainPanel)
+        Me.Panel_Border.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel_Border.Location = New System.Drawing.Point(215, 63)
+        Me.Panel_Border.Name = "Panel_Border"
+        Me.Panel_Border.Padding = New System.Windows.Forms.Padding(7, 7, 21, 14)
+        Me.Panel_Border.Size = New System.Drawing.Size(994, 818)
+        Me.Panel_Border.TabIndex = 4
         '
-        'cmd_incidents
+        'mainPanel
         '
-        Me.cmd_incidents.FlatAppearance.BorderSize = 0
-        Me.cmd_incidents.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_incidents.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_incidents.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmd_incidents.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.cmd_incidents.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmd_incidents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_incidents.ImageKey = "memo.png"
-        Me.cmd_incidents.ImageList = Me.sidebar_images
-        Me.cmd_incidents.Location = New System.Drawing.Point(3, 379)
-        Me.cmd_incidents.Name = "cmd_incidents"
-        Me.cmd_incidents.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.cmd_incidents.Size = New System.Drawing.Size(156, 41)
-        Me.cmd_incidents.TabIndex = 11
-        Me.cmd_incidents.Text = "          Incidents"
-        Me.cmd_incidents.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_incidents.UseVisualStyleBackColor = True
+        Me.mainPanel.BackColor = System.Drawing.Color.White
+        Me.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.mainPanel.Location = New System.Drawing.Point(7, 7)
+        Me.mainPanel.Name = "mainPanel"
+        Me.mainPanel.Size = New System.Drawing.Size(966, 797)
+        Me.mainPanel.TabIndex = 0
+        Me.mainPanel.Visible = False
         '
-        'cmd_shifts
+        'sidebar_images_selected
         '
-        Me.cmd_shifts.FlatAppearance.BorderSize = 0
-        Me.cmd_shifts.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_shifts.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_shifts.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmd_shifts.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.cmd_shifts.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmd_shifts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_shifts.ImageKey = "full-time-job.png"
-        Me.cmd_shifts.ImageList = Me.sidebar_images
-        Me.cmd_shifts.Location = New System.Drawing.Point(3, 97)
-        Me.cmd_shifts.Name = "cmd_shifts"
-        Me.cmd_shifts.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.cmd_shifts.Size = New System.Drawing.Size(156, 41)
-        Me.cmd_shifts.TabIndex = 10
-        Me.cmd_shifts.Text = "          Shifts"
-        Me.cmd_shifts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_shifts.UseVisualStyleBackColor = True
-        '
-        'cmd_dashboard
-        '
-        Me.cmd_dashboard.FlatAppearance.BorderSize = 0
-        Me.cmd_dashboard.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_dashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_dashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmd_dashboard.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.cmd_dashboard.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmd_dashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_dashboard.ImageKey = "performance.png"
-        Me.cmd_dashboard.ImageList = Me.sidebar_images
-        Me.cmd_dashboard.Location = New System.Drawing.Point(3, 3)
-        Me.cmd_dashboard.Name = "cmd_dashboard"
-        Me.cmd_dashboard.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.cmd_dashboard.Size = New System.Drawing.Size(156, 41)
-        Me.cmd_dashboard.TabIndex = 1
-        Me.cmd_dashboard.Text = "          Dashboard"
-        Me.cmd_dashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_dashboard.UseVisualStyleBackColor = True
-        '
-        'cmd_attendance
-        '
-        Me.cmd_attendance.FlatAppearance.BorderSize = 0
-        Me.cmd_attendance.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_attendance.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_attendance.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmd_attendance.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.cmd_attendance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmd_attendance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_attendance.ImageKey = "clock.png"
-        Me.cmd_attendance.ImageList = Me.sidebar_images
-        Me.cmd_attendance.Location = New System.Drawing.Point(3, 144)
-        Me.cmd_attendance.Name = "cmd_attendance"
-        Me.cmd_attendance.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.cmd_attendance.Size = New System.Drawing.Size(156, 41)
-        Me.cmd_attendance.TabIndex = 3
-        Me.cmd_attendance.Text = "          Attendance"
-        Me.cmd_attendance.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_attendance.UseVisualStyleBackColor = True
-        '
-        'cmd_evaluation
-        '
-        Me.cmd_evaluation.FlatAppearance.BorderSize = 0
-        Me.cmd_evaluation.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_evaluation.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_evaluation.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmd_evaluation.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.cmd_evaluation.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmd_evaluation.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_evaluation.ImageKey = "priority.png"
-        Me.cmd_evaluation.ImageList = Me.sidebar_images
-        Me.cmd_evaluation.Location = New System.Drawing.Point(3, 426)
-        Me.cmd_evaluation.Name = "cmd_evaluation"
-        Me.cmd_evaluation.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.cmd_evaluation.Size = New System.Drawing.Size(156, 41)
-        Me.cmd_evaluation.TabIndex = 8
-        Me.cmd_evaluation.Text = "          Evaluation"
-        Me.cmd_evaluation.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_evaluation.UseVisualStyleBackColor = True
-        '
-        'cmd_adjustments
-        '
-        Me.cmd_adjustments.FlatAppearance.BorderSize = 0
-        Me.cmd_adjustments.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_adjustments.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_adjustments.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmd_adjustments.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.cmd_adjustments.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmd_adjustments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_adjustments.ImageKey = "transaction.png"
-        Me.cmd_adjustments.ImageList = Me.sidebar_images
-        Me.cmd_adjustments.Location = New System.Drawing.Point(3, 285)
-        Me.cmd_adjustments.Name = "cmd_adjustments"
-        Me.cmd_adjustments.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.cmd_adjustments.Size = New System.Drawing.Size(156, 41)
-        Me.cmd_adjustments.TabIndex = 6
-        Me.cmd_adjustments.Text = "          Adjustments"
-        Me.cmd_adjustments.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_adjustments.UseVisualStyleBackColor = True
-        '
-        'cmd_payroll
-        '
-        Me.cmd_payroll.FlatAppearance.BorderSize = 0
-        Me.cmd_payroll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_payroll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_payroll.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmd_payroll.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.cmd_payroll.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmd_payroll.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_payroll.ImageKey = "compensation.png"
-        Me.cmd_payroll.ImageList = Me.sidebar_images
-        Me.cmd_payroll.Location = New System.Drawing.Point(3, 191)
-        Me.cmd_payroll.Name = "cmd_payroll"
-        Me.cmd_payroll.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.cmd_payroll.Size = New System.Drawing.Size(156, 41)
-        Me.cmd_payroll.TabIndex = 4
-        Me.cmd_payroll.Text = "          Payroll"
-        Me.cmd_payroll.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_payroll.UseVisualStyleBackColor = True
-        '
-        'cmd_employees
-        '
-        Me.cmd_employees.FlatAppearance.BorderSize = 0
-        Me.cmd_employees.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_employees.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_employees.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmd_employees.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.cmd_employees.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmd_employees.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_employees.ImageKey = "employees.png"
-        Me.cmd_employees.ImageList = Me.sidebar_images
-        Me.cmd_employees.Location = New System.Drawing.Point(3, 50)
-        Me.cmd_employees.Name = "cmd_employees"
-        Me.cmd_employees.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.cmd_employees.Size = New System.Drawing.Size(156, 41)
-        Me.cmd_employees.TabIndex = 2
-        Me.cmd_employees.Text = "          Employees"
-        Me.cmd_employees.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_employees.UseVisualStyleBackColor = True
-        '
-        'cmd_loans
-        '
-        Me.cmd_loans.FlatAppearance.BorderSize = 0
-        Me.cmd_loans.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_loans.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_loans.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmd_loans.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.cmd_loans.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmd_loans.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_loans.ImageKey = "money-bag.png"
-        Me.cmd_loans.ImageList = Me.sidebar_images
-        Me.cmd_loans.Location = New System.Drawing.Point(3, 238)
-        Me.cmd_loans.Name = "cmd_loans"
-        Me.cmd_loans.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.cmd_loans.Size = New System.Drawing.Size(156, 41)
-        Me.cmd_loans.TabIndex = 5
-        Me.cmd_loans.Text = "          Loans"
-        Me.cmd_loans.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_loans.UseVisualStyleBackColor = True
-        '
-        'cmd_leaves
-        '
-        Me.cmd_leaves.FlatAppearance.BorderSize = 0
-        Me.cmd_leaves.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_leaves.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_leaves.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmd_leaves.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.cmd_leaves.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmd_leaves.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_leaves.ImageKey = "calendar.png"
-        Me.cmd_leaves.ImageList = Me.sidebar_images
-        Me.cmd_leaves.Location = New System.Drawing.Point(3, 332)
-        Me.cmd_leaves.Name = "cmd_leaves"
-        Me.cmd_leaves.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.cmd_leaves.Size = New System.Drawing.Size(156, 41)
-        Me.cmd_leaves.TabIndex = 7
-        Me.cmd_leaves.Text = "          Leaves"
-        Me.cmd_leaves.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_leaves.UseVisualStyleBackColor = True
-        '
-        'cmd_reports
-        '
-        Me.cmd_reports.FlatAppearance.BorderSize = 0
-        Me.cmd_reports.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_reports.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(150, Byte), Integer), CType(CType(188, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.cmd_reports.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmd_reports.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!)
-        Me.cmd_reports.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.cmd_reports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_reports.ImageKey = "statistics.png"
-        Me.cmd_reports.ImageList = Me.sidebar_images
-        Me.cmd_reports.Location = New System.Drawing.Point(3, 473)
-        Me.cmd_reports.Name = "cmd_reports"
-        Me.cmd_reports.Padding = New System.Windows.Forms.Padding(8, 0, 0, 0)
-        Me.cmd_reports.Size = New System.Drawing.Size(156, 41)
-        Me.cmd_reports.TabIndex = 9
-        Me.cmd_reports.Text = "          Reports"
-        Me.cmd_reports.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.cmd_reports.UseVisualStyleBackColor = True
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(174, 176)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
-        'lbl_version
-        '
-        Me.lbl_version.AutoSize = True
-        Me.lbl_version.Dock = System.Windows.Forms.DockStyle.Right
-        Me.lbl_version.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!)
-        Me.lbl_version.ForeColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.lbl_version.Location = New System.Drawing.Point(987, 0)
-        Me.lbl_version.Name = "lbl_version"
-        Me.lbl_version.Padding = New System.Windows.Forms.Padding(3)
-        Me.lbl_version.Size = New System.Drawing.Size(48, 19)
-        Me.lbl_version.TabIndex = 15
-        Me.lbl_version.Text = "Version"
+        Me.sidebar_images_selected.ImageStream = CType(resources.GetObject("sidebar_images_selected.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.sidebar_images_selected.TransparentColor = System.Drawing.Color.Transparent
+        Me.sidebar_images_selected.Images.SetKeyName(0, "calendar.png")
         '
         'Main
         '
@@ -690,30 +660,27 @@ Partial Class Main
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(242, Byte), Integer), CType(CType(247, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1209, 881)
         Me.Controls.Add(Me.Panel_Border)
-        Me.Controls.Add(Me.mainRight_Panel)
-        Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.panel_topbar)
         Me.Controls.Add(Me.mainLeft_Panel)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MinimumSize = New System.Drawing.Size(800, 800)
+        Me.MinimumSize = New System.Drawing.Size(1000, 800)
         Me.Name = "Main"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Harmony | HR System"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.mainLeft_Panel.ResumeLayout(False)
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
+        Me.sidebar_panel.ResumeLayout(False)
+        Me.sidebar_panel.PerformLayout()
+        Me.user_panel.ResumeLayout(False)
+        Me.user_panel.PerformLayout()
+        CType(Me.pic_User, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.sidebar_panel.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.panel_topbar.ResumeLayout(False)
         Me.panel_topBar_navigation.ResumeLayout(False)
         Me.panel_topBar_navigation.PerformLayout()
-        Me.Panel3.ResumeLayout(False)
-        Me.Panel3.PerformLayout()
         Me.Panel_Border.ResumeLayout(False)
-        CType(Me.pic_User, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -729,8 +696,6 @@ Partial Class Main
     Friend WithEvents cmd_View As System.Windows.Forms.Button
     Friend WithEvents cmd_Delete As System.Windows.Forms.Button
     Friend WithEvents ImageList2 As System.Windows.Forms.ImageList
-    Friend WithEvents Panel3 As System.Windows.Forms.Panel
-    Friend WithEvents mainRight_Panel As System.Windows.Forms.Panel
     Friend WithEvents Panel_Border As System.Windows.Forms.Panel
     Friend WithEvents mainPanel As System.Windows.Forms.Panel
     Friend WithEvents cmd_dashboard As System.Windows.Forms.Button
@@ -739,13 +704,12 @@ Partial Class Main
     Friend WithEvents cmd_leaves As System.Windows.Forms.Button
     Friend WithEvents cmd_adjustments As System.Windows.Forms.Button
     Friend WithEvents cmd_attendance As System.Windows.Forms.Button
-    Friend WithEvents sidebar_panel As System.Windows.Forms.Panel
     Friend WithEvents cmd_loans As System.Windows.Forms.Button
     Friend WithEvents cmd_payroll As System.Windows.Forms.Button
     Public WithEvents sidebar_images As System.Windows.Forms.ImageList
     Friend WithEvents cmd_shifts As System.Windows.Forms.Button
     Friend WithEvents cmd_incidents As System.Windows.Forms.Button
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents user_panel As System.Windows.Forms.Panel
     Friend WithEvents pic_User As System.Windows.Forms.PictureBox
     Friend WithEvents lbl_access As System.Windows.Forms.Label
     Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
@@ -753,9 +717,9 @@ Partial Class Main
     Friend WithEvents logout As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents UsersToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SettingsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ShapeContainer2 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-    Friend WithEvents LineShape1 As Microsoft.VisualBasic.PowerPacks.LineShape
-    Friend WithEvents LineShape2 As Microsoft.VisualBasic.PowerPacks.LineShape
     Public WithEvents sidebar_images_selected As System.Windows.Forms.ImageList
     Friend WithEvents lbl_version As System.Windows.Forms.Label
+    Friend WithEvents sidebar_panel As System.Windows.Forms.Panel
+    Friend WithEvents ShapeContainer2 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    Friend WithEvents LineShape1 As Microsoft.VisualBasic.PowerPacks.LineShape
 End Class

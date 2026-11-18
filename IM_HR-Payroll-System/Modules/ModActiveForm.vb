@@ -71,6 +71,13 @@
                     .Refresh_List()
                 End With
 
+            Case UCase("FrmEVALUATION")
+                With FrmEVALUATION
+                    .formAction = "add"
+                    FrmEVALUATION_DETAILS.ShowDialog()
+                    .Refresh_List()
+                End With
+
         End Select
 
         
@@ -174,6 +181,17 @@
                         End If
                     End If
                     .Refresh_List()
+                End With
+
+            Case UCase("FrmEVALUATION")
+                With FrmEVALUATION
+                    .lst_evaluations.Focus()
+                    If .lst_evaluations.Items.Count > 0 Then
+                        .formAction = "edit"
+                        .Evaluation_ID = .lst_evaluations.FocusedItem.Text
+                        FrmEVALUATION_DETAILS.ShowDialog()
+                        .Refresh_List()
+                    End If
                 End With
 
         End Select
@@ -308,10 +326,21 @@
                     .Refresh_List()
                 End With
 
+            Case UCase("FrmEVALUATION")
+                With FrmEVALUATION
+                    .lst_evaluations.Focus()
 
+                    If .lst_evaluations.FocusedItem.SubItems(6).Text = "Yes" Then
+                        MsgBox("You cannot delete an VALIDATED evaluation record.", MsgBoxStyle.Information)
+                        Exit Sub
+                    End If
 
-
-
+                    If MsgBox("Do you want to delete this evaluation record?", MsgBoxStyle.YesNo + MsgBoxStyle.Question, msgBox_header) = MsgBoxResult.Yes Then
+                        sqlSTR = "Delete from Evaluation where Employee_ID ='" & .lst_evaluations.FocusedItem.SubItems(0).Text & "'; "
+                        ExecuteSQLQuery(sqlSTR)
+                        .Refresh_List()
+                    End If
+                End With
         End Select
         'Case UCase("FrmPHYSICAL_COUNT")
         'With FrmPHYSICAL_COUNT
@@ -389,6 +418,12 @@
                     End If
                 End With
 
+            Case UCase("FrmEVALUATION")
+                With FrmEVALUATION
+                    center_RelativeTo(.lst_evaluations, .grpFilter)
+                    .grpFilter.Visible = True
+                End With
+
         End Select
         'Case UCase("FrmPHYSICAL_COUNT")
         'With FrmPHYSICAL_COUNT
@@ -446,6 +481,15 @@
 
             Case UCase("FrmATTENDANCE")
                 With FrmATTENDANCE
+                    .whereSQL = "AND Attendance_Date >= DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1) " & _
+                    "AND Attendance_Date <  DATEADD(MONTH, 1, DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1)) "
+                    .Refresh_List()
+                End With
+
+            Case UCase("FrmEVALUATION")
+                With FrmEVALUATION
+                    .whereSQL = " AND Evaluation_Date >= DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1) " & _
+                    "AND Evaluation_Date < DATEADD(MONTH, 1, DATEFROMPARTS(YEAR(GETDATE()), MONTH(GETDATE()), 1)) "
                     .Refresh_List()
                 End With
 

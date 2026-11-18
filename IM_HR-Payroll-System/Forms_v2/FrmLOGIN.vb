@@ -6,7 +6,10 @@ Imports System.Text.RegularExpressions
 Public Class FrmLOGIN
 
     Private Sub FrmLOGIN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        CardPanel(panel_login, 8, 5)
         ThemeHelper.ApplyHighlight(Me)
+
+
 
         txt_username.Text = ""
         txt_password.Text = ""
@@ -54,9 +57,9 @@ Public Class FrmLOGIN
             xUsername = txt_username.Text
             xPassword = txt_password.Text
             With Main
-                .panel_topbar.Visible = True
+
                 .mainLeft_Panel.Visible = True
-                .mainRight_Panel.Visible = True
+                .mainPanel.Visible = True
 
                 .lbl_username.Text = UcFirst(xUsername)
                 .lbl_access.Text = sqlDT.Rows(0)("User_Access").ToString
@@ -76,13 +79,18 @@ Public Class FrmLOGIN
 
                 SetCircularPictureBox(Main.pic_User)
 
+                
             End With
+
+            
+                Main.cmd_dashboard_Click(Main.cmd_dashboard, EventArgs.Empty)
+
+
         Else
             MsgBox("Invalid Username or Password.")
             With Main
                 .panel_topbar.Visible = False
                 .mainLeft_Panel.Visible = False
-                .mainRight_Panel.Visible = False
             End With
             Exit Sub
         End If
@@ -97,7 +105,7 @@ Public Class FrmLOGIN
         Me.Close()
 
 
-        
+
 
 
 

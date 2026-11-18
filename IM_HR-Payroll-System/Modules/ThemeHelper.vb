@@ -20,13 +20,15 @@ Public Module ThemeHelper
             ElseIf TypeOf ctrl Is ComboBox Then
                 StyleComboBox(DirectCast(ctrl, ComboBox))
             ElseIf TypeOf ctrl Is CheckedListBox Then
-                ' CheckedListBox does not support owner drawing, so it is skipped
+                StyleCheckedListBox(DirectCast(ctrl, CheckedListBox))
             ElseIf TypeOf ctrl Is ListBox Then
                 StyleListBox(DirectCast(ctrl, ListBox))
             ElseIf TypeOf ctrl Is TreeView Then
                 StyleTreeView(DirectCast(ctrl, TreeView))
             ElseIf TypeOf ctrl Is CheckBox OrElse TypeOf ctrl Is RadioButton Then
                 StyleToggle(DirectCast(ctrl, ButtonBase))
+
+
             End If
 
             If ctrl.HasChildren Then ApplyHighlight(ctrl)
@@ -76,17 +78,37 @@ Public Module ThemeHelper
         End If
     End Sub
 
+    'Private Sub ListView_DrawSubItem(sender As Object, e As DrawListViewSubItemEventArgs)
+    '    Dim selected As Boolean = e.Item.Selected
+    '    Dim backColor As Color = If(selected, HighlightColor, e.SubItem.BackColor)
+    '    Dim foreColor As Color = If(selected, HighlightTextColor, e.SubItem.ForeColor)
+
+    '    Using b As New SolidBrush(backColor)
+    '        e.Graphics.FillRectangle(b, e.Bounds)
+    '    End Using
+
+    '    Dim textBounds As New Rectangle(e.Bounds.X + 3, e.Bounds.Y, e.Bounds.Width - 3, e.Bounds.Height)
+    '    TextRenderer.DrawText(e.Graphics, e.SubItem.Text, e.SubItem.Font, textBounds, foreColor, _
+    '                          TextFormatFlags.Left Or TextFormatFlags.VerticalCenter Or TextFormatFlags.EndEllipsis)
+    'End Sub
+
     Private Sub ListView_DrawSubItem(sender As Object, e As DrawListViewSubItemEventArgs)
         Dim selected As Boolean = e.Item.Selected
-        Dim backColor As Color = If(selected, HighlightColor, e.SubItem.BackColor)
-        Dim foreColor As Color = If(selected, HighlightTextColor, e.SubItem.ForeColor)
+
+        ' Respect the item-level colors when sub-items follow the item style
+        Dim normalBack As Color = If(e.Item.UseItemStyleForSubItems, e.Item.BackColor, e.SubItem.BackColor)
+        Dim normalFore As Color = If(e.Item.UseItemStyleForSubItems, e.Item.ForeColor, e.SubItem.ForeColor)
+        Dim cellFont As Font = If(e.Item.UseItemStyleForSubItems, e.Item.Font, e.SubItem.Font)
+
+        Dim backColor As Color = If(selected, HighlightColor, normalBack)
+        Dim foreColor As Color = If(selected, HighlightTextColor, normalFore)
 
         Using b As New SolidBrush(backColor)
             e.Graphics.FillRectangle(b, e.Bounds)
         End Using
 
         Dim textBounds As New Rectangle(e.Bounds.X + 3, e.Bounds.Y, e.Bounds.Width - 3, e.Bounds.Height)
-        TextRenderer.DrawText(e.Graphics, e.SubItem.Text, e.SubItem.Font, textBounds, foreColor, _
+        TextRenderer.DrawText(e.Graphics, e.SubItem.Text, cellFont, textBounds, foreColor, _
                               TextFormatFlags.Left Or TextFormatFlags.VerticalCenter Or TextFormatFlags.EndEllipsis)
     End Sub
 #End Region
@@ -170,6 +192,29 @@ Public Module ThemeHelper
         btn.FlatStyle = FlatStyle.Flat
         btn.FlatAppearance.BorderColor = HighlightColor
         btn.ForeColor = HighlightColor   ' also changes the label text color
+    End Sub
+#End Region
+
+#Region "CheckedListBox"
+    Private Sub StyleCheckedListBox(clb As CheckedListBox)
+        RemoveHandler clb.DrawItem, AddressOf CheckedListBox_DrawItem
+        AddHandler clb.DrawItem, AddressOf CheckedListBox_DrawItem
+    End Sub
+
+    Private Sub CheckedListBox_DrawItem(sender As Object, e As DrawItemEventArgs)
+        If e.Index < 0 Then Return
+
+        Dim clb As CheckedListBox = DirectCast(sender, CheckedListBox)
+        Dim selected As Boolean = (e.State And DrawItemState.Selected) = DrawItemState.Selected
+
+        ' The control has already drawn the checkbox glyph; e.Bounds is the text area
+        Using b As New SolidBrush(If(selected, HighlightColor, clb.BackColor))
+            e.Graphics.FillRectangle(b, e.Bounds)
+        End Using
+
+        TextRenderer.DrawText(e.Graphics, clb.GetItemText(clb.Items(e.Index)), clb.Font, e.Bounds, _
+                              If(selected, HighlightTextColor, clb.ForeColor), _
+                              TextFormatFlags.Left Or TextFormatFlags.VerticalCenter Or TextFormatFlags.EndEllipsis)
     End Sub
 #End Region
 End Module

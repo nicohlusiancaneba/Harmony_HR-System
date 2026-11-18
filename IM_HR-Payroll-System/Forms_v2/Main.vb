@@ -19,13 +19,17 @@ Public Class Main
 
     Private Sub Main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        CardPanel(panel_topBar_navigation, 8, 5)
+        CardPanel(sidebar_panel, 8, 5)
+        CardPanel(mainPanel, 8, 5)
+
+
         ThemeHelper.InstallMenuRenderer()
         CacheButtonImageKeys()
         lbl_version.Text = ""
         center_RelativeTo(panel_topbar, panel_topBar_navigation)
-        panel_topbar.Visible = False
+
         mainLeft_Panel.Visible = False
-        mainRight_Panel.Visible = False
         System_Version()
         FrmLOGIN.ShowDialog()
 
@@ -37,52 +41,52 @@ Public Class Main
 
     End Sub
 
-    Private Function GetRoundedRectPath(rect As Rectangle, radius As Integer) As Drawing2D.GraphicsPath
-        Dim path As New Drawing2D.GraphicsPath()
-        Dim diameter As Integer = radius * 2
+    'Private Function GetRoundedRectPath(rect As Rectangle, radius As Integer) As Drawing2D.GraphicsPath
+    '    Dim path As New Drawing2D.GraphicsPath()
+    '    Dim diameter As Integer = radius * 2
 
-        ' Top-left corner
-        path.AddArc(rect.X, rect.Y, diameter, diameter, 180, 90)
-        ' Top-right corner
-        path.AddArc(rect.Right - diameter, rect.Y, diameter, diameter, 270, 90)
-        ' Bottom-right corner
-        path.AddArc(rect.Right - diameter, rect.Bottom - diameter, diameter, diameter, 0, 90)
-        ' Bottom-left corner
-        path.AddArc(rect.X, rect.Bottom - diameter, diameter, diameter, 90, 90)
+    '    ' Top-left corner
+    '    path.AddArc(rect.X, rect.Y, diameter, diameter, 180, 90)
+    '    ' Top-right corner
+    '    path.AddArc(rect.Right - diameter, rect.Y, diameter, diameter, 270, 90)
+    '    ' Bottom-right corner
+    '    path.AddArc(rect.Right - diameter, rect.Bottom - diameter, diameter, diameter, 0, 90)
+    '    ' Bottom-left corner
+    '    path.AddArc(rect.X, rect.Bottom - diameter, diameter, diameter, 90, 90)
 
-        path.CloseFigure()
-        Return path
-    End Function
+    '    path.CloseFigure()
+    '    Return path
+    'End Function
 
-    Private Sub Panel_Border_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Border.Paint
-        e.Graphics.SmoothingMode = Drawing2D.SmoothingMode.AntiAlias
+    'Private Sub Panel_Border_Paint(sender As Object, e As PaintEventArgs) Handles Panel_Border.Paint
+    '    e.Graphics.SmoothingMode = Drawing2D.SmoothingMode.AntiAlias
 
-        Dim radius As Integer = 40 ' at least 10
-        Dim outsideColor As Color = Color.FromArgb(242, 247, 241)
-        Dim borderColor As Color = outsideColor
-        Dim borderWidth As Integer = 2
+    '    Dim radius As Integer = 40 ' at least 10
+    '    Dim outsideColor As Color = Color.FromArgb(242, 247, 241)
+    '    Dim borderColor As Color = outsideColor
+    '    Dim borderWidth As Integer = 2
 
-        Dim fullRect As New Rectangle(0, 0, Panel_Border.Width, Panel_Border.Height)
-        Dim rect As New Rectangle(0, 0, Panel_Border.Width - 1, Panel_Border.Height - 1)
+    '    Dim fullRect As New Rectangle(0, 0, Panel_Border.Width, Panel_Border.Height)
+    '    Dim rect As New Rectangle(0, 0, Panel_Border.Width - 1, Panel_Border.Height - 1)
 
-        ' 1) Fill the whole panel with the "outside" color first (covers the corners)
-        Using outsideBrush As New SolidBrush(outsideColor)
-            e.Graphics.FillRectangle(outsideBrush, fullRect)
-        End Using
+    '    ' 1) Fill the whole panel with the "outside" color first (covers the corners)
+    '    Using outsideBrush As New SolidBrush(outsideColor)
+    '        e.Graphics.FillRectangle(outsideBrush, fullRect)
+    '    End Using
 
-        Using path As Drawing2D.GraphicsPath = GetRoundedRectPath(rect, radius)
+    '    Using path As Drawing2D.GraphicsPath = GetRoundedRectPath(rect, radius)
 
-            ' 2) Fill the inside of the rounded shape with the panel's actual background color
-            Using insideBrush As New SolidBrush(Panel_Border.BackColor)
-                e.Graphics.FillPath(insideBrush, path)
-            End Using
+    '        ' 2) Fill the inside of the rounded shape with the panel's actual background color
+    '        Using insideBrush As New SolidBrush(Panel_Border.BackColor)
+    '            e.Graphics.FillPath(insideBrush, path)
+    '        End Using
 
-            ' 3) Draw the rounded border on top
-            Using pen As New Pen(borderColor, borderWidth)
-                e.Graphics.DrawPath(pen, path)
-            End Using
-        End Using
-    End Sub
+    '        ' 3) Draw the rounded border on top
+    '        Using pen As New Pen(borderColor, borderWidth)
+    '            e.Graphics.DrawPath(pen, path)
+    '        End Using
+    '    End Using
+    'End Sub
 
 
     Private Sub cmd_New_Click(sender As Object, e As EventArgs) Handles cmd_New.Click
@@ -131,6 +135,8 @@ Public Class Main
     End Sub
 
     Private Sub Activate_Topbar(frmName As String)
+        panel_topBar_navigation.Visible = True
+
         If mainPanel.Controls.Count > 0 Then
             panel_topBar_navigation.Visible = True
         End If
@@ -139,7 +145,7 @@ Public Class Main
             If TypeOf ctrl Is Button Then
                 'ctrl.BackColor = Color.White
                 ctrl.ForeColor = Color.Black
-                ctrl.BackColor = Color.FromArgb(242, 247, 241)
+                ctrl.BackColor = Color.White
                 ctrl.ForeColor = Color.FromArgb(29, 135, 112)
             End If
             RestoreSidebarButtons()
@@ -354,8 +360,17 @@ Public Class Main
 
 
 
-    Private Sub cmd_dashboard_Click(sender As Object, e As EventArgs) Handles cmd_dashboard.Click
-
+    Public Sub cmd_dashboard_Click(sender As Object, e As EventArgs) Handles cmd_dashboard.Click
+        FrmDASHBOARD.TopLevel = False
+        FrmDASHBOARD.FormBorderStyle = FormBorderStyle.None
+        FrmDASHBOARD.Dock = DockStyle.Fill
+        mainPanel.Controls.Clear()
+        mainPanel.Controls.Add(FrmDASHBOARD)
+        FrmDASHBOARD.Show()
+        Activate_Topbar(DirectCast(sender, Button).Name)
+        TintSelectedButton(cmd_dashboard, Color.FromArgb(242, 247, 241))
+        DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
+        DirectCast(sender, Button).ForeColor = Color.FromArgb(242, 247, 241)
     End Sub
 
 
@@ -419,7 +434,16 @@ Public Class Main
 
 
     Private Sub cmd_evaluation_Click(sender As Object, e As EventArgs) Handles cmd_evaluation.Click
-
+        FrmEVALUATION.TopLevel = False
+        FrmEVALUATION.FormBorderStyle = FormBorderStyle.None
+        FrmEVALUATION.Dock = DockStyle.Fill
+        mainPanel.Controls.Clear()
+        mainPanel.Controls.Add(FrmEVALUATION)
+        FrmEVALUATION.Show()
+        Activate_Topbar(DirectCast(sender, Button).Name)
+        TintSelectedButton(cmd_evaluation, Color.FromArgb(242, 247, 241))
+        DirectCast(sender, Button).BackColor = Color.FromArgb(29, 135, 112)
+        DirectCast(sender, Button).ForeColor = Color.FromArgb(242, 247, 241)
     End Sub
 
     Private Sub mainPanel_Paint(sender As Object, e As PaintEventArgs) Handles mainPanel.Paint
@@ -456,15 +480,16 @@ Public Class Main
         Else
             lbl_version.Text = "(Debug)"
         End If
+        centerX_RelativeTo(sidebar_panel, lbl_version)
     End Sub
 
     Private Sub logout_Click(sender As Object, e As EventArgs) Handles logout.Click
         closeForms()
 
 
-        panel_topbar.Visible = False
+        panel_topBar_navigation.Visible = False
         mainLeft_Panel.Visible = False
-        mainRight_Panel.Visible = False
+        mainPanel.Visible = False
 
 
 

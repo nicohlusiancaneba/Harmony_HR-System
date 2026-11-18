@@ -29,12 +29,22 @@
 
     Private Sub RefreshList()
         If xSelectIndex Then
-            sqlSTR = "select Evaluation_ID as ID, Evaluation_Date as 'Evaluation Date', CONCAT(Last_Name, ', ', First_Name, ', ', Middle_Name) as 'Evaluee', " & _
-                "CONCAT(Total_Percentage, '%') as Percentage, Evaluation_Description as 'Evaluation Description', Evaluation_Remarks as Remarks, Evaluation_Validated as 'Validated?', " & _
-                "(select top 1 CONCAT(Last_Name, ', ', First_Name, ', ', Middle_Name) from employees where employee_id = Evaluator_ID) as Evaluator " & _
-                "from evaluation " & _
-                "INNER JOIN Employees on Employees.Employee_ID = Evaluation.Employee_ID " & _
-                "WHERE DATENAME(MONTH, Evaluation_Date) = '" & cmb_month.Text & "' and Year(Evaluation_Date) ='" & cmb_year.Text & "'"
+            sqlSTR = "SELECT " & _
+                    "Evaluation_ID AS ID, " & _
+                    "Evaluation_Date AS 'Evaluation Date', " & _
+                    "CONCAT(Last_Name, ', ', First_Name, ', ', Middle_Name) AS Evaluee, " & _
+                    "CONCAT(Total_Percentage, '%') AS Percentage, " & _
+                    "Evaluation_Description AS 'Evaluation Description', " & _
+                    "Evaluation_Remarks AS Remarks, " & _
+                    "Evaluation_Validated AS 'Validated?', " & _
+                    "(SELECT TOP 1 " & _
+                        "CONCAT(Last_Name, ', ', First_Name, ', ', Middle_Name) " & _
+                     "FROM Employees " & _
+                     "WHERE Employee_ID = Evaluator_ID) AS Evaluator " & _
+                    "FROM Evaluation " & _
+                    "INNER JOIN Employees ON Employees.Employee_ID = Evaluation.Employee_ID " & _
+                    "WHERE DATENAME(MONTH, Evaluation_Date) = '" & cmb_month.Text & "' " & _
+                    "AND YEAR(Evaluation_Date) = '" & cmb_year.Text & "'"
             FillListView(ExecuteSQLQuery(sqlSTR), lst_evaluation, 0)
         End If
         

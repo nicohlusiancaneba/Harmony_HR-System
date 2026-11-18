@@ -69,7 +69,8 @@
                         ",Remarks " & _
                         "FROM Shifts_Details " & _
                         "inner join Employees on Employees.Employee_ID = Shifts_Details.Employee_ID " & _
-                        "where Shift_ID = '" & Shift_ID & "';"
+                        "where Shift_ID = '" & Shift_ID & "' " & _
+                        "Order by Employee_Name;"
                 ExecuteSQLQuery(sqlSTR)
 
                 dgv_employees.Rows.Clear()

@@ -79,3 +79,6 @@ M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmATTENDANCE_DETAILS.reso
 M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmATTENDANCE_DATA.resources
 M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmLOGIN.resources
 M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmUSERS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmEVALUATION.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmEVALUATION_DETAILS.resources
+M:\Prj_Harmony\IM_HR-Payroll-System\obj\Debug\Harmony.FrmEVALUATION_QUESTIONS.resources
